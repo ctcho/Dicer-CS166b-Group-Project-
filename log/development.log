@@ -1,5 +1,5 @@
 Started GET "/" for 127.0.0.1 at 2017-02-08 15:17:29 -0500
-  
+
 ActiveRecord::PendingMigrationError (
 
 Migrations are pending. To resolve this issue, run:
@@ -7,7 +7,7 @@ Migrations are pending. To resolve this issue, run:
         bin/rails db:migrate RAILS_ENV=development
 
 ):
-  
+
 activerecord (5.0.1) lib/active_record/migration.rb:573:in `check_pending!'
 activerecord (5.0.1) lib/active_record/migration.rb:549:in `call'
 actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
@@ -108,55 +108,85 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 137ms (Views: 103.6ms | ActiveRecord: 0.9ms)
 
 
-Started GET "/" for 127.0.0.1 at 2017-02-08 15:22:20 -0500
-  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
-Processing by Rails::WelcomeController#index as HTML
-  Parameters: {"internal"=>true}
-  Rendering /home/daniel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/railties-5.0.1/lib/rails/templates/rails/welcome/index.html.erb
-  Rendered /home/daniel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/railties-5.0.1/lib/rails/templates/rails/welcome/index.html.erb (13.7ms)
-Completed 200 OK in 100ms (Views: 32.9ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/users" for 127.0.0.1 at 2017-02-08 15:22:24 -0500
-Processing by UsersController#index as HTML
-  Rendering users/index.html.erb within layouts/application
-  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
-  Rendered users/index.html.erb within layouts/application (60.3ms)
-Completed 200 OK in 1310ms (Views: 1280.5ms | ActiveRecord: 3.5ms)
-
-
-Started GET "/users/new" for 127.0.0.1 at 2017-02-08 15:22:48 -0500
-Processing by UsersController#new as HTML
-  Rendering users/new.html.erb within layouts/application
-  Rendered users/_form.html.erb (86.1ms)
-  Rendered users/new.html.erb within layouts/application (90.2ms)
-Completed 200 OK in 160ms (Views: 155.3ms | ActiveRecord: 0.0ms)
-
-
-Started POST "/users" for 127.0.0.1 at 2017-02-08 15:23:21 -0500
-Processing by UsersController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DGO0gwSbU9uG6f2wPyYN2pizQ5FjdfzKGeFLdzDn82aI2Jql4aaJ0p3RkDuSZeQEws1A+v67X3ilPrCrlLDQxQ==", "user"=>{"email"=>"me@gmail.com", "password_hash"=>"[FILTERED]", "username"=>"izturehs", "zipcode"=>"18360", "profile_pic"=>"image.png", "player_id"=>"-7", "dm_id"=>"-5"}, "commit"=>"Create User"}
-  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
-  [1m[35mSQL (2.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_hash", "username", "zipcode", "profile_pic", "player_id", "dm_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "me@gmail.com"], ["password_hash", "wubba lubba dub dub"], ["username", "izturehs"], ["zipcode", 18360], ["profile_pic", "image.png"], ["player_id", -7], ["dm_id", -5], ["created_at", 2017-02-08 20:23:21 UTC], ["updated_at", 2017-02-08 20:23:21 UTC]]
-  [1m[35m (32.4ms)[0m  [1m[36mcommit transaction[0m
-Redirected to http://0.0.0.0:3000/users/2
-Completed 302 Found in 76ms (ActiveRecord: 35.1ms)
-
-
-Started GET "/users/2" for 127.0.0.1 at 2017-02-08 15:23:21 -0500
-Processing by UsersController#show as HTML
-  Parameters: {"id"=>"2"}
-  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
-  Rendering users/show.html.erb within layouts/application
-  Rendered users/show.html.erb within layouts/application (2.9ms)
-Completed 200 OK in 74ms (Views: 62.3ms | ActiveRecord: 0.6ms)
-
-
-Started GET "/users" for 127.0.0.1 at 2017-02-08 15:23:25 -0500
+Started GET "/users" for 127.0.0.1 at 2017-02-08 15:20:43 -0500
 Processing by UsersController#index as HTML
   Rendering users/index.html.erb within layouts/application
   [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
-  Rendered users/index.html.erb within layouts/application (8.5ms)
-Completed 200 OK in 100ms (Views: 95.8ms | ActiveRecord: 0.9ms)
+  Rendered users/index.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 116ms (Views: 110.8ms | ActiveRecord: 0.9ms)
 
 
+Started GET "/users/new" for 127.0.0.1 at 2017-02-08 15:31:38 -0500
+Processing by UsersController#new as HTML
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+
+
+LoadError (cannot load such file -- bcrypt):
+
+app/models/user.rb:1:in `<top (required)>'
+app/controllers/users_controller.rb:17:in `new'
+  Rendering /home/anne/.rvm/gems/ruby-2.3.3@rails5.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/anne/.rvm/gems/ruby-2.3.3@rails5.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/anne/.rvm/gems/ruby-2.3.3@rails5.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (11.1ms)
+  Rendering /home/anne/.rvm/gems/ruby-2.3.3@rails5.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/anne/.rvm/gems/ruby-2.3.3@rails5.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.4ms)
+  Rendering /home/anne/.rvm/gems/ruby-2.3.3@rails5.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/anne/.rvm/gems/ruby-2.3.3@rails5.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /home/anne/.rvm/gems/ruby-2.3.3@rails5.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (51.6ms)
+Started GET "/users/new" for 127.0.0.1 at 2017-02-08 15:32:20 -0500
+Processing by UsersController#new as HTML
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+
+LoadError (cannot load such file -- bcrypt):
+
+app/models/user.rb:1:in `<top (required)>'
+app/controllers/users_controller.rb:17:in `new'
+  Rendering /home/anne/.rvm/gems/ruby-2.3.3@rails5.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/anne/.rvm/gems/ruby-2.3.3@rails5.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/anne/.rvm/gems/ruby-2.3.3@rails5.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (13.6ms)
+  Rendering /home/anne/.rvm/gems/ruby-2.3.3@rails5.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/anne/.rvm/gems/ruby-2.3.3@rails5.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.5ms)
+  Rendering /home/anne/.rvm/gems/ruby-2.3.3@rails5.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/anne/.rvm/gems/ruby-2.3.3@rails5.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /home/anne/.rvm/gems/ruby-2.3.3@rails5.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (64.4ms)
+Started GET "/users/new" for 127.0.0.1 at 2017-02-08 15:32:45 -0500
+Processing by UsersController#new as HTML
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+
+LoadError (cannot load such file -- bcrypt):
+
+app/models/user.rb:1:in `<top (required)>'
+app/controllers/users_controller.rb:17:in `new'
+  Rendering /home/anne/.rvm/gems/ruby-2.3.3@rails5.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/anne/.rvm/gems/ruby-2.3.3@rails5.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/anne/.rvm/gems/ruby-2.3.3@rails5.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (13.7ms)
+  Rendering /home/anne/.rvm/gems/ruby-2.3.3@rails5.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/anne/.rvm/gems/ruby-2.3.3@rails5.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.2ms)
+  Rendering /home/anne/.rvm/gems/ruby-2.3.3@rails5.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/anne/.rvm/gems/ruby-2.3.3@rails5.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.4ms)
+  Rendered /home/anne/.rvm/gems/ruby-2.3.3@rails5.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (63.9ms)
+Started GET "/users/new" for 127.0.0.1 at 2017-02-08 15:33:01 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (59.3ms)
+  Rendered users/new.html.erb within layouts/application (65.1ms)
+Completed 200 OK in 655ms (Views: 606.8ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-02-08 15:33:32 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fhTNoxpHe5vHycrkHZrwhsJa+8lMDRgu5gs6dP8hVEBlXy8Ti+IqGqx6YuC6ojoGnqIC36O4R1CquhYqs14NPg==", "user"=>{"email"=>"", "password_hash"=>"[FILTERED]", "username"=>"apple", "zipcode"=>"60035", "profile_pic"=>":(", "player_id"=>"1", "dm_id"=>"2"}, "commit"=>"Create User"}
+  [1m[35m (0.8ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER(?) LIMIT ?[0m  [["username", "apple"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (12.8ms)
+  Rendered users/new.html.erb within layouts/application (15.4ms)
+Completed 200 OK in 295ms (Views: 68.8ms | ActiveRecord: 1.8ms)
