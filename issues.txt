@@ -1,0 +1,5 @@
+February 8, 2017
+
+This is the first entry of the issues.txt file.
+The purpose is to see how the GitHub bot works in terms of sending messages to Discord.
+Hope it works.
