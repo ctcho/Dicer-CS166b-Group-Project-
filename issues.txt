@@ -3,6 +3,7 @@ February 8, 2017
 This is the first entry of the issues.txt file.
 The purpose is to see how the GitHub bot works in terms of sending messages to Discord.
 Hope it works.
+<<<<<<< HEAD
 
 What should a player profile have?
   Bios
@@ -18,3 +19,6 @@ Table for character sheets
   character bio
 
 TODO: Generate scaffolding for these three, migrate, push to github
+=======
+ -UPDATE: The GitHub bot is now subscribed. Now it should work...
+>>>>>>> 03352782d9955aee54999561ece31906f5202ae0
