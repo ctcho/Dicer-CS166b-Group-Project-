@@ -190,3 +190,170 @@ Processing by UsersController#create as HTML
   Rendered users/_form.html.erb (12.8ms)
   Rendered users/new.html.erb within layouts/application (15.4ms)
 Completed 200 OK in 295ms (Views: 68.8ms | ActiveRecord: 1.8ms)
+Started GET "/" for 127.0.0.1 at 2017-02-08 23:33:18 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /home/daniel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/railties-5.0.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/daniel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/railties-5.0.1/lib/rails/templates/rails/welcome/index.html.erb (9.7ms)
+Completed 200 OK in 73ms (Views: 33.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-02-08 23:33:24 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (46.0ms)
+Completed 200 OK in 788ms (Views: 751.5ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2017-02-08 23:34:46 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (117.8ms)
+  Rendered users/new.html.erb within layouts/application (123.2ms)
+Completed 200 OK in 191ms (Views: 186.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-02-08 23:43:38 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nyLFg11SeRoCDzw7XMXFVP4muo4W7aqIDW8m4P0chlpCRqiPAYK24aFM11K6yf/FYTJXD3XN9YxrkDsAS/m7yA==", "user"=>{"email"=>"dv@brandeis.edu", "password_hash"=>"[FILTERED]", "username"=>"are", "zipcode"=>"90210", "profile_pic"=>".jpg", "player_id"=>"1", "dm_id"=>"2"}, "commit"=>"Create User"}
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER(?) LIMIT ?[0m  [["username", "are"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "dv@brandeis.edu"], ["LIMIT", 1]]
+  [1m[35mSQL (3.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_hash", "username", "zipcode", "profile_pic", "player_id", "dm_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "dv@brandeis.edu"], ["password_hash", "you"], ["username", "are"], ["zipcode", 90210], ["profile_pic", ".jpg"], ["player_id", 1], ["dm_id", 2], ["created_at", 2017-02-09 04:43:38 UTC], ["updated_at", 2017-02-09 04:43:38 UTC]]
+  [1m[35m (8.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 82ms (ActiveRecord: 13.6ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2017-02-08 23:43:38 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 124ms (Views: 103.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/3/edit" for 127.0.0.1 at 2017-02-08 23:44:48 -0500
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (21.8ms)
+  Rendered users/edit.html.erb within layouts/application (26.2ms)
+Completed 200 OK in 126ms (Views: 96.4ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/users/3" for 127.0.0.1 at 2017-02-08 23:44:53 -0500
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Zq8wF3JdjveWgicHRTbUtjySsIwMQa4Vgi4AJxOpDifSXh0ahy9bu5h53YYejFy1KQ6kYzNQ8Mk+/cDgG37BRg==", "user"=>{"email"=>"dv@brandeis.edu", "password_hash"=>"[FILTERED]", "username"=>"are", "zipcode"=>"90210", "profile_pic"=>".jpg", "player_id"=>"1", "dm_id"=>"2"}, "commit"=>"Update User", "id"=>"3"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER(?) AND ("users"."id" != ?) LIMIT ?[0m  [["username", "are"], ["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) AND ("users"."id" != ?) LIMIT ?[0m  [["email", "dv@brandeis.edu"], ["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 25ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2017-02-08 23:44:53 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 99ms (Views: 89.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-02-08 23:45:08 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 76ms (Views: 72.2ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/users/3" for 127.0.0.1 at 2017-02-08 23:45:13 -0500
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"bXQ2tQiCpqdYRIZhbYUfYp832bziWhD/U47r/zf2NGgG4YGaMnMOrNF+cj2kV5SeeGM4Cd51SXwTkTVPnRbHzA==", "id"=>"3"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  [1m[35m (26.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 55ms (ActiveRecord: 28.5ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-02-08 23:45:13 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 87ms (Views: 82.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2017-02-08 23:45:16 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (13.2ms)
+  Rendered users/new.html.erb within layouts/application (20.9ms)
+Completed 200 OK in 112ms (Views: 103.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-02-08 23:45:30 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5WB4mu9OW2fuFjVudQe6L1X6Plf/wMA9Lb/eiSxUyOw4BBWWs56UnE1V3geTC4C+yu7T1pzgnzlLQMNpmrH1fg==", "user"=>{"email"=>"dv@brandeis.edu", "password_hash"=>"[FILTERED]", "username"=>"are", "zipcode"=>"-2", "profile_pic"=>".jpg", "player_id"=>"-1", "dm_id"=>"-1"}, "commit"=>"Create User"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER(?) LIMIT ?[0m  [["username", "are"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "dv@brandeis.edu"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_hash", "username", "zipcode", "profile_pic", "player_id", "dm_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "dv@brandeis.edu"], ["password_hash", "you"], ["username", "are"], ["zipcode", -2], ["profile_pic", ".jpg"], ["player_id", -1], ["dm_id", -1], ["created_at", 2017-02-09 04:45:30 UTC], ["updated_at", 2017-02-09 04:45:30 UTC]]
+  [1m[35m (9.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/4
+Completed 302 Found in 31ms (ActiveRecord: 10.8ms)
+
+
+Started GET "/users/4" for 127.0.0.1 at 2017-02-08 23:45:30 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 73ms (Views: 67.5ms | ActiveRecord: 0.5ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateDmBios (20170209062741)
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "dm_bios" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "bio" text, "exp_level" integer, "ruleset1" boolean, "ruleset2" boolean, "ruleset3" boolean, "ruleset4" boolean, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170209062741"]]
+  [1m[35m (8.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreatePlayerBios (20170209062852)
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreatePlayerBios (20170209063254)
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "player_bios" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "bio" text, "exp_level" varchar, "ruleset1" boolean, "ruleset2" boolean, "ruleset3" boolean, "ruleset4" boolean, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170209063254"]]
+  [1m[35m (25.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateCharacterSheets (20170209063354)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "character_sheets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "filename" varchar, "bio" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170209063354"]]
+  [1m[35m (26.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m

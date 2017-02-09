@@ -21,3 +21,5 @@ class User < ApplicationRecord
   end
 
 end
+
+puts to_json

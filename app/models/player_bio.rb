@@ -1,0 +1,2 @@
+class PlayerBio < ApplicationRecord
+end

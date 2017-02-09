@@ -1,0 +1,2 @@
+class DmBio < ApplicationRecord
+end

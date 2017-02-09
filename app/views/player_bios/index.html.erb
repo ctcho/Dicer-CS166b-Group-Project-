@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Player Bios</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Bio</th>
+      <th>Exp level</th>
+      <th>Ruleset1</th>
+      <th>Ruleset2</th>
+      <th>Ruleset3</th>
+      <th>Ruleset4</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @player_bios.each do |player_bio| %>
+      <tr>
+        <td><%= player_bio.bio %></td>
+        <td><%= player_bio.exp_level %></td>
+        <td><%= player_bio.ruleset1 %></td>
+        <td><%= player_bio.ruleset2 %></td>
+        <td><%= player_bio.ruleset3 %></td>
+        <td><%= player_bio.ruleset4 %></td>
+        <td><%= link_to 'Show', player_bio %></td>
+        <td><%= link_to 'Edit', edit_player_bio_path(player_bio) %></td>
+        <td><%= link_to 'Destroy', player_bio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Player Bio', new_player_bio_path %>

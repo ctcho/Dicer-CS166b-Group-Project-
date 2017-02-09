@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @character_sheet.user_id %>
+</p>
+
+<p>
+  <strong>Filename:</strong>
+  <%= @character_sheet.filename %>
+</p>
+
+<p>
+  <strong>Bio:</strong>
+  <%= @character_sheet.bio %>
+</p>
+
+<%= link_to 'Edit', edit_character_sheet_path(@character_sheet) %> |
+<%= link_to 'Back', character_sheets_path %>

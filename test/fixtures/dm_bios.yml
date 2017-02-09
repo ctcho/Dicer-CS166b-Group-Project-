@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bio: MyText
+  exp_level: 1
+  ruleset1: false
+  ruleset2: false
+  ruleset3: false
+  ruleset4: false
+
+two:
+  bio: MyText
+  exp_level: 1
+  ruleset1: false
+  ruleset2: false
+  ruleset3: false
+  ruleset4: false

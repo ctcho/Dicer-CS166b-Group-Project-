@@ -1,0 +1,47 @@
+<%= form_for(dm_bio) do |f| %>
+  <% if dm_bio.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(dm_bio.errors.count, "error") %> prohibited this dm_bio from being saved:</h2>
+
+      <ul>
+      <% dm_bio.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :bio %>
+    <%= f.text_area :bio %>
+  </div>
+
+  <div class="field">
+    <%= f.label :exp_level %>
+    <%= f.number_field :exp_level %>
+  </div>
+
+  <div class="field">
+    <%= f.label :ruleset1 %>
+    <%= f.check_box :ruleset1 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :ruleset2 %>
+    <%= f.check_box :ruleset2 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :ruleset3 %>
+    <%= f.check_box :ruleset3 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :ruleset4 %>
+    <%= f.check_box :ruleset4 %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

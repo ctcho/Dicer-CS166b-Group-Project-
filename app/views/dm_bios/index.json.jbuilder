@@ -1,0 +1,1 @@
+json.array! @dm_bios, partial: 'dm_bios/dm_bio', as: :dm_bio

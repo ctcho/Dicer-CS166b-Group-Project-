@@ -1,0 +1,32 @@
+<%= form_for(character_sheet) do |f| %>
+  <% if character_sheet.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(character_sheet.errors.count, "error") %> prohibited this character_sheet from being saved:</h2>
+
+      <ul>
+      <% character_sheet.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id %>
+    <%= f.number_field :user_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :filename %>
+    <%= f.text_field :filename %>
+  </div>
+
+  <div class="field">
+    <%= f.label :bio %>
+    <%= f.text_area :bio %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -10,7 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170208201630) do
+ActiveRecord::Schema.define(version: 20170209063354) do
+
+  create_table "character_sheets", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "filename"
+    t.text     "bio"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "dm_bios", force: :cascade do |t|
+    t.text     "bio"
+    t.integer  "exp_level"
+    t.boolean  "ruleset1"
+    t.boolean  "ruleset2"
+    t.boolean  "ruleset3"
+    t.boolean  "ruleset4"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "player_bios", force: :cascade do |t|
+    t.text     "bio"
+    t.string   "exp_level"
+    t.boolean  "ruleset1"
+    t.boolean  "ruleset2"
+    t.boolean  "ruleset3"
+    t.boolean  "ruleset4"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email"
