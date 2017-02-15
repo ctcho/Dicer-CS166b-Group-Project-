@@ -1,1 +1,0 @@
-json.partial! "player_bios/player_bio", player_bio: @player_bio

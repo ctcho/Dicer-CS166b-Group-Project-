@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20170209063354) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "dm_bios", force: :cascade do |t|
+  create_table "dm_profiles", force: :cascade do |t|
     t.text     "bio"
     t.integer  "exp_level"
     t.boolean  "ruleset1"
@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 20170209063354) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "player_bios", force: :cascade do |t|
+  create_table "player_profiles", force: :cascade do |t|
     t.text     "bio"
     t.string   "exp_level"
     t.boolean  "ruleset1"

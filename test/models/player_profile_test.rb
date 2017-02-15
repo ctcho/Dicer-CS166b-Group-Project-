@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class DmBioTest < ActiveSupport::TestCase
+class PlayerProfileTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

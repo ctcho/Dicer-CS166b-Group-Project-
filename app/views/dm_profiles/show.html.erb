@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Bio:</strong>
+  <%= @dm_profile.bio %>
+</p>
+
+<p>
+  <strong>Exp level:</strong>
+  <%= @dm_profile.exp_level %>
+</p>
+
+<p>
+  <strong>Ruleset1:</strong>
+  <%= @dm_profile.ruleset1 %>
+</p>
+
+<p>
+  <strong>Ruleset2:</strong>
+  <%= @dm_profile.ruleset2 %>
+</p>
+
+<p>
+  <strong>Ruleset3:</strong>
+  <%= @dm_profile.ruleset3 %>
+</p>
+
+<p>
+  <strong>Ruleset4:</strong>
+  <%= @dm_profile.ruleset4 %>
+</p>
+
+<%= link_to 'Edit', edit_dm_profile_path(@dm_profile) %> |
+<%= link_to 'Back', dm_profiles_path %>

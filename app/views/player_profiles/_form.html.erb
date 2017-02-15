@@ -1,10 +1,10 @@
-<%= form_for(player_bio) do |f| %>
-  <% if player_bio.errors.any? %>
+<%= form_for(player_profile) do |f| %>
+  <% if player_profile.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(player_bio.errors.count, "error") %> prohibited this player_bio from being saved:</h2>
+      <h2><%= pluralize(player_profile.errors.count, "error") %> prohibited this player_profile from being saved:</h2>
 
       <ul>
-      <% player_bio.errors.full_messages.each do |message| %>
+      <% player_profile.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>

@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Bio:</strong>
+  <%= @player_profile.bio %>
+</p>
+
+<p>
+  <strong>Exp level:</strong>
+  <%= @player_profile.exp_level %>
+</p>
+
+<p>
+  <strong>Ruleset1:</strong>
+  <%= @player_profile.ruleset1 %>
+</p>
+
+<p>
+  <strong>Ruleset2:</strong>
+  <%= @player_profile.ruleset2 %>
+</p>
+
+<p>
+  <strong>Ruleset3:</strong>
+  <%= @player_profile.ruleset3 %>
+</p>
+
+<p>
+  <strong>Ruleset4:</strong>
+  <%= @player_profile.ruleset4 %>
+</p>
+
+<%= link_to 'Edit', edit_player_profile_path(@player_profile) %> |
+<%= link_to 'Back', player_profiles_path %>
