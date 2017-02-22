@@ -64,11 +64,11 @@ class DmProfilesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_dm_profile
-      @dm_profile = Dmprofile.find(params[:id])
+      @dm_profile = DmProfile.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def dm_profile_params
-      params.require(:dm_profile).permit(:profile, :exp_level, :ruleset1, :ruleset2, :ruleset3, :ruleset4)
+      params.require(:dm_profile).permit(:bio, :exp_level, :ruleset1, :ruleset2, :ruleset3, :ruleset4, :user_id)
     end
 end

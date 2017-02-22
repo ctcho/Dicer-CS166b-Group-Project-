@@ -69,6 +69,6 @@ class PlayerProfilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def player_profile_params
-      params.require(:player_profile).permit(:profile, :exp_level, :ruleset1, :ruleset2, :ruleset3, :ruleset4)
+      params.require(:player_profile).permit(:bio, :exp_level, :ruleset1, :ruleset2, :ruleset3, :ruleset4, :user_id)
     end
 end

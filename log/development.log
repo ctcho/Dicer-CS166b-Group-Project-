@@ -581,3 +581,881 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 4568ms (Views: 4254.3ms | ActiveRecord: 13.0ms)
 
 
+Started GET "/" for 10.0.2.2 at 2017-02-15 20:59:56 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (6.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-5.0.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-5.0.1/lib/rails/templates/rails/welcome/index.html.erb (30.4ms)
+Completed 200 OK in 195ms (Views: 108.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 10.0.2.2 at 2017-02-15 21:00:05 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (10.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (58.2ms)
+Completed 200 OK in 3929ms (Views: 3575.2ms | ActiveRecord: 17.1ms)
+
+
+Started GET "/users/new" for 10.0.2.2 at 2017-02-15 21:00:14 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (479.2ms)
+  Rendered users/new.html.erb within layouts/application (597.8ms)
+Completed 200 OK in 2026ms (Views: 1880.3ms | ActiveRecord: 12.3ms)
+
+
+Started POST "/users" for 10.0.2.2 at 2017-02-15 21:00:39 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"E9ysz0ZK2lrgEzrH8iMaqxehhDzO+u8yw2lSwxT0xzrpV106BmMpQICIVBdSCh2/A3UWMGpKYaDNEJzMu1HLRA==", "user"=>{"email"=>"thingy", "password_hash"=>"[FILTERED]", "username"=>"me", "zipcode"=>"48174", "profile_pic"=>"filename.jpg", "player_id"=>"1", "dm_id"=>"1"}, "commit"=>"Create User"}
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (6.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER(?) LIMIT ?[0m  [["username", "me"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "thingy"], ["LIMIT", 1]]
+  [1m[35mSQL (14.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_hash", "username", "zipcode", "profile_pic", "player_id", "dm_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "thingy"], ["password_hash", "other thingy"], ["username", "me"], ["zipcode", 48174], ["profile_pic", "filename.jpg"], ["player_id", 1], ["dm_id", 1], ["created_at", 2017-02-15 21:00:40 UTC], ["updated_at", 2017-02-15 21:00:40 UTC]]
+  [1m[35m (10.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 372ms (ActiveRecord: 33.0ms)
+
+
+Started GET "/users/1" for 10.0.2.2 at 2017-02-15 21:00:40 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (6.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (14.4ms)
+Completed 200 OK in 1385ms (Views: 1218.5ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/users" for 10.0.2.2 at 2017-02-15 21:00:44 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (5.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (18.2ms)
+Completed 200 OK in 1376ms (Views: 1284.8ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/dm_profiles" for 10.0.2.2 at 2017-02-15 21:00:49 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DmProfilesController#index as HTML
+  Rendering dm_profiles/index.html.erb within layouts/application
+  [1m[36mDmProfile Load (6.6ms)[0m  [1m[34mSELECT "dm_profiles".* FROM "dm_profiles"[0m
+  Rendered dm_profiles/index.html.erb within layouts/application (23.0ms)
+Completed 200 OK in 1573ms (Views: 1306.1ms | ActiveRecord: 13.4ms)
+
+
+Started GET "/dm_profiles/new" for 10.0.2.2 at 2017-02-15 21:00:53 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DmProfilesController#new as HTML
+  Rendering dm_profiles/new.html.erb within layouts/application
+  Rendered dm_profiles/_form.html.erb (146.2ms)
+  Rendered dm_profiles/new.html.erb within layouts/application (232.8ms)
+Completed 200 OK in 1451ms (Views: 1339.9ms | ActiveRecord: 5.1ms)
+
+
+Started POST "/dm_profiles" for 10.0.2.2 at 2017-02-15 21:01:11 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DmProfilesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aoWfJFTaaX2EWbPImFrHEPigBop9ZAuT+3oo0Kqc/txtaSw6C/wjPvQIDWfC//ol6UdnzlCJe7ibsNWrxQdjHA==", "dm_profile"=>{"bio"=>"i am a banana", "exp_level"=>"3424", "ruleset1"=>"1", "ruleset2"=>"0", "ruleset3"=>"1", "ruleset4"=>"0"}, "commit"=>"Create Dm profile"}
+Unpermitted parameter: bio
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  Rendering dm_profiles/new.html.erb within layouts/application
+  Rendered dm_profiles/_form.html.erb (11.2ms)
+  Rendered dm_profiles/new.html.erb within layouts/application (97.6ms)
+Completed 200 OK in 1280ms (Views: 1127.8ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/dm_profiles" for 10.0.2.2 at 2017-02-15 21:01:25 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DmProfilesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"q3naE2xnd3od/ZvHGSJGxoNeO0ar+kfuKmkbxYRUM+L1mZAwQtxKrtwDuasJzluE1AIGfYVqw7fbq7U9eUfwDg==", "dm_profile"=>{"bio"=>"i am a bio", "exp_level"=>"3424", "ruleset1"=>"1", "ruleset2"=>"0", "ruleset3"=>"1", "ruleset4"=>"0"}, "commit"=>"Create Dm profile"}
+Unpermitted parameter: bio
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  Rendering dm_profiles/new.html.erb within layouts/application
+  Rendered dm_profiles/_form.html.erb (13.7ms)
+  Rendered dm_profiles/new.html.erb within layouts/application (97.3ms)
+Completed 200 OK in 1182ms (Views: 1169.7ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/dm_profiles" for 10.0.2.2 at 2017-02-15 21:01:52 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DmProfilesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hoqab+07b5QYJxhBzu2zzdF+B1IWTXlCQZYAlA4vQWzYatBMw4BSQNnZOi3eAa6PhiI6aTjd/RuwVK5s8zyCgA==", "dm_profile"=>{"bio"=>"1", "exp_level"=>"3424", "ruleset1"=>"1", "ruleset2"=>"0", "ruleset3"=>"1", "ruleset4"=>"0"}, "commit"=>"Create Dm profile"}
+Unpermitted parameter: bio
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  Rendering dm_profiles/new.html.erb within layouts/application
+  Rendered dm_profiles/_form.html.erb (13.3ms)
+  Rendered dm_profiles/new.html.erb within layouts/application (101.2ms)
+Completed 200 OK in 1136ms (Views: 1124.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/dm_profiles" for 10.0.2.2 at 2017-02-15 21:01:58 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DmProfilesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FgwMeNdBngkUnrTy9mboWNKkegC0cezI9kbH72ddMWpI7EZb+fqj3dVglp7mivUahfhHO5rhaJEHhGkXmk7yhg==", "dm_profile"=>{"bio"=>"thingy", "exp_level"=>"3424", "ruleset1"=>"1", "ruleset2"=>"0", "ruleset3"=>"1", "ruleset4"=>"0"}, "commit"=>"Create Dm profile"}
+Unpermitted parameter: bio
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  Rendering dm_profiles/new.html.erb within layouts/application
+  Rendered dm_profiles/_form.html.erb (13.6ms)
+  Rendered dm_profiles/new.html.erb within layouts/application (96.3ms)
+Completed 200 OK in 1091ms (Views: 1078.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/dm_profiles" for 10.0.2.2 at 2017-02-15 21:02:06 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DmProfilesController#index as HTML
+  Rendering dm_profiles/index.html.erb within layouts/application
+  [1m[36mDmProfile Load (5.5ms)[0m  [1m[34mSELECT "dm_profiles".* FROM "dm_profiles"[0m
+  Rendered dm_profiles/index.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 1141ms (Views: 1052.9ms | ActiveRecord: 5.5ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (5.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (5.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (4.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (4.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddUserIdToDmProfiles (20170222185422)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (15.5ms)[0m  [1m[35mALTER TABLE "dm_profiles" ADD "user_id" integer[0m
+  [1m[35mSQL (2.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170222185422"]]
+  [1m[35m (9.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddUserIdToPlayerProfiles (20170222185448)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (15.1ms)[0m  [1m[35mALTER TABLE "player_profiles" ADD "user_id" integer[0m
+  [1m[35mSQL (15.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170222185448"]]
+  [1m[35m (13.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (6.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (9.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/" for 10.0.2.2 at 2017-02-22 19:00:31 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (4.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-5.0.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-5.0.1/lib/rails/templates/rails/welcome/index.html.erb (40.6ms)
+Completed 200 OK in 290ms (Views: 146.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 10.0.2.2 at 2017-02-22 19:00:39 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (9.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (106.9ms)
+Completed 200 OK in 4172ms (Views: 3843.7ms | ActiveRecord: 25.3ms)
+
+
+Started GET "/dm_profiles" for 10.0.2.2 at 2017-02-22 19:00:52 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DmProfilesController#index as HTML
+  Rendering dm_profiles/index.html.erb within layouts/application
+  [1m[36mDmProfile Load (5.0ms)[0m  [1m[34mSELECT "dm_profiles".* FROM "dm_profiles"[0m
+  Rendered dm_profiles/index.html.erb within layouts/application (21.2ms)
+Completed 200 OK in 1064ms (Views: 842.2ms | ActiveRecord: 10.9ms)
+
+
+Started GET "/player_profiles" for 10.0.2.2 at 2017-02-22 19:01:08 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#index as HTML
+  Rendering player_profiles/index.html.erb within layouts/application
+  [1m[36mPlayerProfile Load (10.3ms)[0m  [1m[34mSELECT "player_profiles".* FROM "player_profiles"[0m
+  Rendered player_profiles/index.html.erb within layouts/application (31.1ms)
+Completed 200 OK in 1117ms (Views: 938.4ms | ActiveRecord: 17.0ms)
+
+
+Started GET "/player_profiles/new" for 10.0.2.2 at 2017-02-22 19:01:12 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#new as HTML
+  Rendering player_profiles/new.html.erb within layouts/application
+  Rendered player_profiles/_form.html.erb (435.5ms)
+  Rendered player_profiles/new.html.erb within layouts/application (516.1ms)
+Completed 200 OK in 1527ms (Views: 1411.1ms | ActiveRecord: 14.8ms)
+
+
+Started POST "/player_profiles" for 10.0.2.2 at 2017-02-22 19:01:23 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Xlrg2a0J4SWFZt3lLnl2IxLazZGaE5t+B9nJ4WMPU0pCmeQag/YYeOj/wj1Sf5XnsLJ3PTHUPDvIgCu4IkkgGw==", "player_profile"=>{"bio"=>"seven", "exp_level"=>"22", "ruleset1"=>"1", "ruleset2"=>"0", "ruleset3"=>"0", "ruleset4"=>"0", "user_id"=>"1"}, "commit"=>"Create Player profile"}
+Unpermitted parameters: bio, user_id
+  [1m[35m (5.8ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  Rendering player_profiles/new.html.erb within layouts/application
+  Rendered player_profiles/_form.html.erb (12.5ms)
+  Rendered player_profiles/new.html.erb within layouts/application (92.3ms)
+Completed 200 OK in 1059ms (Views: 921.9ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/users" for 10.0.2.2 at 2017-02-22 19:01:34 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (4.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 924ms (Views: 836.8ms | ActiveRecord: 4.8ms)
+
+
+Started POST "/player_profiles" for 10.0.2.2 at 2017-02-22 19:11:08 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9MjKQDT3mHE7Nn8IcfK3cFqvQ55SDJSr4heX+Uo3wn8yswW2cblfA3uxZRsISvi20e/zYcMsAgI2/WnFlOv0CA==", "player_profile"=>{"bio"=>"asdf", "exp_level"=>"22", "ruleset1"=>"1", "ruleset2"=>"0", "ruleset3"=>"0", "ruleset4"=>"0", "user_id"=>"1"}, "commit"=>"Create Player profile"}
+Unpermitted parameters: bio, user_id
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  Rendering player_profiles/new.html.erb within layouts/application
+  Rendered player_profiles/_form.html.erb (13.0ms)
+  Rendered player_profiles/new.html.erb within layouts/application (106.9ms)
+Completed 200 OK in 1001ms (Views: 987.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/player_profiles" for 10.0.2.2 at 2017-02-22 19:15:40 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#index as HTML
+  Rendering player_profiles/index.html.erb within layouts/application
+  [1m[36mPlayerProfile Load (4.7ms)[0m  [1m[34mSELECT "player_profiles".* FROM "player_profiles"[0m
+  Rendered player_profiles/index.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 924ms (Views: 838.1ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/player_profiles/new" for 10.0.2.2 at 2017-02-22 19:15:44 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#new as HTML
+  Rendering player_profiles/new.html.erb within layouts/application
+  Rendered player_profiles/_form.html.erb (10.9ms)
+  Rendered player_profiles/new.html.erb within layouts/application (85.6ms)
+Completed 200 OK in 1039ms (Views: 962.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/player_profiles" for 10.0.2.2 at 2017-02-22 19:15:54 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FgYpuD9cS/3XrMazeHQH5jYvtG7O5Y2bbfPMMje1VKoKxS17EaOyoLo12WsEcuQilEcOwmUiKt6iqi5rdvMn+w==", "player_profile"=>{"bio"=>"dick", "exp_level"=>"butt", "ruleset1"=>"1", "ruleset2"=>"1", "ruleset3"=>"1", "ruleset4"=>"0", "user_id"=>"1"}, "commit"=>"Create Player profile"}
+Unpermitted parameters: bio, user_id
+  [1m[35m (0.6ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  Rendering player_profiles/new.html.erb within layouts/application
+  Rendered player_profiles/_form.html.erb (13.3ms)
+  Rendered player_profiles/new.html.erb within layouts/application (90.3ms)
+Completed 200 OK in 1007ms (Views: 992.5ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/player_profiles" for 10.0.2.2 at 2017-02-22 19:17:45 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sYBOZHAdfaXBDMYhQ/QwgdjFzuXX/C4cC9Uda2J4cMJ3+4GSNVO614GL3DI6TH9HU4V+GkbcuLXfP+NXvKRGtQ==", "player_profile"=>{"bio"=>"asdf", "exp_level"=>"butt", "ruleset1"=>"1", "ruleset2"=>"1", "ruleset3"=>"1", "ruleset4"=>"0", "user_id"=>"1"}, "commit"=>"Create Player profile"}
+Unpermitted parameters: bio, user_id
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  Rendering player_profiles/new.html.erb within layouts/application
+  Rendered player_profiles/_form.html.erb (13.7ms)
+  Rendered player_profiles/new.html.erb within layouts/application (100.6ms)
+Completed 200 OK in 935ms (Views: 922.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users" for 10.0.2.2 at 2017-02-22 19:17:55 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (5.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 930ms (Views: 848.2ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/player_profiles" for 10.0.2.2 at 2017-02-22 19:19:48 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#index as HTML
+  Rendering player_profiles/index.html.erb within layouts/application
+  [1m[36mPlayerProfile Load (4.7ms)[0m  [1m[34mSELECT "player_profiles".* FROM "player_profiles"[0m
+  Rendered player_profiles/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 992ms (Views: 909.9ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/player_profiles/new" for 10.0.2.2 at 2017-02-22 19:19:51 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#new as HTML
+  Rendering player_profiles/new.html.erb within layouts/application
+  Rendered player_profiles/_form.html.erb (11.0ms)
+  Rendered player_profiles/new.html.erb within layouts/application (85.9ms)
+Completed 200 OK in 1042ms (Views: 966.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/player_profiles" for 10.0.2.2 at 2017-02-22 19:19:54 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Sb3+n9WLx8WUlwSJ+JaN9okLI1Zz2SBLjZyUflmiW+dVfvpc+3Q+mPkOG1GEkG4yK2OZ+tgehw5CxXYnGOQotg==", "player_profile"=>{"bio"=>"", "exp_level"=>"", "ruleset1"=>"0", "ruleset2"=>"0", "ruleset3"=>"0", "ruleset4"=>"0", "user_id"=>""}, "commit"=>"Create Player profile"}
+Unpermitted parameters: bio, user_id
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  Rendering player_profiles/new.html.erb within layouts/application
+  Rendered player_profiles/_form.html.erb (12.4ms)
+  Rendered player_profiles/new.html.erb within layouts/application (90.9ms)
+Completed 200 OK in 880ms (Views: 863.5ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/player_profiles" for 10.0.2.2 at 2017-02-22 19:20:05 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ATIEYfl/15buf4LHsIiCGLwqD5l0nbMKft88bzHpLHrHScuXvDEQ5K74mNTJMM3eN2q/ZuW9JaOqNcJT7zUaDQ==", "player_profile"=>{"bio"=>"", "exp_level"=>"", "ruleset1"=>"0", "ruleset2"=>"0", "ruleset3"=>"0", "ruleset4"=>"0", "user_id"=>"0"}, "commit"=>"Create Player profile"}
+Unpermitted parameters: bio, user_id
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  Rendering player_profiles/new.html.erb within layouts/application
+  Rendered player_profiles/_form.html.erb (11.5ms)
+  Rendered player_profiles/new.html.erb within layouts/application (91.8ms)
+Completed 200 OK in 972ms (Views: 960.9ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/player_profiles" for 10.0.2.2 at 2017-02-22 19:20:44 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/IrTG8UQCBG6T/ggdx63P8J+Q30KVyKZeF9XFuyd+SY68RztgF7PY/rI4jMOpvj5ST7zgpt3tDCstakqMkHPUQ==", "player_profile"=>{"bio"=>"", "exp_level"=>"", "ruleset1"=>"0", "ruleset2"=>"0", "ruleset3"=>"0", "ruleset4"=>"0", "user_id"=>"01"}, "commit"=>"Create Player profile"}
+Unpermitted parameters: bio, user_id
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  Rendering player_profiles/new.html.erb within layouts/application
+  Rendered player_profiles/_form.html.erb (10.2ms)
+  Rendered player_profiles/new.html.erb within layouts/application (91.7ms)
+Completed 200 OK in 963ms (Views: 949.7ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/player_profiles" for 10.0.2.2 at 2017-02-22 19:22:05 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VIrF0HEUvxbEt6fXDfxLhSzRW7rqLX4OpllEqtyhGrGS8QomNFp4ZIQwvcR0RARDp5HrRXsN6Kdys7qWAn0sxg==", "player_profile"=>{"bio"=>"I am sam", "exp_level"=>"God", "ruleset1"=>"1", "ruleset2"=>"0", "ruleset3"=>"0", "ruleset4"=>"1", "user_id"=>"1"}, "commit"=>"Create Player profile"}
+Unpermitted parameters: bio, user_id
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  Rendering player_profiles/new.html.erb within layouts/application
+  Rendered player_profiles/_form.html.erb (12.4ms)
+  Rendered player_profiles/new.html.erb within layouts/application (89.6ms)
+Completed 200 OK in 951ms (Views: 937.0ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/player_profiles" for 10.0.2.2 at 2017-02-22 19:22:39 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cE9ht3D4+OTAxA1IDhyw4g5k4lNAelawkSEqiDnSxOK2NK5BNbY/loBDF1t3pP8khSRSrNFawBlFy9S05w7ylQ==", "player_profile"=>{"bio"=>"", "exp_level"=>"God", "ruleset1"=>"1", "ruleset2"=>"0", "ruleset3"=>"0", "ruleset4"=>"1", "user_id"=>"1"}, "commit"=>"Create Player profile"}
+Unpermitted parameters: bio, user_id
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  Rendering player_profiles/new.html.erb within layouts/application
+  Rendered player_profiles/_form.html.erb (11.3ms)
+  Rendered player_profiles/new.html.erb within layouts/application (89.6ms)
+Completed 200 OK in 961ms (Views: 948.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/player_profiles" for 10.0.2.2 at 2017-02-22 19:24:00 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (6.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PlayerProfilesController#index as HTML
+  Rendering player_profiles/index.html.erb within layouts/application
+  [1m[36mPlayerProfile Load (5.9ms)[0m  [1m[34mSELECT "player_profiles".* FROM "player_profiles"[0m
+  Rendered player_profiles/index.html.erb within layouts/application (67.5ms)
+Completed 200 OK in 4165ms (Views: 3819.0ms | ActiveRecord: 11.1ms)
+
+
+Started GET "/player_profiles/new" for 10.0.2.2 at 2017-02-22 19:24:11 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#new as HTML
+  Rendering player_profiles/new.html.erb within layouts/application
+  Rendered player_profiles/_form.html.erb (409.5ms)
+  Rendered player_profiles/new.html.erb within layouts/application (492.0ms)
+Completed 200 OK in 1613ms (Views: 1463.7ms | ActiveRecord: 18.3ms)
+
+
+Started POST "/player_profiles" for 10.0.2.2 at 2017-02-22 19:24:25 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QKQNa83FIs62Ct6HWEnX9YwTP+1dKk+v02Ua/ICQQQJcZwmo4zrbk9uTwV8kTzQxLnuFQfbt6OocPPilwdYyUw==", "player_profile"=>{"bio"=>"I exist", "exp_level"=>"God", "ruleset1"=>"0", "ruleset2"=>"1", "ruleset3"=>"0", "ruleset4"=>"0", "user_id"=>"1"}, "commit"=>"Create Player profile"}
+Unpermitted parameter: bio
+  [1m[36mUser Load (9.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (5.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameter: bio
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (15.2ms)[0m  [1m[32mINSERT INTO "player_profiles" ("exp_level", "ruleset1", "ruleset2", "ruleset3", "ruleset4", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["exp_level", "God"], ["ruleset1", false], ["ruleset2", true], ["ruleset3", false], ["ruleset4", false], ["created_at", 2017-02-22 19:24:58 UTC], ["updated_at", 2017-02-22 19:24:58 UTC], ["user_id", 1]]
+  [1m[35m (9.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/player_profiles/1
+Completed 302 Found in 33612ms (ActiveRecord: 55.8ms)
+
+
+Started GET "/player_profiles/1" for 10.0.2.2 at 2017-02-22 19:24:58 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlayerProfile Load (16.2ms)[0m  [1m[34mSELECT  "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering player_profiles/show.html.erb within layouts/application
+  Rendered player_profiles/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 865ms (Views: 762.7ms | ActiveRecord: 16.2ms)
+
+
+Started GET "/player_profiles" for 10.0.2.2 at 2017-02-22 19:27:05 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#index as HTML
+  Rendering player_profiles/index.html.erb within layouts/application
+  [1m[36mPlayerProfile Load (5.1ms)[0m  [1m[34mSELECT "player_profiles".* FROM "player_profiles"[0m
+  Rendered player_profiles/index.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 978ms (Views: 894.3ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/player_profiles/new" for 10.0.2.2 at 2017-02-22 19:27:09 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#new as HTML
+  Rendering player_profiles/new.html.erb within layouts/application
+  Rendered player_profiles/_form.html.erb (11.8ms)
+  Rendered player_profiles/new.html.erb within layouts/application (87.6ms)
+Completed 200 OK in 1017ms (Views: 941.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/player_profiles" for 10.0.2.2 at 2017-02-22 19:27:16 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WhZBszWVqr5zFzOy8jJdGdij+mxgDjdDJNltxxqoROdG1UVwG2pT4x6OLGqONL7destAwMvJkAbrgI+eW+43tg==", "player_profile"=>{"bio"=>"this is a bio", "exp_level"=>"2", "ruleset1"=>"0", "ruleset2"=>"0", "ruleset3"=>"0", "ruleset4"=>"0", "user_id"=>"1"}, "commit"=>"Create Player profile"}
+Unpermitted parameter: bio
+  [1m[35m (0.6ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (7.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (7.4ms)[0m  [1m[32mINSERT INTO "player_profiles" ("exp_level", "ruleset1", "ruleset2", "ruleset3", "ruleset4", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["exp_level", "2"], ["ruleset1", false], ["ruleset2", false], ["ruleset3", false], ["ruleset4", false], ["created_at", 2017-02-22 19:27:29 UTC], ["updated_at", 2017-02-22 19:27:29 UTC], ["user_id", 1]]
+  [1m[35m (19.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/player_profiles/2
+Completed 302 Found in 13475ms (ActiveRecord: 35.5ms)
+
+
+Started GET "/player_profiles/2" for 10.0.2.2 at 2017-02-22 19:27:30 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPlayerProfile Load (5.7ms)[0m  [1m[34mSELECT  "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering player_profiles/show.html.erb within layouts/application
+  Rendered player_profiles/show.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 941ms (Views: 839.0ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/player_profiles" for 10.0.2.2 at 2017-02-22 19:27:35 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#index as HTML
+  Rendering player_profiles/index.html.erb within layouts/application
+  [1m[36mPlayerProfile Load (5.3ms)[0m  [1m[34mSELECT "player_profiles".* FROM "player_profiles"[0m
+  Rendered player_profiles/index.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 897ms (Views: 815.4ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/" for 10.0.2.2 at 2017-02-22 19:32:13 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-5.0.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-5.0.1/lib/rails/templates/rails/welcome/index.html.erb (6.1ms)
+Completed 200 OK in 17ms (Views: 12.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dm_profiles" for 10.0.2.2 at 2017-02-22 19:32:18 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DmProfilesController#index as HTML
+  Rendering dm_profiles/index.html.erb within layouts/application
+  [1m[36mDmProfile Load (10.1ms)[0m  [1m[34mSELECT "dm_profiles".* FROM "dm_profiles"[0m
+  Rendered dm_profiles/index.html.erb within layouts/application (23.6ms)
+Completed 200 OK in 1031ms (Views: 864.0ms | ActiveRecord: 15.1ms)
+
+
+Started GET "/player_profiles" for 10.0.2.2 at 2017-02-22 19:32:28 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#index as HTML
+  Rendering player_profiles/index.html.erb within layouts/application
+  [1m[36mPlayerProfile Load (4.7ms)[0m  [1m[34mSELECT "player_profiles".* FROM "player_profiles"[0m
+  Rendered player_profiles/index.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 915ms (Views: 832.0ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/player_profiles/1/edit" for 10.0.2.2 at 2017-02-22 19:32:39 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlayerProfile Load (4.8ms)[0m  [1m[34mSELECT  "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering player_profiles/edit.html.erb within layouts/application
+  Rendered player_profiles/_form.html.erb (11.4ms)
+  Rendered player_profiles/edit.html.erb within layouts/application (88.3ms)
+Completed 200 OK in 1036ms (Views: 944.7ms | ActiveRecord: 4.8ms)
+
+
+Started PATCH "/player_profiles/1" for 10.0.2.2 at 2017-02-22 19:32:42 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kOV+Fg//zzk5+oDhLGulfLMcq3BkxQ0HGep7M5i2yF+Ok0h9jc3T2mP2fO4vcq7tO5xPg9hOXBQy1pzT0KdGzg==", "player_profile"=>{"bio"=>"asdf", "exp_level"=>"God", "ruleset1"=>"0", "ruleset2"=>"1", "ruleset3"=>"0", "ruleset4"=>"0", "user_id"=>"1"}, "commit"=>"Update Player profile", "id"=>"1"}
+  [1m[36mPlayerProfile Load (5.3ms)[0m  [1m[34mSELECT  "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameter: bio
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (5.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/player_profiles/1
+Completed 302 Found in 35ms (ActiveRecord: 11.5ms)
+
+
+Started GET "/player_profiles/1" for 10.0.2.2 at 2017-02-22 19:32:42 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlayerProfile Load (5.1ms)[0m  [1m[34mSELECT  "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering player_profiles/show.html.erb within layouts/application
+  Rendered player_profiles/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 915ms (Views: 828.3ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/player_profiles" for 10.0.2.2 at 2017-02-22 19:32:46 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#index as HTML
+  Rendering player_profiles/index.html.erb within layouts/application
+  [1m[36mPlayerProfile Load (6.5ms)[0m  [1m[34mSELECT "player_profiles".* FROM "player_profiles"[0m
+  Rendered player_profiles/index.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 991ms (Views: 908.5ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/character_sheets" for 10.0.2.2 at 2017-02-22 19:44:42 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CharacterSheetsController#index as HTML
+  Rendering character_sheets/index.html.erb within layouts/application
+  [1m[36mCharacterSheet Load (4.9ms)[0m  [1m[34mSELECT "character_sheets".* FROM "character_sheets"[0m
+  Rendered character_sheets/index.html.erb within layouts/application (17.7ms)
+Completed 200 OK in 995ms (Views: 829.0ms | ActiveRecord: 10.7ms)
+
+
+Started GET "/character_sheets/new" for 10.0.2.2 at 2017-02-22 19:44:48 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CharacterSheetsController#new as HTML
+  Rendering character_sheets/new.html.erb within layouts/application
+  Rendered character_sheets/_form.html.erb (8.3ms)
+  Rendered character_sheets/new.html.erb within layouts/application (87.0ms)
+Completed 200 OK in 1033ms (Views: 933.1ms | ActiveRecord: 7.0ms)
+
+
+Started POST "/character_sheets" for 10.0.2.2 at 2017-02-22 19:45:05 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CharacterSheetsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fsK1s8q4ESfqxvhgKt2qjT8qVySHGe3yL25oauwMQ0WtQoKI0kNCbyQk91jHe42EtyJtZnhhLz3aGd+lZHB6/w==", "character_sheet"=>{"user_id"=>"1", "filename"=>"stone.marble", "bio"=>"this is my favorite character. he is a statue."}, "commit"=>"Create Character sheet"}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  Rendering character_sheets/new.html.erb within layouts/application
+  Rendered character_sheets/_form.html.erb (8.2ms)
+  Rendered character_sheets/new.html.erb within layouts/application (84.8ms)
+Completed 200 OK in 1012ms (Views: 950.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users" for 10.0.2.2 at 2017-02-22 19:46:45 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (5.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (5.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (106.9ms)
+Completed 200 OK in 3448ms (Views: 3049.9ms | ActiveRecord: 20.7ms)
+
+
+Started GET "/character_sheets" for 10.0.2.2 at 2017-02-22 19:46:58 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CharacterSheetsController#index as HTML
+  Rendering character_sheets/index.html.erb within layouts/application
+  [1m[36mCharacterSheet Load (10.8ms)[0m  [1m[34mSELECT "character_sheets".* FROM "character_sheets"[0m
+  Rendered character_sheets/index.html.erb within layouts/application (26.9ms)
+Completed 200 OK in 1150ms (Views: 947.2ms | ActiveRecord: 16.8ms)
+
+
+Started GET "/character_sheets/new" for 10.0.2.2 at 2017-02-22 19:47:02 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CharacterSheetsController#new as HTML
+  Rendering character_sheets/new.html.erb within layouts/application
+  Rendered character_sheets/_form.html.erb (211.6ms)
+  Rendered character_sheets/new.html.erb within layouts/application (287.4ms)
+Completed 200 OK in 1357ms (Views: 1253.7ms | ActiveRecord: 10.6ms)
+
+
+Started POST "/character_sheets" for 10.0.2.2 at 2017-02-22 19:47:11 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CharacterSheetsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ykfjCM0awXObZtq5swIHl7WKttfwr0UUIs5BX8NFq5AZx9Qz1eGSO1WE1YFepCCePYKMlQ/Xh9vXufaQSzmSKg==", "character_sheet"=>{"user_id"=>"1", "filename"=>"beep.jpg", "bio"=>"doot"}, "commit"=>"Create Character sheet"}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  Rendering character_sheets/new.html.erb within layouts/application
+  Rendered character_sheets/_form.html.erb (15.4ms)
+  Rendered character_sheets/new.html.erb within layouts/application (93.1ms)
+Completed 200 OK in 1151ms (Views: 983.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/dm_profiles" for 10.0.2.2 at 2017-02-22 19:47:54 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DmProfilesController#index as HTML
+  Rendering dm_profiles/index.html.erb within layouts/application
+  [1m[36mDmProfile Load (5.3ms)[0m  [1m[34mSELECT "dm_profiles".* FROM "dm_profiles"[0m
+  Rendered dm_profiles/index.html.erb within layouts/application (19.9ms)
+Completed 200 OK in 1017ms (Views: 853.5ms | ActiveRecord: 11.6ms)
+
+
+Started GET "/dm_profiles/new" for 10.0.2.2 at 2017-02-22 19:47:59 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DmProfilesController#new as HTML
+  Rendering dm_profiles/new.html.erb within layouts/application
+  Rendered dm_profiles/_form.html.erb (56.4ms)
+  Rendered dm_profiles/new.html.erb within layouts/application (137.8ms)
+Completed 200 OK in 1107ms (Views: 1002.1ms | ActiveRecord: 5.9ms)
+
+
+Started POST "/dm_profiles" for 10.0.2.2 at 2017-02-22 19:48:08 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DmProfilesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iX2/xV6VhociPN7Jt8omO2NibovuhLKjJqRgqD0BEjND8pU5kqPIV21+enM/Ui3UmLNlNE6jSHEZTScewVgsuA==", "dm_profile"=>{"bio"=>"my lovely lady humps", "exp_level"=>"2", "ruleset1"=>"0", "ruleset2"=>"1", "ruleset3"=>"0", "ruleset4"=>"0", "user_id"=>"1"}, "commit"=>"Create Dm profile"}
+Unpermitted parameter: user_id
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  Rendering dm_profiles/new.html.erb within layouts/application
+  Rendered dm_profiles/_form.html.erb (12.1ms)
+  Rendered dm_profiles/new.html.erb within layouts/application (92.9ms)
+Completed 200 OK in 989ms (Views: 935.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/player_profiles" for 10.0.2.2 at 2017-02-22 19:48:17 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#index as HTML
+  Rendering player_profiles/index.html.erb within layouts/application
+  [1m[36mPlayerProfile Load (6.1ms)[0m  [1m[34mSELECT "player_profiles".* FROM "player_profiles"[0m
+  Rendered player_profiles/index.html.erb within layouts/application (45.6ms)
+Completed 200 OK in 1042ms (Views: 862.8ms | ActiveRecord: 17.1ms)
+
+
+Started GET "/player_profiles/1/edit" for 10.0.2.2 at 2017-02-22 19:48:21 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlayerProfile Load (6.5ms)[0m  [1m[34mSELECT  "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering player_profiles/edit.html.erb within layouts/application
+  Rendered player_profiles/_form.html.erb (16.5ms)
+  Rendered player_profiles/edit.html.erb within layouts/application (96.1ms)
+Completed 200 OK in 1143ms (Views: 968.7ms | ActiveRecord: 6.5ms)
+
+
+Started PATCH "/player_profiles/1" for 10.0.2.2 at 2017-02-22 19:48:28 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4evro+xJ/TS4k3qHFOGO4mG/DE07x0O26lCDznxDqQD/nd3Ibnvh1+KfhogX+IVz6T/ovodMEqXBbGQuNFInkQ==", "player_profile"=>{"bio"=>"", "exp_level"=>"God", "ruleset1"=>"0", "ruleset2"=>"1", "ruleset3"=>"0", "ruleset4"=>"0", "user_id"=>"2"}, "commit"=>"Update Player profile", "id"=>"1"}
+  [1m[36mPlayerProfile Load (5.2ms)[0m  [1m[34mSELECT  "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (5.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  Rendering player_profiles/edit.html.erb within layouts/application
+  Rendered player_profiles/_form.html.erb (14.5ms)
+  Rendered player_profiles/edit.html.erb within layouts/application (102.8ms)
+Completed 200 OK in 1113ms (Views: 945.5ms | ActiveRecord: 11.2ms)
+
+
+Started PATCH "/player_profiles/1" for 10.0.2.2 at 2017-02-22 19:48:35 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7fHTvaKTovij0JnJst6uC5y4AEqtHSQxrBRTu4QTcEsrihxL591liuNXg9rLZuHNF/iwtTw9sph4/q2HWs9GPA==", "player_profile"=>{"bio"=>"penis", "exp_level"=>"God", "ruleset1"=>"0", "ruleset2"=>"1", "ruleset3"=>"0", "ruleset4"=>"0", "user_id"=>"1"}, "commit"=>"Update Player profile", "id"=>"1"}
+  [1m[36mPlayerProfile Load (5.8ms)[0m  [1m[34mSELECT  "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (6.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (12.8ms)[0m  [1m[33mUPDATE "player_profiles" SET "bio" = ?, "updated_at" = ? WHERE "player_profiles"."id" = ?[0m  [["bio", "penis"], ["updated_at", 2017-02-22 19:48:35 UTC], ["id", 1]]
+  [1m[35m (13.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/player_profiles/1
+Completed 302 Found in 225ms (ActiveRecord: 38.4ms)
+
+
+Started GET "/player_profiles/1" for 10.0.2.2 at 2017-02-22 19:48:35 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlayerProfile Load (10.7ms)[0m  [1m[34mSELECT  "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering player_profiles/show.html.erb within layouts/application
+  Rendered player_profiles/show.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 947ms (Views: 829.2ms | ActiveRecord: 10.7ms)
+
+
+Started GET "/player_profiles" for 10.0.2.2 at 2017-02-22 19:48:39 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#index as HTML
+  Rendering player_profiles/index.html.erb within layouts/application
+  [1m[36mPlayerProfile Load (4.9ms)[0m  [1m[34mSELECT "player_profiles".* FROM "player_profiles"[0m
+  Rendered player_profiles/index.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 899ms (Views: 817.3ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/dm_profiles" for 10.0.2.2 at 2017-02-22 19:52:28 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DmProfilesController#index as HTML
+  Rendering dm_profiles/index.html.erb within layouts/application
+  [1m[36mDmProfile Load (5.6ms)[0m  [1m[34mSELECT "dm_profiles".* FROM "dm_profiles"[0m
+  Rendered dm_profiles/index.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 953ms (Views: 871.2ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/dm_profiles/new" for 10.0.2.2 at 2017-02-22 19:52:30 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DmProfilesController#new as HTML
+  Rendering dm_profiles/new.html.erb within layouts/application
+  Rendered dm_profiles/_form.html.erb (11.6ms)
+  Rendered dm_profiles/new.html.erb within layouts/application (89.3ms)
+Completed 200 OK in 1101ms (Views: 1018.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/dm_profiles" for 10.0.2.2 at 2017-02-22 19:52:37 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DmProfilesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IhOLOiDp6QEfIPCJY+xfhSoky4dS9UW6mZTusbYWHRPonKHG7N+n0VBiVDPrdFRq0fXAOPLSv2imfakHSk8jmA==", "dm_profile"=>{"bio"=>"penis", "exp_level"=>"2", "ruleset1"=>"1", "ruleset2"=>"0", "ruleset3"=>"0", "ruleset4"=>"0", "user_id"=>"1"}, "commit"=>"Create Dm profile"}
+Unpermitted parameter: user_id
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  Rendering dm_profiles/new.html.erb within layouts/application
+  Rendered dm_profiles/_form.html.erb (11.9ms)
+  Rendered dm_profiles/new.html.erb within layouts/application (90.5ms)
+Completed 200 OK in 936ms (Views: 922.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/dm_profiles" for 10.0.2.2 at 2017-02-22 19:53:02 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (5.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by DmProfilesController#index as HTML
+  Rendering dm_profiles/index.html.erb within layouts/application
+  [1m[36mDmProfile Load (4.8ms)[0m  [1m[34mSELECT "dm_profiles".* FROM "dm_profiles"[0m
+  Rendered dm_profiles/index.html.erb within layouts/application (69.8ms)
+Completed 200 OK in 3356ms (Views: 3035.3ms | ActiveRecord: 9.5ms)
+
+
+Started GET "/dm_profiles/new" for 10.0.2.2 at 2017-02-22 19:53:12 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DmProfilesController#new as HTML
+  Rendering dm_profiles/new.html.erb within layouts/application
+  Rendered dm_profiles/_form.html.erb (350.4ms)
+  Rendered dm_profiles/new.html.erb within layouts/application (442.1ms)
+Completed 200 OK in 1637ms (Views: 1487.8ms | ActiveRecord: 19.7ms)
+
+
+Started POST "/dm_profiles" for 10.0.2.2 at 2017-02-22 19:53:19 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DmProfilesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9DpmpRfudip3YpyFbZ1KWycK7Zs5vP3nFGPk2tVERHs+tUxZ29g4+jggOD/lBUG03NvmJJmbBzUriqNsKR168A==", "dm_profile"=>{"bio"=>"penis", "exp_level"=>"2", "ruleset1"=>"0", "ruleset2"=>"0", "ruleset3"=>"1", "ruleset4"=>"0", "user_id"=>"1"}, "commit"=>"Create Dm profile"}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  Rendering dm_profiles/new.html.erb within layouts/application
+  Rendered dm_profiles/_form.html.erb (18.3ms)
+  Rendered dm_profiles/new.html.erb within layouts/application (97.7ms)
+Completed 200 OK in 1286ms (Views: 986.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/dm_profiles" for 10.0.2.2 at 2017-02-22 19:54:41 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (5.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by DmProfilesController#index as HTML
+  Rendering dm_profiles/index.html.erb within layouts/application
+  [1m[36mDmProfile Load (5.0ms)[0m  [1m[34mSELECT "dm_profiles".* FROM "dm_profiles"[0m
+  Rendered dm_profiles/index.html.erb within layouts/application (68.9ms)
+Completed 200 OK in 3173ms (Views: 2853.3ms | ActiveRecord: 10.7ms)
+
+
+Started GET "/dm_profiles/new" for 10.0.2.2 at 2017-02-22 19:54:53 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DmProfilesController#new as HTML
+  Rendering dm_profiles/new.html.erb within layouts/application
+  Rendered dm_profiles/_form.html.erb (259.3ms)
+  Rendered dm_profiles/new.html.erb within layouts/application (336.4ms)
+Completed 200 OK in 1331ms (Views: 1220.2ms | ActiveRecord: 10.7ms)
+
+
+Started POST "/dm_profiles" for 10.0.2.2 at 2017-02-22 19:55:01 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DmProfilesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DYKA7pFmjiTI9C9FbfsnpieJ8QdeoS7WKYysyA1R3ujHDaoSXVDA9Ie2i//lYyxJ3Fj6uP6G1AQWZet+8QjgYw==", "dm_profile"=>{"bio"=>"twenty", "exp_level"=>"dicks", "ruleset1"=>"0", "ruleset2"=>"1", "ruleset3"=>"0", "ruleset4"=>"0", "user_id"=>"1"}, "commit"=>"Create Dm profile"}
+  [1m[35m (5.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (10.0ms)[0m  [1m[32mINSERT INTO "dm_profiles" ("bio", "exp_level", "ruleset1", "ruleset2", "ruleset3", "ruleset4", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["bio", "twenty"], ["exp_level", 0], ["ruleset1", false], ["ruleset2", true], ["ruleset3", false], ["ruleset4", false], ["created_at", 2017-02-22 19:55:01 UTC], ["updated_at", 2017-02-22 19:55:01 UTC], ["user_id", 1]]
+  [1m[35m (11.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/dm_profiles/1
+Completed 302 Found in 596ms (ActiveRecord: 33.4ms)
+
+
+Started GET "/dm_profiles/1" for 10.0.2.2 at 2017-02-22 19:55:01 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DmProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 85ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant DmProfilesController::Dmprofile):
+  
+app/controllers/dm_profiles_controller.rb:67:in `set_dm_profile'
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.9ms)
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.0ms)
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.7ms)
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (76.1ms)
+Started GET "/dm_profiles" for 10.0.2.2 at 2017-02-22 19:55:22 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DmProfilesController#index as HTML
+  Rendering dm_profiles/index.html.erb within layouts/application
+  [1m[36mDmProfile Load (11.9ms)[0m  [1m[34mSELECT "dm_profiles".* FROM "dm_profiles"[0m
+  Rendered dm_profiles/index.html.erb within layouts/application (19.1ms)
+Completed 200 OK in 871ms (Views: 780.0ms | ActiveRecord: 11.9ms)
+
+
+Started GET "/character_sheets" for 10.0.2.2 at 2017-02-22 19:56:04 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CharacterSheetsController#index as HTML
+  Rendering character_sheets/index.html.erb within layouts/application
+  [1m[36mCharacterSheet Load (9.7ms)[0m  [1m[34mSELECT "character_sheets".* FROM "character_sheets"[0m
+  Rendered character_sheets/index.html.erb within layouts/application (22.8ms)
+Completed 200 OK in 946ms (Views: 777.7ms | ActiveRecord: 14.8ms)
+
+
+Started GET "/character_sheets/new" for 10.0.2.2 at 2017-02-22 19:56:12 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CharacterSheetsController#new as HTML
+  Rendering character_sheets/new.html.erb within layouts/application
+  Rendered character_sheets/_form.html.erb (9.7ms)
+  Rendered character_sheets/new.html.erb within layouts/application (83.8ms)
+Completed 200 OK in 955ms (Views: 861.1ms | ActiveRecord: 5.6ms)
+
+
+Started POST "/character_sheets" for 10.0.2.2 at 2017-02-22 19:56:19 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CharacterSheetsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dn6/eZiWK0EgymJPlMCfchOynNbbj1V2JZ1319sWoYKl/ohCgG14Ce4obXd5Zrh7m7qmlCT3l7nQ6sAYU2qYOA==", "character_sheet"=>{"user_id"=>"1", "filename"=>"dicks.jpg", "bio"=>"not a bio"}, "commit"=>"Create Character sheet"}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (5.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (12.3ms)[0m  [1m[32mINSERT INTO "character_sheets" ("user_id", "filename", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["filename", "dicks.jpg"], ["bio", "not a bio"], ["created_at", 2017-02-22 19:56:19 UTC], ["updated_at", 2017-02-22 19:56:19 UTC]]
+  [1m[35m (19.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/character_sheets/1
+Completed 302 Found in 138ms (ActiveRecord: 36.7ms)
+
+
+Started GET "/character_sheets/1" for 10.0.2.2 at 2017-02-22 19:56:19 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CharacterSheetsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCharacterSheet Load (15.4ms)[0m  [1m[34mSELECT  "character_sheets".* FROM "character_sheets" WHERE "character_sheets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering character_sheets/show.html.erb within layouts/application
+  Rendered character_sheets/show.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 1022ms (Views: 912.9ms | ActiveRecord: 15.4ms)
+
+
+Started GET "/character_sheets" for 10.0.2.2 at 2017-02-22 19:56:24 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CharacterSheetsController#index as HTML
+  Rendering character_sheets/index.html.erb within layouts/application
+  [1m[36mCharacterSheet Load (5.6ms)[0m  [1m[34mSELECT "character_sheets".* FROM "character_sheets"[0m
+  Rendered character_sheets/index.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 1047ms (Views: 944.3ms | ActiveRecord: 5.6ms)
+
+
