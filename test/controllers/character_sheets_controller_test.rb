@@ -3,6 +3,7 @@ require 'test_helper'
 class CharacterSheetsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @character_sheet = character_sheets(:one)
+    @character_sheet.user = User.first
   end
 
   test "should get index" do

@@ -3,7 +3,7 @@ class User < ApplicationRecord
   has_one :dm_profile
   has_one :player_profile
   has_many :character_sheets
-  
+
   include BCrypt
 
   validates :username, presence: true, uniqueness: {case_sensitive: false}
@@ -24,5 +24,3 @@ class User < ApplicationRecord
   end
 
 end
-
-puts to_json

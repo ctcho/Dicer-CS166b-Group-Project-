@@ -1,18 +1,18 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  email: MyString
+  email: email@example.com
   password_hash: MyString
-  username: MyString
+  username: MyStrings
   zipcode: 1
   profile_pic: MyString
   player_id: 1
   dm_id: 1
 
 two:
-  email: MyString
+  email: electronicmail@example.com
   password_hash: MyString
-  username: MyString
+  username: YourString
   zipcode: 1
   profile_pic: MyString
   player_id: 1

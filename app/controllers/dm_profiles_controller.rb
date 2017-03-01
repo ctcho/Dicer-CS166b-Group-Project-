@@ -25,7 +25,6 @@ class DmProfilesController < ApplicationController
   # POST /dm_profiles.json
   def create
     @dm_profile = DmProfile.new(dm_profile_params)
-
     respond_to do |format|
       if @dm_profile.save
         format.html { redirect_to @dm_profile, notice: 'Dm profile was successfully created.' }

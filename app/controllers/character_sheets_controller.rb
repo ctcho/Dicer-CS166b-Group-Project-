@@ -25,7 +25,6 @@ class CharacterSheetsController < ApplicationController
   # POST /character_sheets.json
   def create
     @character_sheet = CharacterSheet.new(character_sheet_params)
-
     respond_to do |format|
       if @character_sheet.save
         format.html { redirect_to @character_sheet, notice: 'Character sheet was successfully created.' }
