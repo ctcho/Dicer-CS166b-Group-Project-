@@ -10,50 +10,68 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170222185448) do
+ActiveRecord::Schema.define(version: 20170303182420) do
 
   create_table "character_sheets", force: :cascade do |t|
-    t.integer  "user_id"
-    t.string   "filename"
-    t.text     "bio"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "player_profile_id"
+    t.string   "file_path"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
   create_table "dm_profiles", force: :cascade do |t|
-    t.text     "bio"
-    t.integer  "exp_level"
-    t.boolean  "ruleset1"
-    t.boolean  "ruleset2"
-    t.boolean  "ruleset3"
-    t.boolean  "ruleset4"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.integer  "user_id"
+    t.text     "bio"
+    t.integer  "experience_level"
+    t.float    "max_distance"
+    t.integer  "online_play"
+    t.integer  "homebrew"
+    t.integer  "original_ruleset"
+    t.integer  "advanced_ruleset"
+    t.integer  "pathfinder"
+    t.integer  "third"
+    t.integer  "three_point_five"
+    t.integer  "fourth"
+    t.integer  "fifth"
+    t.integer  "original_campaign"
+    t.integer  "module"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
   create_table "player_profiles", force: :cascade do |t|
-    t.text     "bio"
-    t.string   "exp_level"
-    t.boolean  "ruleset1"
-    t.boolean  "ruleset2"
-    t.boolean  "ruleset3"
-    t.boolean  "ruleset4"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.integer  "user_id"
+    t.text     "bio"
+    t.integer  "experience_level"
+    t.float    "max_distance"
+    t.integer  "online_play"
+    t.integer  "homebrew"
+    t.integer  "original_ruleset"
+    t.integer  "advanced_ruleset"
+    t.integer  "pathfinder"
+    t.integer  "third"
+    t.integer  "three_point_five"
+    t.integer  "fourth"
+    t.integer  "fifth"
+    t.integer  "original_campaign"
+    t.integer  "module"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "email"
-    t.string   "password_hash"
     t.string   "username"
-    t.integer  "zipcode"
-    t.string   "profile_pic"
-    t.integer  "player_id"
-    t.integer  "dm_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.string   "string"
+    t.string   "email"
+    t.string   "password_digest"
+    t.string   "profile_pic_path"
+    t.integer  "player_profile_id"
+    t.integer  "dm_profile_id"
+    t.integer  "age"
+    t.string   "address"
+    t.datetime "last_active"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
 end

@@ -1,17 +1,35 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  user_id: 1
   bio: MyText
-  exp_level: MyString
-  ruleset1: false
-  ruleset2: false
-  ruleset3: false
-  ruleset4: false
+  experience_level: 
+  max_distance: 1.5
+  online_play: 1
+  homebrew: 1
+  original_ruleset: 1
+  advanced_ruleset: 1
+  pathfinder: 1
+  third: 1
+  three_point_five: 1
+  fourth: 1
+  fifth: 1
+  original_campaign: 1
+  module: 1
 
 two:
+  user_id: 1
   bio: MyText
-  exp_level: MyString
-  ruleset1: false
-  ruleset2: false
-  ruleset3: false
-  ruleset4: false
+  experience_level: 
+  max_distance: 1.5
+  online_play: 1
+  homebrew: 1
+  original_ruleset: 1
+  advanced_ruleset: 1
+  pathfinder: 1
+  third: 1
+  three_point_five: 1
+  fourth: 1
+  fifth: 1
+  original_campaign: 1
+  module: 1

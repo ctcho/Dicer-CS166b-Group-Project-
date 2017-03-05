@@ -1,4 +1,4 @@
-<%= form_for(character_sheet) do |f| %>
+<%= form_for :character_sheet, :url => user_player_profiles_character_sheets_path(@user) do |f| %>
   <% if character_sheet.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(character_sheet.errors.count, "error") %> prohibited this character_sheet from being saved:</h2>
@@ -12,18 +12,13 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :user_id %>
-    <%= f.number_field :user_id %>
+    <%= f.label :player_profile_id %>
+    <%= f.number_field :player_profile_id %>
   </div>
 
   <div class="field">
-    <%= f.label :filename %>
-    <%= f.text_field :filename %>
-  </div>
-
-  <div class="field">
-    <%= f.label :bio %>
-    <%= f.text_area :bio %>
+    <%= f.label :file_path %>
+    <%= f.text_field :file_path %>
   </div>
 
   <div class="actions">

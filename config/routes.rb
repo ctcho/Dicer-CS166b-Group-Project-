@@ -7,11 +7,12 @@ Rails.application.routes.draw do
 
   get 'home_pages/resources'
 
-  resources :character_sheets
-  resources :player_profiles
-  resources :dm_profiles
-  resources :users
+  resources :users do
+    resource :player_profiles do
+      resources :character_sheets
+    end
+    resource :dm_profiles
+  end
 
-  root 'home_pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

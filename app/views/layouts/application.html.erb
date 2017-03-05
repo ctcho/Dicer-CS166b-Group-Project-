@@ -9,10 +9,7 @@
   </head>
 
   <body>
-    <div class="header"><span class="left-align"><%= link_to "Dicer", home_pages_home_path %></span>
-                        <span class="right-align"><%= link_to "About Us", home_pages_about_path %></span></div>
-    <div class="content"><%= yield %></div>
-    <div class="footer"><span class="left-align"><%= link_to "Contact Us", home_pages_contact_path %></span>
-                        <span class="right-align"><%= link_to "FAQ", home_pages_resources_path %></span></div>
+    <%= debug(params) if Rails.env.development? %>
+    <%= yield %>
   </body>
 </html>

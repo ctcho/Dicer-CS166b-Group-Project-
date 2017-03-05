@@ -1,39 +1,79 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>User:</strong>
+  <%= @dm_profile.user_id %>
+</p>
+
+<p>
   <strong>Bio:</strong>
   <%= @dm_profile.bio %>
 </p>
 
 <p>
-  <strong>Exp level:</strong>
-  <%= @dm_profile.exp_level %>
+  <strong>Experience level:</strong>
+  <%= @dm_profile.experience_level %>
 </p>
 
 <p>
-  <strong>Ruleset 1:</strong>
-  <%= @dm_profile.ruleset1 %>
+  <strong>Max distance:</strong>
+  <%= @dm_profile.max_distance %>
 </p>
 
 <p>
-  <strong>Ruleset 2:</strong>
-  <%= @dm_profile.ruleset2 %>
+  <strong>Online play:</strong>
+  <%= @dm_profile.online_play %>
 </p>
 
 <p>
-  <strong>Ruleset 3:</strong>
-  <%= @dm_profile.ruleset3 %>
+  <strong>Homebrew:</strong>
+  <%= @dm_profile.homebrew %>
 </p>
 
 <p>
-  <strong>Ruleset 4:</strong>
-  <%= @dm_profile.ruleset4 %>
+  <strong>Original ruleset:</strong>
+  <%= @dm_profile.original_ruleset %>
 </p>
 
 <p>
-  <strong>User ID:</strong>
-  <%= @dm_profile.user_id %>
+  <strong>Advanced ruleset:</strong>
+  <%= @dm_profile.advanced_ruleset %>
 </p>
 
-<%= link_to 'Edit', edit_dm_profile_path(@dm_profile) %> |
-<%= link_to 'Back', dm_profiles_path %>
+<p>
+  <strong>Pathfinder:</strong>
+  <%= @dm_profile.pathfinder %>
+</p>
+
+<p>
+  <strong>Third:</strong>
+  <%= @dm_profile.third %>
+</p>
+
+<p>
+  <strong>Three point five:</strong>
+  <%= @dm_profile.three_point_five %>
+</p>
+
+<p>
+  <strong>Fourth:</strong>
+  <%= @dm_profile.fourth %>
+</p>
+
+<p>
+  <strong>Fifth:</strong>
+  <%= @dm_profile.fifth %>
+</p>
+
+<p>
+  <strong>Original campaign:</strong>
+  <%= @dm_profile.original_campaign %>
+</p>
+
+<p>
+  <strong>Module:</strong>
+  <%= @dm_profile.module %>
+</p>
+
+<%= link_to 'Edit', edit_user_dm_profiles_path(@dm_profile) %> |
+<%= link_to 'Back', user_path(@user) %>
