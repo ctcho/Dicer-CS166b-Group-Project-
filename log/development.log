@@ -661,3 +661,32 @@ Processing by PlayerProfilesController#edit as HTML
   [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "myusernames"], ["email", "myemail@example.com"], ["password_digest", "$2a$10$xjO1rLqzC.85RJwdlUhhG.Q3i8r05.K8ncVFyiU4DqoyXPWV1rEtm"], ["created_at", 2017-03-06 01:34:52 UTC], ["updated_at", 2017-03-06 01:34:52 UTC]]
   [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
   [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+Started GET "/" for 127.0.0.1 at 2017-03-06 12:49:15 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomePagesController#home as HTML
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (21.8ms)
+Completed 200 OK in 927ms (Views: 826.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home_pages/home" for 127.0.0.1 at 2017-03-06 12:49:27 -0500
+Processing by HomePagesController#home as HTML
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 68ms (Views: 65.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home_pages/about" for 127.0.0.1 at 2017-03-06 12:49:29 -0500
+Processing by HomePagesController#about as HTML
+  Rendering home_pages/about.html.erb within layouts/application
+  Rendered home_pages/about.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 113ms (Views: 61.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home_pages/home" for 127.0.0.1 at 2017-03-06 12:49:46 -0500
+Processing by HomePagesController#home as HTML
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 91ms (Views: 88.8ms | ActiveRecord: 0.0ms)
+
+
