@@ -21,13 +21,21 @@
     <%= f.text_field :email %>
   </div>
 
-  <div class="field">
+  <!--<div class="field">
     <%= f.label :password_digest %>
     <%= f.text_field :password_digest %>
+  </div>-->
+  <div class = "field">
+    <%= f.label :password %>
+    <%= f.password_field :password %>
   </div>
 
-  <div class="field">
-    <%= f.label :profile_pic_path %>
+  <div class = "field">
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
+  </div>
+
+    <!--<%= f.label :profile_pic_path %>
     <%= f.text_field :profile_pic_path %>
   </div>
 
@@ -39,7 +47,7 @@
   <div class="field">
     <%= f.label :dm_profile_id %>
     <%= f.number_field :dm_profile_id %>
-  </div>
+  </div> -->
 
   <div class="field">
     <%= f.label :address %>
@@ -51,10 +59,10 @@
     <%= f.number_field :age %>
   </div>
 
-  <div class="field">
+  <!--<div class="field">
     <%= f.label :last_active %>
     <%= f.datetime_select :last_active %>
-  </div>
+  </div> -->
 
   <div class="actions">
     <%= f.submit %>
