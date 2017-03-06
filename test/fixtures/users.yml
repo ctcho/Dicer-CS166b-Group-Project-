@@ -3,7 +3,7 @@
 one:
   username: MyString
   string: MyString
-  email: MyEmail
+  email: email@example.com
   password_digest: MyString
   profile_pic_path: MyString
   player_profile_id: nil
@@ -15,7 +15,7 @@ one:
 two:
   username: YourString
   string: MyString
-  email: YourEmail
+  email: electronicmail@example.com
   password_digest: MyString
   profile_pic_path: MyString
   player_profile_id: nil
