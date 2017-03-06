@@ -17,7 +17,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
 
   test "should create user" do
     assert_difference('User.count') do
-      post users_url, params: { user: { age: @user.age, dm_profile_id: @user.dm_profile_id, email: @user.email, last_active: @user.last_active, password_digest: @user.password_digest, player_profile_id: @user.player_profile_id, profile_pic_path: @user.profile_pic_path, string: @user.string, username: @user.username } }
+      post users_url, params: { user: { age: @user.age, dm_profile_id: @user.dm_profile_id, email: "Unique@email.com", last_active: @user.last_active, password_digest: @user.password_digest, player_profile_id: @user.player_profile_id, profile_pic_path: @user.profile_pic_path, string: @user.string, username: "Unique_Username" } }
     end
 
     assert_redirected_to user_url(User.last)
@@ -34,7 +34,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update user" do
-    patch user_url(@user), params: { user: { age: @user.age, dm_profile_id: @user.dm_profile_id, email: @user.email, last_active: @user.last_active, password_digest: @user.password_digest, player_profile_id: @user.player_profile_id, profile_pic_path: @user.profile_pic_path, string: @user.string, username: @user.username } }
+    patch user_url(@user), params: { user: { age: @user.age, email: @user.email, last_active: @user.last_active, password_digest: @user.password_digest, profile_pic_path: @user.profile_pic_path, string: @user.string, username: @user.username } }
     assert_redirected_to user_url(@user)
   end
 

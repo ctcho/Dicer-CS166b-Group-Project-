@@ -30,7 +30,7 @@ class DmProfilesController < ApplicationController
   # POST /dm_profiles.json
   def create
     @user = User.find(params[:user_id])
-    @dm_profile = DmProfile.new(user: @user)
+    @dm_profile = DmProfile.new(dm_profile_params)
 
     respond_to do |format|
       if @dm_profile.save

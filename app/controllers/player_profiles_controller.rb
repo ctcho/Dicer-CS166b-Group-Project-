@@ -30,7 +30,7 @@ class PlayerProfilesController < ApplicationController
   # POST /player_profiles.json
   def create
     @user = User.find(params[:user_id])
-    @player_profile = PlayerProfile.new(user: @user)
+    @player_profile = PlayerProfile.new(player_profile_params)
     respond_to do |format|
       if @player_profile.save
         @user.update(player_profile: @player_profile)

@@ -31,7 +31,7 @@ class CharacterSheetsController < ApplicationController
   # POST /character_sheets.json
   def create
     @user = User.find(params[:user_id])
-    @character_sheet = @user.player_profile.character_sheets.new
+    @character_sheet = @user.player_profile.character_sheets.new(character_sheet_params)
     respond_to do |format|
       if @character_sheet.save
         format.html { redirect_to user_player_profiles_character_sheet_path(@user, @character_sheet), notice: 'Character sheet was successfully created.' }
