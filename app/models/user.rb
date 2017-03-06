@@ -1,7 +1,5 @@
 class User < ApplicationRecord
-
-
-
+  before_save{ self.email = email.downcase}
   has_one :dm_profile
   has_one :player_profile
 
