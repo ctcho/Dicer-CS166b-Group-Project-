@@ -1,28 +1,14 @@
-require 'bcrypt'
 class User < ApplicationRecord
+  before_save{ self.email = email.downcase}
   has_one :dm_profile
   has_one :player_profile
-  has_many :character_sheets
-  
-  include BCrypt
 
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :username, presence: true, uniqueness: {case_sensitive: false}
-  validates :email, presence: true, uniqueness: {case_sensitive: false}
-  validates :password_hash, presence: true
+  validates :email, presence: true, uniqueness: {case_sensitive: false},
+                    format: {with: VALID_EMAIL_REGEX }
 
-  def to_json
-    super(:except => :password_hash)
-  end
+  has_secure_password
 
-  def password
-    @password ||=Password.new(password_hash)
-  end
-
-  def password=(new_password)
-    @password = Password.create(new_password)
-    self.password_hash = @password
-  end
 
 end
-
-puts to_json

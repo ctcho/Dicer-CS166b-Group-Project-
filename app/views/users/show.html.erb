@@ -1,38 +1,43 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<p>
-  <strong>Password hash:</strong>
-  <%= @user.password_hash %>
-</p>
-
-<p>
   <strong>Username:</strong>
   <%= @user.username %>
 </p>
 
 <p>
-  <strong>Zipcode:</strong>
-  <%= @user.zipcode %>
+  <strong>Email:</strong>
+  <%= @user.email %>
 </p>
 
 <p>
-  <strong>Profile pic:</strong>
-  <%= @user.profile_pic %>
+  <strong>Password digest:</strong>
+  <%= @user.password_digest %>
 </p>
 
 <p>
-  <strong>Player:</strong>
-  <%= @user.player_id %>
+  <strong>Profile pic path:</strong>
+  <%= @user.profile_pic_path %>
 </p>
 
 <p>
-  <strong>Dm:</strong>
-  <%= @user.dm_id %>
+  <strong>Player profile:</strong>
+  <%= @user.player_profile_id %>
+</p>
+
+<p>
+  <strong>Dm profile:</strong>
+  <%= @user.dm_profile_id %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @user.age %>
+</p>
+
+<p>
+  <strong>Last active:</strong>
+  <%= @user.last_active %>
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |

@@ -1,39 +1,79 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>User:</strong>
+  <%= @player_profile.user_id %>
+</p>
+
+<p>
   <strong>Bio:</strong>
   <%= @player_profile.bio %>
 </p>
 
 <p>
-  <strong>Exp level:</strong>
-  <%= @player_profile.exp_level %>
+  <strong>Experience level:</strong>
+  <%= @player_profile.experience_level %>
 </p>
 
 <p>
-  <strong>Ruleset 1:</strong>
-  <%= @player_profile.ruleset1 %>
+  <strong>Max distance:</strong>
+  <%= @player_profile.max_distance %>
 </p>
 
 <p>
-  <strong>Ruleset 2:</strong>
-  <%= @player_profile.ruleset2 %>
+  <strong>Online play:</strong>
+  <%= @player_profile.online_play %>
 </p>
 
 <p>
-  <strong>Ruleset 3:</strong>
-  <%= @player_profile.ruleset3 %>
+  <strong>Homebrew:</strong>
+  <%= @player_profile.homebrew %>
 </p>
 
 <p>
-  <strong>Ruleset 4:</strong>
-  <%= @player_profile.ruleset4 %>
+  <strong>Original ruleset:</strong>
+  <%= @player_profile.original_ruleset %>
 </p>
 
 <p>
-  <strong>User ID:</strong>
-  <%= @player_profile.user_id %>
+  <strong>Advanced ruleset:</strong>
+  <%= @player_profile.advanced_ruleset %>
 </p>
 
-<%= link_to 'Edit', edit_player_profile_path(@player_profile) %> |
-<%= link_to 'Back', player_profiles_path %>
+<p>
+  <strong>Pathfinder:</strong>
+  <%= @player_profile.pathfinder %>
+</p>
+
+<p>
+  <strong>Third:</strong>
+  <%= @player_profile.third %>
+</p>
+
+<p>
+  <strong>Three point five:</strong>
+  <%= @player_profile.three_point_five %>
+</p>
+
+<p>
+  <strong>Fourth:</strong>
+  <%= @player_profile.fourth %>
+</p>
+
+<p>
+  <strong>Fifth:</strong>
+  <%= @player_profile.fifth %>
+</p>
+
+<p>
+  <strong>Original campaign:</strong>
+  <%= @player_profile.original_campaign %>
+</p>
+
+<p>
+  <strong>Module:</strong>
+  <%= @player_profile.module %>
+</p>
+
+<%= link_to 'Edit', edit_user_player_profiles_path(@user, @player_profile) %> |
+<%= link_to 'Back', user_path(@user) %>

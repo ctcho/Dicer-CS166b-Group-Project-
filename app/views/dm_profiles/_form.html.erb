@@ -1,4 +1,4 @@
-<%= form_for(dm_profile) do |f| %>
+<%= form_for :dm_profile, :url => user_dm_profiles_path(@user) do |f| %>
   <% if dm_profile.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(dm_profile.errors.count, "error") %> prohibited this dm_profile from being saved:</h2>
@@ -12,38 +12,78 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :user_id %>
+    <%= f.number_field :user_id %>
+  </div>
+
+  <div class="field">
     <%= f.label :bio %>
     <%= f.text_area :bio %>
   </div>
 
   <div class="field">
-    <%= f.label :exp_level %>
-    <%= f.text_field :exp_level %>
+    <%= f.label :experience_level %>
+    <%= f.text_field :experience_level %>
   </div>
 
   <div class="field">
-    <%= f.label :ruleset1 %>
-    <%= f.check_box :ruleset1 %>
+    <%= f.label :max_distance %>
+    <%= f.text_field :max_distance %>
   </div>
 
   <div class="field">
-    <%= f.label :ruleset2 %>
-    <%= f.check_box :ruleset2 %>
+    <%= f.label :online_play %>
+    <%= f.number_field :online_play %>
   </div>
 
   <div class="field">
-    <%= f.label :ruleset3 %>
-    <%= f.check_box :ruleset3 %>
+    <%= f.label :homebrew %>
+    <%= f.number_field :homebrew %>
   </div>
 
   <div class="field">
-    <%= f.label :ruleset4 %>
-    <%= f.check_box :ruleset4 %>
+    <%= f.label :original_ruleset %>
+    <%= f.number_field :original_ruleset %>
   </div>
 
   <div class="field">
-    <%= f.label :user_id %>
-    <%= f.number_field :user_id %>
+    <%= f.label :advanced_ruleset %>
+    <%= f.number_field :advanced_ruleset %>
+  </div>
+
+  <div class="field">
+    <%= f.label :pathfinder %>
+    <%= f.number_field :pathfinder %>
+  </div>
+
+  <div class="field">
+    <%= f.label :third %>
+    <%= f.number_field :third %>
+  </div>
+
+  <div class="field">
+    <%= f.label :three_point_five %>
+    <%= f.number_field :three_point_five %>
+  </div>
+
+  <div class="field">
+    <%= f.label :fourth %>
+    <%= f.number_field :fourth %>
+  </div>
+
+  <div class="field">
+    <%= f.label :fifth %>
+    <%= f.number_field :fifth %>
+  </div>
+
+  <div class="field">
+    <%= f.label :original_campaign %>
+    <%= f.number_field :original_campaign %>
+  </div>
+
+  <div class="field">
+    <%= f.label :module %>
+    <%= f.text_field :module %>
   </div>
 
   <div class="actions">

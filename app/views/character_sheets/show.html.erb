@@ -1,19 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>User:</strong>
-  <%= @character_sheet.user_id %>
+  <strong>Player profile:</strong>
+  <%= @character_sheet.player_profile_id %>
 </p>
 
 <p>
-  <strong>Filename:</strong>
-  <%= @character_sheet.filename %>
+  <strong>File path:</strong>
+  <%= @character_sheet.file_path %>
 </p>
 
-<p>
-  <strong>Bio:</strong>
-  <%= @character_sheet.bio %>
-</p>
-
-<%= link_to 'Edit', edit_character_sheet_path(@character_sheet) %> |
-<%= link_to 'Back', character_sheets_path %>
+<%= link_to 'Edit', edit_user_player_profiles_character_sheet_url(@character_sheet) %> |
+<%= link_to 'Back', user_player_profiles_character_sheets_path %>

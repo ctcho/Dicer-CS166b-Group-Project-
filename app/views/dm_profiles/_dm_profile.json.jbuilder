@@ -1,2 +1,2 @@
-json.extract! dm_profile, :id, :bio, :exp_level, :ruleset1, :ruleset2, :ruleset3, :ruleset4, :created_at, :updated_at, :user_id
+json.extract! dm_profile, :id, :user_id, :bio, :experience_level, :max_distance, :online_play, :homebrew, :original_ruleset, :advanced_ruleset, :pathfinder, :third, :three_point_five, :fourth, :fifth, :original_campaign, :module, :created_at, :updated_at
 json.url dm_profile_url(dm_profile, format: :json)

@@ -1,5 +1,5 @@
 class CharacterSheet < ApplicationRecord
-  belongs_to :user
-  validates :filename, presence: true
-  validates :bio, presence: true
+  belongs_to :player_profile
+
+  validates :file_path, presence: true
 end
