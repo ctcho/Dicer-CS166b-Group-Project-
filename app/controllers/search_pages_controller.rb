@@ -10,6 +10,6 @@ class SearchPagesController < ApplicationController
   #AND ruleset3 = ? AND ruleset4 = ?", params[:exp_level], params[:ruleset1], params[:ruleset2],
   #params[:ruleset3], params[:ruleset4])
 
-  @players = PlayerProfile.where("exp_level LIKE ?", params[:exp_level])
+  @players = PlayerProfile.where("experience_level LIKE ?", params[:experience_level])
   end
 end

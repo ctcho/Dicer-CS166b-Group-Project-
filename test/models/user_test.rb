@@ -3,7 +3,7 @@ require 'test_helper'
 class UserTest < ActiveSupport::TestCase
 
   describe User do
-
+    #tests by Michael Spittler
     it "can be created" do
       start_count = User.count
       u = User.create(username: "TestUser0", email: "example0@railstutorial.com", password: "foobar", address: "415 South St, Waltham MA")
@@ -31,6 +31,22 @@ class UserTest < ActiveSupport::TestCase
 
     it "rejects invalid addresses" do
       u = User.create(username: "TestUser", email: "example@railstutorial.com", password: "foobar", address: "clearly not an address")
+      u.valid?.must_equal false
+    end
+
+    #Tests by Anne Charnes
+    it "stores emails in lowercase" do
+      u = User.create(username: "TestUser4", email: "aBcDefGH@railstutorial.cOm", password: "foobar", password_confirmation: "foobar", address: "02453")
+      u.email.must_equal "abcdefgh@railstutorial.com"
+    end
+
+    it "will not save with a password of 5 or fewer characters" do
+      u = User.create(username: "TestUser5", email: "example5@railstutorial.com", password: "foo", password_confirmation: "foo", address:"02453" )
+      u.valid?.must_equal false
+    end
+
+    it "will not save without a matching password_confirmation" do
+      u = User.create(username: "TestUser6", email: "example6@railstutorial.com", password: "foobar")
       u.valid?.must_equal false
     end
   end
