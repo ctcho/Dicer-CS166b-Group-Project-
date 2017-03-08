@@ -1,18 +1,30 @@
 <h1>Search Results</h1>
-
-<p>Hooray, you submitted something!</p>
-
-<p>Expect full functionality soon!</p>
-
-<tbody>
-  <%#= @players.each do |player_profile| %>
+<br>
+<p>Please note that only experience is taken into account for searches at the
+moment. We will be revising this so you can make more robust searches in the future.</p>
+<br>
+<table>
+  <thead>
     <tr>
-      <td><%#= player_profile.bio %></td>
-        <td><%#= player_profile.exp_level %></td>
-        <td><%#= player_profile.ruleset1 %></td>
-        <td><%#= player_profile.ruleset2 %></td>
-        <td><%#= player_profile.ruleset3 %></td>
-        <td><%#= player_profile.ruleset4 %></td>
-    <%# end %>
+      <th>Bio</th>
+      <th>Exp level</th>
+      <th>Ruleset 1</th>
+      <th>Ruleset 2</th>
+      <th>Ruleset 3</th>
+      <th>Ruleset 4</th>
+      <th colspan="3"></th>
     </tr>
-</tbody>
+  </thead>
+
+  <tbody>
+    <% @players.each do |player_profile| %>
+      <tr>
+        <td><%= player_profile.bio %></td>
+        <td><%= player_profile.exp_level %></td>
+        <td><%= player_profile.ruleset1 %></td>
+        <td><%= player_profile.ruleset2 %></td>
+        <td><%= player_profile.ruleset3 %></td>
+        <td><%= player_profile.ruleset4 %></td>
+    <% end %>
+  </tbody>
+</table>
