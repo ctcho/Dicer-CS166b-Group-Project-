@@ -4,7 +4,6 @@ class UserTest < ActiveSupport::TestCase
 
   describe User do
 
-
     it "can be created" do
       start_count = User.count
       u = User.create(username: "TestUser0", email: "example0@railstutorial.com", password: "foobar", address: "415 South St, Waltham MA")
@@ -12,7 +11,7 @@ class UserTest < ActiveSupport::TestCase
     end
 
     it "can geocode addresses" do
-      u = User.create(username: "TestUser", email: "example@railstutorial.com", password: "foobar", address: "1600 Pennsylvania Ave NW, Washington, DC")
+      u = User.create(username: "TestUser1", email: "example1@railstutorial.com", password: "foobar", address: "1600 Pennsylvania Ave NW, Washington, DC")
       u.lat.must_be_close_to 38.8977, 0.01
       u.lng.must_be_close_to -77.0365, 0.01
     end
