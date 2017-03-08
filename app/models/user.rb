@@ -9,6 +9,5 @@ class User < ApplicationRecord
                     format: {with: VALID_EMAIL_REGEX }
 
   has_secure_password
-
-
+  acts_as_mappable :auto_geocode=>{:field=>:address, :error_message=>'Could not geocode address'}
 end

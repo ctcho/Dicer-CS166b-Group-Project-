@@ -2,24 +2,24 @@
 
 one:
   username: MyString
-  string: MyString
+  #string: MyString
   email: email@example.com
   password_digest: MyString
   profile_pic_path: MyString
   player_profile_id: nil
   dm_profile_id: nil
   age: 18
-  address: MyAddress
+  address: "02453"
   last_active: 2017-03-03 13:11:29
 
 two:
   username: YourString
-  string: MyString
+  #string: MyString
   email: electronicmail@example.com
   password_digest: MyString
   profile_pic_path: MyString
   player_profile_id: nil
   dm_profile_id: nil
   age: 18
-  address: MyAddress
+  address: "48183"
   last_active: 2017-03-03 13:11:29
