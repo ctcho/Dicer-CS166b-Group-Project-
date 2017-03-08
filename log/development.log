@@ -135,9 +135,9 @@ Completed 200 OK in 140ms (Views: 131.5ms | ActiveRecord: 0.3ms)
 
 
 Started GET "/users/2/player_profile" for 127.0.0.1 at 2017-03-05 15:49:04 -0500
-  
+
 ActionController::RoutingError (No route matches [GET] "/users/2/player_profile"):
-  
+
 actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
 web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
 web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
@@ -183,16 +183,16 @@ Processing by PlayerProfilesController#show as HTML
 Completed 500 Internal Server Error in 68ms (ActiveRecord: 2.4ms)
 
 
-  
+
 ActionView::Template::Error (undefined method `user_id' for nil:NilClass):
-    2: 
+    2:
     3: <p>
     4:   <strong>User:</strong>
     5:   <%= @player_profile.user_id %>
     6: </p>
-    7: 
+    7:
     8: <p>
-  
+
 app/views/player_profiles/show.html.erb:5:in `_app_views_player_profiles_show_html_erb___4196078974590282391_69942272849020'
   Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
   Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
@@ -225,7 +225,7 @@ Completed 302 Found in 201ms (ActiveRecord: 181.2ms)
 
 
 Started GET "/users/2/player_profiles.1" for 127.0.0.1 at 2017-03-05 15:50:15 -0500
-Processing by PlayerProfilesController#show as 
+Processing by PlayerProfilesController#show as
   Parameters: {"user_id"=>"2"}
   [1m[36mPlayerProfile Load (0.5ms)[0m  [1m[34mSELECT "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ?[0m  [["user_id", 2]]
   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
@@ -301,13 +301,13 @@ Processing by PlayerProfilesController#show as HTML
 Completed 500 Internal Server Error in 163ms (ActiveRecord: 1.0ms)
 
 
-  
+
 ActionView::Template::Error (undefined method `user' for #<#<Class:0x007f3968a7e060>:0x007f3968aa6f88>):
     76: </p>
-    77: 
+    77:
     78: <%= link_to 'Edit', edit_user_player_profiles_path(@user, @player_profile) %> |
     79: <%= link_to 'Back', user(@user) %>
-  
+
 app/views/player_profiles/show.html.erb:79:in `_app_views_player_profiles_show_html_erb___4196078974590282391_69942272933220'
   Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
   Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
@@ -377,9 +377,9 @@ Processing by UsersController#new as HTML
 Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
 
 
-  
+
 ArgumentError (wrong number of arguments (given 0, expected 1)):
-  
+
 app/models/user.rb:2:in `<class:User>'
 app/models/user.rb:1:in `<top (required)>'
 app/controllers/users_controller.rb:17:in `new'
@@ -451,7 +451,7 @@ Completed 302 Found in 361ms (ActiveRecord: 315.1ms)
 
 
 Started GET "/users/3/player_profiles.2" for 127.0.0.1 at 2017-03-05 15:57:03 -0500
-Processing by PlayerProfilesController#show as 
+Processing by PlayerProfilesController#show as
   Parameters: {"user_id"=>"3"}
   [1m[36mPlayerProfile Load (0.5ms)[0m  [1m[34mSELECT "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ?[0m  [["user_id", 3]]
   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
@@ -462,7 +462,7 @@ Completed 200 OK in 85ms (Views: 68.7ms | ActiveRecord: 1.6ms)
 
 
 Started GET "/users/3/player_profiles/edit.2" for 127.0.0.1 at 2017-03-05 15:57:08 -0500
-Processing by PlayerProfilesController#edit as 
+Processing by PlayerProfilesController#edit as
   Parameters: {"user_id"=>"3"}
   [1m[36mPlayerProfile Load (0.6ms)[0m  [1m[34mSELECT "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ?[0m  [["user_id", 3]]
   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
@@ -473,7 +473,7 @@ Processing by PlayerProfilesController#edit as
 Completed 500 Internal Server Error in 5662ms (ActiveRecord: 1.2ms)
 
 
-  
+
 ActionView::Template::Error (undefined method `user_player_profile_path' for #<#<Class:0x0000000315a628>:0x007f3968a7a7f8>
 Did you mean?  user_player_profiles_path
                user_player_profiles_url):
@@ -482,7 +482,7 @@ Did you mean?  user_player_profiles_path
     3:   <% if player_profile.errors.any? %>
     4:     <div id="error_explanation">
     5:       <h2><%= pluralize(player_profile.errors.count, "error") %> prohibited this player_profile from being saved:</h2>
-  
+
 app/views/player_profiles/_form.html.erb:2:in `_app_views_player_profiles__form_html_erb___2338273400783951986_69942218172000'
 app/views/player_profiles/edit.html.erb:3:in `_app_views_player_profiles_edit_html_erb__3100122000405610835_69942272842480'
   Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
@@ -514,14 +514,14 @@ Processing by PlayerProfilesController#edit as HTML
 Completed 500 Internal Server Error in 4479ms (ActiveRecord: 4.0ms)
 
 
-  
+
 ActionView::Template::Error (undefined method `player_profiles_path' for #<#<Class:0x007f3968b04a48>:0x007f3968afaef8>):
     2: <% byebug %>
     3: <%= render 'form', player_profile: @player_profile %>
-    4: 
+    4:
     5: <%= link_to 'Show', @player_profile %> |
     6: <%= link_to 'Back', user_player_profiles_path %>
-  
+
 app/views/player_profiles/edit.html.erb:5:in `_app_views_player_profiles_edit_html_erb__3100122000405610835_69942273125000'
   Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
   Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
@@ -554,7 +554,7 @@ Processing by PlayerProfilesController#edit as HTML
 Completed 500 Internal Server Error in 15049ms (ActiveRecord: 4.8ms)
 
 
-  
+
 ActionView::Template::Error (undefined method `user_player_profile_path' for #<#<Class:0x0000000341c550>:0x0000000340d1b8>
 Did you mean?  user_player_profiles_path
                user_player_profiles_url):
@@ -563,7 +563,7 @@ Did you mean?  user_player_profiles_path
     3:   <% if player_profile.errors.any? %>
     4:     <div id="error_explanation">
     5:       <h2><%= pluralize(player_profile.errors.count, "error") %> prohibited this player_profile from being saved:</h2>
-  
+
 app/views/player_profiles/_form.html.erb:2:in `_app_views_player_profiles__form_html_erb___2338273400783951986_24642620'
 app/views/player_profiles/edit.html.erb:3:in `_app_views_player_profiles_edit_html_erb__3100122000405610835_27345200'
   Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
@@ -718,9 +718,9 @@ Completed 200 OK in 334ms (Views: 331.0ms | ActiveRecord: 0.0ms)
 
 
 Started GET "/user/3/edit" for 127.0.0.1 at 2017-03-06 12:57:36 -0500
-  
+
 ActionController::RoutingError (No route matches [GET] "/user/3/edit"):
-  
+
 actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
 web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
 web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
@@ -756,9 +756,9 @@ puma (3.7.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
   Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.6ms)
   Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (182.3ms)
 Started GET "/user/s3/edit" for 127.0.0.1 at 2017-03-06 12:58:03 -0500
-  
+
 ActionController::RoutingError (No route matches [GET] "/user/s3/edit"):
-  
+
 actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
 web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
 web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
@@ -1021,7 +1021,7 @@ Processing by SessionsController#new as HTML
 Completed 200 OK in 89ms (Views: 86.7ms | ActiveRecord: 0.0ms)
 
 
-<<<<<<< HEAD
+
 Started GET "/" for 127.0.0.1 at 2017-03-07 18:54:50 -0500
   [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
 Processing by HomePagesController#home as HTML
@@ -1083,9 +1083,9 @@ Completed 200 OK in 87ms (Views: 84.5ms | ActiveRecord: 0.8ms)
 
 
 Started GET "/user/all" for 127.0.0.1 at 2017-03-07 19:07:58 -0500
-  
+
 ActionController::RoutingError (No route matches [GET] "/user/all"):
-  
+
 actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
 web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
 web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
@@ -1203,7 +1203,7 @@ Processing by UsersController#show as HTML
 Completed 500 Internal Server Error in 380ms (ActiveRecord: 0.4ms)
 
 
-  
+
 ActionView::Template::Error (undefined local variable or method `log_out_path' for #<#<Class:0x000000052b9670>:0x007efbcdf49758>
 Did you mean?  logout_path):
     12:     <div class="header"><span class="left-align"><%= link_to "Dicer", home_pages_home_path %></span>
@@ -1213,7 +1213,7 @@ Did you mean?  logout_path):
     16:                             <%= link_to "Profile", user(current_users) %>
     17:                           <% else %>
     18:                             <%= link_to "Log In", login_path%></span></div>
-  
+
 app/views/layouts/application.html.erb:15:in `_app_views_layouts_application_html_erb__1340638271609347148_69809978486000'
   Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
   Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
@@ -1233,7 +1233,7 @@ Processing by UsersController#show as HTML
 Completed 500 Internal Server Error in 360ms (ActiveRecord: 0.7ms)
 
 
-  
+
 ActionView::Template::Error (undefined local variable or method `current_users' for #<#<Class:0x000000052b9670>:0x007efbd82f5000>
 Did you mean?  current_user
                @current_user):
@@ -1244,7 +1244,7 @@ Did you mean?  current_user
     17:                           <% else %>
     18:                             <%= link_to "Log In", login_path%></span></div>
     19:                           <% end %>
-  
+
 app/views/layouts/application.html.erb:16:in `_app_views_layouts_application_html_erb__1340638271609347148_69810064354420'
   Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
   Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
@@ -1264,7 +1264,7 @@ Processing by UsersController#show as HTML
 Completed 500 Internal Server Error in 248ms (ActiveRecord: 0.6ms)
 
 
-  
+
 ActionView::Template::Error (undefined method `user' for #<#<Class:0x000000052b9670>:0x00000004cfa130>):
     13:                         <span class="right-align"><%= link_to "About Us", home_pages_about_path %>
     14:                           <% if logged_in? %>
@@ -1273,7 +1273,7 @@ ActionView::Template::Error (undefined method `user' for #<#<Class:0x000000052b9
     17:                           <% else %>
     18:                             <%= link_to "Log In", login_path%></span></div>
     19:                           <% end %>
-  
+
 app/views/layouts/application.html.erb:16:in `_app_views_layouts_application_html_erb__1340638271609347148_40179980'
   Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
   Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
@@ -1304,9 +1304,9 @@ Completed 200 OK in 82ms (Views: 76.0ms | ActiveRecord: 1.8ms)
 
 
 Started GET "/logout" for 127.0.0.1 at 2017-03-07 19:11:08 -0500
-  
+
 ActionController::RoutingError (No route matches [GET] "/logout"):
-  
+
 actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
 web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
 web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
@@ -1388,9 +1388,9 @@ Completed 200 OK in 112ms (Views: 108.3ms | ActiveRecord: 0.2ms)
 
 
 Started GET "/logout" for 127.0.0.1 at 2017-03-07 19:14:46 -0500
-  
+
 ActionController::RoutingError (No route matches [GET] "/logout"):
-  
+
 actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
 web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
 web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
@@ -1450,9 +1450,9 @@ Processing by UsersController#show as HTML
 Completed 404 Not Found in 3ms (ActiveRecord: 0.3ms)
 
 
-  
+
 ActiveRecord::RecordNotFound (Couldn't find User with 'id'=login):
-  
+
 app/controllers/users_controller.rb:68:in `set_user'
   Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
   Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
@@ -1526,9 +1526,9 @@ Completed 200 OK in 88ms (Views: 86.2ms | ActiveRecord: 0.4ms)
 
 
 Started GET "/logout" for 127.0.0.1 at 2017-03-07 19:17:29 -0500
-  
+
 ActionController::RoutingError (No route matches [GET] "/logout"):
-  
+
 actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
 web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
 web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
@@ -1571,7 +1571,7 @@ Processing by SessionsController#new as HTML
 Completed 500 Internal Server Error in 378ms (ActiveRecord: 2.3ms)
 
 
-  
+
 ActionView::Template::Error (undefined local variable or method `delete' for #<#<Class:0x007efbcdb8ecf8>:0x007efbcdb83448>):
     12:     <div class="header"><span class="left-align"><%= link_to "Dicer", home_pages_home_path %></span>
     13:                         <span class="right-align"><%= link_to "About Us", home_pages_about_path %>
@@ -1580,7 +1580,7 @@ ActionView::Template::Error (undefined local variable or method `delete' for #<#
     16:                             <%= link_to "Profile", user_path(current_user) %>
     17:                           <% else %>
     18:                             <%= link_to "Log In", login_path%>
-  
+
 app/views/layouts/application.html.erb:15:in `_app_views_layouts_application_html_erb__1340638271609347148_69809976584740'
   Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
   Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
@@ -1707,10 +1707,10 @@ Unpermitted parameter: address
 Completed 500 Internal Server Error in 360ms (ActiveRecord: 170.4ms)
 
 
-  
+
 NoMethodError (undefined method `login' for #<UsersController:0x007efbd02cb820>
 Did you mean?  log_in):
-  
+
 app/controllers/users_controller.rb:30:in `block in create'
 app/controllers/users_controller.rb:28:in `create'
   Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
@@ -1947,7 +1947,7 @@ Google geocoding. Result: %7B%0A+++%22results%22+%3A+%5B%0A++++++%7B%0A+++++++++
 Multi geocoding. address: 48.8584, 2.2945, args []
 Google geocoding. address: 48.8584, 2.2945, args []
 Google geocoding. Result: %7B%0A+++%22results%22+%3A+%5B%0A++++++%7B%0A+++++++++%22address_components%22+%3A+%5B%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%225%22%2C%0A+++++++++++++++%22short_name%22+%3A+%225%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22street_number%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22Avenue+Anatole+France%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22Avenue+Anatole+France%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22route%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22Paris%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22Paris%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22locality%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22Paris%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22Paris%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22administrative_area_level_2%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22%C3%8Ele-de-France%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22%C3%8Ele-de-France%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22administrative_area_level_1%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22France%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22FR%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22country%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%2275007%22%2C%0A+++++++++++++++%22short_name%22+%3A+%2275007%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22postal_code%22+%5D%0A++++++++++++%7D%0A+++++++++%5D%2C%0A+++++++++%22formatted_address%22+%3A+%225+Avenue+Anatole+France%2C+75007+Paris%2C+France%22%2C%0A+++++++++%22geometry%22+%3A+%7B%0A++++++++++++%22location%22+%3A+%7B%0A+++++++++++++++%22lat%22+%3A+48.8588871%2C%0A+++++++++++++++%22lng%22+%3A+2.2944861%0A++++++++++++%7D%2C%0A++++++++++++%22location_type%22+%3A+%22ROOFTOP%22%2C%0A++++++++++++%22viewport%22+%3A+%7B%0A+++++++++++++++%22northeast%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+48.8602360802915%2C%0A++++++++++++++++++%22lng%22+%3A+2.295835080291502%0A+++++++++++++++%7D%2C%0A+++++++++++++++%22southwest%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+48.8575381197085%2C%0A++++++++++++++++++%22lng%22+%3A+2.293137119708498%0A+++++++++++++++%7D%0A++++++++++++%7D%0A+++++++++%7D%2C%0A+++++++++%22place_id%22+%3A+%22ChIJuX7JjuFv5kcRbLER0b_rtC4%22%2C%0A+++++++++%22types%22+%3A+%5B+%22street_address%22+%5D%0A++++++%7D%2C%0A++++++%7B%0A+++++++++%22address_components%22+%3A+%5B%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22Eiffel+Tower%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22Eiffel+Tower%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22establishment%22%2C+%22point_of_interest%22%2C+%22premise%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22Champ+de+Mars%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22Champ+de+Mars%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22establishment%22%2C+%22point_of_interest%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%225%22%2C%0A+++++++++++++++%22short_name%22+%3A+%225%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22street_number%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22Avenue+Anatole+France%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22Avenue+Anatole+France%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22route%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22Paris%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22Paris%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22locality%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22Paris%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22Paris%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22administrative_area_level_2%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22%C3%8Ele-de-France%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22%C3%8Ele-de-France%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22administrative_area_level_1%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22France%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22FR%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22country%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%2275007%22%2C%0A+++++++++++++++%22short_name%22+%3A+%2275007%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22postal_code%22+%5D%0A++++++++++++%7D%0A+++++++++%5D%2C%0A+++++++++%22formatted_address%22+%3A+%22Eiffel+Tower%2C+Champ+de+Mars%2C+5+Avenue+Anatole+France%2C+75007+Paris%2C+France%22%2C%0A+++++++++%22geometry%22+%3A+%7B%0A++++++++++++%22location%22+%3A+%7B%0A+++++++++++++++%22lat%22+%3A+48.85837009999999%2C%0A+++++++++++++++%22lng%22+%3A+2.2944813%0A++++++++++++%7D%2C%0A++++++++++++%22location_type%22+%3A+%22APPROXIMATE%22%2C%0A++++++++++++%22viewport%22+%3A+%7B%0A+++++++++++++++%22northeast%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+48.8597190802915%2C%0A++++++++++++++++++%22lng%22+%3A+2.295830280291502%0A+++++++++++++++%7D%2C%0A+++++++++++++++%22southwest%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+48.8570211197085%2C%0A++++++++++++++++++%22lng%22+%3A+2.293132319708498%0A+++++++++++++++%7D%0A++++++++++++%7D%0A+++++++++%7D%2C%0A+++++++++%22place_id%22+%3A+%22ChIJLU7jZClu5kcR4PcOOO6p3I0%22%2C%0A+++++++++%22types%22+%3A+%5B+%22establishment%22%2C+%22point_of_interest%22%2C+%22premise%22+%5D%0A++++++%7D%2C%0A++++++%7B%0A+++++++++%22address_components%22+%3A+%5B%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22Tour+Eiffel+-+Parc+du+Champ-de-Mars%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22Tour+Eiffel+-+Parc+du+Champ-de-Mars%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22neighborhood%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%227th+arrondissement%22%2C%0A+++++++++++++++%22short_name%22+%3A+%227th+arrondissement%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22political%22%2C+%22sublocality%22%2C+%22sublocality_level_1%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22Paris%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22Paris%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22locality%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22Paris%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22Paris%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22administrative_area_level_2%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22%C3%8Ele-de-France%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22%C3%8Ele-de-France%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22administrative_area_level_1%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22France%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22FR%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22country%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%2275007%22%2C%0A+++++++++++++++%22short_name%22+%3A+%2275007%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22postal_code%22+%5D%0A++++++++++++%7D%0A+++++++++%5D%2C%0A+++++++++%22formatted_address%22+%3A+%22Tour+Eiffel+-+Parc+du+Champ-de-Mars%2C+75007+Paris%2C+France%22%2C%0A+++++++++%22geometry%22+%3A+%7B%0A++++++++++++%22bounds%22+%3A+%7B%0A+++++++++++++++%22northeast%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+48.86066899999999%2C%0A++++++++++++++++++%22lng%22+%3A+2.3057319%0A+++++++++++++++%7D%2C%0A+++++++++++++++%22southwest%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+48.8511819%2C%0A++++++++++++++++++%22lng%22+%3A+2.291056%0A+++++++++++++++%7D%0A++++++++++++%7D%2C%0A++++++++++++%22location%22+%3A+%7B%0A+++++++++++++++%22lat%22+%3A+48.8558986%2C%0A+++++++++++++++%22lng%22+%3A+2.2980875%0A++++++++++++%7D%2C%0A++++++++++++%22location_type%22+%3A+%22APPROXIMATE%22%2C%0A++++++++++++%22viewport%22+%3A+%7B%0A+++++++++++++++%22northeast%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+48.86066899999999%2C%0A++++++++++++++++++%22lng%22+%3A+2.3057319%0A+++++++++++++++%7D%2C%0A+++++++++++++++%22southwest%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+48.8511819%2C%0A++++++++++++++++++%22lng%22+%3A+2.291056%0A+++++++++++++++%7D%0A++++++++++++%7D%0A+++++++++%7D%2C%0A+++++++++%22place_id%22+%3A+%22ChIJu_HX7B9w5kcRTRE4uAo9C9o%22%2C%0A+++++++++%22types%22+%3A+%5B+%22neighborhood%22%2C+%22political%22+%5D%0A++++++%7D%2C%0A++++++%7B%0A+++++++++%22address_components%22+%3A+%5B%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%227th+arrondissement%22%2C%0A+++++++++++++++%22short_name%22+%3A+%227th+arrondissement%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22political%22%2C+%22sublocality%22%2C+%22sublocality_level_1%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22Paris%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22Paris%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22locality%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22Paris%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22Paris%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22administrative_area_level_2%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22%C3%8Ele-de-France%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22%C3%8Ele-de-France%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22administrative_area_level_1%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22France%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22FR%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22country%22%2C+%22political%22+%5D%0A++++++++++++%7D%0A+++++++++%5D%2C%0A+++++++++%22formatted_address%22+%3A+%227th+arrondissement%2C+Paris%2C+France%22%2C%0A+++++++++%22geometry%22+%3A+%7B%0A++++++++++++%22bounds%22+%3A+%7B%0A+++++++++++++++%22northeast%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+48.86372%2C%0A++++++++++++++++++%22lng%22+%3A+2.333264%0A+++++++++++++++%7D%2C%0A+++++++++++++++%22southwest%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+48.845941%2C%0A++++++++++++++++++%22lng%22+%3A+2.289678%0A+++++++++++++++%7D%0A++++++++++++%7D%2C%0A++++++++++++%22location%22+%3A+%7B%0A+++++++++++++++%22lat%22+%3A+48.85433450000001%2C%0A+++++++++++++++%22lng%22+%3A+2.3134029%0A++++++++++++%7D%2C%0A++++++++++++%22location_type%22+%3A+%22APPROXIMATE%22%2C%0A++++++++++++%22viewport%22+%3A+%7B%0A+++++++++++++++%22northeast%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+48.86372%2C%0A++++++++++++++++++%22lng%22+%3A+2.333264%0A+++++++++++++++%7D%2C%0A+++++++++++++++%22southwest%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+48.845941%2C%0A++++++++++++++++++%22lng%22+%3A+2.289678%0A+++++++++++++++%7D%0A++++++++++++%7D%0A+++++++++%7D%2C%0A+++++++++%22place_id%22+%3A+%22ChIJWWRTZChw5kcRsBqUaMOCCwU%22%2C%0A+++++++++%22types%22+%3A+%5B+%22political%22%2C+%22sublocality%22%2C+%22sublocality_level_1%22+%5D%0A++++++%7D%2C%0A++++++%7B%0A+++++++++%22address_components%22+%3A+%5B%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22Faubourg+Saint-Germain%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22Faubourg+Saint-Germain%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22neighborhood%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%227th+arrondissement%22%2C%0A+++++++++++++++%22short_name%22+%3A+%227th+arrondissement%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22political%22%2C+%22sublocality%22%2C+%22sublocality_level_1%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22Paris%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22Paris%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22locality%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22Paris%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22Paris%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22administrative_area_level_2%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22%C3%8Ele-de-France%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22%C3%8Ele-de-France%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22administrative_area_level_1%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22France%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22FR%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22country%22%2C+%22political%22+%5D%0A++++++++++++%7D%0A+++++++++%5D%2C%0A+++++++++%22formatted_address%22+%3A+%22Faubourg+Saint-Germain%2C+Paris%2C+France%22%2C%0A+++++++++%22geometry%22+%3A+%7B%0A++++++++++++%22bounds%22+%3A+%7B%0A+++++++++++++++%22northeast%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+48.8633634%2C%0A++++++++++++++++++%22lng%22+%3A+2.333602%0A+++++++++++++++%7D%2C%0A+++++++++++++++%22southwest%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+48.8426254%2C%0A++++++++++++++++++%22lng%22+%3A+2.2809588%0A+++++++++++++++%7D%0A++++++++++++%7D%2C%0A++++++++++++%22location%22+%3A+%7B%0A+++++++++++++++%22lat%22+%3A+48.8519896%2C%0A+++++++++++++++%22lng%22+%3A+2.3047888%0A++++++++++++%7D%2C%0A++++++++++++%22location_type%22+%3A+%22APPROXIMATE%22%2C%0A++++++++++++%22viewport%22+%3A+%7B%0A+++++++++++++++%22northeast%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+48.8633634%2C%0A++++++++++++++++++%22lng%22+%3A+2.333602%0A+++++++++++++++%7D%2C%0A+++++++++++++++%22southwest%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+48.8426254%2C%0A++++++++++++++++++%22lng%22+%3A+2.2809588%0A+++++++++++++++%7D%0A++++++++++++%7D%0A+++++++++%7D%2C%0A+++++++++%22place_id%22+%3A+%22ChIJZ_LrRyZw5kcR6jSqYES9Y8s%22%2C%0A+++++++++%22types%22+%3A+%5B+%22neighborhood%22%2C+%22political%22+%5D%0A++++++%7D%2C%0A++++++%7B%0A+++++++++%22address_components%22+%3A+%5B%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22Paris%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22Paris%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22locality%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22Paris%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22Paris%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22administrative_area_level_2%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22%C3%8Ele-de-France%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22%C3%8Ele-de-France%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22administrative_area_level_1%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22France%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22FR%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22country%22%2C+%22political%22+%5D%0A++++++++++++%7D%0A+++++++++%5D%2C%0A+++++++++%22formatted_address%22+%3A+%22Paris%2C+France%22%2C%0A+++++++++%22geometry%22+%3A+%7B%0A++++++++++++%22bounds%22+%3A+%7B%0A+++++++++++++++%22northeast%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+48.9021449%2C%0A++++++++++++++++++%22lng%22+%3A+2.4699208%0A+++++++++++++++%7D%2C%0A+++++++++++++++%22southwest%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+48.815573%2C%0A++++++++++++++++++%22lng%22+%3A+2.224199%0A+++++++++++++++%7D%0A++++++++++++%7D%2C%0A++++++++++++%22location%22+%3A+%7B%0A+++++++++++++++%22lat%22+%3A+48.856614%2C%0A+++++++++++++++%22lng%22+%3A+2.3522219%0A++++++++++++%7D%2C%0A++++++++++++%22location_type%22+%3A+%22APPROXIMATE%22%2C%0A++++++++++++%22viewport%22+%3A+%7B%0A+++++++++++++++%22northeast%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+48.9021449%2C%0A++++++++++++++++++%22lng%22+%3A+2.4699208%0A+++++++++++++++%7D%2C%0A+++++++++++++++%22southwest%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+48.815573%2C%0A++++++++++++++++++%22lng%22+%3A+2.225193%0A+++++++++++++++%7D%0A++++++++++++%7D%0A+++++++++%7D%2C%0A+++++++++%22place_id%22+%3A+%22ChIJD7fiBh9u5kcRYJSMaMOCCwQ%22%2C%0A+++++++++%22types%22+%3A+%5B+%22locality%22%2C+%22political%22+%5D%0A++++++%7D%2C%0A++++++%7B%0A+++++++++%22address_components%22+%3A+%5B%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%2275007%22%2C%0A+++++++++++++++%22short_name%22+%3A+%2275007%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22postal_code%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22Paris%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22Paris%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22locality%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22Paris%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22Paris%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22administrative_area_level_2%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22%C3%8Ele-de-France%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22%C3%8Ele-de-France%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22administrative_area_level_1%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22France%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22FR%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22country%22%2C+%22political%22+%5D%0A++++++++++++%7D%0A+++++++++%5D%2C%0A+++++++++%22formatted_address%22+%3A+%2275007+Paris%2C+France%22%2C%0A+++++++++%22geometry%22+%3A+%7B%0A++++++++++++%22bounds%22+%3A+%7B%0A+++++++++++++++%22northeast%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+48.8637587%2C%0A++++++++++++++++++%22lng%22+%3A+2.3332731%0A+++++++++++++++%7D%2C%0A+++++++++++++++%22southwest%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+48.845927%2C%0A++++++++++++++++++%22lng%22+%3A+2.2898664%0A+++++++++++++++%7D%0A++++++++++++%7D%2C%0A++++++++++++%22location%22+%3A+%7B%0A+++++++++++++++%22lat%22+%3A+48.85433450000001%2C%0A+++++++++++++++%22lng%22+%3A+2.3134029%0A++++++++++++%7D%2C%0A++++++++++++%22location_type%22+%3A+%22APPROXIMATE%22%2C%0A++++++++++++%22viewport%22+%3A+%7B%0A+++++++++++++++%22northeast%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+48.8637587%2C%0A++++++++++++++++++%22lng%22+%3A+2.3332731%0A+++++++++++++++%7D%2C%0A+++++++++++++++%22southwest%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+48.845927%2C%0A++++++++++++++++++%22lng%22+%3A+2.2898664%0A+++++++++++++++%7D%0A++++++++++++%7D%0A+++++++++%7D%2C%0A+++++++++%22place_id%22+%3A+%22ChIJWWRTZChw5kcRYFHY4caCCxw%22%2C%0A+++++++++%22types%22+%3A+%5B+%22postal_code%22+%5D%0A++++++%7D%2C%0A++++++%7B%0A+++++++++%22address_components%22+%3A+%5B%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22Paris%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22Paris%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22administrative_area_level_2%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22%C3%8Ele-de-France%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22%C3%8Ele-de-France%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22administrative_area_level_1%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22France%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22FR%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22country%22%2C+%22political%22+%5D%0A++++++++++++%7D%0A+++++++++%5D%2C%0A+++++++++%22formatted_address%22+%3A+%22Paris%2C+France%22%2C%0A+++++++++%22geometry%22+%3A+%7B%0A++++++++++++%22bounds%22+%3A+%7B%0A+++++++++++++++%22northeast%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+48.9021449%2C%0A++++++++++++++++++%22lng%22+%3A+2.4699208%0A+++++++++++++++%7D%2C%0A+++++++++++++++%22southwest%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+48.815573%2C%0A++++++++++++++++++%22lng%22+%3A+2.224199%0A+++++++++++++++%7D%0A++++++++++++%7D%2C%0A++++++++++++%22location%22+%3A+%7B%0A+++++++++++++++%22lat%22+%3A+48.8565823%2C%0A+++++++++++++++%22lng%22+%3A+2.3522148%0A++++++++++++%7D%2C%0A++++++++++++%22location_type%22+%3A+%22APPROXIMATE%22%2C%0A++++++++++++%22viewport%22+%3A+%7B%0A+++++++++++++++%22northeast%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+48.9021449%2C%0A++++++++++++++++++%22lng%22+%3A+2.4699208%0A+++++++++++++++%7D%2C%0A+++++++++++++++%22southwest%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+48.815573%2C%0A++++++++++++++++++%22lng%22+%3A+2.225193%0A+++++++++++++++%7D%0A++++++++++++%7D%0A+++++++++%7D%2C%0A+++++++++%22place_id%22+%3A+%22ChIJD7fiBh9u5kcRMCqLaMOCCwM%22%2C%0A+++++++++%22types%22+%3A+%5B+%22administrative_area_level_2%22%2C+%22political%22+%5D%0A++++++%7D%2C%0A++++++%7B%0A+++++++++%22address_components%22+%3A+%5B%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22%C3%8Ele-de-France%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22%C3%8Ele-de-France%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22administrative_area_level_1%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22France%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22FR%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22country%22%2C+%22political%22+%5D%0A++++++++++++%7D%0A+++++++++%5D%2C%0A+++++++++%22formatted_address%22+%3A+%22%C3%8Ele-de-France%2C+France%22%2C%0A+++++++++%22geometry%22+%3A+%7B%0A++++++++++++%22bounds%22+%3A+%7B%0A+++++++++++++++%22northeast%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+49.241504%2C%0A++++++++++++++++++%22lng%22+%3A+3.5590069%0A+++++++++++++++%7D%2C%0A+++++++++++++++%22southwest%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+48.1200811%2C%0A++++++++++++++++++%22lng%22+%3A+1.44617%0A+++++++++++++++%7D%0A++++++++++++%7D%2C%0A++++++++++++%22location%22+%3A+%7B%0A+++++++++++++++%22lat%22+%3A+48.8499198%2C%0A+++++++++++++++%22lng%22+%3A+2.6370411%0A++++++++++++%7D%2C%0A++++++++++++%22location_type%22+%3A+%22APPROXIMATE%22%2C%0A++++++++++++%22viewport%22+%3A+%7B%0A+++++++++++++++%22northeast%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+49.241504%2C%0A++++++++++++++++++%22lng%22+%3A+3.5590069%0A+++++++++++++++%7D%2C%0A+++++++++++++++%22southwest%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+48.1200811%2C%0A++++++++++++++++++%22lng%22+%3A+1.44617%0A+++++++++++++++%7D%0A++++++++++++%7D%0A+++++++++%7D%2C%0A+++++++++%22place_id%22+%3A+%22ChIJF4ymA8Th5UcRcCWLaMOCCwE%22%2C%0A+++++++++%22types%22+%3A+%5B+%22administrative_area_level_1%22%2C+%22political%22+%5D%0A++++++%7D%2C%0A++++++%7B%0A+++++++++%22address_components%22+%3A+%5B%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22Paris+Metropolitan+Area%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22Paris+Metropolitan+Area%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22France%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22FR%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22country%22%2C+%22political%22+%5D%0A++++++++++++%7D%0A+++++++++%5D%2C%0A+++++++++%22formatted_address%22+%3A+%22Paris+Metropolitan+Area%2C+France%22%2C%0A+++++++++%22geometry%22+%3A+%7B%0A++++++++++++%22bounds%22+%3A+%7B%0A+++++++++++++++%22northeast%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+49.44956%2C%0A++++++++++++++++++%22lng%22+%3A+3.5590339%0A+++++++++++++++%7D%2C%0A+++++++++++++++%22southwest%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+48.065382%2C%0A++++++++++++++++++%22lng%22+%3A+1.3557489%0A+++++++++++++++%7D%0A++++++++++++%7D%2C%0A++++++++++++%22location%22+%3A+%7B%0A+++++++++++++++%22lat%22+%3A+48.8575712%2C%0A+++++++++++++++%22lng%22+%3A+2.2771715%0A++++++++++++%7D%2C%0A++++++++++++%22location_type%22+%3A+%22APPROXIMATE%22%2C%0A++++++++++++%22viewport%22+%3A+%7B%0A+++++++++++++++%22northeast%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+49.44956%2C%0A++++++++++++++++++%22lng%22+%3A+3.5590339%0A+++++++++++++++%7D%2C%0A+++++++++++++++%22southwest%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+48.065382%2C%0A++++++++++++++++++%22lng%22+%3A+1.3557489%0A+++++++++++++++%7D%0A++++++++++++%7D%0A+++++++++%7D%2C%0A+++++++++%22place_id%22+%3A+%22ChIJW36m20gL5kcRiMnAEpHgyq8%22%2C%0A+++++++++%22types%22+%3A+%5B+%22political%22+%5D%0A++++++%7D%2C%0A++++++%7B%0A+++++++++%22address_components%22+%3A+%5B%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22France%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22FR%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22country%22%2C+%22political%22+%5D%0A++++++++++++%7D%0A+++++++++%5D%2C%0A+++++++++%22formatted_address%22+%3A+%22France%22%2C%0A+++++++++%22geometry%22+%3A+%7B%0A++++++++++++%22bounds%22+%3A+%7B%0A+++++++++++++++%22northeast%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+51.1241999%2C%0A++++++++++++++++++%22lng%22+%3A+9.6624999%0A+++++++++++++++%7D%2C%0A+++++++++++++++%22southwest%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+41.3253001%2C%0A++++++++++++++++++%22lng%22+%3A+-5.5591%0A+++++++++++++++%7D%0A++++++++++++%7D%2C%0A++++++++++++%22location%22+%3A+%7B%0A+++++++++++++++%22lat%22+%3A+46.227638%2C%0A+++++++++++++++%22lng%22+%3A+2.213749%0A++++++++++++%7D%2C%0A++++++++++++%22location_type%22+%3A+%22APPROXIMATE%22%2C%0A++++++++++++%22viewport%22+%3A+%7B%0A+++++++++++++++%22northeast%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+51.0891285%2C%0A++++++++++++++++++%22lng%22+%3A+9.5597934%0A+++++++++++++++%7D%2C%0A+++++++++++++++%22southwest%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+41.342778%2C%0A++++++++++++++++++%22lng%22+%3A+-5.1422579%0A+++++++++++++++%7D%0A++++++++++++%7D%0A+++++++++%7D%2C%0A+++++++++%22place_id%22+%3A+%22ChIJMVd4MymgVA0R99lHx5Y__Ws%22%2C%0A+++++++++%22types%22+%3A+%5B+%22country%22%2C+%22political%22+%5D%0A++++++%7D%0A+++%5D%2C%0A+++%22status%22+%3A+%22OK%22%0A%7D%0A
->>>>>>> a328e492e8c24e68664a7d453575bfe2f04e81f2
+
   [1m[35m (236.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
   [1m[35m (165.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m

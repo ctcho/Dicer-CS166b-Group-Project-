@@ -9,6 +9,7 @@ class UserTest < ActiveSupport::TestCase
 
     it "can be created" do
       u = User.create(username: "TestUser", email: "example@railstutorial.com", password: "foobar", address: "415 South St, Waltham MA")
+      byebug
       u.valid?.must_equal true
       User.count.must_equal 1
     end
