@@ -1,4 +1,5 @@
 require 'test_helper'
+require 'byebug'
 
 class DmProfilesControllerTest < ActionDispatch::IntegrationTest
   setup do

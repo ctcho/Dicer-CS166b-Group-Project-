@@ -2,7 +2,8 @@ require 'test_helper'
 
 class UsersControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @user = User.create(email: "mystring@example.com", password: "strongpass", password_confirmation: "strongpass", username: "unique_names", age: 18)
+    User.destroy_all
+    @user = User.create(email: "mystring@example.com", password: "strongpass", password_confirmation: "strongpass", username: "unique_names", age: 18, address: "02453")
   end
 
   test "should get index" do
@@ -17,7 +18,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
 
   test "should create user" do
     assert_difference('User.count') do
-      post users_url, params: { user: { age: @user.age, dm_profile_id: @user.dm_profile_id, email: "Unique@email.com", last_active: @user.last_active, password: "strongpass", password_confirmation: "strongpass", player_profile_id: @user.player_profile_id, profile_pic_path: @user.profile_pic_path, username: "Unique_Username" } }
+    post users_url, params: { user: { email: "Unique@email.com", password: "strongpass", password_confirmation: "strongpass", username: "Unique_Username", address: "02453"} }
     end
 
     assert_redirected_to user_url(User.last)
@@ -34,7 +35,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update user" do
-    patch user_url(@user), params: { user: { password: @user.password, password_confirmation: @user.password, age: @user.age, email: @user.email, last_active: @user.last_active, profile_pic_path: @user.profile_pic_path, string: @user.string, username: @user.username } }
+    patch user_url(@user), params: { user: { password: @user.password, password_confirmation: @user.password, age: @user.age, email: @user.email, last_active: @user.last_active, profile_pic_path: @user.profile_pic_path, username: @user.username, address: "48183"} }
     assert_redirected_to user_url(@user)
   end
 
