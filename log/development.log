@@ -1846,6 +1846,7 @@ Unpermitted parameter: address
 Completed 200 OK in 198ms (Views: 92.7ms | ActiveRecord: 1.3ms)
 
 
+<<<<<<< Updated upstream
 =======
   [1m[36mActiveRecord::SchemaMigration Load (6.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
 Migrating to AddLatToUsers (20170307225159)
@@ -1991,3 +1992,286 @@ Migrating to AddLngToUsers (20170307225241)
   [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
   [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+=======
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddRememberDigestToUsers (20170308015257)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.6ms)[0m  [1m[35mALTER TABLE "users" ADD "remember_digest" varchar[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170308015257"]]
+  [1m[35m (84.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/users/new" for 127.0.0.1 at 2017-03-07 20:57:52 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (65.9ms)
+  Rendered users/new.html.erb within layouts/application (71.8ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+Completed 200 OK in 947ms (Views: 877.7ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-03-07 20:58:05 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"x29NRawTSYaxGGA5nNTzmCs7iFpsqvQaXXL54XdtKj2kMuXPNeajTkTX1zAp6nVy47w/oyqOBQSPyFX18+LVrw==", "user"=>{"username"=>"Joe", "email"=>"joe@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "address"=>"", "age"=>""}, "commit"=>"Create User"}
+Unpermitted parameter: address
+  [1m[35m (0.8ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER(?) LIMIT ?[0m  [["username", "Joe"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "joe@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (36.7ms)
+  Rendered users/new.html.erb within layouts/application (40.5ms)
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+Completed 200 OK in 240ms (Views: 171.9ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-07 21:31:13 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomePagesController#home as HTML
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (35.4ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+Completed 200 OK in 24561ms (Views: 24466.0ms | ActiveRecord: 2.0ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2017-03-07 21:31:53 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"rYKts7oa2+w1FZRAI2GXsjHvD8UgiEO0x8E7EIWGtd/O3wU5I+8xJMDaI0mWXxFY+Wi4PGassqoVe5cEAQlKTQ=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-07 21:31:53 -0500
+Processing by HomePagesController#home as HTML
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 8625ms (Views: 8621.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-03-07 21:32:04 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (345.9ms)
+Completed 200 OK in 217205ms (Views: 217185.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-03-07 21:35:41 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 3088ms (Views: 3085.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-03-07 21:35:54 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tAYeUukOUoYURlPN3KgZ/0SAObH7rUzuKg2MPsEAj5TXW7bYcPu4TuGJ5MRplp8VjAeOSL2JvfD4tyAqRY9wBg==", "session"=>{"email"=>"joe@example.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "joe@example.com"], ["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 5721ms (Views: 5712.1ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-03-07 21:36:19 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DtXE0M9jJTcE4SUoLcv2Xr63s0/qTSyVpXVRQ7O7lE9tiGxaVpbP//EukiGY9XC0djAEtqxp3Yt3z/1XNzRr3Q==", "session"=>{"email"=>"bob@example.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "bob@example.com"], ["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 3128ms (Views: 3124.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-03-07 21:36:28 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 3156ms (Views: 3137.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-03-07 21:36:38 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 2513ms (Views: 2510.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-03-07 21:36:46 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"V26Z+m27HMu04UdAMzP1jNc20VUQZbXAxHRMD7ezRzQ0MzFw9E72A0Eu8EmGDXNmH7FmrFZBRN4WzuAbMzy4pg==", "session"=>{"email"=>"google@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "google@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.5ms)[0m  [1m[33mUPDATE "users" SET "remember_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_digest", "$2a$10$/H8j.8VCzCGG108aGYYwNeCB2BJUZL9A58a5OYG5rbQIPI2cuZLiS"], ["updated_at", 2017-03-08 02:36:47 UTC], ["id", 6]]
+  [1m[35m (296.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/6
+Completed 302 Found in 483ms (ActiveRecord: 299.2ms)
+
+
+Started GET "/users/6" for 127.0.0.1 at 2017-03-07 21:36:47 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (3.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 3355ms (Views: 3335.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/users/6" for 127.0.0.1 at 2017-03-07 21:36:55 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (2.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 29941ms (Views: 29935.0ms | ActiveRecord: 0.9ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2017-03-07 21:47:31 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"K+CUOOqCWXl/HqJiNuH1zJFgaM3oH9ISNlYdc/tdoCRIvTyyc3ezsYrRFWuD33MmWeffNK47Iwzk7LFnf9Jftg=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "remember_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_digest", nil], ["updated_at", 2017-03-08 02:47:31 UTC], ["id", 6]]
+  [1m[35m (121.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 210ms (ActiveRecord: 124.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-07 21:47:31 -0500
+Processing by HomePagesController#home as HTML
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 803ms (Views: 799.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home_pages/about" for 127.0.0.1 at 2017-03-07 21:47:34 -0500
+Processing by HomePagesController#about as HTML
+  Rendering home_pages/about.html.erb within layouts/application
+  Rendered home_pages/about.html.erb within layouts/application (0.9ms)
+Started GET "/home_pages/about" for 127.0.0.1 at 2017-03-07 21:47:34 -0500
+Processing by HomePagesController#about as HTML
+  Rendering home_pages/about.html.erb within layouts/application
+  Rendered home_pages/about.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 279ms (Views: 277.4ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 206ms (Views: 202.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-03-07 21:47:34 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (117.1ms)
+Completed 200 OK in 214ms (Views: 211.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-03-07 21:47:40 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/JNL8p0/DodjVO5vJ6HNynEKouVeqqie92DokQ2kkZyfzuN4BMrkT5abWWaSn0sguY0VHBiOWYAl2kSFiStuDg==", "session"=>{"email"=>"joe@example.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "joe@example.com"], ["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 105ms (Views: 99.3ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-03-07 21:47:51 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3rp6Ebt10DclHE5++vEY3CLa8epoJR+YBU7+SRqbZYq959KbIoA6/9DT+XdPz5426l1GEy4B7obX9FJdnhSaGA==", "session"=>{"email"=>"google@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "google@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "remember_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_digest", "$2a$10$VASCw6sttpC4yG41dxj1mehItkgatwaNJGfTGB7Qkpm.TU/w5RmGS"], ["updated_at", 2017-03-08 02:47:51 UTC], ["id", 6]]
+  [1m[35m (144.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/6
+Completed 302 Found in 333ms (ActiveRecord: 147.2ms)
+
+
+Started GET "/users/6" for 127.0.0.1 at 2017-03-07 21:47:51 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (3.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 114ms (Views: 107.2ms | ActiveRecord: 1.0ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2017-03-07 21:47:56 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Bn7B7almGPK1Fxcn+DOM4cCVzUc1/jUtqpFJ2gYzNFllI2lnMJPyOkDYoC5NDQoLCBJ6vnPaxDN4K+XOgrzLyw=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[33mUPDATE "users" SET "remember_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_digest", nil], ["updated_at", 2017-03-08 02:47:56 UTC], ["id", 6]]
+  [1m[35m (179.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 190ms (ActiveRecord: 180.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-07 21:47:56 -0500
+Processing by HomePagesController#home as HTML
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 92ms (Views: 89.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-03-07 21:47:58 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 85ms (Views: 82.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-03-07 21:48:22 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 76ms (Views: 73.8ms | ActiveRecord: 0.0ms)
+
+
+>>>>>>> Stashed changes
+  [1m[35m (130.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (180.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20170303181129)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "email" varchar, "password_digest" varchar, "profile_pic_path" varchar, "player_profile_id" integer, "dm_profile_id" integer, "age" integer, "address" varchar, "last_active" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170303181129"]]
+  [1m[35m (98.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreatePlayerProfiles (20170303181650)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "player_profiles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "bio" text, "experience_level" integer, "max_distance" float, "online_play" integer, "homebrew" integer, "original_ruleset" integer, "advanced_ruleset" integer, "pathfinder" integer, "third" integer, "three_point_five" integer, "fourth" integer, "fifth" integer, "original_campaign" integer, "module" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170303181650"]]
+  [1m[35m (144.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateDmProfiles (20170303182206)
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "dm_profiles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "bio" text, "experience_level" integer, "max_distance" float, "online_play" integer, "homebrew" integer, "original_ruleset" integer, "advanced_ruleset" integer, "pathfinder" integer, "third" integer, "three_point_five" integer, "fourth" integer, "fifth" integer, "original_campaign" integer, "module" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170303182206"]]
+  [1m[35m (186.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateCharacterSheets (20170303182420)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "character_sheets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "player_profile_id" integer, "file_path" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170303182420"]]
+  [1m[35m (210.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddLatToUsers (20170307225159)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "users" ADD "lat" float[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170307225159"]]
+  [1m[35m (113.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddLngToUsers (20170307225241)
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "users" ADD "lng" float[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170307225241"]]
+  [1m[35m (174.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddRememberDigestToUsers (20170308015257)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "users" ADD "remember_digest" varchar[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170308015257"]]
+  [1m[35m (180.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-03-08 03:25:18 UTC], ["updated_at", 2017-03-08 03:25:18 UTC]]
+  [1m[35m (172.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
