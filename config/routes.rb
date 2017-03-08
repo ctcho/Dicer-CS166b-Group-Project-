@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'search_pages/search'
+
+  get 'search_pages/results'
+
   get 'home_pages/home'
   get 'home_pages/about'
   get 'home_pages/contact'
