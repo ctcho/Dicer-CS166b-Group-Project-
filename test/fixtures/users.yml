@@ -4,7 +4,7 @@ one:
   username: MyString
   #string: MyString
   email: email@example.com
-  password_digest: MyString
+  password_digest: <%= User.digest('password') %>
   profile_pic_path: MyString
   player_profile_id: nil
   dm_profile_id: nil
@@ -16,7 +16,7 @@ two:
   username: YourString
   #string: MyString
   email: electronicmail@example.com
-  password_digest: MyString
+  password_digest: <%= User.digest('password') %>
   profile_pic_path: MyString
   player_profile_id: nil
   dm_profile_id: nil

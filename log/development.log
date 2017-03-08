@@ -135,9 +135,9 @@ Completed 200 OK in 140ms (Views: 131.5ms | ActiveRecord: 0.3ms)
 
 
 Started GET "/users/2/player_profile" for 127.0.0.1 at 2017-03-05 15:49:04 -0500
-  
+
 ActionController::RoutingError (No route matches [GET] "/users/2/player_profile"):
-  
+
 actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
 web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
 web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
@@ -183,16 +183,16 @@ Processing by PlayerProfilesController#show as HTML
 Completed 500 Internal Server Error in 68ms (ActiveRecord: 2.4ms)
 
 
-  
+
 ActionView::Template::Error (undefined method `user_id' for nil:NilClass):
-    2: 
+    2:
     3: <p>
     4:   <strong>User:</strong>
     5:   <%= @player_profile.user_id %>
     6: </p>
-    7: 
+    7:
     8: <p>
-  
+
 app/views/player_profiles/show.html.erb:5:in `_app_views_player_profiles_show_html_erb___4196078974590282391_69942272849020'
   Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
   Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
@@ -225,7 +225,7 @@ Completed 302 Found in 201ms (ActiveRecord: 181.2ms)
 
 
 Started GET "/users/2/player_profiles.1" for 127.0.0.1 at 2017-03-05 15:50:15 -0500
-Processing by PlayerProfilesController#show as 
+Processing by PlayerProfilesController#show as
   Parameters: {"user_id"=>"2"}
   [1m[36mPlayerProfile Load (0.5ms)[0m  [1m[34mSELECT "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ?[0m  [["user_id", 2]]
   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
@@ -301,13 +301,13 @@ Processing by PlayerProfilesController#show as HTML
 Completed 500 Internal Server Error in 163ms (ActiveRecord: 1.0ms)
 
 
-  
+
 ActionView::Template::Error (undefined method `user' for #<#<Class:0x007f3968a7e060>:0x007f3968aa6f88>):
     76: </p>
-    77: 
+    77:
     78: <%= link_to 'Edit', edit_user_player_profiles_path(@user, @player_profile) %> |
     79: <%= link_to 'Back', user(@user) %>
-  
+
 app/views/player_profiles/show.html.erb:79:in `_app_views_player_profiles_show_html_erb___4196078974590282391_69942272933220'
   Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
   Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
@@ -377,9 +377,9 @@ Processing by UsersController#new as HTML
 Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
 
 
-  
+
 ArgumentError (wrong number of arguments (given 0, expected 1)):
-  
+
 app/models/user.rb:2:in `<class:User>'
 app/models/user.rb:1:in `<top (required)>'
 app/controllers/users_controller.rb:17:in `new'
@@ -451,7 +451,7 @@ Completed 302 Found in 361ms (ActiveRecord: 315.1ms)
 
 
 Started GET "/users/3/player_profiles.2" for 127.0.0.1 at 2017-03-05 15:57:03 -0500
-Processing by PlayerProfilesController#show as 
+Processing by PlayerProfilesController#show as
   Parameters: {"user_id"=>"3"}
   [1m[36mPlayerProfile Load (0.5ms)[0m  [1m[34mSELECT "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ?[0m  [["user_id", 3]]
   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
@@ -462,7 +462,7 @@ Completed 200 OK in 85ms (Views: 68.7ms | ActiveRecord: 1.6ms)
 
 
 Started GET "/users/3/player_profiles/edit.2" for 127.0.0.1 at 2017-03-05 15:57:08 -0500
-Processing by PlayerProfilesController#edit as 
+Processing by PlayerProfilesController#edit as
   Parameters: {"user_id"=>"3"}
   [1m[36mPlayerProfile Load (0.6ms)[0m  [1m[34mSELECT "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ?[0m  [["user_id", 3]]
   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
@@ -473,7 +473,7 @@ Processing by PlayerProfilesController#edit as
 Completed 500 Internal Server Error in 5662ms (ActiveRecord: 1.2ms)
 
 
-  
+
 ActionView::Template::Error (undefined method `user_player_profile_path' for #<#<Class:0x0000000315a628>:0x007f3968a7a7f8>
 Did you mean?  user_player_profiles_path
                user_player_profiles_url):
@@ -482,7 +482,7 @@ Did you mean?  user_player_profiles_path
     3:   <% if player_profile.errors.any? %>
     4:     <div id="error_explanation">
     5:       <h2><%= pluralize(player_profile.errors.count, "error") %> prohibited this player_profile from being saved:</h2>
-  
+
 app/views/player_profiles/_form.html.erb:2:in `_app_views_player_profiles__form_html_erb___2338273400783951986_69942218172000'
 app/views/player_profiles/edit.html.erb:3:in `_app_views_player_profiles_edit_html_erb__3100122000405610835_69942272842480'
   Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
@@ -514,14 +514,14 @@ Processing by PlayerProfilesController#edit as HTML
 Completed 500 Internal Server Error in 4479ms (ActiveRecord: 4.0ms)
 
 
-  
+
 ActionView::Template::Error (undefined method `player_profiles_path' for #<#<Class:0x007f3968b04a48>:0x007f3968afaef8>):
     2: <% byebug %>
     3: <%= render 'form', player_profile: @player_profile %>
-    4: 
+    4:
     5: <%= link_to 'Show', @player_profile %> |
     6: <%= link_to 'Back', user_player_profiles_path %>
-  
+
 app/views/player_profiles/edit.html.erb:5:in `_app_views_player_profiles_edit_html_erb__3100122000405610835_69942273125000'
   Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
   Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
@@ -554,7 +554,7 @@ Processing by PlayerProfilesController#edit as HTML
 Completed 500 Internal Server Error in 15049ms (ActiveRecord: 4.8ms)
 
 
-  
+
 ActionView::Template::Error (undefined method `user_player_profile_path' for #<#<Class:0x0000000341c550>:0x0000000340d1b8>
 Did you mean?  user_player_profiles_path
                user_player_profiles_url):
@@ -563,7 +563,7 @@ Did you mean?  user_player_profiles_path
     3:   <% if player_profile.errors.any? %>
     4:     <div id="error_explanation">
     5:       <h2><%= pluralize(player_profile.errors.count, "error") %> prohibited this player_profile from being saved:</h2>
-  
+
 app/views/player_profiles/_form.html.erb:2:in `_app_views_player_profiles__form_html_erb___2338273400783951986_24642620'
 app/views/player_profiles/edit.html.erb:3:in `_app_views_player_profiles_edit_html_erb__3100122000405610835_27345200'
   Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
@@ -718,9 +718,9 @@ Completed 200 OK in 334ms (Views: 331.0ms | ActiveRecord: 0.0ms)
 
 
 Started GET "/user/3/edit" for 127.0.0.1 at 2017-03-06 12:57:36 -0500
-  
+
 ActionController::RoutingError (No route matches [GET] "/user/3/edit"):
-  
+
 actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
 web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
 web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
@@ -756,9 +756,9 @@ puma (3.7.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
   Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.6ms)
   Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (182.3ms)
 Started GET "/user/s3/edit" for 127.0.0.1 at 2017-03-06 12:58:03 -0500
-  
+
 ActionController::RoutingError (No route matches [GET] "/user/s3/edit"):
-  
+
 actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
 web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
 web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
@@ -1021,6 +1021,833 @@ Processing by SessionsController#new as HTML
 Completed 200 OK in 89ms (Views: 86.7ms | ActiveRecord: 0.0ms)
 
 
+
+Started GET "/" for 127.0.0.1 at 2017-03-07 18:54:50 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomePagesController#home as HTML
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 1414ms (Views: 1395.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2017-03-07 18:55:42 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (129.8ms)
+  Rendered users/new.html.erb within layouts/application (133.6ms)
+Completed 200 OK in 346ms (Views: 244.6ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-07 19:00:43 -0500
+Processing by HomePagesController#home as HTML
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 92ms (Views: 88.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-03-07 19:02:04 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 115ms (Views: 112.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-03-07 19:02:54 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 100ms (Views: 97.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home_pages/home" for 127.0.0.1 at 2017-03-07 19:03:39 -0500
+Processing by HomePagesController#home as HTML
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 76ms (Views: 74.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home_pages/home" for 127.0.0.1 at 2017-03-07 19:07:34 -0500
+Processing by HomePagesController#home as HTML
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 77ms (Views: 74.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-03-07 19:07:37 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.6ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 87ms (Views: 84.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/user/all" for 127.0.0.1 at 2017-03-07 19:07:58 -0500
+
+ActionController::RoutingError (No route matches [GET] "/user/all"):
+
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.7.1) lib/puma/configuration.rb:232:in `call'
+puma (3.7.1) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.1) lib/puma/server.rb:415:in `process_client'
+puma (3.7.1) lib/puma/server.rb:275:in `block in run'
+puma (3.7.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.7ms)
+  Rendered collection of /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [39 times] (149.9ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (30.2ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.1ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (355.5ms)
+Started GET "/users" for 127.0.0.1 at 2017-03-07 19:08:03 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (8.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 83ms (Views: 78.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-03-07 19:08:19 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (4.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 85ms (Views: 82.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/home_pages/home" for 127.0.0.1 at 2017-03-07 19:08:30 -0500
+Processing by HomePagesController#home as HTML
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 87ms (Views: 84.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2017-03-07 19:08:32 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (22.8ms)
+  Rendered users/new.html.erb within layouts/application (27.2ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 109ms (Views: 105.5ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-03-07 19:08:51 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OEQ23co18ivtYnRrMPMH2dAP679+DMRNJma6pg7LI9dbGZ5XU8AY4xitw2KFzYEzGIhcRjgoNVP03BayikTcRQ==", "user"=>{"username"=>"ACE", "email"=>"ace@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "address"=>"", "age"=>"22"}, "commit"=>"Create User"}
+Unpermitted parameter: address
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER(?) LIMIT ?[0m  [["username", "ACE"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "ace@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (2.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "ACE"], ["email", "ace@example.com"], ["password_digest", "$2a$10$S9iemrLGZMPbOYi47NaIYeUhd7n0RAGZ8zAe3PG/7phfe1xfUflfW"], ["age", 22], ["created_at", 2017-03-08 00:08:51 UTC], ["updated_at", 2017-03-08 00:08:51 UTC]]
+  [1m[35m (170.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/5
+Completed 302 Found in 294ms (ActiveRecord: 174.5ms)
+
+
+Started GET "/users/5" for 127.0.0.1 at 2017-03-07 19:08:52 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (2.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 88ms (Views: 79.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-03-07 19:08:56 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (4.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 100ms (Views: 97.0ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-03-07 19:09:02 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TvXKfrPWyBN5X7sGFthHxEZXRymZxU20bAXlcZzmxigtqGL0KiMi24yQDA+j5sEujtDw0N/hvKq+v0llGGk5ug==", "session"=>{"email"=>"ace@example.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ace@example.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/5
+Completed 302 Found in 98ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/users/5" for 127.0.0.1 at 2017-03-07 19:09:02 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (2.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 380ms (ActiveRecord: 0.4ms)
+
+
+
+ActionView::Template::Error (undefined local variable or method `log_out_path' for #<#<Class:0x000000052b9670>:0x007efbcdf49758>
+Did you mean?  logout_path):
+    12:     <div class="header"><span class="left-align"><%= link_to "Dicer", home_pages_home_path %></span>
+    13:                         <span class="right-align"><%= link_to "About Us", home_pages_about_path %>
+    14:                           <% if logged_in? %>
+    15:                             <%= link_to "Log Out", log_out_path%>
+    16:                             <%= link_to "Profile", user(current_users) %>
+    17:                           <% else %>
+    18:                             <%= link_to "Log In", login_path%></span></div>
+
+app/views/layouts/application.html.erb:15:in `_app_views_layouts_application_html_erb__1340638271609347148_69809978486000'
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (9.7ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.4ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (49.8ms)
+Started GET "/users/5" for 127.0.0.1 at 2017-03-07 19:09:18 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (2.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 360ms (ActiveRecord: 0.7ms)
+
+
+
+ActionView::Template::Error (undefined local variable or method `current_users' for #<#<Class:0x000000052b9670>:0x007efbd82f5000>
+Did you mean?  current_user
+               @current_user):
+    13:                         <span class="right-align"><%= link_to "About Us", home_pages_about_path %>
+    14:                           <% if logged_in? %>
+    15:                             <%= link_to "Log Out", logout_path%>
+    16:                             <%= link_to "Profile", user(current_users) %>
+    17:                           <% else %>
+    18:                             <%= link_to "Log In", login_path%></span></div>
+    19:                           <% end %>
+
+app/views/layouts/application.html.erb:16:in `_app_views_layouts_application_html_erb__1340638271609347148_69810064354420'
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (10.7ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.9ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (47.6ms)
+Started GET "/users/5" for 127.0.0.1 at 2017-03-07 19:10:20 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (3.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 248ms (ActiveRecord: 0.6ms)
+
+
+
+ActionView::Template::Error (undefined method `user' for #<#<Class:0x000000052b9670>:0x00000004cfa130>):
+    13:                         <span class="right-align"><%= link_to "About Us", home_pages_about_path %>
+    14:                           <% if logged_in? %>
+    15:                             <%= link_to "Log Out", logout_path%>
+    16:                             <%= link_to "Profile", user(current_user) %>
+    17:                           <% else %>
+    18:                             <%= link_to "Log In", login_path%></span></div>
+    19:                           <% end %>
+
+app/views/layouts/application.html.erb:16:in `_app_views_layouts_application_html_erb__1340638271609347148_40179980'
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (11.8ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.8ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.4ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (50.5ms)
+Started GET "/users/5" for 127.0.0.1 at 2017-03-07 19:10:32 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (2.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+Completed 200 OK in 95ms (Views: 90.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/5" for 127.0.0.1 at 2017-03-07 19:11:01 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (2.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+Completed 200 OK in 82ms (Views: 76.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2017-03-07 19:11:08 -0500
+
+ActionController::RoutingError (No route matches [GET] "/logout"):
+
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.7.1) lib/puma/configuration.rb:232:in `call'
+puma (3.7.1) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.1) lib/puma/server.rb:415:in `process_client'
+puma (3.7.1) lib/puma/server.rb:275:in `block in run'
+puma (3.7.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendered collection of /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [39 times] (27.2ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.8ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.4ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (80.4ms)
+Started GET "/users/5" for 127.0.0.1 at 2017-03-07 19:14:02 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (2.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+Completed 200 OK in 124ms (Views: 75.5ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2017-03-07 19:14:05 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (20.1ms)
+  Rendered users/new.html.erb within layouts/application (23.2ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+Completed 200 OK in 97ms (Views: 93.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-03-07 19:14:25 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (8.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+Completed 200 OK in 89ms (Views: 84.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-03-07 19:14:36 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (10.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+Completed 200 OK in 87ms (Views: 82.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2017-03-07 19:14:39 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (24.7ms)
+  Rendered users/new.html.erb within layouts/application (27.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+Completed 200 OK in 112ms (Views: 108.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2017-03-07 19:14:46 -0500
+
+ActionController::RoutingError (No route matches [GET] "/logout"):
+
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.7.1) lib/puma/configuration.rb:232:in `call'
+puma (3.7.1) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.1) lib/puma/server.rb:415:in `process_client'
+puma (3.7.1) lib/puma/server.rb:275:in `block in run'
+puma (3.7.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered collection of /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [39 times] (32.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.6ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.4ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (85.4ms)
+Started GET "/users" for 127.0.0.1 at 2017-03-07 19:14:48 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (7.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+Completed 200 OK in 84ms (Views: 80.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2017-03-07 19:14:50 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (18.6ms)
+  Rendered users/new.html.erb within layouts/application (23.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+Completed 200 OK in 105ms (Views: 101.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2017-03-07 19:14:54 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"login"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.3ms)
+
+
+
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=login):
+
+app/controllers/users_controller.rb:68:in `set_user'
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.1ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.1ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (63.5ms)
+Started GET "/login" for 127.0.0.1 at 2017-03-07 19:14:57 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (4.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+Completed 200 OK in 82ms (Views: 78.7ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-03-07 19:15:03 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dg+10ZQjxM2I18K5bjJaNgvaqj0UvrlvNeOIL00PW1oVUh1bDdYuBX0YdbDbDNzcw10dxFKaSHHnWSQ7yYCkyA==", "session"=>{"email"=>"google@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "google@gmail.com"], ["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+Completed 200 OK in 85ms (Views: 79.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-07 19:15:33 -0500
+Processing by HomePagesController#home as HTML
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (1.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+Completed 200 OK in 75ms (Views: 71.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2017-03-07 19:15:36 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (25.4ms)
+  Rendered users/new.html.erb within layouts/application (28.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+Completed 200 OK in 113ms (Views: 102.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-03-07 19:16:14 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+Completed 200 OK in 133ms (Views: 127.9ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-03-07 19:16:22 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aErSVpZs35we5Xt1TNRZQGDYl6yw1eu5MyhjHQH4lcsLF3rcD5k1VOsqzHz56t+qqF8gVfbxGqfhks8JhXdqWQ==", "session"=>{"email"=>"google@google.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "google@google.com"], ["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+Completed 200 OK in 81ms (Views: 76.1ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-03-07 19:16:31 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VIMmdmxXEfYHkJzK//JTnMru4BJyYMw5ZTIe8BTFatc33o789aL7PvJfK8NKzNV2AmlX6zREPSe3iLLkkEqVRQ==", "session"=>{"email"=>"google@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "google@gmail.com"], ["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+Completed 200 OK in 88ms (Views: 86.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2017-03-07 19:17:29 -0500
+
+ActionController::RoutingError (No route matches [GET] "/logout"):
+
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.7.1) lib/puma/configuration.rb:232:in `call'
+puma (3.7.1) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.1) lib/puma/server.rb:415:in `process_client'
+puma (3.7.1) lib/puma/server.rb:275:in `block in run'
+puma (3.7.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered collection of /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [39 times] (20.9ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.3ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.7ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (69.9ms)
+Started GET "/login" for 127.0.0.1 at 2017-03-07 19:19:02 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 378ms (ActiveRecord: 2.3ms)
+
+
+
+ActionView::Template::Error (undefined local variable or method `delete' for #<#<Class:0x007efbcdb8ecf8>:0x007efbcdb83448>):
+    12:     <div class="header"><span class="left-align"><%= link_to "Dicer", home_pages_home_path %></span>
+    13:                         <span class="right-align"><%= link_to "About Us", home_pages_about_path %>
+    14:                           <% if logged_in? %>
+    15:                             <%= link_to "Log Out", logout_path, method: delete%>
+    16:                             <%= link_to "Profile", user_path(current_user) %>
+    17:                           <% else %>
+    18:                             <%= link_to "Log In", login_path%>
+
+app/views/layouts/application.html.erb:15:in `_app_views_layouts_application_html_erb__1340638271609347148_69809976584740'
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (10.6ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.9ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (47.1ms)
+Started GET "/login" for 127.0.0.1 at 2017-03-07 19:19:24 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (8.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+Completed 200 OK in 98ms (Views: 95.1ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2017-03-07 19:19:29 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"H4fq85DiSrj25CnvrirYCWoGGvBW2gtrslM27FFnB4582kJ5CRegcAMrnuYbFF7jooGtCRD++nVg6Zr41ej4HA=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 3632ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-07 19:19:32 -0500
+Processing by HomePagesController#home as HTML
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 82ms (Views: 78.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2017-03-07 19:19:48 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (17.8ms)
+  Rendered users/new.html.erb within layouts/application (20.8ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 142ms (Views: 87.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-03-07 19:19:54 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (7.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 82ms (Views: 78.0ms | ActiveRecord: 0.9ms)
+
+
+Started DELETE "/users/1" for 127.0.0.1 at 2017-03-07 19:19:58 -0500
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"SZC4hgaOJvAZ3EoXa71eXpEdHG7FvobQM3NcXuLMXLoqzRAMn3vMOOwT/R7eg9i0WZqrl4Oad87hyfBKZkOjKA==", "id"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 1]]
+  [1m[35m (125.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 137ms (ActiveRecord: 126.9ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-03-07 19:19:59 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (10.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 137ms (Views: 133.4ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/users/3" for 127.0.0.1 at 2017-03-07 19:20:04 -0500
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"rM7ldTG/VNAY0bRo+ftPMdcos7EzurGAzTq0X8smXqvPk03/qEq+GO0eA2FMxcnbH68ESHWeQJ4fgBhLT6mhOQ==", "id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  [1m[35m (114.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 124ms (ActiveRecord: 115.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-03-07 19:20:04 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (5.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 107ms (Views: 103.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2017-03-07 19:20:13 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (27.0ms)
+  Rendered users/new.html.erb within layouts/application (32.0ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 143ms (Views: 139.4ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-03-07 19:20:23 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"R57mBXS20suLP0+P9pn3tIftkxXvfq7NMEMxqcykLBQkw06P7UM4A37w+IZDp3FeT2ok7KlaX9Pi+Z29SCvThg==", "user"=>{"username"=>"Google", "email"=>"google@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "address"=>"", "age"=>""}, "commit"=>"Create User"}
+Unpermitted parameter: address
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER(?) LIMIT ?[0m  [["username", "Google"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "google@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (18.5ms)
+  Rendered users/new.html.erb within layouts/application (21.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 205ms (Views: 93.1ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-03-07 19:20:31 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ecJkiYgFDX74fzYoz6e/bzAqtE/aInwdr5AaiMM4ZfUan8wDEfDntg2wgSF6mTmF+K0DtpwGjQN9KracR7eaZw==", "user"=>{"username"=>"Google", "email"=>"google@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "address"=>"", "age"=>""}, "commit"=>"Create User"}
+Unpermitted parameter: address
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER(?) LIMIT ?[0m  [["username", "Google"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "google@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (2.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "Google"], ["email", "google@gmail.com"], ["password_digest", "$2a$10$swiuhzf1umSgRtjkUdVzcuWmHDoA0R7VHZdlJTblJ/kjZEsz9p1cq"], ["created_at", 2017-03-08 00:20:31 UTC], ["updated_at", 2017-03-08 00:20:31 UTC]]
+  [1m[35m (166.9ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 360ms (ActiveRecord: 170.4ms)
+
+
+
+NoMethodError (undefined method `login' for #<UsersController:0x007efbd02cb820>
+Did you mean?  log_in):
+
+app/controllers/users_controller.rb:30:in `block in create'
+app/controllers/users_controller.rb:28:in `create'
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (9.3ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (119.6ms)
+Started POST "/users" for 127.0.0.1 at 2017-03-07 19:20:47 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ecJkiYgFDX74fzYoz6e/bzAqtE/aInwdr5AaiMM4ZfUan8wDEfDntg2wgSF6mTmF+K0DtpwGjQN9KracR7eaZw==", "user"=>{"username"=>"Google", "email"=>"google@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "address"=>"", "age"=>""}, "commit"=>"Create User"}
+Unpermitted parameter: address
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER(?) LIMIT ?[0m  [["username", "Google"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "google@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (19.6ms)
+  Rendered users/new.html.erb within layouts/application (21.9ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 227ms (Views: 89.4ms | ActiveRecord: 3.9ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-03-07 19:21:04 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vvLU4D+8l0t7BpHQ+yj6QRIlLf1eLGlBK5h9tRpXuNTdr3xqpkl9g47JJtlOFnyr2qKaBBgImF/5ItGhnthHRg==", "user"=>{"username"=>"Bob", "email"=>"Bob@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "address"=>"", "age"=>""}, "commit"=>"Create User"}
+Unpermitted parameter: address
+  [1m[35m (0.7ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER(?) LIMIT ?[0m  [["username", "Bob"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "Bob@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "Bob"], ["email", "bob@gmail.com"], ["password_digest", "$2a$10$lwTAgjmzShC3obX3cA32HeG/Sa2zix4OJacXAvriP8CLVIQ0wJf3a"], ["created_at", 2017-03-08 00:21:04 UTC], ["updated_at", 2017-03-08 00:21:04 UTC]]
+  [1m[35m (114.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/7
+Completed 302 Found in 223ms (ActiveRecord: 116.4ms)
+
+
+Started GET "/users/7" for 127.0.0.1 at 2017-03-07 19:21:05 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+Completed 200 OK in 75ms (Views: 69.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/7" for 127.0.0.1 at 2017-03-07 19:21:46 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+Completed 200 OK in 126ms (Views: 70.9ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/users/7" for 127.0.0.1 at 2017-03-07 19:21:49 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (2.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+Completed 200 OK in 73ms (Views: 69.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-03-07 20:21:55 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (47.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+Completed 200 OK in 901ms (Views: 866.2ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2017-03-07 20:22:00 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (85.4ms)
+  Rendered users/new.html.erb within layouts/application (89.6ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+Completed 200 OK in 190ms (Views: 184.1ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-03-07 20:22:10 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iPscVHAeqIz5KU2mQvfG/v7DKm7UoTqEve7TQFPCYMjrprTe6etCRAzm+q/3yUAUNkSdl5KFy5pvVH9U102fWg==", "user"=>{"username"=>"", "email"=>"asdl;kfj", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "address"=>"", "age"=>""}, "commit"=>"Create User"}
+Unpermitted parameter: address
+  [1m[35m (0.7ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER(?) LIMIT ?[0m  [["username", ""], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "asdl;kfj"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (22.8ms)
+  Rendered users/new.html.erb within layouts/application (25.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+Completed 200 OK in 243ms (Views: 113.8ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-03-07 20:22:44 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (8.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+Completed 200 OK in 91ms (Views: 86.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2017-03-07 20:22:47 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (19.3ms)
+  Rendered users/new.html.erb within layouts/application (22.0ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+Completed 200 OK in 99ms (Views: 93.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-03-07 20:22:54 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ya876h0xMWN/LS9+ZHO55986hGFCH8bZ6sY8I/CynbSq8pNghMTbq4rimHfRTT8NF70zmAQ7N8c4fJA3dD1iJg==", "user"=>{"username"=>"", "email"=>"asdf", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "address"=>"", "age"=>""}, "commit"=>"Create User"}
+Unpermitted parameter: address
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER(?) LIMIT ?[0m  [["username", ""], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "asdf"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (20.3ms)
+  Rendered users/new.html.erb within layouts/application (22.8ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+Completed 200 OK in 198ms (Views: 92.7ms | ActiveRecord: 1.3ms)
+
+
+<<<<<<< Updated upstream
+=======
   [1m[36mActiveRecord::SchemaMigration Load (6.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
 Migrating to AddLatToUsers (20170307225159)
   [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
@@ -1121,3 +1948,330 @@ Google geocoding. Result: %7B%0A+++%22results%22+%3A+%5B%0A++++++%7B%0A+++++++++
 Multi geocoding. address: 48.8584, 2.2945, args []
 Google geocoding. address: 48.8584, 2.2945, args []
 Google geocoding. Result: %7B%0A+++%22results%22+%3A+%5B%0A++++++%7B%0A+++++++++%22address_components%22+%3A+%5B%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%225%22%2C%0A+++++++++++++++%22short_name%22+%3A+%225%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22street_number%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22Avenue+Anatole+France%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22Avenue+Anatole+France%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22route%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22Paris%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22Paris%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22locality%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22Paris%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22Paris%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22administrative_area_level_2%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22%C3%8Ele-de-France%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22%C3%8Ele-de-France%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22administrative_area_level_1%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22France%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22FR%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22country%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%2275007%22%2C%0A+++++++++++++++%22short_name%22+%3A+%2275007%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22postal_code%22+%5D%0A++++++++++++%7D%0A+++++++++%5D%2C%0A+++++++++%22formatted_address%22+%3A+%225+Avenue+Anatole+France%2C+75007+Paris%2C+France%22%2C%0A+++++++++%22geometry%22+%3A+%7B%0A++++++++++++%22location%22+%3A+%7B%0A+++++++++++++++%22lat%22+%3A+48.8588871%2C%0A+++++++++++++++%22lng%22+%3A+2.2944861%0A++++++++++++%7D%2C%0A++++++++++++%22location_type%22+%3A+%22ROOFTOP%22%2C%0A++++++++++++%22viewport%22+%3A+%7B%0A+++++++++++++++%22northeast%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+48.8602360802915%2C%0A++++++++++++++++++%22lng%22+%3A+2.295835080291502%0A+++++++++++++++%7D%2C%0A+++++++++++++++%22southwest%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+48.8575381197085%2C%0A++++++++++++++++++%22lng%22+%3A+2.293137119708498%0A+++++++++++++++%7D%0A++++++++++++%7D%0A+++++++++%7D%2C%0A+++++++++%22place_id%22+%3A+%22ChIJuX7JjuFv5kcRbLER0b_rtC4%22%2C%0A+++++++++%22types%22+%3A+%5B+%22street_address%22+%5D%0A++++++%7D%2C%0A++++++%7B%0A+++++++++%22address_components%22+%3A+%5B%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22Eiffel+Tower%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22Eiffel+Tower%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22establishment%22%2C+%22point_of_interest%22%2C+%22premise%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22Champ+de+Mars%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22Champ+de+Mars%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22establishment%22%2C+%22point_of_interest%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%225%22%2C%0A+++++++++++++++%22short_name%22+%3A+%225%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22street_number%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22Avenue+Anatole+France%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22Avenue+Anatole+France%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22route%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22Paris%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22Paris%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22locality%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22Paris%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22Paris%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22administrative_area_level_2%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22%C3%8Ele-de-France%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22%C3%8Ele-de-France%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22administrative_area_level_1%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22France%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22FR%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22country%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%2275007%22%2C%0A+++++++++++++++%22short_name%22+%3A+%2275007%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22postal_code%22+%5D%0A++++++++++++%7D%0A+++++++++%5D%2C%0A+++++++++%22formatted_address%22+%3A+%22Eiffel+Tower%2C+Champ+de+Mars%2C+5+Avenue+Anatole+France%2C+75007+Paris%2C+France%22%2C%0A+++++++++%22geometry%22+%3A+%7B%0A++++++++++++%22location%22+%3A+%7B%0A+++++++++++++++%22lat%22+%3A+48.85837009999999%2C%0A+++++++++++++++%22lng%22+%3A+2.2944813%0A++++++++++++%7D%2C%0A++++++++++++%22location_type%22+%3A+%22APPROXIMATE%22%2C%0A++++++++++++%22viewport%22+%3A+%7B%0A+++++++++++++++%22northeast%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+48.8597190802915%2C%0A++++++++++++++++++%22lng%22+%3A+2.295830280291502%0A+++++++++++++++%7D%2C%0A+++++++++++++++%22southwest%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+48.8570211197085%2C%0A++++++++++++++++++%22lng%22+%3A+2.293132319708498%0A+++++++++++++++%7D%0A++++++++++++%7D%0A+++++++++%7D%2C%0A+++++++++%22place_id%22+%3A+%22ChIJLU7jZClu5kcR4PcOOO6p3I0%22%2C%0A+++++++++%22types%22+%3A+%5B+%22establishment%22%2C+%22point_of_interest%22%2C+%22premise%22+%5D%0A++++++%7D%2C%0A++++++%7B%0A+++++++++%22address_components%22+%3A+%5B%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22Tour+Eiffel+-+Parc+du+Champ-de-Mars%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22Tour+Eiffel+-+Parc+du+Champ-de-Mars%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22neighborhood%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%227th+arrondissement%22%2C%0A+++++++++++++++%22short_name%22+%3A+%227th+arrondissement%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22political%22%2C+%22sublocality%22%2C+%22sublocality_level_1%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22Paris%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22Paris%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22locality%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22Paris%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22Paris%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22administrative_area_level_2%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22%C3%8Ele-de-France%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22%C3%8Ele-de-France%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22administrative_area_level_1%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22France%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22FR%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22country%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%2275007%22%2C%0A+++++++++++++++%22short_name%22+%3A+%2275007%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22postal_code%22+%5D%0A++++++++++++%7D%0A+++++++++%5D%2C%0A+++++++++%22formatted_address%22+%3A+%22Tour+Eiffel+-+Parc+du+Champ-de-Mars%2C+75007+Paris%2C+France%22%2C%0A+++++++++%22geometry%22+%3A+%7B%0A++++++++++++%22bounds%22+%3A+%7B%0A+++++++++++++++%22northeast%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+48.86066899999999%2C%0A++++++++++++++++++%22lng%22+%3A+2.3057319%0A+++++++++++++++%7D%2C%0A+++++++++++++++%22southwest%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+48.8511819%2C%0A++++++++++++++++++%22lng%22+%3A+2.291056%0A+++++++++++++++%7D%0A++++++++++++%7D%2C%0A++++++++++++%22location%22+%3A+%7B%0A+++++++++++++++%22lat%22+%3A+48.8558986%2C%0A+++++++++++++++%22lng%22+%3A+2.2980875%0A++++++++++++%7D%2C%0A++++++++++++%22location_type%22+%3A+%22APPROXIMATE%22%2C%0A++++++++++++%22viewport%22+%3A+%7B%0A+++++++++++++++%22northeast%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+48.86066899999999%2C%0A++++++++++++++++++%22lng%22+%3A+2.3057319%0A+++++++++++++++%7D%2C%0A+++++++++++++++%22southwest%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+48.8511819%2C%0A++++++++++++++++++%22lng%22+%3A+2.291056%0A+++++++++++++++%7D%0A++++++++++++%7D%0A+++++++++%7D%2C%0A+++++++++%22place_id%22+%3A+%22ChIJu_HX7B9w5kcRTRE4uAo9C9o%22%2C%0A+++++++++%22types%22+%3A+%5B+%22neighborhood%22%2C+%22political%22+%5D%0A++++++%7D%2C%0A++++++%7B%0A+++++++++%22address_components%22+%3A+%5B%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%227th+arrondissement%22%2C%0A+++++++++++++++%22short_name%22+%3A+%227th+arrondissement%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22political%22%2C+%22sublocality%22%2C+%22sublocality_level_1%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22Paris%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22Paris%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22locality%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22Paris%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22Paris%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22administrative_area_level_2%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22%C3%8Ele-de-France%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22%C3%8Ele-de-France%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22administrative_area_level_1%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22France%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22FR%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22country%22%2C+%22political%22+%5D%0A++++++++++++%7D%0A+++++++++%5D%2C%0A+++++++++%22formatted_address%22+%3A+%227th+arrondissement%2C+Paris%2C+France%22%2C%0A+++++++++%22geometry%22+%3A+%7B%0A++++++++++++%22bounds%22+%3A+%7B%0A+++++++++++++++%22northeast%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+48.86372%2C%0A++++++++++++++++++%22lng%22+%3A+2.333264%0A+++++++++++++++%7D%2C%0A+++++++++++++++%22southwest%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+48.845941%2C%0A++++++++++++++++++%22lng%22+%3A+2.289678%0A+++++++++++++++%7D%0A++++++++++++%7D%2C%0A++++++++++++%22location%22+%3A+%7B%0A+++++++++++++++%22lat%22+%3A+48.85433450000001%2C%0A+++++++++++++++%22lng%22+%3A+2.3134029%0A++++++++++++%7D%2C%0A++++++++++++%22location_type%22+%3A+%22APPROXIMATE%22%2C%0A++++++++++++%22viewport%22+%3A+%7B%0A+++++++++++++++%22northeast%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+48.86372%2C%0A++++++++++++++++++%22lng%22+%3A+2.333264%0A+++++++++++++++%7D%2C%0A+++++++++++++++%22southwest%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+48.845941%2C%0A++++++++++++++++++%22lng%22+%3A+2.289678%0A+++++++++++++++%7D%0A++++++++++++%7D%0A+++++++++%7D%2C%0A+++++++++%22place_id%22+%3A+%22ChIJWWRTZChw5kcRsBqUaMOCCwU%22%2C%0A+++++++++%22types%22+%3A+%5B+%22political%22%2C+%22sublocality%22%2C+%22sublocality_level_1%22+%5D%0A++++++%7D%2C%0A++++++%7B%0A+++++++++%22address_components%22+%3A+%5B%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22Faubourg+Saint-Germain%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22Faubourg+Saint-Germain%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22neighborhood%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%227th+arrondissement%22%2C%0A+++++++++++++++%22short_name%22+%3A+%227th+arrondissement%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22political%22%2C+%22sublocality%22%2C+%22sublocality_level_1%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22Paris%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22Paris%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22locality%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22Paris%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22Paris%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22administrative_area_level_2%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22%C3%8Ele-de-France%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22%C3%8Ele-de-France%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22administrative_area_level_1%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22France%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22FR%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22country%22%2C+%22political%22+%5D%0A++++++++++++%7D%0A+++++++++%5D%2C%0A+++++++++%22formatted_address%22+%3A+%22Faubourg+Saint-Germain%2C+Paris%2C+France%22%2C%0A+++++++++%22geometry%22+%3A+%7B%0A++++++++++++%22bounds%22+%3A+%7B%0A+++++++++++++++%22northeast%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+48.8633634%2C%0A++++++++++++++++++%22lng%22+%3A+2.333602%0A+++++++++++++++%7D%2C%0A+++++++++++++++%22southwest%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+48.8426254%2C%0A++++++++++++++++++%22lng%22+%3A+2.2809588%0A+++++++++++++++%7D%0A++++++++++++%7D%2C%0A++++++++++++%22location%22+%3A+%7B%0A+++++++++++++++%22lat%22+%3A+48.8519896%2C%0A+++++++++++++++%22lng%22+%3A+2.3047888%0A++++++++++++%7D%2C%0A++++++++++++%22location_type%22+%3A+%22APPROXIMATE%22%2C%0A++++++++++++%22viewport%22+%3A+%7B%0A+++++++++++++++%22northeast%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+48.8633634%2C%0A++++++++++++++++++%22lng%22+%3A+2.333602%0A+++++++++++++++%7D%2C%0A+++++++++++++++%22southwest%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+48.8426254%2C%0A++++++++++++++++++%22lng%22+%3A+2.2809588%0A+++++++++++++++%7D%0A++++++++++++%7D%0A+++++++++%7D%2C%0A+++++++++%22place_id%22+%3A+%22ChIJZ_LrRyZw5kcR6jSqYES9Y8s%22%2C%0A+++++++++%22types%22+%3A+%5B+%22neighborhood%22%2C+%22political%22+%5D%0A++++++%7D%2C%0A++++++%7B%0A+++++++++%22address_components%22+%3A+%5B%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22Paris%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22Paris%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22locality%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22Paris%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22Paris%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22administrative_area_level_2%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22%C3%8Ele-de-France%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22%C3%8Ele-de-France%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22administrative_area_level_1%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22France%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22FR%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22country%22%2C+%22political%22+%5D%0A++++++++++++%7D%0A+++++++++%5D%2C%0A+++++++++%22formatted_address%22+%3A+%22Paris%2C+France%22%2C%0A+++++++++%22geometry%22+%3A+%7B%0A++++++++++++%22bounds%22+%3A+%7B%0A+++++++++++++++%22northeast%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+48.9021449%2C%0A++++++++++++++++++%22lng%22+%3A+2.4699208%0A+++++++++++++++%7D%2C%0A+++++++++++++++%22southwest%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+48.815573%2C%0A++++++++++++++++++%22lng%22+%3A+2.224199%0A+++++++++++++++%7D%0A++++++++++++%7D%2C%0A++++++++++++%22location%22+%3A+%7B%0A+++++++++++++++%22lat%22+%3A+48.856614%2C%0A+++++++++++++++%22lng%22+%3A+2.3522219%0A++++++++++++%7D%2C%0A++++++++++++%22location_type%22+%3A+%22APPROXIMATE%22%2C%0A++++++++++++%22viewport%22+%3A+%7B%0A+++++++++++++++%22northeast%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+48.9021449%2C%0A++++++++++++++++++%22lng%22+%3A+2.4699208%0A+++++++++++++++%7D%2C%0A+++++++++++++++%22southwest%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+48.815573%2C%0A++++++++++++++++++%22lng%22+%3A+2.225193%0A+++++++++++++++%7D%0A++++++++++++%7D%0A+++++++++%7D%2C%0A+++++++++%22place_id%22+%3A+%22ChIJD7fiBh9u5kcRYJSMaMOCCwQ%22%2C%0A+++++++++%22types%22+%3A+%5B+%22locality%22%2C+%22political%22+%5D%0A++++++%7D%2C%0A++++++%7B%0A+++++++++%22address_components%22+%3A+%5B%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%2275007%22%2C%0A+++++++++++++++%22short_name%22+%3A+%2275007%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22postal_code%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22Paris%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22Paris%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22locality%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22Paris%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22Paris%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22administrative_area_level_2%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22%C3%8Ele-de-France%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22%C3%8Ele-de-France%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22administrative_area_level_1%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22France%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22FR%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22country%22%2C+%22political%22+%5D%0A++++++++++++%7D%0A+++++++++%5D%2C%0A+++++++++%22formatted_address%22+%3A+%2275007+Paris%2C+France%22%2C%0A+++++++++%22geometry%22+%3A+%7B%0A++++++++++++%22bounds%22+%3A+%7B%0A+++++++++++++++%22northeast%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+48.8637587%2C%0A++++++++++++++++++%22lng%22+%3A+2.3332731%0A+++++++++++++++%7D%2C%0A+++++++++++++++%22southwest%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+48.845927%2C%0A++++++++++++++++++%22lng%22+%3A+2.2898664%0A+++++++++++++++%7D%0A++++++++++++%7D%2C%0A++++++++++++%22location%22+%3A+%7B%0A+++++++++++++++%22lat%22+%3A+48.85433450000001%2C%0A+++++++++++++++%22lng%22+%3A+2.3134029%0A++++++++++++%7D%2C%0A++++++++++++%22location_type%22+%3A+%22APPROXIMATE%22%2C%0A++++++++++++%22viewport%22+%3A+%7B%0A+++++++++++++++%22northeast%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+48.8637587%2C%0A++++++++++++++++++%22lng%22+%3A+2.3332731%0A+++++++++++++++%7D%2C%0A+++++++++++++++%22southwest%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+48.845927%2C%0A++++++++++++++++++%22lng%22+%3A+2.2898664%0A+++++++++++++++%7D%0A++++++++++++%7D%0A+++++++++%7D%2C%0A+++++++++%22place_id%22+%3A+%22ChIJWWRTZChw5kcRYFHY4caCCxw%22%2C%0A+++++++++%22types%22+%3A+%5B+%22postal_code%22+%5D%0A++++++%7D%2C%0A++++++%7B%0A+++++++++%22address_components%22+%3A+%5B%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22Paris%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22Paris%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22administrative_area_level_2%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22%C3%8Ele-de-France%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22%C3%8Ele-de-France%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22administrative_area_level_1%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22France%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22FR%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22country%22%2C+%22political%22+%5D%0A++++++++++++%7D%0A+++++++++%5D%2C%0A+++++++++%22formatted_address%22+%3A+%22Paris%2C+France%22%2C%0A+++++++++%22geometry%22+%3A+%7B%0A++++++++++++%22bounds%22+%3A+%7B%0A+++++++++++++++%22northeast%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+48.9021449%2C%0A++++++++++++++++++%22lng%22+%3A+2.4699208%0A+++++++++++++++%7D%2C%0A+++++++++++++++%22southwest%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+48.815573%2C%0A++++++++++++++++++%22lng%22+%3A+2.224199%0A+++++++++++++++%7D%0A++++++++++++%7D%2C%0A++++++++++++%22location%22+%3A+%7B%0A+++++++++++++++%22lat%22+%3A+48.8565823%2C%0A+++++++++++++++%22lng%22+%3A+2.3522148%0A++++++++++++%7D%2C%0A++++++++++++%22location_type%22+%3A+%22APPROXIMATE%22%2C%0A++++++++++++%22viewport%22+%3A+%7B%0A+++++++++++++++%22northeast%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+48.9021449%2C%0A++++++++++++++++++%22lng%22+%3A+2.4699208%0A+++++++++++++++%7D%2C%0A+++++++++++++++%22southwest%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+48.815573%2C%0A++++++++++++++++++%22lng%22+%3A+2.225193%0A+++++++++++++++%7D%0A++++++++++++%7D%0A+++++++++%7D%2C%0A+++++++++%22place_id%22+%3A+%22ChIJD7fiBh9u5kcRMCqLaMOCCwM%22%2C%0A+++++++++%22types%22+%3A+%5B+%22administrative_area_level_2%22%2C+%22political%22+%5D%0A++++++%7D%2C%0A++++++%7B%0A+++++++++%22address_components%22+%3A+%5B%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22%C3%8Ele-de-France%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22%C3%8Ele-de-France%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22administrative_area_level_1%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22France%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22FR%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22country%22%2C+%22political%22+%5D%0A++++++++++++%7D%0A+++++++++%5D%2C%0A+++++++++%22formatted_address%22+%3A+%22%C3%8Ele-de-France%2C+France%22%2C%0A+++++++++%22geometry%22+%3A+%7B%0A++++++++++++%22bounds%22+%3A+%7B%0A+++++++++++++++%22northeast%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+49.241504%2C%0A++++++++++++++++++%22lng%22+%3A+3.5590069%0A+++++++++++++++%7D%2C%0A+++++++++++++++%22southwest%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+48.1200811%2C%0A++++++++++++++++++%22lng%22+%3A+1.44617%0A+++++++++++++++%7D%0A++++++++++++%7D%2C%0A++++++++++++%22location%22+%3A+%7B%0A+++++++++++++++%22lat%22+%3A+48.8499198%2C%0A+++++++++++++++%22lng%22+%3A+2.6370411%0A++++++++++++%7D%2C%0A++++++++++++%22location_type%22+%3A+%22APPROXIMATE%22%2C%0A++++++++++++%22viewport%22+%3A+%7B%0A+++++++++++++++%22northeast%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+49.241504%2C%0A++++++++++++++++++%22lng%22+%3A+3.5590069%0A+++++++++++++++%7D%2C%0A+++++++++++++++%22southwest%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+48.1200811%2C%0A++++++++++++++++++%22lng%22+%3A+1.44617%0A+++++++++++++++%7D%0A++++++++++++%7D%0A+++++++++%7D%2C%0A+++++++++%22place_id%22+%3A+%22ChIJF4ymA8Th5UcRcCWLaMOCCwE%22%2C%0A+++++++++%22types%22+%3A+%5B+%22administrative_area_level_1%22%2C+%22political%22+%5D%0A++++++%7D%2C%0A++++++%7B%0A+++++++++%22address_components%22+%3A+%5B%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22Paris+Metropolitan+Area%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22Paris+Metropolitan+Area%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22France%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22FR%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22country%22%2C+%22political%22+%5D%0A++++++++++++%7D%0A+++++++++%5D%2C%0A+++++++++%22formatted_address%22+%3A+%22Paris+Metropolitan+Area%2C+France%22%2C%0A+++++++++%22geometry%22+%3A+%7B%0A++++++++++++%22bounds%22+%3A+%7B%0A+++++++++++++++%22northeast%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+49.44956%2C%0A++++++++++++++++++%22lng%22+%3A+3.5590339%0A+++++++++++++++%7D%2C%0A+++++++++++++++%22southwest%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+48.065382%2C%0A++++++++++++++++++%22lng%22+%3A+1.3557489%0A+++++++++++++++%7D%0A++++++++++++%7D%2C%0A++++++++++++%22location%22+%3A+%7B%0A+++++++++++++++%22lat%22+%3A+48.8575712%2C%0A+++++++++++++++%22lng%22+%3A+2.2771715%0A++++++++++++%7D%2C%0A++++++++++++%22location_type%22+%3A+%22APPROXIMATE%22%2C%0A++++++++++++%22viewport%22+%3A+%7B%0A+++++++++++++++%22northeast%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+49.44956%2C%0A++++++++++++++++++%22lng%22+%3A+3.5590339%0A+++++++++++++++%7D%2C%0A+++++++++++++++%22southwest%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+48.065382%2C%0A++++++++++++++++++%22lng%22+%3A+1.3557489%0A+++++++++++++++%7D%0A++++++++++++%7D%0A+++++++++%7D%2C%0A+++++++++%22place_id%22+%3A+%22ChIJW36m20gL5kcRiMnAEpHgyq8%22%2C%0A+++++++++%22types%22+%3A+%5B+%22political%22+%5D%0A++++++%7D%2C%0A++++++%7B%0A+++++++++%22address_components%22+%3A+%5B%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22France%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22FR%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22country%22%2C+%22political%22+%5D%0A++++++++++++%7D%0A+++++++++%5D%2C%0A+++++++++%22formatted_address%22+%3A+%22France%22%2C%0A+++++++++%22geometry%22+%3A+%7B%0A++++++++++++%22bounds%22+%3A+%7B%0A+++++++++++++++%22northeast%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+51.1241999%2C%0A++++++++++++++++++%22lng%22+%3A+9.6624999%0A+++++++++++++++%7D%2C%0A+++++++++++++++%22southwest%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+41.3253001%2C%0A++++++++++++++++++%22lng%22+%3A+-5.5591%0A+++++++++++++++%7D%0A++++++++++++%7D%2C%0A++++++++++++%22location%22+%3A+%7B%0A+++++++++++++++%22lat%22+%3A+46.227638%2C%0A+++++++++++++++%22lng%22+%3A+2.213749%0A++++++++++++%7D%2C%0A++++++++++++%22location_type%22+%3A+%22APPROXIMATE%22%2C%0A++++++++++++%22viewport%22+%3A+%7B%0A+++++++++++++++%22northeast%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+51.0891285%2C%0A++++++++++++++++++%22lng%22+%3A+9.5597934%0A+++++++++++++++%7D%2C%0A+++++++++++++++%22southwest%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+41.342778%2C%0A++++++++++++++++++%22lng%22+%3A+-5.1422579%0A+++++++++++++++%7D%0A++++++++++++%7D%0A+++++++++%7D%2C%0A+++++++++%22place_id%22+%3A+%22ChIJMVd4MymgVA0R99lHx5Y__Ws%22%2C%0A+++++++++%22types%22+%3A+%5B+%22country%22%2C+%22political%22+%5D%0A++++++%7D%0A+++%5D%2C%0A+++%22status%22+%3A+%22OK%22%0A%7D%0A
+
+  [1m[35m (236.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (165.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20170303181129)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "email" varchar, "password_digest" varchar, "profile_pic_path" varchar, "player_profile_id" integer, "dm_profile_id" integer, "age" integer, "address" varchar, "last_active" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170303181129"]]
+  [1m[35m (179.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreatePlayerProfiles (20170303181650)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE TABLE "player_profiles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "bio" text, "experience_level" integer, "max_distance" float, "online_play" integer, "homebrew" integer, "original_ruleset" integer, "advanced_ruleset" integer, "pathfinder" integer, "third" integer, "three_point_five" integer, "fourth" integer, "fifth" integer, "original_campaign" integer, "module" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170303181650"]]
+  [1m[35m (211.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateDmProfiles (20170303182206)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "dm_profiles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "bio" text, "experience_level" integer, "max_distance" float, "online_play" integer, "homebrew" integer, "original_ruleset" integer, "advanced_ruleset" integer, "pathfinder" integer, "third" integer, "three_point_five" integer, "fourth" integer, "fifth" integer, "original_campaign" integer, "module" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170303182206"]]
+  [1m[35m (137.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateCharacterSheets (20170303182420)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "character_sheets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "player_profile_id" integer, "file_path" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170303182420"]]
+  [1m[35m (184.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddLatToUsers (20170307225159)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "users" ADD "lat" float[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170307225159"]]
+  [1m[35m (117.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddLngToUsers (20170307225241)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "users" ADD "lng" float[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170307225241"]]
+  [1m[35m (180.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-03-08 02:57:43 UTC], ["updated_at", 2017-03-08 02:57:43 UTC]]
+  [1m[35m (150.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+=======
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddRememberDigestToUsers (20170308015257)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.6ms)[0m  [1m[35mALTER TABLE "users" ADD "remember_digest" varchar[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170308015257"]]
+  [1m[35m (84.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/users/new" for 127.0.0.1 at 2017-03-07 20:57:52 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (65.9ms)
+  Rendered users/new.html.erb within layouts/application (71.8ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+Completed 200 OK in 947ms (Views: 877.7ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-03-07 20:58:05 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"x29NRawTSYaxGGA5nNTzmCs7iFpsqvQaXXL54XdtKj2kMuXPNeajTkTX1zAp6nVy47w/oyqOBQSPyFX18+LVrw==", "user"=>{"username"=>"Joe", "email"=>"joe@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "address"=>"", "age"=>""}, "commit"=>"Create User"}
+Unpermitted parameter: address
+  [1m[35m (0.8ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER(?) LIMIT ?[0m  [["username", "Joe"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "joe@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (36.7ms)
+  Rendered users/new.html.erb within layouts/application (40.5ms)
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+Completed 200 OK in 240ms (Views: 171.9ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-07 21:31:13 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomePagesController#home as HTML
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (35.4ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+Completed 200 OK in 24561ms (Views: 24466.0ms | ActiveRecord: 2.0ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2017-03-07 21:31:53 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"rYKts7oa2+w1FZRAI2GXsjHvD8UgiEO0x8E7EIWGtd/O3wU5I+8xJMDaI0mWXxFY+Wi4PGassqoVe5cEAQlKTQ=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-07 21:31:53 -0500
+Processing by HomePagesController#home as HTML
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 8625ms (Views: 8621.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-03-07 21:32:04 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (345.9ms)
+Completed 200 OK in 217205ms (Views: 217185.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-03-07 21:35:41 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 3088ms (Views: 3085.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-03-07 21:35:54 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tAYeUukOUoYURlPN3KgZ/0SAObH7rUzuKg2MPsEAj5TXW7bYcPu4TuGJ5MRplp8VjAeOSL2JvfD4tyAqRY9wBg==", "session"=>{"email"=>"joe@example.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "joe@example.com"], ["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 5721ms (Views: 5712.1ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-03-07 21:36:19 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DtXE0M9jJTcE4SUoLcv2Xr63s0/qTSyVpXVRQ7O7lE9tiGxaVpbP//EukiGY9XC0djAEtqxp3Yt3z/1XNzRr3Q==", "session"=>{"email"=>"bob@example.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "bob@example.com"], ["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 3128ms (Views: 3124.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-03-07 21:36:28 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 3156ms (Views: 3137.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-03-07 21:36:38 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 2513ms (Views: 2510.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-03-07 21:36:46 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"V26Z+m27HMu04UdAMzP1jNc20VUQZbXAxHRMD7ezRzQ0MzFw9E72A0Eu8EmGDXNmH7FmrFZBRN4WzuAbMzy4pg==", "session"=>{"email"=>"google@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "google@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.5ms)[0m  [1m[33mUPDATE "users" SET "remember_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_digest", "$2a$10$/H8j.8VCzCGG108aGYYwNeCB2BJUZL9A58a5OYG5rbQIPI2cuZLiS"], ["updated_at", 2017-03-08 02:36:47 UTC], ["id", 6]]
+  [1m[35m (296.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/6
+Completed 302 Found in 483ms (ActiveRecord: 299.2ms)
+
+
+Started GET "/users/6" for 127.0.0.1 at 2017-03-07 21:36:47 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (3.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 3355ms (Views: 3335.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/users/6" for 127.0.0.1 at 2017-03-07 21:36:55 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (2.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 29941ms (Views: 29935.0ms | ActiveRecord: 0.9ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2017-03-07 21:47:31 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"K+CUOOqCWXl/HqJiNuH1zJFgaM3oH9ISNlYdc/tdoCRIvTyyc3ezsYrRFWuD33MmWeffNK47Iwzk7LFnf9Jftg=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "remember_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_digest", nil], ["updated_at", 2017-03-08 02:47:31 UTC], ["id", 6]]
+  [1m[35m (121.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 210ms (ActiveRecord: 124.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-07 21:47:31 -0500
+Processing by HomePagesController#home as HTML
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 803ms (Views: 799.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home_pages/about" for 127.0.0.1 at 2017-03-07 21:47:34 -0500
+Processing by HomePagesController#about as HTML
+  Rendering home_pages/about.html.erb within layouts/application
+  Rendered home_pages/about.html.erb within layouts/application (0.9ms)
+Started GET "/home_pages/about" for 127.0.0.1 at 2017-03-07 21:47:34 -0500
+Processing by HomePagesController#about as HTML
+  Rendering home_pages/about.html.erb within layouts/application
+  Rendered home_pages/about.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 279ms (Views: 277.4ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 206ms (Views: 202.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-03-07 21:47:34 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (117.1ms)
+Completed 200 OK in 214ms (Views: 211.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-03-07 21:47:40 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/JNL8p0/DodjVO5vJ6HNynEKouVeqqie92DokQ2kkZyfzuN4BMrkT5abWWaSn0sguY0VHBiOWYAl2kSFiStuDg==", "session"=>{"email"=>"joe@example.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "joe@example.com"], ["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 105ms (Views: 99.3ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-03-07 21:47:51 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3rp6Ebt10DclHE5++vEY3CLa8epoJR+YBU7+SRqbZYq959KbIoA6/9DT+XdPz5426l1GEy4B7obX9FJdnhSaGA==", "session"=>{"email"=>"google@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "google@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "remember_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_digest", "$2a$10$VASCw6sttpC4yG41dxj1mehItkgatwaNJGfTGB7Qkpm.TU/w5RmGS"], ["updated_at", 2017-03-08 02:47:51 UTC], ["id", 6]]
+  [1m[35m (144.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/6
+Completed 302 Found in 333ms (ActiveRecord: 147.2ms)
+
+
+Started GET "/users/6" for 127.0.0.1 at 2017-03-07 21:47:51 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (3.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 114ms (Views: 107.2ms | ActiveRecord: 1.0ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2017-03-07 21:47:56 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Bn7B7almGPK1Fxcn+DOM4cCVzUc1/jUtqpFJ2gYzNFllI2lnMJPyOkDYoC5NDQoLCBJ6vnPaxDN4K+XOgrzLyw=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[33mUPDATE "users" SET "remember_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_digest", nil], ["updated_at", 2017-03-08 02:47:56 UTC], ["id", 6]]
+  [1m[35m (179.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 190ms (ActiveRecord: 180.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-07 21:47:56 -0500
+Processing by HomePagesController#home as HTML
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 92ms (Views: 89.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-03-07 21:47:58 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 85ms (Views: 82.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-03-07 21:48:22 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 76ms (Views: 73.8ms | ActiveRecord: 0.0ms)
+
+
+>>>>>>> Stashed changes
+  [1m[35m (130.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (180.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20170303181129)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "email" varchar, "password_digest" varchar, "profile_pic_path" varchar, "player_profile_id" integer, "dm_profile_id" integer, "age" integer, "address" varchar, "last_active" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170303181129"]]
+  [1m[35m (98.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreatePlayerProfiles (20170303181650)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "player_profiles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "bio" text, "experience_level" integer, "max_distance" float, "online_play" integer, "homebrew" integer, "original_ruleset" integer, "advanced_ruleset" integer, "pathfinder" integer, "third" integer, "three_point_five" integer, "fourth" integer, "fifth" integer, "original_campaign" integer, "module" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170303181650"]]
+  [1m[35m (144.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateDmProfiles (20170303182206)
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "dm_profiles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "bio" text, "experience_level" integer, "max_distance" float, "online_play" integer, "homebrew" integer, "original_ruleset" integer, "advanced_ruleset" integer, "pathfinder" integer, "third" integer, "three_point_five" integer, "fourth" integer, "fifth" integer, "original_campaign" integer, "module" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170303182206"]]
+  [1m[35m (186.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateCharacterSheets (20170303182420)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "character_sheets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "player_profile_id" integer, "file_path" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170303182420"]]
+  [1m[35m (210.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddLatToUsers (20170307225159)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "users" ADD "lat" float[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170307225159"]]
+  [1m[35m (113.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddLngToUsers (20170307225241)
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "users" ADD "lng" float[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170307225241"]]
+  [1m[35m (174.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddRememberDigestToUsers (20170308015257)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "users" ADD "remember_digest" varchar[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170308015257"]]
+  [1m[35m (180.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-03-08 03:25:18 UTC], ["updated_at", 2017-03-08 03:25:18 UTC]]
+  [1m[35m (172.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
