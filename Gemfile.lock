@@ -82,6 +82,9 @@ GEM
     mime-types-data (3.2016.0521)
     mini_portile2 (2.1.0)
     minitest (5.10.1)
+    minitest-rails (3.0.0)
+      minitest (~> 5.8)
+      railties (~> 5.0)
     multi_json (1.12.1)
     nio4r (2.0.0)
     nokogiri (1.7.0.1)
@@ -176,8 +179,10 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
+  minitest-rails
   pg
   puma (~> 3.0)
+  rack-test
   rails (~> 5.0.1)
   rails-controller-testing
   sass-rails (~> 5.0)

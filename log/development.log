@@ -2275,3 +2275,331 @@ Migrating to AddRememberDigestToUsers (20170308015257)
   [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-03-08 03:25:18 UTC], ["updated_at", 2017-03-08 03:25:18 UTC]]
   [1m[35m (172.7ms)[0m  [1m[36mcommit transaction[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/" for 127.0.0.1 at 2017-03-08 15:26:54 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomePagesController#home as HTML
+Geokit is using the domain: localhost
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 1573ms (Views: 1553.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home_pages/about" for 127.0.0.1 at 2017-03-08 15:27:08 -0500
+Processing by HomePagesController#about as HTML
+Geokit is using the domain: localhost
+  Rendering home_pages/about.html.erb within layouts/application
+  Rendered home_pages/about.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 156ms (Views: 152.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2017-03-08 15:27:14 -0500
+Processing by UsersController#new as HTML
+Geokit is using the domain: localhost
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (88.0ms)
+  Rendered users/new.html.erb within layouts/application (91.2ms)
+Completed 200 OK in 235ms (Views: 166.1ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-03-08 15:27:26 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"N5LLYqHRKFRvYdltm7jm6hOZwKXK2X7sxIypCXwyO/2v6oLxBv092j7R6iosV4yIRequvqgNFqW1Y8XIgEXzzA==", "user"=>{"username"=>"", "email"=>"asdfasdf", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "address"=>"", "age"=>""}, "commit"=>"Create User"}
+Geokit is using the domain: localhost
+  [1m[35m (0.7ms)[0m  [1m[36mbegin transaction[0m
+Multi geocoding. address: , args []
+Google geocoding. address: , args []
+Us geocoding. address: , args []
+Caught an error during Us geocoding call: Failed to open TCP connection to geocoder.us:80 (getaddrinfo: Temporary failure in name resolution)
+/usr/lib/ruby/2.3.0/net/http.rb:882:in `rescue in block in connect'
+/usr/lib/ruby/2.3.0/net/http.rb:879:in `block in connect'
+/usr/lib/ruby/2.3.0/timeout.rb:91:in `block in timeout'
+/usr/lib/ruby/2.3.0/timeout.rb:101:in `timeout'
+/usr/lib/ruby/2.3.0/net/http.rb:878:in `connect'
+/usr/lib/ruby/2.3.0/net/http.rb:863:in `do_start'
+/usr/lib/ruby/2.3.0/net/http.rb:852:in `start'
+/var/lib/gems/2.3.0/gems/geokit-1.10.0/lib/geokit/net_adapter/net_http.rb:21:in `do_get'
+/var/lib/gems/2.3.0/gems/geokit-1.10.0/lib/geokit/geocoders.rb:162:in `do_get'
+/var/lib/gems/2.3.0/gems/geokit-1.10.0/lib/geokit/geocoders.rb:140:in `call_geocoder_service'
+/var/lib/gems/2.3.0/gems/geokit-1.10.0/lib/geokit/geocoders.rb:190:in `process'
+/var/lib/gems/2.3.0/gems/geokit-1.10.0/lib/geokit/geocoders/us_geocoder.rb:12:in `do_geocode'
+/var/lib/gems/2.3.0/gems/geokit-1.10.0/lib/geokit/geocoders.rb:89:in `geocode'
+/var/lib/gems/2.3.0/gems/geokit-1.10.0/lib/geokit/multi_geocoder.rb:34:in `block in do_geocode'
+/var/lib/gems/2.3.0/gems/geokit-1.10.0/lib/geokit/multi_geocoder.rb:31:in `each'
+/var/lib/gems/2.3.0/gems/geokit-1.10.0/lib/geokit/multi_geocoder.rb:31:in `do_geocode'
+/var/lib/gems/2.3.0/gems/geokit-1.10.0/lib/geokit/geocoders.rb:89:in `geocode'
+/var/lib/gems/2.3.0/gems/geokit-rails-2.2.0/lib/geokit-rails/acts_as_mappable.rb:366:in `auto_geocode_address'
+/var/lib/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/callbacks.rb:382:in `block in make_lambda'
+/var/lib/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/callbacks.rb:150:in `block (2 levels) in halting_and_conditional'
+/var/lib/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/callbacks.rb:770:in `block (2 levels) in deprecated_false_terminator'
+/var/lib/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/callbacks.rb:769:in `catch'
+/var/lib/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/callbacks.rb:769:in `block in deprecated_false_terminator'
+/var/lib/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/callbacks.rb:151:in `block in halting_and_conditional'
+/var/lib/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/callbacks.rb:454:in `block in call'
+/var/lib/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/callbacks.rb:454:in `each'
+/var/lib/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/callbacks.rb:454:in `call'
+/var/lib/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/callbacks.rb:101:in `__run_callbacks__'
+/var/lib/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/callbacks.rb:750:in `_run_validation_callbacks'
+/var/lib/gems/2.3.0/gems/activemodel-5.0.2/lib/active_model/validations/callbacks.rb:113:in `run_validations!'
+/var/lib/gems/2.3.0/gems/activemodel-5.0.2/lib/active_model/validations.rb:338:in `valid?'
+/var/lib/gems/2.3.0/gems/activerecord-5.0.2/lib/active_record/validations.rb:65:in `valid?'
+/var/lib/gems/2.3.0/gems/activerecord-5.0.2/lib/active_record/validations.rb:82:in `perform_validations'
+/var/lib/gems/2.3.0/gems/activerecord-5.0.2/lib/active_record/validations.rb:44:in `save'
+/var/lib/gems/2.3.0/gems/activerecord-5.0.2/lib/active_record/attribute_methods/dirty.rb:22:in `save'
+/var/lib/gems/2.3.0/gems/activerecord-5.0.2/lib/active_record/transactions.rb:319:in `block (2 levels) in save'
+/var/lib/gems/2.3.0/gems/activerecord-5.0.2/lib/active_record/transactions.rb:395:in `block in with_transaction_returning_status'
+/var/lib/gems/2.3.0/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/database_statements.rb:232:in `block in transaction'
+/var/lib/gems/2.3.0/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/transaction.rb:189:in `within_new_transaction'
+/var/lib/gems/2.3.0/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/database_statements.rb:232:in `transaction'
+/var/lib/gems/2.3.0/gems/activerecord-5.0.2/lib/active_record/transactions.rb:211:in `transaction'
+/var/lib/gems/2.3.0/gems/activerecord-5.0.2/lib/active_record/transactions.rb:392:in `with_transaction_returning_status'
+/var/lib/gems/2.3.0/gems/activerecord-5.0.2/lib/active_record/transactions.rb:319:in `block in save'
+/var/lib/gems/2.3.0/gems/activerecord-5.0.2/lib/active_record/transactions.rb:334:in `rollback_active_record_state!'
+/var/lib/gems/2.3.0/gems/activerecord-5.0.2/lib/active_record/transactions.rb:318:in `save'
+/var/lib/gems/2.3.0/gems/activerecord-5.0.2/lib/active_record/suppressor.rb:41:in `save'
+/home/anne/Dropbox/cosi166b_acharnes/Dicer/app/controllers/users_controller.rb:29:in `block in create'
+/var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_controller/metal/mime_responds.rb:195:in `respond_to'
+/home/anne/Dropbox/cosi166b_acharnes/Dicer/app/controllers/users_controller.rb:28:in `create'
+/var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+/var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/abstract_controller/base.rb:188:in `process_action'
+/var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_controller/metal/rendering.rb:30:in `process_action'
+/var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+/var/lib/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/callbacks.rb:126:in `call'
+/var/lib/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/callbacks.rb:506:in `block (2 levels) in compile'
+/var/lib/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/callbacks.rb:455:in `call'
+/var/lib/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/callbacks.rb:101:in `__run_callbacks__'
+/var/lib/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/callbacks.rb:750:in `_run_process_action_callbacks'
+/var/lib/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/callbacks.rb:90:in `run_callbacks'
+/var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/abstract_controller/callbacks.rb:19:in `process_action'
+/var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_controller/metal/rescue.rb:20:in `process_action'
+/var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+/var/lib/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/notifications.rb:164:in `block in instrument'
+/var/lib/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/var/lib/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/notifications.rb:164:in `instrument'
+/var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+/var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_controller/metal/params_wrapper.rb:248:in `process_action'
+/var/lib/gems/2.3.0/gems/activerecord-5.0.2/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+/var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/abstract_controller/base.rb:126:in `process'
+/var/lib/gems/2.3.0/gems/actionview-5.0.2/lib/action_view/rendering.rb:30:in `process'
+/var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_controller/metal.rb:190:in `dispatch'
+/var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_controller/metal.rb:262:in `dispatch'
+/var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+/var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/routing/route_set.rb:32:in `serve'
+/var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/journey/router.rb:39:in `block in serve'
+/var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/journey/router.rb:26:in `each'
+/var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/journey/router.rb:26:in `serve'
+/var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/routing/route_set.rb:725:in `call'
+/var/lib/gems/2.3.0/gems/rack-2.0.1/lib/rack/etag.rb:25:in `call'
+/var/lib/gems/2.3.0/gems/rack-2.0.1/lib/rack/conditional_get.rb:38:in `call'
+/var/lib/gems/2.3.0/gems/rack-2.0.1/lib/rack/head.rb:12:in `call'
+/var/lib/gems/2.3.0/gems/rack-2.0.1/lib/rack/session/abstract/id.rb:222:in `context'
+/var/lib/gems/2.3.0/gems/rack-2.0.1/lib/rack/session/abstract/id.rb:216:in `call'
+/var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/cookies.rb:613:in `call'
+/var/lib/gems/2.3.0/gems/activerecord-5.0.2/lib/active_record/migration.rb:553:in `call'
+/var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+/var/lib/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+/var/lib/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+/var/lib/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/callbacks.rb:90:in `run_callbacks'
+/var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+/var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/executor.rb:12:in `call'
+/var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+/var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+/var/lib/gems/2.3.0/gems/web-console-3.4.0/lib/web_console/middleware.rb:135:in `call_app'
+/var/lib/gems/2.3.0/gems/web-console-3.4.0/lib/web_console/middleware.rb:28:in `block in call'
+/var/lib/gems/2.3.0/gems/web-console-3.4.0/lib/web_console/middleware.rb:18:in `catch'
+/var/lib/gems/2.3.0/gems/web-console-3.4.0/lib/web_console/middleware.rb:18:in `call'
+/var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+/var/lib/gems/2.3.0/gems/railties-5.0.2/lib/rails/rack/logger.rb:36:in `call_app'
+/var/lib/gems/2.3.0/gems/railties-5.0.2/lib/rails/rack/logger.rb:24:in `block in call'
+/var/lib/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/tagged_logging.rb:69:in `block in tagged'
+/var/lib/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/tagged_logging.rb:26:in `tagged'
+/var/lib/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/tagged_logging.rb:69:in `tagged'
+/var/lib/gems/2.3.0/gems/railties-5.0.2/lib/rails/rack/logger.rb:24:in `call'
+/var/lib/gems/2.3.0/gems/sprockets-rails-3.2.0/lib/sprockets/rails/quiet_assets.rb:13:in `call'
+/var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/request_id.rb:24:in `call'
+/var/lib/gems/2.3.0/gems/rack-2.0.1/lib/rack/method_override.rb:22:in `call'
+/var/lib/gems/2.3.0/gems/rack-2.0.1/lib/rack/runtime.rb:22:in `call'
+/var/lib/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+/var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/executor.rb:12:in `call'
+/var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/static.rb:136:in `call'
+/var/lib/gems/2.3.0/gems/rack-2.0.1/lib/rack/sendfile.rb:111:in `call'
+/var/lib/gems/2.3.0/gems/railties-5.0.2/lib/rails/engine.rb:522:in `call'
+/var/lib/gems/2.3.0/gems/puma-3.7.1/lib/puma/configuration.rb:232:in `call'
+/var/lib/gems/2.3.0/gems/puma-3.7.1/lib/puma/server.rb:578:in `handle_request'
+/var/lib/gems/2.3.0/gems/puma-3.7.1/lib/puma/server.rb:415:in `process_client'
+/var/lib/gems/2.3.0/gems/puma-3.7.1/lib/puma/server.rb:275:in `block in run'
+/var/lib/gems/2.3.0/gems/puma-3.7.1/lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER(?) LIMIT ?[0m  [["username", ""], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "asdfasdf"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (21.3ms)
+  Rendered users/new.html.erb within layouts/application (23.8ms)
+Completed 200 OK in 11474ms (Views: 95.7ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-03-08 15:28:07 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bxHRRFsiCQbTgJgBnj4hZLm4DBE9qRpdplhijrhQHrv3aZjX/A4ciIIwq0Yp0UsG78tiCl99chTXtw5PRCfWig==", "user"=>{"username"=>"", "email"=>"asdfasdf", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "address"=>"asdfadfs", "age"=>""}, "commit"=>"Create User"}
+Geokit is using the domain: localhost
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+Multi geocoding. address: asdfadfs, args []
+Google geocoding. address: asdfadfs, args []
+Google geocoding. Result: %7B%0A+++%22results%22+%3A+%5B%5D%2C%0A+++%22status%22+%3A+%22ZERO_RESULTS%22%0A%7D%0A
+Us geocoding. address: asdfadfs, args []
+Caught an error during Us geocoding call: Failed to open TCP connection to geocoder.us:80 (getaddrinfo: Temporary failure in name resolution)
+/usr/lib/ruby/2.3.0/net/http.rb:882:in `rescue in block in connect'
+/usr/lib/ruby/2.3.0/net/http.rb:879:in `block in connect'
+/usr/lib/ruby/2.3.0/timeout.rb:91:in `block in timeout'
+/usr/lib/ruby/2.3.0/timeout.rb:101:in `timeout'
+/usr/lib/ruby/2.3.0/net/http.rb:878:in `connect'
+/usr/lib/ruby/2.3.0/net/http.rb:863:in `do_start'
+/usr/lib/ruby/2.3.0/net/http.rb:852:in `start'
+/var/lib/gems/2.3.0/gems/geokit-1.10.0/lib/geokit/net_adapter/net_http.rb:21:in `do_get'
+/var/lib/gems/2.3.0/gems/geokit-1.10.0/lib/geokit/geocoders.rb:162:in `do_get'
+/var/lib/gems/2.3.0/gems/geokit-1.10.0/lib/geokit/geocoders.rb:140:in `call_geocoder_service'
+/var/lib/gems/2.3.0/gems/geokit-1.10.0/lib/geokit/geocoders.rb:190:in `process'
+/var/lib/gems/2.3.0/gems/geokit-1.10.0/lib/geokit/geocoders/us_geocoder.rb:12:in `do_geocode'
+/var/lib/gems/2.3.0/gems/geokit-1.10.0/lib/geokit/geocoders.rb:89:in `geocode'
+/var/lib/gems/2.3.0/gems/geokit-1.10.0/lib/geokit/multi_geocoder.rb:34:in `block in do_geocode'
+/var/lib/gems/2.3.0/gems/geokit-1.10.0/lib/geokit/multi_geocoder.rb:31:in `each'
+/var/lib/gems/2.3.0/gems/geokit-1.10.0/lib/geokit/multi_geocoder.rb:31:in `do_geocode'
+/var/lib/gems/2.3.0/gems/geokit-1.10.0/lib/geokit/geocoders.rb:89:in `geocode'
+/var/lib/gems/2.3.0/gems/geokit-rails-2.2.0/lib/geokit-rails/acts_as_mappable.rb:366:in `auto_geocode_address'
+/var/lib/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/callbacks.rb:382:in `block in make_lambda'
+/var/lib/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/callbacks.rb:150:in `block (2 levels) in halting_and_conditional'
+/var/lib/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/callbacks.rb:770:in `block (2 levels) in deprecated_false_terminator'
+/var/lib/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/callbacks.rb:769:in `catch'
+/var/lib/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/callbacks.rb:769:in `block in deprecated_false_terminator'
+/var/lib/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/callbacks.rb:151:in `block in halting_and_conditional'
+/var/lib/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/callbacks.rb:454:in `block in call'
+/var/lib/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/callbacks.rb:454:in `each'
+/var/lib/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/callbacks.rb:454:in `call'
+/var/lib/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/callbacks.rb:101:in `__run_callbacks__'
+/var/lib/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/callbacks.rb:750:in `_run_validation_callbacks'
+/var/lib/gems/2.3.0/gems/activemodel-5.0.2/lib/active_model/validations/callbacks.rb:113:in `run_validations!'
+/var/lib/gems/2.3.0/gems/activemodel-5.0.2/lib/active_model/validations.rb:338:in `valid?'
+/var/lib/gems/2.3.0/gems/activerecord-5.0.2/lib/active_record/validations.rb:65:in `valid?'
+/var/lib/gems/2.3.0/gems/activerecord-5.0.2/lib/active_record/validations.rb:82:in `perform_validations'
+/var/lib/gems/2.3.0/gems/activerecord-5.0.2/lib/active_record/validations.rb:44:in `save'
+/var/lib/gems/2.3.0/gems/activerecord-5.0.2/lib/active_record/attribute_methods/dirty.rb:22:in `save'
+/var/lib/gems/2.3.0/gems/activerecord-5.0.2/lib/active_record/transactions.rb:319:in `block (2 levels) in save'
+/var/lib/gems/2.3.0/gems/activerecord-5.0.2/lib/active_record/transactions.rb:395:in `block in with_transaction_returning_status'
+/var/lib/gems/2.3.0/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/database_statements.rb:232:in `block in transaction'
+/var/lib/gems/2.3.0/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/transaction.rb:189:in `within_new_transaction'
+/var/lib/gems/2.3.0/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/database_statements.rb:232:in `transaction'
+/var/lib/gems/2.3.0/gems/activerecord-5.0.2/lib/active_record/transactions.rb:211:in `transaction'
+/var/lib/gems/2.3.0/gems/activerecord-5.0.2/lib/active_record/transactions.rb:392:in `with_transaction_returning_status'
+/var/lib/gems/2.3.0/gems/activerecord-5.0.2/lib/active_record/transactions.rb:319:in `block in save'
+/var/lib/gems/2.3.0/gems/activerecord-5.0.2/lib/active_record/transactions.rb:334:in `rollback_active_record_state!'
+/var/lib/gems/2.3.0/gems/activerecord-5.0.2/lib/active_record/transactions.rb:318:in `save'
+/var/lib/gems/2.3.0/gems/activerecord-5.0.2/lib/active_record/suppressor.rb:41:in `save'
+/home/anne/Dropbox/cosi166b_acharnes/Dicer/app/controllers/users_controller.rb:29:in `block in create'
+/var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_controller/metal/mime_responds.rb:195:in `respond_to'
+/home/anne/Dropbox/cosi166b_acharnes/Dicer/app/controllers/users_controller.rb:28:in `create'
+/var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+/var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/abstract_controller/base.rb:188:in `process_action'
+/var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_controller/metal/rendering.rb:30:in `process_action'
+/var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+/var/lib/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/callbacks.rb:126:in `call'
+/var/lib/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/callbacks.rb:506:in `block (2 levels) in compile'
+/var/lib/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/callbacks.rb:455:in `call'
+/var/lib/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/callbacks.rb:101:in `__run_callbacks__'
+/var/lib/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/callbacks.rb:750:in `_run_process_action_callbacks'
+/var/lib/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/callbacks.rb:90:in `run_callbacks'
+/var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/abstract_controller/callbacks.rb:19:in `process_action'
+/var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_controller/metal/rescue.rb:20:in `process_action'
+/var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+/var/lib/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/notifications.rb:164:in `block in instrument'
+/var/lib/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/var/lib/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/notifications.rb:164:in `instrument'
+/var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+/var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_controller/metal/params_wrapper.rb:248:in `process_action'
+/var/lib/gems/2.3.0/gems/activerecord-5.0.2/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+/var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/abstract_controller/base.rb:126:in `process'
+/var/lib/gems/2.3.0/gems/actionview-5.0.2/lib/action_view/rendering.rb:30:in `process'
+/var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_controller/metal.rb:190:in `dispatch'
+/var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_controller/metal.rb:262:in `dispatch'
+/var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+/var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/routing/route_set.rb:32:in `serve'
+/var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/journey/router.rb:39:in `block in serve'
+/var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/journey/router.rb:26:in `each'
+/var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/journey/router.rb:26:in `serve'
+/var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/routing/route_set.rb:725:in `call'
+/var/lib/gems/2.3.0/gems/rack-2.0.1/lib/rack/etag.rb:25:in `call'
+/var/lib/gems/2.3.0/gems/rack-2.0.1/lib/rack/conditional_get.rb:38:in `call'
+/var/lib/gems/2.3.0/gems/rack-2.0.1/lib/rack/head.rb:12:in `call'
+/var/lib/gems/2.3.0/gems/rack-2.0.1/lib/rack/session/abstract/id.rb:222:in `context'
+/var/lib/gems/2.3.0/gems/rack-2.0.1/lib/rack/session/abstract/id.rb:216:in `call'
+/var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/cookies.rb:613:in `call'
+/var/lib/gems/2.3.0/gems/activerecord-5.0.2/lib/active_record/migration.rb:553:in `call'
+/var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+/var/lib/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+/var/lib/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+/var/lib/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/callbacks.rb:90:in `run_callbacks'
+/var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+/var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/executor.rb:12:in `call'
+/var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+/var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+/var/lib/gems/2.3.0/gems/web-console-3.4.0/lib/web_console/middleware.rb:135:in `call_app'
+/var/lib/gems/2.3.0/gems/web-console-3.4.0/lib/web_console/middleware.rb:28:in `block in call'
+/var/lib/gems/2.3.0/gems/web-console-3.4.0/lib/web_console/middleware.rb:18:in `catch'
+/var/lib/gems/2.3.0/gems/web-console-3.4.0/lib/web_console/middleware.rb:18:in `call'
+/var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+/var/lib/gems/2.3.0/gems/railties-5.0.2/lib/rails/rack/logger.rb:36:in `call_app'
+/var/lib/gems/2.3.0/gems/railties-5.0.2/lib/rails/rack/logger.rb:24:in `block in call'
+/var/lib/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/tagged_logging.rb:69:in `block in tagged'
+/var/lib/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/tagged_logging.rb:26:in `tagged'
+/var/lib/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/tagged_logging.rb:69:in `tagged'
+/var/lib/gems/2.3.0/gems/railties-5.0.2/lib/rails/rack/logger.rb:24:in `call'
+/var/lib/gems/2.3.0/gems/sprockets-rails-3.2.0/lib/sprockets/rails/quiet_assets.rb:13:in `call'
+/var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/request_id.rb:24:in `call'
+/var/lib/gems/2.3.0/gems/rack-2.0.1/lib/rack/method_override.rb:22:in `call'
+/var/lib/gems/2.3.0/gems/rack-2.0.1/lib/rack/runtime.rb:22:in `call'
+/var/lib/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+/var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/executor.rb:12:in `call'
+/var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/static.rb:136:in `call'
+/var/lib/gems/2.3.0/gems/rack-2.0.1/lib/rack/sendfile.rb:111:in `call'
+/var/lib/gems/2.3.0/gems/railties-5.0.2/lib/rails/engine.rb:522:in `call'
+/var/lib/gems/2.3.0/gems/puma-3.7.1/lib/puma/configuration.rb:232:in `call'
+/var/lib/gems/2.3.0/gems/puma-3.7.1/lib/puma/server.rb:578:in `handle_request'
+/var/lib/gems/2.3.0/gems/puma-3.7.1/lib/puma/server.rb:415:in `process_client'
+/var/lib/gems/2.3.0/gems/puma-3.7.1/lib/puma/server.rb:275:in `block in run'
+/var/lib/gems/2.3.0/gems/puma-3.7.1/lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER(?) LIMIT ?[0m  [["username", ""], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "asdfasdf"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (22.1ms)
+  Rendered users/new.html.erb within layouts/application (25.1ms)
+Completed 200 OK in 10864ms (Views: 97.7ms | ActiveRecord: 1.3ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to RemovePlayerProfileIdFromUsers (20170309204217)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "email" varchar, "password_digest" varchar, "profile_pic_path" varchar, "player_profile_id" integer, "dm_profile_id" integer, "age" integer, "address" varchar, "last_active" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "lat" float, "lng" float, "remember_digest" varchar)[0m
+  [1m[35m (0.4ms)[0m  [1m[32mINSERT INTO "ausers" ("id","username","email","password_digest","profile_pic_path","player_profile_id","dm_profile_id","age","address","last_active","created_at","updated_at","lat","lng","remember_digest")
+                     SELECT "id","username","email","password_digest","profile_pic_path","player_profile_id","dm_profile_id","age","address","last_active","created_at","updated_at","lat","lng","remember_digest" FROM "users"[0m
+  [1m[35m (2.3ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "email" varchar, "password_digest" varchar, "profile_pic_path" varchar, "dm_profile_id" integer, "age" integer, "address" varchar, "last_active" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "lat" float, "lng" float, "remember_digest" varchar)[0m
+  [1m[35m (0.4ms)[0m  [1m[32mINSERT INTO "users" ("id","username","email","password_digest","profile_pic_path","dm_profile_id","age","address","last_active","created_at","updated_at","lat","lng","remember_digest")
+                     SELECT "id","username","email","password_digest","profile_pic_path","dm_profile_id","age","address","last_active","created_at","updated_at","lat","lng","remember_digest" FROM "ausers"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170309204217"]]
+  [1m[35m (183.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to RemoveDmProfileIdFromUsers (20170309204236)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "email" varchar, "password_digest" varchar, "profile_pic_path" varchar, "dm_profile_id" integer, "age" integer, "address" varchar, "last_active" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "lat" float, "lng" float, "remember_digest" varchar)[0m
+  [1m[35m (0.3ms)[0m  [1m[32mINSERT INTO "ausers" ("id","username","email","password_digest","profile_pic_path","dm_profile_id","age","address","last_active","created_at","updated_at","lat","lng","remember_digest")
+                     SELECT "id","username","email","password_digest","profile_pic_path","dm_profile_id","age","address","last_active","created_at","updated_at","lat","lng","remember_digest" FROM "users"[0m
+  [1m[35m (1.6ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "email" varchar, "password_digest" varchar, "profile_pic_path" varchar, "age" integer, "address" varchar, "last_active" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "lat" float, "lng" float, "remember_digest" varchar)[0m
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO "users" ("id","username","email","password_digest","profile_pic_path","age","address","last_active","created_at","updated_at","lat","lng","remember_digest")
+                     SELECT "id","username","email","password_digest","profile_pic_path","age","address","last_active","created_at","updated_at","lat","lng","remember_digest" FROM "ausers"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170309204236"]]
+  [1m[35m (207.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
