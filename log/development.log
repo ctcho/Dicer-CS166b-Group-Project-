@@ -2275,3 +2275,441 @@ Migrating to AddRememberDigestToUsers (20170308015257)
   [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-03-08 03:25:18 UTC], ["updated_at", 2017-03-08 03:25:18 UTC]]
   [1m[35m (172.7ms)[0m  [1m[36mcommit transaction[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/" for 10.0.2.2 at 2017-03-08 18:56:45 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (5.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomePagesController#home as HTML
+Geokit is using the domain: localhost
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (71.6ms)
+Completed 500 Internal Server Error in 17070ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Inconsistent indentation: 2 spaces were used for indentation, but the rest of the document was indented using 4 spaces.):
+    4:     <title>Dicer</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:   </head>
+   10: 
+  
+app/assets/stylesheets/application.css.sass:49
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__2133165269100820890_70283881450720'
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (18.4ms)
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.0ms)
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.6ms)
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (84.3ms)
+Started GET "/" for 10.0.2.2 at 2017-03-08 18:58:12 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomePagesController#home as HTML
+Geokit is using the domain: localhost
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (2.2ms)
+Completed 500 Internal Server Error in 633ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Inconsistent indentation: 3 spaces were used for indentation, but the rest of the document was indented using 4 spaces.):
+    4:     <title>Dicer</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:   </head>
+   10: 
+  
+app/assets/stylesheets/application.css.sass:61
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__2133165269100820890_70283500549760'
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (18.6ms)
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.2ms)
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.7ms)
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (75.3ms)
+Started GET "/" for 10.0.2.2 at 2017-03-08 19:01:58 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomePagesController#home as HTML
+Geokit is using the domain: localhost
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (2.3ms)
+Completed 500 Internal Server Error in 649ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Invalid CSS after "...ana, sans-serif": expected expression (e.g. 1px, bold), was ";"):
+    4:     <title>Dicer</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:   </head>
+   10: 
+  
+app/assets/stylesheets/application.css.sass:25
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__2133165269100820890_70283450297420'
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (19.0ms)
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.9ms)
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.1ms)
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (75.6ms)
+Started GET "/" for 10.0.2.2 at 2017-03-08 19:02:36 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomePagesController#home as HTML
+Geokit is using the domain: localhost
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 8870ms (Views: 8791.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 10.0.2.2 at 2017-03-08 19:07:34 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (5.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomePagesController#home as HTML
+Geokit is using the domain: localhost
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (49.8ms)
+Completed 200 OK in 15806ms (Views: 15649.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 10.0.2.2 at 2017-03-08 19:12:26 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomePagesController#home as HTML
+Geokit is using the domain: localhost
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (3.4ms)
+Completed 500 Internal Server Error in 932ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Invalid CSS after "$dark_red_1 ": expected ":", was "= #7B0828;"):
+    4:     <title>Dicer</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:   </head>
+   10: 
+  
+app/assets/stylesheets/main.scss:4
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__1457199373863579901_70332857447260'
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (37.6ms)
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.2ms)
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (91.8ms)
+Started GET "/" for 10.0.2.2 at 2017-03-08 19:14:41 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomePagesController#home as HTML
+Geokit is using the domain: localhost
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 2252ms (Views: 2166.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 10.0.2.2 at 2017-03-08 19:15:07 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomePagesController#home as HTML
+Geokit is using the domain: localhost
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 1902ms (Views: 1823.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 10.0.2.2 at 2017-03-08 19:17:47 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomePagesController#home as HTML
+Geokit is using the domain: localhost
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 2024ms (Views: 1942.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 10.0.2.2 at 2017-03-08 19:18:27 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomePagesController#home as HTML
+Geokit is using the domain: localhost
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 1864ms (Views: 1783.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 10.0.2.2 at 2017-03-08 19:19:02 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (5.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomePagesController#home as HTML
+Geokit is using the domain: localhost
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (51.3ms)
+Completed 200 OK in 15862ms (Views: 15699.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 10.0.2.2 at 2017-03-08 19:22:14 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomePagesController#home as HTML
+Geokit is using the domain: localhost
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 1978ms (Views: 1891.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 10.0.2.2 at 2017-03-08 19:24:03 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomePagesController#home as HTML
+Geokit is using the domain: localhost
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 2032ms (Views: 1945.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 10.0.2.2 at 2017-03-08 19:26:36 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomePagesController#home as HTML
+Geokit is using the domain: localhost
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 2574ms (Views: 2481.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 10.0.2.2 at 2017-03-08 19:29:53 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomePagesController#home as HTML
+Geokit is using the domain: localhost
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 1748ms (Views: 1662.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 10.0.2.2 at 2017-03-08 19:30:48 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomePagesController#home as HTML
+Geokit is using the domain: localhost
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 1634ms (Views: 1549.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 10.0.2.2 at 2017-03-08 19:36:19 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomePagesController#home as HTML
+Geokit is using the domain: localhost
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 2185ms (Views: 2102.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home_pages/about" for 10.0.2.2 at 2017-03-08 19:36:56 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomePagesController#about as HTML
+Geokit is using the domain: localhost
+  Rendering home_pages/about.html.erb within layouts/application
+  Rendered home_pages/about.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 1359ms (Views: 1276.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home_pages/about" for 10.0.2.2 at 2017-03-08 19:39:10 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomePagesController#about as HTML
+Geokit is using the domain: localhost
+  Rendering home_pages/about.html.erb within layouts/application
+  Rendered home_pages/about.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 2156ms (Views: 2069.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home_pages/about" for 10.0.2.2 at 2017-03-08 19:44:15 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomePagesController#about as HTML
+Geokit is using the domain: localhost
+  Rendering home_pages/about.html.erb within layouts/application
+  Rendered home_pages/about.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 2360ms (Views: 2275.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home_pages/about" for 10.0.2.2 at 2017-03-08 19:44:38 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomePagesController#about as HTML
+Geokit is using the domain: localhost
+  Rendering home_pages/about.html.erb within layouts/application
+  Rendered home_pages/about.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 2167ms (Views: 2083.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home_pages/about" for 10.0.2.2 at 2017-03-08 19:45:19 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomePagesController#about as HTML
+Geokit is using the domain: localhost
+  Rendering home_pages/about.html.erb within layouts/application
+  Rendered home_pages/about.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 4110ms (Views: 3900.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home_pages/about" for 10.0.2.2 at 2017-03-08 19:46:36 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomePagesController#about as HTML
+Geokit is using the domain: localhost
+  Rendering home_pages/about.html.erb within layouts/application
+  Rendered home_pages/about.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 2221ms (Views: 2133.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home_pages/about" for 10.0.2.2 at 2017-03-08 20:01:20 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomePagesController#about as HTML
+Geokit is using the domain: localhost
+  Rendering home_pages/about.html.erb within layouts/application
+  Rendered home_pages/about.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 1957ms (Views: 1859.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home_pages/about" for 10.0.2.2 at 2017-03-08 20:01:52 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomePagesController#about as HTML
+Geokit is using the domain: localhost
+  Rendering home_pages/about.html.erb within layouts/application
+  Rendered home_pages/about.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 2116ms (Views: 2027.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home_pages/about" for 10.0.2.2 at 2017-03-08 20:03:46 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomePagesController#about as HTML
+Geokit is using the domain: localhost
+  Rendering home_pages/about.html.erb within layouts/application
+  Rendered home_pages/about.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 1523ms (Views: 1383.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/resources" for 10.0.2.2 at 2017-03-10 18:41:36 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (5.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+ActionController::RoutingError (No route matches [GET] "/resources"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:20:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.7.1) lib/puma/configuration.rb:232:in `call'
+puma (3.7.1) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.1) lib/puma/server.rb:415:in `process_client'
+puma (3.7.1) lib/puma/server.rb:275:in `block in run'
+puma (3.7.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.2ms)
+  Rendered collection of /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [41 times] (98.5ms)
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (160.7ms)
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (82.0ms)
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (545.0ms)
+Started GET "/home_pages/resources" for 10.0.2.2 at 2017-03-10 18:41:53 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomePagesController#resources as HTML
+Geokit is using the domain: localhost
+  Rendering home_pages/resources.html.erb within layouts/application
+  Rendered home_pages/resources.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 20931ms (Views: 20849.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home_pages/resources" for 10.0.2.2 at 2017-03-10 18:42:57 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomePagesController#resources as HTML
+Geokit is using the domain: localhost
+  Rendering home_pages/resources.html.erb within layouts/application
+  Rendered home_pages/resources.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 1217ms (Views: 1138.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home_pages/resources" for 10.0.2.2 at 2017-03-10 18:43:50 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomePagesController#resources as HTML
+Geokit is using the domain: localhost
+  Rendering home_pages/resources.html.erb within layouts/application
+  Rendered home_pages/resources.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 1135ms (Views: 1051.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home_pages/resources" for 10.0.2.2 at 2017-03-10 18:44:48 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomePagesController#resources as HTML
+Geokit is using the domain: localhost
+  Rendering home_pages/resources.html.erb within layouts/application
+  Rendered home_pages/resources.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 1230ms (Views: 1143.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home_pages/resources" for 10.0.2.2 at 2017-03-10 18:45:25 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomePagesController#resources as HTML
+Geokit is using the domain: localhost
+  Rendering home_pages/resources.html.erb within layouts/application
+  Rendered home_pages/resources.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 1358ms (Views: 1276.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home_pages/resources" for 10.0.2.2 at 2017-03-10 18:46:09 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomePagesController#resources as HTML
+Geokit is using the domain: localhost
+  Rendering home_pages/resources.html.erb within layouts/application
+  Rendered home_pages/resources.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 1240ms (Views: 1159.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home_pages/resources" for 10.0.2.2 at 2017-03-10 18:47:46 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomePagesController#resources as HTML
+Geokit is using the domain: localhost
+  Rendering home_pages/resources.html.erb within layouts/application
+  Rendered home_pages/resources.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 1939ms (Views: 1860.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home_pages/resources" for 10.0.2.2 at 2017-03-10 18:48:00 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomePagesController#resources as HTML
+Geokit is using the domain: localhost
+  Rendering home_pages/resources.html.erb within layouts/application
+  Rendered home_pages/resources.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 1608ms (Views: 1529.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home_pages/home" for 10.0.2.2 at 2017-03-10 18:48:13 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomePagesController#home as HTML
+Geokit is using the domain: localhost
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 1107ms (Views: 1028.5ms | ActiveRecord: 0.0ms)
+
+

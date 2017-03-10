@@ -9,8 +9,12 @@
   </head>
 
   <body>
-    <div class="header"><span class="left-align"><%= link_to "Dicer", home_pages_home_path %></span>
-                        <span class="right-align"><%= link_to "About Us", home_pages_about_path %>
+    <div class="header"><span class="left-align">  <%= link_to "Dicer", home_pages_home_path %>
+                                                   <%= link_to "About Us", home_pages_about_path %>
+                                                   <%= link_to "Contact Us", home_pages_contact_path %>
+                                                   <%= link_to "Resources", home_pages_resources_path %>
+                                             </span>
+                        <span class="right-align">
                           <% if logged_in? %>
                             <%= link_to "Log Out", logout_path, method: "delete"%>
                             <%= link_to "Profile", user_path(current_user) %>
