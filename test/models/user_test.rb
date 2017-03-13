@@ -1,3 +1,4 @@
+
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
@@ -8,11 +9,17 @@ class UserTest < ActiveSupport::TestCase
     end
   end
 
+
+	#These tests were written by Michael Spittler to test the functionality of the Geolocation verification on the user model.
+	#Users enter some geolocatable address, e.g. a direct address, just a zip-code, or direct coordinates, and the lat and lng
+	#columns of the user table to be used for distance searches with the Geokit-rails gem.
+
   test "can geocode address" do
     u = User.create(username: "TestUser1", email: "example1@railstutorial.com", password: "foobar", address: "1600 Pennsylvania Ave NW, Washington, DC")
     assert_in_delta u.lat, 38.8977, 0.01
     assert_in_delta u.lng, -77.0365, 0.01
   end
+
 
   test "can geocode zipcodes" do
     u = User.create(username: "TestUser2", email: "example2@railstutorial.com", password: "foobar", address: "02453")
