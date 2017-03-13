@@ -1,34 +1,33 @@
 class CharacterSheetsController < ApplicationController
   before_action :set_character_sheet, only: [:show, :edit, :update, :destroy]
 
-  # GET /character_sheets
-  # GET /character_sheets.json
+  # GET /user/1/player_profiles/character_sheets
+  # GET /user/1/player_profiles/character_sheets.json
   def index
     @character_sheets = CharacterSheet.all
   end
 
-  # GET /character_sheets/1
-  # GET /character_sheets/1.json
+  # GET /user/1/player_profiles/character_sheets
+  # GET /user/1/player_profiles/character_sheets
   def show
     @user = User.find(params[:user_id])
     @player_profile = @user.player_profile
   end
 
-  # GET /character_sheets/new
+  # GET /user/1/player_profiles/character_sheets/new
   def new
-    #@player_profile = User.find(params[:user_id]).player_profile
     @user = User.find(params[:user_id])
     @character_sheet = CharacterSheet.new
   end
 
-  # GET /character_sheets/1/edit
+  # GET /user/1/player_profiles/character_sheets/edit
   def edit
     @user = User.find(params[:user_id])
     @character_sheet = CharacterSheet.find(params[:id])
   end
 
-  # POST /character_sheets
-  # POST /character_sheets.json
+  # POST /user/1/player_profiles/character_sheets
+  # POST /user/1/player_profiles/character_sheets.json
   def create
     @user = User.find(params[:user_id])
     @character_sheet = @user.player_profile.character_sheets.new(character_sheet_params)
@@ -43,8 +42,8 @@ class CharacterSheetsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /character_sheets/1
-  # PATCH/PUT /character_sheets/1.json
+  # PATCH/PUT /user/1/player_profiles/character_sheets
+  # PATCH/PUT /user/1/player_profiles/character_sheets.json
   def update
     respond_to do |format|
       if @character_sheet.update(character_sheet_params)
@@ -57,8 +56,8 @@ class CharacterSheetsController < ApplicationController
     end
   end
 
-  # DELETE /character_sheets/1
-  # DELETE /character_sheets/1.json
+  # DELETE /user/1/player_profiles/character_sheets
+  # DELETE /user/1/player_profiles/character_sheets.json
   def destroy
     @character_sheet.destroy
     respond_to do |format|
