@@ -21,6 +21,7 @@
 
 
     <div class="content"><%= yield %></div>
+    <%= debug(params) if Rails.env.development? %>
   <!--  <div class="footer"><span class="left-align"><%= link_to "Contact Us", home_pages_contact_path %></span>
                         <span class="right-align"><%= link_to "FAQ", home_pages_resources_path %></span></div>
 -->

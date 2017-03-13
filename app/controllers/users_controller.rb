@@ -28,25 +28,23 @@ class UsersController < ApplicationController
 
     if @user.save
       log_in @user
-        # format.html { redirect_to @user, notice: "Welcome to Dicer" }
-        # format.json { render :show, status: :created, location: @user }
       if params[:help]
+        respond_to do |format|
         if params[:player] == "yes"
-          respond_to do |format|
-            format.html { redirect_to "/users/#{@user.id}/player_profiles  /new/crashcourse" }
+            format.html { redirect_to "/users/#{@user.id}/player_profiles/new/crashcourse" }
             #redirect_to "/user/#{@user.id}/player_profile/new/crashcourse"
-            end
           else
             # new dm profile, guided
           end
+        end
         else
+          respond_to do |format|
             if params[:player_profile] || 1==1
-              respond_to do |format|
                 format.html{ redirect_to new_user_player_profiles_path(@user) }
-              end
             else
-              # new dm_profile, undguided
+              # new dm_profile, unguided
             end
+          end
         end
       else
         respond_to do |format|

@@ -36,6 +36,7 @@ class PlayerProfilesController < ApplicationController
   # POST /player_profiles
   # POST /player_profiles.json
   def create
+    byebug
     @user = User.find(params[:user_id])
     @player_profile = PlayerProfile.new(player_profile_params)
     respond_to do |format|
@@ -84,6 +85,9 @@ class PlayerProfilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def player_profile_params
-      params.require(:player_profile).permit(:user_id, :bio, :experience_level, :max_distance, :online_play, :homebrew, :original_ruleset, :advanced_ruleset, :pathfinder, :third, :three_point_five, :fourth, :fifth, :original_campaign, :module)
+      profile_params = params.require(:player_profile).permit(:user_id, :bio, :experience_level, :max_distance, :online_play, :homebrew, :original_ruleset, :advanced_ruleset, :pathfinder, :third, :three_point_five, :fourth, :fifth, :original_campaign, :module)
+      profile_params[:user_id] = @user.id
+      profile_params[:experience_level] = params[:experience_level]
+      profile_params
     end
 end
