@@ -25,11 +25,26 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
+    byebug
     respond_to do |format|
       if @user.save
         log_in @user
-        format.html { redirect_to @user, notice: "Welcome to Dicer" }
-        format.json { render :show, status: :created, location: @user }
+        # format.html { redirect_to @user, notice: "Welcome to Dicer" }
+        # format.json { render :show, status: :created, location: @user }
+        if params[:help]
+          if params[:player_profile]
+            format.html { redirect_to "/user/#{@user.id}/player_profile/new/crashcourse" }
+            #redirect_to "/user/#{@user.id}/player_profile/new/crashcourse"
+          else
+            # new dm profile, guided
+          end
+        else
+            if params[:player_profile]
+              format.html{ redirect_to new_user_player_profiles_path }
+            else
+              # new dm_profile, undguided
+            end
+        end
       else
         format.html { render :new }
         format.json { render json: @user.errors, status: :unprocessable_entity }
@@ -69,6 +84,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:username, :string, :email, :password, :password_confirmation, :profile_pic_path, :player_profile_id, :dm_profile_id, :age, :last_active, :address)
+      params.require(:user).permit(:username, :string, :email, :password, :password_confirmation, :profile_pic_path, :age, :last_active, :address)
     end
 end

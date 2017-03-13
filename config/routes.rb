@@ -8,8 +8,10 @@ Rails.application.routes.draw do
   get 'home_pages/contact'
   get 'home_pages/resources'
 
+  get 'users/:user_id/player_profiles/new/crashcourse', to: 'player_profiles#crashcourse'
+
   get 'signup', to: 'users#new'
-  
+
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
