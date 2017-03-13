@@ -209,3 +209,16 @@ input[type=button], input[type=submit], input[type=reset] {
   //margin: 4px 2px;
   cursor: pointer;
 }
+
+a:link.outside, a:visited.outside {
+    background: none;
+    color: blue;
+    padding: 0px;
+    border-bottom: 1px dotted blue;
+    //text-align: center;
+    text-decoration: none;
+    //display: inline-block;
+}
+a:hover.outside, a:active.outside {
+    border-bottom: 1px solid blue;
+}
