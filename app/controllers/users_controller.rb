@@ -25,31 +25,35 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
-    byebug
-    respond_to do |format|
-      if @user.save
-        log_in @user
+
+    if @user.save
+      log_in @user
         # format.html { redirect_to @user, notice: "Welcome to Dicer" }
         # format.json { render :show, status: :created, location: @user }
-        if params[:help]
-          if params[:player_profile]
-            format.html { redirect_to "/user/#{@user.id}/player_profile/new/crashcourse" }
+      if params[:help]
+        if params[:player] == "yes"
+          respond_to do |format|
+            format.html { redirect_to "/users/#{@user.id}/player_profiles  /new/crashcourse" }
             #redirect_to "/user/#{@user.id}/player_profile/new/crashcourse"
+            end
           else
             # new dm profile, guided
           end
         else
-            if params[:player_profile]
-              format.html{ redirect_to new_user_player_profiles_path }
+            if params[:player_profile] || 1==1
+              respond_to do |format|
+                format.html{ redirect_to new_user_player_profiles_path(@user) }
+              end
             else
               # new dm_profile, undguided
             end
         end
       else
-        format.html { render :new }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+        respond_to do |format|
+          format.html { render :new }
+          format.json { render json: @user.errors, status: :unprocessable_entity }
+        end
       end
-    end
   end
 
   # PATCH/PUT /users/1
