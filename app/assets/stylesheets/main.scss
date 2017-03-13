@@ -64,6 +64,11 @@ li a {
   top: 0;
   left: 0;
   background-color: $red_2;
+  opacity: 0.8;
+  transition: opacity 0.5s;
+}
+.header:hover{
+  opacity: 1;
 }
 .content {
   width:0px auto;
@@ -127,4 +132,80 @@ th, td {
 }
 tr:hover {
   background-color: $light_grey_2
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border: 1px solid black;
+    text-decoration: underline;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 150%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+input[type=text], input[type=password], input[type^=email] {
+    //width: 100%;
+    padding: 3px 5px;
+    margin: 5px 8px;
+    box-sizing: border-box;
+    border: 2px solid $light_grey_2;
+    border-radius:8px;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+}
+
+input[type=text]:focus, input[type=password]:focus, input[type^=email]:focus{
+    border: 2px solid $red_2;
+}
+
+select {
+    width: auto;
+    padding: 1px 5px;
+    border: 2px solid $dark_grey_2;
+    border-radius: 5px;
+    background-color: $light_grey_2;
+}
+
+input[type=button], input[type=submit], input[type=reset] {
+  background-color: $red_2;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  display: inline-block;
+  border: none;
+  text-decoration: none;
+  //margin: 4px 2px;
+  cursor: pointer;
 }
