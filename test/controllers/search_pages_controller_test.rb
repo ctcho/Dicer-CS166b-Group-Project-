@@ -37,14 +37,10 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "gives no results for a Player Profile search" do
-    #get search_pages_search_path
-    #somehow put in and submit the search parameters (NO idea how to do that...)
-    #redirect_to search_pages_results_path
-    #assert @users.count == 0
     @params = {:experience_level => 1, :ruleset1 => 2,
       :profile_type => 0, :online_play => 0, :module => 1}
-      get search_pages_results_path(@params)
-      assert_response :success
+    get search_pages_results_path(@params)
+    assert_response :success
     assert User.search(@params).count == 0
     #How do you assert a message showing up?
   end
