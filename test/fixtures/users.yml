@@ -6,8 +6,8 @@ one:
   email: email@example.com
   password_digest: <%= User.digest('password') %>
   profile_pic_path: MyString
-  player_profile_id: nil
-  dm_profile_id: nil
+  #player_profile_id: nil
+  #dm_profile_id: nil
   age: 18
   address: "02453"
   last_active: 2017-03-03 13:11:29
@@ -18,8 +18,8 @@ two:
   email: electronicmail@example.com
   password_digest: <%= User.digest('password') %>
   profile_pic_path: MyString
-  player_profile_id: nil
-  dm_profile_id: nil
+  #player_profile_id: nil
+  #dm_profile_id: nil
   age: 18
   address: "48183"
   last_active: 2017-03-03 13:11:29

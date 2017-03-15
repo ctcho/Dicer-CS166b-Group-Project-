@@ -9,7 +9,7 @@ class CharacterSheetsControllerTest < ActionDispatch::IntegrationTest
     @player_profile = player_profiles(:one)
     @character_sheet = character_sheets(:one)
     @player_profile.update(user: @user)
-    @user.update(player_profile_id: @player_profile.id)
+    @user.update(player_profile: @player_profile)
     @character_sheet.update(player_profile: @player_profile, file_path: "Updated/Path")
   end
 
