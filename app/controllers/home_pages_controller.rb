@@ -15,5 +15,9 @@ class HomePagesController < ApplicationController
   # GET /resources
   def resources
   end
-  
+
+  def unauthorized
+    
+  end
+
 end

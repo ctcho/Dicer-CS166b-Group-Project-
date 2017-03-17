@@ -2,12 +2,15 @@ class SessionsController < ApplicationController
 
   # Get /login
   def new
-
+    if logged_in?
+      render 'already_logged_in'
+    else
+      render 'new'
+    end
   end
 
   # POST /login
   def create
-
     user = User.find_by(email: params[:session][:email].downcase)
     if user  && user.authenticate(params[:session][:password])
       log_in user

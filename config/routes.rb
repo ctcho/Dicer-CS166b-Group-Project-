@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'home_pages/about'
   get 'home_pages/contact'
   get 'home_pages/resources'
+  get 'home_pages/unauthorized'
 
   get 'users/:user_id/player_profiles/new/crashcourse', to: 'player_profiles#crashcourse'
 

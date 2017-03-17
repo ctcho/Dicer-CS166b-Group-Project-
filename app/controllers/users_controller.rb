@@ -19,6 +19,13 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    if (logged_in? && current_user == params[:user_id])
+      byebug
+      render 'edit'
+    else
+      #some sort of error page
+      redirect_to home_pages_unauthorized_path
+    end
   end
 
   # POST /users

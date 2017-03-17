@@ -28,9 +28,9 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should get edit" do
+  test "should not get edit if not logged in" do
     get edit_user_url(@user)
-    assert_response :success
+    assert_redirected_to home_pages_unauthorized_url
   end
 
   test "should update user" do
