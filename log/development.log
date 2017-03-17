@@ -5821,3 +5821,1314 @@ Geokit is using the domain:
 Completed 200 OK in 2461ms (Views: 2361.9ms | ActiveRecord: 5.9ms)
 
 
+Started GET "/" for 10.0.2.2 at 2017-03-17 16:37:29 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (6.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.0.2) lib/active_record/migration.rb:573:in `check_pending!'
+activerecord (5.0.2) lib/active_record/migration.rb:549:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.2) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.2) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.2) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:20:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.7.1) lib/puma/configuration.rb:232:in `call'
+puma (3.7.1) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.1) lib/puma/server.rb:415:in `process_client'
+puma (3.7.1) lib/puma/server.rb:275:in `block in run'
+puma (3.7.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (9.3ms)
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.3ms)
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.4ms)
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (120.0ms)
+  [1m[36mActiveRecord::SchemaMigration Load (6.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to RemovePlayerProfileIdFromUsers (20170309204217)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "email" varchar, "password_digest" varchar, "profile_pic_path" varchar, "player_profile_id" integer, "dm_profile_id" integer, "age" integer, "address" varchar, "last_active" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "lat" float, "lng" float, "remember_digest" varchar)[0m
+  [1m[35m (1.6ms)[0m  [1m[32mINSERT INTO "ausers" ("id","username","email","password_digest","profile_pic_path","player_profile_id","dm_profile_id","age","address","last_active","created_at","updated_at","lat","lng","remember_digest")
+                     SELECT "id","username","email","password_digest","profile_pic_path","player_profile_id","dm_profile_id","age","address","last_active","created_at","updated_at","lat","lng","remember_digest" FROM "users"[0m
+  [1m[35m (13.2ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "email" varchar, "password_digest" varchar, "profile_pic_path" varchar, "dm_profile_id" integer, "age" integer, "address" varchar, "last_active" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "lat" float, "lng" float, "remember_digest" varchar)[0m
+  [1m[35m (7.0ms)[0m  [1m[32mINSERT INTO "users" ("id","username","email","password_digest","profile_pic_path","dm_profile_id","age","address","last_active","created_at","updated_at","lat","lng","remember_digest")
+                     SELECT "id","username","email","password_digest","profile_pic_path","dm_profile_id","age","address","last_active","created_at","updated_at","lat","lng","remember_digest" FROM "ausers"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35mSQL (2.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170309204217"]]
+  [1m[35m (14.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to RemoveDmProfileIdFromUsers (20170309204236)
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "email" varchar, "password_digest" varchar, "profile_pic_path" varchar, "dm_profile_id" integer, "age" integer, "address" varchar, "last_active" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "lat" float, "lng" float, "remember_digest" varchar)[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "ausers" ("id","username","email","password_digest","profile_pic_path","dm_profile_id","age","address","last_active","created_at","updated_at","lat","lng","remember_digest")
+                     SELECT "id","username","email","password_digest","profile_pic_path","dm_profile_id","age","address","last_active","created_at","updated_at","lat","lng","remember_digest" FROM "users"[0m
+  [1m[35m (8.8ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "email" varchar, "password_digest" varchar, "profile_pic_path" varchar, "age" integer, "address" varchar, "last_active" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "lat" float, "lng" float, "remember_digest" varchar)[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "users" ("id","username","email","password_digest","profile_pic_path","age","address","last_active","created_at","updated_at","lat","lng","remember_digest")
+                     SELECT "id","username","email","password_digest","profile_pic_path","age","address","last_active","created_at","updated_at","lat","lng","remember_digest" FROM "ausers"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35mSQL (2.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170309204236"]]
+  [1m[35m (8.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (8.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (7.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/" for 10.0.2.2 at 2017-03-17 16:39:31 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (5.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomePagesController#home as HTML
+Geokit is using the domain: localhost
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (73.8ms)
+Completed 200 OK in 24715ms (Views: 24530.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 10.0.2.2 at 2017-03-17 16:40:14 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#new as HTML
+Geokit is using the domain: localhost
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (401.2ms)
+  Rendered users/new.html.erb within layouts/application (550.2ms)
+Completed 200 OK in 2447ms (Views: 1985.5ms | ActiveRecord: 25.3ms)
+
+
+Started GET "/home_pages/home" for 10.0.2.2 at 2017-03-17 16:40:50 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomePagesController#home as HTML
+Geokit is using the domain: localhost
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 2002ms (Views: 1846.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 10.0.2.2 at 2017-03-17 16:40:53 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#new as HTML
+Geokit is using the domain: localhost
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (41.3ms)
+  Rendered users/new.html.erb within layouts/application (136.7ms)
+Completed 200 OK in 1559ms (Views: 1466.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 10.0.2.2 at 2017-03-17 16:41:25 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (6.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomePagesController#home as HTML
+Geokit is using the domain: localhost
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (56.1ms)
+Completed 200 OK in 4948ms (Views: 4726.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 10.0.2.2 at 2017-03-17 16:41:41 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#new as HTML
+Geokit is using the domain: localhost
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (370.6ms)
+  Rendered users/new.html.erb within layouts/application (464.7ms)
+Completed 200 OK in 2286ms (Views: 1947.8ms | ActiveRecord: 22.7ms)
+
+
+Started POST "/users" for 10.0.2.2 at 2017-03-17 16:42:01 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DpiZZReIj0YwlSSno5TX1dZJHAim92Hqa9Dvt0TSNtb9ChYOslAhujyXkNetIX10+W/9zvtC7tkzWcuWevlU7A==", "user"=>{"username"=>"newuser1", "email"=>"newuser1@example.com", "password"=>"[FILTERED]", "address"=>"foobar", "age"=>"19"}, "commit"=>"Create User"}
+Geokit is using the domain: localhost
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+Multi geocoding. address: foobar, args []
+Google geocoding. address: foobar, args []
+Google geocoding. Result: %7B%0A+++%22results%22+%3A+%5B%0A++++++%7B%0A+++++++++%22address_components%22+%3A+%5B%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22816%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22816%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22street_number%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22East+New+Haven+Avenue%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22E+New+Haven+Ave%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22route%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22Melbourne%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22Melbourne%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22locality%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22Brevard+County%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22Brevard+County%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22administrative_area_level_2%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22Florida%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22FL%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22administrative_area_level_1%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22United+States%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22US%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22country%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%2232901%22%2C%0A+++++++++++++++%22short_name%22+%3A+%2232901%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22postal_code%22+%5D%0A++++++++++++%7D%0A+++++++++%5D%2C%0A+++++++++%22formatted_address%22+%3A+%22816+E+New+Haven+Ave%2C+Melbourne%2C+FL+32901%2C+USA%22%2C%0A+++++++++%22geometry%22+%3A+%7B%0A++++++++++++%22location%22+%3A+%7B%0A+++++++++++++++%22lat%22+%3A+28.0786702%2C%0A+++++++++++++++%22lng%22+%3A+-80.6068775%0A++++++++++++%7D%2C%0A++++++++++++%22location_type%22+%3A+%22APPROXIMATE%22%2C%0A++++++++++++%22viewport%22+%3A+%7B%0A+++++++++++++++%22northeast%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+28.0800191802915%2C%0A++++++++++++++++++%22lng%22+%3A+-80.60552851970849%0A+++++++++++++++%7D%2C%0A+++++++++++++++%22southwest%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+28.07732121970849%2C%0A++++++++++++++++++%22lng%22+%3A+-80.60822648029149%0A+++++++++++++++%7D%0A++++++++++++%7D%0A+++++++++%7D%2C%0A+++++++++%22place_id%22+%3A+%22ChIJefmnT4wR3ogRC3AzrUaksVU%22%2C%0A+++++++++%22types%22+%3A+%5B+%22bar%22%2C+%22establishment%22%2C+%22night_club%22%2C+%22point_of_interest%22+%5D%0A++++++%7D%0A+++%5D%2C%0A+++%22status%22+%3A+%22OK%22%0A%7D%0A
+  [1m[36mUser Exists (5.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER(?) LIMIT ?[0m  [["username", "newuser1"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "newuser1@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (12.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "age", "address", "created_at", "updated_at", "lat", "lng") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["username", "newuser1"], ["email", "newuser1@example.com"], ["password_digest", "$2a$10$rbdDofmXBzTdjEXVZDHNPeUSEhjjESZuv8sOPNRSLOAZ5VCk2.7Xa"], ["age", 19], ["address", "foobar"], ["created_at", 2017-03-17 16:42:04 UTC], ["updated_at", 2017-03-17 16:42:04 UTC], ["lat", 28.0786702], ["lng", -80.6068775]]
+  [1m[35m (17.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 2804ms (ActiveRecord: 36.2ms)
+
+
+Started GET "/users/1" for 10.0.2.2 at 2017-03-17 16:42:04 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+Geokit is using the domain: localhost
+  [1m[36mUser Load (5.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPlayerProfile Load (5.8ms)[0m  [1m[34mSELECT  "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mDmProfile Load (7.1ms)[0m  [1m[34mSELECT  "dm_profiles".* FROM "dm_profiles" WHERE "dm_profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (762.0ms)
+  [1m[36mUser Load (5.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2272ms (Views: 1948.5ms | ActiveRecord: 36.7ms)
+
+
+Started GET "/users" for 10.0.2.2 at 2017-03-17 16:43:13 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+Geokit is using the domain: localhost
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (6.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (14.1ms)
+  [1m[36mUser Load (5.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 1863ms (Views: 1744.0ms | ActiveRecord: 12.4ms)
+
+
+Started GET "/users/1/player_profile" for 10.0.2.2 at 2017-03-17 16:43:31 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [GET] "/users/1/player_profile"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:20:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.7.1) lib/puma/configuration.rb:232:in `call'
+puma (3.7.1) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.1) lib/puma/server.rb:415:in `process_client'
+puma (3.7.1) lib/puma/server.rb:275:in `block in run'
+puma (3.7.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendered collection of /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [41 times] (187.2ms)
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (102.3ms)
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.0ms)
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (462.5ms)
+Started GET "/users/1/player_profiles/new" for 10.0.2.2 at 2017-03-17 16:43:43 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#new as HTML
+  Parameters: {"user_id"=>"1"}
+Geokit is using the domain: localhost
+  [1m[36mUser Load (9.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering player_profiles/new.html.erb within layouts/application
+  Rendered player_profiles/_form.html.erb (110.4ms)
+  Rendered player_profiles/new.html.erb within layouts/application (216.0ms)
+  [1m[36mUser Load (5.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 1882ms (Views: 1714.5ms | ActiveRecord: 31.2ms)
+
+
+Started POST "/users/1/player_profiles" for 10.0.2.2 at 2017-03-17 16:44:49 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uUH6ycxvp0NgBAkqDCDmh44CMo2WSoP3/1NCWnWhEUdK03WiabcJv2wGvVoClUwmoSTTS8v/DMSn2mZ7S4pzfQ==", "player_profile"=>{"user_id"=>"", "bio"=>"lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor ", "experience_level"=>"over 9000", "max_distance"=>"9000", "online_play"=>"1", "homebrew"=>"1", "original_ruleset"=>"1", "advanced_ruleset"=>"0", "pathfinder"=>"0", "third"=>"0", "three_point_five"=>"1", "fourth"=>"0", "fifth"=>"0", "original_campaign"=>"1", "module"=>"1"}, "commit"=>"Save Player profile", "user_id"=>"1"}
+Geokit is using the domain: localhost
+  [1m[36mUser Load (6.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  Rendering player_profiles/new.html.erb within layouts/application
+  Rendered player_profiles/_form.html.erb (22.0ms)
+  Rendered player_profiles/new.html.erb within layouts/application (114.3ms)
+  [1m[36mUser Load (5.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 1499ms (Views: 1439.2ms | ActiveRecord: 12.4ms)
+
+
+Started POST "/users/1/player_profiles" for 10.0.2.2 at 2017-03-17 16:45:02 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HN3MmtoGHTPPkZQmQOBREZ/VlPhaZC1jdS5Uw3GSXMLvT0Pxf96zz8OTIFZOVfuwsPN1PgfRolAtp3DiT7k++A==", "player_profile"=>{"user_id"=>"1", "bio"=>"lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor ", "experience_level"=>"over 9000", "max_distance"=>"9000", "online_play"=>"1", "homebrew"=>"1", "original_ruleset"=>"1", "advanced_ruleset"=>"0", "pathfinder"=>"0", "third"=>"0", "three_point_five"=>"1", "fourth"=>"0", "fifth"=>"0", "original_campaign"=>"1", "module"=>"1"}, "commit"=>"Save Player profile", "user_id"=>"1"}
+Geokit is using the domain: localhost
+  [1m[36mUser Load (6.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (5.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (11.1ms)[0m  [1m[32mINSERT INTO "player_profiles" ("user_id", "bio", "experience_level", "max_distance", "online_play", "homebrew", "original_ruleset", "advanced_ruleset", "pathfinder", "third", "three_point_five", "fourth", "fifth", "original_campaign", "module", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 1], ["bio", "lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor "], ["experience_level", 0], ["max_distance", 9000.0], ["online_play", 1], ["homebrew", 1], ["original_ruleset", 1], ["advanced_ruleset", 0], ["pathfinder", 0], ["third", 0], ["three_point_five", 1], ["fourth", 0], ["fifth", 0], ["original_campaign", 1], ["module", 1], ["created_at", 2017-03-17 16:45:02 UTC], ["updated_at", 2017-03-17 16:45:02 UTC]]
+  [1m[35m (13.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlayerProfile Load (7.8ms)[0m  [1m[34mSELECT  "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER(?) AND ("users"."id" != ?) LIMIT ?[0m  [["username", "newuser1"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) AND ("users"."id" != ?) LIMIT ?[0m  [["email", "newuser1@example.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (7.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/1/player_profiles.1
+Completed 302 Found in 127ms (ActiveRecord: 53.9ms)
+
+
+Started GET "/users/1/player_profiles.1" for 10.0.2.2 at 2017-03-17 16:45:02 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#show as 
+  Parameters: {"user_id"=>"1"}
+Geokit is using the domain: localhost
+  [1m[36mPlayerProfile Load (6.6ms)[0m  [1m[34mSELECT "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mUser Load (6.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlayerProfile Load (4.6ms)[0m  [1m[34mSELECT  "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering player_profiles/show.html.erb within layouts/application
+  Rendered player_profiles/show.html.erb within layouts/application (4.3ms)
+  [1m[36mUser Load (7.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 3320ms (Views: 2278.5ms | ActiveRecord: 25.7ms)
+
+
+Started GET "/users/1" for 10.0.2.2 at 2017-03-17 16:45:14 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+Geokit is using the domain: localhost
+  [1m[36mUser Load (6.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPlayerProfile Load (6.3ms)[0m  [1m[34mSELECT  "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mDmProfile Load (7.0ms)[0m  [1m[34mSELECT  "dm_profiles".* FROM "dm_profiles" WHERE "dm_profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (27.4ms)
+  [1m[36mUser Load (8.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 1467ms (Views: 1340.3ms | ActiveRecord: 27.5ms)
+
+
+Started GET "/users/1/player_profiles" for 10.0.2.2 at 2017-03-17 16:45:23 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#show as HTML
+  Parameters: {"user_id"=>"1"}
+Geokit is using the domain: localhost
+  [1m[36mPlayerProfile Load (5.4ms)[0m  [1m[34mSELECT "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mUser Load (6.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlayerProfile Load (4.9ms)[0m  [1m[34mSELECT  "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering player_profiles/show.html.erb within layouts/application
+  Rendered player_profiles/show.html.erb within layouts/application (4.5ms)
+  [1m[36mUser Load (8.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 1848ms (Views: 1723.6ms | ActiveRecord: 25.7ms)
+
+
+Started GET "/users/1/player_profiles" for 10.0.2.2 at 2017-03-17 16:51:48 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#show as HTML
+  Parameters: {"user_id"=>"1"}
+Geokit is using the domain: localhost
+  [1m[36mPlayerProfile Load (5.7ms)[0m  [1m[34mSELECT "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mUser Load (8.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlayerProfile Load (5.7ms)[0m  [1m[34mSELECT  "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering player_profiles/show.html.erb within layouts/application
+  Rendered player_profiles/show.html.erb within layouts/application (4.0ms)
+Completed 500 Internal Server Error in 3223ms (ActiveRecord: 19.7ms)
+
+
+  
+ActionView::Template::Error (Undefined variable: "$light_grey_2".):
+    4:     <title>Dicer</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:   </head>
+   10: 
+  
+app/assets/stylesheets/player_profiles.scss:10
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___92367375204646838_69967636762620'
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (34.8ms)
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.0ms)
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.6ms)
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (99.9ms)
+Started GET "/users/1/player_profiles" for 10.0.2.2 at 2017-03-17 16:52:31 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#show as HTML
+  Parameters: {"user_id"=>"1"}
+Geokit is using the domain: localhost
+  [1m[36mPlayerProfile Load (4.7ms)[0m  [1m[34mSELECT "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mUser Load (5.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlayerProfile Load (5.2ms)[0m  [1m[34mSELECT  "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering player_profiles/show.html.erb within layouts/application
+  Rendered player_profiles/show.html.erb within layouts/application (4.0ms)
+  [1m[36mUser Load (9.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2535ms (Views: 2405.4ms | ActiveRecord: 24.5ms)
+
+
+Started GET "/users/1/player_profiles" for 10.0.2.2 at 2017-03-17 16:53:20 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#show as HTML
+  Parameters: {"user_id"=>"1"}
+Geokit is using the domain: localhost
+  [1m[36mPlayerProfile Load (14.3ms)[0m  [1m[34mSELECT "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mUser Load (7.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlayerProfile Load (6.6ms)[0m  [1m[34mSELECT  "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering player_profiles/show.html.erb within layouts/application
+  Rendered player_profiles/show.html.erb within layouts/application (4.2ms)
+  [1m[36mUser Load (5.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 1955ms (Views: 1818.8ms | ActiveRecord: 33.4ms)
+
+
+Started GET "/users/1/player_profiles" for 10.0.2.2 at 2017-03-17 16:54:21 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#show as HTML
+  Parameters: {"user_id"=>"1"}
+Geokit is using the domain: localhost
+  [1m[36mPlayerProfile Load (6.6ms)[0m  [1m[34mSELECT "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mUser Load (6.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlayerProfile Load (5.7ms)[0m  [1m[34mSELECT  "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering player_profiles/show.html.erb within layouts/application
+  Rendered player_profiles/show.html.erb within layouts/application (4.4ms)
+  [1m[36mUser Load (5.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 1917ms (Views: 1787.5ms | ActiveRecord: 24.0ms)
+
+
+Started GET "/users/1/player_profiles" for 10.0.2.2 at 2017-03-17 16:55:09 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#show as HTML
+  Parameters: {"user_id"=>"1"}
+Geokit is using the domain: localhost
+  [1m[36mPlayerProfile Load (11.3ms)[0m  [1m[34mSELECT "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mUser Load (6.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlayerProfile Load (5.4ms)[0m  [1m[34mSELECT  "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering player_profiles/show.html.erb within layouts/application
+  Rendered player_profiles/show.html.erb within layouts/application (3.9ms)
+  [1m[36mUser Load (5.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 1446ms (Views: 1309.8ms | ActiveRecord: 28.7ms)
+
+
+Started GET "/users/1/player_profiles" for 10.0.2.2 at 2017-03-17 16:55:54 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#show as HTML
+  Parameters: {"user_id"=>"1"}
+Geokit is using the domain: localhost
+  [1m[36mPlayerProfile Load (10.0ms)[0m  [1m[34mSELECT "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mUser Load (9.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlayerProfile Load (6.3ms)[0m  [1m[34mSELECT  "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering player_profiles/show.html.erb within layouts/application
+  Rendered player_profiles/show.html.erb within layouts/application (4.5ms)
+  [1m[36mUser Load (6.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2117ms (Views: 1972.6ms | ActiveRecord: 32.5ms)
+
+
+Started GET "/users/1/player_profiles" for 10.0.2.2 at 2017-03-17 16:56:18 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#show as HTML
+  Parameters: {"user_id"=>"1"}
+Geokit is using the domain: localhost
+  [1m[36mPlayerProfile Load (5.1ms)[0m  [1m[34mSELECT "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mUser Load (5.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlayerProfile Load (4.9ms)[0m  [1m[34mSELECT  "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering player_profiles/show.html.erb within layouts/application
+  Rendered player_profiles/show.html.erb within layouts/application (4.0ms)
+  [1m[36mUser Load (5.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2107ms (Views: 1981.2ms | ActiveRecord: 21.2ms)
+
+
+Started GET "/users/1/player_profiles" for 10.0.2.2 at 2017-03-17 16:56:55 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#show as HTML
+  Parameters: {"user_id"=>"1"}
+Geokit is using the domain: localhost
+  [1m[36mPlayerProfile Load (12.6ms)[0m  [1m[34mSELECT "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mUser Load (6.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlayerProfile Load (5.3ms)[0m  [1m[34mSELECT  "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering player_profiles/show.html.erb within layouts/application
+  Rendered player_profiles/show.html.erb within layouts/application (4.5ms)
+  [1m[36mUser Load (6.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 1373ms (Views: 1247.8ms | ActiveRecord: 30.0ms)
+
+
+Started GET "/users/1/player_profiles" for 10.0.2.2 at 2017-03-17 17:01:50 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#show as HTML
+  Parameters: {"user_id"=>"1"}
+Geokit is using the domain: localhost
+  [1m[36mPlayerProfile Load (6.5ms)[0m  [1m[34mSELECT "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mUser Load (5.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlayerProfile Load (5.3ms)[0m  [1m[34mSELECT  "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering player_profiles/show.html.erb within layouts/application
+  Rendered player_profiles/show.html.erb within layouts/application (4.0ms)
+  [1m[36mUser Load (7.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 1831ms (Views: 1716.3ms | ActiveRecord: 24.6ms)
+
+
+Started GET "/users/1/player_profiles" for 10.0.2.2 at 2017-03-17 17:01:52 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#show as HTML
+  Parameters: {"user_id"=>"1"}
+Geokit is using the domain: localhost
+  [1m[36mPlayerProfile Load (5.7ms)[0m  [1m[34mSELECT "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mUser Load (5.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlayerProfile Load (5.2ms)[0m  [1m[34mSELECT  "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering player_profiles/show.html.erb within layouts/application
+  Rendered player_profiles/show.html.erb within layouts/application (4.1ms)
+  [1m[36mUser Load (5.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 1174ms (Views: 1058.3ms | ActiveRecord: 21.8ms)
+
+
+Started GET "/users/1/player_profiles" for 10.0.2.2 at 2017-03-17 17:02:01 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#show as HTML
+  Parameters: {"user_id"=>"1"}
+Geokit is using the domain: localhost
+  [1m[36mPlayerProfile Load (7.8ms)[0m  [1m[34mSELECT "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mUser Load (7.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlayerProfile Load (5.6ms)[0m  [1m[34mSELECT  "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering player_profiles/show.html.erb within layouts/application
+  Rendered player_profiles/show.html.erb within layouts/application (3.8ms)
+  [1m[36mUser Load (6.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 1221ms (Views: 1083.0ms | ActiveRecord: 27.4ms)
+
+
+Started GET "/users/1/player_profiles" for 10.0.2.2 at 2017-03-17 17:02:21 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#show as HTML
+  Parameters: {"user_id"=>"1"}
+Geokit is using the domain: localhost
+  [1m[36mPlayerProfile Load (6.9ms)[0m  [1m[34mSELECT "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mUser Load (5.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlayerProfile Load (6.4ms)[0m  [1m[34mSELECT  "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering player_profiles/show.html.erb within layouts/application
+  Rendered player_profiles/show.html.erb within layouts/application (3.7ms)
+  [1m[36mUser Load (5.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 1269ms (Views: 1146.5ms | ActiveRecord: 24.9ms)
+
+
+Started GET "/users/1/app/assets/images/9712-six-sided-dice-d6--vector.png" for 10.0.2.2 at 2017-03-17 17:02:25 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [GET] "/users/1/app/assets/images/9712-six-sided-dice-d6--vector.png"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:20:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.7.1) lib/puma/configuration.rb:232:in `call'
+puma (3.7.1) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.1) lib/puma/server.rb:415:in `process_client'
+puma (3.7.1) lib/puma/server.rb:275:in `block in run'
+puma (3.7.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.3ms)
+  Rendered collection of /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [41 times] (168.8ms)
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.0ms)
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.6ms)
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (287.3ms)
+Started GET "/users/1/player_profiles" for 10.0.2.2 at 2017-03-17 17:04:36 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#show as HTML
+  Parameters: {"user_id"=>"1"}
+Geokit is using the domain: localhost
+  [1m[36mPlayerProfile Load (7.4ms)[0m  [1m[34mSELECT "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mUser Load (5.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlayerProfile Load (4.9ms)[0m  [1m[34mSELECT  "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering player_profiles/show.html.erb within layouts/application
+  Rendered player_profiles/show.html.erb within layouts/application (3.8ms)
+  [1m[36mUser Load (6.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 1336ms (Views: 1216.7ms | ActiveRecord: 24.2ms)
+
+
+Started GET "/users/1/player_profiles" for 10.0.2.2 at 2017-03-17 17:05:31 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#show as HTML
+  Parameters: {"user_id"=>"1"}
+Geokit is using the domain: localhost
+  [1m[36mPlayerProfile Load (6.2ms)[0m  [1m[34mSELECT "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mUser Load (4.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlayerProfile Load (5.5ms)[0m  [1m[34mSELECT  "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering player_profiles/show.html.erb within layouts/application
+  Rendered player_profiles/show.html.erb within layouts/application (5.0ms)
+  [1m[36mUser Load (6.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 1400ms (Views: 1254.5ms | ActiveRecord: 22.9ms)
+
+
+Started GET "/users/1/player_profiles" for 10.0.2.2 at 2017-03-17 17:08:23 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#show as HTML
+  Parameters: {"user_id"=>"1"}
+Geokit is using the domain: localhost
+  [1m[36mPlayerProfile Load (6.0ms)[0m  [1m[34mSELECT "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mUser Load (5.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlayerProfile Load (7.7ms)[0m  [1m[34mSELECT  "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering player_profiles/show.html.erb within layouts/application
+  Rendered player_profiles/show.html.erb within layouts/application (3.1ms)
+Completed 500 Internal Server Error in 364ms (ActiveRecord: 18.8ms)
+
+
+  
+SyntaxError (/vagrant/dropbox/cosi166b_spittler/dicer/dicer/app/views/player_profiles/show.html.erb:3: syntax error, unexpected ')', expecting =>
+...Default Profile Picture", "/" );@output_buffer.safe_append='...
+...                               ^
+/vagrant/dropbox/cosi166b_spittler/dicer/dicer/app/views/player_profiles/show.html.erb:84: syntax error, unexpected keyword_ensure, expecting ')'
+/vagrant/dropbox/cosi166b_spittler/dicer/dicer/app/views/player_profiles/show.html.erb:86: syntax error, unexpected keyword_end, expecting ')'):
+  
+app/views/player_profiles/show.html.erb:3: syntax error, unexpected ')', expecting =>
+app/views/player_profiles/show.html.erb:84: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/player_profiles/show.html.erb:86: syntax error, unexpected keyword_end, expecting ')'
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (14.1ms)
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.2ms)
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.6ms)
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (69.4ms)
+Started GET "/users/1/player_profiles" for 10.0.2.2 at 2017-03-17 17:08:41 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#show as HTML
+  Parameters: {"user_id"=>"1"}
+Geokit is using the domain: localhost
+  [1m[36mPlayerProfile Load (6.2ms)[0m  [1m[34mSELECT "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mUser Load (4.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlayerProfile Load (6.1ms)[0m  [1m[34mSELECT  "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering player_profiles/show.html.erb within layouts/application
+  Rendered player_profiles/show.html.erb within layouts/application (1880.8ms)
+  [1m[36mUser Load (5.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 3666ms (Views: 3545.4ms | ActiveRecord: 22.7ms)
+
+
+Started GET "/users/1/player_profiles" for 10.0.2.2 at 2017-03-17 17:11:09 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#show as HTML
+  Parameters: {"user_id"=>"1"}
+Geokit is using the domain: localhost
+  [1m[36mPlayerProfile Load (5.3ms)[0m  [1m[34mSELECT "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mUser Load (18.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlayerProfile Load (4.5ms)[0m  [1m[34mSELECT  "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering player_profiles/show.html.erb within layouts/application
+  Rendered player_profiles/show.html.erb within layouts/application (51.0ms)
+  [1m[36mUser Load (5.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 1551ms (Views: 1421.6ms | ActiveRecord: 33.4ms)
+
+
+Started GET "/users/1/player_profiles" for 10.0.2.2 at 2017-03-17 17:11:30 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#show as HTML
+  Parameters: {"user_id"=>"1"}
+Geokit is using the domain: localhost
+  [1m[36mPlayerProfile Load (6.0ms)[0m  [1m[34mSELECT "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mUser Load (6.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlayerProfile Load (4.9ms)[0m  [1m[34mSELECT  "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering player_profiles/show.html.erb within layouts/application
+  Rendered player_profiles/show.html.erb within layouts/application (43.4ms)
+  [1m[36mUser Load (6.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2082ms (Views: 1937.4ms | ActiveRecord: 23.9ms)
+
+
+Started GET "/users/1/player_profiles" for 10.0.2.2 at 2017-03-17 17:13:45 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#show as HTML
+  Parameters: {"user_id"=>"1"}
+Geokit is using the domain: localhost
+  [1m[36mPlayerProfile Load (5.4ms)[0m  [1m[34mSELECT "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mUser Load (7.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlayerProfile Load (4.5ms)[0m  [1m[34mSELECT  "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering player_profiles/show.html.erb within layouts/application
+  Rendered player_profiles/show.html.erb within layouts/application (59.4ms)
+  [1m[36mUser Load (7.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2464ms (Views: 2330.9ms | ActiveRecord: 24.0ms)
+
+
+Started GET "/users/1/player_profiles" for 10.0.2.2 at 2017-03-17 17:14:25 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#show as HTML
+  Parameters: {"user_id"=>"1"}
+Geokit is using the domain: localhost
+  [1m[36mPlayerProfile Load (5.1ms)[0m  [1m[34mSELECT "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mUser Load (6.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlayerProfile Load (4.7ms)[0m  [1m[34mSELECT  "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering player_profiles/show.html.erb within layouts/application
+  Rendered player_profiles/show.html.erb within layouts/application (44.5ms)
+  [1m[36mUser Load (8.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 1929ms (Views: 1807.9ms | ActiveRecord: 24.7ms)
+
+
+Started GET "/users/1/player_profiles" for 10.0.2.2 at 2017-03-17 17:14:44 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#show as HTML
+  Parameters: {"user_id"=>"1"}
+Geokit is using the domain: localhost
+  [1m[36mPlayerProfile Load (5.5ms)[0m  [1m[34mSELECT "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mUser Load (4.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlayerProfile Load (5.9ms)[0m  [1m[34mSELECT  "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering player_profiles/show.html.erb within layouts/application
+  Rendered player_profiles/show.html.erb within layouts/application (48.3ms)
+  [1m[36mUser Load (6.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2426ms (Views: 2303.2ms | ActiveRecord: 22.7ms)
+
+
+Started GET "/users/1/player_profiles" for 10.0.2.2 at 2017-03-17 17:15:36 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#show as HTML
+  Parameters: {"user_id"=>"1"}
+Geokit is using the domain: localhost
+  [1m[36mPlayerProfile Load (5.7ms)[0m  [1m[34mSELECT "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mUser Load (5.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlayerProfile Load (6.6ms)[0m  [1m[34mSELECT  "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering player_profiles/show.html.erb within layouts/application
+  Rendered player_profiles/show.html.erb within layouts/application (45.0ms)
+  [1m[36mUser Load (5.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 1421ms (Views: 1309.0ms | ActiveRecord: 23.2ms)
+
+
+Started GET "/users/1/player_profiles" for 10.0.2.2 at 2017-03-17 17:15:52 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#show as HTML
+  Parameters: {"user_id"=>"1"}
+Geokit is using the domain: localhost
+  [1m[36mPlayerProfile Load (6.5ms)[0m  [1m[34mSELECT "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mUser Load (4.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlayerProfile Load (5.0ms)[0m  [1m[34mSELECT  "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering player_profiles/show.html.erb within layouts/application
+  Rendered player_profiles/show.html.erb within layouts/application (55.8ms)
+Completed 500 Internal Server Error in 1165ms (ActiveRecord: 16.4ms)
+
+
+  
+ActionView::Template::Error (Operation not permitted @ rb_file_s_rename - (/vagrant/dropbox/cosi166b_spittler/dicer/dicer/tmp/cache/assets/sprockets/v3.0/St/StWhc50AJptS8UnlfVZoRbUmh1C6JTHI6eL4zA25mew.cache.69967640901080.4940.926201, /vagrant/dropbox/cosi166b_spittler/dicer/dicer/tmp/cache/assets/sprockets/v3.0/St/StWhc50AJptS8UnlfVZoRbUmh1C6JTHI6eL4zA25mew.cache)):
+    4:     <title>Dicer</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:   </head>
+   10: 
+  
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___92367375204646838_69967166189480'
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (19.5ms)
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.6ms)
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.0ms)
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (83.5ms)
+Started GET "/users/1/player_profiles" for 10.0.2.2 at 2017-03-17 17:16:02 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#show as HTML
+  Parameters: {"user_id"=>"1"}
+Geokit is using the domain: localhost
+  [1m[36mPlayerProfile Load (5.4ms)[0m  [1m[34mSELECT "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mUser Load (5.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlayerProfile Load (5.1ms)[0m  [1m[34mSELECT  "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering player_profiles/show.html.erb within layouts/application
+  Rendered player_profiles/show.html.erb within layouts/application (50.6ms)
+  [1m[36mUser Load (6.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 1951ms (Views: 1831.0ms | ActiveRecord: 21.5ms)
+
+
+Started GET "/users/1/player_profiles" for 10.0.2.2 at 2017-03-17 17:17:22 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#show as HTML
+  Parameters: {"user_id"=>"1"}
+Geokit is using the domain: localhost
+  [1m[36mPlayerProfile Load (7.0ms)[0m  [1m[34mSELECT "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mUser Load (5.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlayerProfile Load (4.8ms)[0m  [1m[34mSELECT  "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering player_profiles/show.html.erb within layouts/application
+  [1m[36mUser Load (5.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered player_profiles/show.html.erb within layouts/application (52.3ms)
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 1341ms (Views: 1217.9ms | ActiveRecord: 23.2ms)
+
+
+Started GET "/users/1/player_profiles" for 10.0.2.2 at 2017-03-17 17:27:26 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (6.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PlayerProfilesController#show as HTML
+  Parameters: {"user_id"=>"1"}
+Geokit is using the domain: localhost
+  [1m[36mPlayerProfile Load (5.2ms)[0m  [1m[34mSELECT "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mUser Load (5.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlayerProfile Load (6.5ms)[0m  [1m[34mSELECT  "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering player_profiles/show.html.erb within layouts/application
+  [1m[36mUser Load (5.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (5.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (4.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered player_profiles/show.html.erb within layouts/application (7028.9ms)
+Completed 500 Internal Server Error in 8286ms (ActiveRecord: 64.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `experience_level' for #<User:0x007effa5b5cdf8>):
+    13: 
+    14:   <p>
+    15:     <strong>Experience level:</strong>
+    16:     <%= translate_experience_level(User.find(@player_profile.user_id)) %>
+    17:   </p>
+    18: 
+    19:   <p>
+  
+app/helpers/users_helper.rb:5:in `translate_experience_level'
+app/views/player_profiles/show.html.erb:16:in `_app_views_player_profiles_show_html_erb__1503940381608104313_69818647961240'
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (15.6ms)
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (9.1ms)
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.7ms)
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (77.7ms)
+  [1m[36mUser Load (5.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlayerProfile Load (5.5ms)[0m  [1m[34mSELECT  "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+Started GET "/users/1/player_profiles" for 10.0.2.2 at 2017-03-17 17:29:51 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (7.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PlayerProfilesController#show as HTML
+  Parameters: {"user_id"=>"1"}
+Geokit is using the domain: localhost
+  [1m[36mPlayerProfile Load (5.7ms)[0m  [1m[34mSELECT "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mUser Load (5.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlayerProfile Load (5.0ms)[0m  [1m[34mSELECT  "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering player_profiles/show.html.erb within layouts/application
+  [1m[36mUser Load (5.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (8.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered player_profiles/show.html.erb within layouts/application (2093.9ms)
+  [1m[36mUser Load (7.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 5792ms (Views: 4770.5ms | ActiveRecord: 66.5ms)
+
+
+Started GET "/users/1/player_profiles" for 10.0.2.2 at 2017-03-17 17:32:43 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#show as HTML
+  Parameters: {"user_id"=>"1"}
+Geokit is using the domain: localhost
+  [1m[36mPlayerProfile Load (12.0ms)[0m  [1m[34mSELECT "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mUser Load (5.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlayerProfile Load (5.6ms)[0m  [1m[34mSELECT  "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering player_profiles/show.html.erb within layouts/application
+  [1m[36mUser Load (5.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered player_profiles/show.html.erb within layouts/application (461.8ms)
+Completed 500 Internal Server Error in 873ms (ActiveRecord: 28.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `translate_online_play' for #<#<Class:0x007fddcc996a40>:0x007fdd9e4af7a8>
+Did you mean?  translate_experience_level):
+    22:   </p>
+    23: 
+    24:   <p>
+    25:     <%= translate_online_play(@player_profile) %>
+    26:   </p>
+    27: 
+    28:   <p>
+  
+app/views/player_profiles/show.html.erb:25:in `_app_views_player_profiles_show_html_erb___126534523397584535_70294910075160'
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (13.5ms)
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.7ms)
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.1ms)
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (69.0ms)
+Started GET "/users/1/player_profiles" for 10.0.2.2 at 2017-03-17 17:33:07 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#show as HTML
+  Parameters: {"user_id"=>"1"}
+Geokit is using the domain: localhost
+  [1m[36mPlayerProfile Load (10.7ms)[0m  [1m[34mSELECT "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mUser Load (6.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlayerProfile Load (5.4ms)[0m  [1m[34mSELECT  "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering player_profiles/show.html.erb within layouts/application
+  [1m[36mUser Load (5.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered player_profiles/show.html.erb within layouts/application (469.5ms)
+Completed 500 Internal Server Error in 827ms (ActiveRecord: 27.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `translate_online_play' for #<#<Class:0x007fddcc996a40>:0x007fdd9f172350>
+Did you mean?  translate_experience_level):
+    22:   </p>
+    23: 
+    24:   <p>
+    25:     <%= translate_online_play(@player_profile) %>
+    26:   </p>
+    27: 
+    28:   <p>
+  
+app/views/player_profiles/show.html.erb:25:in `_app_views_player_profiles_show_html_erb___126534523397584535_70294916798500'
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (13.9ms)
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.5ms)
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.6ms)
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (69.0ms)
+Started GET "/users/1/player_profiles" for 10.0.2.2 at 2017-03-17 17:33:30 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#show as HTML
+  Parameters: {"user_id"=>"1"}
+Geokit is using the domain: localhost
+  [1m[36mPlayerProfile Load (6.9ms)[0m  [1m[34mSELECT "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mUser Load (4.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlayerProfile Load (4.9ms)[0m  [1m[34mSELECT  "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering player_profiles/show.html.erb within layouts/application
+  [1m[36mUser Load (5.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered player_profiles/show.html.erb within layouts/application (423.2ms)
+Completed 500 Internal Server Error in 777ms (ActiveRecord: 22.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `translate_online_play' for #<#<Class:0x007fddcc996a40>:0x007fddccb4b5c0>
+Did you mean?  translate_experience_level):
+    22:   </p>
+    23: 
+    24:   <p>
+    25:     <%= translate_online_play(@player_profile) %>
+    26:   </p>
+    27: 
+    28:   <p>
+  
+app/views/player_profiles/show.html.erb:25:in `_app_views_player_profiles_show_html_erb___126534523397584535_70295299486120'
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (17.9ms)
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.5ms)
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.6ms)
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (72.4ms)
+Started GET "/users/1/player_profiles" for 10.0.2.2 at 2017-03-17 17:34:02 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (6.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PlayerProfilesController#show as HTML
+  Parameters: {"user_id"=>"1"}
+Geokit is using the domain: localhost
+  [1m[36mPlayerProfile Load (6.4ms)[0m  [1m[34mSELECT "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mUser Load (5.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlayerProfile Load (5.6ms)[0m  [1m[34mSELECT  "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering player_profiles/show.html.erb within layouts/application
+  [1m[36mUser Load (6.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (5.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered player_profiles/show.html.erb within layouts/application (1982.6ms)
+  [1m[36mUser Load (7.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 5353ms (Views: 4388.8ms | ActiveRecord: 65.2ms)
+
+
+  [1m[36mUser Load (5.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/home_pages/home" for 10.0.2.2 at 2017-03-17 17:37:08 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (5.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomePagesController#home as HTML
+Geokit is using the domain: localhost
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (59.8ms)
+  [1m[36mUser Load (8.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 4694ms (Views: 4499.0ms | ActiveRecord: 24.5ms)
+
+
+Started GET "/signup" for 10.0.2.2 at 2017-03-17 17:37:31 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#new as HTML
+Geokit is using the domain: localhost
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (326.8ms)
+  Rendered users/new.html.erb within layouts/application (440.1ms)
+  [1m[36mUser Load (16.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2530ms (Views: 2419.0ms | ActiveRecord: 16.8ms)
+
+
+Started GET "/signup" for 10.0.2.2 at 2017-03-17 17:39:27 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#new as HTML
+Geokit is using the domain: localhost
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (21.0ms)
+  Rendered users/new.html.erb within layouts/application (114.3ms)
+  [1m[36mUser Load (13.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 1497ms (Views: 1376.9ms | ActiveRecord: 13.3ms)
+
+
+Started POST "/users" for 10.0.2.2 at 2017-03-17 17:39:52 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tVzZtnG9HKyq8chexg71fawCEgsBzqO4v6VD3NXFOSVGzlbd1GWyUKbzfC7Iu1/cgyTzzVx7LIvnLGf96+5bHw==", "user"=>{"username"=>"exampleuser2", "email"=>"exampleuser2@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "address"=>"02453", "age"=>"18"}, "commit"=>"Create User"}
+Geokit is using the domain: localhost
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+Multi geocoding. address: 02453, args []
+Google geocoding. address: 02453, args []
+Google geocoding. Result: %7B%0A+++%22results%22+%3A+%5B%0A++++++%7B%0A+++++++++%22address_components%22+%3A+%5B%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%2202453%22%2C%0A+++++++++++++++%22short_name%22+%3A+%2202453%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22postal_code%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22Waltham%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22Waltham%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22locality%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22Middlesex+County%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22Middlesex+County%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22administrative_area_level_2%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22Massachusetts%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22MA%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22administrative_area_level_1%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22United+States%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22US%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22country%22%2C+%22political%22+%5D%0A++++++++++++%7D%0A+++++++++%5D%2C%0A+++++++++%22formatted_address%22+%3A+%22Waltham%2C+MA+02453%2C+USA%22%2C%0A+++++++++%22geometry%22+%3A+%7B%0A++++++++++++%22bounds%22+%3A+%7B%0A+++++++++++++++%22northeast%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+42.3864031%2C%0A++++++++++++++++++%22lng%22+%3A+-71.19445589999999%0A+++++++++++++++%7D%2C%0A+++++++++++++++%22southwest%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+42.3536328%2C%0A++++++++++++++++++%22lng%22+%3A+-71.272502%0A+++++++++++++++%7D%0A++++++++++++%7D%2C%0A++++++++++++%22location%22+%3A+%7B%0A+++++++++++++++%22lat%22+%3A+42.3624504%2C%0A+++++++++++++++%22lng%22+%3A+-71.25772329999999%0A++++++++++++%7D%2C%0A++++++++++++%22location_type%22+%3A+%22APPROXIMATE%22%2C%0A++++++++++++%22viewport%22+%3A+%7B%0A+++++++++++++++%22northeast%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+42.3864031%2C%0A++++++++++++++++++%22lng%22+%3A+-71.19445589999999%0A+++++++++++++++%7D%2C%0A+++++++++++++++%22southwest%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+42.3536328%2C%0A++++++++++++++++++%22lng%22+%3A+-71.272502%0A+++++++++++++++%7D%0A++++++++++++%7D%0A+++++++++%7D%2C%0A+++++++++%22place_id%22+%3A+%22ChIJI1deT9qC44kRaSoDL_Qg51w%22%2C%0A+++++++++%22types%22+%3A+%5B+%22postal_code%22+%5D%0A++++++%7D%0A+++%5D%2C%0A+++%22status%22+%3A+%22OK%22%0A%7D%0A
+  [1m[36mUser Exists (7.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER(?) LIMIT ?[0m  [["username", "exampleuser2"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "exampleuser2@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (13.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "age", "address", "created_at", "updated_at", "lat", "lng") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["username", "exampleuser2"], ["email", "exampleuser2@example.com"], ["password_digest", "$2a$10$e55b9rmMuk2oqnIkMW5aHOVLFpJiFlTf1ipJ9Iy6NwRpYdsvF5Oqm"], ["age", 18], ["address", "02453"], ["created_at", 2017-03-17 17:39:53 UTC], ["updated_at", 2017-03-17 17:39:53 UTC], ["lat", 42.3624504], ["lng", -71.2577233]]
+  [1m[35m (27.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 496ms (ActiveRecord: 49.4ms)
+
+
+Started GET "/users/2" for 10.0.2.2 at 2017-03-17 17:39:53 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+Geokit is using the domain: localhost
+  [1m[36mUser Load (15.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPlayerProfile Load (6.0ms)[0m  [1m[34mSELECT  "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  [1m[36mDmProfile Load (5.3ms)[0m  [1m[34mSELECT  "dm_profiles".* FROM "dm_profiles" WHERE "dm_profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (569.3ms)
+  [1m[36mUser Load (5.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 2065ms (Views: 1915.8ms | ActiveRecord: 47.2ms)
+
+
+Started GET "/users" for 10.0.2.2 at 2017-03-17 17:40:10 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+Geokit is using the domain: localhost
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (6.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (16.3ms)
+  [1m[36mUser Load (6.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 1961ms (Views: 1859.6ms | ActiveRecord: 12.9ms)
+
+
+  [1m[36mUser Load (5.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (5.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Started GET "/" for 10.0.2.2 at 2017-03-17 17:52:22 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (5.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomePagesController#home as HTML
+Geokit is using the domain: localhost
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (64.1ms)
+  [1m[36mUser Load (6.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 4623ms (Views: 4430.9ms | ActiveRecord: 26.6ms)
+
+
+Started GET "/users/2" for 10.0.2.2 at 2017-03-17 17:52:38 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+Geokit is using the domain: localhost
+  [1m[36mUser Load (11.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPlayerProfile Load (5.5ms)[0m  [1m[34mSELECT  "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  [1m[36mDmProfile Load (6.2ms)[0m  [1m[34mSELECT  "dm_profiles".* FROM "dm_profiles" WHERE "dm_profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (705.8ms)
+  [1m[36mUser Load (6.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 2252ms (Views: 2120.4ms | ActiveRecord: 41.1ms)
+
+
+Started GET "/users/1/player_profiles" for 10.0.2.2 at 2017-03-17 17:52:44 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#show as HTML
+  Parameters: {"user_id"=>"1"}
+Geokit is using the domain: localhost
+  [1m[36mPlayerProfile Load (5.8ms)[0m  [1m[34mSELECT "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mUser Load (6.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlayerProfile Load (5.1ms)[0m  [1m[34mSELECT  "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering player_profiles/show.html.erb within layouts/application
+  [1m[36mUser Load (6.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (13.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered player_profiles/show.html.erb within layouts/application (93.0ms)
+Completed 200 OK in 1411ms (Views: 1209.1ms | ActiveRecord: 48.5ms)
+
+
+Started GET "/users/1/player_profiles" for 10.0.2.2 at 2017-03-17 17:55:05 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#show as HTML
+  Parameters: {"user_id"=>"1"}
+Geokit is using the domain: localhost
+  [1m[36mPlayerProfile Load (6.3ms)[0m  [1m[34mSELECT "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mUser Load (5.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlayerProfile Load (5.1ms)[0m  [1m[34mSELECT  "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering player_profiles/show.html.erb within layouts/application
+  [1m[36mUser Load (5.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (11.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered player_profiles/show.html.erb within layouts/application (73.6ms)
+Completed 200 OK in 1324ms (Views: 1198.2ms | ActiveRecord: 33.6ms)
+
+
+Started GET "/users/1/player_profiles" for 10.0.2.2 at 2017-03-17 17:55:44 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (5.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PlayerProfilesController#show as HTML
+  Parameters: {"user_id"=>"1"}
+Geokit is using the domain: localhost
+  [1m[36mPlayerProfile Load (5.3ms)[0m  [1m[34mSELECT "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mUser Load (7.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlayerProfile Load (4.8ms)[0m  [1m[34mSELECT  "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering player_profiles/show.html.erb within layouts/application
+  [1m[36mUser Load (6.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (6.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (6.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (6.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered player_profiles/show.html.erb within layouts/application (1918.7ms)
+Completed 200 OK in 4977ms (Views: 4056.5ms | ActiveRecord: 68.8ms)
+
+
+Started GET "/users/1/player_profiles" for 10.0.2.2 at 2017-03-17 17:56:37 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (5.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PlayerProfilesController#show as HTML
+  Parameters: {"user_id"=>"1"}
+Geokit is using the domain: localhost
+  [1m[36mPlayerProfile Load (5.7ms)[0m  [1m[34mSELECT "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mUser Load (5.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlayerProfile Load (5.9ms)[0m  [1m[34mSELECT  "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering player_profiles/show.html.erb within layouts/application
+  [1m[36mUser Load (5.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (6.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (5.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (7.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered player_profiles/show.html.erb within layouts/application (1854.2ms)
+Completed 200 OK in 4909ms (Views: 3985.9ms | ActiveRecord: 68.5ms)
+
+
+Started GET "/users/2/player_profiles" for 10.0.2.2 at 2017-03-17 17:56:59 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#show as HTML
+  Parameters: {"user_id"=>"2"}
+Geokit is using the domain: localhost
+  [1m[36mPlayerProfile Load (12.2ms)[0m  [1m[34mSELECT "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mUser Load (5.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPlayerProfile Load (5.2ms)[0m  [1m[34mSELECT  "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  Rendering player_profiles/show.html.erb within layouts/application
+  Rendered player_profiles/show.html.erb within layouts/application (169.9ms)
+Completed 500 Internal Server Error in 507ms (ActiveRecord: 22.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `user_id' for nil:NilClass):
+    3:   <%= image_tag("dicepic.png", height: '300', width: '300')%>
+    4:   <p>
+    5:     <strong>Username:</strong>
+    6:     <%= User.find(@player_profile.user_id).username %>
+    7:   </p>
+    8: 
+    9:   <p>
+  
+app/views/player_profiles/show.html.erb:6:in `_app_views_player_profiles_show_html_erb___4076806746107740288_70100997249180'
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (12.8ms)
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.9ms)
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.7ms)
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (67.5ms)
+Started GET "/users/2/player_profiles/new" for 10.0.2.2 at 2017-03-17 17:57:02 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#new as HTML
+  Parameters: {"user_id"=>"2"}
+Geokit is using the domain: localhost
+  [1m[36mUser Load (12.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering player_profiles/new.html.erb within layouts/application
+  Rendered player_profiles/_form.html.erb (248.2ms)
+  Rendered player_profiles/new.html.erb within layouts/application (329.5ms)
+  [1m[36mUser Load (5.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 1616ms (Views: 1514.8ms | ActiveRecord: 17.5ms)
+
+
+Started POST "/users/2/player_profiles" for 10.0.2.2 at 2017-03-17 17:57:36 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FyHieVkV5VEYqb1UnIxLf2qpzXm/f0eJydQM8yCOyUTks20S/M1LrRSrCSSSOeHeRY8sv+LKyLqRXSjSHqWrfg==", "player_profile"=>{"user_id"=>"2", "bio"=>"foobar", "experience_level"=>"2", "max_distance"=>"90", "online_play"=>"1", "homebrew"=>"0", "original_ruleset"=>"0", "advanced_ruleset"=>"0", "pathfinder"=>"0", "third"=>"0", "three_point_five"=>"1", "fourth"=>"1", "fifth"=>"1", "original_campaign"=>"0", "module"=>"0"}, "commit"=>"Save Player profile", "user_id"=>"2"}
+Geokit is using the domain: localhost
+  [1m[36mUser Load (10.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (5.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (12.7ms)[0m  [1m[32mINSERT INTO "player_profiles" ("user_id", "bio", "experience_level", "max_distance", "online_play", "homebrew", "original_ruleset", "advanced_ruleset", "pathfinder", "third", "three_point_five", "fourth", "fifth", "original_campaign", "module", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 2], ["bio", "foobar"], ["experience_level", 2], ["max_distance", 90.0], ["online_play", 1], ["homebrew", 0], ["original_ruleset", 0], ["advanced_ruleset", 0], ["pathfinder", 0], ["third", 0], ["three_point_five", 1], ["fourth", 1], ["fifth", 1], ["original_campaign", 0], ["module", 0], ["created_at", 2017-03-17 17:57:36 UTC], ["updated_at", 2017-03-17 17:57:36 UTC]]
+  [1m[35m (19.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlayerProfile Load (6.7ms)[0m  [1m[34mSELECT  "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER(?) AND ("users"."id" != ?) LIMIT ?[0m  [["username", "exampleuser2"], ["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) AND ("users"."id" != ?) LIMIT ?[0m  [["email", "exampleuser2@example.com"], ["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (5.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/2/player_profiles.2
+Completed 302 Found in 241ms (ActiveRecord: 62.2ms)
+
+
+Started GET "/users/2/player_profiles.2" for 10.0.2.2 at 2017-03-17 17:57:36 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#show as 
+  Parameters: {"user_id"=>"2"}
+Geokit is using the domain: localhost
+  [1m[36mPlayerProfile Load (11.1ms)[0m  [1m[34mSELECT "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mUser Load (5.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPlayerProfile Load (5.4ms)[0m  [1m[34mSELECT  "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  Rendering player_profiles/show.html.erb within layouts/application
+  [1m[36mUser Load (5.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered player_profiles/show.html.erb within layouts/application (68.0ms)
+Completed 200 OK in 2900ms (Views: 1998.9ms | ActiveRecord: 27.9ms)
+
+
+Started GET "/users/2/player_profiles" for 10.0.2.2 at 2017-03-17 17:57:51 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#show as HTML
+  Parameters: {"user_id"=>"2"}
+Geokit is using the domain: localhost
+  [1m[36mPlayerProfile Load (5.3ms)[0m  [1m[34mSELECT "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mUser Load (6.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPlayerProfile Load (4.8ms)[0m  [1m[34mSELECT  "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  Rendering player_profiles/show.html.erb within layouts/application
+  [1m[36mUser Load (10.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered player_profiles/show.html.erb within layouts/application (70.0ms)
+Completed 200 OK in 1325ms (Views: 1208.6ms | ActiveRecord: 27.8ms)
+
+
+Started DELETE "/logout" for 10.0.2.2 at 2017-03-17 17:58:01 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"c/bftxZJ25+dWKtBk9vyiR4ENssHnyrAWMUVLE1M4JuAZFDcs5F1Y5FaHzGdblgoMSLXDVoqpfMATDENc2eCoQ=="}
+Geokit is using the domain: localhost
+  [1m[36mUser Load (6.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 14ms (ActiveRecord: 6.1ms)
+
+
+Started GET "/" for 10.0.2.2 at 2017-03-17 17:58:01 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomePagesController#home as HTML
+Geokit is using the domain: localhost
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 1451ms (Views: 1359.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 10.0.2.2 at 2017-03-17 17:58:27 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+Geokit is using the domain: localhost
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (103.4ms)
+Completed 200 OK in 1469ms (Views: 1372.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 10.0.2.2 at 2017-03-17 17:58:38 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0UDtz3GcXqB2o0TA6faxRcEVEqS7yQOVrlygdSvKJBEi0mKk1ETwXHqh8LDnQxvk7jPzYuZ8jKb21YRUFeFGKw==", "session"=>{"email"=>"exampleuser2@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Geokit is using the domain: localhost
+  [1m[36mUser Load (5.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "exampleuser2@example.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 122ms (ActiveRecord: 5.7ms)
+
+
+Started GET "/users/2" for 10.0.2.2 at 2017-03-17 17:58:38 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+Geokit is using the domain: localhost
+  [1m[36mUser Load (5.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPlayerProfile Load (5.9ms)[0m  [1m[34mSELECT  "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  [1m[36mDmProfile Load (4.8ms)[0m  [1m[34mSELECT  "dm_profiles".* FROM "dm_profiles" WHERE "dm_profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (194.5ms)
+  [1m[36mUser Load (5.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 1441ms (Views: 1324.0ms | ActiveRecord: 28.4ms)
+
+
+Started GET "/users/2/player_profiles" for 10.0.2.2 at 2017-03-17 17:58:46 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#show as HTML
+  Parameters: {"user_id"=>"2"}
+Geokit is using the domain: localhost
+  [1m[36mPlayerProfile Load (6.1ms)[0m  [1m[34mSELECT "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mUser Load (5.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPlayerProfile Load (5.1ms)[0m  [1m[34mSELECT  "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  Rendering player_profiles/show.html.erb within layouts/application
+  [1m[36mUser Load (5.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered player_profiles/show.html.erb within layouts/application (62.2ms)
+Completed 200 OK in 1306ms (Views: 1192.0ms | ActiveRecord: 21.9ms)
+
+
+Started GET "/users/2/player_profiles" for 10.0.2.2 at 2017-03-17 18:02:09 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#show as HTML
+  Parameters: {"user_id"=>"2"}
+Geokit is using the domain: localhost
+  [1m[36mPlayerProfile Load (6.5ms)[0m  [1m[34mSELECT "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mUser Load (5.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPlayerProfile Load (7.4ms)[0m  [1m[34mSELECT  "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  Rendering player_profiles/show.html.erb within layouts/application
+  [1m[36mUser Load (5.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered player_profiles/show.html.erb within layouts/application (59.8ms)
+Completed 200 OK in 1247ms (Views: 1131.2ms | ActiveRecord: 25.0ms)
+
+
+Started GET "/users/1/player_profiles" for 10.0.2.2 at 2017-03-17 18:03:00 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#show as HTML
+  Parameters: {"user_id"=>"1"}
+Geokit is using the domain: localhost
+  [1m[36mPlayerProfile Load (5.1ms)[0m  [1m[34mSELECT "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mUser Load (5.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlayerProfile Load (4.9ms)[0m  [1m[34mSELECT  "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering player_profiles/show.html.erb within layouts/application
+  [1m[36mUser Load (5.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (9.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered player_profiles/show.html.erb within layouts/application (66.7ms)
+Completed 200 OK in 1296ms (Views: 1176.6ms | ActiveRecord: 30.9ms)
+
+
