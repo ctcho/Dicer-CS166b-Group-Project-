@@ -21,12 +21,6 @@ class PlayerProfilesController < ApplicationController
     @player_profile = PlayerProfile.new
   end
 
-  # GET /user/1/player_profiles/new/crashcourse
-  #def crashcourse
-  #  @tutorial = true
-  #  @user = User.find(params[:user_id])
-  #  @player_profile = PlayerProfile.new
-  #end
 
   # GET /player_profiles/1/edit
   def edit
