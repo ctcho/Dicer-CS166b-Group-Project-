@@ -16,16 +16,17 @@ class PlayerProfilesController < ApplicationController
 
   # GET /player_profiles/new
   def new
+    @tutorial = params[:tutorial] if params[:tutorial] == "true"
     @user = User.find(params[:user_id])
     @player_profile = PlayerProfile.new
   end
 
   # GET /user/1/player_profiles/new/crashcourse
-  def crashcourse
-    @tutorial = true
-    @user = User.find(params[:user_id])
-    @player_profile = PlayerProfile.new
-  end
+  #def crashcourse
+  #  @tutorial = true
+  #  @user = User.find(params[:user_id])
+  #  @player_profile = PlayerProfile.new
+  #end
 
   # GET /player_profiles/1/edit
   def edit

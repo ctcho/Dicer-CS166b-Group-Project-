@@ -20,10 +20,9 @@ class UsersController < ApplicationController
   # GET /users/1/edit
   def edit
     if (logged_in? && current_user == params[:user_id])
-      byebug
+
       render 'edit'
     else
-      #some sort of error page
       redirect_to home_pages_unauthorized_path
     end
   end
@@ -32,35 +31,21 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
-
     if @user.save
       log_in @user
-      if params[:help]
+      @tutorial = true if params[:help] == "yes"
+      if params[:player] == "yes" ? @profile_type = "player_profiles" : @profile_type = "dm_profiles"
         respond_to do |format|
-        if params[:player] == "yes"
-            format.html { redirect_to "/users/#{@user.id}/player_profiles/new/crashcourse" }
-            #redirect_to "/user/#{@user.id}/player_profile/new/crashcourse"
-          else
-            # new dm profile, guided
-          end
-        end
-        else
-          respond_to do |format|
-            if params[:player_profile] || 1==1
-                format.html{ redirect_to new_user_player_profiles_path(@user) }
-            else
-              # new dm_profile, unguided
-            end
-          end
-        end
-      else
-        respond_to do |format|
-          format.html { render :new }
-          format.json { render json: @user.errors, status: :unprocessable_entity }
+          format.html { redirect_to "/users/#{@user.id}/#{@profile_type}/new?tutorial=#{@tutorial}"}
         end
       end
+    else
+      respond_to do |format|
+        format.html { render :new }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+    end
   end
-
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update

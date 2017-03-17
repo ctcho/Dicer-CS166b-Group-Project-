@@ -44,7 +44,7 @@ There are lots of ways to play DnD. The following tutorial will help you figure 
     3rd Edition Dungeons and Dragons introduced many of the core mechanics in modern DnD - actions become (mostly) centered around
     D20 rolls with some bonuses from character traits, and 3rd edition introduced greater customizability for characters. <b>Almost all
     actions of the game become simplified from this edition onwards.</b>
-  <%end %>
+  <% end %>
   <br>
   <h3>
     <%= f.label :three_point_five do %>
@@ -56,10 +56,10 @@ There are lots of ways to play DnD. The following tutorial will help you figure 
     DnD v3.5 is an update to the 3rd edition, with some minor tweaks to the rules and some additions here and there to what v3 added.
     Most "homebrew" rulesets start with the mechanics of v3.5. <b>Highly recommended!</b>
     <br>
-  <%end %>
+  <% end %>
   <br>
   <h3>
-    <% f.label :pathfinder do %>
+    <%= f.label :pathfinder do %>
       Pathfinder
       <%= f.check_box :pathfinder %>
     <% end %>
@@ -71,7 +71,7 @@ There are lots of ways to play DnD. The following tutorial will help you figure 
     <br>
   <%end %>
   <h3>
-    <% f.label :fourth  do%>
+    <%= f.label :fourth  do%>
       4th Edition
       <%= f.check_box :fourth %>
     <% end %>
@@ -85,7 +85,7 @@ There are lots of ways to play DnD. The following tutorial will help you figure 
   <%end %>
   <br>
   <h3>
-    <% f.label :fifth do %>
+    <%= f.label :fifth do %>
       5th Edition
       <%= f.check_box :fifth %>
     <% end %>
@@ -101,7 +101,7 @@ There are lots of ways to play DnD. The following tutorial will help you figure 
   <% end %>
   <br>
   <h3>
-    <% f.label :homebrew do %>
+    <%= f.label :homebrew do %>
       Homebrew
       <%= f.check_box :homebrew %>
     <% end %>
