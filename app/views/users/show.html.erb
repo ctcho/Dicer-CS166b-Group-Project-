@@ -20,15 +20,26 @@
   <%= @user.profile_pic_path %>
 </p>
 
-<!--<p>
+<!--If the user has a player profile-->
+<% if !@user.player_profile.nil? %>
+<p>
   <strong>Player profile:</strong>
   <%= @user.player_profile %>
 </p>
+<% else %>
+  <p>It seems you don't have a player profile.</p>
+  <%= link_to "Create a Player Profile",  new_user_player_profiles_path(@user) %>
+<% end %>
 
+<% if !@user.dm_profile.nil? %>
 <p>
   <strong>Dm profile:</strong>
   <%= @user.dm_profile %>
-</p>-->
+</p>
+<% else %>
+  <p>It seems you don't have a DM profile.</p>
+  <%= link_to "Create a DM Profile",  new_user_dm_profiles_path(@user) %>
+<% end %>
 
 <p>
   <strong>Age:</strong>

@@ -5821,3 +5821,453 @@ Geokit is using the domain:
 Completed 200 OK in 2461ms (Views: 2361.9ms | ActiveRecord: 5.9ms)
 
 
+Started GET "/" for 10.0.2.2 at 2017-03-17 17:00:10 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (1.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.0.2) lib/active_record/migration.rb:573:in `check_pending!'
+activerecord (5.0.2) lib/active_record/migration.rb:549:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.2) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.2) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.2) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:20:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.7.1) lib/puma/configuration.rb:232:in `call'
+puma (3.7.1) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.1) lib/puma/server.rb:415:in `process_client'
+puma (3.7.1) lib/puma/server.rb:275:in `block in run'
+puma (3.7.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.0ms)
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (42.1ms)
+  [1m[36mActiveRecord::SchemaMigration Load (1.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to RemovePlayerProfileIdFromUsers (20170309204217)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "email" varchar, "password_digest" varchar, "profile_pic_path" varchar, "player_profile_id" integer, "dm_profile_id" integer, "age" integer, "address" varchar, "last_active" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "lat" float, "lng" float, "remember_digest" varchar)[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "ausers" ("id","username","email","password_digest","profile_pic_path","player_profile_id","dm_profile_id","age","address","last_active","created_at","updated_at","lat","lng","remember_digest")
+                     SELECT "id","username","email","password_digest","profile_pic_path","player_profile_id","dm_profile_id","age","address","last_active","created_at","updated_at","lat","lng","remember_digest" FROM "users"[0m
+  [1m[35m (5.5ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "email" varchar, "password_digest" varchar, "profile_pic_path" varchar, "dm_profile_id" integer, "age" integer, "address" varchar, "last_active" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "lat" float, "lng" float, "remember_digest" varchar)[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "users" ("id","username","email","password_digest","profile_pic_path","dm_profile_id","age","address","last_active","created_at","updated_at","lat","lng","remember_digest")
+                     SELECT "id","username","email","password_digest","profile_pic_path","dm_profile_id","age","address","last_active","created_at","updated_at","lat","lng","remember_digest" FROM "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170309204217"]]
+  [1m[35m (5.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to RemoveDmProfileIdFromUsers (20170309204236)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "email" varchar, "password_digest" varchar, "profile_pic_path" varchar, "dm_profile_id" integer, "age" integer, "address" varchar, "last_active" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "lat" float, "lng" float, "remember_digest" varchar)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "ausers" ("id","username","email","password_digest","profile_pic_path","dm_profile_id","age","address","last_active","created_at","updated_at","lat","lng","remember_digest")
+                     SELECT "id","username","email","password_digest","profile_pic_path","dm_profile_id","age","address","last_active","created_at","updated_at","lat","lng","remember_digest" FROM "users"[0m
+  [1m[35m (3.4ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "email" varchar, "password_digest" varchar, "profile_pic_path" varchar, "age" integer, "address" varchar, "last_active" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "lat" float, "lng" float, "remember_digest" varchar)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "users" ("id","username","email","password_digest","profile_pic_path","age","address","last_active","created_at","updated_at","lat","lng","remember_digest")
+                     SELECT "id","username","email","password_digest","profile_pic_path","age","address","last_active","created_at","updated_at","lat","lng","remember_digest" FROM "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170309204236"]]
+  [1m[35m (6.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/" for 10.0.2.2 at 2017-03-17 17:00:30 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (2.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomePagesController#home as HTML
+Geokit is using the domain: 
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 4065ms (Views: 3977.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 10.0.2.2 at 2017-03-17 17:00:49 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+Geokit is using the domain: 
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 566ms (Views: 453.0ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/users" for 10.0.2.2 at 2017-03-17 17:00:58 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+Geokit is using the domain: 
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (4.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 479ms (Views: 438.9ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/" for 10.0.2.2 at 2017-03-17 17:01:02 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomePagesController#home as HTML
+Geokit is using the domain: 
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 802ms (Views: 751.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 10.0.2.2 at 2017-03-17 17:11:14 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomePagesController#home as HTML
+Geokit is using the domain: 
+  Rendering home_pages/home.html.erb within layouts/application
+  Rendered home_pages/home.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 473ms (Views: 436.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/useres" for 10.0.2.2 at 2017-03-17 17:11:19 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [GET] "/useres"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:20:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.7.1) lib/puma/configuration.rb:232:in `call'
+puma (3.7.1) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.1) lib/puma/server.rb:415:in `process_client'
+puma (3.7.1) lib/puma/server.rb:275:in `block in run'
+puma (3.7.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered collection of /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [41 times] (13.9ms)
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (141.5ms)
+  Rendering /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (220.9ms)
+Started GET "/users" for 10.0.2.2 at 2017-03-17 17:11:22 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+Geokit is using the domain: 
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 458ms (Views: 419.0ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/users/new" for 10.0.2.2 at 2017-03-17 17:11:24 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#new as HTML
+Geokit is using the domain: 
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (64.7ms)
+  Rendered users/new.html.erb within layouts/application (96.2ms)
+Completed 200 OK in 578ms (Views: 527.3ms | ActiveRecord: 5.2ms)
+
+
+Started POST "/users" for 10.0.2.2 at 2017-03-17 17:11:38 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vBQWqe3Xg7AqzMxlP+5Aw3bqikP5B02KuIu6pvYb0pyyTmO6eW0NFwSL1TfHpNeNGFvw4XTPfJYXBSSft2dEcA==", "user"=>{"username"=>"User 1", "email"=>"u1@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+Geokit is using the domain: 
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Multi geocoding. address: , args []
+Google geocoding. address: , args []
+Us geocoding. address: , args []
+Caught an error during Us geocoding call: Failed to open TCP connection to geocoder.us:80 (getaddrinfo: Temporary failure in name resolution)
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/2.3.0/net/http.rb:882:in `rescue in block in connect'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/2.3.0/net/http.rb:879:in `block in connect'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/2.3.0/timeout.rb:91:in `block in timeout'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/2.3.0/timeout.rb:101:in `timeout'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/2.3.0/net/http.rb:878:in `connect'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/2.3.0/net/http.rb:863:in `do_start'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/2.3.0/net/http.rb:852:in `start'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/geokit-1.10.0/lib/geokit/net_adapter/net_http.rb:21:in `do_get'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/geokit-1.10.0/lib/geokit/geocoders.rb:162:in `do_get'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/geokit-1.10.0/lib/geokit/geocoders.rb:140:in `call_geocoder_service'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/geokit-1.10.0/lib/geokit/geocoders.rb:190:in `process'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/geokit-1.10.0/lib/geokit/geocoders/us_geocoder.rb:12:in `do_geocode'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/geokit-1.10.0/lib/geokit/geocoders.rb:89:in `geocode'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/geokit-1.10.0/lib/geokit/multi_geocoder.rb:34:in `block in do_geocode'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/geokit-1.10.0/lib/geokit/multi_geocoder.rb:31:in `each'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/geokit-1.10.0/lib/geokit/multi_geocoder.rb:31:in `do_geocode'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/geokit-1.10.0/lib/geokit/geocoders.rb:89:in `geocode'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/geokit-rails-2.2.0/lib/geokit-rails/acts_as_mappable.rb:366:in `auto_geocode_address'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/callbacks.rb:382:in `block in make_lambda'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/callbacks.rb:150:in `block (2 levels) in halting_and_conditional'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/callbacks.rb:770:in `block (2 levels) in deprecated_false_terminator'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/callbacks.rb:769:in `catch'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/callbacks.rb:769:in `block in deprecated_false_terminator'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/callbacks.rb:151:in `block in halting_and_conditional'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/callbacks.rb:454:in `block in call'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/callbacks.rb:454:in `each'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/callbacks.rb:454:in `call'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/callbacks.rb:101:in `__run_callbacks__'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/callbacks.rb:750:in `_run_validation_callbacks'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activemodel-5.0.2/lib/active_model/validations/callbacks.rb:113:in `run_validations!'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activemodel-5.0.2/lib/active_model/validations.rb:338:in `valid?'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activerecord-5.0.2/lib/active_record/validations.rb:65:in `valid?'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activerecord-5.0.2/lib/active_record/validations.rb:82:in `perform_validations'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activerecord-5.0.2/lib/active_record/validations.rb:44:in `save'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activerecord-5.0.2/lib/active_record/attribute_methods/dirty.rb:22:in `save'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activerecord-5.0.2/lib/active_record/transactions.rb:319:in `block (2 levels) in save'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activerecord-5.0.2/lib/active_record/transactions.rb:395:in `block in with_transaction_returning_status'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/database_statements.rb:232:in `block in transaction'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/transaction.rb:189:in `within_new_transaction'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/database_statements.rb:232:in `transaction'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activerecord-5.0.2/lib/active_record/transactions.rb:211:in `transaction'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activerecord-5.0.2/lib/active_record/transactions.rb:392:in `with_transaction_returning_status'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activerecord-5.0.2/lib/active_record/transactions.rb:319:in `block in save'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activerecord-5.0.2/lib/active_record/transactions.rb:334:in `rollback_active_record_state!'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activerecord-5.0.2/lib/active_record/transactions.rb:318:in `save'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activerecord-5.0.2/lib/active_record/suppressor.rb:41:in `save'
+/vagrant/CS166b/Dicer3/Dicer/app/controllers/users_controller.rb:29:in `block in create'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_controller/metal/mime_responds.rb:195:in `respond_to'
+/vagrant/CS166b/Dicer3/Dicer/app/controllers/users_controller.rb:28:in `create'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/abstract_controller/base.rb:188:in `process_action'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_controller/metal/rendering.rb:30:in `process_action'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/callbacks.rb:126:in `call'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/callbacks.rb:506:in `block (2 levels) in compile'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/callbacks.rb:455:in `call'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/callbacks.rb:101:in `__run_callbacks__'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/callbacks.rb:750:in `_run_process_action_callbacks'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/callbacks.rb:90:in `run_callbacks'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/abstract_controller/callbacks.rb:19:in `process_action'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_controller/metal/rescue.rb:20:in `process_action'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/notifications.rb:164:in `block in instrument'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/notifications.rb:164:in `instrument'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_controller/metal/params_wrapper.rb:248:in `process_action'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activerecord-5.0.2/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/abstract_controller/base.rb:126:in `process'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionview-5.0.2/lib/action_view/rendering.rb:30:in `process'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_controller/metal.rb:190:in `dispatch'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_controller/metal.rb:262:in `dispatch'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/routing/route_set.rb:32:in `serve'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/journey/router.rb:39:in `block in serve'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/journey/router.rb:26:in `each'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/journey/router.rb:26:in `serve'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/routing/route_set.rb:725:in `call'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rack-2.0.1/lib/rack/etag.rb:25:in `call'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rack-2.0.1/lib/rack/conditional_get.rb:38:in `call'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rack-2.0.1/lib/rack/head.rb:12:in `call'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rack-2.0.1/lib/rack/session/abstract/id.rb:222:in `context'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rack-2.0.1/lib/rack/session/abstract/id.rb:216:in `call'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/cookies.rb:613:in `call'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activerecord-5.0.2/lib/active_record/migration.rb:553:in `call'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/callbacks.rb:90:in `run_callbacks'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/executor.rb:12:in `call'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-3.4.0/lib/web_console/middleware.rb:135:in `call_app'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-3.4.0/lib/web_console/middleware.rb:20:in `block in call'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-3.4.0/lib/web_console/middleware.rb:18:in `catch'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-3.4.0/lib/web_console/middleware.rb:18:in `call'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-5.0.2/lib/rails/rack/logger.rb:36:in `call_app'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-5.0.2/lib/rails/rack/logger.rb:24:in `block in call'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/tagged_logging.rb:69:in `block in tagged'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/tagged_logging.rb:26:in `tagged'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/tagged_logging.rb:69:in `tagged'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-5.0.2/lib/rails/rack/logger.rb:24:in `call'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/sprockets-rails-3.2.0/lib/sprockets/rails/quiet_assets.rb:13:in `call'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/request_id.rb:24:in `call'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rack-2.0.1/lib/rack/method_override.rb:22:in `call'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rack-2.0.1/lib/rack/runtime.rb:22:in `call'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activesupport-5.0.2/lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/executor.rb:12:in `call'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/static.rb:136:in `call'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rack-2.0.1/lib/rack/sendfile.rb:111:in `call'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-5.0.2/lib/rails/engine.rb:522:in `call'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/puma-3.7.1/lib/puma/configuration.rb:232:in `call'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/puma-3.7.1/lib/puma/server.rb:578:in `handle_request'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/puma-3.7.1/lib/puma/server.rb:415:in `process_client'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/puma-3.7.1/lib/puma/server.rb:275:in `block in run'
+/home/vagrant/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/puma-3.7.1/lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[36mUser Exists (5.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER(?) LIMIT ?[0m  [["username", "User 1"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "u1@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (13.9ms)
+  Rendered users/new.html.erb within layouts/application (82.9ms)
+Completed 200 OK in 1578ms (Views: 619.5ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/users" for 10.0.2.2 at 2017-03-17 17:11:49 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+Geokit is using the domain: 
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 452ms (Views: 414.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/users" for 10.0.2.2 at 2017-03-17 17:12:37 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+Geokit is using the domain: 
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 483ms (Views: 444.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/users/new" for 10.0.2.2 at 2017-03-17 17:13:44 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#new as HTML
+Geokit is using the domain: 
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (4.8ms)
+  Rendered users/new.html.erb within layouts/application (36.8ms)
+Completed 200 OK in 481ms (Views: 446.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 10.0.2.2 at 2017-03-17 17:14:04 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ywzcY2K616fK7McrBa/0cze4KuyAs1YKBc0sAIqAPnTFVqlw9gBZAOSr3nn95WM9WQlQTg17ZxaqQ7I5y/yomA==", "user"=>{"username"=>"User 1", "email"=>"u1@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "address"=>"02452", "age"=>"19"}, "commit"=>"Create User"}
+Geokit is using the domain: 
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Multi geocoding. address: 02452, args []
+Google geocoding. address: 02452, args []
+Google geocoding. Result: %7B%0A+++%22results%22+%3A+%5B%0A++++++%7B%0A+++++++++%22address_components%22+%3A+%5B%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%2202452%22%2C%0A+++++++++++++++%22short_name%22+%3A+%2202452%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22postal_code%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22Waltham%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22Waltham%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22locality%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22Middlesex+County%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22Middlesex+County%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22administrative_area_level_2%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22Massachusetts%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22MA%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22administrative_area_level_1%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22United+States%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22US%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22country%22%2C+%22political%22+%5D%0A++++++++++++%7D%0A+++++++++%5D%2C%0A+++++++++%22formatted_address%22+%3A+%22Waltham%2C+MA+02452%2C+USA%22%2C%0A+++++++++%22geometry%22+%3A+%7B%0A++++++++++++%22bounds%22+%3A+%7B%0A+++++++++++++++%22northeast%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+42.41317100000001%2C%0A++++++++++++++++++%22lng%22+%3A+-71.1945429%0A+++++++++++++++%7D%2C%0A+++++++++++++++%22southwest%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+42.37539100000001%2C%0A++++++++++++++++++%22lng%22+%3A+-71.24413509999999%0A+++++++++++++++%7D%0A++++++++++++%7D%2C%0A++++++++++++%22location%22+%3A+%7B%0A+++++++++++++++%22lat%22+%3A+42.3944416%2C%0A+++++++++++++++%22lng%22+%3A+-71.2220832%0A++++++++++++%7D%2C%0A++++++++++++%22location_type%22+%3A+%22APPROXIMATE%22%2C%0A++++++++++++%22viewport%22+%3A+%7B%0A+++++++++++++++%22northeast%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+42.41317100000001%2C%0A++++++++++++++++++%22lng%22+%3A+-71.1945429%0A+++++++++++++++%7D%2C%0A+++++++++++++++%22southwest%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+42.37539100000001%2C%0A++++++++++++++++++%22lng%22+%3A+-71.24413509999999%0A+++++++++++++++%7D%0A++++++++++++%7D%0A+++++++++%7D%2C%0A+++++++++%22place_id%22+%3A+%22ChIJz4pCKTmd44kRr-cmr1SqCY4%22%2C%0A+++++++++%22types%22+%3A+%5B+%22postal_code%22+%5D%0A++++++%7D%0A+++%5D%2C%0A+++%22status%22+%3A+%22OK%22%0A%7D%0A
+  [1m[36mUser Exists (9.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER(?) LIMIT ?[0m  [["username", "User 1"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "u1@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (14.9ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "age", "address", "created_at", "updated_at", "lat", "lng") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["username", "User 1"], ["email", "u1@example.com"], ["password_digest", "$2a$10$cmkzSJJVCnscQ1WVUivZZOSzLOsIsPMGXHlEXp4U8kWt1xpSNqVFO"], ["age", 19], ["address", "02452"], ["created_at", 2017-03-17 17:14:07 UTC], ["updated_at", 2017-03-17 17:14:07 UTC], ["lat", 42.3944416], ["lng", -71.2220832]]
+  [1m[35m (11.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://127.0.0.1:3000/users/1
+Completed 302 Found in 2696ms (ActiveRecord: 36.3ms)
+
+
+Started GET "/users/1" for 10.0.2.2 at 2017-03-17 17:14:07 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+Geokit is using the domain: 
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPlayerProfile Load (2.2ms)[0m  [1m[34mSELECT  "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mDmProfile Load (1.6ms)[0m  [1m[34mSELECT  "dm_profiles".* FROM "dm_profiles" WHERE "dm_profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (228.1ms)
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 683ms (Views: 625.3ms | ActiveRecord: 12.5ms)
+
+
+Started GET "/users/1/player_profiles/new" for 10.0.2.2 at 2017-03-17 17:14:29 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#new as HTML
+  Parameters: {"user_id"=>"1"}
+Geokit is using the domain: 
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering player_profiles/new.html.erb within layouts/application
+  Rendered player_profiles/_form.html.erb (15.3ms)
+  Rendered player_profiles/new.html.erb within layouts/application (50.0ms)
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 515ms (Views: 462.1ms | ActiveRecord: 8.2ms)
+
+
+Started POST "/users/1/player_profiles" for 10.0.2.2 at 2017-03-17 17:15:20 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LzdkjIL4n3itbRNxZfk2+HZSCqeiGyGIPHKunyyitEYhbRGfFkIR34MqCiOds6G2GONwBS/TEJST/DCmbd4iqg==", "player_profile"=>{"user_id"=>"1", "bio"=>"I am the player profile for User 1.", "experience_level"=>"2", "max_distance"=>"20", "online_play"=>"1", "homebrew"=>"0", "original_ruleset"=>"1", "advanced_ruleset"=>"1", "pathfinder"=>"1", "third"=>"0", "three_point_five"=>"0", "fourth"=>"1", "fifth"=>"1", "original_campaign"=>"0", "module"=>"0"}, "commit"=>"Save Player profile", "user_id"=>"1"}
+Geokit is using the domain: 
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (9.6ms)[0m  [1m[32mINSERT INTO "player_profiles" ("user_id", "bio", "experience_level", "max_distance", "online_play", "homebrew", "original_ruleset", "advanced_ruleset", "pathfinder", "third", "three_point_five", "fourth", "fifth", "original_campaign", "module", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 1], ["bio", "I am the player profile for User 1."], ["experience_level", 2], ["max_distance", 20.0], ["online_play", 1], ["homebrew", 0], ["original_ruleset", 1], ["advanced_ruleset", 1], ["pathfinder", 1], ["third", 0], ["three_point_five", 0], ["fourth", 1], ["fifth", 1], ["original_campaign", 0], ["module", 0], ["created_at", 2017-03-17 17:15:20 UTC], ["updated_at", 2017-03-17 17:15:20 UTC]]
+  [1m[35m (5.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlayerProfile Load (3.2ms)[0m  [1m[34mSELECT  "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER(?) AND ("users"."id" != ?) LIMIT ?[0m  [["username", "User 1"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) AND ("users"."id" != ?) LIMIT ?[0m  [["email", "u1@example.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/users/1/player_profiles.1
+Completed 302 Found in 72ms (ActiveRecord: 28.8ms)
+
+
+Started GET "/users/1/player_profiles.1" for 10.0.2.2 at 2017-03-17 17:15:20 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlayerProfilesController#show as 
+  Parameters: {"user_id"=>"1"}
+Geokit is using the domain: 
+  [1m[36mPlayerProfile Load (2.7ms)[0m  [1m[34mSELECT "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlayerProfile Load (1.8ms)[0m  [1m[34mSELECT  "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering player_profiles/show.html.erb within layouts/application
+  Rendered player_profiles/show.html.erb within layouts/application (1.3ms)
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 1119ms (Views: 743.2ms | ActiveRecord: 8.1ms)
+
+
+Started GET "/users/1" for 10.0.2.2 at 2017-03-17 17:15:24 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+Geokit is using the domain: 
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPlayerProfile Load (1.9ms)[0m  [1m[34mSELECT  "player_profiles".* FROM "player_profiles" WHERE "player_profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mDmProfile Load (2.0ms)[0m  [1m[34mSELECT  "dm_profiles".* FROM "dm_profiles" WHERE "dm_profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (7.4ms)
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 477ms (Views: 424.0ms | ActiveRecord: 9.6ms)
+
+
