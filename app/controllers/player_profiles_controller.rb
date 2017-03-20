@@ -16,9 +16,11 @@ class PlayerProfilesController < ApplicationController
 
   # GET /player_profiles/new
   def new
+    @tutorial = params[:tutorial] if params[:tutorial] == "true"
     @user = User.find(params[:user_id])
     @player_profile = PlayerProfile.new
   end
+
 
   # GET /player_profiles/1/edit
   def edit
@@ -34,7 +36,7 @@ class PlayerProfilesController < ApplicationController
     respond_to do |format|
       if @player_profile.save
         @user.update(player_profile: @player_profile)
-        format.html { redirect_to user_player_profiles_path(User.find(@player_profile.user_id), @player_profile), notice: 'Player profile was successfully created.' }
+        format.html { redirect_to user_player_profiles_path(@user), @player_profile), notice: 'Player profile was successfully created.' }
         format.json { render :show, status: :created, location: @player_profile }
       else
         format.html { render :new }
@@ -46,9 +48,10 @@ class PlayerProfilesController < ApplicationController
   # PATCH/PUT /player_profiles/1
   # PATCH/PUT /player_profiles/1.json
   def update
+    @user = @player_profile.user
     respond_to do |format|
       if @player_profile.update(player_profile_params)
-        format.html { redirect_to user_player_profiles_path(User.find(@player_profile.user_id), @player_profile), notice: 'Player profile was successfully updated.' }
+        format.html { redirect_to user_player_profiles_path(@user, @player_profile), notice: 'Player profile was successfully updated.' }
         format.json { render :show, status: :ok, location: @player_profile }
       else
         format.html { render :edit }
@@ -70,13 +73,12 @@ class PlayerProfilesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_player_profile
-      #byebug
-      #@player_profile = PlayerProfile.find(params[:id])
       @player_profile = PlayerProfile.where(user_id: params[:user_id])[0]
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def player_profile_params
-      params.require(:player_profile).permit(:user_id, :bio, :experience_level, :max_distance, :online_play, :homebrew, :original_ruleset, :advanced_ruleset, :pathfinder, :third, :three_point_five, :fourth, :fifth, :original_campaign, :module)
+      profile_params = params.require(:player_profile).permit(:user_id, :bio, :experience_level, :max_distance, :online_play, :homebrew, :original_ruleset, :advanced_ruleset, :pathfinder, :third, :three_point_five, :fourth, :fifth, :original_campaign, :module)
+      profile_params
     end
 end

@@ -213,6 +213,20 @@ input[type=button], input[type=submit], input[type=reset] {
   cursor: pointer;
 }
 
-* {
-  border-sizing:border-box;
+
+//* {
+  //border-sizing:border-box;
+
+a:link.outside, a:visited.outside {
+    background: none;
+    color: blue;
+    padding: 0px;
+    border-bottom: 1px dotted blue;
+    //text-align: center;
+    text-decoration: none;
+    //display: inline-block;
+}
+a:hover.outside, a:active.outside {
+    border-bottom: 1px solid blue;
+
 }

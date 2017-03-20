@@ -19,24 +19,33 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    if (logged_in? && current_user == params[:user_id])
+
+      render 'edit'
+    else
+      redirect_to home_pages_unauthorized_path
+    end
   end
 
   # POST /users
   # POST /users.json
   def create
     @user = User.new(user_params)
-    respond_to do |format|
-      if @user.save
-        log_in @user
-        format.html { redirect_to @user, notice: "Welcome to Dicer" }
-        format.json { render :show, status: :created, location: @user }
-      else
+    if @user.save
+      log_in @user
+      @tutorial = true if params[:help] == "yes"
+      if params[:player] == "yes" ? @profile_type = "player_profiles" : @profile_type = "dm_profiles"
+        respond_to do |format|
+          format.html { redirect_to "/users/#{@user.id}/#{@profile_type}/new?tutorial=#{@tutorial}"}
+        end
+      end
+    else
+      respond_to do |format|
         format.html { render :new }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
   end
-
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
@@ -69,6 +78,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:username, :string, :email, :password, :password_confirmation, :profile_pic_path, :player_profile_id, :dm_profile_id, :age, :last_active, :address)
+      params.require(:user).permit(:username, :string, :email, :password, :password_confirmation, :profile_pic_path, :age, :last_active, :address)
     end
 end

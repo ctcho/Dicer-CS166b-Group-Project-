@@ -20,7 +20,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_difference('User.count') do
     post users_url, params: { user: { email: "Unique@email.com", password: "strongpass", password_confirmation: "strongpass", username: "Unique_Username", address: "02453"} }
     end
-    assert_redirected_to user_url(User.last)
+    assert_redirected_to new_user_dm_profiles_url(User.last, tutorial:"")
   end
 
   test "should show user" do
@@ -28,9 +28,9 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should get edit" do
+  test "should not get edit if not logged in" do
     get edit_user_url(@user)
-    assert_response :success
+    assert_redirected_to home_pages_unauthorized_url
   end
 
   test "should update user" do

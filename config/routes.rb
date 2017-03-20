@@ -7,9 +7,10 @@ Rails.application.routes.draw do
   get 'home_pages/about'
   get 'home_pages/contact'
   get 'home_pages/resources'
+  get 'home_pages/unauthorized'
 
   get 'signup', to: 'users#new'
-  
+
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
