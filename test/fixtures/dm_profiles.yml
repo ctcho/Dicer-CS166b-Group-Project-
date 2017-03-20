@@ -1,5 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
+# I altered these profiles slightly from the original yml files to test for "more realistic"
+# serach tests. -Cameron C.
 one:
   user_id: 1
   bio: MyText
@@ -7,10 +9,10 @@ one:
   max_distance: 1.5
   online_play: 1
   homebrew: 1
-  original_ruleset: 1
+  original_ruleset: 0
   advanced_ruleset: 1
-  pathfinder: 1
-  third: 1
+  pathfinder: 0
+  third: 0
   three_point_five: 1
   fourth: 1
   fifth: 1
@@ -22,14 +24,14 @@ two:
   bio: MyText
   experience_level: 3
   max_distance: 1.5
-  online_play: 1
+  online_play: 0
   homebrew: 1
   original_ruleset: 1
   advanced_ruleset: 1
   pathfinder: 1
   third: 1
-  three_point_five: 1
+  three_point_five: 0
   fourth: 1
   fifth: 1
   original_campaign: 1
-  module: 1
+  module: 0

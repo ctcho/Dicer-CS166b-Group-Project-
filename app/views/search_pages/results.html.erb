@@ -1,30 +1,84 @@
 <h1>Search Results</h1>
 <br>
-<p>Please note that only experience is taken into account for searches at the
-moment. We will be revising this so you can make more robust searches in the future.</p>
-<br>
+<!--Happens if the search results come up empty -->
+<% if @users.count == 0 %>
+<p>There are no users that match your given preferences.</p>
+<%= link_to "Try Another Search", search_pages_search_path %>
+
+<!--There are users in the search result-->
+<% else %>
 <table>
   <thead>
     <tr>
-      <th>Bio</th>
-      <th>Exp level</th>
-      <th>Ruleset 1</th>
-      <th>Ruleset 2</th>
-      <th>Ruleset 3</th>
-      <th>Ruleset 4</th>
-      <th colspan="3"></th>
+      <thead>
+        <tr>
+          <th>User</th>
+          <th>Bio</th>
+          <th>Experience level</th>
+          <th>Online play</th>
+          <th>Homebrew</th>
+          <th>Original ruleset</th>
+          <th>Advanced ruleset</th>
+          <th>Pathfinder</th>
+          <th>Third</th>
+          <th>Three point five</th>
+          <th>Fourth</th>
+          <th>Fifth</th>
+          <th>Original campaign</th>
+          <th>Module</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
     </tr>
   </thead>
 
   <tbody>
-    <% @players.each do |player_profile| %>
+    <!-- If the user searches for player profiles -->
+    <% if @profile == 0 %>
+
+    <% @users.each do |player_profile| %>
       <tr>
+        <td><%= player_profile.user_id %></td>
         <td><%= player_profile.bio %></td>
         <td><%= player_profile.experience_level %></td>
-        <td><%= player_profile.ruleset1 %></td>
-        <td><%= player_profile.ruleset2 %></td>
-        <td><%= player_profile.ruleset3 %></td>
-        <td><%= player_profile.ruleset4 %></td>
+        <td><%= player_profile.online_play %></td>
+        <td><%= player_profile.homebrew %></td>
+        <td><%= player_profile.original_ruleset %></td>
+        <td><%= player_profile.advanced_ruleset %></td>
+        <td><%= player_profile.pathfinder %></td>
+        <td><%= player_profile.third %></td>
+        <td><%= player_profile.three_point_five %></td>
+        <td><%= player_profile.fourth %></td>
+        <td><%= player_profile.fifth %></td>
+        <td><%= player_profile.original_campaign %></td>
+        <td><%= player_profile.module %>
+      </tr>
+    <% end %>
+
+    <!--Otherwise, the user has searched for DM profiles -->
+    <% else %>
+    <% @users.each do |dm_profile| %>
+      <tr>
+        <td><%= dm_profile.user_id %></td>
+        <td><%= dm_profile.bio %></td>
+        <td><%= dm_profile.experience_level %></td>
+        <td><%= dm_profile.online_play %></td>
+        <td><%= dm_profile.homebrew %></td>
+        <td><%= dm_profile.original_ruleset %></td>
+        <td><%= dm_profile.advanced_ruleset %></td>
+        <td><%= dm_profile.pathfinder %></td>
+        <td><%= dm_profile.third %></td>
+        <td><%= dm_profile.three_point_five %></td>
+        <td><%= dm_profile.fourth %></td>
+        <td><%= dm_profile.fifth %></td>
+        <td><%= dm_profile.original_campaign %></td>
+        <td><%= dm_profile.module %>
+      </tr>
+    <% end %>
+
     <% end %>
   </tbody>
 </table>
+<br><br><br>
+<%= link_to "Try Another Search", search_pages_search_path %>
+<% end %>

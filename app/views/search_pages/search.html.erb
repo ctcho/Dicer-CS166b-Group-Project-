@@ -1,25 +1,35 @@
 <h1>Search Page</h1>
-<p>Insert your search parameters for players here:</p>
+<p>Enter your preferences here:</p>
 
 <%= form_tag("/search_pages/results", method: "get") do %>
   <strong>Exp Level</strong>
     <br>
-    <%= text_field_tag(:exp_level) %>
-    <!-- Below is how I want to represent EXP levels. That would require a database reset, though... -->
-    <%#= select_tag :exp_level, options_for_select([['< 1 year', 0],
+    <%= select_tag :experience_level, options_for_select([['< 1 year', 0],
       ['1 year', 1], ['2 years', 2], ['3 years', 3], ['4 years', 4], ['5 years', 5],
       ['5+ years', 6]]) %>
       <br><br><br>
-      <strong>Ruleset</strong>
+      <strong>Preferred Ruleset 1</strong>
       <br>
-      <%= select_tag :ruleset, options_for_select([['Ruleset 1', 1],
-      ['Ruleset 2', :ruleset2], ['Ruleset 3', :ruleset3], ['Ruleset 4', :ruleset4]]) %>
+      <%= select_tag :ruleset1, options_for_select([["Home Brew", 1], ["Original", 2],
+      ["Advanced", 3], ["Path Finder", 4], ["Third", 5], ["Three-point-Five", 6],
+      ["Fourth", 7], ["Fifth", 8], ["Original Campaign", 9]]) %>
     	<br><br><br>
-  	<strong>Distance from Current Location</strong>
+    <strong>Prefer Online Play?</strong>
     <br>
-    <%= select_tag :location, options_for_select([['< 5 miles', 0],
-    ['5 - 10 miles', 1], ['10 - 20 miles', 2], ['20 -50 miles', 3],
-    ['50+ miles', 4]]) %>
+    <%= select_tag :online_play, options_for_select([["Yes", 1], ["No", 0]]) %>
+    <br><br><br>
+    <strong>Profile Type</strong>
+    <br>
+    <!--I'll get to the option of you being able to select both Players and DM's in a bit. Cameron C. -->
+    <%= select_tag :profile_type, options_for_select([["Players", 0], ["DM's", 1]]) %>
+    <br><br><br>
+    <strong>Module Use?</strong>
+    <br>
+    <%= select_tag :module, options_for_select([["Yes", 1], ["No", 0]]) %>
+    <br><br><br>
+  	<strong>Current Location</strong>
+    <br>
+    <%= text_field_tag(:location) %>
   	<br><br><br>
-  <%= submit_tag("Search") %>
+  <%= submit_tag "Search", name: nil %>
 <% end %>
