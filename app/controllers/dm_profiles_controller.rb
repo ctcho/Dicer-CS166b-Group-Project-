@@ -16,6 +16,7 @@ class DmProfilesController < ApplicationController
 
   # GET /user/1/dm_profiles/new
   def new
+    @tutorial = params[:tutorial] if params[:tutorial] == "true"
     @user = User.find(params[:user_id])
     @dm_profile = DmProfile.new
   end
@@ -35,7 +36,7 @@ class DmProfilesController < ApplicationController
     respond_to do |format|
       if @dm_profile.save
         @user.update(dm_profile: @dm_profile)
-        format.html { redirect_to user_dm_profiles_path(User.find(@dm_profile.user_id), @dm_profile), notice: 'Dm profile was successfully created.' }
+        format.html { redirect_to user_dm_profiles_path(@user), @dm_profile), notice: 'Dm profile was successfully created.' }
         format.json { render :show, status: :created, location: @dm_profile }
       else
         format.html { render :new }

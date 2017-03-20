@@ -36,7 +36,7 @@ class PlayerProfilesController < ApplicationController
     respond_to do |format|
       if @player_profile.save
         @user.update(player_profile: @player_profile)
-        format.html { redirect_to user_player_profiles_path(User.find(@player_profile.user_id), @player_profile), notice: 'Player profile was successfully created.' }
+        format.html { redirect_to user_player_profiles_path(@user), @player_profile), notice: 'Player profile was successfully created.' }
         format.json { render :show, status: :created, location: @player_profile }
       else
         format.html { render :new }
