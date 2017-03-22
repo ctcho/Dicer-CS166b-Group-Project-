@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :logged_in_user, only: [:edit, :update, :show]
 
   # GET /users
   # GET /users.json
@@ -38,6 +39,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       log_in @user
+      session[:remember_me] == '1' ? remember(@user) : forget(@user)
       @tutorial = true if params[:help] == "yes"
       if params[:player] == "yes" ? @profile_type = "player_profiles" : @profile_type = "dm_profiles"
         respond_to do |format|
@@ -84,5 +86,12 @@ class UsersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       params.require(:user).permit(:username, :string, :email, :password, :password_confirmation, :profile_pic_path, :age, :last_active, :address)
+    end
+
+    def logged_in_user
+      unless logged_in?
+        flash[:danger] = "Please Log In"
+        redirect_to login_url
+      end
     end
 end
