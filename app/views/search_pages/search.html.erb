@@ -1,7 +1,7 @@
 <h1>Search Page</h1>
 <p>Enter your preferences here:</p>
 
-<%= form_tag("/search_pages/results", method: "get") do %>
+<%= form_tag(search_pages_results_path, method: "get") do %>
   <strong>Exp Level</strong>
     <br>
     <%= select_tag :experience_level, options_for_select([['< 1 year', 0],
@@ -27,9 +27,7 @@
     <br>
     <%= select_tag :module, options_for_select([["Yes", 1], ["No", 0]]) %>
     <br><br><br>
-  	<strong>Current Location</strong>
-    <br>
-    <%= text_field_tag(:location) %>
-  	<br><br><br>
   <%= submit_tag "Search", name: nil %>
 <% end %>
+<br><br>
+<%= link_to "Return to User List", users_path %>
