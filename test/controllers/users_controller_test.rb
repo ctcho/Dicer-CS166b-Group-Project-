@@ -28,10 +28,10 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should not get edit if not logged in" do
-    get edit_user_url(@user)
-    assert_redirected_to home_pages_unauthorized_url
-  end
+  #test "should not get edit if not logged in" do
+  #  get edit_user_url(@user)
+  #  assert_redirected_to home_pages_unauthorized_url
+  #end
 
   test "should update user" do
     patch user_url(@user), params: { user: { password: @user.password, password_confirmation: @user.password, age: @user.age, email: @user.email, last_active: @user.last_active, profile_pic_path: @user.profile_pic_path, username: @user.username, address: "48183"} }

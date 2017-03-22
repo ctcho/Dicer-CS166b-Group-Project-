@@ -37,4 +37,8 @@ module UsersHelper
     end
   end
 
+  def user_settings_path user
+    "/user/#{user.id}/settings"
+  end
+
 end

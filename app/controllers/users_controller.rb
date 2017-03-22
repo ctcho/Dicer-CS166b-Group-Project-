@@ -17,14 +17,19 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def settings
+    @user = current_user
+    render 'settings'
+  end
   # GET /users/1/edit
   def edit
-    if (logged_in? && current_user == params[:user_id])
+    @user = User.find(params[:id])
+    #if (logged_in? && current_user == params[:user_id])
 
-      render 'edit'
-    else
-      redirect_to home_pages_unauthorized_path
-    end
+    #  render 'edit'
+    #else
+    #  redirect_to home_pages_unauthorized_path
+    #end
   end
 
   # POST /users

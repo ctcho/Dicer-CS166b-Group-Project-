@@ -1,0 +1,10 @@
+<%= link_to "Edit Account Settings", edit_user_path(@user) %>
+<br>
+<% if @user.player_profile %>
+  <%= link_to "Edit Player Profile", edit_user_player_profiles_path(@user) %>
+  <br>
+<% end %>
+
+<% if @user.dm_profile%>
+  <%= link_to "Edit DM Profile", edit_user_dm_profiles_path(@user) %>
+<% end %>

@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get 'home_pages/contact'
   get 'home_pages/resources'
   get 'home_pages/unauthorized'
-
+  get '/user/:user_id/settings', to: 'users#settings'
   get 'signup', to: 'users#new'
 
   get 'login', to: 'sessions#new'
