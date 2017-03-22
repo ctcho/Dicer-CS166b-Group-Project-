@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   attr_accessor :remember_token
+  acts_as_mappable
   before_save{ self.email = email.downcase}
   has_one :dm_profile
   has_one :player_profile
@@ -11,6 +12,34 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 6 }, allow_nil: true
 
   has_secure_password
+
+  #A quibble: Why do the player and DM profiles of a user have max distance fields,
+  #but not the user? Do we want them to be different fields because we might intend
+  #for the user to be in different modes (player mode vs. DM mode)?
+  #If not, it might make more sense for us to simply move the max distance field to
+  #the user model only...  --Cameron C.
+  def self.location(user, profile_type)
+    if Integer(profile_type) == 0 #Player Profiles
+      if (!user.player_profile.nil?) #User may not have a player profile
+        PlayerProfile.within(user.player_profile.max_distance, origin: user)
+      elsif (!user.dm_profile.nil?) #user only has a DM profile
+        PlayerProfile.within(user.dm_profile.max_distance, origin: user)
+      else #The user has neither profile
+        #Insert error message Here
+      end
+    else #DM profiles
+      if (!user.player_profile.nil?) #User may not have a player profile
+        DmProfile.within(user.player_profile.max_distance, origin: user)
+      elsif (!user.dm_profile.nil?) #user only has a DM profile
+        DmProfile.within(user.dm_profile.max_distance, origin: user)
+      else #The user has neither profile
+        #Insert error message Here
+      end
+    end
+  end
+
+  #If you're worried about all of this code in the model, the professor says it's okay
+  #since this only deals with querying the database for other users. --Cameron C.
 
   #Search the user database based on the search parameters from search.html.erb
   #Please see search.html.erb for the parameters it sends.
