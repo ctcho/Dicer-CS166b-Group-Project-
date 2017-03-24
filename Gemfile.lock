@@ -53,6 +53,8 @@ GEM
     debug_inspector (0.0.2)
     erubis (2.7.0)
     execjs (2.7.0)
+    faker (1.7.3)
+      i18n (~> 0.5)
     ffi (1.9.18)
     geokit (1.10.0)
     geokit-rails (2.2.0)
@@ -175,6 +177,7 @@ DEPENDENCIES
   bcrypt
   byebug
   coffee-rails (~> 4.2)
+  faker
   geokit-rails
   jbuilder (~> 2.5)
   jquery-rails
