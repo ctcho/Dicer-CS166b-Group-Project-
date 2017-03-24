@@ -7,27 +7,28 @@ class DmProfilesController < ApplicationController
     @dm_profiles = DmProfile.all
   end
 
-  # GET /dm_profiles/1
-  # GET /dm_profiles/1.json
+  # GET /user/1/dm_profiles
+  # GET /user/1/dm_profiles.json
   def show
     @user = User.find(params[:user_id])
     @dm_profile = @user.dm_profile
   end
 
-  # GET /dm_profiles/new
+  # GET /user/1/dm_profiles/new
   def new
+    @tutorial = params[:tutorial] if params[:tutorial] == "true"
     @user = User.find(params[:user_id])
     @dm_profile = DmProfile.new
   end
 
-  # GET /dm_profiles/1/edit
+  # GET user/1/dm_profiles/edit
   def edit
     @user = User.find(params[:user_id])
     @dm_profile = @user.dm_profile
   end
 
-  # POST /dm_profiles
-  # POST /dm_profiles.json
+  # POST /user/1/dm_profiles
+  # POST user/1/dm_profiles.json
   def create
     @user = User.find(params[:user_id])
     @dm_profile = DmProfile.new(dm_profile_params)
@@ -35,7 +36,7 @@ class DmProfilesController < ApplicationController
     respond_to do |format|
       if @dm_profile.save
         @user.update(dm_profile: @dm_profile)
-        format.html { redirect_to user_dm_profiles_path(User.find(@dm_profile.user_id), @dm_profile), notice: 'Dm profile was successfully created.' }
+        format.html { redirect_to user_dm_profiles_path(@user, @dm_profile), notice: 'Dm profile was successfully created.' }
         format.json { render :show, status: :created, location: @dm_profile }
       else
         format.html { render :new }
@@ -44,8 +45,8 @@ class DmProfilesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /dm_profiles/1
-  # PATCH/PUT /dm_profiles/1.json
+  # PATCH/PUT /user/1/dm_profiles
+  # PATCH/PUT /user/1/dm_profiles.json
   def update
     respond_to do |format|
       if @dm_profile.update(dm_profile_params)
@@ -58,8 +59,8 @@ class DmProfilesController < ApplicationController
     end
   end
 
-  # DELETE /dm_profiles/1
-  # DELETE /dm_profiles/1.json
+  # DELETE /user/1/dm_profiles
+  # DELETE /user/1/dm_profiles.json
   def destroy
     @dm_profile.destroy
     respond_to do |format|
@@ -76,6 +77,9 @@ class DmProfilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def dm_profile_params
-      params.require(:dm_profile).permit(:user_id, :bio, :experience_level, :online_play, :homebrew, :original_ruleset, :advanced_ruleset, :pathfinder, :third, :three_point_five, :fourth, :fifth, :original_campaign, :module)
+      profile_params = params.require(:dm_profile).permit(:user_id, :bio, :experience_level, :max_distance, :online_play, :homebrew, :original_ruleset, :advanced_ruleset, :pathfinder, :third, :three_point_five, :fourth, :fifth, :original_campaign, :module)
+      profile_params[:user_id] = params[:user_id]
+      profile_params[:experience_level] ||= params[:experience_level]
+      profile_params
     end
 end

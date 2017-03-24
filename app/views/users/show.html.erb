@@ -10,7 +10,7 @@
   <%= @user.email %>
 </p>
 
-<p>
+<!--<p>
   <strong>Password digest:</strong>
   <%= @user.password_digest %>
 </p>
@@ -23,7 +23,7 @@
 <p>
   <strong>Profile pic path:</strong>
   <%= @user.profile_pic_path %>
-</p>
+</p>-->
 
 <!--If the user has a player profile-->
 <% if !@user.player_profile.nil? %>
@@ -51,10 +51,10 @@
   <%= @user.age %>
 </p>
 
-<p>
+<!--<p>
   <strong>Last active:</strong>
   <%= @user.last_active %>
-</p>
+</p>-->
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

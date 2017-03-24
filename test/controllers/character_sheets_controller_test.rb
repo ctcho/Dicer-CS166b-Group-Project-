@@ -1,8 +1,5 @@
 require 'test_helper'
 
-
-
-
 class CharacterSheetsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @user = users(:one)
