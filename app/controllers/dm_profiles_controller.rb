@@ -76,6 +76,6 @@ class DmProfilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def dm_profile_params
-      params.require(:dm_profile).permit(:user_id, :bio, :experience_level, :max_distance, :online_play, :homebrew, :original_ruleset, :advanced_ruleset, :pathfinder, :third, :three_point_five, :fourth, :fifth, :original_campaign, :module)
+      params.require(:dm_profile).permit(:user_id, :bio, :experience_level, :online_play, :homebrew, :original_ruleset, :advanced_ruleset, :pathfinder, :third, :three_point_five, :fourth, :fifth, :original_campaign, :module)
     end
 end

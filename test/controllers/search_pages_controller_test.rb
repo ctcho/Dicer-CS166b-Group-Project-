@@ -7,10 +7,25 @@ require 'test_helper'
 class SearchPagesControllerTest < ActionDispatch::IntegrationTest
   setup do
     #byebug
+    @u1 = User.create(email: "us1@example.com", password: "strongpass", password_confirmation: "strongpass",
+      username: "unique_names", age: 18, address: "02453", max_distance: 30.0)
+      #byebug
+    @u2 = User.create(email: "us2@example.com", password: "strongpass2", password_confirmation: "strongpass2",
+      username: "unique_names2", age: 18, address: "02453", max_distance: 30.0)
+    @u3 = User.create(email: "us3@example.com", password: "strongpass3", password_confirmation: "strongpass3",
+      username: "unique_names3", age: 18, address: "02453", max_distance: 30.0)
+    @u4 = User.create(email: "us4@example.com", password: "strongpass4", password_confirmation: "strongpass4",
+      username: "unique_names4", age: 18, address: "02453", max_distance: 30.0)
+    log_in_as(@u1, "strongpass", 1)
     @p1 = player_profiles(:one)
     @p2 = player_profiles(:two)
     @dm1 = dm_profiles(:one)
     @dm2 = dm_profiles(:two)
+    @u1.player_profile = @p1
+    @u2.player_profile = @p2
+    @u3.dm_profile = @dm1
+    @u4.dm_profile = @dm2
+    #byebug
   end
 
   #include Rails.application.routes.url_helpers
@@ -57,7 +72,9 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
   test "can retrieve DmProfile 2" do
     @params = {:experience_level => 3, :ruleset1 => 2,
       :profile_type => 1, :online_play => 0, :module => 0}
+      #byebug
     get search_pages_results_path(@params)
+    #byebug
     assert_response :success
     assert_equal(@dm2, User.search(@params).first)
   end

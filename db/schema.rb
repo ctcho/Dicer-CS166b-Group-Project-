@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170309204236) do
+ActiveRecord::Schema.define(version: 20170322190022) do
 
   create_table "character_sheets", force: :cascade do |t|
     t.integer  "player_profile_id"
@@ -23,7 +23,6 @@ ActiveRecord::Schema.define(version: 20170309204236) do
     t.integer  "user_id"
     t.text     "bio"
     t.integer  "experience_level"
-    t.float    "max_distance"
     t.integer  "online_play"
     t.integer  "homebrew"
     t.integer  "original_ruleset"
@@ -43,7 +42,6 @@ ActiveRecord::Schema.define(version: 20170309204236) do
     t.integer  "user_id"
     t.text     "bio"
     t.integer  "experience_level"
-    t.float    "max_distance"
     t.integer  "online_play"
     t.integer  "homebrew"
     t.integer  "original_ruleset"
@@ -72,6 +70,7 @@ ActiveRecord::Schema.define(version: 20170309204236) do
     t.float    "lat"
     t.float    "lng"
     t.string   "remember_digest"
+    t.float    "max_distance"
   end
 
 end

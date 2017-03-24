@@ -20,7 +20,7 @@ class PlayerProfilesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create player_profile" do
     assert_difference('PlayerProfile.count') do
-      post user_player_profiles_url(@user), params: { player_profile: { advanced_ruleset: @player_profile.advanced_ruleset, bio: @player_profile.bio, experience_level: @player_profile.experience_level, fifth: @player_profile.fifth, fourth: @player_profile.fourth, homebrew: @player_profile.homebrew, max_distance: @player_profile.max_distance, module: @player_profile.module, online_play: @player_profile.online_play, original_campaign: @player_profile.original_campaign, original_ruleset: @player_profile.original_ruleset, pathfinder: @player_profile.pathfinder, third: @player_profile.third, three_point_five: @player_profile.three_point_five, user_id: @player_profile.user_id } }
+      post user_player_profiles_url(@user), params: { player_profile: { advanced_ruleset: @player_profile.advanced_ruleset, bio: @player_profile.bio, experience_level: @player_profile.experience_level, fifth: @player_profile.fifth, fourth: @player_profile.fourth, homebrew: @player_profile.homebrew, module: @player_profile.module, online_play: @player_profile.online_play, original_campaign: @player_profile.original_campaign, original_ruleset: @player_profile.original_ruleset, pathfinder: @player_profile.pathfinder, third: @player_profile.third, three_point_five: @player_profile.three_point_five, user_id: @player_profile.user_id } }
     end
 
     assert_redirected_to user_player_profiles_url(@user, PlayerProfile.last)
@@ -37,7 +37,7 @@ class PlayerProfilesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update player_profile" do
-    patch user_player_profiles_url(@user), params: { player_profile: { advanced_ruleset: @player_profile.advanced_ruleset, bio: @player_profile.bio, experience_level: @player_profile.experience_level, fifth: @player_profile.fifth, fourth: @player_profile.fourth, homebrew: @player_profile.homebrew, max_distance: @player_profile.max_distance, module: @player_profile.module, online_play: @player_profile.online_play, original_campaign: @player_profile.original_campaign, original_ruleset: @player_profile.original_ruleset, pathfinder: @player_profile.pathfinder, third: @player_profile.third, three_point_five: @player_profile.three_point_five, user_id: @player_profile.user_id } }
+    patch user_player_profiles_url(@user), params: { player_profile: { advanced_ruleset: @player_profile.advanced_ruleset, bio: @player_profile.bio, experience_level: @player_profile.experience_level, fifth: @player_profile.fifth, fourth: @player_profile.fourth, homebrew: @player_profile.homebrew, module: @player_profile.module, online_play: @player_profile.online_play, original_campaign: @player_profile.original_campaign, original_ruleset: @player_profile.original_ruleset, pathfinder: @player_profile.pathfinder, third: @player_profile.third, three_point_five: @player_profile.three_point_five, user_id: @player_profile.user_id } }
     assert_redirected_to user_player_profiles_url(@user, @player_profile)
   end
 
