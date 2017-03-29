@@ -10,13 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170309204236) do
+ActiveRecord::Schema.define(version: 20170329181933) do
 
   create_table "character_sheets", force: :cascade do |t|
     t.integer  "player_profile_id"
     t.string   "file_path"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+  end
+
+  create_table "chat_rooms", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "dm_profiles", force: :cascade do |t|
@@ -37,6 +43,15 @@ ActiveRecord::Schema.define(version: 20170309204236) do
     t.integer  "module"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.text     "content"
+    t.string   "image_path"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "user_id"
+    t.integer  "chat_room_id"
   end
 
   create_table "player_profiles", force: :cascade do |t|
