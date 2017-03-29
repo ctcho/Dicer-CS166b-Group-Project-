@@ -66,6 +66,7 @@ li a {
   background-color: $red_2;
   opacity: 0.8;
   transition: opacity 0.5s;
+  z-index: 10000;
 }
 .header:hover{
   opacity: 1;
