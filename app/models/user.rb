@@ -3,6 +3,8 @@ class User < ApplicationRecord
   before_save{ self.email = email.downcase}
   has_one :dm_profile
   has_one :player_profile
+  has_many :messages
+  has_and_belongs_to_many :chat_rooms
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :username, presence: true, uniqueness: {case_sensitive: false}
