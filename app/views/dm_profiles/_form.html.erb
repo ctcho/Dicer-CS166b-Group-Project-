@@ -132,8 +132,23 @@ There are lots of ways to play DnD. The following tutorial will help you figure 
     <%= f.check_box :module %>
   </div>
 
-  <input type="hidden" id="dm_profile[:experience_level]" name="experience_level" value= 0/>
-  <br>
+  <% if @tutorial %>
+    <input type="hidden" id="dm_profile[:experience_level]" name="experience_level" value= 0>
+    <br>
+  <% else %>
+    <div class = "field">
+      How experienced are you?
+      <br>
+      <%= f.label(:experience_level_beginner, "Beginner (0-1 years of play)") %>
+      <%= f.radio_button(:experience_level, 1) %>
+      <%= f.label(:experience_level_novice, "Novice (1-2 years of play)") %>
+      <%= f.radio_button(:experience_level, 2) %>
+      <%= f.label(:experience_level_experienced, "Experienced (2-5 years of play)") %>
+      <%= f.radio_button(:experience_level, 3) %>
+      <%= f.label(:experience_level_veteran,"Veteran (More than 5 years of play)" ) %>
+      <%= f.radio_button(:experience_level, 4) %>
+    </div>
+  <% end %>
 
   <h2>Bio</h2>
   <% if @tutorial %>
