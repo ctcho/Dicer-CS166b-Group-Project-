@@ -1,79 +1,63 @@
-<p id="notice"><%= notice %></p>
+<div class="profile-wrapper">
+  <div class="profile-summary">
+    <p id="notice"><%= notice %></p>
+    <%= image_tag("dicepic.png", height: '175', width: '175')%>
+    <div class="profile-text">
+      <p>
+        <strong>Username:</strong>
+        <%= User.find(@dm_profile.user_id).username %>
+      </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @dm_profile.user_id %>
-</p>
+      <p>
+        <strong>Age:</strong>
+        <%= User.find(@dm_profile.user_id).age %>
+      </p>
 
-<p>
-  <strong>Bio:</strong>
-  <%= @dm_profile.bio %>
-</p>
+      <p>
+        <strong>Experience:</strong>
+        <%= translate_experience_level(@dm_profile.experience_level) %>
+      </p>
 
-<p>
-  <strong>Experience level:</strong>
-  <%= @dm_profile.experience_level %>
-</p>
+      <p>
+        <strong>Likes to play:</strong>
+        <%= get_ruleset_strings(@dm_profile).join(", ") %>
+      </p>
 
-<p>
-  <strong>Max distance:</strong>
-  <%= @dm_profile.max_distance %>
-</p>
+      <p>
+        <strong><%= translate_online_play(@dm_profile) %></strong>
+      </p>
 
-<p>
-  <strong>Online play:</strong>
-  <%= @dm_profile.online_play %>
-</p>
 
-<p>
-  <strong>Homebrew:</strong>
-  <%= @dm_profile.homebrew %>
-</p>
-
-<p>
-  <strong>Original ruleset:</strong>
-  <%= @dm_profile.original_ruleset %>
-</p>
-
-<p>
-  <strong>Advanced ruleset:</strong>
-  <%= @dm_profile.advanced_ruleset %>
-</p>
-
-<p>
-  <strong>Pathfinder:</strong>
-  <%= @dm_profile.pathfinder %>
-</p>
-
-<p>
-  <strong>Third:</strong>
-  <%= @dm_profile.third %>
-</p>
-
-<p>
-  <strong>Three point five:</strong>
-  <%= @dm_profile.three_point_five %>
-</p>
-
-<p>
-  <strong>Fourth:</strong>
-  <%= @dm_profile.fourth %>
-</p>
-
-<p>
-  <strong>Fifth:</strong>
-  <%= @dm_profile.fifth %>
-</p>
-
-<p>
-  <strong>Original campaign:</strong>
-  <%= @dm_profile.original_campaign %>
-</p>
-
-<p>
-  <strong>Module:</strong>
-  <%= @dm_profile.module %>
-</p>
-
-<%= link_to 'Edit', edit_user_dm_profiles_path(@dm_profile) %> |
-<%= link_to 'Back', user_path(@user) %>
+    <!--  <% unless logged_in? && (current_user.id == params[:user_id])  %>
+        <% #if within_distance(User.find(@dm_profile.user_id), current_user) %>
+          <p>
+            <strong>Distance:</strong>
+            <%= find_distance(User.find(@dm_profile.id), current_user) %>
+          </p>
+        <% else %>
+          <p>
+            <strong>Too far away!</strong>
+          </p>
+        <%#end %>
+      <% end %>-->
+    </div>
+    <div class="button-container">
+      <button class="contact-me-button">Contact me!</button>
+    </div>
+  </div>
+  <div class="profile-bio">
+    <p>
+      <strong>Bio:</strong>
+      <%= @dm_profile.bio %>
+    </p>
+  </div>
+  <div class="more-users-box">
+    <p>
+      <strong>You may also like:</strong>
+    </p>
+  </div>
+  <div class="ending-buttons">
+    <%= link_to 'Edit', edit_user_dm_profiles_path(@user, @dm_profile) %> |
+    <%= link_to 'Back', user_path(@user) %>
+  </div>
+</div>
