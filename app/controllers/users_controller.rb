@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :logged_in_user, only: [:edit, :update, :show]
+  before_action :logged_in_user, only: [:edit, :update, :show, :settings]
+  before_action :correct_user, only:[:edit, :update, :show]
 
   # GET /users
   # GET /users.json
@@ -25,12 +26,6 @@ class UsersController < ApplicationController
   # GET /users/1/edit
   def edit
     @user = User.find(params[:id])
-    #if (logged_in? && current_user == params[:user_id])
-
-    #  render 'edit'
-    #else
-    #  redirect_to home_pages_unauthorized_path
-    #end
   end
 
   # POST /users
@@ -53,6 +48,7 @@ class UsersController < ApplicationController
       end
     end
   end
+
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
@@ -83,6 +79,10 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
     end
 
+    def correct_user
+      @user = User.find(params[:id])
+      redirect_to('/unauthorized') unless current_user?(@user)
+    end
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       params.require(:user).permit(:username, :string, :email, :password, :password_confirmation, :profile_pic_path, :age, :last_active, :address)

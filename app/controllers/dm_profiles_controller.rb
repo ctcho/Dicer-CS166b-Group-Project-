@@ -1,6 +1,7 @@
 class DmProfilesController < ApplicationController
   before_action :set_dm_profile, only: [:show, :edit, :update, :destroy]
-
+  before_action :logged_in_user, only: [:edit, :update]
+  before_action :correct_user, only: [:edit, :update]
   # GET /dm_profiles
   # GET /dm_profiles.json
   def index
@@ -81,5 +82,17 @@ class DmProfilesController < ApplicationController
       profile_params[:user_id] = params[:user_id]
       profile_params[:experience_level] ||= params[:experience_level]
       profile_params
+    end
+    
+    def logged_in_user
+      unless logged_in?
+        flash[:danger] = "Please Log In"
+        redirect_to login_url
+      end
+    end
+
+    def correct_user
+      @user = User.find(params[:user_id])
+      redirect_to('/unauthorized') unless current_user?(@user)
     end
 end
