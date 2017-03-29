@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 <div class="profile-wrapper">
   <div class="profile-summary">
-    <%= image_tag("dicepic.png", height: '175', width: '175')%>
+    <%= image_tag @user.avatar.url(:medium) %>
     <div class="profile-text">
       <p>
         <strong>Username:</strong>

@@ -19,6 +19,12 @@ ActiveRecord::Schema.define(version: 20170329183305) do
     t.datetime "updated_at",        null: false
   end
 
+  create_table "chat_rooms", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "dm_profiles", force: :cascade do |t|
     t.integer  "user_id"
     t.text     "bio"
@@ -37,6 +43,15 @@ ActiveRecord::Schema.define(version: 20170329183305) do
     t.integer  "module"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.text     "content"
+    t.string   "image_path"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "user_id"
+    t.integer  "chat_room_id"
   end
 
   create_table "player_profiles", force: :cascade do |t|
