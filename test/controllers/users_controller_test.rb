@@ -59,6 +59,17 @@ end
   #  assert_redirected_to user_url(@user)
   #end
 
+  test "should not allow the admin attribute to be edited via the web" do
+    log_in_as(@user2, 'password', 0)
+    assert_not @user2.admin?
+    patch user_path(@user2), params: {
+                                   user: { password:              'strongpass',
+                                           password_confirmation: 'strongpass',
+                                           admin: true } }
+   assert_not @user2.admin?
+
+  end
+
   test "should destroy user" do
     assert_difference('User.count', -1) do
       delete user_url(@user)
@@ -66,4 +77,6 @@ end
 
     assert_redirected_to users_url
   end
+
+
 end

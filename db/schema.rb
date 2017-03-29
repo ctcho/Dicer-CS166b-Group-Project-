@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170309204236) do
+ActiveRecord::Schema.define(version: 20170329190540) do
 
   create_table "character_sheets", force: :cascade do |t|
     t.integer  "player_profile_id"
@@ -67,11 +67,12 @@ ActiveRecord::Schema.define(version: 20170309204236) do
     t.integer  "age"
     t.string   "address"
     t.datetime "last_active"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
     t.float    "lat"
     t.float    "lng"
     t.string   "remember_digest"
+    t.boolean  "admin",            default: false
   end
 
 end
