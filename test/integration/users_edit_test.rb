@@ -7,9 +7,9 @@ class UsersEditTest <ActionDispatch::IntegrationTest
   end
 
   test "gets the edit page when user is logged in" do
-    log_in_as(@user, 'password', 1)
     get edit_user_path(@user)
-    assert_template 'users/edit'
+    log_in_as(@user, 'password', 1)
+    assert_redirected_to edit_user_path(@user)
   end
 
   test "returns to edit page when unsuccessful edit" do
@@ -30,7 +30,7 @@ class UsersEditTest <ActionDispatch::IntegrationTest
                                               email: email,
                                               password:              "",
                                               password_confirmation: "" } }
-    assert_redirected_to edit_user_path(@user)
+    assert_redirected_to @user
     @user.reload
     assert_equal username, @user.username
     assert_equal email, @user.email

@@ -53,7 +53,7 @@ class PlayerProfilesController < ApplicationController
     respond_to do |format|
 
       if @player_profile.update_attributes(player_profile_params)
-      
+
         format.html { redirect_to user_player_profiles_path(@user, @player_profile), notice: 'Player profile was successfully updated.' }
         format.json { render :show, status: :ok, location: @player_profile }
       else
@@ -89,6 +89,7 @@ class PlayerProfilesController < ApplicationController
 
     def logged_in_user
       unless logged_in?
+        store_location
         flash[:danger] = "Please Log In"
         redirect_to login_url
       end

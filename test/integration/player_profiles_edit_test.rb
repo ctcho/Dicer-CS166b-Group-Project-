@@ -9,9 +9,9 @@ class PlayerProfilesEditTest <ActionDispatch::IntegrationTest
   end
 
   test "gets the edit page when the user is logged in" do
-    log_in_as(@user, 'password', 1)
     get edit_user_player_profiles_path(@user)
-    assert_template 'player_profiles/edit'
+    log_in_as(@user, 'password', 1)
+    assert_redirected_to edit_user_player_profiles_path(@user)
   end
 
   test "returns to edit page when unsuccessful edit" do

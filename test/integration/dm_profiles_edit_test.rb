@@ -9,9 +9,9 @@ class DmProfilesEditTest <ActionDispatch::IntegrationTest
   end
 
   test "gets the edit page when the user is logged in" do
-    log_in_as(@user, 'password', 1)
     get edit_user_dm_profiles_path(@user)
-    assert_template 'dm_profiles/edit'
+    log_in_as(@user, 'password', 1)
+    assert_redirected_to edit_user_dm_profiles_path(@user)
   end
 
   test "returns to edit page when unsuccessful edit" do
@@ -30,7 +30,7 @@ class DmProfilesEditTest <ActionDispatch::IntegrationTest
     patch user_dm_profiles_path, params: { dm_profile: {experience_level: 3,
       bio: bio
       }}
-      assert_redirected_to user_dm_profiles_path(@user. @player_profile)
+      assert_redirected_to user_dm_profiles_path(@user, @dm_profile)
       @dm_profile.reload
       assert_equal bio, @dm_profile.bio
   end

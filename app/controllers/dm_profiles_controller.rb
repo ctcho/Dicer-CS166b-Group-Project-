@@ -83,9 +83,10 @@ class DmProfilesController < ApplicationController
       profile_params[:experience_level] ||= params[:experience_level]
       profile_params
     end
-    
+
     def logged_in_user
       unless logged_in?
+        store_location
         flash[:danger] = "Please Log In"
         redirect_to login_url
       end
@@ -95,4 +96,6 @@ class DmProfilesController < ApplicationController
       @user = User.find(params[:user_id])
       redirect_to('/unauthorized') unless current_user?(@user)
     end
+
+
 end
