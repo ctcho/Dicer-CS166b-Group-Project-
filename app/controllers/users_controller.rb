@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :logged_in_user, only: [:edit, :update, :show, :settings]
+  before_action :logged_in_user, only: [:edit, :update, :show, :settings, :index]
   before_action :correct_user, only:[:edit, :update, :show]
+  before_action :admin_user, only:[:index]
 
   # GET /users
   # GET /users.json
@@ -94,5 +95,9 @@ class UsersController < ApplicationController
         flash[:danger] = "Please Log In"
         redirect_to login_url
       end
+    end
+
+    def admin_user
+      redirect_to('/unauthorized') unless current_user.admin?
     end
 end

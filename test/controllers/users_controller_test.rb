@@ -3,13 +3,25 @@ require 'test_helper'
 class UsersControllerTest < ActionDispatch::IntegrationTest
   setup do
     User.destroy_all
-    @user = User.create(email: "mystring@example.com", password: "strongpass", password_confirmation: "strongpass", username: "unique_names", age: 18, address: "02453")
+    @user = User.create(email: "mystring@example.com", password: "strongpass", password_confirmation: "strongpass", username: "unique_names", age: 18, address: "02453", admin: true)
     @user2  = User.create(email: "myotherstring@example.com", password: "strongpass", password_confirmation: "strongpass", username: "another_unique_name", address: "02453")
 end
 
   test "should get index" do
+    log_in_as(@user, "strongpass", 0)
     get users_url
     assert_response :success
+  end
+
+  test "should redirect index if not logged in" do
+    get users_url
+    assert_redirected_to login_path
+  end
+
+  test "should redirect index if not admin" do
+    log_in_as(@user2, "strongpass", 0)
+    get users_url
+    assert_redirected_to '/unauthorized'
   end
 
   test "should get new" do
@@ -66,7 +78,7 @@ end
                                    user: { password:              'strongpass',
                                            password_confirmation: 'strongpass',
                                            admin: true } }
-   assert_not @user2.admin?
+   assert_not @user2.reload.admin?
 
   end
 
