@@ -8,6 +8,7 @@ one:
   profile_pic_path: MyString
   #player_profile_id: nil
   #dm_profile_id: nil
+  max_distance: 1.5
   age: 18
   address: "02453"
   last_active: 2017-03-03 13:11:29
@@ -20,6 +21,7 @@ two:
   profile_pic_path: MyString
   #player_profile_id: nil
   #dm_profile_id: nil
+  max_distance: 1.5
   age: 18
   address: "48183"
   last_active: 2017-03-03 13:11:29
