@@ -18,6 +18,7 @@ Rails.application.routes.draw do
     resource :player_profiles do
       resources :character_sheets
     end
+    resource :message
     resource :dm_profiles
   end
 

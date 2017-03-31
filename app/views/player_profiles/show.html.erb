@@ -42,7 +42,7 @@
       <% end %>-->
     </div>
     <div class="button-container">
-      <button class="contact-me-button">Contact me!</button>
+      <%= button_to "Contact me!", new_user_message_path, class: "contact-me-button", method: :get %>
     </div>
   </div>
   <div class="profile-bio">
