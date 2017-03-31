@@ -87,11 +87,15 @@ ActiveRecord::Schema.define(version: 20170329191543) do
     t.integer  "age"
     t.string   "address"
     t.datetime "last_active"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
     t.float    "lat"
     t.float    "lng"
     t.string   "remember_digest"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
 end
