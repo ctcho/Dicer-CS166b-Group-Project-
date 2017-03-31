@@ -4,28 +4,41 @@
 <%= form_tag(search_pages_results_path, method: "get") do %>
   <strong>Exp Level</strong>
     <br>
-    <%= select_tag :experience_level, options_for_select([['< 1 year', 0],
-      ['1 year', 1], ['2 years', 2], ['3 years', 3], ['4 years', 4], ['5 years', 5],
-      ['5+ years', 6]]) %>
+    <%= select_tag :experience_level, options_for_select([['Beginner (0-1 years of play)', 1],
+      ['Novice (1-2 years of play)', 2], ['Experienced (2-5 years of play)', 3],
+      ['Veteran (More than 5 years of play)', 4]]), prompt: "Select an Option" %>
       <br><br><br>
       <strong>Preferred Ruleset 1</strong>
       <br>
-      <%= select_tag :ruleset1, options_for_select([["Home Brew", 1], ["Original", 2],
-      ["Advanced", 3], ["Path Finder", 4], ["Third", 5], ["Three-point-Five", 6],
-      ["Fourth", 7], ["Fifth", 8], ["Original Campaign", 9]]) %>
-    	<br><br><br>
+      <%= select_tag :ruleset1, options_for_select([["Home Brew", 1], ["Original Ruleset", 2],
+      ["Advanced Ruleset", 3], ["Pathfinder", 4], ["Third", 5], ["Three-Point-Five", 6],
+      ["Fourth", 7], ["Fifth", 8]]), prompt: "Select one" %>
+      <br><br><br>
+      <strong>Preferred Ruleset 2</strong>
+      <br>
+      <%= select_tag :ruleset2, options_for_select([["Home Brew", 1], ["Original Ruleset", 2],
+      ["Advanced Ruleset", 3], ["Pathfinder", 4], ["Third", 5], ["Three-Point-Five", 6],
+      ["Fourth", 7], ["Fifth", 8]]), prompt: "Select one" %>
+      <br><br><br>
+      <strong>Preferred Ruleset 3</strong>
+      <br>
+      <%= select_tag :ruleset3, options_for_select([["Home Brew", 1], ["Original Ruleset", 2],
+      ["Advanced Ruleset", 3], ["Pathfinder", 4], ["Third", 5], ["Three-Point-Five", 6],
+      ["Fourth", 7], ["Fifth", 8]]), prompt: "Select one" %>
+      <br><br><br>
     <strong>Prefer Online Play?</strong>
     <br>
-    <%= select_tag :online_play, options_for_select([["Yes", 1], ["No", 0]]) %>
+    <%= select_tag :online_play, options_for_select([["Yes", 1], ["No", 0]]), prompt: "Select an Option" %>
     <br><br><br>
     <strong>Profile Type</strong>
     <br>
     <!--I'll get to the option of you being able to select both Players and DM's in a bit. Cameron C. -->
-    <%= select_tag :profile_type, options_for_select([["Players", 0], ["DM's", 1]]) %>
+    <%= select_tag :profile_type, options_for_select([["Players", 0], ["DM's", 1]]), prompt: "Select an Option" %>
     <br><br><br>
-    <strong>Module Use?</strong>
+    <strong>Campaign Type</strong>
     <br>
-    <%= select_tag :module, options_for_select([["Yes", 1], ["No", 0]]) %>
+    <%= select_tag :campaign_type, options_for_select([["Original Campaign", 0], ["Module", 1]]),
+    prompt: "Select one" %>
     <br><br><br>
   <%= submit_tag "Search", name: nil %>
 <% end %>

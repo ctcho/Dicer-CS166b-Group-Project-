@@ -1,5 +1,5 @@
 class SearchPagesController < ApplicationController
-
+include SearchPagesHelper
 
   def search
   end
