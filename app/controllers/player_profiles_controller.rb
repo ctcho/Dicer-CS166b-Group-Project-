@@ -36,12 +36,10 @@ class PlayerProfilesController < ApplicationController
     @player_profile = PlayerProfile.new(player_profile_params)
     respond_to do |format|
       if @player_profile.save
-        puts "I SAVED"
         @user.update(player_profile: @player_profile)
         format.html { redirect_to user_player_profiles_path(@user, @player_profile), notice: 'Player profile was successfully created.' }
         format.json { render :show, status: :created, location: @player_profile }
       else
-        puts "SOMETHING DIDNT WORK"
         byebug
         format.html { render :new }
         format.json { render json: @player_profile.errors, status: :unprocessable_entity }
