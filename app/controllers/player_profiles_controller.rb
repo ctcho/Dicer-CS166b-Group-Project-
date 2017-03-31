@@ -1,6 +1,7 @@
 class PlayerProfilesController < ApplicationController
   before_action :set_player_profile, only: [:show, :edit, :update, :destroy]
-
+  before_action :logged_in_user, only: [:edit, :update]
+  before_action :correct_user, only: [:edit, :update]
   # GET /player_profiles
   # GET /player_profiles.json
   def index
@@ -53,7 +54,9 @@ class PlayerProfilesController < ApplicationController
   def update
     @user = @player_profile.user
     respond_to do |format|
-      if @player_profile.update(player_profile_params)
+
+      if @player_profile.update_attributes(player_profile_params)
+
         format.html { redirect_to user_player_profiles_path(@user, @player_profile), notice: 'Player profile was successfully updated.' }
         format.json { render :show, status: :ok, location: @player_profile }
       else
@@ -85,5 +88,18 @@ class PlayerProfilesController < ApplicationController
       profile_params[:user_id] = params[:user_id]
       profile_params[:experience_level] ||= params[:experience_level]
       profile_params
+    end
+
+    def logged_in_user
+      unless logged_in?
+        store_location
+        flash[:danger] = "Please Log In"
+        redirect_to login_url
+      end
+    end
+
+    def correct_user
+      @user = User.find(params[:user_id])
+      redirect_to('/unauthorized') unless current_user?(@user)
     end
 end

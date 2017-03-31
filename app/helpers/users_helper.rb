@@ -37,6 +37,7 @@ module UsersHelper
     end
   end
 
+
   def get_ruleset_strings(profile)
     rulesets = Array.new
     if(profile.original_ruleset > 0)
@@ -76,5 +77,10 @@ module UsersHelper
 #    distance = find_distance(user1, user2)
 #    user1.max_distance < distance && user2.max_distance < distance
 #  end
+
+  def user_settings_path user
+    "/user/#{user.id}/settings"
+  end
+
 
 end

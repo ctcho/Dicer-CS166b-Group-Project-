@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 20170329191543) do
 
+
   create_table "character_sheets", force: :cascade do |t|
     t.integer  "player_profile_id"
     t.string   "file_path"
@@ -87,11 +88,12 @@ ActiveRecord::Schema.define(version: 20170329191543) do
     t.integer  "age"
     t.string   "address"
     t.datetime "last_active"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
     t.float    "lat"
     t.float    "lng"
     t.string   "remember_digest"
+    t.boolean  "admin",            default: false
   end
 
 end

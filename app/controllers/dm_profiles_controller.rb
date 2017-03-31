@@ -1,6 +1,7 @@
 class DmProfilesController < ApplicationController
   before_action :set_dm_profile, only: [:show, :edit, :update, :destroy]
-
+  before_action :logged_in_user, only: [:edit, :update]
+  before_action :correct_user, only: [:edit, :update]
   # GET /dm_profiles
   # GET /dm_profiles.json
   def index
@@ -77,9 +78,24 @@ class DmProfilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def dm_profile_params
-      profile_params = params.require(:player_profile).permit(:user_id, :bio, :experience_level, :max_distance, :online_play, :homebrew, :original_ruleset, :advanced_ruleset, :pathfinder, :third, :three_point_five, :fourth, :fifth, :original_campaign, :module)
+      profile_params = params.require(:dm_profile).permit(:user_id, :bio, :experience_level, :max_distance, :online_play, :homebrew, :original_ruleset, :advanced_ruleset, :pathfinder, :third, :three_point_five, :fourth, :fifth, :original_campaign, :module)
       profile_params[:user_id] = params[:user_id]
       profile_params[:experience_level] ||= params[:experience_level]
       profile_params
     end
+
+    def logged_in_user
+      unless logged_in?
+        store_location
+        flash[:danger] = "Please Log In"
+        redirect_to login_url
+      end
+    end
+
+    def correct_user
+      @user = User.find(params[:user_id])
+      redirect_to('/unauthorized') unless current_user?(@user)
+    end
+
+
 end
