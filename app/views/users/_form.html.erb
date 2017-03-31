@@ -1,4 +1,11 @@
-<%= form_for(:user, url: users_path, html: { multipart: true }) do |f| %>
+<% if @user.new_record?
+  @url = users_path
+  @method = 'post'
+else
+  @url = user_path
+  @method = 'patch'
+end %>
+<%= form_for(:user, url: @url, method: @method, html: { multipart: true }) do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -58,17 +65,21 @@
     <%= f.label :last_active %>
     <%= f.datetime_select :last_active %>
   </div> -->
-<div class="field">
-  I want to start as a:<br>
-  <input type="radio"  id="player_yes" name="player" value="yes" /> Player<br>
-  <input type="radio"  id="player_no" name="player" value="no" /> DM<br>
-<br>
-<div class="field">
-  Are you familiar with D&D?<br>
-  <input type="radio"  id="tutorial_yes" name="help" value="yes" /> I'm new to D&D<br>
-  <input type="radio"  id="tutorial_no" name="help" value="no" /> I'm familiar with D&D<br>
+  <%if @user.new_record? %>
+    <div class="field">
+      I want to start as a:<br>
+      <input type="radio"  id="player_yes" name="player" value="yes" /> Player<br>
+      <input type="radio"  id="player_no" name="player" value="no" /> DM<br>
+    <br>
+    <div class="field">
+      Are you familiar with D&D?<br>
+      <input type="radio"  id="tutorial_yes" name="help" value="yes" /> I'm new to D&D<br>
+      <input type="radio"  id="tutorial_no" name="help" value="no" /> I'm familiar with D&D<br>
+    </div>
+  <% end %>
+
+<div class="actions">
+  <%= f.submit %>
 </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
 <% end %>

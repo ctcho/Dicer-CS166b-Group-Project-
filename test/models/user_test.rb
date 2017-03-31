@@ -59,4 +59,10 @@ class UserTest < ActiveSupport::TestCase
     assert !u.authenticated?('')
   end
 
+  test "authenticated? should return false for a user with nil digest" do
+    u = User.create(username: "TestUser8", email: "example8@railstutorial.com", password: "foobar", password_confirmation: "foobar", address: "02453")
+    assert_not u.authenticated?('')
+  end
+
+
 end

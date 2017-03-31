@@ -9,7 +9,9 @@ gem 'paperclip'
 gem 'geokit-rails'
 gem 'bcrypt'
 gem 'pg'
-gem 'faker'
+
+gem 'faker', '1.6.6'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.1'
 # Use sqlite3 as the database for Active Record
