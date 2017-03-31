@@ -1,16 +1,16 @@
-<p id="notice"><%= notice %></p>
+<div id="notice"><%= notice %></div>
 <div class="profile-wrapper">
   <div class="profile-summary">
     <%= image_tag @user.avatar.url(:medium) %>
     <div class="profile-text">
       <p>
         <strong>Username:</strong>
-        <%= User.find(@player_profile.user_id).username %>
+        <%= @user.username %>
       </p>
 
       <p>
         <strong>Age:</strong>
-        <%= User.find(@player_profile.user_id).age %>
+        <%= @user.age %>
       </p>
 
       <p>
