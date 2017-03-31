@@ -35,10 +35,13 @@ class PlayerProfilesController < ApplicationController
     @player_profile = PlayerProfile.new(player_profile_params)
     respond_to do |format|
       if @player_profile.save
+        puts "I SAVED"
         @user.update(player_profile: @player_profile)
         format.html { redirect_to user_player_profiles_path(@user, @player_profile), notice: 'Player profile was successfully created.' }
         format.json { render :show, status: :created, location: @player_profile }
       else
+        puts "SOMETHING DIDNT WORK"
+        byebug
         format.html { render :new }
         format.json { render json: @player_profile.errors, status: :unprocessable_entity }
       end
@@ -79,6 +82,8 @@ class PlayerProfilesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def player_profile_params
       profile_params = params.require(:player_profile).permit(:user_id, :bio, :experience_level, :max_distance, :online_play, :homebrew, :original_ruleset, :advanced_ruleset, :pathfinder, :third, :three_point_five, :fourth, :fifth, :original_campaign, :module)
+      profile_params[:user_id] = params[:user_id]
+      profile_params[:experience_level] ||= params[:experience_level]
       profile_params
     end
 end
