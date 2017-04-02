@@ -6,6 +6,15 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+#creates a seeded user with administrative powers
+User.create!(username:  "Example User",
+             email: "example@dicer.org",
+             password:              "foobar",
+             password_confirmation: "foobar",
+             address: "02453",
+             admin: true)
+
+
 25.times do |n|
   name = Faker::Name.name
   age = n + 1

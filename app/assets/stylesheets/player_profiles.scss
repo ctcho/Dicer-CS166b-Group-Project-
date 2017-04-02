@@ -1,30 +1,3 @@
 // Place all the styles related to the PlayerProfiles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-$red_2: #C2132B;
-$dark_red_2: #7A0C1B;
-$dark_grey_2: #595959;
-$mid_grey_2: #7F7F7F;
-$light_grey_2: #A5A5A5;
-
-div.profile-summary{
-  //width: 100%;
-  //height: px
-  padding:10px;
-  border: 2px solid $light_grey_2;
-  border-radius:5px;
-  //position:absolute;
-}
-
-.profile-summary img{
-  position: relative;
-  border-radius:25%;
-  float: left;
-  margin:10px;
-}
-
-.profile-summary p{
-  //float:
-  margin:20px;
-  font-size:2em;
-}

@@ -1,8 +1,8 @@
 module UsersHelper
 
+
   #Takes the integer of experience level and converts it to its corresponding string
-  def translate_experience_level(profile)
-    exp = profile.experience_level
+  def translate_experience_level(exp)
     case exp
     when 0
       "New player (no experience)"
@@ -36,5 +36,51 @@ module UsersHelper
       "Error: Session not found"
     end
   end
+
+
+  def get_ruleset_strings(profile)
+    rulesets = Array.new
+    if(profile.original_ruleset > 0)
+      rulesets << "Original Dungeons and Dragons"
+    end
+    if(profile.advanced_ruleset > 0)
+      rulesets << "Advanced Dungeons and Dragons"
+    end
+    if(profile.third > 0)
+      rulesets << "Third Edition"
+    end
+    if(profile.three_point_five > 0)
+      rulesets << "3.5 Edition"
+    end
+    if(profile.fourth > 0)
+      rulesets << "Fourth Edition"
+    end
+    if(profile.fifth > 0)
+      rulesets << "Fifth Edition"
+    end
+    if(profile.pathfinder > 0)
+      rulesets << "Pathfinder"
+    end
+    rulesets
+  end
+
+  def find_distance(user1, user2)
+    if(!!user2)
+      distance = user1.distance_from(user2)
+      "%.1f miles away" % distance
+    else
+      "Error: Session not found"
+    end
+  end
+
+#  def within_distance(user1, user2)
+#    distance = find_distance(user1, user2)
+#    user1.max_distance < distance && user2.max_distance < distance
+#  end
+
+  def user_settings_path user
+    "/user/#{user.id}/settings"
+  end
+
 
 end

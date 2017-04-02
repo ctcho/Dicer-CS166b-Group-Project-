@@ -10,13 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20170322190022) do
+=======
+ActiveRecord::Schema.define(version: 20170329191543) do
+>>>>>>> da59314ac4023a1d7330a9207a406bb730900d8a
 
   create_table "character_sheets", force: :cascade do |t|
     t.integer  "player_profile_id"
     t.string   "file_path"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+  end
+
+  create_table "chat_rooms", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "chat_rooms_users", force: :cascade do |t|
+    t.integer "chat_room_id"
+    t.integer "user_id"
   end
 
   create_table "dm_profiles", force: :cascade do |t|
@@ -36,6 +51,15 @@ ActiveRecord::Schema.define(version: 20170322190022) do
     t.integer  "module"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.text     "content"
+    t.string   "image_path"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "user_id"
+    t.integer  "chat_room_id"
   end
 
   create_table "player_profiles", force: :cascade do |t|
@@ -65,12 +89,18 @@ ActiveRecord::Schema.define(version: 20170322190022) do
     t.integer  "age"
     t.string   "address"
     t.datetime "last_active"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
     t.float    "lat"
     t.float    "lng"
     t.string   "remember_digest"
     t.float    "max_distance"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.boolean  "admin",               default: false
+>>>>>>> da59314ac4023a1d7330a9207a406bb730900d8a
   end
 
 end
