@@ -1,8 +1,9 @@
 class User < ApplicationRecord
   has_attached_file :avatar, styles: { medium: "175x175>", thumb: "75x75>" }, default_url: "/app/assets/images/dicepic.png"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
-  validates_with AttachmentSizeValidator, attributes: :avatar, less_than: 1.megabytes  
+  validates_with AttachmentSizeValidator, attributes: :avatar, less_than: 1.megabytes
   attr_accessor :remember_token
+  acts_as_mappable
   before_save{ self.email = email.downcase}
   has_one :dm_profile
   has_one :player_profile
@@ -17,92 +18,88 @@ class User < ApplicationRecord
 
   has_secure_password
 
-  #Search the user database based on the search parameters from search.html.erb
-  #Please see search.html.erb for the parameters it sends.
-  #Focusing on player/dm profiles individually at the moment. I will expand this. --Cameron C.
-  def self.search(parameters)
-    ruleset = Integer(parameters[:ruleset1])
-    if Integer(parameters[:profile_type]) == 0 #Search the player database
-      case ruleset #Since I am currently only searching for most preferred ruleset
-      when 1 #Home brew rulesest
-        PlayerProfile.where("experience_level = ? AND homebrew = ? AND online_play = ?
-        AND module = ?", Integer(parameters[:experience_level]), 1,
-        Integer(parameters[:online_play]), Integer(parameters[:module]))
-      when 2 #Original ruleset
-        PlayerProfile.where("experience_level = ? AND original_ruleset = ? AND online_play = ?
-        AND module = ?", Integer(parameters[:experience_level]), 1,
-        Integer(parameters[:online_play]), Integer(parameters[:module]))
-      when 3 #Advanced Ruleset
-        PlayerProfile.where("experience_level = ? AND advanced_ruleset = ? AND online_play = ?
-        AND module = ?", Integer(parameters[:experience_level]), 1,
-        Integer(parameters[:online_play]), Integer(parameters[:module]))
-      when 4 #Pathfinder ruleset
-        PlayerProfile.where("experience_level = ? AND pathfinder = ? AND online_play = ?
-        AND module = ?", Intger(parameters[:experience_level]), 1,
-        Integer(parameters[:online_play]), Integer(parameters[:module]))
-      when 5 #Third edition ruleset
-        PlayerProfile.where("experience_level = ? AND third = ? AND online_play = ?
-        AND module = ?", Integer(parameters[:experience_level]), 1,
-        Integer(parameters[:online_play]), Integer(parameters[:module]))
-      when 6 #Three.five ruleset
-        PlayerProfile.where("experience_level = ? AND three_point_five = ? AND online_play = ?
-        AND module = ?", Integer(parameters[:experience_level]), 1,
-        Integer(parameters[:online_play]), Integer(parameters[:module]))
-      when 7 #Fourth edition ruleset
-        PlayerProfile.where("experience_level = ? AND fourth = ? AND online_play = ?
-        AND module = ?", Integer(parameters[:experience_level]), 1,
-        Integer(parameters[:online_play]), Integer(parameters[:module]))
-      when 8 #Fifth edition ruleset
-        PlayerProfile.where("experience_level = ? AND fifth = ? AND online_play = ?
-        AND module = ?", Integer(parameters[:experience_level]), 1,
-        Integer(parameters[:online_play]), Integer(parameters[:module]))
-      else #Original Campaign ruleset
-        PlayerProfile.where("experience_level = ? AND original_campaign = ? AND online_play = ?
-        AND module = ?", Integer(parameters[:experience_level]), 1,
-        Integer(parameters[:online_play]), Integer(parameters[:module]))
-      end
-    else #Searching for DM's
-      case ruleset #Since I am currently only searching for most preferred ruleset
-      when 1 #Home brew rulesest
-        DmProfile.where("experience_level = ? AND homebrew = ? AND online_play = ?
-        AND module = ?", Integer(parameters[:experience_level]), 1,
-        Integer(parameters[:online_play]), Integer(parameters[:module]))
-      when 2 #Original ruleset
-        DmProfile.where("experience_level = ? AND original_ruleset = ? AND online_play = ?
-        AND module = ?", Integer(parameters[:experience_level]), 1,
-        Integer(parameters[:online_play]), Integer(parameters[:module]))
-      when 3 #Advanced Ruleset
-        DmProfile.where("experience_level = ? AND advanced_ruleset = ? AND online_play = ?
-        AND module = ?", Integer(parameters[:experience_level]), 1,
-        Integer(parameters[:online_play]), Integer(parameters[:module]))
-      when 4 #Pathfinder ruleset
-        DmProfile.where("experience_level = ? AND pathfinder = ? AND online_play = ?
-        AND module = ?", Integer(parameters[:experience_level]), 1,
-        Integer(parameters[:online_play]), Integer(parameters[:module]))
-      when 5 #Third edition ruleset
-        DmProfile.where("experience_level = ? AND third = ? AND online_play = ?
-        AND module = ?", Integer(parameters[:experience_level]), 1,
-        Integer(parameters[:online_play]), Integer(parameters[:module]))
-      when 6 #Three.five ruleset
-        DmProfile.where("experience_level = ? AND three_point_five = ? AND online_play = ?
-        AND module = ?", Integer(parameters[:experience_level]), 1,
-        Integer(parameters[:online_play]), Integer(parameters[:module]))
-      when 7 #Fourth edition ruleset
-        DmProfile.where("experience_level = ? AND fourth = ? AND online_play = ?
-        AND module = ?", Integer(parameters[:experience_level]), 1,
-        Integer(parameters[:online_play]), Integer(parameters[:module]))
-      when 8 #Fifth edition ruleset
-        DmProfile.where("experience_level = ? AND fifth = ? AND online_play = ?
-        AND module = ?", Integer(parameters[:experience_level]), 1,
-        Integer(parameters[:online_play]), Integer(parameters[:module]))
-      else #Original Campaign ruleset
-        DmProfile.where("experience_level = ? AND original_campaign = ? AND online_play = ?
-        AND module = ?", Integer(parameters[:experience_level]), 1,
-        Integer(parameters[:online_play]), Integer(parameters[:module]))
-      end
+
+
+  def self.location(user, profile_type)
+    if Integer(profile_type) == 0 #Player Profiles
+      temp = User.joins(:player_profile).within(user.max_distance, origin: user)
+      temp.map { |x| x.player_profile }
+      #PlayerProfile.within(user.max_distance, origin: user)
+    else #DM profiles
+      temp = User.joins(:dm_profile).within(user.max_distance, origin: user)
+      temp.map { |x| x.dm_profile }
     end
   end
 
+  #Search the user database based on the search parameters from search.html.erb
+  #Please see search.html.erb for the parameters it sends.
+  #As of 3/24/2017, I made the search more secure by preventing the possibility
+  #of SQL injection.
+  #Focusing on player/dm profiles individually at the moment. I will expand this. --Cameron C.
+  def self.search(parameters)
+    rulesets = []
+    rulesets = ruleset_parse([Integer(parameters[:ruleset1]), Integer(parameters[:ruleset2]),
+    Integer(parameters[:ruleset3])])
+    campaign_types = campaign_parse(Integer(parameters[:campaign_type]))
+    if Integer(parameters[:profile_type]) == 0 #Search the player database
+      PlayerProfile.where(experience_level: Integer(parameters[:experience_level])).merge(
+      PlayerProfile.where(rulesets[0]).or(PlayerProfile.where(rulesets[1])).or(
+      PlayerProfile.where(rulesets[2]))).merge(
+      PlayerProfile.where(online_play: Integer(parameters[:online_play]))).merge(
+      PlayerProfile.where(campaign_types[:campaign]))
+    else #Searching for DM's
+      DmProfile.where(experience_level: Integer(parameters[:experience_level])).merge(
+      DmProfile.where(rulesets[0]).or(DmProfile.where(rulesets[1])).or(
+      DmProfile.where(rulesets[2]))).merge(
+      DmProfile.where(online_play: Integer(parameters[:online_play]))).merge(
+      DmProfile.where(campaign_types[:campaign]))
+    end
+  end
+
+  def self.ruleset_parse(rulesets)
+    #puts "#{rulesets}"
+    compiled = []
+    rulesets.each do |r|
+      #puts "#{r}"
+      if r == 1 #homebrew
+        compiled << {homebrew: 1}
+        #puts "Homebrew"
+      elsif r == 2 #original_ruleset
+        compiled << {original_ruleset: 1}
+        #puts "Original Ruleset"
+      elsif r == 3 #advanced_ruleset
+        compiled << {advanced_ruleset: 1}
+        #puts "Advanced Ruleset"
+      elsif r == 4 #Pathfinder
+        compiled << {pathfinder: 1}
+        #puts "Pathfinder"
+      elsif r == 5 #third
+        compiled << {third: 1}
+        #puts "Third"
+      elsif r == 6 #three_point_five
+        compiled << {three_point_five: 1}
+        #puts "Three point five"
+      elsif r == 7 #fourth
+        compiled << {fourth: 1}
+        #puts "Fourth"
+      else #fifth
+        compiled << {fifth: 1}
+        #puts "Fifth"
+      end
+    end
+    return compiled
+  end
+
+  def self.campaign_parse(campaign_id)
+    #puts "#{campaign_id}"
+    selected = Hash.new
+    if campaign_id == 0 #original_campaign
+      selected[:campaign] = {original_campaign: 1}
+    else #module
+      selected[:campaign] = {module: 1}
+    end
+    return selected
+  end
   def self.digest string
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
                                                   BCrypt::Engine.cost

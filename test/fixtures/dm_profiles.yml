@@ -6,7 +6,6 @@ one:
   user_id: 1
   bio: MyText
   experience_level: 1
-  max_distance: 1.5
   online_play: 1
   homebrew: 1
   original_ruleset: 0
@@ -23,7 +22,6 @@ two:
   user_id: 1
   bio: MyText
   experience_level: 3
-  max_distance: 1.5
   online_play: 0
   homebrew: 1
   original_ruleset: 1
