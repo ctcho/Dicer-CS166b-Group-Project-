@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   has_attached_file :avatar, styles: { medium: "175x175>", thumb: "75x75>" }, default_url: "/app/assets/images/dicepic.png"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
-  validates_with AttachmentSizeValidator, attributes: :avatar, less_than: 1.megabytes  
+  validates_with AttachmentSizeValidator, attributes: :avatar, less_than: 1.megabytes
   attr_accessor :remember_token
   acts_as_mappable
   before_save{ self.email = email.downcase}
@@ -38,8 +38,9 @@ class User < ApplicationRecord
   #Focusing on player/dm profiles individually at the moment. I will expand this. --Cameron C.
   def self.search(parameters)
     rulesets = []
-    rulesets = ruleset_parse([parameters[:ruleset1], parameters[:ruleset2], parameters[:ruleset3]])
-    campaign_types = campaign_parse(parameters[:campaign_type])
+    rulesets = ruleset_parse([Integer(parameters[:ruleset1]), Integer(parameters[:ruleset2]),
+    Integer(parameters[:ruleset3])])
+    campaign_types = campaign_parse(Integer(parameters[:campaign_type]))
     if Integer(parameters[:profile_type]) == 0 #Search the player database
       PlayerProfile.where(experience_level: Integer(parameters[:experience_level])).merge(
       PlayerProfile.where(rulesets[0]).or(PlayerProfile.where(rulesets[1])).or(
@@ -48,7 +49,7 @@ class User < ApplicationRecord
       PlayerProfile.where(campaign_types[:campaign]))
     else #Searching for DM's
       DmProfile.where(experience_level: Integer(parameters[:experience_level])).merge(
-      DmProfile.where(rulesets[0]).or(PlayerProfile.where(rulesets[1])).or(
+      DmProfile.where(rulesets[0]).or(DmProfile.where(rulesets[1])).or(
       DmProfile.where(rulesets[2]))).merge(
       DmProfile.where(online_play: Integer(parameters[:online_play]))).merge(
       DmProfile.where(campaign_types[:campaign]))
@@ -56,30 +57,41 @@ class User < ApplicationRecord
   end
 
   def self.ruleset_parse(rulesets)
+    #puts "#{rulesets}"
     compiled = []
     rulesets.each do |r|
+      #puts "#{r}"
       if r == 1 #homebrew
         compiled << {homebrew: 1}
+        #puts "Homebrew"
       elsif r == 2 #original_ruleset
         compiled << {original_ruleset: 1}
+        #puts "Original Ruleset"
       elsif r == 3 #advanced_ruleset
         compiled << {advanced_ruleset: 1}
+        #puts "Advanced Ruleset"
       elsif r == 4 #Pathfinder
         compiled << {pathfinder: 1}
+        #puts "Pathfinder"
       elsif r == 5 #third
         compiled << {third: 1}
+        #puts "Third"
       elsif r == 6 #three_point_five
         compiled << {three_point_five: 1}
+        #puts "Three point five"
       elsif r == 7 #fourth
         compiled << {fourth: 1}
+        #puts "Fourth"
       else #fifth
         compiled << {fifth: 1}
+        #puts "Fifth"
       end
     end
     return compiled
   end
 
   def self.campaign_parse(campaign_id)
+    #puts "#{campaign_id}"
     selected = Hash.new
     if campaign_id == 0 #original_campaign
       selected[:campaign] = {original_campaign: 1}

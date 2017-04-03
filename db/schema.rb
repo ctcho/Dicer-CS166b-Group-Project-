@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20170322190022) do
-=======
 ActiveRecord::Schema.define(version: 20170329191543) do
->>>>>>> da59314ac4023a1d7330a9207a406bb730900d8a
 
   create_table "character_sheets", force: :cascade do |t|
     t.integer  "player_profile_id"
@@ -100,7 +96,6 @@ ActiveRecord::Schema.define(version: 20170329191543) do
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.boolean  "admin",               default: false
->>>>>>> da59314ac4023a1d7330a9207a406bb730900d8a
   end
 
 end
