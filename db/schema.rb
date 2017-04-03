@@ -89,12 +89,12 @@ ActiveRecord::Schema.define(version: 20170401200856) do
     t.float    "lat"
     t.float    "lng"
     t.string   "remember_digest"
-    t.float    "max_distance"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.boolean  "admin",               default: false
+    t.float    "max_distance"
   end
 
 end
