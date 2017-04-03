@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_attached_file :avatar, styles: { medium: "175x175>", thumb: "75x75>" }, default_url: "/app/assets/images/dicepic.png"
+  has_attached_file :avatar, styles: { medium: "175x175>", thumb: "75x75>" }, default_url: "dicepic175.png"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
   validates_with AttachmentSizeValidator, attributes: :avatar, less_than: 1.megabytes
   attr_accessor :remember_token

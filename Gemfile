@@ -9,7 +9,7 @@ gem 'paperclip'
 gem 'geokit-rails'
 gem 'bcrypt'
 gem 'pg'
-
+gem 'will_paginate'
 gem 'faker', '1.6.6'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
