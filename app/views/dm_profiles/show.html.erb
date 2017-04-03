@@ -1,8 +1,10 @@
-<div class="profile-wrapper">
-  <div class="profile-summary">
-    <p id="notice"><%= notice %></p>
-    <%= image_tag @user.avatar.url(:medium) %>
-    <div class="profile-text">
+<div id="notice"><%= notice %></div>
+<div class="profile-wrapper container-fluid">
+  <div class="profile-summary row">
+    <div class="col-md-2">
+      <%= image_tag @user.avatar.url(:medium) %>
+    </div>
+    <div class="profile-text col-md-7">
       <p>
         <strong>Username:</strong>
         <%= @user.username %>
@@ -41,23 +43,33 @@
         <%#end %>
       <% end %>-->
     </div>
-    <div class="button-container">
-      <button class="contact-me-button">Contact me!</button>
+    <div class="button-container col-md-3">
+      <%= button_to "Contact me!", new_user_message_path, class: "contact-me-button", method: :get %>
     </div>
   </div>
-  <div class="profile-bio">
-    <p>
-      <strong>Bio:</strong>
-      <%= @dm_profile.bio %>
-    </p>
+  <div class="row">
+    <div class="col-md-8">
+      <div class="profile-bio">
+      <p>
+        <strong>Bio:</strong>
+        <%= @dm_profile.bio %>
+      </p>
+    </div>
+    </div>
+    <div class="col-md-4">
+      <div class="more-users-box">
+      <p>
+        <strong>You may also like:</strong>
+      </p>
+    </div>
+    </div>
   </div>
-  <div class="more-users-box">
-    <p>
-      <strong>You may also like:</strong>
-    </p>
-  </div>
-  <div class="ending-buttons">
-    <%= link_to 'Edit', edit_user_dm_profiles_path(@user, @dm_profile) %> |
-    <%= link_to 'Back', user_path(@user) %>
+  <div class="row">
+    <div class="col-sm-3">
+      <div class="ending-buttons">
+        <%= link_to 'Edit', edit_user_dm_profiles_path(@user, @dm_profile) %> |
+        <%= link_to 'Back', user_path(@user) %>
+      </div>
+    </div>
   </div>
 </div>

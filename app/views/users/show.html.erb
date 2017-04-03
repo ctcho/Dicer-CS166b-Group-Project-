@@ -13,22 +13,34 @@
 <!--<p>
   <strong>Password digest:</strong>
   <%= @user.password_digest %>
-</p>
-
-<p>
-  <strong>Profile pic path:</strong>
-  <%= @user.profile_pic_path %>
 </p>-->
 
-<!--<p>
-  <strong>Player profile:</strong>
-  <%= @user.player_profile %>
+<p>
+  <strong>Max Distance:</strong>
+  <%= @user.max_distance %>
 </p>
 
+
+<!--If the user has a player profile-->
+<% if !@user.player_profile.nil? %>
 <p>
-  <strong>Dm profile:</strong>
-  <%= @user.dm_profile %>
-</p>-->
+  <%= link_to "View Player Profile", user_player_profiles_path(@user) %>
+</p>
+<% else %>
+  <p>It seems you don't have a player profile.<br><br>
+    <%= link_to "Create a Player Profile",  new_user_player_profiles_path(@user) %>
+  </p>
+<% end %>
+
+<% if !@user.dm_profile.nil? %>
+<p>
+  <%= link_to "View DM Profile", user_dm_profiles_path(@user) %>
+</p>
+<% else %>
+  <p>It seems you don't have a DM profile.<br><br>
+  <%= link_to "Create a DM Profile",  new_user_dm_profiles_path(@user) %>
+  </p>
+<% end %>
 
 <p>
   <strong>Age:</strong>
