@@ -14,16 +14,29 @@ User.create!(username:  "Example User",
              address: "02453",
              admin: true)
 
-
+#seeds an additional 25 regular users
 25.times do |n|
-  name = Faker::Name.name
+  username = Faker::Name.name
   age = n + 1
   email = "example#{n+1}@example.com"
   password = "password"
-  User.create!(username: name,
+  u = User.create!(username: username,
                email: email,
                password: password,
                password_confirmation: password,
                age: age,
                address: "415 South Street, Waltham, MA 02454")
+  u.player_profile = PlayerProfile.create(experience_level: 3, bio: "I have a bio",   online_play: 1,
+    homebrew: 1,
+    original_ruleset: 0,
+    advanced_ruleset: 1,
+    pathfinder: 0,
+    third: 0,
+    three_point_five: 1,
+    fourth: 1,
+    fifth: 1,
+    original_campaign: 1,
+    module: 1)
 end
+
+# Create seeded private chats and messages.

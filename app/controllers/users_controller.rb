@@ -13,6 +13,9 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    #get their chats
+    @user = current_user
+    @conversations = @user.chat_rooms
   end
 
   # GET /users/new

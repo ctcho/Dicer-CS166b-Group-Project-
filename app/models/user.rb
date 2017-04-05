@@ -8,7 +8,9 @@ class User < ApplicationRecord
   has_one :dm_profile
   has_one :player_profile
   has_many :messages
-  has_and_belongs_to_many :chat_rooms
+  #has_and_belongs_to_many :chat_rooms
+  has_many :chat_rooms_users
+  has_many :chat_rooms, through: :chat_rooms_users
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :username, presence: true, uniqueness: {case_sensitive: false}

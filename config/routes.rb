@@ -19,8 +19,13 @@ Rails.application.routes.draw do
     resource :player_profiles do
       resources :character_sheets
     end
-    resource :message
+    resource :messages
+
+
     resource :dm_profiles
+  end
+  resources :chat_rooms do
+    resource :message
   end
 
   root 'home_pages#home'

@@ -1,0 +1,19 @@
+<br>
+<%= @room.name %>
+<br>
+<% @messages.each do |message|%>
+  <%=message.user.username %> | <%= message.created_at%><br>
+  <%= message.content %>
+  <br><br>
+<% end %>
+
+<%= form_tag chat_room_message_url(@room), method: 'post' do %>
+<div class="field">
+  <%=text_field_tag :message, params[:message] %>
+</div>
+
+<div class="action">
+    <%= submit_tag "Send" %>
+</div>
+
+<% end %>
