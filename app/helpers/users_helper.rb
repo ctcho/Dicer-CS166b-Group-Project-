@@ -73,14 +73,26 @@ module UsersHelper
     end
   end
 
-#  def within_distance(user1, user2)
-#    distance = find_distance(user1, user2)
-#    user1.max_distance < distance && user2.max_distance < distance
-#  end
+  def within_distance(user1, user2)
+    distance = find_distance(user1, user2)
+    user1.max_distance < distance && user2.max_distance < distance
+  end
 
   def user_settings_path user
     "/user/#{user.id}/settings"
   end
 
+  def ruleset_preview(profile)
+    rulesets = get_ruleset_strings(profile)
+    html = ""
+    length = rulesets.length
+    if(length <= 3)
+      html << rulesets.join("<br>")
+    else
+      html << rulesets.sample(3).join("<br>")
+      html << "<br> and #{length-3} more..."
+    end
+    html.html_safe
+  end
 
 end

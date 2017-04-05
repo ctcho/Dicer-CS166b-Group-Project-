@@ -1,0 +1,23 @@
+<!--<% @user = User.find(@profile.user_id) %>-->
+<div class="row profile-summary profile-preview">
+  <div class="col-md-2">
+    <%= image_tag User.find(@profile.user_id).avatar.url(:thumb) %>
+  </div>
+  <div class="col-md-3 profile-excerpt">
+              <div class="username-preview"><%= User.find(@profile.user_id).username %></div>
+              Age: <%= User.find(@profile.user_id).age %><br>
+              <%= translate_experience_level(@profile.experience_level) %>
+  </div>
+  <div class="col-md-3 profile-excerpt">
+    <p>
+      <strong>Plays:</strong><br>
+      <%= ruleset_preview(@profile) %>
+    </p>
+  </div>
+  <div class="button-container col-md-2">
+    <%= button_to "More info", @profile, class: "show-more-button profile-button" %>
+  </div>
+  <div class="button-container col-md-2">
+    <%= button_to "Contact me!", "#", class: "contact-me-button-small profile-button" %>
+  </div>
+</div>
