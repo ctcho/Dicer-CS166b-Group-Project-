@@ -22,12 +22,13 @@ class User < ApplicationRecord
 
   def self.location(user, profile_type)
     if Integer(profile_type) == 0 #Player Profiles
-      temp = User.joins(:player_profile).within(user.max_distance, origin: user)
-      temp.map { |x| x.player_profile }
+      #byebug
+      in_range = User.joins(:player_profile).within(user.max_distance, origin: user)
+      in_range.map { |x| x.player_profile }
       #PlayerProfile.within(user.max_distance, origin: user)
     else #DM profiles
-      temp = User.joins(:dm_profile).within(user.max_distance, origin: user)
-      temp.map { |x| x.dm_profile }
+      in_range = User.joins(:dm_profile).within(user.max_distance, origin: user)
+      in_range.map { |x| x.dm_profile }
     end
   end
 
