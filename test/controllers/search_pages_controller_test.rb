@@ -35,28 +35,28 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "can retrieve PlayerProfile 1" do
-    log_in_as(@u2, "strongpass2", 0)
+  test "can retrieve PlayerProfile 2" do
+    #log_in_as(@u2, "strongpass2", 0)
     @params = {:experience_level => 3, :ruleset1 => 2, :ruleset2 => 6,
-      :ruleset3 => 8, :profile_type => 0, :online_play => 1, :campaign_type => 1}
+      :ruleset3 => 8, :profile_type => "0", :online_play => 1, :campaign_type => 1}
     get search_pages_results_path(@params)
     assert_response :success
-    assert_equal(@p1, User.search(@params).first)
-  end
-
-  test "can retrieve Player Profile 2" do
-    log_in_as(@u1, "strongpass", 0)
-    @params = {:experience_level => 1, :ruleset1 => 3, :ruleset2 => 4,
-      :ruleset3 => 6, :profile_type => 0, :online_play => 0, :campaign_type => 0}
-      get search_pages_results_path(@params)
-      assert_response :success
     assert_equal(@p2, User.search(@params).first)
   end
 
+  test "can retrieve Player Profile 1" do
+    #log_in_as(@u1, "strongpass", 0)
+    @params = {:experience_level => 1, :ruleset1 => 3, :ruleset2 => 4,
+      :ruleset3 => 6, :profile_type => "0", :online_play => 0, :campaign_type => 0}
+    get search_pages_results_path(@params)
+    assert_response :success
+    assert_equal(@p1, User.search(@params).second)
+    #assert User.search(@params).include?(@p2)
+  end
+
   test "gives no results for a Player Profile search" do
-    log_in_as(@u1, "strongpass", 0)
-    @params = {:experience_level => 2, :ruleset1 => 1, :ruleset2 => 2,
-      :ruleset3 => 3, :profile_type => 0, :online_play => 0, :campaign_type => 1}
+    #log_in_as(@u1, "strongpass", 0)
+    @params = {:experience_level => 2}
     get search_pages_results_path(@params)
     assert_response :success
     assert User.search(@params).count == 0
@@ -64,29 +64,29 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
   end
 
 
-  test "can retrieve DmProfile 1" do
-    log_in_as(@u4, "strongpass4", 0)
-    @params = {:experience_level => 1, :ruleset1 => 3, :ruleset2 => 6,
-      :ruleset3 => 8, :profile_type => 1, :online_play => 1, :campaign_type => 1}
-    get search_pages_results_path(@params)
-    assert_response :success
-    assert_equal(@dm1, User.search(@params).first)
-  end
-
   test "can retrieve DmProfile 2" do
-    log_in_as(@u3, "strongpass3", 0)
-    @params = {:experience_level => 3, :ruleset1 => 2, :ruleset2 => 4,
-      :ruleset3 => 7, :profile_type => 1, :online_play => 0, :campaign_type => 0}
-      #byebug
+    #log_in_as(@u4, "strongpass4", 0)
+    @params = {:experience_level => 1, :ruleset1 => 3, :ruleset2 => 6,
+      :ruleset3 => 8, :profile_type => "1", :online_play => 1, :campaign_type => 1}
     get search_pages_results_path(@params)
-    #byebug
     assert_response :success
     assert_equal(@dm2, User.search(@params).first)
   end
 
+  test "can retrieve DmProfile 1" do
+    #log_in_as(@u3, "strongpass3", 0)
+    @params = {:experience_level => 3, :ruleset1 => 2, :ruleset2 => 4,
+      :ruleset3 => 7, :profile_type => "1", :online_play => 0, :campaign_type => 0}
+      #byebug
+    get search_pages_results_path(@params)
+    #byebug
+    assert_response :success
+    assert_equal(@dm1, User.search(@params).second)
+    #assert User.search(@params).include?(@p2)
+  end
+
   test "gives no results for a DM Profile search" do
-    @params = {:experience_level => 2, :ruleset1 => 1, :ruleset2 => 2,
-      :ruleset3 => 3, :profile_type => 1, :online_play => 0, :campaign_type => 1}
+    @params = {:experience_level => 2}
     get search_pages_results_path(@params)
     assert_response :success
     assert User.search(@params).count == 0
@@ -95,7 +95,7 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
 
   test "can redirect to search page for another search" do
     @params = {:experience_level => 3, :ruleset1 => 1, :ruleset2 => 2,
-      :ruleset3 => 3, :profile_type => 0, :online_play => 1, :campaign_type => 1}
+      :ruleset3 => 3, :profile_type => "0", :online_play => 1, :campaign_type => 1}
     get search_pages_results_path(@params)
     assert_response :success
     assert_select "a[href=?]", search_pages_search_path

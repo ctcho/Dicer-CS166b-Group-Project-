@@ -2,11 +2,16 @@
 <p>Enter your preferences here:</p>
 
 <%= form_tag(search_pages_results_path, method: "get") do %>
-  <strong>Exp Level</strong>
+    <strong>Profile Type (You must specify this)</strong>
     <br>
-    <%= select_tag :experience_level, options_for_select([['Beginner (0-1 years of play)', 1],
-      ['Novice (1-2 years of play)', 2], ['Experienced (2-5 years of play)', 3],
-      ['Veteran (More than 5 years of play)', 4]]), prompt: "Select an Option" %>
+    <!--I'll get to the option of you being able to select both Players and DM's in a bit. Cameron C. -->
+    <%= select_tag :profile_type, options_for_select([["Players", 0], ["DM's", 1]]), prompt: "Select an Option" %>
+    <br><br><br>
+    <strong>Exp Level</strong>
+    <br>
+    <%= select_tag :experience_level, options_for_select([["No preference", 0],
+      ['Beginner (0-1 years of play)', 1], ['Novice (1-2 years of play)', 2],
+      ['Experienced (2-5 years of play)', 3], ['Veteran (More than 5 years of play)', 4]]) %>
       <br><br><br>
       <strong>Preferred Ruleset 1</strong>
       <br>
@@ -28,19 +33,12 @@
       <br><br><br>
     <strong>Prefer Online Play?</strong>
     <br>
-    <%= select_tag :online_play, options_for_select([["Yes", 1], ["No", 0]]), prompt: "Select an Option" %>
-    <br><br><br>
-    <strong>Profile Type</strong>
-    <br>
-    <!--I'll get to the option of you being able to select both Players and DM's in a bit. Cameron C. -->
-    <%= select_tag :profile_type, options_for_select([["Players", 0], ["DM's", 1]]), prompt: "Select an Option" %>
+    <%= select_tag :online_play, options_for_select([["No preference", 2], ["Yes", 1], ["No", 0]]) %>
     <br><br><br>
     <strong>Campaign Type</strong>
     <br>
-    <%= select_tag :campaign_type, options_for_select([["Original Campaign", 0], ["Module", 1]]),
-    prompt: "Select one" %>
+    <%= select_tag :campaign_type, options_for_select([["No preference", 2], ["Original Campaign", 0],
+    ["Module", 1]]) %>
     <br><br><br>
   <%= submit_tag "Search", name: nil %>
 <% end %>
-<br><br>
-<%= link_to "Return to User List", users_path %>
