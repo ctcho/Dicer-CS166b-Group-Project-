@@ -3,7 +3,6 @@
 <!--Happens if the search results come up empty -->
 <% if @users.count == 0 %>
   <p>There are no users that match your given preferences.</p>
-  <%= link_to "Try Another Search", search_pages_search_path %>
 <!--There are users in the search result-->
 <% else %>
   <div class="container-fluid">
@@ -14,4 +13,3 @@
 </table>
 <br><br><br>
 <%= link_to "Try Another Search", search_pages_search_path %>
-<% end %>
