@@ -37,6 +37,11 @@ module UsersHelper
     end
   end
 
+  def num_distance(user1, user2)
+    distance = user1.distance_from(user2)
+    distance
+  end
+
 
   def get_ruleset_strings(profile)
     rulesets = Array.new
@@ -64,18 +69,9 @@ module UsersHelper
     rulesets
   end
 
-  def find_distance(user1, user2)
-    if(!!user2)
-      distance = user1.distance_from(user2)
-      "%.1f miles away" % distance
-    else
-      "Error: Session not found"
-    end
-  end
-
   def within_distance(user1, user2)
-    distance = find_distance(user1, user2)
-    user1.max_distance < distance && user2.max_distance < distance
+    distance = num_distance(user1, user2)
+    user1.max_distance > distance && user2.max_distance > distance
   end
 
   def user_settings_path user

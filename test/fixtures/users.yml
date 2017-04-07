@@ -7,9 +7,11 @@ one:
   password_digest: <%= User.digest('password') %>
   #player_profile_id: nil
   #dm_profile_id: nil
-  max_distance: 1.5
+  max_distance: 50
   age: 18
   address: "02453"
+  lat: 42.3624504
+  lng: -71.2577233
   last_active: 2017-03-03 13:11:29
 
 two:
@@ -22,4 +24,6 @@ two:
   max_distance: 1.5
   age: 18
   address: "48183"
+  lat: 42.1352293
+  lng: -83.2291862
   last_active: 2017-03-03 13:11:29
