@@ -227,7 +227,7 @@ a:link.outside, a:visited.outside {
     border-bottom: 1px dotted blue;
     //text-align: center;
     text-decoration: none;
-    //display: inline-block;
+    display: inline !important;
 }
 a:hover.outside, a:active.outside {
     border-bottom: 1px solid blue;
