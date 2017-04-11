@@ -3,12 +3,15 @@
 <!--Happens if the search results come up empty -->
 <% if @users.count == 0 %>
   <p>There are no users that match your given preferences.</p>
+  <% if @profile_type.nil? %>
+    <p>You need to specify if you are searching for players or DM's.</p>
+  <% end %>
   <%= link_to "Try Another Search", search_pages_search_path %>
 
 <!--There are users in the search result-->
 <% else %>
-  <% if @profile.empty? %>
-    <p>You need to specify whether you are looking for players or DM's.</p>
+  <% if @profile_type.nil? %>
+    <p>You need to specify if you are searching for players or DM's.</p>
   <% else %>
     <table>
       <thead>
@@ -60,28 +63,28 @@
 
       <!--Otherwise, the user has searched for DM profiles -->
       <% else %>
-      <% @users.each do |dm_profile| %>
-        <tr>
-          <td><%= dm_profile.user_id %></td>
-          <td><%= dm_profile.bio %></td>
-          <td><%= dm_profile.experience_level %></td>
-          <td><%= dm_profile.online_play %></td>
-          <td><%= dm_profile.homebrew %></td>
-          <td><%= dm_profile.original_ruleset %></td>
-          <td><%= dm_profile.advanced_ruleset %></td>
-          <td><%= dm_profile.pathfinder %></td>
-          <td><%= dm_profile.third %></td>
-          <td><%= dm_profile.three_point_five %></td>
-          <td><%= dm_profile.fourth %></td>
-          <td><%= dm_profile.fifth %></td>
-          <td><%= dm_profile.original_campaign %></td>
-          <td><%= dm_profile.module %>
-        </tr>
+        <% @users.each do |dm_profile| %>
+          <tr>
+            <td><%= dm_profile.user_id %></td>
+            <td><%= dm_profile.bio %></td>
+            <td><%= dm_profile.experience_level %></td>
+            <td><%= dm_profile.online_play %></td>
+            <td><%= dm_profile.homebrew %></td>
+            <td><%= dm_profile.original_ruleset %></td>
+            <td><%= dm_profile.advanced_ruleset %></td>
+            <td><%= dm_profile.pathfinder %></td>
+            <td><%= dm_profile.third %></td>
+            <td><%= dm_profile.three_point_five %></td>
+            <td><%= dm_profile.fourth %></td>
+            <td><%= dm_profile.fifth %></td>
+            <td><%= dm_profile.original_campaign %></td>
+            <td><%= dm_profile.module %>
+          </tr>
+        <% end %>
       <% end %>
   <% end %>
-<% end %>
-  </tbody>
-</table>
+      </tbody>
+    </table>
 <br><br><br>
 <%= link_to "Try Another Search", search_pages_search_path %>
 <% end %>

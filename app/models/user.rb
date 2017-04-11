@@ -39,30 +39,41 @@ class User < ApplicationRecord
   #Focusing on player/dm profiles individually at the moment. I will expand this. --Cameron C.
   def self.search(parameters)
     rulesets = []
-    rulesets = ruleset_parse([parameters[:ruleset1], parameters[:ruleset2], parameters[:ruleset3]])
+    #rulesets = ruleset_parse([parameters[:ruleset1], parameters[:ruleset2], parameters[:ruleset3]])
     campaign_types = campaign_parse(parameters[:campaign_type])
     exp_level = exp_parse(parameters[:experience_level])
     online = online_parse(parameters[:online_play])
+    rulesets = ruleset_parse([parameters[:homebrew], parameters[:original_ruleset], parameters[:advanced_ruleset],
+    parameters[:pathfinder], parameters[:third], parameters[:three_point_five], parameters[:fourth],
+    parameters[:fifth]])
+    #if rulesets.nil?
+    #byebug
     if parameters[:profile_type] == "0" #Search the player database
-      if !rulesets.any? || !campaign_types.nil? || !exp_level.nil? || online.nil?
-        PlayerProfile.where(exp_level[:level]).merge(
-        PlayerProfile.where(rulesets[0]).or(PlayerProfile.where(rulesets[1])).or(
-        PlayerProfile.where(rulesets[2]))).merge(
-        PlayerProfile.where(online[:choice])).merge(
-        PlayerProfile.where(campaign_types[:campaign]))
-      else #The user really didn't feel like filling anything in...
-        PlayerProfile.all
-      end
-    else  #Searching for DM's or the user didn't listen to you...
-      if !rulesets.any? || !campaign_types.nil? || !exp_level.nil? || online.nil?
-        DmProfile.where(exp_level[:level]).merge(
-        DmProfile.where(rulesets[0]).or(DmProfile.where(rulesets[1])).or(
-        DmProfile.where(rulesets[2]))).merge(
-        DmProfile.where(online[:choice])).merge(
-        DmProfile.where(campaign_types[:campaign]))
-      else
-        DmProfile.all
-      end
+      PlayerProfile.where(exp_level[:level])
+      .merge(PlayerProfile.where(online[:on_line]))
+      .merge(PlayerProfile.where(campaign_types[:campaign]))
+      .merge(PlayerProfile.where(rulesets[0])
+      .merge(PlayerProfile.where(rulesets[1]))
+      .merge(PlayerProfile.where(rulesets[2]))
+      .merge(PlayerProfile.where(rulesets[3]))
+      .merge(PlayerProfile.where(rulesets[4]))
+      .merge(PlayerProfile.where(rulesets[5]))
+      .merge(PlayerProfile.where(rulesets[6]))
+      .merge(PlayerProfile.where(rulesets[7]))
+      )
+    else #Searching for DM's
+      DmProfile.where(exp_level[:level])
+      .merge(DmProfile.where(online[:on_line]))
+      .merge(DmProfile.where(campaign_types[:campaign]))
+      .merge(DmProfile.where(rulesets[0])
+      .merge(DmProfile.where(rulesets[1]))
+      .merge(DmProfile.where(rulesets[2]))
+      .merge(DmProfile.where(rulesets[3]))
+      .merge(DmProfile.where(rulesets[4]))
+      .merge(DmProfile.where(rulesets[5]))
+      .merge(DmProfile.where(rulesets[6]))
+      .merge(DmProfile.where(rulesets[7]))
+      )
     end
   end
 
@@ -70,32 +81,32 @@ class User < ApplicationRecord
     #puts "#{rulesets}"
     compiled = []
     rulesets.each do |r|
-      #puts "#{r}"
-      if r == "1" #homebrew
-        compiled << {homebrew: 1}
-        #puts "Homebrew"
-      elsif r == "2" #original_ruleset
-        compiled << {original_ruleset: 1}
-        #puts "Original Ruleset"
-      elsif r == "3" #advanced_ruleset
-        compiled << {advanced_ruleset: 1}
-        #puts "Advanced Ruleset"
-      elsif r == "4" #Pathfinder
-        compiled << {pathfinder: 1}
-        #puts "Pathfinder"
-      elsif r == "5" #third
-        compiled << {third: 1}
-        #puts "Third"
-      elsif r == "6" #three_point_five
-        compiled << {three_point_five: 1}
-        #puts "Three point five"
-      elsif r == "7" #fourth
-        compiled << {fourth: 1}
-        #puts "Fourth"
-      elsif r == "8" #fifth
-        compiled << {fifth: 1}
-        #puts "Fifth"
-        #If it doesn't match any of these, the user didn't fill this part in...
+      if !r.nil?
+        if r == "1" #homebrew
+          compiled << {homebrew: 1}
+          #puts "Homebrew"
+        elsif r == "2" #original_ruleset
+          compiled << {original_ruleset: 1}
+          #puts "Original Ruleset"
+        elsif r == "3" #advanced_ruleset
+          compiled << {advanced_ruleset: 1}
+          #puts "Advanced Ruleset"
+        elsif r == "4" #Pathfinder
+          compiled << {pathfinder: 1}
+          #puts "Pathfinder"
+        elsif r == "5" #third
+          compiled << {third: 1}
+          #puts "Third"
+        elsif r == "6" #three_point_five
+          compiled << {three_point_five: 1}
+          #puts "Three point five"
+        elsif r == "7" #fourth
+          compiled << {fourth: 1}
+          #puts "Fourth"
+        elsif r == "8" #fifth
+          compiled << {fifth: 1}
+          #puts "Fifth"
+        end
       end
     end
     return compiled
@@ -115,7 +126,7 @@ class User < ApplicationRecord
 
   def self.exp_parse(experience)
     exp = Hash.new
-    if experience == "1" #Beginner
+    if experience == "1" #New
       exp[:level] = {experience_level: 1}
     elsif experience == "2" #Novice
       exp[:level] = {experience_level: 2}
@@ -123,18 +134,18 @@ class User < ApplicationRecord
       exp[:level] = {experience_level: 3}
     elsif experience == "4" #Veteran
       exp[:level] = {experience_level: 4}
-    end #The user hasn't chosen anything.
+    end
     return exp
   end
 
-  def self.online_parse(online)
-    pref = Hash.new
-    if online == "0" #Does not want to meet online
-      pref[:choice] = {online_play: 0}
-    elsif online == "1" #Does want to meet online
-      pref[:choice] = {online_play: 1}
-    end #The user did not express a preference.
-    return pref
+  def self.online_parse(on)
+    line = Hash.new
+    if on == "0" #Does not like online play
+      line[:on_line] = {online_play: 0}
+    elsif on == "1" #Does like online play
+      line[:on_line] = {online_play: 1}
+    end
+    return line
   end
 
   def self.digest string

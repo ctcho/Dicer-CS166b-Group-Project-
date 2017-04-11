@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170405192752) do
+ActiveRecord::Schema.define(version: 20170401200856) do
 
   create_table "character_sheets", force: :cascade do |t|
     t.integer  "player_profile_id"
@@ -75,11 +75,6 @@ ActiveRecord::Schema.define(version: 20170405192752) do
     t.integer  "module"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
-  end
-
-  create_table "search_pages", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
