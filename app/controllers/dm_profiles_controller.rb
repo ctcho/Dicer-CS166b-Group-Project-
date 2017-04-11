@@ -1,7 +1,7 @@
 class DmProfilesController < ApplicationController
   before_action :set_dm_profile, only: [:show, :edit, :update, :destroy]
-  before_action :logged_in_user, only: [:edit, :update]
-  before_action :correct_user, only: [:edit, :update]
+  before_action :logged_in_user, only: [:new, :edit, :update]
+  before_action :correct_user, only: [:new, :edit, :update]
   # GET /dm_profiles
   # GET /dm_profiles.json
   def index
@@ -13,6 +13,14 @@ class DmProfilesController < ApplicationController
   def show
     @user = User.find(params[:user_id])
     @dm_profile = @user.dm_profile
+    byebug
+    if !@dm_profile
+      byebug
+      redirect_to new_user_dm_profiles_path(@user, tutorial: params[:tutorial])
+    else
+      byebug
+      render 'show'
+    end
   end
 
   # GET /user/1/dm_profiles/new
@@ -33,13 +41,13 @@ class DmProfilesController < ApplicationController
   def create
     @user = User.find(params[:user_id])
     @dm_profile = DmProfile.new(dm_profile_params)
-
     respond_to do |format|
       if @dm_profile.save
         @user.update(dm_profile: @dm_profile)
         format.html { redirect_to user_dm_profiles_path(@user, @dm_profile), notice: 'Dm profile was successfully created.' }
         format.json { render :show, status: :created, location: @dm_profile }
       else
+        @tutorial = params[:tutorial]
         format.html { render :new }
         format.json { render json: @dm_profile.errors, status: :unprocessable_entity }
       end
