@@ -3,24 +3,6 @@
 <h1>Dm Profiles</h1>
 
 
-<% @dm_profile = @dm_profiles.first %>
-<% @user = User.find(@dm_profile.user_id) %>
-<div class="row profile-summary">
-  <div class="col-md-3">
-    <%= image_tag @user.avatar.url(:thumbnail) %>
-  </div>
-  <div class="col-md-6">
-    <p class="profile-excerpt">
-      <strong><%= @user.username %>
-              <%= @user.age %>
-              <%= translate_experience_level(@dm_profile.experience_level) %> </strong>
-    </p>
-  </div>
-  <div class="col-md-3">
-    <!--contact me button small-->
-  </div>
-</div>
-
 <table>
   <thead>
     <tr>

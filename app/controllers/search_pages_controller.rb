@@ -10,8 +10,10 @@ include SearchPagesHelper
     #Goes to User.search in user model --Cameron C.
     @profile = Integer(params[:profile_type])
     @users = User.search(params)
+    #byebug
     @users_in_range = User.location(current_user, params[:profile_type])
     @users = @users.merge(@users_in_range)
+    @profiles = PlayerProfile.first
     #Current idea:
     #Get a list of player/DM profiles. (Class = ActiveRecord::Relation)
     #Get a list of user profiles within the radius of the current user. (Class = ActiveRecord::Relation)

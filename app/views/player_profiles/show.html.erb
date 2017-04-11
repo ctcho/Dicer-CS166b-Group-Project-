@@ -1,6 +1,6 @@
 <div id="notice"><%= notice %></div>
 <div class="profile-wrapper container-fluid">
-  <div class="profile-summary row">
+  <div class="profile-summary profile-info row">
     <div class="col-md-2">
       <%= image_tag @user.avatar.url(:medium) %>
     </div>
@@ -44,7 +44,9 @@
       <% end %>-->
     </div>
     <div class="button-container col-md-3">
+
       <%= button_to "Contact me!", new_user_messages_path, class: "contact-me-button", method: :get %>
+
     </div>
   </div>
   <div class="row">

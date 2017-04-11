@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_attached_file :avatar, styles: { medium: "175x175>", thumb: "75x75>" }, default_url: "dicepic175.png"
+  has_attached_file :avatar, styles: { medium: "175x175>", thumb: "100x100>" }, default_url: ":style/dicepic.png"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
   validates_with AttachmentSizeValidator, attributes: :avatar, less_than: 1.megabytes
   attr_accessor :remember_token
@@ -24,12 +24,13 @@ class User < ApplicationRecord
 
   def self.location(user, profile_type)
     if Integer(profile_type) == 0 #Player Profiles
-      temp = User.joins(:player_profile).within(user.max_distance, origin: user)
-      temp.map { |x| x.player_profile }
+      #byebug
+      in_range = User.joins(:player_profile).within(user.max_distance, origin: user)
+      in_range.map { |x| x.player_profile }
       #PlayerProfile.within(user.max_distance, origin: user)
     else #DM profiles
-      temp = User.joins(:dm_profile).within(user.max_distance, origin: user)
-      temp.map { |x| x.dm_profile }
+      in_range = User.joins(:dm_profile).within(user.max_distance, origin: user)
+      in_range.map { |x| x.dm_profile }
     end
   end
 
