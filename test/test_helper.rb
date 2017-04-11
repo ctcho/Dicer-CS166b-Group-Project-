@@ -25,8 +25,8 @@ class ActiveSupport::TestCase
                                             password: password,
                                             remember_me: remember_me}}
   end
+  
   # Add more helper methods to be used by all tests here...
-
   def is_logged_in?
     !session[:user_id].nil?
   end
