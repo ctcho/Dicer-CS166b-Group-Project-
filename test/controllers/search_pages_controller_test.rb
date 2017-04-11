@@ -35,11 +35,13 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "cannot access results without providing a profile type" do
+  test "not providing a profile type gets PlayerProfiles by default" do
     @params = {experience_level: "1", homebrew: "1"}
     get search_pages_results_path(@params)
     assert_response :success
-    assert_select "p", "You need to specify if you are searching for players or DM's."
+    assert User.search(@params).count > 0
+    assert User.search(@params).first.class == PlayerProfile
+
   end
 
   test "can redirect to search page for another search" do

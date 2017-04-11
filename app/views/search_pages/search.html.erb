@@ -2,10 +2,10 @@
 <p>Enter your preferences here:</p>
 
 <%= form_tag(search_pages_results_path, method: "get") do %>
-  <strong>Profile Type (You must specify this)</strong>
+  <strong>Profile Type (Default Search is for Players)</strong>
   <br>
   <!--I'll get to the option of you being able to select both Players and DM's in a bit. Cameron C. -->
-  <%= select_tag :profile_type, options_for_select([["Players", 0], ["DM's", 1]]), prompt: "Select an Option" %>
+  <%= select_tag :profile_type, options_for_select([["Players", 0], ["DM's", 1]]) %>
   <br><br><br>
   <strong>Exp Level</strong>
     <br>
