@@ -35,70 +35,208 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "can retrieve PlayerProfile 1" do
-    log_in_as(@u2, "strongpass2", 0)
-    @params = {:experience_level => 3, :ruleset1 => 2, :ruleset2 => 6,
-      :ruleset3 => 8, :profile_type => 0, :online_play => 1, :campaign_type => 1}
+  test "cannot access results without providing a profile type" do
+    @params = {experience_level: "1", homebrew: "1"}
     get search_pages_results_path(@params)
     assert_response :success
-    assert_equal(@p1, User.search(@params).first)
+    assert_select "p", "You need to specify if you are searching for players or DM's."
   end
 
-  test "can retrieve Player Profile 2" do
-    log_in_as(@u1, "strongpass", 0)
-    @params = {:experience_level => 1, :ruleset1 => 3, :ruleset2 => 4,
-      :ruleset3 => 6, :profile_type => 0, :online_play => 0, :campaign_type => 0}
-      get search_pages_results_path(@params)
-      assert_response :success
+  test "can redirect to search page for another search" do
+    @params = {profile_type: "0", homebrew: "1"}
+    get search_pages_results_path(@params)
+    assert_response :success
+    assert_select "a[href=?]", search_pages_search_path
+  end
+
+
+
+  test "can retrieve PlayerProfile 2" do
+    @params = {profile_type: "0", experience_level: "1", homebrew: "1", original_ruleset: "2",
+      advanced_ruleset: "3", pathfinder: "4", third: "5", three_point_five: "6", fourth: "7", fifth: "8",
+      online_play: "0", campaign_type: "0"}
+    get search_pages_results_path(@params)
+    assert_response :success
+    assert User.search(@params).count == 1
     assert_equal(@p2, User.search(@params).first)
   end
 
-  test "gives no results for a Player Profile search" do
-    log_in_as(@u1, "strongpass", 0)
-    @params = {:experience_level => 2, :ruleset1 => 1, :ruleset2 => 2,
-      :ruleset3 => 3, :profile_type => 0, :online_play => 0, :campaign_type => 1}
+  test "can retrieve PlayerProfile 2 without using all parameters, part 1" do
+    @params = {profile_type: "0", homebrew: "1", original_ruleset: "2",
+      advanced_ruleset: "3", pathfinder: "4", third: "5", online_play: "0", campaign_type: "0"}
     get search_pages_results_path(@params)
     assert_response :success
-    assert User.search(@params).count == 0
+    assert User.search(@params).count == 1
+    assert_equal(@p2, User.search(@params).first)
     #How do you assert a message showing up?
   end
 
+  test "can retrieve PlayerProfile 2 without using all parameters, part 2" do
+    @params = {profile_type: "0", experience_level: "1", advanced_ruleset: "3", pathfinder: "4",
+      third: "5", three_point_five: "6", fourth: "7", fifth: "8"}
+    get search_pages_results_path(@params)
+    assert_response :success
+    assert User.search(@params).count == 1
+    assert_equal(@p2, User.search(@params).first)
+    #How do you assert a message showing up?
+  end
+
+  test "can retrieve PlayerProfile 2 without using all parameters, part 3" do
+    @params = {profile_type: "0", experience_level: "1", online_play: "0"}
+    get search_pages_results_path(@params)
+    assert_response :success
+    assert User.search(@params).count == 1
+    assert_equal(@p2, User.search(@params).first)
+  end
+
+  test "can retrieve PlayerProfile 1" do
+    @params = {profile_type: "0", experience_level: "3", homebrew: "1", original_ruleset: "2",
+      third: "5", three_point_five: "6", fourth: "7", fifth: "8", online_play: "1", campaign_type: "0"}
+    get search_pages_results_path(@params)
+    assert_response :success
+    assert User.search(@params).count == 1
+    assert_equal(@p1, User.search(@params).first)
+  end
+
+  test "can retrieve PlayerProfile 1 without using all parameters, part 1" do
+    @params = {profile_type: "0", experience_level: "3", third: "5", three_point_five: "6",
+      fourth: "7", fifth: "8", online_play: "1", campaign_type: "0"}
+    get search_pages_results_path(@params)
+    assert_response :success
+    assert User.search(@params).count == 1
+    assert_equal(@p1, User.search(@params).first)
+  end
+
+  test "can retrieve PlayerProfile 1 without using all parameters, part 2" do
+    @params = {profile_type: "0",homebrew: "1", original_ruleset: "2",
+      third: "5", three_point_five: "6", online_play: "1", campaign_type: "0"}
+    get search_pages_results_path(@params)
+    assert_response :success
+    assert User.search(@params).count == 1
+    assert_equal(@p1, User.search(@params).first)
+  end
+
+  test "can retrieve PlayerProfile 1 without using all parameters, part 3" do
+    @params = {profile_type: "0", experience_level: "3", online_play: "1"}
+    get search_pages_results_path(@params)
+    assert_response :success
+    assert User.search(@params).count == 1
+    assert_equal(@p1, User.search(@params).first)
+  end
+
+  test "can retrieve both PlayerProfiles" do
+    @params = {profile_type: "0"}
+    get search_pages_results_path(@params)
+    assert_response :success
+    assert User.search(@params).count == 2
+  end
+
+  test "some parameter combinations get both PlayerProfiles, part 1" do
+    @params = {profile_type: "0", third: "5", three_point_five: "6", fourth: "7", fifth: "8"}
+    get search_pages_results_path(@params)
+    assert_response :success
+    assert User.search(@params).count == 2
+  end
+
+  test "some parameter combinations get both PlayerProfiles, part 2" do
+    @params = {profile_type: "0", campaign_type: "0"}
+    get search_pages_results_path(@params)
+    assert_response :success
+    assert User.search(@params).count == 2
+  end
+
+
+
+  test "can retrieve DmProfile 2" do
+    @params = {profile_type: "1", experience_level: "3", homebrew: "1", original_ruleset: "2",
+      advanced_ruleset: "3", pathfinder: "4", third: "5", fourth: "7", fifth: "8", online_play: "0",
+      campaign_type: "0"}
+    get search_pages_results_path(@params)
+    assert_response :success
+    assert User.search(@params).count == 1
+    assert_equal(@dm2, User.search(@params).first)
+  end
+
+  test "can retrieve DmProfile 2 without using all parameters, part 1" do
+    @params = {profile_type: "1", experience_level: "3", homebrew: "1",
+      advanced_ruleset: "3", pathfinder: "4", third: "5", fourth: "7", fifth: "8"}
+    get search_pages_results_path(@params)
+    assert_response :success
+    assert User.search(@params).count == 1
+    assert_equal(@dm2, User.search(@params).first)
+  end
+
+  test "can retrieve DmProfile 2 without using all parameters, part 2" do
+    @params = {profile_type: "1", advanced_ruleset: "3", pathfinder: "4", third: "5",
+      fourth: "7", fifth: "8", online_play: "0", campaign_type: "0"}
+    get search_pages_results_path(@params)
+    assert_response :success
+    assert User.search(@params).count == 1
+    assert_equal(@dm2, User.search(@params).first)
+  end
+
+  test "can retrieve DmProfile 2 without using all parameters, part 3" do
+    @params = {profile_type: "1", experience_level: "3", online_play: "0", campaign_type: "0"}
+    get search_pages_results_path(@params)
+    assert_response :success
+    assert User.search(@params).count == 1
+    assert_equal(@dm2, User.search(@params).first)
+  end
 
   test "can retrieve DmProfile 1" do
-    log_in_as(@u4, "strongpass4", 0)
-    @params = {:experience_level => 1, :ruleset1 => 3, :ruleset2 => 6,
-      :ruleset3 => 8, :profile_type => 1, :online_play => 1, :campaign_type => 1}
+    @params = {profile_type: "1", experience_level: "1", homebrew: "1", advanced_ruleset: "3",
+      three_point_five: "6", fourth: "7", fifth: "8", online_play: "1", campaign_type: "1"}
     get search_pages_results_path(@params)
+    assert User.search(@params).count == 1
     assert_response :success
     assert_equal(@dm1, User.search(@params).first)
   end
 
-  test "can retrieve DmProfile 2" do
-    log_in_as(@u3, "strongpass3", 0)
-    @params = {:experience_level => 3, :ruleset1 => 2, :ruleset2 => 4,
-      :ruleset3 => 7, :profile_type => 1, :online_play => 0, :campaign_type => 0}
-      #byebug
+  test "can retrieve DmProfile 1 without using all parameters, part 1" do
+    @params = {profile_type: "1", experience_level: "1", advanced_ruleset: "3",
+      three_point_five: "6", fourth: "7", fifth: "8"}
     get search_pages_results_path(@params)
-    #byebug
+    assert User.search(@params).count == 1
     assert_response :success
-    assert_equal(@dm2, User.search(@params).first)
+    assert_equal(@dm1, User.search(@params).first)
   end
 
-  test "gives no results for a DM Profile search" do
-    @params = {:experience_level => 2, :ruleset1 => 1, :ruleset2 => 2,
-      :ruleset3 => 3, :profile_type => 1, :online_play => 0, :campaign_type => 1}
+  test "can retrieve DmProfile 1 without using all parameters, part 2" do
+    @params = {profile_type: "1", three_point_five: "6", fourth: "7", fifth: "8",
+      online_play: "1", campaign_type: "1"}
     get search_pages_results_path(@params)
+    assert User.search(@params).count == 1
     assert_response :success
-    assert User.search(@params).count == 0
-    #How do you assert a message showing up?
+    assert_equal(@dm1, User.search(@params).first)
   end
 
-  test "can redirect to search page for another search" do
-    @params = {:experience_level => 3, :ruleset1 => 1, :ruleset2 => 2,
-      :ruleset3 => 3, :profile_type => 0, :online_play => 1, :campaign_type => 1}
+  test "can retrieve DmProfile 1 without using all parameters, part 3" do
+    @params = {profile_type: "1", experience_level: "1", online_play: "1", campaign_type: "1"}
+    get search_pages_results_path(@params)
+    assert User.search(@params).count == 1
+    assert_response :success
+    assert_equal(@dm1, User.search(@params).first)
+  end
+
+  test "can retrieve both DmProfiles" do
+    @params = {profile_type: "1"}
     get search_pages_results_path(@params)
     assert_response :success
-    assert_select "a[href=?]", search_pages_search_path
-
+    assert User.search(@params).count == 2
   end
+
+  test "some parameter combinations get both DmProfiles, part 1" do
+    @params = {profile_type: "1", fourth: "7", fifth: "8"}
+    get search_pages_results_path(@params)
+    assert_response :success
+    assert User.search(@params).count == 2
+  end
+
+  test "some parameter combinations get both DmProfiles, part 2" do
+    @params = {profile_type: "1", homebrew: "1", advanced_ruleset: "3", campaign_type: "0"}
+    get search_pages_results_path(@params)
+    assert_response :success
+    assert User.search(@params).count == 2
+  end
+
 end
