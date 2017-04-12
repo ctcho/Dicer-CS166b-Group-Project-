@@ -4,7 +4,7 @@ class User < ApplicationRecord
   validates_with AttachmentSizeValidator, attributes: :avatar, less_than: 1.megabytes
   attr_accessor :remember_token
   acts_as_mappable
-  before_save{ self.email = email.downcase}
+  before_save { self.email = email.downcase}
   has_one :dm_profile
   has_one :player_profile
   has_many :messages
@@ -24,7 +24,6 @@ class User < ApplicationRecord
 
   def self.location(user, profile_type)
     if profile_type == "0" #Player Profiles
-      #byebug
       in_range = User.joins(:player_profile).within(user.max_distance, origin: user)
       in_range.map { |x| x.player_profile }
       #PlayerProfile.within(user.max_distance, origin: user)

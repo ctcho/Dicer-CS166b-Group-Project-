@@ -18,7 +18,6 @@ class ChatRoomsController < ApplicationController
   def remove_user
     user = current_user
     chat_rooms_user = ChatRoomsUser.find_by(chat_room: @chat_room, user: user)
-    byebug
     chat_rooms_user.destroy
     respond_to do |format|
       format.html { redirect_to users_path(user), notice: 'Successfully left chat' }

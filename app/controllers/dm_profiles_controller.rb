@@ -13,12 +13,9 @@ class DmProfilesController < ApplicationController
   def show
     @user = User.find(params[:user_id])
     @dm_profile = @user.dm_profile
-    byebug
     if !@dm_profile
-      byebug
       redirect_to new_user_dm_profiles_path(@user, tutorial: params[:tutorial])
     else
-      byebug
       render 'show'
     end
   end

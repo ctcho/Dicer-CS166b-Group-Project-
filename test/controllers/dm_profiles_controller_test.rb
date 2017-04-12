@@ -15,12 +15,14 @@ class DmProfilesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get new" do
+    log_in_as(@user, 'password', 0)
     get new_user_dm_profiles_url(@user)
     assert_response :success
   end
 
   test "should create dm_profile" do
     assert_difference('DmProfile.count') do
+      log_in_as(@user, 'password', 0)
       post user_dm_profiles_url(@user), params: { dm_profile: {
                                               advanced_ruleset: @dm_profile.advanced_ruleset,
                                               bio: @dm_profile.bio,
