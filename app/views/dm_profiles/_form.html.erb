@@ -1,7 +1,7 @@
 <% if @tutorial %>
   There are lots of ways to play DnD. The following tutorial will help you figure out how you can enjoy the game the way you want to!
 <% end %>
-<%= form_for(:dm_profile, url: user_dm_profiles_path(@user)) do |f| %>
+<%= form_for(:dm_profile, url: user_dm_profiles_path(@user, tutorial: @tutorial), params: {tutorial: @tutorial} ) do |f| %>
   <div class=ruleset-selection-container>
     <h2>Rulesets</h2>
       <% if @tutorial %>
