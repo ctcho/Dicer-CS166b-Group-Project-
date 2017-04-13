@@ -1,13 +1,21 @@
-<div class="content">
-<h1>Welcome to Dicer</h1>
-<br>
-<h3>Spend less time looking around for that perfect player or DM.
-Spend more time tackling the world you've created.</h3>
-<br>
-<!--<h1>Sign Up Here! (link to sign up page when created)</h1>-->
-<%= link_to "Sign Up Here!", signup_path %>
-<br>
-<h2>Screenshots</h2>
-<p>link to screenshots here<p>
-<br>
+<script>
+$('#carouselExampleControls').carousel();
+</script>
+
+<div class="home-page-container">
+    <div class="start">
+      Welcome to
+    </div>
+    <div class="main-text">
+      <%= image_tag "iteration3.png", height: '200', width: '700' %>
+    </div>
+
+    <div class="hook">
+        Spend less time looking around for that perfect player or DM<br>
+        Spend more time playing DnD
+    </div>
+
+    <div>
+      <%= link_to "Sign Up Here!", signup_path, class: "main-signup-button" %>
+    </div>
 </div>
