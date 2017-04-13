@@ -18,16 +18,71 @@ $mid_grey_2: #7F7F7F;
 $light_grey_2: #A5A5A5;
 
 @font-face {
-  font-family: 'Dungeon';
+  font-family: 'Dungeon'; // FREE
   src: font-url('DUNGRG__.TTF');
   font-weight: normal;
   font-style: normal;
 }
 
-body{
-  margin:0px !important;
+@font-face {
+  font-family: 'Endor'; // FREE
+  src: font-url('ENDOR__.ttf');
+  font-weight: normal;
+  font-style: normal;
 }
 
+@font-face {
+  font-family: 'Immortal'; // FREE
+  src:font-url('IMMORTAL.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Half-Elven-3D'; // NOT FREE FOR COMMERCIAL
+  src:font-url('halfelven3d.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Half-Elven'; // NOT FREE FOR COMMERCIAL
+  src:font-url('halfelven.ttf');
+  font-weight:normal;
+  font-style:normal;
+}
+
+@font-face {
+  font-family: 'Antique Quest St'; // NOT FREE FOR COMMERCIAL
+  src:font-url('AntiqueQuestSt.ttf');
+  font-weight:normal;
+  font-style:normal;
+}
+
+@font-face {
+  font-family: 'Hultog'; // FREE
+  src:font-url('Hultog.ttf');
+  font-weight:normal;
+  font-style:normal;
+}
+
+@font-face {
+  font-family: 'Hultog';
+  src:font-url('HultogItalic.ttf');
+  font-weight:normal;
+  font-style:italic;
+}
+
+html{
+  margin: 0px;
+  padding:0px;
+  height: 100vh;
+}
+body {
+  margin: 0px !important;
+  padding: 0px;
+  min-height: 100vh;
+}
 
 .header {
   /*padding: 1rem;*/
@@ -38,8 +93,8 @@ body{
   top: 0;
   left: 0;
   z-index: 10000;
-  border-bottom: solid 1px $dark_grey_2;
-  background-color: rgb(225, 225, 225);
+  background-image: url('/assets/headerattempt1.png');
+  background-size: contain;
 }
 .content {
   width:0px auto;
@@ -63,19 +118,20 @@ body{
 }
 
 .header-link:link, .header-link:visited{
-  color: $dark_red_2;
+  color: black;
   padding: 10px;
-  font-weight:bold;
-  font-size: 1.2em;
+  font-family: 'Hultog';
+  font-size: 2em;
   text-align: center;
-  text-decoration: underline;
+  border-left: 1px solid rgb(200,165,45);
+  text-decoration: none;
   display: inline-block;
   transition: 0.2s;
 }
 
 
 .header-link:hover, .header-link:active {
-   color: $red_2;
+   color: $dark_red_2;
    //box-shadow: 2px 2px 2px $mid_grey_2;
    text-shadow: 2px 2px 10px rgb(150,150,150);
 }
@@ -208,7 +264,10 @@ a:hover.outside, a:active.outside {
   height: 100%;
   padding: 0px;
   margin: 0px;
-  background-color:rgb(215,215,215);
+  //background-color:rgb(215,215,215);
+  background-image: url('/assets/parchment1.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .main-text{
@@ -225,8 +284,8 @@ a:hover.outside, a:active.outside {
 
 .hook{
   text-align:center;
-  font-weight:bold;
-  font-size:2em;
+  font-family: 'Hultog';
+  font-size:3.5em;
   color: black;
   text-shadow: 1px 1px 1px rgb(150,150,150);
   line-height:35px;
@@ -237,10 +296,10 @@ a:hover.outside, a:active.outside {
 }
 
 .start{
+  font-family: 'Immortal';
   font-size:4em;
   color:black;
-  font-weight:bolder;
-  padding-top:30px;
+  padding-top:60px;
   padding-bottom:15px;
   line-height:40px;
   text-align:center;
@@ -248,6 +307,7 @@ a:hover.outside, a:active.outside {
 }
 
 .main-signup-button{
+  font-family: 'Immortal';
   display:block;
   margin-top:30px;
   margin-left:auto;
@@ -268,4 +328,16 @@ a:hover.outside, a:active.outside {
 .main-signup-button:hover{
   background-color: rgb(100,0,0);
   color: white !important;
+}
+
+#myCarousel{
+  display:block;
+  margin: 0 auto;
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+}
+
+.carousel-inner img {
+  margin: 0 auto;
 }
