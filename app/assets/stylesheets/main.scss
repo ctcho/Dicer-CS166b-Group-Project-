@@ -17,45 +17,17 @@ $dark_grey_2: #595959;
 $mid_grey_2: #7F7F7F;
 $light_grey_2: #A5A5A5;
 
+@font-face {
+  font-family: 'Dungeon';
+  src: font-url('DUNGRG__.TTF');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body{
-  margin:20px;
-}
-h1{
-  font-size:3em;
-  line-height:45px;
-  font-style: "Lucida Grande", Verdana, sans-serif;
-}
-h2{
-  font-size:2em;
-  font-style: "Candara", Arial, sans-serif;
-}
-p{
-  font-style:"Book Antiqua", Times, serif;
+  margin:0px !important;
 }
 
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 10;
-  /*overflow: hidden;*/
-  background-color: #333;
-  /*position: fixed;*/
-  top: 0;
-  /*width: 100%;*/
-}
-
-li {
-  color: white;
-  /*float: left;*/
-}
-
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
 
 .header {
   /*padding: 1rem;*/
@@ -65,13 +37,9 @@ li a {
   right: 0;
   top: 0;
   left: 0;
-  background-color: $red_2;
-  opacity: 0.8;
-  transition: opacity 0.5s;
   z-index: 10000;
-}
-.header:hover{
-  opacity: 1;
+  border-bottom: solid 1px $dark_grey_2;
+  background-color: rgb(225, 225, 225);
 }
 .content {
   width:0px auto;
@@ -87,14 +55,6 @@ li a {
   padding:10px;
   text-align:justify;
 }
-.footer {
-  background-color: $red_2;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  /*padding: 1rem;*/
-}
 .left-align{
   float: left;
 }
@@ -102,19 +62,22 @@ li a {
   float: right;
 }
 
-a:link, a:visited {
-   background-color: $red_2;
-   color: white;
-   padding: 10px;
-   text-align: center;
-   text-decoration: none;
-   display: inline-block;
-   transition: 0.2s;
+.header-link:link, .header-link:visited{
+  color: $dark_red_2;
+  padding: 10px;
+  font-weight:bold;
+  font-size: 1.2em;
+  text-align: center;
+  text-decoration: underline;
+  display: inline-block;
+  transition: 0.2s;
 }
-a:hover, a:active {
-   background-color: $dark_red_2;
+
+
+.header-link:hover, .header-link:active {
+   color: $red_2;
    //box-shadow: 2px 2px 2px $mid_grey_2;
-   box-shadow: 1px 2px 30px 0 rgba(0,0,0,0.24), 0 2px 30px 0 rgba(0,0,0,0.19);
+   text-shadow: 2px 2px 10px rgb(150,150,150);
 }
 
 table, td, th {
@@ -231,5 +194,78 @@ a:link.outside, a:visited.outside {
 }
 a:hover.outside, a:active.outside {
     border-bottom: 1px solid blue;
+}
 
+#notice{
+  font-size:2em;
+  color: rgb(204,0,0) !important;
+  font-weight: bold;
+  margin-top: 50px;
+}
+
+.home-page-container{
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+  background-color:rgb(215,215,215);
+}
+
+.main-text{
+  font-family: 'Dungeon';
+  text-align:center;
+  font-size:15em;
+  color: rgb(100,0,0);
+  font-weight:bolder;
+  text-shadow: 2px 2px 1px rgb(150,150,150);
+  padding: 40px;
+  padding-top:20px;
+  line-height:60px;
+}
+
+.hook{
+  text-align:center;
+  font-weight:bold;
+  font-size:2em;
+  color: black;
+  text-shadow: 1px 1px 1px rgb(150,150,150);
+  line-height:35px;
+}
+
+.screenshots{
+
+}
+
+.start{
+  font-size:4em;
+  color:black;
+  font-weight:bolder;
+  padding-top:30px;
+  padding-bottom:15px;
+  line-height:40px;
+  text-align:center;
+  text-shadow: 2px 2px 1px rgb(150,150,150);
+}
+
+.main-signup-button{
+  display:block;
+  margin-top:30px;
+  margin-left:auto;
+  margin-right:auto;
+  width:35%;
+  text-align:center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: rgb(100,0,0) !important;
+  background-color: rgba(0,0,0,0);
+  border: 1px solid rgb(100,0,0);
+  transition: 0.2s;
+  text-decoration:none !important;
+  font-size: 2.5em;
+  border-radius:8px;
+}
+
+.main-signup-button:hover{
+  background-color: rgb(100,0,0);
+  color: white !important;
 }

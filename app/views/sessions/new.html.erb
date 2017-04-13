@@ -1,4 +1,8 @@
 <% provide(:title, "Log in") %>
+<div id="notice">
+  <%= notice %>
+</div>
+
 <h1>Login</h1>
 
 <%=form_for(:session, url: login_path) do |f| %>
