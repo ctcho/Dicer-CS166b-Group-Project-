@@ -4,11 +4,13 @@ class User < ApplicationRecord
   validates_with AttachmentSizeValidator, attributes: :avatar, less_than: 1.megabytes
   attr_accessor :remember_token
   acts_as_mappable
-  before_save{ self.email = email.downcase}
+  before_save { self.email = email.downcase}
   has_one :dm_profile
   has_one :player_profile
   has_many :messages
-  has_and_belongs_to_many :chat_rooms
+  #has_and_belongs_to_many :chat_rooms
+  has_many :chat_rooms_users
+  has_many :chat_rooms, through: :chat_rooms_users
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :username, presence: true, uniqueness: {case_sensitive: false}
@@ -22,7 +24,6 @@ class User < ApplicationRecord
 
   def self.location(user, profile_type)
     if profile_type == "0" #Player Profiles
-      #byebug
       in_range = User.joins(:player_profile).within(user.max_distance, origin: user)
       in_range.map { |x| x.player_profile }
       #PlayerProfile.within(user.max_distance, origin: user)

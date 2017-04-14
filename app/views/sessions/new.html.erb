@@ -1,4 +1,9 @@
+<div id="notice"><%= notice %></div>
 <% provide(:title, "Log in") %>
+<div id="notice">
+  <%= notice %>
+</div>
+
 <h1>Login</h1>
 
 <%=form_for(:session, url: login_path) do |f| %>
@@ -24,3 +29,4 @@
     <%= f.submit "Log in" %>
   </div>
 <% end %>
+Need an account? <%= link_to "Sign up!", signup_path %>

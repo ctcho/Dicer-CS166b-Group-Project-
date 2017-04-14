@@ -41,7 +41,7 @@ class UserTest < ActiveSupport::TestCase
 
   test "stores emails in lowercase" do
     u = User.create(username: "TestUser4", email: "aBcDefGH@railstutorial.cOm", password: "foobar", password_confirmation: "foobar", address: "02453")
-    assert_equal(u.email, "abcdefgh@railstutorial.com")
+    assert_equal("abcdefgh@railstutorial.com", u.email)
   end
 
   test "will not save with a password of 5 or fewer characters" do

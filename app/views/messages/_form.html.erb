@@ -1,0 +1,10 @@
+<%= form_tag user_messages_url, method: 'post' do %>
+  <div class="field">
+    <%=text_field_tag :message, params[:message] %>
+  </div>
+
+  <div class="action">
+      <%= submit_tag "Send" %>
+  </div>
+
+  <% end %>

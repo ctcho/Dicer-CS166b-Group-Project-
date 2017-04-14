@@ -9,8 +9,10 @@ Rails.application.routes.draw do
   get 'home_pages/resources'
   #get 'home_pages/unauthorized'
   get '/unauthorized', to: 'homepages#unauthorized'
-  get '/user/:user_id/settings', to: 'users#settings' #fix this with routes collections or whatever
+  get '/user/:user_id/settings', to: 'users#settings', as: 'settings' #fix this with routes collections or whatever
   get 'signup', to: 'users#new'
+
+  delete '/chat_room/:id/leave', to: 'chat_rooms#remove_user', as: 'leave_chat'
 
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
@@ -19,8 +21,13 @@ Rails.application.routes.draw do
     resource :player_profiles do
       resources :character_sheets
     end
-    resource :message
+    resource :messages
+
+
     resource :dm_profiles
+  end
+  resources :chat_rooms do
+    resource :message
   end
 
   root 'home_pages#home'
