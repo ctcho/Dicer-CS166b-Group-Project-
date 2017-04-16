@@ -49,33 +49,74 @@ class User < ApplicationRecord
     parameters[:fifth]])
     #if rulesets.nil?
     #byebug
-    if parameters[:profile_type] != "1" #Search the player database
-      PlayerProfile.where(exp_level[:level])
-      .merge(PlayerProfile.where(online[:on_line]))
-      .merge(PlayerProfile.where(campaign_types[:campaign]))
-      .merge(PlayerProfile.where(rulesets[0])
-      .merge(PlayerProfile.where(rulesets[1]))
-      .merge(PlayerProfile.where(rulesets[2]))
-      .merge(PlayerProfile.where(rulesets[3]))
-      .merge(PlayerProfile.where(rulesets[4]))
-      .merge(PlayerProfile.where(rulesets[5]))
-      .merge(PlayerProfile.where(rulesets[6]))
-      .merge(PlayerProfile.where(rulesets[7]))
-      )
-    else #Searching for DM's
-      DmProfile.where(exp_level[:level])
-      .merge(DmProfile.where(online[:on_line]))
-      .merge(DmProfile.where(campaign_types[:campaign]))
-      .merge(DmProfile.where(rulesets[0])
-      .merge(DmProfile.where(rulesets[1]))
-      .merge(DmProfile.where(rulesets[2]))
-      .merge(DmProfile.where(rulesets[3]))
-      .merge(DmProfile.where(rulesets[4]))
-      .merge(DmProfile.where(rulesets[5]))
-      .merge(DmProfile.where(rulesets[6]))
-      .merge(DmProfile.where(rulesets[7]))
-      )
+    if parameters[:option] == "AND" # Search for all of the listed conditions
+      if parameters[:profile_type] != "1" #Search the player database
+        PlayerProfile.where(exp_level[:level])
+        .merge(PlayerProfile.where(online[:on_line]))
+        .merge(PlayerProfile.where(campaign_types[:campaign]))
+        .merge(PlayerProfile.where(rulesets[0])
+        .merge(PlayerProfile.where(rulesets[1]))
+        .merge(PlayerProfile.where(rulesets[2]))
+        .merge(PlayerProfile.where(rulesets[3]))
+        .merge(PlayerProfile.where(rulesets[4]))
+        .merge(PlayerProfile.where(rulesets[5]))
+        .merge(PlayerProfile.where(rulesets[6]))
+        .merge(PlayerProfile.where(rulesets[7]))
+        )
+      else #Searching for DM's
+        DmProfile.where(exp_level[:level])
+        .merge(DmProfile.where(online[:on_line]))
+        .merge(DmProfile.where(campaign_types[:campaign]))
+        .merge(DmProfile.where(rulesets[0])
+        .merge(DmProfile.where(rulesets[1]))
+        .merge(DmProfile.where(rulesets[2]))
+        .merge(DmProfile.where(rulesets[3]))
+        .merge(DmProfile.where(rulesets[4]))
+        .merge(DmProfile.where(rulesets[5]))
+        .merge(DmProfile.where(rulesets[6]))
+        .merge(DmProfile.where(rulesets[7]))
+        )
+      end
+    else #Search for any of the listed conditions
+      if parameters[:profile_type] != "1" #Search the player database
+        PlayerProfile.where(exp_level[:level])
+        .or(PlayerProfile.where(online[:on_line]))
+        .or(PlayerProfile.where(campaign_types[:campaign]))
+        .or(PlayerProfile.where(rulesets[0])
+        .or(PlayerProfile.where(rulesets[1]))
+        .or(PlayerProfile.where(rulesets[2]))
+        .or(PlayerProfile.where(rulesets[3]))
+        .or(PlayerProfile.where(rulesets[4]))
+        .or(PlayerProfile.where(rulesets[5]))
+        .or(PlayerProfile.where(rulesets[6]))
+        .or(PlayerProfile.where(rulesets[7]))
+        )
+        #Below is how I chose to sort the results of a search.
+        #The order of priority is as follows:
+        # 1. Ruleset
+        # 2. Experience
+        # 3. Campaign Type
+        # 4. Willingness to play online
+        # --Cameron C.
+
+      else #Searching for DM's
+        DmProfile.where(exp_level[:level])
+        .or(DmProfile.where(online[:on_line]))
+        .or(DmProfile.where(campaign_types[:campaign]))
+        .or(DmProfile.where(rulesets[0])
+        .or(DmProfile.where(rulesets[1]))
+        .or(DmProfile.where(rulesets[2]))
+        .or(DmProfile.where(rulesets[3]))
+        .or(DmProfile.where(rulesets[4]))
+        .or(DmProfile.where(rulesets[5]))
+        .or(DmProfile.where(rulesets[6]))
+        .or(DmProfile.where(rulesets[7]))
+        )
+        #Same rule for sorting for players applies to DM's, too.
+
+      end
     end
+
   end
 
   def self.ruleset_parse(rulesets)

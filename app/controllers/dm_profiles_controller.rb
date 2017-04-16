@@ -18,6 +18,7 @@ class DmProfilesController < ApplicationController
     else
       render 'show'
     end
+    #@recommended = User.recommender(params)
   end
 
   # GET /user/1/dm_profiles/new

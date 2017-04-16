@@ -49,7 +49,7 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
 
   test "not providing a profile type gets PlayerProfiles by default" do
     #puts "#{current_user.username}"
-    @params = {experience_level: "1", homebrew: "1"}
+    @params = {option: "AND", experience_level: "1", homebrew: "1"}
     #byebug
     if current_user.nil?
       log_in_as(@searcher, "search", 0)
@@ -61,8 +61,19 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
     assert User.search(@params).first.class == PlayerProfile
   end
 
+  test "not giving a search option will use the 'AND' feature by default" do
+    @params = {profile_type: "0"}
+    if current_user.nil?
+      log_in_as(@searcher, "search", 0)
+    end
+    get search_pages_results_path(@params)
+    assert_response :success
+    assert User.search(@params).count > 0
+    assert User.search(@params).first.class == PlayerProfile
+  end
+
   test "a user will not find themselves in a search" do
-    @params = {profile_type: "0", experience_level: "2", online_play: "1"}
+    @params = {option: "AND", profile_type: "0", experience_level: "2", online_play: "1"}
     if current_user.nil?
       log_in_as(@searcher, "search", 0)
     end
@@ -73,7 +84,7 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "can redirect to search page for another search" do
-    @params = {profile_type: "0", homebrew: "1"}
+    @params = {option: "AND", profile_type: "0", homebrew: "1"}
     if current_user.nil?
       log_in_as(@searcher, "search", 0)
     end
@@ -85,7 +96,7 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
 
 
   test "can retrieve PlayerProfile 2" do
-    @params = {profile_type: "0", experience_level: "1", homebrew: "1", original_ruleset: "2",
+    @params = {option: "AND", profile_type: "0", experience_level: "1", homebrew: "1", original_ruleset: "2",
       advanced_ruleset: "3", pathfinder: "4", third: "5", three_point_five: "6", fourth: "7", fifth: "8",
       online_play: "0", campaign_type: "0"}
       if current_user.nil?
@@ -99,7 +110,7 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "can retrieve PlayerProfile 2 without using all parameters, part 1" do
-    @params = {profile_type: "0", homebrew: "1", original_ruleset: "2",
+    @params = {option: "AND", profile_type: "0", homebrew: "1", original_ruleset: "2",
       advanced_ruleset: "3", pathfinder: "4", third: "5", online_play: "0", campaign_type: "0"}
       if current_user.nil?
         log_in_as(@searcher, "search", 0)
@@ -112,7 +123,7 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "can retrieve PlayerProfile 2 without using all parameters, part 2" do
-    @params = {profile_type: "0", experience_level: "1", advanced_ruleset: "3", pathfinder: "4",
+    @params = {option: "AND", profile_type: "0", experience_level: "1", advanced_ruleset: "3", pathfinder: "4",
       third: "5", three_point_five: "6", fourth: "7", fifth: "8"}
       if current_user.nil?
         log_in_as(@searcher, "search", 0)
@@ -125,7 +136,7 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "can retrieve PlayerProfile 2 without using all parameters, part 3" do
-    @params = {profile_type: "0", experience_level: "1", online_play: "0"}
+    @params = {option: "AND", profile_type: "0", experience_level: "1", online_play: "0"}
     if current_user.nil?
       log_in_as(@searcher, "search", 0)
     end
@@ -137,7 +148,7 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "can retrieve PlayerProfile 1" do
-    @params = {profile_type: "0", experience_level: "3", homebrew: "1", original_ruleset: "2",
+    @params = {option: "AND", profile_type: "0", experience_level: "3", homebrew: "1", original_ruleset: "2",
       third: "5", three_point_five: "6", fourth: "7", fifth: "8", online_play: "1", campaign_type: "0"}
       if current_user.nil?
         log_in_as(@searcher, "search", 0)
@@ -150,7 +161,7 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "can retrieve PlayerProfile 1 without using all parameters, part 1" do
-    @params = {profile_type: "0", experience_level: "3", third: "5", three_point_five: "6",
+    @params = {option: "AND", profile_type: "0", experience_level: "3", third: "5", three_point_five: "6",
       fourth: "7", fifth: "8", online_play: "1", campaign_type: "0"}
       if current_user.nil?
         log_in_as(@searcher, "search", 0)
@@ -163,7 +174,7 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "can retrieve PlayerProfile 1 without using all parameters, part 2" do
-    @params = {profile_type: "0",homebrew: "1", original_ruleset: "2",
+    @params = {option: "AND", profile_type: "0",homebrew: "1", original_ruleset: "2",
       third: "5", three_point_five: "6", online_play: "1", campaign_type: "0"}
       if current_user.nil?
         log_in_as(@searcher, "search", 0)
@@ -176,7 +187,7 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "can retrieve PlayerProfile 1 without using all parameters, part 3" do
-    @params = {profile_type: "0", experience_level: "3", online_play: "1"}
+    @params = {option: "AND", profile_type: "0", experience_level: "3", online_play: "1"}
     if current_user.nil?
       log_in_as(@searcher, "search", 0)
     end
@@ -188,7 +199,7 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "some parameter combinations get multiple PlayerProfiles, part 1" do
-    @params = {profile_type: "0", third: "5", three_point_five: "6", fourth: "7", fifth: "8"}
+    @params = {option: "AND", profile_type: "0", third: "5", three_point_five: "6", fourth: "7", fifth: "8"}
     if current_user.nil?
       log_in_as(@searcher, "search", 0)
     end
@@ -198,7 +209,7 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "some parameter combinations get multiple PlayerProfiles, part 2" do
-    @params = {profile_type: "0", campaign_type: "0"}
+    @params = {option: "AND", profile_type: "0", campaign_type: "0"}
     if current_user.nil?
       log_in_as(@searcher, "search", 0)
     end
@@ -208,7 +219,7 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "a user cannot find a player unwilling to travel to their location" do
-    @params = {profile_type: "0", experience_level: "4", online_play: "1",
+    @params = {option: "AND", profile_type: "0", experience_level: "4", online_play: "1",
       original_ruleset: "2", third: "5", three_point_five: "6", campaign_type: "1"}
       if current_user.nil?
         log_in_as(@searcher, "search", 0)
@@ -225,7 +236,7 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
 
   test "can retrieve DmProfile 2" do
     #puts "#{current_user.username}"
-    @params = {profile_type: "1", experience_level: "3", homebrew: "1", original_ruleset: "2",
+    @params = {option: "AND", profile_type: "1", experience_level: "3", homebrew: "1", original_ruleset: "2",
       advanced_ruleset: "3", pathfinder: "4", third: "5", fourth: "7", fifth: "8", online_play: "0",
       campaign_type: "0"}
       if current_user.nil?
@@ -239,7 +250,7 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "can retrieve DmProfile 2 without using all parameters, part 1" do
-    @params = {profile_type: "1", experience_level: "3", homebrew: "1",
+    @params = {option: "AND", profile_type: "1", experience_level: "3", homebrew: "1",
       advanced_ruleset: "3", pathfinder: "4", third: "5", fourth: "7", fifth: "8"}
       if current_user.nil?
         log_in_as(@searcher, "search", 0)
@@ -252,7 +263,7 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "can retrieve DmProfile 2 without using all parameters, part 2" do
-    @params = {profile_type: "1", advanced_ruleset: "3", pathfinder: "4", third: "5",
+    @params = {option: "AND", profile_type: "1", advanced_ruleset: "3", pathfinder: "4", third: "5",
       fourth: "7", fifth: "8", online_play: "0", campaign_type: "0"}
       if current_user.nil?
         log_in_as(@searcher, "search", 0)
@@ -265,7 +276,7 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "can retrieve DmProfile 2 without using all parameters, part 3" do
-    @params = {profile_type: "1", experience_level: "3", online_play: "0", campaign_type: "0"}
+    @params = {option: "AND", profile_type: "1", experience_level: "3", online_play: "0", campaign_type: "0"}
     if current_user.nil?
       log_in_as(@searcher, "search", 0)
     end
@@ -277,7 +288,7 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "can retrieve DmProfile 1" do
-    @params = {profile_type: "1", experience_level: "1", homebrew: "1", advanced_ruleset: "3",
+    @params = {option: "AND", profile_type: "1", experience_level: "1", homebrew: "1", advanced_ruleset: "3",
       three_point_five: "6", fourth: "7", fifth: "8", online_play: "1", campaign_type: "1"}
       if current_user.nil?
         log_in_as(@searcher, "search", 0)
@@ -290,7 +301,7 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "can retrieve DmProfile 1 without using all parameters, part 1" do
-    @params = {profile_type: "1", experience_level: "1", advanced_ruleset: "3",
+    @params = {option: "AND", profile_type: "1", experience_level: "1", advanced_ruleset: "3",
       three_point_five: "6", fourth: "7", fifth: "8"}
       if current_user.nil?
         log_in_as(@searcher, "search", 0)
@@ -303,7 +314,7 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "can retrieve DmProfile 1 without using all parameters, part 2" do
-    @params = {profile_type: "1", three_point_five: "6", fourth: "7", fifth: "8",
+    @params = {option: "AND", profile_type: "1", three_point_five: "6", fourth: "7", fifth: "8",
       online_play: "1", campaign_type: "1"}
       if current_user.nil?
         log_in_as(@searcher, "search", 0)
@@ -316,7 +327,7 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "can retrieve DmProfile 1 without using all parameters, part 3" do
-    @params = {profile_type: "1", experience_level: "1", online_play: "1", campaign_type: "1"}
+    @params = {option: "AND", profile_type: "1", experience_level: "1", online_play: "1", campaign_type: "1"}
     if current_user.nil?
       log_in_as(@searcher, "search", 0)
     end
@@ -328,7 +339,7 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "some parameter combinations get multiple DmProfiles, part 1" do
-    @params = {profile_type: "1", fourth: "7", fifth: "8"}
+    @params = {option: "AND", profile_type: "1", fourth: "7", fifth: "8"}
     if current_user.nil?
       log_in_as(@searcher, "search", 0)
     end
@@ -338,7 +349,7 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "some parameter combinations get multiple DmProfiles, part 2" do
-    @params = {profile_type: "1", homebrew: "1", advanced_ruleset: "3", campaign_type: "0"}
+    @params = {option: "AND", profile_type: "1", homebrew: "1", advanced_ruleset: "3", campaign_type: "0"}
     if current_user.nil?
       log_in_as(@searcher, "search", 0)
     end
@@ -348,7 +359,7 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "a user cannot find a DM unwilling to travel to their location" do
-    @params = {profile_type: "1", experience_level: "4", online_play: "1",
+    @params = {option: "AND", profile_type: "1", experience_level: "4", online_play: "1",
       original_ruleset: "2", third: "5", three_point_five: "6", campaign_type: "1"}
       if current_user.nil?
         log_in_as(@searcher, "search", 0)
