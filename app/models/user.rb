@@ -44,9 +44,8 @@ class User < ApplicationRecord
     campaign_types = campaign_parse(parameters[:campaign_type])
     exp_level = exp_parse(parameters[:experience_level])
     online = online_parse(parameters[:online_play])
-    rulesets = ruleset_parse([parameters[:homebrew], parameters[:original_ruleset], parameters[:advanced_ruleset],
-    parameters[:pathfinder], parameters[:third], parameters[:three_point_five], parameters[:fourth],
-    parameters[:fifth]])
+    rulesets = ruleset_parse([parameters[:r1], parameters[:r2], parameters[:r3],
+    parameters[:r4], parameters[:r5], parameters[:r6], parameters[:r7], parameters[:r8]])
     #if rulesets.nil?
     #byebug
     if parameters[:option] == "AND" # Search for all of the listed conditions
@@ -79,7 +78,7 @@ class User < ApplicationRecord
       end
     else #Search for any of the listed conditions
       if parameters[:profile_type] != "1" #Search the player database
-        PlayerProfile.where(exp_level[:level])
+        result = PlayerProfile.where(exp_level[:level])
         .or(PlayerProfile.where(online[:on_line]))
         .or(PlayerProfile.where(campaign_types[:campaign]))
         .or(PlayerProfile.where(rulesets[0])
@@ -98,9 +97,11 @@ class User < ApplicationRecord
         # 3. Campaign Type
         # 4. Willingness to play online
         # --Cameron C.
-
+        result = result.order(parameters[:r1], parameters[:r2], parameters[:r3],
+        parameters[:r4], parameters[:r5], parameters[:r6], parameters[:r7],
+        parameters[:r8], :experience_level, parameters[:campaign_type], :online_play)
       else #Searching for DM's
-        DmProfile.where(exp_level[:level])
+        result = DmProfile.where(exp_level[:level])
         .or(DmProfile.where(online[:on_line]))
         .or(DmProfile.where(campaign_types[:campaign]))
         .or(DmProfile.where(rulesets[0])
@@ -113,7 +114,9 @@ class User < ApplicationRecord
         .or(DmProfile.where(rulesets[7]))
         )
         #Same rule for sorting for players applies to DM's, too.
-
+        result = result.order(parameters[:r1], parameters[:r2], parameters[:r3],
+        parameters[:r4], parameters[:r5], parameters[:r6], parameters[:r7],
+        parameters[:r8], :experience_level, parameters[:campaign_type], :online_play)
       end
     end
 
@@ -124,28 +127,28 @@ class User < ApplicationRecord
     compiled = []
     rulesets.each do |r|
       if !r.nil?
-        if r == "1" #homebrew
+        if r == "homebrew" #homebrew
           compiled << {homebrew: 1}
           #puts "Homebrew"
-        elsif r == "2" #original_ruleset
+        elsif r == "original_ruleset" #original_ruleset
           compiled << {original_ruleset: 1}
           #puts "Original Ruleset"
-        elsif r == "3" #advanced_ruleset
+        elsif r == "advanced_ruleset" #advanced_ruleset
           compiled << {advanced_ruleset: 1}
           #puts "Advanced Ruleset"
-        elsif r == "4" #Pathfinder
+        elsif r == "pathfinder" #Pathfinder
           compiled << {pathfinder: 1}
           #puts "Pathfinder"
-        elsif r == "5" #third
+        elsif r == "third" #third
           compiled << {third: 1}
           #puts "Third"
-        elsif r == "6" #three_point_five
+        elsif r == "three_point_five" #three_point_five
           compiled << {three_point_five: 1}
           #puts "Three point five"
-        elsif r == "7" #fourth
+        elsif r == "fourth" #fourth
           compiled << {fourth: 1}
           #puts "Fourth"
-        elsif r == "8" #fifth
+        elsif r == "fifth" #fifth
           compiled << {fifth: 1}
           #puts "Fifth"
         end
