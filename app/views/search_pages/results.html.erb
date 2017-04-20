@@ -1,10 +1,14 @@
 <h1>Search Results</h1>
 <br>
-<!--Happens if the search results come up empty -->
-<% if @users.count == 0 %>
+<!--Happens if the search results come up empty or no valid users are in the results -->
+<% if @users.count == 0 || !@has_valid %>
   <p>There are no users that match your given preferences.</p>
 <% else %>
   <div class="container-fluid">
-    <%= render @users %>
+    <% @users.each do |user| %>
+      <% if user.user != current_user && within_distance(current_user, user.user) %>
+        <%= render user %>
+      <% end %>
+    <% end %>
   </div>
 <% end %>
