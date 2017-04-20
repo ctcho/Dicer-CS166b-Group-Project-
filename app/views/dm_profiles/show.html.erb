@@ -63,6 +63,15 @@
       <p>
         <strong>You may also like:</strong>
       </p>
+      <div class="container-fluid">
+        <% if @similar_profiles.count > 0 %>
+          <% @similar_profiles.each do |s| %>
+            <% if s.user != @user && within_distance(@user, s.user) && (s.user.age - @user.age).abs <= 3 %>
+              <%= render s %>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
     </div>
     </div>
   </div>

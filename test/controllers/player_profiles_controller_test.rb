@@ -5,11 +5,15 @@ class PlayerProfilesControllerTest < ActionDispatch::IntegrationTest
     @user = users(:one)
     @user2 = users(:two)
     @player_profile = player_profiles(:one)
+    @player_profile2 = player_profiles(:two)
     @player_profile.user_id = @user.id
+    @player_profile2.user_id = @user2.id
+    @user2.player_profile = @player_profile2
     @player_profile.save
   end
 
   test "should get index" do
+    #byebug
     get user_player_profiles_url(@user, @player_profile)
     assert_response :success
   end
@@ -28,6 +32,7 @@ class PlayerProfilesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should show player_profile" do
+    #byebug
     get user_player_profiles_url(@user, @player_profile)
     assert_response :success
   end

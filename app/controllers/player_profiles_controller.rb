@@ -13,7 +13,7 @@ class PlayerProfilesController < ApplicationController
   def show
     @user = User.find(params[:user_id])
     @player_profile = @user.player_profile
-    #@recommended = User.recommender(params)
+    @similar_profiles = User.recommender(@player_profile)
   end
 
   # GET /player_profiles/new

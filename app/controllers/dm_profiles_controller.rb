@@ -13,12 +13,12 @@ class DmProfilesController < ApplicationController
   def show
     @user = User.find(params[:user_id])
     @dm_profile = @user.dm_profile
+    @similar_profiles = User.recommender(@dm_profile)
     if !@dm_profile
       redirect_to new_user_dm_profiles_path(@user, tutorial: params[:tutorial])
     else
       render 'show'
     end
-    #@recommended = User.recommender(params)
   end
 
   # GET /user/1/dm_profiles/new
