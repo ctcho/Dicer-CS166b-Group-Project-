@@ -73,6 +73,41 @@ $light_grey_2: #A5A5A5;
   font-style:italic;
 }
 
+@font-face {
+  font-family: 'Breathe Fire'; // NOT FREE FOR COMMERCIAL
+  src:font-url('BreatheFire.otf');
+  font-weight:normal;
+  font-style:normal;
+}
+
+@font-face {
+  font-family: 'Party Business'; // FREE
+  src:font-url('partybusiness.ttf');
+  font-weight:normal;
+  font-style:normal;
+}
+
+@font-face{
+  font-family: 'Devinne Swash'; // FREE
+  src:font-url('DevinneSwash.ttf');
+  font-weight:normal;
+  font-style:normal;
+}
+
+@font-face{
+  font-family: 'Wizard of the Moon'; // NOT FREE FOR COMMERCIAL
+  src:font-url('WizardOfTheMoon.ttf');
+  font-weight:normal;
+  font-style:normal;
+}
+
+@font-face{
+  font-family: 'Mysticora'; // NOT FREE FOR COMMERCIAL
+  src:font-url('DS_Mysticora.ttf');
+  font-weight:normal;
+  font-style:normal;
+}
+
 html{
   margin: 0px;
   padding:0px;
@@ -82,6 +117,9 @@ body {
   margin: 0px !important;
   padding: 0px;
   min-height: 100vh;
+  background-image: url('/assets/woodbackground1scale.png');
+//  background-style: contain;
+//  background-repeat: no-repeat;
 }
 
 .header {
@@ -93,7 +131,7 @@ body {
   top: 0;
   left: 0;
   z-index: 10000;
-  background-image: url('/assets/headerattempt1.png');
+  background-image: url('/assets/headerattempt2.png');
   background-size: contain;
 }
 .content {
@@ -119,7 +157,8 @@ body {
 
 .header-link:link, .header-link:visited{
   color: black;
-  padding: 10px;
+  height: 31px;
+  padding: 6px;
   font-family: 'Hultog';
   font-size: 2em;
   text-align: center;
@@ -127,6 +166,20 @@ body {
   text-decoration: none;
   display: inline-block;
   transition: 0.2s;
+}
+
+.white-border-text {
+  text-shadow: -1px 0px 0px rgba(255, 255, 255, 1),
+               1px 0px 0px rgba(255, 255, 255, 1),
+               0px 1px 0px rgba(255, 255, 255, 1),
+               0px -1px 0px rgba(255, 255, 255, 1);
+}
+
+.black-border-text {
+  text-shadow: -1px 0px 0px rgba(0, 0, 0, 1),
+               1px 0px 0px rgba(0, 0, 0, 1),
+               0px 1px 0px rgba(0, 0, 0, 1),
+               0px -1px 0px rgba(0, 0, 0, 1);
 }
 
 
@@ -200,13 +253,9 @@ tr:hover {
 }
 
 input[type=text], input[type=password], input[type^=email] {
-    //width: 100%;
-    padding: 3px 5px;
-    margin: 5px 8px;
-    box-sizing: border-box;
+    //width: 100%
     border: 2px solid $light_grey_2;
-    border-radius:8px;
-    -webkit-transition: 0.5s;
+    border-radius:5px;
     transition: 0.5s;
     outline: none;
 }
@@ -223,7 +272,7 @@ select {
     background-color: $light_grey_2;
 }
 
-input[type=button], input[type=submit], input[type=reset] {
+input[type=button], input[type=reset] {
   background-color: $red_2;
   color: white;
   padding: 10px;
@@ -256,7 +305,7 @@ a:hover.outside, a:active.outside {
   font-size:2em;
   color: rgb(204,0,0) !important;
   font-weight: bold;
-  margin-top: 50px;
+  margin-top: 20px;
 }
 
 .home-page-container{
@@ -265,9 +314,10 @@ a:hover.outside, a:active.outside {
   padding: 0px;
   margin: 0px;
   //background-color:rgb(215,215,215);
-  background-image: url('/assets/parchment1.jpg');
+  //background-image: url('/assets/parchment1.jpg');
   background-size: cover;
   background-repeat: no-repeat;
+  overflow: hidden;
 }
 
 .main-text{
@@ -276,10 +326,11 @@ a:hover.outside, a:active.outside {
   font-size:15em;
   color: rgb(100,0,0);
   font-weight:bolder;
-  text-shadow: 2px 2px 1px rgb(150,150,150);
+  text-shadow: 2px 3px 1px rgb(10,10,10);
   padding: 40px;
   padding-top:20px;
   line-height:60px;
+  color:white;
 }
 
 .hook{
@@ -287,8 +338,9 @@ a:hover.outside, a:active.outside {
   font-family: 'Hultog';
   font-size:3.5em;
   color: black;
-  text-shadow: 1px 1px 1px rgb(150,150,150);
+  text-shadow: 1px 3px 1px rgb(10,10,10);
   line-height:35px;
+  color:white;
 }
 
 .screenshots{
@@ -303,7 +355,8 @@ a:hover.outside, a:active.outside {
   padding-bottom:15px;
   line-height:40px;
   text-align:center;
-  text-shadow: 2px 2px 1px rgb(150,150,150);
+  text-shadow: 2px 3px 1px rgb(10,10,10);
+  color:white;
 }
 
 .main-signup-button{
@@ -316,18 +369,30 @@ a:hover.outside, a:active.outside {
   text-align:center;
   padding-top: 20px;
   padding-bottom: 20px;
-  color: rgb(100,0,0) !important;
-  background-color: rgba(0,0,0,0);
-  border: 1px solid rgb(100,0,0);
+  color: white !important;
+  border: 50px solid transparent;
   transition: 0.2s;
   text-decoration:none !important;
   font-size: 2.5em;
-  border-radius:8px;
+  border-image: url('/assets/borderfloralceltic2') 200 190 200 190 round;
+  background-color: rgba(100,0,0,0.5);
+  text-shadow: 2px 2px 1px rgba(10, 10, 10, 1);
 }
 
 .main-signup-button:hover{
-  background-color: rgb(100,0,0);
+  background-color: rgba(150,0,0,0.8);
+  border-color: white;
+  //background: rgba(100,0,0,1);
+  //background: radial-gradient(ellipse at center, rgba(100,0,0,1) 0%, rgba(119,113,113,0.38) 38%, rgba(240,190,184,0.63) 63%, rgba(255,255,255,0) 96%, rgba(255,255,255,0) 100%);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-size: 100%;
   color: white !important;
+  box-shadow: 0px 3px 20px -4px rgba(0,0,0,0.75);
+}
+
+.main-signup-button-container{
+
 }
 
 #myCarousel{
@@ -340,4 +405,11 @@ a:hover.outside, a:active.outside {
 
 .carousel-inner img {
   margin: 0 auto;
+}
+
+.page-label{
+  font-family: 'Dungeon';
+  font-size: 9em;
+  color: rgb(110,0,0);
+  line-height: 70px;
 }

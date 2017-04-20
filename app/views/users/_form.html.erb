@@ -18,60 +18,107 @@ end %>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :username %>
-    <%= f.text_field :username %>
+  <div class="field row">
+    <div class="col-md-6">
+      <%= f.label :username, class: "signup-label" %>
+    </div>
+    <div class="col-md-6">
+      <%= f.text_field :username, class: "signup-field" %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.text_field :email %>
+  <div class="field row">
+    <div class="col-md-6">
+      <%= f.label :email, class: "signup-label" %>
+    </div>
+    <div class="col-md-6">
+      <%= f.text_field :email, class: "signup-field"%>
+    </div>
   </div>
 
   <!--<div class="field">
     <%= f.label :password_digest %>
     <%= f.text_field :password_digest %>
   </div>-->
-  <div class = "field">
-    <%= f.label :password %>
-    <%= f.password_field :password %>
+
+  <div class = "field row">
+    <div class="col-md-6">
+      <%= f.label :password, class: "signup-label" %>
+    </div>
+    <div class="col-md-6">
+      <%= f.password_field :password, class: "signup-field" %>
+    </div>
   </div>
 
-  <div class = "field">
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
+  <div class = "field row">
+    <div class="col-md-6">
+      <%= f.label :password_confirmation, class: "signup-label" %>
+    </div>
+    <div class="col-md-6">
+      <%= f.password_field :password_confirmation, class: "signup-field" %>
+    </div>
+  </div>
+
+  <div class="field row">
+    <div class="col-md-6">
+      <%= f.label :address, class: "signup-label" %>
+    </div>
+    <div class="col-md-6">
+      <%= f.text_field :address, class: "signup-field" %>
+    </div>
+  </div>
+
+  <div class="field row">
+    <div class="col-md-6">
+      <%= f.label "Max distance you are willing to travel (in miles)", class: "signup-label", id: "distance-label" %>
+    </div>
+    <div class="col-md-6">
+      <%= f.number_field :max_distance, class: "signup-field" %>
+    </div>
+  </div>
+
+  <div class="field row">
+    <div class="col-md-6">
+      <%= f.label :age, class: "signup-label" %>
+    </div>
+    <div class="col-md-6">
+      <%= f.number_field :age, class: "signup-field" %>
+    </div>
   </div>
 
   <div class="field">
-    <%= f.label :address %>
-    <%= f.text_field :address %>
-  </div>
-
-  <div class="field">
-    <%= f.label "Max distance you are willing to travel (in miles)"%>
-    <%= f.number_field :max_distance %>
-  </div>
-
-  <div class="field">
-    <%= f.label :age %>
-    <%= f.number_field :age %>
-  </div>
-
-  <div class="field">
-    <%= f.label :avatar %>
-    <%= f.file_field :avatar %>
+    <%= f.label :avatar, id: 'signup-avatar-label' %>
+    <%= f.file_field :avatar, id: 'signup-avatar-field' %>
   </div>
 
   <%if @user.new_record? %>
-    <div class="field">
-      I want to start as a:<br>
-      <input type="radio"  id="player_yes" name="player" value="yes" /> Player<br>
-      <input type="radio"  id="player_no" name="player" value="no" /> DM<br>
-    <br>
-    <div class="field">
-      Are you familiar with D&D?<br>
-      <input type="radio"  id="tutorial_yes" name="help" value="yes" /> I'm new to D&D<br>
-      <input type="radio"  id="tutorial_no" name="help" value="no" /> I'm familiar with D&D<br>
+    <div class="field button-field row">
+      <div class="col-md-6">
+        <div class="signup-label">
+          I want to start as a:
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="signup-field buttons-container">
+          <input type="radio"  id="player_yes" name="player" value="yes"> Player
+          <br>
+          <input type="radio"  id="player_no" name="player" value="no"> DM
+        </div>
+      </div>
+    </div>
+    <div class="field button-field row">
+      <div class="col-md-6">
+        <div class="signup-label" id="familiarity">
+          Are you familiar with D&D?
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="signup-field buttons-container">
+          <input type="radio"  id="tutorial_yes" name="help" value="yes"> I'm new to D&D
+          <br>
+          <input type="radio"  id="tutorial_no" name="help" value="no"> I'm familiar with D&D
+        </div>
+      </div>
     </div>
   <% end %>
 

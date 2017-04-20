@@ -1,6 +1,12 @@
+<div class='signup-container'>
+  <div class="page-label white-border-text" id="signup-page-label">New User</div>
 
-<h1>New User</h1>
- <p>Already have an account? <%= link_to "Log In", login_path %>
-<%= render 'form', user: @user %>
+  <div class="login-reminder">Already have an account? <%= link_to "Log In", login_path, class: "black-border-text" %></div>
 
-<%= link_to 'Back', users_path %>
+  <div class="signup-form-container container-fluid">
+    <%= render 'form', user: @user %>
+  </div>
+
+  <%= link_to 'Back', users_path %>
+
+</div>
