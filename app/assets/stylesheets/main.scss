@@ -305,7 +305,9 @@ a:hover.outside, a:active.outside {
   font-size:9em;
   color: rgb(204,0,0) !important;
   font-family: 'Mysticora';
-  margin-top: 20px;
+  margin-top: 60px;
+  text-align: center;
+  background-image: url('parchmentbackground5');
 }
 
 .home-page-container{
@@ -412,4 +414,59 @@ a:hover.outside, a:active.outside {
   font-size: 9em;
   color: rgb(110,0,0);
   line-height: 70px;
+}
+/* CSS for Sending a Message */
+.modall {
+    display: none;
+    position: relative;
+    background-color: white;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    .close {
+      color: black;
+      float: right;
+      font-weight: bold;
+      font-size: 28px;
+    }
+    .close:hover,
+    .close:focus {
+      color: #000;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .greeting {
+      margin: auto;
+      padding: 2px;
+      font-size: 15px;
+
+    }
+    .submit {
+      float: right;
+    }
+}
+
+.msgform {
+    font-size: 12px;
+    background-color: white;
+    margin: auto; /* 15% from the top and centered */
+    padding: 0;
+    border: 1px solid #888;
+    width: 90%; /* Could be more or less, depending on screen size */
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
 }

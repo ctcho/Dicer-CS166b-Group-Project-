@@ -10,6 +10,7 @@ class PlayerProfilesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get index" do
+    log_in_as @user, 'password', 1
     get user_player_profiles_url(@user, @player_profile)
     assert_response :success
   end
@@ -28,6 +29,7 @@ class PlayerProfilesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should show player_profile" do
+    log_in_as @user, 'password', 1
     get user_player_profiles_url(@user, @player_profile)
     assert_response :success
   end

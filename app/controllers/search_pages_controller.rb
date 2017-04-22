@@ -1,6 +1,8 @@
 class SearchPagesController < ApplicationController
 include SearchPagesHelper
+  before_action :logged_in_user
 
+  #restrict availability of search function for now to logged in users
   def search
   end
 
@@ -21,4 +23,12 @@ include SearchPagesHelper
     #If that user has a player/DM profile and it's in the compiled list of user/DM profiles,
     #Show that user in the results.
   end
+
+  private
+    def logged_in_user
+      unless logged_in?
+        store_location
+        redirect_to login_url, notice: "In order to protect our users' privacy, an account is required to access user search. Please log in or create an account."
+      end
+    end
 end

@@ -12,6 +12,7 @@ User.create!(username:  "Example User",
              password:              "foobar",
              password_confirmation: "foobar",
              address: "02453",
+             max_distance: 30,
              admin: true)
 
 #seeds an additional 25 regular users
@@ -25,7 +26,8 @@ User.create!(username:  "Example User",
                password: password,
                password_confirmation: password,
                age: age,
-               address: "415 South Street, Waltham, MA 02454")
+               address: "415 South Street, Waltham, MA 02454",
+               max_distance: 30)
   u.player_profile = PlayerProfile.create(experience_level: 3, bio: "I have a bio",   online_play: 1,
     homebrew: 1,
     original_ruleset: 0,
