@@ -29,7 +29,6 @@ module UsersHelper
   end
 
   def find_distance(user1, user2)
-    byebug
     if(!!user2)
       distance = user1.distance_from(user2)
       "%.1f miles away" % distance
@@ -39,7 +38,6 @@ module UsersHelper
   end
 
   def num_distance(user1, user2)
-    byebug
     if (!!user1 && !!user2)
       distance = user1.distance_from(user2)
       distance

@@ -225,11 +225,6 @@ $light_grey_2: #A5A5A5;
   font-size: 2em;
 }
 
-.login-container{
-  background-image: url('/assets/parchment-scroll');
-  margin: auto;
-}
-
 .signup-container{
   background-image: url('/assets/parchment-scroll');
   margin: auto;
@@ -256,7 +251,7 @@ $light_grey_2: #A5A5A5;
   margin-top: 20px;
   font-size: 2.5em;
   color:black;
-  margin-left: -18vw;
+  margin-left: -246px;
 }
 
 .signup-field{
@@ -269,35 +264,92 @@ $light_grey_2: #A5A5A5;
 .signup-label{
   display: inline-block !important;
   float:right;
-  padding-left: 40vw;
+  padding-left: 546px;
   padding-top: 20px;
   padding-bottom: 20px;
 }
 
-.buttons-container{
+.radio-buttons-container{
   text-align: left !important;
 }
 
 .button-field{
   text-align: left !important;
-  padding-left: 18vw;
+  padding-left: 246px;
 }
 
 #signup-avatar-label{
-  padding-left: 18vw;
+  padding-left: 246px;
 }
 
 #signup-avatar-field{
-  padding-left: 21vw;
+  padding-left: 287px;
   font-size: 0.5em;
   font-family: sans-serif;
 }
 
 #familiarity{
-  padding-left: 0vw;
+  padding-left: 0px;
 }
 
 #distance-label{
   padding-top: 0px;
   padding-bottom: 0px;
+}
+
+#signup{
+  padding-left: 0px;
+  padding-top: 28px;
+}
+
+#signup-button{
+  padding-left: 0px;
+  margin-left: 0px;
+  width: 100%;
+  padding-top: 5px;
+}
+
+.familiarity-text-container{
+  width: 13.6% !important;
+}
+
+.signup-login-submit{
+  background-color: rgba(110,0,0,0.8);
+  font-size: 1.75em;
+  font-family: 'Dungeon';
+}
+
+.signup-login-submit:hover{
+  background-color: rgba(130,0,0,0.9);
+}
+
+.signup-submit-container{
+  padding-left: 830px;
+}
+
+.login-container{
+  background-image: url('/assets/parchment-scroll2');
+  margin: auto;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-top: 35px;
+  font-family: 'Dungeon';
+  text-align: center;
+  width: 30%;
+  height: 550px;
+}
+
+.login-form-container{
+  font-size: 2.5em;
+  margin-top: 30px;
+}
+
+#login-submit{
+  border-width: 20px !important;
+  font-size: 2em;
+  padding: 10px;
+}
+
+#login-label{
+  padding-top: 70px;
 }
