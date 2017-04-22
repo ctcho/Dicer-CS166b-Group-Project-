@@ -44,11 +44,26 @@
       <% end %>-->
     </div>
     <div class="button-container col-md-3">
-
-      <%= button_to "Contact me!", new_user_messages_path, class: "contact-me-button", method: :get %>
-
+      <% if (current_user.id - 1) != @player_profile.id %>
+        <button class="contact-me-button", id="contact"> Contact me! </button>
+      <%end%>
     </div>
   </div>
+
+
+ <!--Message sending modal. Class name is "modall" to avoid bootstrap conficts -->
+ <div class="modall" id="msgmodal">
+  <span class="close">
+    &times;
+  </span>
+  <span class="greeting">
+    Send <%=User.find(@player_profile.user_id).username%> a message
+  </span>
+  <section class="msgform">
+    <%= render 'messages/message_form' %>
+  </section>
+</div>
+
   <div class="row">
     <div class="col-md-8">
       <div class="profile-bio">
@@ -75,3 +90,5 @@
     </div>
   </div>
 </div>
+
+<%= javascript_include_tag "show.js" %>
