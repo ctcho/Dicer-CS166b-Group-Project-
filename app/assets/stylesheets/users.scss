@@ -188,16 +188,71 @@ $light_grey_2: #A5A5A5;
 
 .ruleset-selection-container{
   display: table;
+  background-image: url('parchmentbackground6');
+  margin: 40px;
+  font-family: 'Hultog';
+  font-size: 1.5em;
+  width: 100%;
+}
+
+.tutorial-section-label{
+  text-align: center;
+  font-size: 2.25em;
+  color: rgb(110,0,0);
+  line-height: 50px;
+  margin-top: 10px;
+}
+
+.checkbox-label{
+  float: right;
+  font-size: 1.5em;
+  color: rgb(110,0,0);
+  line-height: 40px;
+  margin-bottom: 0px;
+  display: inline-block !important;
+}
+
+.checkbox{
+  float: left;
+  display: inline-block !important;
+  margin-top: 11px;
+}
+
+.tutorial-explanation-text{
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
+}
+
+.tutorial-opening{
+  font-size: 5em;
+  font-family: 'Dungeon';
+  line-height: 50px;
+  text-align: center;
+  color: white;
+}
+
+#tutorial-label{
+  margin-top: 60px;
+  text-align: center;
 }
 
 .ruleset-box{
   border: 1px solid $light_grey_2;
   border-radius: 10px;
-  padding:10px;
-  margin:10px;
+  padding:5px;
+  margin:5px;
   display: flex;
   justify-content: center; /* align horizontal */
   align-items: center; /* align vertical */
+}
+
+.campaign-type-box{
+  background-image: url('parchmentbackground6');
+  margin: 0px 20px 0px 20px;
+  padding: 0px;
+  font-family: 'Hultog';
+  font-size: 1.5em;
 }
 
 .ruleset-picture{
@@ -209,9 +264,40 @@ $light_grey_2: #A5A5A5;
   float: right;
   vertical-align:middle;
   display: table-cell;
-  text-align: justify;
-  padding-left: 40px;
-  padding-right: 40px;
+  text-align: left;
+  padding-left: 60px;
+  padding-right: 20px;
+  line-height: 24px;
+}
+
+.bio-container{
+  font-family: 'Hultog';
+  background-image: url('parchmentbackground5');
+  font-size: 1.5em;
+  margin: 0px 20px 0px 20px;
+}
+
+.location-container{
+  font-family: 'Hultog';
+  background-image: url('parchmentbackground4');
+  font-size: 1.5em;
+  margin: 0px 20px 0px 20px;
+}
+
+#online-check{
+  text-align: center;
+}
+
+#dm_profile_bio{
+  width: 98%;
+  height: 200px;
+  margin: 10px;
+}
+
+.profile-submit-container{
+  font-size: 2em;
+  display: block;
+  padding-left: 520px;
 }
 
 .info-label{
