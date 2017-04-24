@@ -39,6 +39,17 @@ User.create!(username:  "Example User",
     fifth: 1,
     original_campaign: 1,
     module: 1)
+  u.dm_profile = DmProfile.create(experience_level: 3, bio: "I have a bio",   online_play: 1,
+    homebrew: 1,
+    original_ruleset: 0,
+    advanced_ruleset: 1,
+    pathfinder: 0,
+    third: 0,
+    three_point_five: 1,
+    fourth: 1,
+    fifth: 1,
+    original_campaign: 1,
+    module: 1)
 end
 
 # Create seeded private chats and messages.
