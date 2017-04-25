@@ -1,6 +1,6 @@
 class MessagesController < ApplicationController
   include MessagesHelper
-  
+
   before_action :logged_in_user
 
   def create
@@ -18,11 +18,18 @@ class MessagesController < ApplicationController
     #twice?
     current_user.messages.build(content: params[:message][:content], chat_room_id: @room.id)
     current_user.save
+    #it might not be true that a user looks at a chatroom when they send a message
+    ChatRoomsUser.where("user_id = ?", current_user.id).find_by(chat_room_id: @room.id)
+                 .update_attributes(last_viewed: Time.now)
     render 'chats/index'
   end
 
   def new
     @message = Message.new
+  end
+
+  #TODO: When this loads, current_user's last_viewed should update
+  def show
   end
 
   private

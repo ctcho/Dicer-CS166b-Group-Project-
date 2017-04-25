@@ -22,6 +22,7 @@
           <%= link_to "Settings", user_settings_path(current_user), class: "header-link" %>
           <%= link_to "Search for Users...", search_pages_search_path, class: "header-link" %>
           <%= link_to "Log Out", logout_path, method: "delete", class: "header-link" %>
+          <%= link_to chats_helper, user_messages_path(current_user), class: "header-link" %>
         <% else %>
           <%= link_to "Log In", login_path, class:"header-link" %>
         <% end %>
