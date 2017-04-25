@@ -1,3 +1,46 @@
 // Place all the styles related to the Messages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.chatroom-container{
+  margin-top: 50px;
+}
+
+.active-chatroom{
+  background-image: url("parchmentbackground6");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.sidebar{
+
+}
+
+#active-chatroom-header{
+  text-align: center;
+}
+
+.message-container{ //individual message
+
+}
+
+.message{ // individual message
+
+}
+
+.message-user{
+
+}
+
+.message-content{
+
+}
+
+#messages{ //contains all messages for chatroom
+
+}
+
+#messages-table{ // idk?
+
+}

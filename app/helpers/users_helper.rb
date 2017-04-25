@@ -38,9 +38,12 @@ module UsersHelper
   end
 
   def num_distance(user1, user2)
-    #byebug
-    distance = user1.distance_from(user2)
-    distance
+    if (!!user1 && !!user2)
+      distance = user1.distance_from(user2)
+      distance
+    else
+      nil
+    end
   end
 
 
@@ -73,7 +76,11 @@ module UsersHelper
   def within_distance(user1, user2)
     #byebug
     distance = num_distance(user1, user2)
-    user1.max_distance > distance && user2.max_distance > distance
+    if(!!distance)
+      user1.max_distance > distance && user2.max_distance > distance
+    else
+      false
+    end
   end
 
   def user_settings_path user
