@@ -1,21 +1,9 @@
 <br>
 <%= @chat_room.name %>
 <br>
-<% @messages.each do |message|%>
-  <%=message.user.username %> | <%= message.created_at%><br>
-  <%= message.content %>
-  <br><br>
-<% end %>
-
-<%= form_for(:message, url: chat_room_message_url(@chat_room), method: 'post') do |f| %>
-<div class="field">
-<%=f.text_area :content, placeholder: "Send new message..", cols: "40", rows: "10" %>
-</div>
-
-<div class="action">
-    <%= f.submit "Send", class: "submit" %>
-</div>
-<% end %>
+<div>
+  <%= render 'messages/messages' %>
+  <%= render 'message_form' %>
 
 <%= form_tag leave_chat_path(@chat_room), method: 'delete' do %>
   <div class="action">

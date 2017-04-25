@@ -24,8 +24,6 @@ class MessagesController < ApplicationController
     current_user.messages.build(content: params[:message][:content], chat_room_id: @chat_room.id)
     current_user.save
     @messages = @chat_room.messages
-    #render 'chats/index'
-    #render 'chat_rooms/show'
     redirect_to chat_room_path(@chat_room)
   end
 
