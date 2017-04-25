@@ -1,12 +1,18 @@
-<br>
-<%= @chat_room.name %>
-<br>
-<div>
-  <%= render 'messages/messages' %>
-  <%= render 'message_form' %>
-
-<%= form_tag leave_chat_path(@chat_room), method: 'delete' do %>
-  <div class="action">
-    <%= submit_tag "Leave this chat" %>
+<div class="chatroom-container">
+  <div class="page-label white-border-text" id="active-chatroom-header">
+    <%= @chat_room.name %>
   </div>
-<% end %>
+  <div class="active-chatroom">
+    <%= render 'messages/messages' %>
+    <%= render 'message_form' %>
+    <%= form_tag leave_chat_path(@chat_room), method: 'delete' do %>
+      <div class="action button-container">
+        <%= submit_tag "Leave this chat", class: "profile-button signup-login-submit" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="sidebar">
+  <!-- all chats/friends go here-->
+</div>
