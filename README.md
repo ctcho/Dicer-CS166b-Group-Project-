@@ -18,3 +18,5 @@ Tests can be run simply using the rails test command.
 
 Tests are written in minitest.
 
+# Contributors
+Dicer is developed by Anne Charnes(@timetwister4), Cameron Cho, Michael Spittler(@Ithadriel), and Daniel Vilinsky(@dvilinsky)
