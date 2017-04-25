@@ -1,5 +1,5 @@
+include SearchPagesHelper
 class User < ApplicationRecord
-  include SearchPagesHelper
   has_attached_file :avatar, styles: { medium: "175x175>", thumb: "100x100>" }, default_url: ":style/dicepic.png"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
   validates_with AttachmentSizeValidator, attributes: :avatar, less_than: 1.megabytes
@@ -25,8 +25,9 @@ class User < ApplicationRecord
     rulesets = []
     rulesets = rule_recom_parse([profile.homebrew, profile.original_ruleset, profile.advanced_ruleset,
     profile.pathfinder, profile.third, profile.three_point_five, profile.fourth, profile.fifth])
+    filter = search_checksum(rulesets)
     if profile.class == PlayerProfile
-      PlayerProfile.where(experience_level: profile.experience_level)
+      result = PlayerProfile.where(experience_level: profile.experience_level)
       .or(PlayerProfile.where(rulesets[0])
       .or(PlayerProfile.where(rulesets[1]))
       .or(PlayerProfile.where(rulesets[2]))
@@ -35,9 +36,9 @@ class User < ApplicationRecord
       .or(PlayerProfile.where(rulesets[5]))
       .or(PlayerProfile.where(rulesets[6]))
       .or(PlayerProfile.where(rulesets[7]))
-      ).limit(4)
+      )
     else #DM profile
-      DmProfile.where(experience_level: profile.experience_level)
+      result = DmProfile.where(experience_level: profile.experience_level)
       .or(DmProfile.where(rulesets[0])
       .or(DmProfile.where(rulesets[1]))
       .or(DmProfile.where(rulesets[2]))
@@ -46,9 +47,9 @@ class User < ApplicationRecord
       .or(DmProfile.where(rulesets[5]))
       .or(DmProfile.where(rulesets[6]))
       .or(DmProfile.where(rulesets[7]))
-      ).limit(4)
+      )
     end
-    #puts "#{rulesets}"
+    return sort_results(result, filter)
   end
 
   def self.location(user, profile_type)
@@ -79,11 +80,11 @@ class User < ApplicationRecord
     filter = search_checksum([exp_level] + [campaign_types] + [online] + rulesets)
     #if rulesets.nil?
     #byebug
-    if parameters[:option] == "AND" # Search for all of the listed conditions
+    if parameters[:option] != "OR" # Search for all of the listed conditions
       if parameters[:profile_type] != "1" #Search the player database
-        PlayerProfile.where(exp_level[:level])
-        .merge(PlayerProfile.where(online[:on_line]))
-        .merge(PlayerProfile.where(campaign_types[:campaign]))
+        PlayerProfile.where(exp_level)
+        .merge(PlayerProfile.where(online))
+        .merge(PlayerProfile.where(campaign_types))
         .merge(PlayerProfile.where(rulesets[0])
         .merge(PlayerProfile.where(rulesets[1]))
         .merge(PlayerProfile.where(rulesets[2]))
@@ -94,9 +95,9 @@ class User < ApplicationRecord
         .merge(PlayerProfile.where(rulesets[7]))
         )
       else #Searching for DM's
-        DmProfile.where(exp_level[:level])
-        .merge(DmProfile.where(online[:on_line]))
-        .merge(DmProfile.where(campaign_types[:campaign]))
+        DmProfile.where(exp_level)
+        .merge(DmProfile.where(online))
+        .merge(DmProfile.where(campaign_types))
         .merge(DmProfile.where(rulesets[0])
         .merge(DmProfile.where(rulesets[1]))
         .merge(DmProfile.where(rulesets[2]))
@@ -109,9 +110,9 @@ class User < ApplicationRecord
       end
     else #Search for any of the listed conditions
       if parameters[:profile_type] != "1" #Search the player database
-        results = PlayerProfile.where(exp_level[:level])
-        .or(PlayerProfile.where(online[:on_line]))
-        .or(PlayerProfile.where(campaign_types[:campaign]))
+        results = PlayerProfile.where(exp_level)
+        .or(PlayerProfile.where(online))
+        .or(PlayerProfile.where(campaign_types))
         .or(PlayerProfile.where(rulesets[0])
         .or(PlayerProfile.where(rulesets[1]))
         .or(PlayerProfile.where(rulesets[2]))
@@ -130,9 +131,9 @@ class User < ApplicationRecord
         # --Cameron C.
         return sort_results(results, filter)
       else #Searching for DM's
-        results = DmProfile.where(exp_level[:level])
-        .or(DmProfile.where(online[:on_line]))
-        .or(DmProfile.where(campaign_types[:campaign]))
+        results = DmProfile.where(exp_level)
+        .or(DmProfile.where(online))
+        .or(DmProfile.where(campaign_types))
         .or(DmProfile.where(rulesets[0])
         .or(DmProfile.where(rulesets[1]))
         .or(DmProfile.where(rulesets[2]))
@@ -188,9 +189,9 @@ class User < ApplicationRecord
     #puts "#{campaign_id}"
     selected = Hash.new
     if campaign_id == "0" #original_campaign
-      selected[:campaign] = {original_campaign: 1}
+      selected = {original_campaign: 1}
     elsif campaign_id == "1" #module
-      selected[:campaign] = {module: 1}
+      selected = {module: 1}
       #The user has expressed no preference for campaigns otherwise.
     end
     return selected
@@ -199,13 +200,13 @@ class User < ApplicationRecord
   def self.exp_parse(experience)
     exp = Hash.new
     if experience == "1" #New
-      exp[:level] = {experience_level: 1}
+      exp = {experience_level: 1}
     elsif experience == "2" #Novice
-      exp[:level] = {experience_level: 2}
+      exp = {experience_level: 2}
     elsif experience == "3" #Experienced
-      exp[:level] = {experience_level: 3}
+      exp = {experience_level: 3}
     elsif experience == "4" #Veteran
-      exp[:level] = {experience_level: 4}
+      exp = {experience_level: 4}
     end
     return exp
   end
@@ -213,9 +214,9 @@ class User < ApplicationRecord
   def self.online_parse(on)
     line = Hash.new
     if on == "0" #Does not like online play
-      line[:on_line] = {online_play: 0}
+      line = {online_play: 0}
     elsif on == "1" #Does like online play
-      line[:on_line] = {online_play: 1}
+      line = {online_play: 1}
     end
     return line
   end

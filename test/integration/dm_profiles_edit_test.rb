@@ -30,6 +30,7 @@ class DmProfilesEditTest <ActionDispatch::IntegrationTest
     patch user_dm_profiles_path, params: { dm_profile: {experience_level: 3,
       bio: bio
       }}
+      #byebug
       assert_redirected_to user_dm_profiles_path(@user, @dm_profile)
       @dm_profile.reload
       assert_equal bio, @dm_profile.bio

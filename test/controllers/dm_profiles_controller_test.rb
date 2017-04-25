@@ -14,7 +14,7 @@ class DmProfilesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get index" do
-    #byebug
+    log_in_as(@user, 'password', 0)
     get user_dm_profiles_url(@user, @dm_profile)
     assert_response :success
   end
@@ -44,12 +44,12 @@ class DmProfilesControllerTest < ActionDispatch::IntegrationTest
                                               three_point_five: @dm_profile.three_point_five,
                                               user_id: @dm_profile.user_id } }
     end
-
+    #byebug
     assert_redirected_to user_dm_profiles_url(@user, DmProfile.last)
   end
 
   test "should show dm_profile" do
-    #byebug
+    log_in_as(@user, 'password', 0)
     get user_dm_profiles_url(@user, @dm_profile)
     assert_response :success
   end

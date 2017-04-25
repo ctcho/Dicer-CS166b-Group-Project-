@@ -4,7 +4,15 @@
 
 
 <p>New Recommendations<p>
-
+  <div class="container-fluid">
+    <% if @similar_profiles.count > 0 %>
+      <% @similar_profiles.each do |s| %>
+        <% if !s.nil? %>
+          <%= render s %>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
 
 <p>Contact Requests</p>
 
