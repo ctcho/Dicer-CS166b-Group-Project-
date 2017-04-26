@@ -6,9 +6,7 @@
 <% else %>
   <div class="container-fluid parchment-background">
     <% @users.each do |user| %>
-      <% if user.user != current_user && within_distance(current_user, user.user) %>
-        <%= render user %>
-      <% end %>
+      <%= render user %>
     <% end %>
   </div>
 <% end %>
