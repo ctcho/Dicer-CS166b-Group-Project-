@@ -11,6 +11,10 @@
   background-image: url("parchmentbackground6");
   background-size: cover;
   background-repeat: no-repeat;
+  width: 50%;
+  text-align: left;
+  float: left;
+  display: block;
 }
 
 .sidebar{
@@ -22,15 +26,29 @@
 }
 
 .message-container{ //individual message
-
+  margin: 10px;
+  display: block;
 }
 
 .message{ // individual message
-
+  color: white;
+  padding: 3px 8px 3px 8px;
+  background-color: rgba(110,0,0,0.8);
+  border-radius: 10px;
+  display: inline-block;
 }
 
 .message-user{
+  display: inline-block;
+}
 
+.message-avatar{
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.message-avatar:hover{
+  border-radius: 0;
 }
 
 .message-content{
@@ -38,9 +56,45 @@
 }
 
 #messages{ //contains all messages for chatroom
-
+  margin: 10px;
+  font-family: 'Immortal';
+  font-size: 1.5em;
+  line-height: 25px;
 }
 
 #messages-table{ // idk?
 
+}
+
+#message_content{
+  width: 90%;
+  height: 50px;
+  font-family: 'Immortal';
+  font-size: 1.35em;
+  line-height: 22px;
+  border-radius: 10px;
+  border-width: 2px;
+  border-right: 0px;
+  border-style: solid;
+  border-radius: 10px 0px 0px 10px;
+  border-color: grey;
+  transition: 0.2s;
+  display: inline-block;
+}
+
+#message_content:focus{
+  border: 2px solid rgb(140,0,0);
+  border-right: 0px;
+}
+
+#send-button{
+  border-radius: 0px 10px 10px 0px;
+  border-color: rgb(140,0,0);
+  background-color: rgb(140,0,0);
+  color: white;
+  font-family: 'Hultog';
+  display: inline-block;
+  width: 10%;
+  font-size: 1.65em;
+  height: 50px;
 }
