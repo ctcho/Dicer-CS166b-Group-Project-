@@ -1,12 +1,14 @@
 <% if @tutorial %>
-  There are lots of ways to play DnD. The following tutorial will help you figure out how you can enjoy the game the way you want to!
+  <div class="tutorial-opening black-border-text">There are lots of ways to play DnD. The following tutorial will help you figure out how you can enjoy the game the way you want to!</div>
 <% end %>
 <%= form_for(:dm_profile, url: user_dm_profiles_path(@user, tutorial: @tutorial), params: {tutorial: @tutorial} ) do |f| %>
   <div class=ruleset-selection-container>
-    <h2>Rulesets</h2>
+    <div class="tutorial-section-label">Rulesets</div>
       <% if @tutorial %>
-        DnD has been around a long time, and people have played with many different versions of the rules.
-        Here are the major rulesets. Check whichever ones seem interesting to you.
+        <div class="tutorial-explanation-text">
+          DnD has been around a long time, and people playwith many different rules.
+          Here are the major rulesets. Check whichever ones seem interesting to you!
+        </div>
       <% end %>
       <br>
       <div class="container-fluid field">
@@ -81,7 +83,7 @@
                     <%= f.check_box :three_point_five %>
                   <% end %>
                 </h3>
-                <%= image_tag "dnd35.png", height: '450', width: '300' %>
+                <%= image_tag "dnd35.jpg", height: '450', width: '300' %>
               </div>
               <div class="ruleset-text col-md-6">
                 <% if @tutorial %>
@@ -166,7 +168,7 @@
                     <%= f.check_box :homebrew %>
                   <% end %>
                 </h3>
-                <%= image_tag "dndhomebrew.jpg", height: '450', width: '300' %>
+                <%= image_tag "dndhomebrew2.jpg", height: '450', width: '300' %>
               </div>
               <div class="ruleset-text col-md-6">
                 <% if @tutorial %>
@@ -181,31 +183,49 @@
       </div>
     </div>
 
-<h2>Campaign Types</h2>
-  <% if @tutorial %>
-  There are two main different types of campaign: modular (published/written) campaigns and original campaigns.
-  Playing a module means playing a pre-written campaign out of a book. There's lots of these and even pre-defined universes and settings
-  for them to fit into, such as the "Forgotten Realms". Just because they're pre-packaged and pre-written doesn't make them any less fun to play!
-  An original campaign is one written or adapted by your DM.
-  Both are great, though some modules aren't for everyone, and some original campaigns are made for specific audiences. Sometimes
-  an original or "homebrew" campaign will also add its own rules and quirks; conversely, modular campaigns are typically by the book
-  when it comes to rules.
-  <% end %>
-  <br><br>
-  <div class="field">
-    <%=f.label :original_campaign %>
-    <%= f.check_box :original_campaign %>
-    <br>
-    <%= f.label :module %>
-    <%= f.check_box :module %>
-  </div>
 
+<div class="campaign-type-box">
+  <div class="tutorial-section-label">Campaign Types</div>
+  <% if @tutorial %>
+    <div class="tutorial-explanation-text">
+      There are two main different types of campaign: modular (published/written) campaigns and original campaigns.
+      Playing a module means playing a pre-written campaign out of a book. There's lots of these and even pre-defined universes and settings
+      for them to fit into, such as the "Forgotten Realms". Just because they're pre-packaged and pre-written doesn't make them any less fun to play!
+      An original campaign is one written or adapted by your DM.
+      Both are great, though some modules aren't for everyone, and some original campaigns are made for specific audiences. Sometimes
+      an original or "homebrew" campaign will also add its own rules and quirks; conversely, modular campaigns are typically by the book
+      when it comes to rules.
+    </div>
+  <% end %>
+  <div class="field row">
+    <div class="col-md-5">
+      <div class="checkbox-label">
+        <%= f.label :original_campaign %>
+      </div>
+    </div>
+    <div class="col-md-1">
+      <div class="checkbox">
+        <%= f.check_box :original_campaign %>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <div class="checkbox-label">
+        <%= f.label :module %>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="checkbox">
+        <%= f.check_box :module %>
+      </div>
+    </div>
+  </div>
+</div>
   <% if @tutorial %>
     <input type="hidden" id="dm_profile[:experience_level]" name="experience_level" value= 0>
     <br>
   <% else %>
-    <div class = "field">
-      How experienced are you?
+    <div class = "field location-container">
+      <div class="tutorial-section-label">How experienced are you?</div>
       <br>
       <%= f.label(:experience_level_beginner, "Beginner (0-1 years of play)") %>
       <%= f.radio_button(:experience_level, 1) %>
@@ -218,33 +238,40 @@
     </div>
   <% end %>
 
-  <h2>Bio</h2>
-  <% if @tutorial %>
-  This section is for you to describe yourself as a player. Eventually, after you've played a few sessions, you will write about
-  what you like and don't like in a campaign, DM, and fellow adventurers. For now, write what kind of experience you are looking
-  for and why you are interested in trying DnD.
-  <%end %>
-  <div class="field">
-    <%= f.text_area :bio, placeholder: "Tell us a bit about yourself..."%>
+  <div class="bio-container">
+    <div class="tutorial-section-label">Bio</div>
+    <% if @tutorial %>
+      <div class="tutorial-explanation-text">
+        This section is for you to describe yourself as a player. Eventually, after you've played a few sessions, you will write about
+        what you like and don't like in a campaign, DM, and fellow adventurers. For now, write what kind of experience you are looking
+        for and why you are interested in trying DnD.
+      </div>
+    <% end %>
+    <div class="field">
+      <%= f.text_area :bio, placeholder: "Tell us a bit about yourself..."%>
+    </div>
   </div>
 
-  <h2>Location Details</h2>
-  <% if @tutorial %>
-  Lastly, we want to know if you're willing to play online, and how far you're willing to travel to play in person.
-  Online play allows you to play with people from all over the world using the power of the internet and supplementary applications like
-  <a class="outside" href=https://roll20.net/>Roll20</a>.
-  Playing in person often has a much different dynamic than online play does, as players can roleplay their characters more accurately
-  (like actually whispering to each other).
-  <b>Remember, saying that you're willing to play online <i>DOES NOT</i> exclude you from in person play, it just changes who can search for you!</b>
-  <br><br>
-  <%end %>
+  <div class="location-container">
+    <div class="tutorial-section-label">Location Details</div>
+    <% if @tutorial %>
+      <div class="tutorial-explanation-text">
+        Lastly, we want to know if you're willing to play online, and how far you're willing to travel to play in person.
+        Online play allows you to play with people from all over the world using the power of the internet and supplementary applications like
+        <a class="outside" href=https://roll20.net/>Roll20</a>.
+        Playing in person often has a much different dynamic than online play does, as players can roleplay their characters more accurately
+        (like actually whispering to each other).
+        <b>Remember, saying that you're willing to play online <i>DOES NOT</i> exclude you from in person play, it just changes who can search for you!</b>
+      </div>
+    <% end %>
+    <br>
+    <div class="field" id="online-check">
+      <%= f.label "Play with users online?" %>
+      <%= f.check_box :online_play %>
+    </div>
+  </div>
 
-  <div class = "field">
-    <%= f.label "Play with users online?" %>
-    <%= f.check_box :online_play %>
-  <div>
-  <br>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="actions button-container profile-submit-container">
+    <%= f.submit 'Create my profile!', class: "profile-button signup-login-submit" %>
   </div>
 <% end %>

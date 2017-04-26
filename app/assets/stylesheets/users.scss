@@ -8,25 +8,39 @@ $dark_grey_2: #595959;
 $mid_grey_2: #7F7F7F;
 $light_grey_2: #A5A5A5;
 
+
+.profile-wrapper{
+
+}
+
+.parchment-background{
+  background-image: url('/assets/parchmentbackground6');
+  border-radius: 2px;
+  margin:10px;
+}
+
 .profile-summary{
   width: 100%;
   position:relative;
   display: table;
   border: 2px;
-  border-color: $light_grey_2;
-  border-style: solid;
-  padding: 5px 0px 5px 5px;
+//  border-color: $light_grey_2;
+//  border-style: solid;
+//  padding: 5px 0px 5px 5px;
+//  background-image: url('/assets/parchmentbackground6')
+  border-bottom: 2px dashed rgb(210,182,123);
 }
 
 .profile-info{
   margin: 40px 0px 0px 0px !important;
   padding: 5px 0px 5px 5px;
-  border-radius:5px;
+  border-radius:2px;
 }
 
 .profile-preview{
-  border-radius: 5px;
-  border: 1px solid $light_grey_2;
+  border-radius: 2px;
+  border-bottom: 2px dashed rgb(210,182,123);
+  border-top: 2px dashed rgb(210,182,123);
   margin: 10px 0px 10px 0px !important;
 }
 
@@ -52,20 +66,35 @@ $light_grey_2: #A5A5A5;
 }
 
 .profile-summary p{
-  font-size:1.25em;
-  margin: 10px !important;
+  margin: 5px !important;
+  display:inline-block;
 }
 
 .profile-bio{
   margin-top:10px;
-  border: 2px solid $light_grey_2;
-  border-radius:5px;
+  //border: 2px solid $light_grey_2;
+  border-radius:2px;
   overflow:hidden;
   box-sizing:border-box;
+//  background-image: url('/assets/parchmentbackground4')
+  border-right: 2px dashed rgb(210,182,123);
+  border-bottom: 1px dashed rgb(210,182,123);
+}
+
+.bio-label{
+  text-decoration:underline;
+  text-align:center;
+  font-size:2.5em;
+  font-family: 'Breathe Fire';
+}
+
+.bio-text{
+  font-size: 1.7em;
+  font-family: 'Party Business';
+  line-height: 25px;
 }
 
 .profile-bio p{
-  font-size: 1em;
   margin: 10px 15px 10px 15px !important;
 }
 
@@ -76,48 +105,54 @@ $light_grey_2: #A5A5A5;
 }
 
 .contact-me-button{
-  background-color: #4F79FF !important;
-  border-color: #0066FF !important;
+  background-color: rgba(130,0,0,0.65) !important;
+  border: 35px solid transparent;
+  border-image: url('transparentceltic2') 90 70 90 70 round;
   font-size:3em;
+  line-height:40px;
+  color:white;
+  font-family: 'Wizard Of The Moon';
+  text-shadow: 2px 2px 1px rgba(10, 10, 10, 1);
+  padding-top:2px;
+  transition: 0.2s;
 }
 
 .contact-me-button-small{
-  background-color: #4F79FF !important;
-  border-color: #0066FF !important;
-  font-size:1.5em;
+  background-color: rgba(130,0,0,0.65);
 }
 
 .contact-me-button:hover, .contact-me-button-small:hover, .contact-me-button:active, .contact-me-button-small:active{
-  background-color: #000091 !important;
-  border-color: #001388 !important;
+  background-color: rgba(100,0,0,0.8) !important;
+  box-shadow: 0px 3px 20px -4px rgba(0,0,0,0.75);
 }
 
 .show-more-button{
-  font-size: 1.5em;
-  background-color: #dc252f !important;
-  border-color: #cf252e !important;
+  background-color: rgba(95,158,160,0.7);
 }
 
 .show-more-button:hover, .show-more-button:active{
-  background-color: #b3001b !important;
-  border-color: #9f001b !important;
+  background-color: rgba(54, 123, 125, 0.8);
+  box-shadow: 0px 3px 20px -4px rgba(0,0,0,0.75);
+  color:white;
+  text-decoration:none;
 }
 
 .profile-button{
+  font-family: 'Wizard Of The Moon';
+  transition:0.2s;
+  line-height:35px;
+  font-size: 2.25em;
+  text-decoration:none;
   color: white;
-  text-shadow: 0px 0px 2px #000000;
+  text-shadow: 2px 2px 1px rgba(10, 10, 10, 1);
   text-align: center;
   cursor:pointer;
-  border-radius: 5px !important;
-  border-style: ridge !important;
-  border-width: 7px !important;
-  transition: 0.2s !important;
-  opacity:0.8 !important;
+  border: 30px solid transparent;
+  border-image: url('/assets/simplecelticborder2') 45 round;
 }
 
 .profile-button:hover, .profile-button:active {
   //border-style: groove !important;
-  opacity: 1 !important;
   box-shadow: 0px 3px 15px -2px rgba(0,0,0,0.65) !important;
 }
 
@@ -126,9 +161,10 @@ $light_grey_2: #A5A5A5;
   margin-top: 10px;
   font-size:1.5em;
   color:black;
-  border: 2px solid $light_grey_2;
-  border-radius:5px;
+  //border: 2px solid $light_grey_2;
+  border-radius:2px;
   box-sizing:border-box;
+//  background-image: url('/assets/parchmentbackground5');
 }
 
 .ending-buttons{
@@ -145,24 +181,78 @@ $light_grey_2: #A5A5A5;
 }
 
 .username-preview{
-  font-size: 2em;
-  padding: 0px !important;
-  margin: 10px 0px 10px 0px !important;
-  font-weight: bold;
+  font-size: 3.5em !important;
+  font-family: "Mysticora" !important;
+  line-height: 45px;
 }
 
 .ruleset-selection-container{
   display: table;
+  background-image: url('parchmentbackground6');
+  margin: 40px;
+  font-family: 'Hultog';
+  font-size: 1.5em;
+  width: 100%;
+}
+
+.tutorial-section-label{
+  text-align: center;
+  font-size: 2.25em;
+  color: rgb(110,0,0);
+  line-height: 50px;
+  margin-top: 10px;
+}
+
+.checkbox-label{
+  float: right;
+  font-size: 1.5em;
+  color: rgb(110,0,0);
+  line-height: 40px;
+  margin-bottom: 0px;
+  display: inline-block !important;
+}
+
+.checkbox{
+  float: left;
+  display: inline-block !important;
+  margin-top: 11px;
+}
+
+.tutorial-explanation-text{
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
+}
+
+.tutorial-opening{
+  font-size: 5em;
+  font-family: 'Dungeon';
+  line-height: 50px;
+  text-align: center;
+  color: white;
+}
+
+#tutorial-label{
+  margin-top: 60px;
+  text-align: center;
 }
 
 .ruleset-box{
   border: 1px solid $light_grey_2;
   border-radius: 10px;
-  padding:10px;
-  margin:10px;
+  padding:5px;
+  margin:5px;
   display: flex;
   justify-content: center; /* align horizontal */
   align-items: center; /* align vertical */
+}
+
+.campaign-type-box{
+  background-image: url('parchmentbackground6');
+  margin: 0px 20px 0px 20px;
+  padding: 0px;
+  font-family: 'Hultog';
+  font-size: 1.5em;
 }
 
 .ruleset-picture{
@@ -174,7 +264,178 @@ $light_grey_2: #A5A5A5;
   float: right;
   vertical-align:middle;
   display: table-cell;
-  text-align: justify;
-  padding-left: 40px;
-  padding-right: 40px;
+  text-align: left;
+  padding-left: 60px;
+  padding-right: 20px;
+  line-height: 24px;
+}
+
+.bio-container{
+  font-family: 'Hultog';
+  background-image: url('parchmentbackground5');
+  font-size: 1.5em;
+  margin: 0px 20px 0px 20px;
+}
+
+.location-container{
+  font-family: 'Hultog';
+  background-image: url('parchmentbackground4');
+  font-size: 1.5em;
+  margin: 0px 20px 0px 20px;
+}
+
+#online-check{
+  text-align: center;
+}
+
+#dm_profile_bio{
+  width: 98%;
+  height: 200px;
+  margin: 10px;
+}
+
+.profile-submit-container{
+  font-size: 2em;
+  display: block;
+  padding-left: 520px;
+}
+
+.info-label{
+  font-family: 'Breathe Fire';
+  font-size: 2em;
+  color: rgba(110,0,0,1);
+}
+
+.info{
+  font-family: 'Mysticora';
+  font-size: 2em;
+}
+
+.signup-container{
+  background-image: url('/assets/parchment-scroll');
+  margin: auto;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-top: 35px;
+  font-family: 'Dungeon';
+}
+
+.signup-container:first-child{
+  text-align:center;
+}
+
+#signup-page-label{
+  padding-top: 70px;
+}
+
+.login-reminder{
+  font-size: 4em;
+  color:black;
+}
+
+.signup-form-container{
+  margin-top: 20px;
+  font-size: 2.5em;
+  color:black;
+  margin-left: -246px;
+}
+
+.signup-field{
+  width: 45%;
+  float:left;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.signup-label{
+  display: inline-block !important;
+  float:right;
+  padding-left: 546px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.radio-buttons-container{
+  text-align: left !important;
+}
+
+.button-field{
+  text-align: left !important;
+  padding-left: 246px;
+}
+
+#signup-avatar-label{
+  padding-left: 246px;
+}
+
+#signup-avatar-field{
+  padding-left: 287px;
+  font-size: 0.5em;
+  font-family: sans-serif;
+}
+
+#familiarity{
+  padding-left: 0px;
+}
+
+#distance-label{
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+#signup{
+  padding-left: 0px;
+  padding-top: 28px;
+}
+
+#signup-button{
+  padding-left: 0px;
+  margin-left: 0px;
+  width: 100%;
+  padding-top: 5px;
+}
+
+.familiarity-text-container{
+  width: 13.6% !important;
+}
+
+.signup-login-submit{
+  background-color: rgba(110,0,0,0.8);
+  font-size: 1.75em;
+  font-family: 'Dungeon';
+}
+
+.signup-login-submit:hover{
+  background-color: rgba(130,0,0,0.9);
+}
+
+.signup-submit-container{
+  padding-left: 830px;
+}
+
+.login-container{
+  background-image: url('/assets/parchment-scroll2');
+  margin: auto;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-top: 35px;
+  font-family: 'Dungeon';
+  text-align: center;
+  width: 30%;
+  height: 550px;
+}
+
+.login-form-container{
+  font-size: 2.5em;
+  margin-top: 30px;
+}
+
+#login-submit{
+  border-width: 20px !important;
+  font-size: 2em;
+  padding: 10px;
+}
+
+#login-label{
+  padding-top: 70px;
 }
