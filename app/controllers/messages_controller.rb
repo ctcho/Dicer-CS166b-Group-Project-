@@ -4,9 +4,6 @@ class MessagesController < ApplicationController
   before_action :logged_in_user
 
   def create
-    if params[:chat_room_id]
-      @chat_room = ChatRoom.find(params[:chat_room_id])
-    else
       @receiver = User.find_by(id: params[:user_id])
       @chat_room = exists_chatroom current_user, @receiver
       if @chat_room == nil
@@ -15,7 +12,6 @@ class MessagesController < ApplicationController
         @chat_room.users << current_user
         @chat_room.save
       end
-    end
     #problem: if we resend the post request, a duplicate message ends up being
     #created. But it is a problem when I keep resending the request to look at debug
     #information. Would this happen in real life if I prohibit the send button from being clicked
@@ -26,8 +22,6 @@ class MessagesController < ApplicationController
     ChatRoomsUser.where("user_id = ?", current_user.id).find_by(chat_room_id: @room.id)
                  .update_attributes(last_viewed: Time.now)
     render 'chats/index'
-    @messages = @chat_room.messages
-    redirect_to chat_room_path(@chat_room)
   end
 
   def new
@@ -36,6 +30,9 @@ class MessagesController < ApplicationController
 
   #TODO: When this loads, current_user's last_viewed should update
   def show
+    #in the future this won't be true- we'll have to separate chats
+    ChatRoomsUser.where("user_id = ?", current_user.id).find_by(chat_room_id: @room.id)
+                 .update_attributes(last_viewed: Time.now)
   end
 
   private
