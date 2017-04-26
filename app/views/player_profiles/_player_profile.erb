@@ -3,20 +3,22 @@
     <%= image_tag User.find(player_profile.user_id).avatar.url(:thumb) %>
   </div>
   <div class="col-md-3 profile-excerpt">
-              <div class="username-preview"><%= User.find(player_profile.user_id).username %></div>
-              Age: <%= User.find(player_profile.user_id).age %><br>
-              <%= translate_experience_level(player_profile.experience_level) %>
+    <p class="username-preview info-label"><%= User.find(player_profile.user_id).username %></p>
+    <br>
+    <p class="info-label">Age:</p>
+    <p class="info"><%= User.find(player_profile.user_id).age %></p>
+    <br>
+    <p class="info"><%= translate_experience_level(player_profile.experience_level) %></p>
   </div>
   <div class="col-md-3 profile-excerpt">
-    <p>
-      <strong>Plays:</strong><br>
-      <%= ruleset_preview(player_profile) %>
-    </p>
+    <p class="info-label">Plays:</p>
+    <br>
+    <p class="info"><%= ruleset_preview(player_profile) %></p>
   </div>
   <div class="button-container col-md-2">
     <%= link_to "More info", user_player_profiles_path(User.find(player_profile.user_id)), class: "show-more-button profile-button" %>
   </div>
   <div class="button-container col-md-2">
-    <%= button_to "Contact me!", "#", class: "contact-me-button-small profile-button" %>
+    <%= button_to "Write to me", "#", class: "contact-me-button-small profile-button" %>
   </div>
 </div>

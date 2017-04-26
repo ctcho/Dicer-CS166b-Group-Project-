@@ -1,52 +1,51 @@
-<div id="notice"><%= notice %></div>
+<div id="notice" class="black-border-text"><%= notice %></div>
 <div class="profile-wrapper container-fluid">
-  <div class="profile-summary profile-info row">
-    <div class="col-md-2">
-      <%= image_tag @user.avatar.url(:medium) %>
-    </div>
-    <div class="profile-text col-md-7">
-      <p>
-        <strong>Username:</strong>
-        <%= @user.username %>
-      </p>
+  <div class="parchment-background">
+    <div class="profile-summary profile-info row">
+      <div class="col-md-2">
+        <%= image_tag @user.avatar.url(:medium) %>
+      </div>
+      <div class="profile-text col-md-7">
+        <p class="info-label">Username:</p>
+        <p class="info"><%= @user.username %></p>
 
-      <p>
-        <strong>Age:</strong>
-        <%= @user.age %>
-      </p>
+        <br>
 
-      <p>
-        <strong>Experience:</strong>
-        <%= translate_experience_level(@player_profile.experience_level) %>
-      </p>
+        <p class="info-label">Age:</p>
+        <p class="info"><%= @user.age %></p>
 
-      <p>
-        <strong>Likes to play:</strong>
-        <%= get_ruleset_strings(@player_profile).join(", ") %>
-      </p>
+        <br>
 
-      <p>
-        <strong><%= translate_online_play(@player_profile) %></strong>
-      </p>
+        <p class="info-label">Experience:</p>
+        <p class="info"><%= translate_experience_level(@player_profile.experience_level) %></p>
 
+        <br>
 
-    <!--  <% unless logged_in? && (current_user.id == params[:user_id])  %>
-        <% #if within_distance(User.find(@player_profile.user_id), current_user) %>
-          <p>
-            <strong>Distance:</strong>
-            <%= find_distance(User.find(@player_profile.id), current_user) %>
-          </p>
-        <% else %>
-          <p>
-            <strong>Too far away!</strong>
-          </p>
-        <%#end %>
-      <% end %>-->
-    </div>
-    <div class="button-container col-md-3">
+        <p class="info-label">Likes to play:</p>
+        <p class="info"><%= get_ruleset_strings(@player_profile).join(", ") %></p>
 
-      <%= button_to "Contact me!", new_user_messages_path, class: "contact-me-button", method: :get %>
+        <br>
 
+        <p class="info-label"><%= translate_online_play(@player_profile) %></p>
+
+        <br>
+
+        <% unless current_user? @user %>
+          <% if within_distance(User.find(@player_profile.user_id), current_user) %>
+            <p class="info-label">Distance:</p>
+            <p class="info"><%= find_distance(User.find(@player_profile.id), current_user) %></p>
+          <% else %>
+            <p class="info-label">Too far away!</p>
+          <% end %>
+        <% end %>
+
+      </div>
+
+      <div class="button-container col-md-3">
+        <% if (current_user.id - 1) != @player_profile.id %>
+          <button class="contact-me-button", id="contact"> Contact me! </button>
+        <%end%>
+      </div>
     </div>
   </div>
   <div class="row">
@@ -63,15 +62,52 @@
       <p>
         <strong>You may also like:</strong>
       </p>
+      <div class="container-fluid">
+        <% if @similar_profiles.count > 0 %>
+          <% @similar_profiles.each do |s| %>
+            <% if !s.nil? %>
+              <%= render s %>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+
+
+ <!--Message sending modal. Class name is "modall" to avoid bootstrap conficts -->
+     <div class="modall" id="msgmodal">
+      <span class="close">
+        &times;
+      </span>
+      <span class="greeting">
+        Send <%=User.find(@player_profile.user_id).username%> a message
+      </span>
+      <section class="msgform">
+        <%= render 'messages/message_form' %>
+      </section>
     </div>
+
+    <div class="row">
+      <div class="col-md-8">
+        <div class="profile-bio">
+          <p class="bio-label">Bio</p>
+          <p class="bio-text"><%= @player_profile.bio %></p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="more-users-box info-label">
+          You may also like:
+        </div>
+      </div>
     </div>
   </div>
   <div class="row">
     <div class="col-sm-3">
       <div class="ending-buttons">
-        <%= link_to 'Edit', edit_user_player_profiles_path(@user, @player_profile) %> |
+        <%= link_to 'Edit', edit_user_dm_profiles_path(@user, @player_profile) %> |
         <%= link_to 'Back', user_path(@user) %>
       </div>
     </div>
   </div>
 </div>
+
+<%= javascript_include_tag "show.js" %>

@@ -1,4 +1,5 @@
 class PlayerProfilesController < ApplicationController
+  include SearchPagesHelper
   before_action :set_player_profile, only: [:show, :edit, :update, :destroy]
   before_action :logged_in_user, only: [:edit, :update]
   before_action :correct_user, only: [:edit, :update]
@@ -13,7 +14,8 @@ class PlayerProfilesController < ApplicationController
   def show
     @user = User.find(params[:user_id])
     @player_profile = @user.player_profile
-    #@recommended = User.recommender(params)
+    @similar_profiles = User.recommender(@player_profile)
+    @similar_profiles = recommend_set(@similar_profiles, @user)
   end
 
   # GET /player_profiles/new

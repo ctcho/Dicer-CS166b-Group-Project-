@@ -1,34 +1,33 @@
 class MessagesController < ApplicationController
+  include MessagesHelper
 
   before_action :logged_in_user
 
   def create
-    room = nil
-    sender = current_user
     if params[:chat_room_id]
-      room = ChatRoom.find(params[:chat_room_id])
+      @chat_room = ChatRoom.find(params[:chat_room_id])
     else
-      shared_chats = ChatRoom.joins(:chat_rooms_users).where("chat_rooms_users.user_id LIKE ? OR chat_rooms_users.user_id LIKE ?", sender.id, params[:user_id]).merge(ChatRoom.group('user_id').having("count('user.id') = 2"))
-      if shared_chats.empty?
-        room = ChatRoom.create(name: "private_chat_#{sender.id}_#{params[:user_id]}")
-        ChatRoomsUser.create(chat_room_id: room.id, user_id: sender.id)
-        ChatRoomsUser.create(chat_room_id: room.id, user_id: params[:user_id] )
-      else
-        room = shared_chats[0]
+      @receiver = User.find_by(id: params[:user_id])
+      @chat_room = exists_chatroom current_user, @receiver
+      if @chat_room == nil
+        @chat_room = ChatRoom.new(name: "#{current_user.username} and #{@receiver.username}")
+        @chat_room.users << @receiver
+        @chat_room.users << current_user
+        @chat_room.save
       end
     end
-    if room
-      room.messages.create(content: params[:message], user_id: sender.id)
-      #temporary, figure out where we should redirect to.
-      redirect_to chat_room_url(room)
-    else
-      #temporary, render an error password_digest
-      render 'error'
-    end
+    #problem: if we resend the post request, a duplicate message ends up being
+    #created. But it is a problem when I keep resending the request to look at debug
+    #information. Would this happen in real life if I prohibit the send button from being clicked
+    #twice?
+    byebug
+    current_user.messages.build(content: params[:message][:content], chat_room_id: @chat_room.id)
+    current_user.save
+    @messages = @chat_room.messages
+    redirect_to chat_room_path(@chat_room)
   end
 
   def new
-
     @message = Message.new
   end
 

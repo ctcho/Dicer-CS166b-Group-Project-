@@ -1,3 +1,48 @@
 // Place all the styles related to the HomePages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.home-page-background{
+  background-image: url('parchmentbackground4');
+  margin-top: 50px;
+}
+
+.home-page-container{
+  margin: 0px;
+  padding: 0px;
+}
+
+#home-page-header{
+  text-align: center;
+  padding-top: 10px;
+}
+
+.home-page-label{
+  margin-top: 20px;
+  padding: 0px;
+  font-size: 4em;
+  line-height: 64px;
+  font-style: italic;
+  font-family: 'Hultog';
+}
+
+.home-page-sublabel{
+  font-size: 3em;
+  margin-top: 10px;
+}
+
+.home-page-text{
+  margin: 0px;
+  padding: 0px;
+  font-size: 1.6em;
+  line-height: 25px;
+  font-family: 'Hultog';
+}
+
+.contact-container{
+  height: 165px;
+}
+
+#ruleset-list-start{
+  margin-top: 50px;
+}

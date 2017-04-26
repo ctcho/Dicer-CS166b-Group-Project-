@@ -19,7 +19,7 @@ one:
   module: 1
 
 two:
-  user_id: 1
+  user_id: 2
   bio: MyText
   experience_level: 1
   online_play: 0

@@ -1,5 +1,6 @@
 require 'test_helper'
 include SessionsHelper
+include SearchPagesHelper
 
 #The functionality at the moment is all set. However, I'm trying to test a strange
 #part: you know how controllers of items have special variables that can be used in
@@ -14,26 +15,76 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
     @u4 = users(:user_4)
     @u5 = users(:user_5)
     @u6 = users(:user_6)
+    @u7 = users(:user_7)
+    @u8 = users(:user_8)
+    @u9 = users(:user_9)
+    @u10 = users(:user_10)
+    @u11 = users(:user_11)
+    @u12 = users(:user_12)
+    @u13 = users(:user_13)
+    @u14 = users(:user_14)
+    @u15 = users(:user_15)
+    @u16 = users(:user_16)
     @searcher = users(:searcher)
     @p1 = player_profiles(:one)
     @p2 = player_profiles(:two)
-    @p3 = PlayerProfile.create(user_id: 2, bio: "My Text", experience_level: 4, online_play: 1, homebrew: 0,
+    @p3 = PlayerProfile.create(user_id: 3, bio: "My Text", experience_level: 4, online_play: 1, homebrew: 0,
       original_ruleset: 1, advanced_ruleset: 0, pathfinder: 0, third: 1, three_point_five: 1, fourth: 0,
       fifth: 0, original_campaign: 0, module: 1)
-    @p0 = PlayerProfile.create(user_id: 3, bio: "My Text", experience_level: 2, online_play: 1, homebrew: 0,
+    @p0 = PlayerProfile.create(user_id: 4, bio: "My Text", experience_level: 2, online_play: 1, homebrew: 0,
       original_ruleset: 0, advanced_ruleset: 0, pathfinder: 0, third: 0, three_point_five: 0, fourth: 0,
       fifth: 0, original_campaign: 0, module: 0)
+    @p4 = PlayerProfile.create(user_id: 5, bio: "My Text", experience_level: 1, online_play: 0, homebrew: 0,
+      original_ruleset: 0, advanced_ruleset: 0, pathfinder: 0, third: 1, three_point_five: 0, fourth: 1,
+      fifth: 1, original_campaign: 0, module: 1)
+    @p5 = PlayerProfile.create(user_id: 6, bio: "My Text", experience_level: 1, online_play: 0, homebrew: 0,
+      original_ruleset: 0, advanced_ruleset: 0, pathfinder: 0, third: 1, three_point_five: 0, fourth: 1,
+      fifth: 1, original_campaign: 0, module: 1)
+    @p6 = PlayerProfile.create(user_id: 7, bio: "My Text", experience_level: 1, online_play: 0, homebrew: 0,
+      original_ruleset: 0, advanced_ruleset: 0, pathfinder: 0, third: 1, three_point_five: 0, fourth: 1,
+      fifth: 1, original_campaign: 0, module: 1)
+    @p7 = PlayerProfile.create(user_id: 8, bio: "My Text", experience_level: 2, online_play: 1, homebrew: 0,
+      original_ruleset: 0, advanced_ruleset: 0, pathfinder: 0, third: 1, three_point_five: 0, fourth: 1,
+      fifth: 1, original_campaign: 0, module: 1)
+    @p8 = PlayerProfile.create(user_id: 9, bio: "My Text", experience_level: 2, online_play: 1, homebrew: 0,
+      original_ruleset: 0, advanced_ruleset: 0, pathfinder: 0, third: 1, three_point_five: 0, fourth: 1,
+      fifth: 1, original_campaign: 0, module: 1)
     @dm1 = dm_profiles(:one)
     @dm2 = dm_profiles(:two)
-    @dm3 = DmProfile.create(user_id: 2, bio: "My Text", experience_level: 4, online_play: 1, homebrew: 0,
+    @dm3 = DmProfile.create(user_id: 3, bio: "My Text", experience_level: 4, online_play: 1, homebrew: 0,
     original_ruleset: 1, advanced_ruleset: 0, pathfinder: 0, third: 1, three_point_five: 1, fourth: 0,
     fifth: 0, original_campaign: 0, module: 1)
+    @dm4 = DmProfile.create(user_id: 4, bio: "My Text", experience_level: 1, online_play: 0, homebrew: 0,
+    original_ruleset: 1, advanced_ruleset: 0, pathfinder: 0, third: 1, three_point_five: 0, fourth: 1,
+    fifth: 1, original_campaign: 0, module: 1)
+    @dm5 = DmProfile.create(user_id: 5, bio: "My Text", experience_level: 1, online_play: 0, homebrew: 0,
+    original_ruleset: 1, advanced_ruleset: 0, pathfinder: 0, third: 1, three_point_five: 0, fourth: 1,
+    fifth: 1, original_campaign: 0, module: 1)
+    @dm6 = DmProfile.create(user_id: 6, bio: "My Text", experience_level: 1, online_play: 0, homebrew: 0,
+    original_ruleset: 1, advanced_ruleset: 0, pathfinder: 0, third: 1, three_point_five: 0, fourth: 1,
+    fifth: 1, original_campaign: 0, module: 1)
+    @dm7 = DmProfile.create(user_id: 7, bio: "My Text", experience_level: 2, online_play: 1, homebrew: 0,
+      original_ruleset: 0, advanced_ruleset: 0, pathfinder: 0, third: 1, three_point_five: 0, fourth: 1,
+      fifth: 1, original_campaign: 0, module: 1)
+    @dm8 = DmProfile.create(user_id: 8, bio: "My Text", experience_level: 2, online_play: 1, homebrew: 0,
+      original_ruleset: 0, advanced_ruleset: 0, pathfinder: 0, third: 1, three_point_five: 0, fourth: 1,
+      fifth: 1, original_campaign: 0, module: 1)
     @u1.player_profile = @p1
     @u2.player_profile = @p2
     @u3.dm_profile = @dm1
     @u4.dm_profile = @dm2
     @u5.player_profile = @p3
     @u6.dm_profile = @dm3
+    @u7.player_profile = @p4
+    @u8.player_profile = @p5
+    @u9.player_profile = @p6
+    @u10.dm_profile = @dm4
+    @u11.dm_profile = @dm5
+    @u12.dm_profile = @dm6
+    @u13.player_profile = @p7
+    @u14.dm_profile = @dm7
+    @u15.player_profile = @p8
+    @u16.dm_profile = @dm8
     @searcher.player_profile = @p0
     log_in_as(@searcher, "search", 1)
   end
@@ -57,8 +108,8 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
     #byebug
     get search_pages_results_path(@params)
     assert_response :success
-    assert User.search(@params).count > 0
-    assert User.search(@params).first.class == PlayerProfile
+    assert User.search(@params, current_user).count > 0
+    assert User.search(@params, current_user).first.class == PlayerProfile
   end
 
   test "not giving a search option will use the 'AND' feature by default" do
@@ -69,8 +120,8 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
     byebug
     get search_pages_results_path(@params)
     assert_response :success
-    assert User.search(@params).count > 0
-    assert User.search(@params).first.class == PlayerProfile
+    assert User.search(@params, current_user).count > 0
+    assert User.search(@params, current_user).first.class == PlayerProfile
   end
 
   test "a user will not find themselves in a search" do
@@ -80,8 +131,8 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
     end
     get search_pages_results_path(@params)
     assert_response :success
-    assert User.search(@params).count == 1
-    assert_select "p", "There are no users that match your given preferences."
+    assert_not User.search(@params, current_user).include?(@p0)
+    assert_select "#{@searcher.username}", 0
   end
 
   test "can redirect to search page for another search" do
@@ -92,6 +143,29 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
     get search_pages_results_path(@params)
     assert_response :success
     assert_select "a[href=?]", search_pages_search_path
+  end
+
+  test "user will only see PlayerProfile recommendations if they don't have a DmProfile" do
+    get user_path(@searcher)
+    assert_response :success
+    recommendations = recommend_set(User.recommender(@p0), @searcher)
+    assert recommendations.count > 0
+    assert recommendations.first.class == PlayerProfile
+    assert "div.profile-preview", 1
+  end
+
+  test "user will see both PlayerProfile and DmProfile recommendations if they have both profile types" do
+    dm0 = DmProfile.create(user_id: 0, bio: "My Text", experience_level: 2, online_play: 1, homebrew: 0,
+      original_ruleset: 0, advanced_ruleset: 0, pathfinder: 0, third: 0, three_point_five: 0, fourth: 0,
+      fifth: 0, original_campaign: 0, module: 0)
+    @searcher.dm_profile = dm0
+    get user_path(@searcher)
+    assert_response :success
+    recommend_players = recommend_set(User.recommender(@p0), @searcher)
+    recommend_dms = recommend_set(User.recommender(dm0), @searcher)
+    assert recommend_players.count > 0
+    assert recommend_dms.count > 0
+    assert "div.profile-preview", 2
   end
 
 
@@ -105,9 +179,9 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
       end
     get search_pages_results_path(@params)
     assert_response :success
-    assert User.search(@params).count == 1
-    assert_equal(@p2, User.search(@params).first)
-    assert_select "div.row", 1
+    #assert User.search(@params, current_user).count == 1
+    assert User.search(@params, current_user).include?(@p2)
+    assert_select "div.profile-preview"
   end
 
   test "can retrieve PlayerProfile 2 without using all parameters, part 1" do
@@ -119,9 +193,8 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
       end
     get search_pages_results_path(@params)
     assert_response :success
-    assert User.search(@params).count == 1
-    assert_equal(@p2, User.search(@params).first)
-    assert_select "div.row", 1
+    assert User.search(@params, current_user).include?(@p2)
+    assert_select "div.profile-preview"
   end
 
   test "can retrieve PlayerProfile 2 without using all parameters, part 2" do
@@ -132,9 +205,8 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
       end
     get search_pages_results_path(@params)
     assert_response :success
-    assert User.search(@params).count == 1
-    assert_equal(@p2, User.search(@params).first)
-    assert_select "div.row", 1
+    assert User.search(@params, current_user).include?(@p2)
+    assert_select "div.profile-preview"
   end
 
   test "can retrieve PlayerProfile 2 without using all parameters, part 3" do
@@ -144,9 +216,9 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
     end
     get search_pages_results_path(@params)
     assert_response :success
-    assert User.search(@params).count == 1
-    assert_equal(@p2, User.search(@params).first)
-    assert_select "div.row", 1
+    #assert User.search(@params, current_user).count == 1
+    assert User.search(@params, current_user).include?(@p2)
+    assert_select "div.profile-preview"
   end
 
   test "can retrieve PlayerProfile 1" do
@@ -158,9 +230,8 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
       end
     get search_pages_results_path(@params)
     assert_response :success
-    assert User.search(@params).count == 1
-    assert_equal(@p1, User.search(@params).first)
-    assert_select "div.row", 1
+    assert User.search(@params, current_user).include?(@p1)
+    assert_select "div.profile-preview"
   end
 
   test "can retrieve PlayerProfile 1 without using all parameters, part 1" do
@@ -171,9 +242,8 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
       end
     get search_pages_results_path(@params)
     assert_response :success
-    assert User.search(@params).count == 1
-    assert_equal(@p1, User.search(@params).first)
-    assert_select "div.row", 1
+    assert User.search(@params, current_user).include?(@p1)
+    assert_select "div.profile-preview"
   end
 
   test "can retrieve PlayerProfile 1 without using all parameters, part 2" do
@@ -184,9 +254,8 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
       end
     get search_pages_results_path(@params)
     assert_response :success
-    assert User.search(@params).count == 1
-    assert_equal(@p1, User.search(@params).first)
-    assert_select "div.row", 1
+    assert User.search(@params, current_user).include?(@p1)
+    assert_select "div.profile-preview"
   end
 
   test "can retrieve PlayerProfile 1 without using all parameters, part 3" do
@@ -196,9 +265,8 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
     end
     get search_pages_results_path(@params)
     assert_response :success
-    assert User.search(@params).count == 1
-    assert_equal(@p1, User.search(@params).first)
-    assert_select "div.row", 1
+    assert User.search(@params, current_user).include?(@p1)
+    assert_select "div.profile-preview"
   end
 
   test "some parameter combinations get multiple PlayerProfiles, part 1" do
@@ -209,7 +277,7 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
     end
     get search_pages_results_path(@params)
     assert_response :success
-    assert User.search(@params).count > 1
+    assert User.search(@params, current_user).count > 1
   end
 
   test "some parameter combinations get multiple PlayerProfiles, part 2" do
@@ -219,10 +287,11 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
     end
     get search_pages_results_path(@params)
     assert_response :success
-    assert User.search(@params).count > 1
+    assert User.search(@params, current_user).count > 1
   end
 
   test "a user cannot find a player unwilling to travel to their location" do
+    #attempting to find @p3
     @params = {option: "AND", profile_type: "0", experience_level: "4", online_play: "1",
       r2: "original_ruleset", r5: "third", r6: "three_point_five", campaign_type: "module"}
       if current_user.nil?
@@ -230,10 +299,78 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
       end
       get search_pages_results_path(@params)
       assert_response :success
-      #puts "#{User.search(@params).count}"
+      #puts "#{User.search(@params, current_user).count}"
       #byebug
-      assert User.search(@params).count == 1
+      assert_not User.search(@params, current_user).include?(@p3)
       assert_select "p", "There are no users that match your given preferences."
+  end
+
+  test "Using the 'OR' feature returns results from most relevant to least relevant for PlayerProfiles" do
+    if current_user.nil?
+      log_in_as(@searcher, "search", 0)
+    end
+    @params = {option: "OR", profile_type: "0", experience_level: "3", online_play: "1",
+      original_ruleset: "2", third: "5", three_point_five: "1", campaign_type: "1"}
+    get search_pages_results_path(@params)
+    assert_response :success
+    #Intended Order: @p1, @p3, @p2
+    assert_select "div.profile-preview"
+    #byebug
+    sorted = User.search(@params, current_user)
+    #unsorted = PlayerProfile.all
+    #byebug #Uncomment both these lines in case you need to prove to yourself this works...
+    assert_equal(sorted.first, @p1)
+    assert_equal(sorted.second, @p2)
+    assert_equal(sorted.third, @p7)
+  end
+
+  test "A PlayerProfile will see up to 4 recommended PlayerProfiles" do
+    if current_user.nil?
+      log_in_as(@searcher, "search", 0)
+    end
+    get user_player_profiles_url(@u1, @p1)
+    assert_response :success
+    recommendations = recommend_set(User.recommender(@p1), @u1)
+    assert recommendations.count == 4
+    #puts assert_select "div.profile-preview"
+    assert recommendations.first.class == PlayerProfile
+  end
+
+  test "A list of recommended PlayerProfiles is sorted from most relevant to least relevant" do
+    if current_user.nil?
+      log_in_as(@searcher, "search", 0)
+    end
+    get user_player_profiles_url(@u1, @p1)
+    assert_response :success
+    recommendations = recommend_set(User.recommender(@p1), @u1)
+    assert recommendations.count == 4
+    assert_equal(recommendations.first, @p2)
+    assert_equal(recommendations.second, @p4)
+    assert_equal(recommendations.third, @p5)
+    assert_equal(recommendations.fourth, @p6)
+  end
+
+  test "the list of recommended PlayerProfiles does not include the one being viewed nor the searcher" do
+    if current_user.nil?
+      log_in_as(@searcher, "search", 0)
+    end
+    get user_player_profiles_url(@u1, @p1)
+    assert_response :success
+    recommendations = recommend_set(User.recommender(@p1), @u1)
+    assert recommendations.count == 4
+    assert_not recommendations.include?(@p1)
+    assert_not recommendations.include?(@searcher)
+  end
+
+  test "the list of recommended PlayerProfiles does not include users 3+ years older than the one viewed" do
+    if current_user.nil?
+      log_in_as(@searcher, "search", 0)
+    end
+    get user_player_profiles_url(@u1, @p1)
+    assert_response :success
+    recommendations = recommend_set(User.recommender(@p1), @u1)
+    assert recommendations.count == 4
+    assert_not recommendations.include?(@p7)
   end
 
 
@@ -248,9 +385,8 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
       end
     get search_pages_results_path(@params)
     assert_response :success
-    assert User.search(@params).count == 1
-    assert_equal(@dm2, User.search(@params).first)
-    assert_select "div.row", 1
+    assert User.search(@params, current_user).include?(@dm2)
+    assert_select "div.profile-preview"
   end
 
   test "can retrieve DmProfile 2 without using all parameters, part 1" do
@@ -261,9 +397,8 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
       end
     get search_pages_results_path(@params)
     assert_response :success
-    assert User.search(@params).count == 1
-    assert_equal(@dm2, User.search(@params).first)
-    assert_select "div.row", 1
+    assert User.search(@params, current_user).include?(@dm2)
+    assert_select "div.profile-preview"
   end
 
   test "can retrieve DmProfile 2 without using all parameters, part 2" do
@@ -274,9 +409,8 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
       end
     get search_pages_results_path(@params)
     assert_response :success
-    assert User.search(@params).count == 1
-    assert_equal(@dm2, User.search(@params).first)
-    assert_select "div.row", 1
+    assert User.search(@params, current_user).include?(@dm2)
+    assert_select "div.profile-preview"
   end
 
   test "can retrieve DmProfile 2 without using all parameters, part 3" do
@@ -287,9 +421,8 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
     end
     get search_pages_results_path(@params)
     assert_response :success
-    assert User.search(@params).count == 1
-    assert_equal(@dm2, User.search(@params).first)
-    assert_select "div.row", 1
+    assert User.search(@params, current_user).include?(@dm2)
+    assert_select "div.profile-preview"
   end
 
   test "can retrieve DmProfile 1" do
@@ -299,10 +432,9 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
         log_in_as(@searcher, "search", 0)
       end
     get search_pages_results_path(@params)
-    assert User.search(@params).count == 1
     assert_response :success
-    assert_equal(@dm1, User.search(@params).first)
-    assert_select "div.row", 1
+    assert User.search(@params, current_user).include?(@dm1)
+    assert_select "div.profile-preview"
   end
 
   test "can retrieve DmProfile 1 without using all parameters, part 1" do
@@ -312,10 +444,9 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
         log_in_as(@searcher, "search", 0)
       end
     get search_pages_results_path(@params)
-    assert User.search(@params).count == 1
     assert_response :success
-    assert_equal(@dm1, User.search(@params).first)
-    assert_select "div.row", 1
+    assert User.search(@params, current_user).include?(@dm1)
+    assert_select "div.profile-preview"
   end
 
   test "can retrieve DmProfile 1 without using all parameters, part 2" do
@@ -325,10 +456,9 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
         log_in_as(@searcher, "search", 0)
       end
     get search_pages_results_path(@params)
-    assert User.search(@params).count == 1
     assert_response :success
-    assert_equal(@dm1, User.search(@params).first)
-    assert_select "div.row", 1
+    assert User.search(@params, current_user).include?(@dm1)
+    assert_select "div.profile-preview"
   end
 
   test "can retrieve DmProfile 1 without using all parameters, part 3" do
@@ -338,10 +468,10 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
       log_in_as(@searcher, "search", 0)
     end
     get search_pages_results_path(@params)
-    assert User.search(@params).count == 1
     assert_response :success
-    assert_equal(@dm1, User.search(@params).first)
-    assert_select "div.row", 1
+    assert User.search(@params, current_user).count == 1
+    assert_equal(@dm1, User.search(@params, current_user).first)
+    assert_select "div.profile-preview", 1
   end
 
   test "some parameter combinations get multiple DmProfiles, part 1" do
@@ -351,7 +481,7 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
     end
     get search_pages_results_path(@params)
     assert_response :success
-    assert User.search(@params).count > 1
+    assert User.search(@params, current_user).count > 1
   end
 
   test "some parameter combinations get multiple DmProfiles, part 2" do
@@ -362,10 +492,11 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
     end
     get search_pages_results_path(@params)
     assert_response :success
-    assert User.search(@params).count > 1
+    assert User.search(@params, current_user).count > 1
   end
 
   test "a user cannot find a DM unwilling to travel to their location" do
+    #attempting to find @dm3
     @params = {option: "AND", profile_type: "1", experience_level: "4", online_play: "1",
       r2: "original_ruleset", r5: "third", r6: "three_point_five", campaign_type: "module"}
       if current_user.nil?
@@ -373,9 +504,77 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
       end
       get search_pages_results_path(@params)
       assert_response :success
-      #puts "#{User.search(@params).count}"
-      assert User.search(@params).count == 1
+      #puts "#{User.search(@params, current_user).count}"
+      assert_not User.search(@params, current_user).include?(@dm3)
       assert_select "p", "There are no users that match your given preferences."
+  end
+
+  test "Using the 'OR' feature returns results from most relevant to least relevant for DmProfiles" do
+    if current_user.nil?
+      log_in_as(@searcher, "search", 0)
+    end
+    @params = {option: "OR", profile_type: "1", experience_level: "1", online_play: "1",
+      third: "5", three_point_five: "1", campaign_type: "1"}
+    get search_pages_results_path(@params)
+    assert_response :success
+    #Intended Order: @dm1, @dm3, @dm2
+    assert_select "div.profile-preview"
+    #byebug
+    sorted = User.search(@params, current_user)
+    #unsorted = DmProfile.all
+    #byebug #Uncomment both these lines in case you need to prove to yourself this works...
+    assert_equal(sorted.first, @dm1)
+    assert_equal(sorted.second, @dm4)
+    assert_equal(sorted.third, @dm5)
+  end
+
+  test "A DmProfile will see up to 4 recommended DmProfiles" do
+    if current_user.nil?
+      log_in_as(@searcher, "search", 0)
+    end
+    get user_dm_profiles_path(@u3, @dm1)
+    assert_response :success
+    recommendations = recommend_set(User.recommender(@dm1), @u3)
+    assert recommendations.count == 4
+    #puts assert_select "div.profile-preview"
+    assert recommendations.first.class == DmProfile
+  end
+
+  test "A list of recommended DmProfiles is sorted from most relevant to least relevant" do
+    if current_user.nil?
+      log_in_as(@searcher, "search", 0)
+    end
+    get user_dm_profiles_path(@u3, @dm1)
+    assert_response :success
+    recommendations = recommend_set(User.recommender(@dm1), @u3)
+    assert recommendations.count == 4
+    assert_equal(recommendations.first, @dm2)
+    assert_equal(recommendations.second, @dm4)
+    assert_equal(recommendations.third, @dm5)
+    assert_equal(recommendations.fourth, @dm6)
+  end
+
+  test "the list of recommended DmProfiles does not include the one being viewed nor the searcher" do
+    if current_user.nil?
+      log_in_as(@searcher, "search", 0)
+    end
+    get user_dm_profiles_path(@u3, @dm1)
+    assert_response :success
+    recommendations = recommend_set(User.recommender(@dm1), @u3)
+    assert recommendations.count == 4
+    assert_not recommendations.include?(@dm1)
+    assert_not recommendations.include?(@searcher)
+  end
+
+  test "the list of recommended DmProfiles does not include users 3+ years older than the one viewed" do
+    if current_user.nil?
+      log_in_as(@searcher, "search", 0)
+    end
+    get user_dm_profiles_url(@u3, @dm1)
+    assert_response :success
+    recommendations = recommend_set(User.recommender(@dm1), @u3)
+    assert recommendations.count == 4
+    assert_not recommendations.include?(@dm7)
   end
 
 end
