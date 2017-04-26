@@ -5,12 +5,15 @@ class PlayerProfilesControllerTest < ActionDispatch::IntegrationTest
     @user = users(:one)
     @user2 = users(:two)
     @player_profile = player_profiles(:one)
+    @player_profile2 = player_profiles(:two)
     @player_profile.user_id = @user.id
+    @player_profile2.user_id = @user2.id
+    @user2.player_profile = @player_profile2
     @player_profile.save
   end
 
   test "should get index" do
-    log_in_as @user, 'password', 1
+    log_in_as(@user, 'password', 0)
     get user_player_profiles_url(@user, @player_profile)
     assert_response :success
   end
@@ -24,12 +27,12 @@ class PlayerProfilesControllerTest < ActionDispatch::IntegrationTest
     assert_difference('PlayerProfile.count') do
       post user_player_profiles_url(@user), params: { player_profile: { advanced_ruleset: @player_profile.advanced_ruleset, bio: @player_profile.bio, experience_level: @player_profile.experience_level, fifth: @player_profile.fifth, fourth: @player_profile.fourth, homebrew: @player_profile.homebrew, module: @player_profile.module, online_play: @player_profile.online_play, original_campaign: @player_profile.original_campaign, original_ruleset: @player_profile.original_ruleset, pathfinder: @player_profile.pathfinder, third: @player_profile.third, three_point_five: @player_profile.three_point_five, user_id: @player_profile.user_id } }
     end
-
+    #byebug
     assert_redirected_to user_player_profiles_url(@user, PlayerProfile.last)
   end
 
   test "should show player_profile" do
-    log_in_as @user, 'password', 1
+    log_in_as(@user, 'password', 0)
     get user_player_profiles_url(@user, @player_profile)
     assert_response :success
   end
@@ -54,6 +57,7 @@ class PlayerProfilesControllerTest < ActionDispatch::IntegrationTest
   test "should update player_profile" do
     log_in_as(@user, 'password', 1)
     patch user_player_profiles_url(@user), params: { player_profile: { advanced_ruleset: @player_profile.advanced_ruleset, bio: @player_profile.bio, experience_level: @player_profile.experience_level, fifth: @player_profile.fifth, fourth: @player_profile.fourth, homebrew: @player_profile.homebrew, module: @player_profile.module, online_play: @player_profile.online_play, original_campaign: @player_profile.original_campaign, original_ruleset: @player_profile.original_ruleset, pathfinder: @player_profile.pathfinder, third: @player_profile.third, three_point_five: @player_profile.three_point_five, user_id: @player_profile.user_id } }
+    #byebug
     assert_redirected_to user_player_profiles_url(@user, @player_profile)
   end
 

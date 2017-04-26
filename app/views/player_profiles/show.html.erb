@@ -47,7 +47,31 @@
         <%end%>
       </div>
     </div>
-
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8">
+      <div class="profile-bio">
+      <p>
+        <strong>Bio:</strong>
+        <%= @player_profile.bio %>
+      </p>
+    </div>
+    </div>
+    <div class="col-md-4">
+      <div class="more-users-box">
+      <p>
+        <strong>You may also like:</strong>
+      </p>
+      <div class="container-fluid">
+        <% if @similar_profiles.count > 0 %>
+          <% @similar_profiles.each do |s| %>
+            <% if !s.nil? %>
+              <%= render s %>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
 
  <!--Message sending modal. Class name is "modall" to avoid bootstrap conficts -->
      <div class="modall" id="msgmodal">
@@ -62,19 +86,6 @@
       </section>
     </div>
 
-    <div class="row">
-      <div class="col-md-8">
-        <div class="profile-bio">
-          <p class="bio-label">Bio</p>
-          <p class="bio-text"><%= @player_profile.bio %></p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="more-users-box info-label">
-          You may also like:
-        </div>
-      </div>
-    </div>
   </div>
   <div class="row">
     <div class="col-sm-3">

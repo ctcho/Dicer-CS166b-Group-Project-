@@ -4,12 +4,17 @@ require 'byebug'
 class DmProfilesControllerTest < ActionDispatch::IntegrationTest
   setup do
     @dm_profile = dm_profiles(:one)
+    @dm_profile2 = dm_profiles(:two)
     @user = users(:one)
     @user2 = users(:two)
+    @user2.dm_profile = @dm_profile2
+    @user.dm_profile = @dm_profile
+    @dm_profile.user_id = @user.id
     @dm_profile.update(user: @user)
   end
 
   test "should get index" do
+    log_in_as(@user, 'password', 0)
     get user_dm_profiles_url(@user, @dm_profile)
     assert_response :success
   end
@@ -39,11 +44,12 @@ class DmProfilesControllerTest < ActionDispatch::IntegrationTest
                                               three_point_five: @dm_profile.three_point_five,
                                               user_id: @dm_profile.user_id } }
     end
-
+    #byebug
     assert_redirected_to user_dm_profiles_url(@user, DmProfile.last)
   end
 
   test "should show dm_profile" do
+    log_in_as(@user, 'password', 0)
     get user_dm_profiles_url(@user, @dm_profile)
     assert_response :success
   end

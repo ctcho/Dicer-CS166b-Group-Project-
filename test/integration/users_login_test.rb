@@ -4,6 +4,11 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
 
   def setup
     @user = users(:one)
+    @user2 = users(:two)
+    @p1 = player_profiles(:one)
+    @p2 = player_profiles(:two)
+    @user.player_profile = @p1
+    @user2.player_profile = @p2
   end
 
   def invalid_login
