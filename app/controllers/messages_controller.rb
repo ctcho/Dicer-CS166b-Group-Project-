@@ -23,10 +23,13 @@ class MessagesController < ApplicationController
     byebug
     current_user.messages.build(content: params[:message][:content], chat_room_id: @chat_room.id)
     current_user.save
+<<<<<<< HEAD
     #it might not be true that a user looks at a chatroom when they send a message
     ChatRoomsUser.where("user_id = ?", current_user.id).find_by(chat_room_id: @room.id)
                  .update_attributes(last_viewed: Time.now)
     render 'chats/index'
+=======
+>>>>>>> 0664335f91ae965fd58edd08419251c42e19132e
     @messages = @chat_room.messages
     redirect_to chat_room_path(@chat_room)
   end

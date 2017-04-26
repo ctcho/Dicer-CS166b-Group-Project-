@@ -23,6 +23,7 @@
 
         <p class="info-label">Likes to play:</p>
         <p class="info"><%= get_ruleset_strings(@dm_profile).join(", ") %></p>
+<<<<<<< HEAD
 
         <br>
 
@@ -30,6 +31,15 @@
 
         <br>
 
+=======
+
+        <br>
+
+        <p class="info-label"><%= translate_online_play(@dm_profile) %></p>
+
+        <br>
+
+>>>>>>> 0664335f91ae965fd58edd08419251c42e19132e
         <% unless current_user? @user  %>
           <% if within_distance(User.find(@dm_profile.user_id), current_user) %>
             <p class="info-label">Distance:</p>
@@ -48,6 +58,7 @@
       </div>
 
     </div>
+<<<<<<< HEAD
     <div class="row">
       <div class="col-md-8">
         <div class="profile-bio">
@@ -60,6 +71,33 @@
           You may also like:
         </div>
       </div>
+=======
+  </div>
+  <div class="row">
+    <div class="col-md-8">
+      <div class="profile-bio">
+      <p>
+        <strong>Bio:</strong>
+        <%= @dm_profile.bio %>
+      </p>
+    </div>
+    </div>
+    <div class="col-md-4">
+      <div class="more-users-box">
+      <p>
+        <strong>You may also like:</strong>
+      </p>
+      <div class="container-fluid">
+        <% if @similar_profiles.count > 0 %>
+          <% @similar_profiles.each do |s| %>
+            <% if !s.nil? %>
+              <%= render s %>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+>>>>>>> 0664335f91ae965fd58edd08419251c42e19132e
     </div>
   </div>
   <div class="row">

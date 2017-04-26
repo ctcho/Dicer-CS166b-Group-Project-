@@ -1,4 +1,5 @@
 class DmProfilesController < ApplicationController
+  include SearchPagesHelper
   before_action :set_dm_profile, only: [:show, :edit, :update, :destroy]
   before_action :logged_in_user, only: [:new, :edit, :update]
   before_action :correct_user, only: [:new, :edit, :update]
@@ -13,6 +14,8 @@ class DmProfilesController < ApplicationController
   def show
     @user = User.find(params[:user_id])
     @dm_profile = @user.dm_profile
+    @similar_profiles = User.recommender(@dm_profile)
+    @similar_profiles = recommend_set(@similar_profiles, @user)
     if !@dm_profile
       redirect_to new_user_dm_profiles_path(@user, tutorial: params[:tutorial])
     else
