@@ -8,7 +8,6 @@
       <div class="profile-text col-md-7">
         <p class="info-label">Username:</p>
         <p class="info"><%= @user.username %></p>
-<<<<<<< HEAD
 
         <br>
 
@@ -42,49 +41,12 @@
 
       </div>
 
-=======
-
-        <br>
-
-        <p class="info-label">Age:</p>
-        <p class="info"><%= @user.age %></p>
-
-        <br>
-
-        <p class="info-label">Experience:</p>
-        <p class="info"><%= translate_experience_level(@player_profile.experience_level) %></p>
-
-        <br>
-
-        <p class="info-label">Likes to play:</p>
-        <p class="info"><%= get_ruleset_strings(@player_profile).join(", ") %></p>
-
-        <br>
-
-        <p class="info-label"><%= translate_online_play(@player_profile) %></p>
-
-        <br>
-
-        <% unless current_user? @user %>
-          <% if within_distance(User.find(@player_profile.user_id), current_user) %>
-            <p class="info-label">Distance:</p>
-            <p class="info"><%= find_distance(User.find(@player_profile.id), current_user) %></p>
-          <% else %>
-            <p class="info-label">Too far away!</p>
-          <% end %>
-        <% end %>
-
-      </div>
-
->>>>>>> 0664335f91ae965fd58edd08419251c42e19132e
       <div class="button-container col-md-3">
         <% if (current_user.id - 1) != @player_profile.id %>
           <button class="contact-me-button", id="contact"> Contact me! </button>
         <%end%>
       </div>
-<<<<<<< HEAD
     </div>
-=======
     </div>
   </div>
   <div class="row">
@@ -110,8 +72,6 @@
           <% end %>
         <% end %>
       </div>
->>>>>>> 0664335f91ae965fd58edd08419251c42e19132e
-
 
  <!--Message sending modal. Class name is "modall" to avoid bootstrap conficts -->
      <div class="modall" id="msgmodal">
@@ -126,19 +86,6 @@
       </section>
     </div>
 
-    <div class="row">
-      <div class="col-md-8">
-        <div class="profile-bio">
-          <p class="bio-label">Bio</p>
-          <p class="bio-text"><%= @player_profile.bio %></p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="more-users-box info-label">
-          You may also like:
-        </div>
-      </div>
-    </div>
   </div>
   <div class="row">
     <div class="col-sm-3">
