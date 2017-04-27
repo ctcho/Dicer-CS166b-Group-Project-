@@ -22,21 +22,21 @@
     <strong>Preferred Rulesets</strong>
     <br><br>
     <%=label_tag :home, "Homebrew" %>
-    <%=check_box_tag :r1, :homebrew %>
+    <%=check_box_tag :homebrew, 1 %>
     <%=label_tag :original, "Original Ruleset" %>
-    <%=check_box_tag :r2, :original_ruleset %>
+    <%=check_box_tag :original_ruleset, 2 %>
     <%=label_tag :advanced, "Advanced Ruleset" %>
-    <%=check_box_tag :r3, :advanced_ruleset %>
+    <%=check_box_tag :advanced_ruleset, 3 %>
     <%=label_tag :path, "Pathfinder" %>
-    <%=check_box_tag :r4, :pathfinder %>
+    <%=check_box_tag :pathfinder, 4 %>
     <%=label_tag :th, "Third" %>
-    <%=check_box_tag :r5, :third %>
+    <%=check_box_tag :third, 5 %>
     <%=label_tag :t_five, "Three-Point-Five" %>
-    <%=check_box_tag :r6, :three_point_five %>
+    <%=check_box_tag :three_point_five, 6 %>
     <%=label_tag :frth, "Fourth" %>
-    <%=check_box_tag :r7, :fourth %>
+    <%=check_box_tag :fourth, 7 %>
     <%=label_tag :ffth, "Fifth" %>
-    <%=check_box_tag :r8, :fifth %>
+    <%=check_box_tag :fifth, 8 %>
     <br><br><br>
     <strong>Prefer Online Play?</strong>
     <br>
@@ -44,8 +44,8 @@
     <br><br><br>
     <strong>Campaign Type</strong>
     <br>
-    <%= select_tag :campaign_type, options_for_select([["No preference", 2],
-    ["Original Campaign", :original_campaign], ["Module", :module]]) %>
+    <%= select_tag :campaign_type, options_for_select([["No preference", 2], ["Original Campaign", 0],
+    ["Module", 1]]) %>
     <br><br><br>
   <%= submit_tag "Search", name: nil %>
 <% end %>
