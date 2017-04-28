@@ -1,0 +1,11 @@
+<div class="chat-user-container">
+  <div class="active-user-avatar">
+    <%= image_tag user.avatar.url(:smallerthumb), class: "message-avatar" %>
+  </div>
+  <div class="chat-user-name">
+    <%= user.username %>
+  </div>
+  <div class="active-dot">
+    <!-- put your green/red/blank dot here whoever wants to do that -->
+  </div>
+</div>

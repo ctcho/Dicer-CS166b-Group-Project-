@@ -3,21 +3,21 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .chat-dashboard-container{
-  margin-top: 50px;
+  margin-top: 0px;
 }
 
 .chatroom-container{
-
-}
-
-.active-chatroom{
   background-image: url("parchmentbackground6");
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.active-chatroom{
   width: 100%;
   text-align: left;
   float: left;
   display: block;
+  padding: 10px;
 }
 
 .sidebar{
@@ -26,6 +26,7 @@
 
 #active-chatroom-header{
   text-align: center;
+  padding-top: 50px;
 }
 
 .message-container{ //individual message
@@ -111,21 +112,21 @@
 
 .primary-column{
     float: left;
-    margin-left: 25%;
-    width: 50%;
+    margin-left: 20%;
+    width: 60%;
     padding: 0px;
 }
 
 .secondary-column{
     float: left;
-    margin: 0 0 0 -75%;
-    width: 25%;
+    margin: 0 0 0 -80%;
+    width: 20%;
     clear: none;
 }
 
 .tertiary-column{
     float: right;
-    width: 25%;
+    width: 20%;
     clear: none;
 }
 
@@ -145,13 +146,14 @@
 }
 
 .chat-name-container:first-child{
-  margin-top: 50px;
+  margin-top: 85px;
 }
 
 .active-chat-sidebar{
   margin-top: -50px;
   background-color: rgba(200,200,200,0.6);
   border-right: 2px solid rgba(30,30,30,0.9);
+  border-left: 2px solid rgba(30,30,30,0.9);
   min-height: 113vh;
 }
 
@@ -161,4 +163,51 @@
   color: black;
   padding: 7px 8px 7px 8px;
   line-height: 24px;
+}
+
+#active-users-label{
+  font-size: 3em;
+  color: rgb(150,0,0);
+  padding-top: 75px;
+  padding-left: 10px;
+  text-align:center;
+  text-decoration: underline;
+}
+
+#active-users-sidebar{
+  background-image: url('parchmentbackground4');
+}
+
+.user-list-container{
+  text-align: center;
+}
+
+.chat-user-container{
+  border-width: 1px 0px 0px 0px;
+  border-color: rgba(50,50,50,0.9);
+  border-style: solid;
+  background-color: rgba(200,200,200,0.4);
+  padding: 5px;
+  min-height: 45px;
+}
+
+.chat-user-container:hover{
+  background-color: rgba(200,200,200,0.8);
+  cursor: pointer;
+}
+
+.chat-user-name{
+  font-family: 'Immortal';
+  font-size: 1.5em;
+  line-height: 25px;
+  text-align: left;
+  float: left;
+  display: inline-block;
+  padding: 10px 5px 10px 5px;
+  overflow: hidden;
+}
+
+.active-user-avatar{
+  float: left;
+  display: inline-block;
 }

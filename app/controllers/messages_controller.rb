@@ -31,8 +31,9 @@ class MessagesController < ApplicationController
   #TODO: When this loads, current_user's last_viewed should update
   def show
     #in the future this won't be true- we'll have to separate chats
-    ChatRoomsUser.where("user_id = ?", current_user.id).find_by(chat_room_id: @room.id)
-                 .update_attributes(last_viewed: Time.now)
+    #ChatRoomsUser.where("user_id = ?", current_user.id).find_by(chat_room_id: @room.id)
+    #             .update_attributes(last_viewed: Time.now)
+    @messages = User.find(params[:user_id]).messages
   end
 
   private
