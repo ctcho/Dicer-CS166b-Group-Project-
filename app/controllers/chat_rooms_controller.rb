@@ -10,9 +10,15 @@ class ChatRoomsController < ApplicationController
   def new
   end
 
+  def index
+    @chat_rooms = User.find_by(id: params[:format]).chat_rooms
+    render 'chat_rooms/index'
+  end
 
   def show
     @messages = @chat_room.messages.order(:created_at)
+    ChatRoomsUser.where("user_id = ?", current_user.id).find_by(chat_room_id: params[:id])
+                 .update_attributes(last_viewed: Time.now)
   end
 
   def remove_user
