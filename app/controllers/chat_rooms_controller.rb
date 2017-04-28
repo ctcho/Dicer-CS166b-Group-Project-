@@ -13,6 +13,7 @@ class ChatRoomsController < ApplicationController
 
   def show
     @messages = @chat_room.messages.order(:created_at)
+    @chat_rooms = ChatRoom.all; # FOR CSS PURPOSES, REPLACE WITH ALL CHATS ACTIVE FOR THE ACCESSING USER
   end
 
   def remove_user
