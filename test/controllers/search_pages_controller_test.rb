@@ -144,24 +144,25 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
     assert_select "a[href=?]", search_pages_search_path
   end
 
-  test "user will only see PlayerProfile recommendations if they don't have a DmProfile" do
+  test "user will see recommendations based on only one profile type if they don't have the other" do
     get user_path(@searcher)
     assert_response :success
-    recommendations = recommend_set(User.recommender(@p0), @searcher)
-    assert recommendations.count > 0
-    assert recommendations.first.class == PlayerProfile
-    assert "div.profile-preview", 1
+    player_recommend = recommend_set(User.recommender(@p0, "player"), @searcher)
+    dm_recommend = recommend_set(User.recommender(@p0, "dm"), @searcher)
+    assert player_recommend.count > 0
+    assert dm_recommend.count > 0
+    assert "div.profile-preview"
   end
 
-  test "user will see both PlayerProfile and DmProfile recommendations if they have both profile types" do
+  test "user will see recommendations based on both profile types if they have both profile types" do
     dm0 = DmProfile.create(user_id: 0, bio: "My Text", experience_level: 2, online_play: 1, homebrew: 0,
       original_ruleset: 0, advanced_ruleset: 0, pathfinder: 0, third: 0, three_point_five: 0, fourth: 0,
       fifth: 0, original_campaign: 0, module: 0)
     @searcher.dm_profile = dm0
     get user_path(@searcher)
     assert_response :success
-    recommend_players = recommend_set(User.recommender(@p0), @searcher)
-    recommend_dms = recommend_set(User.recommender(dm0), @searcher)
+    recommend_players = recommend_set(User.recommender(@p0, "player"), @searcher)
+    recommend_dms = recommend_set(User.recommender(dm0, "dm"), @searcher)
     assert recommend_players.count > 0
     assert recommend_dms.count > 0
     assert "div.profile-preview", 2
@@ -326,7 +327,7 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
     end
     get user_player_profiles_url(@u1, @p1)
     assert_response :success
-    recommendations = recommend_set(User.recommender(@p1), @u1)
+    recommendations = recommend_set(User.recommender(@p1, "player"), @u1)
     assert recommendations.count == 4
     #puts assert_select "div.profile-preview"
     assert recommendations.first.class == PlayerProfile
@@ -338,7 +339,7 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
     end
     get user_player_profiles_url(@u1, @p1)
     assert_response :success
-    recommendations = recommend_set(User.recommender(@p1), @u1)
+    recommendations = recommend_set(User.recommender(@p1, "player"), @u1)
     assert recommendations.count == 4
     assert_equal(recommendations.first, @p2)
     assert_equal(recommendations.second, @p4)
@@ -352,7 +353,7 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
     end
     get user_player_profiles_url(@u1, @p1)
     assert_response :success
-    recommendations = recommend_set(User.recommender(@p1), @u1)
+    recommendations = recommend_set(User.recommender(@p1, "player"), @u1)
     assert recommendations.count == 4
     assert_not recommendations.include?(@p1)
     assert_not recommendations.include?(@searcher)
@@ -364,7 +365,7 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
     end
     get user_player_profiles_url(@u1, @p1)
     assert_response :success
-    recommendations = recommend_set(User.recommender(@p1), @u1)
+    recommendations = recommend_set(User.recommender(@p1, "player"), @u1)
     assert recommendations.count == 4
     assert_not recommendations.include?(@p7)
   end
@@ -527,7 +528,7 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
     end
     get user_dm_profiles_path(@u3, @dm1)
     assert_response :success
-    recommendations = recommend_set(User.recommender(@dm1), @u3)
+    recommendations = recommend_set(User.recommender(@dm1, "dm"), @u3)
     assert recommendations.count == 4
     #puts assert_select "div.profile-preview"
     assert recommendations.first.class == DmProfile
@@ -539,7 +540,7 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
     end
     get user_dm_profiles_path(@u3, @dm1)
     assert_response :success
-    recommendations = recommend_set(User.recommender(@dm1), @u3)
+    recommendations = recommend_set(User.recommender(@dm1, "dm"), @u3)
     assert recommendations.count == 4
     assert_equal(recommendations.first, @dm2)
     assert_equal(recommendations.second, @dm4)
@@ -553,7 +554,7 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
     end
     get user_dm_profiles_path(@u3, @dm1)
     assert_response :success
-    recommendations = recommend_set(User.recommender(@dm1), @u3)
+    recommendations = recommend_set(User.recommender(@dm1, "dm"), @u3)
     assert recommendations.count == 4
     assert_not recommendations.include?(@dm1)
     assert_not recommendations.include?(@searcher)
@@ -565,7 +566,7 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
     end
     get user_dm_profiles_url(@u3, @dm1)
     assert_response :success
-    recommendations = recommend_set(User.recommender(@dm1), @u3)
+    recommendations = recommend_set(User.recommender(@dm1, "dm"), @u3)
     assert recommendations.count == 4
     assert_not recommendations.include?(@dm7)
   end

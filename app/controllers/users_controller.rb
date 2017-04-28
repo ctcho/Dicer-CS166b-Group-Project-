@@ -17,26 +17,20 @@ class UsersController < ApplicationController
     @user = current_user
     @conversations = @user.chat_rooms
     @similar_profiles = []
-    if !@user.player_profile.nil? && @user.dm_profile.nil?
-      similar_players = recommend_set(User.recommender(@user.player_profile), @user)
-      @similar_profiles << similar_players.first
-      @similar_profiles << similar_players.second
-      @similar_profiles << similar_players.third
-      @similar_profiles << similar_players.fourth
-    elsif !@user.dm_profile.nil? && @user.player_profile.nil?
-      similar_dms = recommend_set(User.recommender(@user.dm_profile), @user)
-      @similar_profiles << similar_dms.first
-      @similar_profiles << similar_dms.second
-      @similar_profiles << similar_dms.third
-      @similar_profiles << similar_dms.fourth
+    if @user.dm_profile.nil?
+      similar_players = recommend_set(User.recommender(@user.player_profile, "player"), @user)
+      similar_dms = recommend_set(User.recommender(@user.player_profile, "dm"), @user)
+    elsif @user.player_profile.nil?
+      similar_players = recommend_set(User.recommender(@user.dm_profile, "player"), @user)
+      similar_dms = recommend_set(User.recommender(@user.dm_profile, "dm"), @user)
     else #user has both
-      similar_players = recommend_set(User.recommender(@user.player_profile), @user)
-      similar_dms = recommend_set(User.recommender(@user.dm_profile), @user)
-      @similar_profiles << similar_players.first
-      @similar_profiles << similar_players.second
-      @similar_profiles << similar_dms.first
-      @similar_profiles << similar_dms.second
+      similar_players = recommend_set(User.recommender(@user.player_profile, "player"), @user)
+      similar_dms = recommend_set(User.recommender(@user.dm_profile, "dm"), @user)
     end
+    @similar_profiles << similar_players.first
+    @similar_profiles << similar_players.second
+    @similar_profiles << similar_dms.first
+    @similar_profiles << similar_dms.second
   end
 
   # GET /users/new

@@ -21,12 +21,12 @@ class User < ApplicationRecord
 
   has_secure_password
 
-  def self.recommender(profile)
+  def self.recommender(profile, type)
     rulesets = []
     rulesets = rule_recom_parse([profile.homebrew, profile.original_ruleset, profile.advanced_ruleset,
     profile.pathfinder, profile.third, profile.three_point_five, profile.fourth, profile.fifth])
     filter = search_checksum(rulesets)
-    if profile.class == PlayerProfile
+    if type == "player"
       result = PlayerProfile.where(experience_level: profile.experience_level)
       .or(searching_rulesets(rulesets, "0", "OR"))
     else #DM profile
