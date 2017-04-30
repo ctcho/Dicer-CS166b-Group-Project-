@@ -1,9 +1,9 @@
 <div class="message-container">
+  <div class="message-user">
+    <%= image_tag message.user.avatar.url(:smallerthumb), class: "message-avatar" %>
+  </div>
   <div class="message">
-    <div class="message-user">
-      <%= message.user.username %>
-    </div>
-    <div class="message-content">
+    <div class="message-content black-border-text">
       <%= message.content %>
     </div>
   </div>

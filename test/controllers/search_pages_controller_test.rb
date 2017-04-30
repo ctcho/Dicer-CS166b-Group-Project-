@@ -151,7 +151,7 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
     dm_recommend = recommend_set(User.recommender(@p0, "dm"), @searcher)
     assert player_recommend.count > 0
     assert dm_recommend.count > 0
-    assert "div.profile-preview"
+    #assert "div.profile-preview"
   end
 
   test "user will see recommendations based on both profile types if they have both profile types" do
@@ -165,7 +165,7 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
     recommend_dms = recommend_set(User.recommender(dm0, "dm"), @searcher)
     assert recommend_players.count > 0
     assert recommend_dms.count > 0
-    assert "div.profile-preview", 2
+    #assert "div.profile-preview", 2
   end
 
 

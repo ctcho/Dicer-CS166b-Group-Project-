@@ -2,15 +2,22 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
-.chatroom-container{
-  margin-top: 50px;
+.chat-dashboard-container{
+  margin-top: 0px;
 }
 
-.active-chatroom{
+.chatroom-container{
   background-image: url("parchmentbackground6");
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.active-chatroom{
+  width: 100%;
+  text-align: left;
+  float: left;
+  display: block;
+  padding: 10px;
 }
 
 .sidebar{
@@ -19,18 +26,33 @@
 
 #active-chatroom-header{
   text-align: center;
+  padding-top: 50px;
 }
 
 .message-container{ //individual message
-
+  margin: 10px;
+  display: block;
 }
 
 .message{ // individual message
-
+  color: white;
+  padding: 3px 8px 3px 8px;
+  background-color: rgba(110,0,0,0.8);
+  border-radius: 10px;
+  display: inline-block;
 }
 
 .message-user{
+  display: inline-block;
+}
 
+.message-avatar{
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.message-avatar:hover{
+  border-radius: 0;
 }
 
 .message-content{
@@ -38,9 +60,154 @@
 }
 
 #messages{ //contains all messages for chatroom
-
+  margin: 10px;
+  font-family: 'Immortal';
+  font-size: 1.5em;
+  line-height: 25px;
 }
 
 #messages-table{ // idk?
 
+}
+
+#message_content{
+  padding: 2px 5px 2px 5px;
+  width: 90%;
+  height: 50px;
+  font-family: 'Immortal';
+  font-size: 1.35em;
+  line-height: 22px;
+  border-radius: 10px;
+  border-width: 2px;
+  border-right: 0px;
+  border-style: solid;
+  border-radius: 10px 0px 0px 10px;
+  border-color: grey;
+  transition: 0.2s;
+  vertical-align: bottom;
+  display: inline-block;
+}
+
+#message_content:focus{
+  border: 2px solid rgb(140,0,0);
+  border-right: 0px;
+}
+
+#send-button{
+  border-radius: 0px 10px 10px 0px;
+  border-color: rgb(140,0,0);
+  background-color: rgb(140,0,0);
+  color: white;
+  font-family: 'Hultog';
+  display: inline-block;
+  width: 10%;
+  font-size: 1.65em;
+  height: 50px;
+  margin-left: -7px;
+}
+
+#message-field{
+  height: 50px;
+}
+
+.primary-column{
+    float: left;
+    margin-left: 20%;
+    width: 60%;
+    padding: 0px;
+}
+
+.secondary-column{
+    float: left;
+    margin: 0 0 0 -80%;
+    width: 20%;
+    clear: none;
+}
+
+.tertiary-column{
+    float: right;
+    width: 20%;
+    clear: none;
+}
+
+.chat-name-container{
+  width: 100%;
+  background-color: rgba(200,200,200,0.6);
+  border-width: 1px 0px 1px 0px;
+  border-color: rgba(50,50,50,0.9);
+  border-style: solid;
+  height: 40px;
+  overflow-y: hidden;
+}
+
+.chat-name-container:hover{
+  background-color: rgba(200,200,200,0.8);
+  cursor: pointer;
+}
+
+.chat-name-container:first-child{
+  margin-top: 85px;
+}
+
+.active-chat-sidebar{
+  margin-top: -50px;
+  background-color: rgba(200,200,200,0.6);
+  border-right: 2px solid rgba(30,30,30,0.9);
+  border-left: 2px solid rgba(30,30,30,0.9);
+  min-height: 113vh;
+}
+
+.chat-name{
+  font-family: 'Dungeon';
+  font-size: 2em;
+  color: black;
+  padding: 7px 8px 7px 8px;
+  line-height: 24px;
+}
+
+#active-users-label{
+  font-size: 3em;
+  color: rgb(150,0,0);
+  padding-top: 75px;
+  padding-left: 10px;
+  text-align:center;
+  text-decoration: underline;
+}
+
+#active-users-sidebar{
+  background-image: url('parchmentbackground4');
+}
+
+.user-list-container{
+  text-align: center;
+}
+
+.chat-user-container{
+  border-width: 1px 0px 0px 0px;
+  border-color: rgba(50,50,50,0.9);
+  border-style: solid;
+  background-color: rgba(200,200,200,0.4);
+  padding: 5px;
+  min-height: 45px;
+}
+
+.chat-user-container:hover{
+  background-color: rgba(200,200,200,0.8);
+  cursor: pointer;
+}
+
+.chat-user-name{
+  font-family: 'Immortal';
+  font-size: 1.5em;
+  line-height: 25px;
+  text-align: left;
+  float: left;
+  display: inline-block;
+  padding: 10px 5px 10px 5px;
+  overflow: hidden;
+}
+
+.active-user-avatar{
+  float: left;
+  display: inline-block;
 }
