@@ -4,6 +4,7 @@ class MessagesController < ApplicationController
   before_action :logged_in_user
 
   def create
+    #swithc to data chat_room id, so you don't have to hav this if else
     if params[:chat_room_id]
       @chat_room = ChatRoom.find(params[:chat_room_id])
     else
@@ -16,15 +17,20 @@ class MessagesController < ApplicationController
         @chat_room.save
       end
     end
+
     #problem: if we resend the post request, a duplicate message ends up being
     #created. But it is a problem when I keep resending the request to look at debug
     #information. Would this happen in real life if I prohibit the send button from being clicked
     #twice?
-    byebug
-    current_user.messages.build(content: params[:message][:content], chat_room_id: @chat_room.id)
-    current_user.save
+    #byebug
+
+    message = current_user.messages.build(content: params[:message][:content], chat_room_id: @chat_room.id)
+    #current_user.save
+    if message.save
+      ActionCable.server.broadcast "chat_rooms_#{@chat_room.id}_channel", content: message.content, username: message.user.username
+    end
     @messages = @chat_room.messages
-    redirect_to chat_room_path(@chat_room)
+    #redirect_to chat_room_path(@chat_room)
   end
 
   def new
@@ -38,6 +44,15 @@ class MessagesController < ApplicationController
         flash[:danger] = "Please Log In"
         redirect_to login_url, notice: "Please Log In"
       end
+    end
+
+    def get_messages
+      @messages = Message.for_display
+      @message = current_user.messages.build
+    end
+
+    def message_params
+      params.require(:message).permit(:content)
     end
 
 end
