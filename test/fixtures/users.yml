@@ -104,3 +104,113 @@ user_6:
   lat: 42.097282
   lng: -72.055034
   last_active: 2017-03-03 13:11:29
+
+user_7:
+  username: unique_names7
+  email: us7@example.com
+  password_digest: <%= User.digest('strongpass7') %>
+  max_distance: 30.0
+  age: 18
+  address: "02453"
+  lat: 42.3624504
+  lng: -71.2577233
+  last_active: 2017-03-03 13:11:29
+
+user_8:
+  username: unique_names8
+  email: us8@example.com
+  password_digest: <%= User.digest('strongpass8') %>
+  max_distance: 30.0
+  age: 18
+  address: "02453"
+  lat: 42.3624504
+  lng: -71.2577233
+  last_active: 2017-03-03 13:11:29
+
+user_9:
+  username: unique_names9
+  email: us9@example.com
+  password_digest: <%= User.digest('strongpass9') %>
+  max_distance: 30.0
+  age: 18
+  address: "02453"
+  lat: 42.3624504
+  lng: -71.2577233
+  last_active: 2017-03-03 13:11:29
+
+user_10:
+  username: unique_names10
+  email: us10@example.com
+  password_digest: <%= User.digest('strongpass10') %>
+  max_distance: 30.0
+  age: 18
+  address: "02453"
+  lat: 42.3624504
+  lng: -71.2577233
+  last_active: 2017-03-03 13:11:29
+
+user_11:
+  username: unique_names11
+  email: us11@example.com
+  password_digest: <%= User.digest('strongpass11') %>
+  max_distance: 30.0
+  age: 18
+  address: "02453"
+  lat: 42.3624504
+  lng: -71.2577233
+  last_active: 2017-03-03 13:11:29
+
+user_12:
+  username: unique_names12
+  email: us12@example.com
+  password_digest: <%= User.digest('strongpass12') %>
+  max_distance: 30.0
+  age: 18
+  address: "02453"
+  lat: 42.3624504
+  lng: -71.2577233
+  last_active: 2017-03-03 13:11:29
+
+user_13:
+  username: unique_names13
+  email: us13@example.com
+  password_digest: <%= User.digest('strongpass13') %>
+  max_distance: 30.0
+  age: 24
+  address: "02453"
+  lat: 42.3624504
+  lng: -71.2577233
+  last_active: 2017-03-03 13:11:29
+
+user_14:
+  username: unique_names14
+  email: us14@example.com
+  password_digest: <%= User.digest('strongpass14') %>
+  max_distance: 30.0
+  age: 24
+  address: "02453"
+  lat: 42.3624504
+  lng: -71.2577233
+  last_active: 2017-03-03 13:11:29
+
+user_15:
+  username: unique_names15
+  email: us15@example.com
+  password_digest: <%= User.digest('strongpass15') %>
+  max_distance: 30.0
+  age: 18
+  address: "02453"
+  lat: 42.3624504
+  lng: -71.2577233
+  last_active: 2017-03-03 13:11:29
+
+user_16:
+  username: unique_names16
+  email: us16@example.com
+  password_digest: <%= User.digest('strongpass16') %>
+  max_distance: 30.0
+  age: 18
+  address: "02453"
+  lat: 42.3624504
+  lng: -71.2577233
+  last_active: 2017-03-03 13:11:29

@@ -1,11 +1,7 @@
-<div class="message-input">
-  <%= form_for(:message, url: chat_room_message_url(@chat_room), method: 'post', remote: true) do |f| %>
-    <div class="field">
-      <%=f.text_area :content, placeholder: "Send new message.." %>
-    </div>
 
-    <div class="action">
-      <%= f.submit "Send", class: "submit" %>
-    </div>
-  <% end %>
-<div>
+<%= form_for(:message, url: chat_room_message_url(@chat_room), method: 'post', remote: true) do |f| %>
+<div class="field" id="message-field">
+  <%=f.text_area :content, placeholder: "Send new message..." %>
+  <%= f.submit "Send", class: "submit black-border-text", id: "send-button" %>
+</div>
+<% end %>

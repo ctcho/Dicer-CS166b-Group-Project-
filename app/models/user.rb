@@ -1,5 +1,6 @@
+include SearchPagesHelper
 class User < ApplicationRecord
-  has_attached_file :avatar, styles: { medium: "175x175>", thumb: "100x100>" }, default_url: ":style/dicepic.png"
+  has_attached_file :avatar, styles: { medium: "175x175>", thumb: "100x100>", smallerthumb: "35x35>"}, default_url: ":style/dicepic.png"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
   validates_with AttachmentSizeValidator, attributes: :avatar, less_than: 1.megabytes
   attr_accessor :remember_token
@@ -20,7 +21,36 @@ class User < ApplicationRecord
 
   has_secure_password
 
-
+  def self.recommender(profile)
+    rulesets = []
+    rulesets = rule_recom_parse([profile.homebrew, profile.original_ruleset, profile.advanced_ruleset,
+    profile.pathfinder, profile.third, profile.three_point_five, profile.fourth, profile.fifth])
+    filter = search_checksum(rulesets)
+    if profile.class == PlayerProfile
+      result = PlayerProfile.where(experience_level: profile.experience_level)
+      .or(PlayerProfile.where(rulesets[0])
+      .or(PlayerProfile.where(rulesets[1]))
+      .or(PlayerProfile.where(rulesets[2]))
+      .or(PlayerProfile.where(rulesets[3]))
+      .or(PlayerProfile.where(rulesets[4]))
+      .or(PlayerProfile.where(rulesets[5]))
+      .or(PlayerProfile.where(rulesets[6]))
+      .or(PlayerProfile.where(rulesets[7]))
+      )
+    else #DM profile
+      result = DmProfile.where(experience_level: profile.experience_level)
+      .or(DmProfile.where(rulesets[0])
+      .or(DmProfile.where(rulesets[1]))
+      .or(DmProfile.where(rulesets[2]))
+      .or(DmProfile.where(rulesets[3]))
+      .or(DmProfile.where(rulesets[4]))
+      .or(DmProfile.where(rulesets[5]))
+      .or(DmProfile.where(rulesets[6]))
+      .or(DmProfile.where(rulesets[7]))
+      )
+    end
+    return sort_results(result, filter)
+  end
 
   def self.location(user, profile_type)
     if profile_type == "0" #Player Profiles
@@ -47,35 +77,77 @@ class User < ApplicationRecord
     rulesets = ruleset_parse([parameters[:homebrew], parameters[:original_ruleset], parameters[:advanced_ruleset],
     parameters[:pathfinder], parameters[:third], parameters[:three_point_five], parameters[:fourth],
     parameters[:fifth]])
+    filter = search_checksum([exp_level] + [campaign_types] + [online] + rulesets)
     #if rulesets.nil?
     #byebug
-    if parameters[:profile_type] != "1" #Search the player database
-      PlayerProfile.where(exp_level[:level])
-      .merge(PlayerProfile.where(online[:on_line]))
-      .merge(PlayerProfile.where(campaign_types[:campaign]))
-      .merge(PlayerProfile.where(rulesets[0])
-      .merge(PlayerProfile.where(rulesets[1]))
-      .merge(PlayerProfile.where(rulesets[2]))
-      .merge(PlayerProfile.where(rulesets[3]))
-      .merge(PlayerProfile.where(rulesets[4]))
-      .merge(PlayerProfile.where(rulesets[5]))
-      .merge(PlayerProfile.where(rulesets[6]))
-      .merge(PlayerProfile.where(rulesets[7]))
-      )
-    else #Searching for DM's
-      DmProfile.where(exp_level[:level])
-      .merge(DmProfile.where(online[:on_line]))
-      .merge(DmProfile.where(campaign_types[:campaign]))
-      .merge(DmProfile.where(rulesets[0])
-      .merge(DmProfile.where(rulesets[1]))
-      .merge(DmProfile.where(rulesets[2]))
-      .merge(DmProfile.where(rulesets[3]))
-      .merge(DmProfile.where(rulesets[4]))
-      .merge(DmProfile.where(rulesets[5]))
-      .merge(DmProfile.where(rulesets[6]))
-      .merge(DmProfile.where(rulesets[7]))
-      )
+    if parameters[:option] != "OR" # Search for all of the listed conditions
+      if parameters[:profile_type] != "1" #Search the player database
+        PlayerProfile.where(exp_level)
+        .merge(PlayerProfile.where(online))
+        .merge(PlayerProfile.where(campaign_types))
+        .merge(PlayerProfile.where(rulesets[0])
+        .merge(PlayerProfile.where(rulesets[1]))
+        .merge(PlayerProfile.where(rulesets[2]))
+        .merge(PlayerProfile.where(rulesets[3]))
+        .merge(PlayerProfile.where(rulesets[4]))
+        .merge(PlayerProfile.where(rulesets[5]))
+        .merge(PlayerProfile.where(rulesets[6]))
+        .merge(PlayerProfile.where(rulesets[7]))
+        )
+      else #Searching for DM's
+        DmProfile.where(exp_level)
+        .merge(DmProfile.where(online))
+        .merge(DmProfile.where(campaign_types))
+        .merge(DmProfile.where(rulesets[0])
+        .merge(DmProfile.where(rulesets[1]))
+        .merge(DmProfile.where(rulesets[2]))
+        .merge(DmProfile.where(rulesets[3]))
+        .merge(DmProfile.where(rulesets[4]))
+        .merge(DmProfile.where(rulesets[5]))
+        .merge(DmProfile.where(rulesets[6]))
+        .merge(DmProfile.where(rulesets[7]))
+        )
+      end
+    else #Search for any of the listed conditions
+      if parameters[:profile_type] != "1" #Search the player database
+        results = PlayerProfile.where(exp_level)
+        .or(PlayerProfile.where(online))
+        .or(PlayerProfile.where(campaign_types))
+        .or(PlayerProfile.where(rulesets[0])
+        .or(PlayerProfile.where(rulesets[1]))
+        .or(PlayerProfile.where(rulesets[2]))
+        .or(PlayerProfile.where(rulesets[3]))
+        .or(PlayerProfile.where(rulesets[4]))
+        .or(PlayerProfile.where(rulesets[5]))
+        .or(PlayerProfile.where(rulesets[6]))
+        .or(PlayerProfile.where(rulesets[7]))
+        )
+        #Below is how I chose to sort the results of a search.
+        #The order of priority is as follows:
+        # 1. Ruleset
+        # 2. Experience
+        # 3. Campaign Type
+        # 4. Willingness to play online
+        # --Cameron C.
+        return sort_results(results, filter)
+      else #Searching for DM's
+        results = DmProfile.where(exp_level)
+        .or(DmProfile.where(online))
+        .or(DmProfile.where(campaign_types))
+        .or(DmProfile.where(rulesets[0])
+        .or(DmProfile.where(rulesets[1]))
+        .or(DmProfile.where(rulesets[2]))
+        .or(DmProfile.where(rulesets[3]))
+        .or(DmProfile.where(rulesets[4]))
+        .or(DmProfile.where(rulesets[5]))
+        .or(DmProfile.where(rulesets[6]))
+        .or(DmProfile.where(rulesets[7]))
+        )
+        #Same rule for sorting for players applies to DM's, too.
+        return sort_results(results, filter)
+      end
     end
+
   end
 
   def self.ruleset_parse(rulesets)
@@ -117,9 +189,9 @@ class User < ApplicationRecord
     #puts "#{campaign_id}"
     selected = Hash.new
     if campaign_id == "0" #original_campaign
-      selected[:campaign] = {original_campaign: 1}
+      selected = {original_campaign: 1}
     elsif campaign_id == "1" #module
-      selected[:campaign] = {module: 1}
+      selected = {module: 1}
       #The user has expressed no preference for campaigns otherwise.
     end
     return selected
@@ -128,13 +200,13 @@ class User < ApplicationRecord
   def self.exp_parse(experience)
     exp = Hash.new
     if experience == "1" #New
-      exp[:level] = {experience_level: 1}
+      exp = {experience_level: 1}
     elsif experience == "2" #Novice
-      exp[:level] = {experience_level: 2}
+      exp = {experience_level: 2}
     elsif experience == "3" #Experienced
-      exp[:level] = {experience_level: 3}
+      exp = {experience_level: 3}
     elsif experience == "4" #Veteran
-      exp[:level] = {experience_level: 4}
+      exp = {experience_level: 4}
     end
     return exp
   end
@@ -142,11 +214,41 @@ class User < ApplicationRecord
   def self.online_parse(on)
     line = Hash.new
     if on == "0" #Does not like online play
-      line[:on_line] = {online_play: 0}
+      line = {online_play: 0}
     elsif on == "1" #Does like online play
-      line[:on_line] = {online_play: 1}
+      line = {online_play: 1}
     end
     return line
+  end
+
+  def self.rule_recom_parse(rulesets)
+    preferred = []
+    i = 1
+    rulesets.each do |r|
+      if r == 1 #Profile likes this particular ruleset
+        if i == 1
+          preferred << {homebrew: 1}
+        elsif i == 2
+          preferred << {original_ruleset: 1}
+        elsif i == 3
+          preferred << {advanced_ruleset: 1}
+        elsif i == 4
+          preferred << {pathfinder: 1}
+        elsif i == 5
+          preferred << {third: 1}
+        elsif i == 6
+          preferred << {three_point_five: 1}
+        elsif i == 7
+          preferred << {fourth: 1}
+        else
+          preferred << {fifth: 1}
+        end
+      else #Profile does not like this particular ruleset
+        preferred << nil
+      end
+      i += 1
+    end
+    return preferred
   end
 
   def self.digest string

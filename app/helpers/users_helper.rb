@@ -74,6 +74,7 @@ module UsersHelper
   end
 
   def within_distance(user1, user2)
+    #byebug
     distance = num_distance(user1, user2)
     if(!!distance)
       user1.max_distance > distance && user2.max_distance > distance
