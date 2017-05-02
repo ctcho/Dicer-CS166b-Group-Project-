@@ -12,7 +12,7 @@ class ChatRoomsController < ApplicationController
 
   def index
     @chat_rooms = User.find_by(id: params[:format]).chat_rooms
-    render 'chat_rooms/index'
+    #render 'chat_rooms/index'
   end
 
   def show

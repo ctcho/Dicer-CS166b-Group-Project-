@@ -1,10 +1,17 @@
 <div class="message-container">
   <div class="message">
     <div class="message-user">
-      <%= message.user.username %>
-    </div>
-    <div class="message-content">
-      <%= message.content %>
+      <% if current_user == message.user%>
+        <%= message.content %>
+        <b><%= message.user.username %></b>
+        <%=link_to "Edit", '#', id: "edit-msg" %>
+        <%=link_to "Delete", chat_room_message_path(params[:id]), :method => :delete%>
+      <%else%>
+        <b><%= message.user.username %></b>
+        <%= message.content %>
+      <%end%>
     </div>
   </div>
 </div>
+
+<%= javascript_include_tag "edit_message.js" %>

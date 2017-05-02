@@ -464,3 +464,9 @@ a:hover.outside, a:active.outside {
     from {top:-300px; opacity:0}
     to {top:0; opacity:1}
 }
+
+.dummy {
+  margin-top: 60px;
+  background-image: url('parchmentbackground5'); 
+  color: black;
+}
