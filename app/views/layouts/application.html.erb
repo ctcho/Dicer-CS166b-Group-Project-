@@ -18,9 +18,9 @@
       </span>
       <span class="right-align">
         <% if logged_in? %>
-          <%= link_to "Profile", user_path(current_user), class: "header-link white-border-text" %>
+          <%= link_to "Dashboard", user_path(current_user), class: "header-link white-border-text" %>
           <%= link_to "Settings", user_settings_path(current_user), class: "header-link white-border-text" %>
-          <%= link_to "Search for Users...", search_pages_search_path, class: "header-link white-border-text" %>
+          <%= link_to "Search for Users", search_pages_search_path, class: "header-link white-border-text" %>
           <%= link_to "Log Out", logout_path, method: "delete", class: "header-link white-border-text" %>
           <%= link_to chats_helper, chat_rooms_path(current_user), class: "header-link white-border-text" %>
         <% else %>

@@ -5,7 +5,46 @@
     <div class="page-label" id="username-label">
       <%= @user.username %>
     </div>
-    <!-- player profile, DM profile links -->
+    <div class="dm-profile-container">
+      <% unless @dm_profile.nil? %>
+        <%= link_to user_dm_profiles_path(@user) do %>
+          <div class="profile-button signup-login-submit">
+            View my DM Profile
+          </div>
+        <% end %>
+        <%= link_to edit_user_dm_profiles_path(@user, @dm_profile) do %>
+          <div class="profile-button signup-login-submit">
+            Edit my DM Profile
+          </div>
+        <% end %>
+      <% else %>
+        <%= link_to '#' do %>
+          <div class="profile-button signup-login-submit">
+            Create a DM Profile
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="player-profile-container">
+      <% unless @player_profile.nil? %>
+        <%= link_to user_player_profiles_path(@user) do %>
+          <div class="profile-button signup-login-submit">
+            View my Player Profile
+          </div>
+        <% end %>
+        <%= link_to edit_user_dm_profiles_path(@user, @player_profile) do %>
+          <div class="profile-button signup-login-submit">
+            Edit my Player Profile
+          </div>
+        <% end %>
+      <% else %>
+        <%= link_to '#' do %>
+          <div class="profile-button signup-login-submit">
+            Create a Player Profile
+          </div>
+        <% end %>
+      <% end %>
+    </div>
   </div>
 
   <div class="row-top">

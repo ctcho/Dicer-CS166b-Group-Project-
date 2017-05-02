@@ -15,6 +15,8 @@ class UsersController < ApplicationController
   def show
     #get their chats
     @user = current_user
+    @dm_profile = @user.dm_profile
+    @player_profile = @user.player_profile
     @conversations = @user.chat_rooms
     @new_conversations = @user.chat_rooms
     @similar_profiles = []
