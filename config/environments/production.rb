@@ -1,4 +1,7 @@
 Rails.application.configure do
+
+  config.web_socket_server_url = "wss://dicer-dnd.herokuapp.com/cable"
+  config.action_cable.allowed_request_origins = ['https://dicer-dnd.herokuapp.com', 'http://dicer-dnd.herokuapp.com']
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
@@ -25,7 +28,7 @@ Rails.application.configure do
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = true
   config.serve_static_assets = true
-  
+
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.

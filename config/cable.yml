@@ -6,4 +6,4 @@ test:
 
 production:
   adapter: redis
-  url: URI.encode(ENV[REDIS_URL])
+  url: redis://h:p1a8152bf0f7389a9ed503b98f06d209bc
