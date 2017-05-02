@@ -4,7 +4,6 @@ class CreateDmProfiles < ActiveRecord::Migration[5.0]
       t.integer :user_id
       t.text :bio
       t.integer :experience_level
-      t.float :max_distance
       t.integer :online_play
       t.integer :homebrew
       t.integer :original_ruleset

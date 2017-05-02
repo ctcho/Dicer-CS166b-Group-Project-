@@ -4,6 +4,11 @@ class MessagesController < ApplicationController
   before_action :logged_in_user
 
   def create
+
+    if params[:chat_room_id]
+      @chat_room = ChatRoom.find(params[:chat_room_id])
+    else
+      @redirect = true
       @receiver = User.find_by(id: params[:user_id])
       @chat_room = exists_chatroom current_user, @receiver
       if @chat_room == nil
@@ -12,28 +17,27 @@ class MessagesController < ApplicationController
         @chat_room.users << current_user
         @chat_room.save
       end
+    end
+
     #problem: if we resend the post request, a duplicate message ends up being
     #created. But it is a problem when I keep resending the request to look at debug
     #information. Would this happen in real life if I prohibit the send button from being clicked
     #twice?
-    current_user.messages.build(content: params[:message][:content], chat_room_id: @chat_room.id)
-    current_user.save
-    #it might not be true that a user looks at a chatroom when they send a message
-    ChatRoomsUser.where("user_id = ?", current_user.id).find_by(chat_room_id: @room.id)
-                 .update_attributes(last_viewed: Time.now)
-    render 'chats/index'
+    #byebug
+
+    message = current_user.messages.build(content: params[:message][:content], chat_room_id: @chat_room.id)
+    #current_user.save
+    if message.save
+      ActionCable.server.broadcast "chat_rooms_#{@chat_room.id}_channel", content: message.content, username: message.user.username
+    end
+    @messages = @chat_room.messages
+    if @redirect
+      redirect_to chat_room_path(@chat_room)
+    end
   end
 
   def new
     @message = Message.new
-  end
-
-  #TODO: When this loads, current_user's last_viewed should update
-  def show
-    #in the future this won't be true- we'll have to separate chats
-    #ChatRoomsUser.where("user_id = ?", current_user.id).find_by(chat_room_id: @room.id)
-    #             .update_attributes(last_viewed: Time.now)
-    @messages = User.find(params[:user_id]).messages
   end
 
   private
@@ -43,6 +47,15 @@ class MessagesController < ApplicationController
         flash[:danger] = "Please Log In"
         redirect_to login_url, notice: "Please Log In"
       end
+    end
+
+    def get_messages
+      @messages = Message.for_display
+      @message = current_user.messages.build
+    end
+
+    def message_params
+      params.require(:message).permit(:content)
     end
 
 end

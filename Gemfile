@@ -11,6 +11,7 @@ gem 'bcrypt'
 gem 'pg'
 gem 'will_paginate'
 gem 'faker', '1.6.6'
+gem 'redis'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.1'
