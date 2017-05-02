@@ -1,7 +1,9 @@
 jQuery(document).on 'turbolinks:load', ->
   messages = $('#messages')
   if $('#messages').length > 0
-
+    console.log "stuff"
+    console.log messages
+    console.log messages.data('chat-room-id')
     App.global_chat = App.cable.subscriptions.create {
         channel: "ChatRoomChannel"
         chat_room_id: messages.data('chat-room-id')

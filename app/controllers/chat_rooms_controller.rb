@@ -15,9 +15,10 @@ class ChatRoomsController < ApplicationController
   end
 
   def show
+    user = current_user
     @messages = @chat_room.messages.order(:created_at)
-    @chat_rooms = ChatRoom.all; # FOR CSS PURPOSES, REPLACE WITH ALL CHATS ACTIVE FOR THE ACCESSING USER
-    @participating_users = User.all; # FOR CSS PURPOSES, REPLACE WITH ALL USERS ACTIVE IN THE CURENT CHAT
+    @chat_rooms = user.chat_rooms#ChatRoom.all; # FOR CSS PURPOSES, REPLACE WITH ALL CHATS ACTIVE FOR THE ACCESSING USER
+    @participating_users = @chat_room.users#User.all; # FOR CSS PURPOSES, REPLACE WITH ALL USERS ACTIVE IN THE CURENT CHAT
     ChatRoomsUser.where("user_id = ?", current_user.id).find_by(chat_room_id: params[:id])
                  .update_attributes(last_viewed: Time.now)
 
