@@ -3,7 +3,8 @@ class CreateMessages < ActiveRecord::Migration[5.0]
     create_table :messages do |t|
       t.text :content
       t.string :image_path
-
+      t.integer :user_id
+      t.integer :chat_room_id
       t.timestamps
     end
   end

@@ -6,22 +6,29 @@ class MessagesController < ApplicationController
   #right now this is more or less functional for 1-on-1 chats. Next step: groupd
   #chats
   def create
-    Message.transaction do
-        @receiver = User.find_by(id: params[:user_id]) ||
-                    User.find_by(id: (ChatRoom.find_by(id: params[:chat_room_id]).users - [current_user]).first.id)
-        @chat_room = exists_chatroom current_user, @receiver
-        if @chat_room == nil
-          @chat_room = ChatRoom.new(name: "#{current_user.username} and #{@receiver.username}")
-          @chat_room.users << @receiver
-          @chat_room.users << current_user
-          @chat_room.save
-        end
-      current_user.messages.build(content: params[:message][:content], chat_room_id: @chat_room.id)
-      current_user.save
+    @receiver = User.find_by(id: params[:user_id]) ||
+                User.find_by(id: (ChatRoom.find_by(id: params[:chat_room_id]).users - [current_user]).first.id)
+    @chat_room = exists_chatroom current_user, @receiver
+    if @chat_room == nil
+      @chat_room = ChatRoom.new(name: "#{current_user.username} and #{@receiver.username}")
+      @chat_room.users << @receiver
+      @chat_room.users << current_user
+      @chat_room.save
+    end
       #it might not be true that a user looks at a chatroom when they send a message
       ChatRoomsUser.where("user_id = ?", current_user.id).find_by(chat_room_id: @chat_room.id)
                    .update_attributes(last_viewed: Time.now)
-      redirect_to :back
+    #problem: if we resend the post request, a duplicate message ends up being
+    #created. But it is a problem when I keep resending the request to look at debug
+    #information. Would this happen in real life if I prohibit the send button from being clicked
+    #twice?
+    message = current_user.messages.build(content: params[:message][:content], chat_room_id: @chat_room.id)
+    if message.save
+      ActionCable.server.broadcast "chat_rooms_#{@chat_room.id}_channel", content: message.content, username: message.user.username
+    end
+    @messages = @chat_room.messages
+    if @redirect
+      redirect_to chat_room_path(@chat_room)
     end
   end
 
@@ -34,7 +41,7 @@ class MessagesController < ApplicationController
   end
 
   def edit
-    
+
   end
 
   private
@@ -44,6 +51,15 @@ class MessagesController < ApplicationController
         flash[:danger] = "Please Log In"
         redirect_to login_url, notice: "Please Log In"
       end
+    end
+
+    def get_messages
+      @messages = Message.for_display
+      @message = current_user.messages.build
+    end
+
+    def message_params
+      params.require(:message).permit(:content)
     end
 
 end

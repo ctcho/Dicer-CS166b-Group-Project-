@@ -1,18 +1,24 @@
-<div class="chatroom-container">
-  <div class="page-label white-border-text" id="active-chatroom-header">
-    <%= @chat_room.name %>
+<div class="chat-dashboard-container">
+  <div class="chatroom-container primary-column">
+    <div class="page-label white-border-text" id="active-chatroom-header">
+      <%= @chat_room.name %>
+    </div>
+    <div class="active-chatroom" id="messages" data-chat-room-id="<%= @chat_room.id %>">
+      <%= render 'messages/messages' %>
+      <%= render 'message_form' %>
+    </div>
   </div>
-  <div class="active-chatroom">
-    <%= render 'messages/messages' %>
-    <%= render 'message_form' %>
-    <%= form_tag leave_chat_path(@chat_room), method: 'delete' do %>
-      <div class="action button-container">
-        <%= submit_tag "Leave this chat", class: "profile-button signup-login-submit" %>
-      </div>
-    <% end %>
-  </div>
-</div>
 
-<div class="sidebar">
-  <!-- all chats/friends go here-->
+  <div class="active-chat-sidebar secondary-column">
+    <%= render partial: "chat", collection: @chat_rooms, as: :chat %>
+  </div>
+
+  <div class="tertiary-column active-chat-sidebar">
+    <div class="page-label black-border-text" id="active-users-label">
+      Users in this chat
+    </div>
+    <div class="user-list-container">
+      <%= render partial: "participating_users", collection: @participating_users, as: :user %>
+    </div>
+  </div>
 </div>

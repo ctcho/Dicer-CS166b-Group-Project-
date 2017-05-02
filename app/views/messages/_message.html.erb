@@ -1,4 +1,7 @@
 <div class="message-container">
+  <div class="message-user">
+    <%= image_tag message.user.avatar.url(:smallerthumb), class: "message-avatar" %>
+  </div>
   <div class="message">
     <div class="message-user">
       <% if current_user == message.user%>
@@ -10,6 +13,8 @@
         <b><%= message.user.username %></b>
         <%= message.content %>
       <%end%>
+    <div class="message-content black-border-text">
+      <%= message.content %>
     </div>
   </div>
 </div>

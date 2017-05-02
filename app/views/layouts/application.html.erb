@@ -11,20 +11,20 @@
   <body>
     <div class="header">
       <span class="left-align">
-        <%= link_to "Dicer", home_pages_home_path, class:"header-link" %>
-        <%= link_to "About Us", home_pages_about_path, class:"header-link" %>
-        <%= link_to "Contact Us", home_pages_contact_path, class:"header-link" %>
-        <%= link_to "Resources", home_pages_resources_path, class:"header-link" %>
+        <%= link_to "Dicer", home_pages_home_path, class:"header-link white-border-text" %>
+        <%= link_to "About Us", home_pages_about_path, class:"header-link white-border-text" %>
+        <%= link_to "Contact Us", home_pages_contact_path, class:"header-link white-border-text" %>
+        <%= link_to "Resources", home_pages_resources_path, class:"header-link white-border-text" %>
       </span>
       <span class="right-align">
         <% if logged_in? %>
-          <%= link_to "Profile", user_path(current_user), class: "header-link" %>
-          <%= link_to "Settings", user_settings_path(current_user), class: "header-link" %>
-          <%= link_to "Search for Users...", search_pages_search_path, class: "header-link" %>
-          <%= link_to "Log Out", logout_path, method: "delete", class: "header-link" %>
-          <%= link_to chats_helper, chat_rooms_path(current_user), class: "header-link" %>
+          <%= link_to "Profile", user_path(current_user), class: "header-link white-border-text" %>
+          <%= link_to "Settings", user_settings_path(current_user), class: "header-link white-border-text" %>
+          <%= link_to "Search for Users...", search_pages_search_path, class: "header-link white-border-text" %>
+          <%= link_to "Log Out", logout_path, method: "delete", class: "header-link white-border-text" %>
+          <%= link_to chats_helper, chat_rooms_path(current_user), class: "header-link white-border-text" %>
         <% else %>
-          <%= link_to "Log In", login_path, class:"header-link" %>
+          <%= link_to "Log In", login_path, class:"header-link white-border-text" %>
         <% end %>
       </span>
     </div>

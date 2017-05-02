@@ -19,6 +19,6 @@
     <%= link_to "More info", user_player_profiles_path(User.find(player_profile.user_id)), class: "show-more-button profile-button" %>
   </div>
   <div class="button-container col-md-2">
-    <%= button_to "Write to me", "#", class: "contact-me-button-small profile-button" %>
+    <%= button_to "Write to me", new_user_messages_path(player_profile.user), class: "contact-me-button-small profile-button", method: :get %>
   </div>
 </div>

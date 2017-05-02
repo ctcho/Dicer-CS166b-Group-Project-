@@ -6,9 +6,9 @@ class ChatRoomsControllerTest <ActionDispatch::IntegrationTest
     @chat_room = ChatRoom.new(name: "test room")
     @user1 = users(:one)
     @user2 = users(:two)
+    @user3 = users(:user_3)
     @chat_room.users << @user1 << @user2
     @chat_room.save
-    ChatRoomsUser.create(chat_room: @chat_room, user: @user1)
   end
 
   test "should get show if user is authorized" do
@@ -18,7 +18,7 @@ class ChatRoomsControllerTest <ActionDispatch::IntegrationTest
   end
 
   test "should redirect correctly if user is not authorized" do
-    log_in_as(@user2, 'password', 0)
+    log_in_as(@user3, 'strongpass3', 0)
     get chat_room_path(@chat_room)
     assert_redirected_to unauthorized_path
 
