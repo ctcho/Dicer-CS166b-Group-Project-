@@ -26,7 +26,6 @@ class MessagesController < ApplicationController
     #byebug
 
     message = current_user.messages.build(content: params[:message][:content], chat_room_id: @chat_room.id)
-    #current_user.save
     if message.save
       ActionCable.server.broadcast "chat_rooms_#{@chat_room.id}_channel", content: message.content, username: message.user.username
     end
