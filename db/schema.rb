@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170425200112) do
+ActiveRecord::Schema.define(version: 20170501191411) do
 
   create_table "character_sheets", force: :cascade do |t|
     t.integer  "player_profile_id"
@@ -21,8 +21,12 @@ ActiveRecord::Schema.define(version: 20170425200112) do
 
   create_table "chat_rooms", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   create_table "chat_rooms_users", force: :cascade do |t|

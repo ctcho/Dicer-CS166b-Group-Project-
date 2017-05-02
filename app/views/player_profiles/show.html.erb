@@ -71,7 +71,7 @@
           &times;
         </span>
         <span class="greeting">
-          Send <%=User.find(@player_profile.user_id).username%> a message
+          Send <%= @user.username %> a message
         </span>
         <section class="msgform">
           <%= render 'messages/message_form' %>

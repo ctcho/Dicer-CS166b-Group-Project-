@@ -1,6 +1,6 @@
 <%= form_for(:message, url: chat_room_message_url(@chat_room), method: 'post') do |f| %>
 <div class="field" id="message-field">
-  <%=f.text_area :content, placeholder: "Send new message..." %>
+  <%= f.text_area :content %>
   <%= f.submit "Send", class: "submit black-border-text", id: "send-button" %>
 </div>
 <% end %>
