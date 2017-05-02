@@ -100,6 +100,41 @@ module UsersHelper
     html.html_safe
   end
 
+  def get_similar_profiles(user)
+    similar_profiles = []
+    if user.dm_profile.nil?
+      similar_players = recommend_set(User.recommender(user.player_profile, "player"), user)
+      similar_dms = recommend_set(User.recommender(user.player_profile, "dm"), user)
+    elsif user.player_profile.nil?
+      similar_players = recommend_set(User.recommender(user.dm_profile, "player"), user)
+      similar_dms = recommend_set(User.recommender(user.dm_profile, "dm"), user)
+    else #user has both
+      similar_players = recommend_set(User.recommender(user.player_profile, "player"), user)
+      similar_dms = recommend_set(User.recommender(user.dm_profile, "dm"), user)
+    end
+    if !similar_players.empty?
+      count = 0
+      similar_players.each do |player|
+        #byebug
+        if count < 2
+          similar_profiles << player
+        end
+        count = count + 1
+      end
+    end
+    if !similar_dms.empty?
+      count = 0
+      similar_dms.each do |dm|
+        #byebug
+        if count < 2
+          similar_profiles << dm
+        end
+        count = count + 1
+      end
+    end
+    return similar_profiles
+  end
+
   def profile_link(profile) # returns either a dm profile link or player profile link depending on player profile type
     if(profile.nil?)
       nil
@@ -112,7 +147,5 @@ module UsersHelper
       end
     end
   end
-  
-
 
 end

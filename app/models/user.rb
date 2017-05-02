@@ -21,33 +21,17 @@ class User < ApplicationRecord
 
   has_secure_password
 
-  def self.recommender(profile)
+  def self.recommender(profile, type)
     rulesets = []
     rulesets = rule_recom_parse([profile.homebrew, profile.original_ruleset, profile.advanced_ruleset,
     profile.pathfinder, profile.third, profile.three_point_five, profile.fourth, profile.fifth])
     filter = search_checksum(rulesets)
-    if profile.class == PlayerProfile
+    if type == "player"
       result = PlayerProfile.where(experience_level: profile.experience_level)
-      .or(PlayerProfile.where(rulesets[0])
-      .or(PlayerProfile.where(rulesets[1]))
-      .or(PlayerProfile.where(rulesets[2]))
-      .or(PlayerProfile.where(rulesets[3]))
-      .or(PlayerProfile.where(rulesets[4]))
-      .or(PlayerProfile.where(rulesets[5]))
-      .or(PlayerProfile.where(rulesets[6]))
-      .or(PlayerProfile.where(rulesets[7]))
-      )
+      .or(searching_rulesets(rulesets, "0", "OR"))
     else #DM profile
       result = DmProfile.where(experience_level: profile.experience_level)
-      .or(DmProfile.where(rulesets[0])
-      .or(DmProfile.where(rulesets[1]))
-      .or(DmProfile.where(rulesets[2]))
-      .or(DmProfile.where(rulesets[3]))
-      .or(DmProfile.where(rulesets[4]))
-      .or(DmProfile.where(rulesets[5]))
-      .or(DmProfile.where(rulesets[6]))
-      .or(DmProfile.where(rulesets[7]))
-      )
+      .or(searching_rulesets(rulesets, "1", "OR"))
     end
     return sort_results(result, filter)
   end
@@ -56,7 +40,6 @@ class User < ApplicationRecord
     if profile_type == "0" #Player Profiles
       in_range = User.joins(:player_profile).within(user.max_distance, origin: user)
       in_range.map { |x| x.player_profile }
-      #PlayerProfile.within(user.max_distance, origin: user)
     else #DM profiles or the user decided not to search for anyone...
       in_range = User.joins(:dm_profile).within(user.max_distance, origin: user)
       in_range.map { |x| x.dm_profile }
@@ -68,7 +51,7 @@ class User < ApplicationRecord
   #As of 3/24/2017, I made the search more secure by preventing the possibility
   #of SQL injection.
   #Focusing on player/dm profiles individually at the moment. I will expand this. --Cameron C.
-  def self.search(parameters)
+  def self.search(parameters, user)
     rulesets = []
     #rulesets = ruleset_parse([parameters[:ruleset1], parameters[:ruleset2], parameters[:ruleset3]])
     campaign_types = campaign_parse(parameters[:campaign_type])
@@ -78,14 +61,46 @@ class User < ApplicationRecord
     parameters[:pathfinder], parameters[:third], parameters[:three_point_five], parameters[:fourth],
     parameters[:fifth]])
     filter = search_checksum([exp_level] + [campaign_types] + [online] + rulesets)
-    #if rulesets.nil?
     #byebug
     if parameters[:option] != "OR" # Search for all of the listed conditions
       if parameters[:profile_type] != "1" #Search the player database
-        PlayerProfile.where(exp_level)
+        result = PlayerProfile.where(exp_level)
         .merge(PlayerProfile.where(online))
         .merge(PlayerProfile.where(campaign_types))
-        .merge(PlayerProfile.where(rulesets[0])
+        .merge(searching_rulesets(rulesets, parameters[:profile_type], parameters[:option]))
+        return parse_results(result, user)
+      else #Searching for DM's
+        result = DmProfile.where(exp_level)
+        .merge(DmProfile.where(online))
+        .merge(DmProfile.where(campaign_types))
+        .merge(searching_rulesets(rulesets, parameters[:profile_type], parameters[:option]))
+        return parse_results(result, user)
+      end
+    else #Search for any of the listed conditions
+      if parameters[:profile_type] != "1" #Search the player database
+        results = PlayerProfile.where(exp_level)
+        .or(PlayerProfile.where(online))
+        .or(PlayerProfile.where(campaign_types))
+        .or(searching_rulesets(rulesets, parameters[:profile_type], parameters[:option]))
+        results = sort_results(results, filter)
+        return parse_results(results, user)
+      else #Searching for DM's
+        results = DmProfile.where(exp_level)
+        .or(DmProfile.where(online))
+        .or(DmProfile.where(campaign_types))
+        .or(searching_rulesets(rulesets, parameters[:profile_type], parameters[:option]))
+        results = sort_results(results, filter)
+        return parse_results(results, user)
+      end
+    end
+
+  end
+
+  #This happens often enough to put it in its own method...
+  def self.searching_rulesets(rulesets, profile_type, option)
+    if option != "OR" #option is "AND" and all of the conditions apply
+      if profile_type != "1" #Searching for Players
+        return PlayerProfile.where(rulesets[0])
         .merge(PlayerProfile.where(rulesets[1]))
         .merge(PlayerProfile.where(rulesets[2]))
         .merge(PlayerProfile.where(rulesets[3]))
@@ -93,12 +108,8 @@ class User < ApplicationRecord
         .merge(PlayerProfile.where(rulesets[5]))
         .merge(PlayerProfile.where(rulesets[6]))
         .merge(PlayerProfile.where(rulesets[7]))
-        )
       else #Searching for DM's
-        DmProfile.where(exp_level)
-        .merge(DmProfile.where(online))
-        .merge(DmProfile.where(campaign_types))
-        .merge(DmProfile.where(rulesets[0])
+        return DmProfile.where(rulesets[0])
         .merge(DmProfile.where(rulesets[1]))
         .merge(DmProfile.where(rulesets[2]))
         .merge(DmProfile.where(rulesets[3]))
@@ -106,14 +117,10 @@ class User < ApplicationRecord
         .merge(DmProfile.where(rulesets[5]))
         .merge(DmProfile.where(rulesets[6]))
         .merge(DmProfile.where(rulesets[7]))
-        )
       end
-    else #Search for any of the listed conditions
-      if parameters[:profile_type] != "1" #Search the player database
-        results = PlayerProfile.where(exp_level)
-        .or(PlayerProfile.where(online))
-        .or(PlayerProfile.where(campaign_types))
-        .or(PlayerProfile.where(rulesets[0])
+    else #option is "OR" and any of the conditions apply
+      if profile_type != "1" #Searching for Players
+        return PlayerProfile.where(rulesets[0])
         .or(PlayerProfile.where(rulesets[1]))
         .or(PlayerProfile.where(rulesets[2]))
         .or(PlayerProfile.where(rulesets[3]))
@@ -121,20 +128,8 @@ class User < ApplicationRecord
         .or(PlayerProfile.where(rulesets[5]))
         .or(PlayerProfile.where(rulesets[6]))
         .or(PlayerProfile.where(rulesets[7]))
-        )
-        #Below is how I chose to sort the results of a search.
-        #The order of priority is as follows:
-        # 1. Ruleset
-        # 2. Experience
-        # 3. Campaign Type
-        # 4. Willingness to play online
-        # --Cameron C.
-        return sort_results(results, filter)
       else #Searching for DM's
-        results = DmProfile.where(exp_level)
-        .or(DmProfile.where(online))
-        .or(DmProfile.where(campaign_types))
-        .or(DmProfile.where(rulesets[0])
+        return DmProfile.where(rulesets[0])
         .or(DmProfile.where(rulesets[1]))
         .or(DmProfile.where(rulesets[2]))
         .or(DmProfile.where(rulesets[3]))
@@ -142,12 +137,8 @@ class User < ApplicationRecord
         .or(DmProfile.where(rulesets[5]))
         .or(DmProfile.where(rulesets[6]))
         .or(DmProfile.where(rulesets[7]))
-        )
-        #Same rule for sorting for players applies to DM's, too.
-        return sort_results(results, filter)
       end
     end
-
   end
 
   def self.ruleset_parse(rulesets)
@@ -155,28 +146,28 @@ class User < ApplicationRecord
     compiled = []
     rulesets.each do |r|
       if !r.nil?
-        if r == "1" #homebrew
+        if r == "homebrew" #homebrew
           compiled << {homebrew: 1}
           #puts "Homebrew"
-        elsif r == "2" #original_ruleset
+        elsif r == "original_ruleset" #original_ruleset
           compiled << {original_ruleset: 1}
           #puts "Original Ruleset"
-        elsif r == "3" #advanced_ruleset
+        elsif r == "advanced_ruleset" #advanced_ruleset
           compiled << {advanced_ruleset: 1}
           #puts "Advanced Ruleset"
-        elsif r == "4" #Pathfinder
+        elsif r == "pathfinder" #Pathfinder
           compiled << {pathfinder: 1}
           #puts "Pathfinder"
-        elsif r == "5" #third
+        elsif r == "third" #third
           compiled << {third: 1}
           #puts "Third"
-        elsif r == "6" #three_point_five
+        elsif r == "three_point_five" #three_point_five
           compiled << {three_point_five: 1}
           #puts "Three point five"
-        elsif r == "7" #fourth
+        elsif r == "fourth" #fourth
           compiled << {fourth: 1}
           #puts "Fourth"
-        elsif r == "8" #fifth
+        elsif r == "fifth" #fifth
           compiled << {fifth: 1}
           #puts "Fifth"
         end

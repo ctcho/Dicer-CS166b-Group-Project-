@@ -6,6 +6,9 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
 
   <body>
@@ -20,7 +23,7 @@
         <% if logged_in? %>
           <%= link_to "Dashboard", user_path(current_user), class: "header-link white-border-text" %>
           <%= link_to "Settings", user_settings_path(current_user), class: "header-link white-border-text" %>
-          <%= link_to "Search for Users", search_pages_search_path, class: "header-link white-border-text" %>
+          <%= link_to "Search for Users", search_pages_search_path, data: { toggle: "modal", target: "#search_modal" }, id: "search", class: "header-link white-border-text" %>
           <%= link_to "Log Out", logout_path, method: "delete", class: "header-link white-border-text" %>
           <%= link_to chats_helper, chat_rooms_path(current_user), class: "header-link white-border-text" %>
         <% else %>
@@ -28,10 +31,8 @@
         <% end %>
       </span>
     </div>
-    <div>
-      <%= yield %>
-    </div>
+    <div><%= yield %></div>
     <%= debug(params) if Rails.env.development? %>
-
+    <%= render 'search_pages/search' %>
   </body>
 </html>

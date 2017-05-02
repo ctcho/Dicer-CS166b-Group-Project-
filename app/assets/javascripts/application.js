@@ -14,3 +14,9 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(function() {
+  $("#search-form").on("change", function() {
+    $.get($("#search-form").attr("action"), $("#search-form").serialize(), null, "script");
+  });
+});
