@@ -13,7 +13,12 @@
     <%= render partial: "chat", collection: @chat_rooms, as: :chat %>
   </div>
 
-  <div class="tertiary-column">
-    <!-- users in the chats and their online status-->
+  <div class="tertiary-column active-chat-sidebar">
+    <div class="page-label black-border-text" id="active-users-label">
+      Users in this chat
+    </div>
+    <div class="user-list-container">
+      <%= render partial: "participating_users", collection: @participating_users, as: :user %>
+    </div>
   </div>
 </div>
