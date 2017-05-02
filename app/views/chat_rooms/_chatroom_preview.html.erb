@@ -1,0 +1,10 @@
+<%= link_to chat do %>
+  <div class="preview">
+    <div class="avatar-container">
+      <%= image_tag chat.avatar.url(:thumb), class: "dashboard-avatar" %>
+    </div>
+    <div class="preview-name">
+      <%= chat.name %>
+    </div>
+  </div>
+<% end %>

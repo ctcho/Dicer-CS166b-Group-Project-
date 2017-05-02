@@ -10,15 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
+ActiveRecord::Schema.define(version: 20170501191411) do
+=======
 ActiveRecord::Schema.define(version: 20170329191543) do
+>>>>>>> 7f9ae28c88de6f1b7c03d46d990cc53873e3779e
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "chat_rooms", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   create_table "chat_rooms_users", force: :cascade do |t|

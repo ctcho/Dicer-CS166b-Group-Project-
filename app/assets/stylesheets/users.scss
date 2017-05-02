@@ -85,13 +85,15 @@ $light_grey_2: #A5A5A5;
   text-decoration:underline;
   text-align:center;
   font-size:2.5em;
+  line-height: 45px;
   font-family: 'Breathe Fire';
 }
 
 .bio-text{
-  font-size: 1.7em;
-  font-family: 'Party Business';
-  line-height: 25px;
+  font-size: 2.25em;
+  font-family: 'Dungeon';
+  line-height: 36px;
+  padding: 10px 25px;
 }
 
 .profile-bio p{
@@ -442,3 +444,149 @@ $light_grey_2: #A5A5A5;
 
 
 // now starting user dashboard
+
+.sidebar-column{
+  min-height: 650px;
+  max-height: 100vh;
+  min-width: 250px;
+  width: 20%;
+  float: left;
+  padding: 0px;
+  clear: none;
+  background-color: green;
+  z-index: 1;
+}
+
+.row-top{
+  margin-top: -25px;
+  min-width: 1349px;
+  width: 100%;
+  min-height: 235px;
+  max-height: 33.3vh;
+  background-color: red;
+}
+
+.row-middle{
+  width: 100%;
+  min-width: 1349px;
+  min-height: 192px;
+  max-height: 33.3vh;
+  background-color: yellow;
+}
+
+.row-bottom{
+  width: 100%;
+  min-width: 1349px;
+  min-height: 192px;
+  max-height: 33.4vh;
+  background-color: black;
+}
+
+.dashboard-avatar{
+  margin: auto;
+  border-radius: 50%;
+  transition: 0.4s;
+  display: block;
+}
+
+.dashboard-avatar:hover{
+  border-radius: 0;
+}
+
+#user-avatar{
+  padding-top: 30px;
+}
+
+#username-label{
+  font-size: 3.5em;
+  text-align: center;
+}
+
+.chatroom-preview-container{
+  display: inline-block;
+  width: 68%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  min-height: 192px;
+  max-height: 33.3vh;
+}
+
+#top-chat-container{
+  min-height: 235px;
+}
+
+.preview{
+  max-width: 200px;
+  max-height: 200px;
+  font-size: 2em;
+  font-family: 'Mysticora';
+  line-height: 30px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.chatroom-preview-container div{
+  margin: 0px 18px 0px 18px;
+}
+
+.preview-name{
+  overflow-y: scroll !important;
+  overflow-x: hidden !important;
+  white-space: normal !important;
+  text-align: center;
+  max-width: 150px;
+  display: block;
+  margin: auto;
+  margin-top: 5px;
+  max-height: 60px;
+}
+
+.chatroom-new-container{
+  display: inline-block;
+}
+
+.chatroom-new-container img{
+  vertical-align: 0px !important;
+}
+
+#new-chats{
+  width: 80%;
+}
+
+.recommendations-container{
+  display: inline-block;
+  width: 80%;
+  text-align: center;
+  font-family: 'Mysticora';
+  line-height: 35px;
+  color: rgb(150,0,0);
+}
+
+.recommendations-container a{
+  margin: 0px 50px 0px 50px;
+}
+
+.row-label{
+  font-family: "Wizard of the Moon";
+  font-size: 3em;
+  line-height: 40px;
+  color: rgb(200,0,0);
+  text-decoration: underline;
+  padding-left: 10px;
+  text-align: left;
+}
+
+#first-row-label{
+  padding-top: 20px;
+}
+
+.dashboard-container a{
+  color: rgb(150,0,0);
+  text-decoration: none;
+}
+
+.dashboard-container a:hover{
+  color: rgb(110,0,0);
+  text-decoration: none;
+}

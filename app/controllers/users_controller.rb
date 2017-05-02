@@ -16,6 +16,7 @@ class UsersController < ApplicationController
     #get their chats
     @user = current_user
     @conversations = @user.chat_rooms
+    @new_conversations = @user.chat_rooms
     @similar_profiles = []
     if !@user.player_profile.nil? && @user.dm_profile.nil?
       similar_players = recommend_set(User.recommender(@user.player_profile), @user)
@@ -37,6 +38,7 @@ class UsersController < ApplicationController
       @similar_profiles << similar_dms.first
       @similar_profiles << similar_dms.second
     end
+    @similar_profiles = (PlayerProfile.all).sample(4); #until the code above is fixed I need this to test, fix when possible - Michael
   end
 
   # GET /users/new

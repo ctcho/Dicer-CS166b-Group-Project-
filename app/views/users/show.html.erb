@@ -1,23 +1,44 @@
-<div id="notice"><%=notice%></div>
-<%= image_tag @user.avatar.url(:medium)%>
-<p><%= @user.username %><p>
-
-
-<p>New Recommendations<p>
-  <div class="container-fluid">
-    <% if @similar_profiles.count > 0 %>
-      <% @similar_profiles.each do |s| %>
-        <% if !s.nil? %>
-          <%= render s %>
-        <% end %>
-      <% end %>
-    <% end %>
+<div id="notice"><%= notice %></div>
+<div class="dashboard-container">
+  <div class="sidebar-column">
+    <%= image_tag @user.avatar.url(:medium), class: "dashboard-avatar", id: "user-avatar" %>
+    <div class="page-label" id="username-label">
+      <%= @user.username %>
+    </div>
+    <!-- player profile, DM profile links -->
   </div>
 
-<p>Contact Requests</p>
+  <div class="row-top">
+    <!-- chats you are participating in with pictures -->
+    <div class="chatroom-preview-container" id="top-chat-container">
+      <div class="row-label black-border-text" id="first-row-label">
+        Your Chats
+      </div>
+      <%= render partial: "chat_rooms/chatroom_preview", collection: @conversations, as: :chat %>
+    </div>
+    <!-- create new chat link -->
+    <div class="chatroom-new-container">
+      <%= image_tag "addnewbutton", height: "200", width: "150" %>
+    </div>
+  </div>
 
+  <div class="row-middle">
+    <!-- new chats, pending chat requests, etc -->
+    <div class="chatroom-preview-container" id="new-chats">
+      <div class="row-label black-border-text">
+        New Chat Requests
+      </div>
+      <%= render partial: "chat_rooms/chatroom_preview", collection: @new_conversations, as: :chat %>
+    </div>
+  </div>
 
-<p>Conversations</p>
-<% @conversations.each do |chat| %>
-  <%=link_to chat.name, chat_room_path(chat.id)%>
-<% end %>
+  <div class="row-bottom">
+    <!-- recommendations -->
+    <div class="recommendations-container black-border-text">
+      <div class="row-label black-border-text">
+        People you may like
+      </div>
+      <%= render partial: "recommend_preview", collection: @similar_profiles, as: :profile %>
+    </div>
+  </div>
+</div>
