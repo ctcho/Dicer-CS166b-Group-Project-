@@ -3,14 +3,9 @@
     <div class="page-label white-border-text" id="active-chatroom-header">
       <%= @chat_room.name %>
     </div>
-    <div class="active-chatroom">
+    <div class="active-chatroom" id="messages" data-chat-room-id="<%= @chat_room.id %>">
       <%= render 'messages/messages' %>
       <%= render 'message_form' %>
-      <%= form_tag leave_chat_path(@chat_room), method: 'delete' do %>
-        <div class="action button-container">
-          <%= submit_tag "Leave this chat", class: "profile-button signup-login-submit" %>
-        </div>
-      <% end %>
     </div>
   </div>
 

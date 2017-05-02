@@ -59,7 +59,7 @@ class DmProfilesController < ApplicationController
   def update
     respond_to do |format|
       if @dm_profile.update(dm_profile_params)
-        format.html { redirect_to user_dm_profiles_url(User.find(@dm_profile.user_id), @dm_profile), notice: 'Dm profile was successfully updated.' }
+        format.html { redirect_to user_dm_profiles_path(User.find(@dm_profile.user_id), @dm_profile), notice: 'Dm profile was successfully updated.' }
         format.json { render :show, status: :ok, location: @dm_profile }
       else
         format.html { render :edit }
@@ -95,8 +95,7 @@ class DmProfilesController < ApplicationController
     def logged_in_user
       unless logged_in?
         store_location
-        flash[:danger] = "Please Log In"
-        redirect_to login_url
+        redirect_to login_url, notice: "Please Log In"
       end
     end
 

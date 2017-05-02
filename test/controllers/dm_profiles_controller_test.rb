@@ -45,7 +45,7 @@ class DmProfilesControllerTest < ActionDispatch::IntegrationTest
                                               user_id: @dm_profile.user_id } }
     end
     #byebug
-    assert_redirected_to user_dm_profiles_url(@user, DmProfile.last)
+    assert_redirected_to user_dm_profiles_path(@user, DmProfile.last)
   end
 
   test "should show dm_profile" do
@@ -74,7 +74,7 @@ class DmProfilesControllerTest < ActionDispatch::IntegrationTest
   test "should update dm_profile" do
     log_in_as(@user, 'password', 0)
     patch user_dm_profiles_url(@user), params: { dm_profile: { advanced_ruleset: @dm_profile.advanced_ruleset, bio: @dm_profile.bio, experience_level: @dm_profile.experience_level, fifth: @dm_profile.fifth, fourth: @dm_profile.fourth, homebrew: @dm_profile.homebrew, module: @dm_profile.module, online_play: @dm_profile.online_play, original_campaign: @dm_profile.original_campaign, original_ruleset: @dm_profile.original_ruleset, pathfinder: @dm_profile.pathfinder, third: @dm_profile.third, three_point_five: @dm_profile.three_point_five, user_id: @dm_profile.user_id } }
-    assert_redirected_to user_dm_profiles_url(@user, @dm_profile)
+    assert_redirected_to user_dm_profiles_path(@user, @dm_profile)
 
   end
 

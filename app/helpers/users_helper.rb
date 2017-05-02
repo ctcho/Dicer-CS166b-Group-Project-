@@ -28,7 +28,7 @@ module UsersHelper
     end
   end
 
-  def find_distance(user1, user2)
+  def find_distance(user1, user2) # returns a string specifying distance between two players
     if(!!user2)
       distance = user1.distance_from(user2)
       "%.1f miles away" % distance
@@ -37,7 +37,7 @@ module UsersHelper
     end
   end
 
-  def num_distance(user1, user2)
+  def num_distance(user1, user2) # returns the numerical distance between two players
     if (!!user1 && !!user2)
       distance = user1.distance_from(user2)
       distance
@@ -47,7 +47,7 @@ module UsersHelper
   end
 
 
-  def get_ruleset_strings(profile)
+  def get_ruleset_strings(profile) # creates a string array of all the rulesets the user plays
     rulesets = Array.new
     if(profile.original_ruleset > 0)
       rulesets << "Original Dungeons and Dragons"
@@ -73,7 +73,7 @@ module UsersHelper
     rulesets
   end
 
-  def within_distance(user1, user2)
+  def within_distance(user1, user2) # returns true if the users are within visiting distance
     #byebug
     distance = num_distance(user1, user2)
     if(!!distance)
@@ -87,7 +87,7 @@ module UsersHelper
     "/user/#{user.id}/settings"
   end
 
-  def ruleset_preview(profile)
+  def ruleset_preview(profile) # samples their rulesets and returns a random 3, specifying if there are any more
     rulesets = get_ruleset_strings(profile)
     html = ""
     length = rulesets.length
@@ -133,6 +133,19 @@ module UsersHelper
       end
     end
     return similar_profiles
+  end
+
+  def profile_link(profile) # returns either a dm profile link or player profile link depending on player profile type
+    if(profile.nil?)
+      nil
+    else
+      user = User.find(profile.user_id)
+      if(profile.is_a?(DmProfile))
+        return user_dm_profiles_path(user)
+      else
+        return user_player_profiles_path(user)
+      end
+    end
   end
 
 end

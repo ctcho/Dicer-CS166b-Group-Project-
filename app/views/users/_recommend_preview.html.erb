@@ -1,0 +1,10 @@
+<%= link_to profile_link(profile) do %>
+  <div class="preview recommend-profile-preview">
+    <div class="avatar-container">
+      <%= image_tag User.find(profile.user_id).avatar.url(:thumb), class: "dashboard-avatar" %>
+    </div>
+    <div class="preview-name">
+      <%= User.find(profile.user_id).username %>
+    </div>
+  </div>
+<% end %>
