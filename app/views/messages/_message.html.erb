@@ -1,22 +1,19 @@
 <div class="message-container">
-  <div class="message-user">
-    <%= image_tag message.user.avatar.url(:smallerthumb), class: "message-avatar" %>
-  </div>
-  <div class="message">
+  <% if current_user.id != message.user.id %>
     <div class="message-user">
-      <% if current_user == message.user%>
-        <%= message.content %>
-        <b><%= message.user.username %></b>
-        <%=link_to "Edit", '#', id: "edit-msg" %>
-        <%=link_to "Delete", chat_room_message_path(params[:id]), :method => :delete%>
-      <%else%>
-        <b><%= message.user.username %></b>
-        <%= message.content %>
-      <%end%>
+        <%= link_to image_tag(message.user.avatar.url(:smallerthumb), class: "message-avatar"), user_path(message.user.id) %>
+    </div>
+  <%end%>
+  <div class="message">
     <div class="message-content black-border-text">
-      <%= message.content %>
+       <%= message.content %>
     </div>
   </div>
+  <% if current_user.id = message.user.id %>
+    <div class="message-user">
+        <%= link_to image_tag(message.user.avatar.url(:smallerthumb), class: "message-avatar"), user_path(message.user.id) %>
+    </div>
+  <%end%>
 </div>
 
 <%= javascript_include_tag "edit_message.js" %>

@@ -27,9 +27,7 @@ class MessagesController < ApplicationController
       ActionCable.server.broadcast "chat_rooms_#{@chat_room.id}_channel", content: message.content, username: message.user.username
     end
     @messages = @chat_room.messages
-    if @redirect
-      redirect_to chat_room_path(@chat_room)
-    end
+    redirect_to chat_room_path(@chat_room)
   end
 
   def new
