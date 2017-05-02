@@ -1,5 +1,6 @@
 module SearchPagesHelper
 include UsersHelper
+#include SessionsHelper
 
   def has_valid_users(search_results)
     results = search_results.count
@@ -9,6 +10,17 @@ include UsersHelper
       end
     end
     return results != 0
+  end
+
+  def parse_results(searches, user)
+    set = []
+    searches.each do |profile|
+      #byebug
+      if profile.user != user && within_distance(user, profile.user)
+        set << profile
+      end
+    end
+    return set
   end
 
   def recommend_set(recommend_search_results, viewed_user)

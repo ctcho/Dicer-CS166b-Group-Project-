@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  include UsersHelper
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :logged_in_user, only: [:edit, :update, :show, :settings, :index]
   before_action :correct_user, only:[:edit, :update, :show]
@@ -15,30 +16,11 @@ class UsersController < ApplicationController
   def show
     #get their chats
     @user = current_user
+    @dm_profile = @user.dm_profile
+    @player_profile = @user.player_profile
     @conversations = @user.chat_rooms
-    @new_conversations = @user.chat_rooms
-    @similar_profiles = []
-    if !@user.player_profile.nil? && @user.dm_profile.nil?
-      similar_players = recommend_set(User.recommender(@user.player_profile), @user)
-      @similar_profiles << similar_players.first
-      @similar_profiles << similar_players.second
-      @similar_profiles << similar_players.third
-      @similar_profiles << similar_players.fourth
-    elsif !@user.dm_profile.nil? && @user.player_profile.nil?
-      similar_dms = recommend_set(User.recommender(@user.dm_profile), @user)
-      @similar_profiles << similar_dms.first
-      @similar_profiles << similar_dms.second
-      @similar_profiles << similar_dms.third
-      @similar_profiles << similar_dms.fourth
-    else #user has both
-      similar_players = recommend_set(User.recommender(@user.player_profile), @user)
-      similar_dms = recommend_set(User.recommender(@user.dm_profile), @user)
-      @similar_profiles << similar_players.first
-      @similar_profiles << similar_players.second
-      @similar_profiles << similar_dms.first
-      @similar_profiles << similar_dms.second
-    end
-    @similar_profiles = (PlayerProfile.all).sample(4); #until the code above is fixed I need this to test, fix when possible - Michael
+    @similar_profiles = get_similar_profiles(@user)
+  #  @similar_profiles = (PlayerProfile.all).sample(4); #until the code above is fixed I need this to test, fix when possible - Michael
   end
 
   # GET /users/new

@@ -1,0 +1,12 @@
+<div class="page-label">Search Results</div>
+<br>
+<!--Happens if the search results come up empty or no valid users are in the results -->
+<% if @users.count == 0 || !@has_valid %>
+  <div class="search-text">There are no users that match your given preferences.</div>
+<% else %>
+  <div class="container-fluid parchment-background">
+    <% @users.each do |user| %>
+      <%= render user %>
+    <% end %>
+  </div>
+<% end %>
