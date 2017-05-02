@@ -4,10 +4,11 @@ class MessagesController < ApplicationController
   before_action :logged_in_user
 
   def create
-    #swithc to data chat_room id, so you don't have to hav this if else
+
     if params[:chat_room_id]
       @chat_room = ChatRoom.find(params[:chat_room_id])
     else
+      @redirect = true
       @receiver = User.find_by(id: params[:user_id])
       @chat_room = exists_chatroom current_user, @receiver
       if @chat_room == nil
@@ -30,7 +31,9 @@ class MessagesController < ApplicationController
       ActionCable.server.broadcast "chat_rooms_#{@chat_room.id}_channel", content: message.content, username: message.user.username
     end
     @messages = @chat_room.messages
-    #redirect_to chat_room_path(@chat_room)
+    if @redirect
+      redirect_to chat_room_path(@chat_room)
+    end
   end
 
   def new
