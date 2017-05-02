@@ -3,7 +3,11 @@
     <%= image_tag user.avatar.url(:smallerthumb), class: "message-avatar" %>
   </div>
   <div class="chat-user-name">
-    <%= user.username %>
+    <% if current_user.id == user.id %>
+      <%= link_to user.username, user_path(user) %>
+    <%else%>
+      <%= link_to user.username, user_player_profiles_path(user) %>
+    <%end%>
   </div>
   <div class="active-dot">
     <!-- put your green/red/blank dot here whoever wants to do that -->
