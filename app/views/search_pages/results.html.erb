@@ -1,12 +1,59 @@
-<h1>Search Results</h1>
+<div class="parchment-background">
+<br><br>
+<div class="page-label">New Search</div>
 <br>
-<!--Happens if the search results come up empty or no valid users are in the results -->
-<% if @users.count == 0 || !@has_valid %>
-  <p>There are no users that match your given preferences.</p>
-<% else %>
-  <div class="container-fluid parchment-background">
-    <% @users.each do |user| %>
-      <%= render user %>
-    <% end %>
-  </div>
+<%= form_tag(search_pages_results_path, method: "get") do %>
+  <div class="search-param">Profile Type (Default Search is for Players)</div>
+  <%= select_tag :profile_type, options_for_select([["Players", 0], ["DM's", 1]]) %>
+  <br><br><br>
+  <div class="search-param">Search Preferences</div>
+  <%= radio_button_tag(:option, "AND", true) %>
+  <%= label_tag(:option_all, "Search for ALL the listed options") %>
+  <br>
+  <%= radio_button_tag(:option, "OR") %>
+  <%= label_tag(:option_or, "Search for ANY of the listed options") %>
+  <br><br><br>
+  <div class="search-param">Exp Level</div>
+  <%= select_tag :experience_level, options_for_select([["No preference", 0],
+    ['Beginner (0-1 years of play)', 1], ['Novice (1-2 years of play)', 2],
+    ['Experienced (2-5 years of play)', 3], ['Veteran (More than 5 years of play)', 4]]) %>
+    <br><br><br>
+    <div class="search-param">Preferred Rulesets</div>
+    <%=check_box_tag :homebrew, 1 %>
+    <%=label_tag :home, "Homebrew" %>
+    <br>
+    <%=check_box_tag :original_ruleset, 2 %>
+    <%=label_tag :original, "Original Ruleset" %>
+    <br>
+    <%=check_box_tag :advanced_ruleset, 3 %>
+    <%=label_tag :advanced, "Advanced Ruleset" %>
+    <br>
+    <%=check_box_tag :pathfinder, 4 %>
+    <%=label_tag :path, "Pathfinder" %>
+    <br>
+    <%=check_box_tag :third, 5 %>
+    <%=label_tag :th, "Third" %>
+    <br>
+    <%=check_box_tag :three_point_five, 6 %>
+    <%=label_tag :t_five, "Three-Point-Five" %>
+    <br>
+    <%=check_box_tag :fourth, 7 %>
+    <%=label_tag :frth, "Fourth" %>
+    <br>
+    <%=check_box_tag :fifth, 8 %>
+    <%=label_tag :ffth, "Fifth" %>
+    <br><br><br>
+    <div class="search-param">Prefer Online Play?</div>
+    <%= select_tag :online_play, options_for_select([["Yes", 1], ["No", 0]]), prompt: "Select an Option" %>
+    <br><br><br>
+    <div class="search-param">Campaign Type</div>
+    <%= select_tag :campaign_type, options_for_select([["No preference", 2], ["Original Campaign", 0],
+    ["Module", 1]]) %>
+    <br><br>
+    <%= submit_tag "Search", name: nil %>
 <% end %>
+
+<br><br><br><br>
+<div><%= render 'results' %></div>
+<br>
+</div>

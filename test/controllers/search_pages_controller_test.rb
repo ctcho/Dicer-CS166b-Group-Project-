@@ -1,6 +1,7 @@
 require 'test_helper'
 include SessionsHelper
 include SearchPagesHelper
+include UsersHelper
 
 #The functionality at the moment is all set. However, I'm trying to test a strange
 #part: you know how controllers of items have special variables that can be used in
@@ -147,10 +148,10 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
   test "user will see recommendations based on only one profile type if they don't have the other" do
     get user_path(@searcher)
     assert_response :success
-    player_recommend = recommend_set(User.recommender(@p0, "player"), @searcher)
-    dm_recommend = recommend_set(User.recommender(@p0, "dm"), @searcher)
-    assert player_recommend.count > 0
-    assert dm_recommend.count > 0
+    recommendations = get_similar_profiles(@searcher)
+    assert recommendations.count > 0
+    assert recommendations.first.class == PlayerProfile
+    assert recommendations.third.class == DmProfile
     #assert "div.profile-preview"
   end
 
@@ -161,10 +162,10 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
     @searcher.dm_profile = dm0
     get user_path(@searcher)
     assert_response :success
-    recommend_players = recommend_set(User.recommender(@p0, "player"), @searcher)
-    recommend_dms = recommend_set(User.recommender(dm0, "dm"), @searcher)
-    assert recommend_players.count > 0
-    assert recommend_dms.count > 0
+    recommendations = get_similar_profiles(@searcher)
+    assert recommendations.count > 0
+    assert recommendations.first.class == PlayerProfile
+    assert recommendations.third.class == DmProfile
     #assert "div.profile-preview", 2
   end
 
@@ -299,7 +300,7 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
       #puts "#{User.search(@params, current_user).count}"
       #byebug
       assert_not User.search(@params, current_user).include?(@p3)
-      assert_select "p", "There are no users that match your given preferences."
+      assert_select "div.search-text", "There are no users that match your given preferences."
   end
 
   test "Using the 'OR' feature returns results from most relevant to least relevant for PlayerProfiles" do
@@ -500,7 +501,7 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
       assert_response :success
       #puts "#{User.search(@params, current_user).count}"
       assert_not User.search(@params, current_user).include?(@dm3)
-      assert_select "p", "There are no users that match your given preferences."
+      assert_select "div.search-text", "There are no users that match your given preferences."
   end
 
   test "Using the 'OR' feature returns results from most relevant to least relevant for DmProfiles" do
