@@ -1,83 +1,84 @@
 <div id="notice" class="black-border-text"><%= notice %></div>
-  <div class="profile-wrapper container-fluid">
-    <div class="parchment-background">
-      <div class="profile-summary profile-info row">
-        <div class="col-md-2">
-          <%= image_tag @user.avatar.url(:medium) %>
-        </div>
-        <div class="profile-text col-md-7">
-          <p class="info-label">Username:</p>
-          <p class="info"><%= @user.username %></p>
+<div class="profile-wrapper container-fluid">
+  <div class="parchment-background">
+    <div class="profile-summary profile-info row">
+      <div class="col-md-2">
+        <%= image_tag @user.avatar.url(:medium) %>
+      </div>
+      <div class="profile-text col-md-7">
+        <p class="info-label">Username:</p>
+        <p class="info"><%= @user.username %></p>
 
-          <br>
+        <br>
 
-          <p class="info-label">Age:</p>
-          <p class="info"><%= @user.age %></p>
+        <p class="info-label">Age:</p>
+        <p class="info"><%= @user.age %></p>
 
-          <br>
+        <br>
 
-          <p class="info-label">Experience:</p>
-          <p class="info"><%= translate_experience_level(@player_profile.experience_level) %></p>
+        <p class="info-label">Experience:</p>
+        <p class="info"><%= translate_experience_level(@player_profile.experience_level) %></p>
 
-          <br>
+        <br>
 
-          <p class="info-label">Likes to play:</p>
-          <p class="info"><%= get_ruleset_strings(@player_profile).join(", ") %></p>
+        <p class="info-label">Likes to play:</p>
+        <p class="info"><%= get_ruleset_strings(@player_profile).join(", ") %></p>
 
-          <br>
+        <br>
 
-          <p class="info-label"><%= translate_online_play(@player_profile) %></p>
+        <p class="info-label"><%= translate_online_play(@player_profile) %></p>
 
-          <br>
+        <br>
 
-          <% unless current_user? @user %>
-            <% if within_distance(User.find(@player_profile.user_id), current_user) %>
-              <p class="info-label">Distance:</p>
-              <p class="info"><%= find_distance(User.find(@player_profile.id), current_user) %></p>
-            <% else %>
-              <p class="info-label">Too far away!</p>
-            <% end %>
+        <% unless current_user? @user %>
+          <% if within_distance(User.find(@player_profile.user_id), current_user) %>
+            <p class="info-label">Distance:</p>
+            <p class="info"><%= find_distance(User.find(@player_profile.id), current_user) %></p>
+          <% else %>
+            <p class="info-label">Too far away!</p>
           <% end %>
+        <% end %>
 
-        </div>
+      </div>
 
-        <div class="button-container col-md-3">
-          <% if (current_user.id - 1) != @player_profile.id %>
-            <button class="contact-me-button", id="contact"> Contact me! </button>
-          <%end%>
+      <div class="button-container col-md-3">
+        <% if (current_user.id - 1) != @player_profile.id %>
+          <button class="contact-me-button", id="contact"> Contact me! </button>
+        <%end%>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
+        <div class="profile-bio">
+          <div class="bio-label">Bio</div>
+          <div class="bio-text">
+            <%= @player_profile.bio %>
+          </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-md-8">
-          <div class="profile-bio">
-            <div class="bio-label">Bio</div>
-            <div class="bio-text">
-              <%= @player_profile.bio %>
-            </div>
+      <div class="col-md-4">
+        <div class="more-users-box">
+          <div class="info-label" id="more-users-label">You may also like:</div>
+          <div class="container-fluid">
+            <%= render partial: "users/recommend_preview", collection: @similar_profiles, as: :profile %>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="more-users-box">
-            <div class="info-label">You may also like:</div>
-            <div class="container-fluid">
-              <!-- TODO: STYLE @similar_profiles -->
-            </div>
-          </div>
-        </div>
+      </div>
 
    <!--Message sending modal. Class name is "modall" to avoid bootstrap conficts -->
        <div class="modall" id="msgmodal">
-          <span class="close">
-            &times;
-          </span>
-          <span class="greeting">
-            Send <%= @user.username %> a message
-          </span>
-          <section class="msgform">
-            <%= render 'messages/message_form' %>
-          </section>
-        </div>
+        <span class="close">
+          &times;
+        </span>
+        <span class="greeting">
+          Send <%= @user.username %> a message
+        </span>
+        <section class="msgform">
+          <%= render 'messages/message_form' %>
+        </section>
       </div>
+
+    </div>
     <div class="row">
       <div class="col-sm-3">
         <div class="ending-buttons">
