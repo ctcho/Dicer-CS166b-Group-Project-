@@ -1,4 +1,6 @@
 class MessagesController < ApplicationController
+
+  # consider whether this should be merged with the chatrooms controller?
   include MessagesHelper
 
   before_action :logged_in_user
@@ -40,6 +42,7 @@ class MessagesController < ApplicationController
   end
 
   private
+  
     def logged_in_user
       unless logged_in?
         store_location

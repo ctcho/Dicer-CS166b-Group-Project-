@@ -3,6 +3,7 @@ class DmProfilesController < ApplicationController
   before_action :set_dm_profile, only: [:show, :edit, :update, :destroy]
   before_action :logged_in_user, only: [:new, :edit, :update]
   before_action :correct_user, only: [:new, :edit, :update]
+
   # GET /dm_profiles
   # GET /dm_profiles.json
   def index
@@ -99,6 +100,7 @@ class DmProfilesController < ApplicationController
       end
     end
 
+    # should give a 404 error instead
     def correct_user
       @user = User.find(params[:user_id])
       redirect_to('/unauthorized') unless current_user?(@user)

@@ -56,9 +56,11 @@
       <%= render partial: "chat_rooms/chatroom_preview", collection: @conversations, as: :chat %>
     </div>
     <!-- create new chat link -->
+    <%= link_to new_chat_room_path do %>
     <div class="chatroom-new-container">
       <%= image_tag "addnewbutton", height: "200", width: "150" %>
     </div>
+    <% end %>
   </div>
 
   <div class="row-middle">

@@ -29,7 +29,7 @@ $(document).on 'turbolinks:load', ->
 submit_message = () ->
   $('#message_content').on 'keydown', (event) ->
     if event.keyCode is 13
-      $('input').click()
+      $(document.getElementById('send-button')).click()
       event.target.value = ""
       event.preventDefault()
 
