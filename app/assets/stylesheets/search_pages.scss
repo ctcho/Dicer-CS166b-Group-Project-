@@ -3,8 +3,12 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .search-mod {
+  margin-top: 3vw !important;
   margin-left: 25vw !important;
   font-family: "Hultog";
+  position: absolute;
+  z-index: 1;
+  transition: 0.2s;
 }
 
 .search-param {
@@ -15,4 +19,30 @@
 
 .search-text {
   font-family: "Hulthog";
+}
+
+.close {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 3px;
+  padding-bottom: 1px;
+  margin-left: 45vw !important;
+  font-size: 40px;
+  color: red;
+}
+
+.close:hover {
+  cursor: pointer;
+  background-color: lightgrey;
+}
+
+#search_modal {
+  display: none;
+}
+
+#search {
+  background: none;
+  border: none;
+  font-family: "Hultog";
+  font-size: 23px;
 }

@@ -453,7 +453,7 @@ a:hover.outside, a:active.outside {
 .msgform {
     font-size: 12px;
     background-color: white;
-    margin: auto; /* 15% from the top and centered */
+    margin: none; /* 15% from the top and centered */
     padding: 0;
     border: 1px solid #888;
     width: 90%; /* Could be more or less, depending on screen size */
@@ -468,4 +468,10 @@ a:hover.outside, a:active.outside {
 @keyframes animatetop {
     from {top:-300px; opacity:0}
     to {top:0; opacity:1}
+}
+
+.dummy {
+  margin-top: 60px;
+  background-image: url('parchmentbackground5');
+  color: black;
 }

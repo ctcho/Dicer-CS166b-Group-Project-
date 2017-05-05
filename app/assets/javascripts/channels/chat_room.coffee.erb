@@ -30,9 +30,10 @@ submit_message = () ->
   $('#message_content').on 'keydown', (event) ->
     if event.keyCode is 13
       $(document.getElementById('send-button')).click()
+      $('#send-button').click()
       event.target.value = ""
-      event.preventDefault()
-
+      event.preventDefault() #what is the default?
+      
 scroll_bottom = () ->
   $('#messages').scrollTop($('#messages')[0].scrollHeight)
 

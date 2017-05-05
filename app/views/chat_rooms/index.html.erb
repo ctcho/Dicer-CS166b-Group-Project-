@@ -1,0 +1,5 @@
+<div class="dummy">
+  <% @chat_rooms.each do |room| %>
+    <%= link_to "#{room.name}", chat_room_path(room.id) %>
+  <%end%>
+</div>
