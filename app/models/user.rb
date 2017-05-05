@@ -21,6 +21,13 @@ class User < ApplicationRecord
 
   has_secure_password
 
+  #Facebook Schtuff. Hope it works.
+  def self.koala(auth)
+    access_token = auth['token']
+    facebook = Koala::Facebook::API.new(access_token)
+    facebook.get_object("me?fields=name,picture")
+  end
+
   def self.recommender(profile, type)
     rulesets = []
     rulesets = rule_recom_parse([profile.homebrew, profile.original_ruleset, profile.advanced_ruleset,

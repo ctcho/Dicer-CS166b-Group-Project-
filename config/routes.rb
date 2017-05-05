@@ -17,6 +17,11 @@ Rails.application.routes.draw do
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
+
+  #Facebook stuff.
+  get 'auth/facebook', as: "auth_provider"
+  #get 'auth/facebook/callback', to: 'sessions#new'
+
   resources :users do
     resource :player_profiles do
       resources :character_sheets
