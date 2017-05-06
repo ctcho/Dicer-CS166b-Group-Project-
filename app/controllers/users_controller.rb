@@ -18,7 +18,7 @@ class UsersController < ApplicationController
     @dm_profile = @user.dm_profile
     @player_profile = @user.player_profile
     @conversations = @user.chat_rooms
-    @similar_profiles = get_similar_profiles(@user)
+    @similar_profiles = get_similar_profiles(@user) & (User.location(current_user, "0") || User.location(current_user, "0"))
   end
 
   # GET /users/new
