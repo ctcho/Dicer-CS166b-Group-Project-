@@ -16,7 +16,7 @@ class DmProfilesController < ApplicationController
     @user = User.find(params[:user_id])
     @dm_profile = @user.dm_profile
     @similar_profiles = User.recommender(@dm_profile, "dm")
-    @similar_profiles = recommend_set(@similar_profiles, @user)
+    @similar_profiles = recommend_set(@similar_profiles, @user) & User.location(current_user, "1")
     if !@dm_profile
       redirect_to new_user_dm_profiles_path(@user, tutorial: params[:tutorial])
     else
