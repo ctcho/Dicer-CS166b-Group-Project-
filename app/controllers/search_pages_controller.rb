@@ -16,7 +16,7 @@ include SearchPagesHelper
   #  byebug
   #  render json: {message: "Success2"}
 
-  end
+  #end
 
   def results
     #Goes to User.search in user model --Cameron C.

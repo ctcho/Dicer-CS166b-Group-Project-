@@ -9,7 +9,6 @@ include UsersHelper
 #now... -Cameron C.
 class SearchPagesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    #byebug
     @u1 = users(:user_1)
     @u2 = users(:user_2)
     @u3 = users(:user_3)
@@ -300,7 +299,7 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
       #puts "#{User.search(@params, current_user).count}"
       #byebug
       assert_not User.search(@params, current_user).include?(@p3)
-      assert_select "div.search-text", "There are no users that match your given preferences."
+      assert_select "div.search-apology", "There are no users that match your preferences."
   end
 
   test "Using the 'OR' feature returns results from most relevant to least relevant for PlayerProfiles" do
@@ -501,7 +500,7 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
       assert_response :success
       #puts "#{User.search(@params, current_user).count}"
       assert_not User.search(@params, current_user).include?(@dm3)
-      assert_select "div.search-text", "There are no users that match your given preferences."
+      assert_select "div.search-apology", "There are no users that match your preferences."
   end
 
   test "Using the 'OR' feature returns results from most relevant to least relevant for DmProfiles" do

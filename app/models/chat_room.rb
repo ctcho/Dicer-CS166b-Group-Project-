@@ -1,5 +1,5 @@
 class ChatRoom < ApplicationRecord
-  belongs_to :owner, :class_name => "User"
+  has_one :owner, :class_name => "User"
   #before_save :has_two_users
   has_many :messages
   #has_and_belongs_to_many :users
@@ -15,4 +15,3 @@ class ChatRoom < ApplicationRecord
   #  end
   #end
 end
-  

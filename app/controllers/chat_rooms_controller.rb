@@ -7,12 +7,14 @@ class ChatRoomsController < ApplicationController
   def create
     @chat_room = ChatRoom.new(chat_room_params)
     if @chat_room.save
+      puts "yay!"
       ChatRoomsUser.create(chat_room: @chat_room, user: current_user)
       params[:users].each do |user|
         ChatRoomsUser.create(chat_room: @chat_room, user_id: user)
       end
       redirect_to chat_room_path(@chat_room), notice: 'Chat successfully created'
     else
+      byebug
       render :new
     end
   end
