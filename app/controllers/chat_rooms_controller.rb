@@ -65,7 +65,8 @@ class ChatRoomsController < ApplicationController
   end
 
   def chat_room_params
-    {owner: current_user, name: params[:chat_room_name]}
+    byebug
+    {owner: current_user, name: params[:name], avatar: params[:avatar]}
   end
 
     def set_chat_room

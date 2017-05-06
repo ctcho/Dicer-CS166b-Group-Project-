@@ -26,7 +26,7 @@ class MessagesController < ApplicationController
     #twice?
     message = current_user.messages.build(content: params[:message][:content], chat_room_id: @chat_room.id)
     if message.save
-      ActionCable.server.broadcast "chat_rooms_#{@chat_room.id}_channel", content: message.content, username: message.user.username
+      ActionCable.server.broadcast "chat_rooms_#{@chat_room.id}_channel", content: message.content, username: message.user.username, avatar_path: message.user.avatar.url(:smallerthumb)
     end
     @messages = @chat_room.messages
     redirect_to chat_room_path(@chat_room)
@@ -45,7 +45,7 @@ class MessagesController < ApplicationController
   end
 
   private
-  
+
     def logged_in_user
       unless logged_in?
         store_location

@@ -2,7 +2,7 @@
 <div class='container-fluid parchment-background'>
   <div class="form-text"> Create a Group Chat </div>
   <br>
-  <%= form_tag(chat_rooms_path, method: "post") do %>
+  <%= form_tag(chat_rooms_path, method: "post", multipart: true) do %>
     <% if @chat_room.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(chat_room.errors.count, "error") %> prohibited this chat room from being saved</h2>
@@ -16,8 +16,8 @@
 
   <div class="field row">
     <div class="col-md-6">
-      <%= label_tag :chat_room_name, "Give your chat a name:" %>
-      <%= text_field_tag :chat_room_name %>
+      <%= label_tag :name, "Give your chat a name:" %>
+      <%= text_field_tag :name %>
     </div>
   </div>
 
@@ -37,7 +37,10 @@
     <% end %>
 
 
-
+    <div class="field">
+      <% label_tag :avatar, id: 'chat-avatar-label' %>
+      <%= file_field_tag :avatar, class: 'image_file_input', id: 'chat-avatar-field' %>
+    </div>
 
 
 
