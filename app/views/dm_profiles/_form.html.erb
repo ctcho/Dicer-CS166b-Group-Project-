@@ -3,275 +3,286 @@
 <% end %>
 <%= form_for(:dm_profile, url: user_dm_profiles_path(@user, tutorial: @tutorial), params: {tutorial: @tutorial} ) do |f| %>
   <div class=ruleset-selection-container>
-    <div class="tutorial-section-label">Rulesets</div>
+    <div class="tutorial-section-label" id="ruleset-header">Rulesets</div>
+    <% if @tutorial %>
+      <div class="tutorial-explanation-text">
+        DnD has been around a long time, and people playwith many different rules.
+        Here are the major rulesets. Check whichever ones seem interesting to you!
+      </div>
+    <% end %>
+    <br>
+    <div class="container-fluid field">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="row ruleset-box">
+            <div class="ruleset-picture col-md-6">
+              <div class="ruleset-label">
+                <%= f.label :original do %>
+                  Original
+                  <%= f.check_box :original_ruleset %>
+                <% end %>
+              </div>
+              <%= image_tag "dnd1.png", height: '450', width: '300' %>
+            </div>
+            <div class="ruleset-text col-md-6">
+               <% if @tutorial %>
+                The Original ruleset for Dungeons and Dragons has all the fundamentals of the game: a fighting class, a magic class,
+                and a healing class, and the roleplaying/dice rolling mechanics. However, the math of
+                the game is different than other versions, and it relies somewhat heavily on miniatures. Not recommended for new players!
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="row ruleset-box">
+            <div class="ruleset-picture col-md-6">
+              <div class="ruleset-label">
+                <%= f.label :advanced do %>
+                  Advanced
+                  <%= f.check_box :advanced_ruleset %>
+                <% end %>
+                <%= image_tag "dnd2.jpg", height: '450', width: '300' %>
+              </div>
+            </div>
+            <div class="ruleset-text col-md-6">
+              <% if @tutorial %>
+                Advanced Dungeons and Dragons and Advanced 2nd Edition DnD added some more classes to the original version and simplified the combat
+                rules. Some dice-rolling rules differ compared to other editions, and not many people play this edition.
+              <%end%>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="ruleset-box row">
+            <div class="ruleset-picture col-md-6">
+              <div class="ruleset-label">
+                <%= f.label :third do %>
+                  3rd Edition
+                  <%= f.check_box :third %>
+                <% end %>
+              </div>
+              <%= image_tag "dnd3.jpg", height: '450', width: '300' %>
+            </div>
+            <div class="ruleset-text col-md-6">
+              <% if @tutorial %>
+                3rd Edition Dungeons and Dragons introduced many of the core mechanics in modern DnD - actions become (mostly) centered around
+                D20 rolls with some bonuses from character traits, and 3rd edition introduced greater customizability for characters. <b>Almost all
+                actions of the game become simplified from this edition onwards.</b>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="ruleset-box row">
+            <div class="ruleset-picture col-md-6">
+              <div class="ruleset-label">
+                <%= f.label :three_point_five do %>
+                  3.5 Edition
+                  <%= f.check_box :three_point_five %>
+                <% end %>
+              </div>
+              <%= image_tag "dnd35.jpg", height: '450', width: '300' %>
+            </div>
+            <div class="ruleset-text col-md-6">
+              <% if @tutorial %>
+                DnD v3.5 is an update to the 3rd edition, with some minor tweaks to the rules and some additions here and there to what v3 added.
+                Most "homebrew" rulesets start with the mechanics of v3.5. <b>Highly recommended!</b>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="ruleset-box row">
+            <div class="ruleset-picture col-md-6">
+              <div class="ruleset-label">
+                <%= f.label :pathfinder do %>
+                  Pathfinder
+                  <%= f.check_box :pathfinder %>
+                <% end %>
+              </div>
+              <%= image_tag "pathfinder.jpg", height: '450', width: '300' %>
+            </div>
+            <div class="ruleset-text col-md-6">
+              <% if @tutorial %>
+                Pathfinder was a game released as sort of an expansion to v3 and v3.5 of Dungeons and Dragons. Sometimes called "v3.75", Pathfinder
+                expanded on the rules and mechanics of version 3 with some slight changes to mechanics like skills and spells. Although not
+                <i>technically</i> a ruleset of DnD... it's DnD. <b>Recommended!</b>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="ruleset-box row">
+            <div class="ruleset-picture col-md-6">
+              <div class="ruleset-label">
+                <%= f.label :fourth  do%>
+                  4th Edition
+                  <%= f.check_box :fourth %>
+                <% end %>
+              </div>
+              <%= image_tag "dnd4.jpg", height: '450', width: '300' %>
+            </div>
+            <div class="ruleset-text col-md-6">
+              <% if @tutorial %>
+                The 4th Edition of Dungeons and Dragons introduced some pretty significant changes to DnD mechanics from v3, including giving every
+                class powers that they can use in combat. Most of the combat and power usage in this version is simplified greatly with miniatures or
+                a site like <a class="outside" href=https://roll20.net/>Roll20</a>, an online tabletop grid/miniature simulator.
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="ruleset-box row">
+            <div class="ruleset-picture col-md-6">
+              <div class="ruleset-label">
+                <%= f.label :fifth do %>
+                  5th Edition
+                  <%= f.check_box :fifth %>
+                <% end %>
+              </div>
+              <%= image_tag "dnd5.jpg", height: '450', width: '300' %>
+            </div>
+            <div class="ruleset-text col-md-6">
+              <% if @tutorial %>
+                5th edition is the most recent release of Dungeons and Dragons, and it attempts to simplify combat and mechanics from 4th Edition.
+                Powers were removed, and the focus is returned to skills. Spell mechanics were also changed to be more similar to that of 3 and 3.5.
+                Wizards of the Coast has many resources for new players in 5th edition, like the <a class="outside" href=http://dnd.wizards.com/articles/features/basicrules>
+                basic rules for players and DMs available on their website</a> and the <a class="outside" href=http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_starterset>
+                Starter Set</a> which includes dice, rulebooks, and pre-made characters. <b>Highly recommended!</b>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="ruleset-box row">
+            <div class="ruleset-picture col-md-6">
+              <div class="ruleset-label">
+                <%= f.label :homebrew do %>
+                  Homebrew
+                  <%= f.check_box :homebrew %>
+                <% end %>
+              </div>
+              <%= image_tag "dndhomebrew2.jpg", height: '450', width: '300' %>
+            </div>
+            <div class="ruleset-text col-md-6">
+              <% if @tutorial %>
+                Homebrew refers to the various "house" rules that players use. With such a creative game, players and DMs modify rules for optimal
+                enjoyment. Homebrew can also be synonymous with original campaigns, monsters, classes, or anything not created by the publishers.
+                Choose this for a more flexible game experience, but be warned: while house rules may simplify things, sometimes it may complicate them too!
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="campaign-type-box">
+      <div class="tutorial-section-label">Campaign Types</div>
       <% if @tutorial %>
         <div class="tutorial-explanation-text">
-          DnD has been around a long time, and people playwith many different rules.
-          Here are the major rulesets. Check whichever ones seem interesting to you!
+          There are two main different types of campaign: modular (published/written) campaigns and original campaigns.
+          Playing a module means playing a pre-written campaign out of a book. There's lots of these and even pre-defined universes and settings
+          for them to fit into, such as the "Forgotten Realms". Just because they're pre-packaged and pre-written doesn't make them any less fun to play!
+          An original campaign is one written or adapted by your DM.
+          Both are great, though some modules aren't for everyone, and some original campaigns are made for specific audiences. Sometimes
+          an original or "homebrew" campaign will also add its own rules and quirks; conversely, modular campaigns are typically by the book
+          when it comes to rules.
         </div>
       <% end %>
-      <br>
-      <div class="container-fluid field">
-        <div class="row">
-          <div class="col-md-6">
-            <div class="row ruleset-box">
-              <div class="ruleset-picture col-md-6">
-                <h3>
-                  <%= f.label :original do %>
-                    Original
-                    <%= f.check_box :original_ruleset %>
-                  <% end %>
-                </h3>
-                <%= image_tag "dnd1.png", height: '450', width: '300' %>
-              </div>
-              <div class="ruleset-text col-md-6">
-                 <% if @tutorial %>
-                  The Original ruleset for Dungeons and Dragons has all the fundamentals of the game: a fighting class, a magic class,
-                  and a healing class, and the roleplaying/dice rolling mechanics. However, the math of
-                  the game is different than other versions, and it relies somewhat heavily on miniatures. Not recommended for new players!
-                <% end %>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="row ruleset-box">
-              <div class="ruleset-picture col-md-6">
-                <h3>
-                  <%= f.label :advanced do %>
-                    Advanced
-                    <%= f.check_box :advanced_ruleset %>
-                  <% end %>
-                  <%= image_tag "dnd2.jpg", height: '450', width: '300' %>
-                </h3>
-              </div>
-              <div class="ruleset-text col-md-6">
-                <% if @tutorial %>
-                  Advanced Dungeons and Dragons and Advanced 2nd Edition DnD added some more classes to the original version and simplified the combat
-                  rules. Some dice-rolling rules differ compared to other editions, and not many people play this edition.
-                <%end%>
-              </div>
-            </div>
+      <div class="field row">
+        <div class="col-md-5">
+          <div class="checkbox-label">
+            <%= f.label :original_campaign %>
           </div>
         </div>
-        <div class="row">
-          <div class="col-md-6">
-            <div class="ruleset-box row">
-              <div class="ruleset-picture col-md-6">
-                <h3>
-                  <%= f.label :third do %>
-                    3rd Edition
-                    <%= f.check_box :third %>
-                  <% end %>
-                </h3>
-                <%= image_tag "dnd3.jpg", height: '450', width: '300' %>
-              </div>
-              <div class="ruleset-text col-md-6">
-                <% if @tutorial %>
-                  3rd Edition Dungeons and Dragons introduced many of the core mechanics in modern DnD - actions become (mostly) centered around
-                  D20 rolls with some bonuses from character traits, and 3rd edition introduced greater customizability for characters. <b>Almost all
-                  actions of the game become simplified from this edition onwards.</b>
-                <% end %>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="ruleset-box row">
-              <div class="ruleset-picture col-md-6">
-                <h3>
-                  <%= f.label :three_point_five do %>
-                    3.5 Edition
-                    <%= f.check_box :three_point_five %>
-                  <% end %>
-                </h3>
-                <%= image_tag "dnd35.jpg", height: '450', width: '300' %>
-              </div>
-              <div class="ruleset-text col-md-6">
-                <% if @tutorial %>
-                  DnD v3.5 is an update to the 3rd edition, with some minor tweaks to the rules and some additions here and there to what v3 added.
-                  Most "homebrew" rulesets start with the mechanics of v3.5. <b>Highly recommended!</b>
-                <% end %>
-              </div>
-            </div>
+        <div class="col-md-1">
+          <div class="checkbox">
+            <%= f.check_box :original_campaign %>
           </div>
         </div>
-        <div class="row">
-          <div class="col-md-6">
-            <div class="ruleset-box row">
-              <div class="ruleset-picture col-md-6">
-                <h3>
-                  <%= f.label :pathfinder do %>
-                    Pathfinder
-                    <%= f.check_box :pathfinder %>
-                  <% end %>
-                </h3>
-                <%= image_tag "pathfinder.jpg", height: '450', width: '300' %>
-              </div>
-              <div class="ruleset-text col-md-6">
-                <% if @tutorial %>
-                  Pathfinder was a game released as sort of an expansion to v3 and v3.5 of Dungeons and Dragons. Sometimes called "v3.75", Pathfinder
-                  expanded on the rules and mechanics of version 3 with some slight changes to mechanics like skills and spells. Although not
-                  <i>technically</i> a ruleset of DnD... it's DnD. <b>Recommended!</b>
-                <% end %>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="ruleset-box row">
-              <div class="ruleset-picture">
-                <h3>
-                  <%= f.label :fourth  do%>
-                    4th Edition
-                    <%= f.check_box :fourth %>
-                  <% end %>
-                </h3>
-                <%= image_tag "dnd4.jpg", height: '450', width: '300' %>
-              </div>
-              <div class="ruleset-text">
-                <% if @tutorial %>
-                  The 4th Edition of Dungeons and Dragons introduced some pretty significant changes to DnD mechanics from v3, including giving every
-                  class powers that they can use in combat. Most of the combat and power usage in this version is simplified greatly with miniatures or
-                  a site like <a class="outside" href=https://roll20.net/>Roll20</a>, an online tabletop grid/miniature simulator.
-                <% end %>
-              </div>
-            </div>
+        <div class="col-md-2">
+          <div class="checkbox-label">
+            <%= f.label :module %>
           </div>
         </div>
-        <div class="row">
-          <div class="col-md-6">
-            <div class="ruleset-box row">
-              <div class="ruleset-picture col-md-6">
-                <h3>
-                  <%= f.label :fifth do %>
-                    5th Edition
-                    <%= f.check_box :fifth %>
-                  <% end %>
-                </h3>
-                <%= image_tag "dnd5.jpg", height: '450', width: '300' %>
-              </div>
-              <div class="ruleset-text col-md-6">
-                <% if @tutorial %>
-                  5th edition is the most recent release of Dungeons and Dragons, and it attempts to simplify combat and mechanics from 4th Edition.
-                  Powers were removed, and the focus is returned to skills. Spell mechanics were also changed to be more similar to that of 3 and 3.5.
-                  Wizards of the Coast has many resources for new players in 5th edition, like the <a class="outside" href=http://dnd.wizards.com/articles/features/basicrules>
-                  basic rules for players and DMs available on their website</a> and the <a class="outside" href=http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_starterset>
-                  Starter Set</a> which includes dice, rulebooks, and pre-made characters. <b>Highly recommended!</b>
-                <% end %>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="ruleset-box row">
-              <div class="ruleset-picture col-md-6">
-                <h3>
-                  <%= f.label :homebrew do %>
-                    Homebrew
-                    <%= f.check_box :homebrew %>
-                  <% end %>
-                </h3>
-                <%= image_tag "dndhomebrew2.jpg", height: '450', width: '300' %>
-              </div>
-              <div class="ruleset-text col-md-6">
-                <% if @tutorial %>
-                  Homebrew refers to the various "house" rules that players use. With such a creative game, players and DMs modify rules for optimal
-                  enjoyment. Homebrew can also be synonymous with original campaigns, monsters, classes, or anything not created by the publishers.
-                  Choose this for a more flexible game experience, but be warned: while house rules may simplify things, sometimes it may complicate them too!
-                <% end %>
-              </div>
-            </div>
+        <div class="col-md-4">
+          <div class="checkbox">
+            <%= f.check_box :module %>
           </div>
         </div>
       </div>
     </div>
+      <% if @tutorial %>
+        <input type="hidden" id="dm_profile[:experience_level]" name="experience_level" value= 0>
+        <br>
+      <% else %>
+        <div class = "field location-container">
+          <div class="tutorial-section-label">How experienced are you?</div>
+          <br>
+          <div class="row">
+            <div class="col-md-3">
+              <%= f.radio_button(:experience_level, 1) %>
+              <%= f.label(:experience_level_beginner, "Beginner (0-1 years of play)") %>
+            </div>
+            <div class="col-md-3">
+              <%= f.radio_button(:experience_level, 2) %>
+              <%= f.label(:experience_level_novice, "Novice (1-2 years of play)") %>
+            </div>
+            <div class="col-md-3">
+              <%= f.radio_button(:experience_level, 3) %>
+              <%= f.label(:experience_level_experienced, "Experienced (2-5 years of play)") %>
+            </div>
+            <div class="col-md-3">
+              <%= f.radio_button(:experience_level, 4) %>
+              <%= f.label(:experience_level_veteran,"Veteran (More than 5 years of play)" ) %>
+            </div>
+          </div>
+        </div>
+      <% end %>
 
+      <div class="bio-container">
+        <div class="tutorial-section-label">Bio</div>
+        <% if @tutorial %>
+          <div class="tutorial-explanation-text">
+            This section is for you to describe yourself as a player. Eventually, after you've played a few sessions, you will write about
+            what you like and don't like in a campaign, DM, and fellow adventurers. For now, write what kind of experience you are looking
+            for and why you are interested in trying DnD.
+          </div>
+        <% end %>
+        <div class="field">
+          <%= f.text_area :bio, placeholder: "Tell us a bit about you as a DM"%>
+        </div>
+      </div>
 
-<div class="campaign-type-box">
-  <div class="tutorial-section-label">Campaign Types</div>
-  <% if @tutorial %>
-    <div class="tutorial-explanation-text">
-      There are two main different types of campaign: modular (published/written) campaigns and original campaigns.
-      Playing a module means playing a pre-written campaign out of a book. There's lots of these and even pre-defined universes and settings
-      for them to fit into, such as the "Forgotten Realms". Just because they're pre-packaged and pre-written doesn't make them any less fun to play!
-      An original campaign is one written or adapted by your DM.
-      Both are great, though some modules aren't for everyone, and some original campaigns are made for specific audiences. Sometimes
-      an original or "homebrew" campaign will also add its own rules and quirks; conversely, modular campaigns are typically by the book
-      when it comes to rules.
-    </div>
-  <% end %>
-  <div class="field row">
-    <div class="col-md-5">
-      <div class="checkbox-label">
-        <%= f.label :original_campaign %>
+      <div class="location-container">
+        <div class="tutorial-section-label">Location Details</div>
+        <% if @tutorial %>
+          <div class="tutorial-explanation-text">
+            Lastly, we want to know if you're willing to play online, and how far you're willing to travel to play in person.
+            Online play allows you to play with people from all over the world using the power of the internet and supplementary applications like
+            <a class="outside" href=https://roll20.net/>Roll20</a>.
+            Playing in person often has a much different dynamic than online play does, as players can roleplay their characters more accurately
+            (like actually whispering to each other).
+            <b>Remember, saying that you're willing to play online <i>DOES NOT</i> exclude you from in person play, it just changes who can search for you!</b>
+          </div>
+        <% end %>
+        <br>
+        <div class="field" id="online-check">
+          <%= f.label "Play with users online?" %>
+          <%= f.check_box :online_play %>
+        </div>
       </div>
-    </div>
-    <div class="col-md-1">
-      <div class="checkbox">
-        <%= f.check_box :original_campaign %>
-      </div>
-    </div>
-    <div class="col-md-2">
-      <div class="checkbox-label">
-        <%= f.label :module %>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="checkbox">
-        <%= f.check_box :module %>
-      </div>
-    </div>
-  </div>
-</div>
-  <% if @tutorial %>
-    <input type="hidden" id="dm_profile[:experience_level]" name="experience_level" value= 0>
-    <br>
-  <% else %>
-    <div class = "field location-container">
-      <div class="tutorial-section-label">How experienced are you?</div>
-      <br>
-      <%= f.label(:experience_level_beginner, "Beginner (0-1 years of play)") %>
-      <%= f.radio_button(:experience_level, 1) %>
-      <%= f.label(:experience_level_novice, "Novice (1-2 years of play)") %>
-      <%= f.radio_button(:experience_level, 2) %>
-      <%= f.label(:experience_level_experienced, "Experienced (2-5 years of play)") %>
-      <%= f.radio_button(:experience_level, 3) %>
-      <%= f.label(:experience_level_veteran,"Veteran (More than 5 years of play)" ) %>
-      <%= f.radio_button(:experience_level, 4) %>
-    </div>
-  <% end %>
 
-  <div class="bio-container">
-    <div class="tutorial-section-label">Bio</div>
-    <% if @tutorial %>
-      <div class="tutorial-explanation-text">
-        This section is for you to describe yourself as a player. Eventually, after you've played a few sessions, you will write about
-        what you like and don't like in a campaign, DM, and fellow adventurers. For now, write what kind of experience you are looking
-        for and why you are interested in trying DnD.
+      <div class="actions button-container profile-submit-container">
+        <%= f.submit 'Create my profile!', class: "profile-button signup-login-submit" %>
       </div>
+    </div>
     <% end %>
-    <div class="field">
-      <%= f.text_area :bio, placeholder: "Tell us a bit about yourself..."%>
-    </div>
   </div>
-
-  <div class="location-container">
-    <div class="tutorial-section-label">Location Details</div>
-    <% if @tutorial %>
-      <div class="tutorial-explanation-text">
-        Lastly, we want to know if you're willing to play online, and how far you're willing to travel to play in person.
-        Online play allows you to play with people from all over the world using the power of the internet and supplementary applications like
-        <a class="outside" href=https://roll20.net/>Roll20</a>.
-        Playing in person often has a much different dynamic than online play does, as players can roleplay their characters more accurately
-        (like actually whispering to each other).
-        <b>Remember, saying that you're willing to play online <i>DOES NOT</i> exclude you from in person play, it just changes who can search for you!</b>
-      </div>
-    <% end %>
-    <br>
-    <div class="field" id="online-check">
-      <%= f.label "Play with users online?" %>
-      <%= f.check_box :online_play %>
-    </div>
-  </div>
-
-  <div class="actions button-container profile-submit-container">
-    <%= f.submit 'Create my profile!', class: "profile-button signup-login-submit" %>
-  </div>
-<% end %>

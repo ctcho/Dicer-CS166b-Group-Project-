@@ -108,6 +108,10 @@ $light_grey_2: #A5A5A5;
   font-style:normal;
 }
 
+.titanic{
+  float:none;
+}
+
 html{
   margin: 0px;
   padding:0px;
@@ -422,12 +426,12 @@ a:hover.outside, a:active.outside {
 /* CSS for Sending a Message */
 .modall {
     display: none;
+    background-image: url('parchmentbackground5');
     position: relative;
-    background-color: white;
     margin: auto;
     padding: 0;
     border: 1px solid #888;
-    width: 80%;
+    width: 800px;
     -webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.4s;
     animation-name: animatetop;
@@ -446,9 +450,6 @@ a:hover.outside, a:active.outside {
     }
     .greeting {
       margin: auto;
-      padding: 2px;
-      font-size: 15px;
-
     }
     .submit {
       float: right;
@@ -460,7 +461,6 @@ a:hover.outside, a:active.outside {
     background-color: white;
     margin: none; /* 15% from the top and centered */
     padding: 0;
-    border: 1px solid #888;
     width: 90%; /* Could be more or less, depending on screen size */
 }
 
@@ -473,6 +473,21 @@ a:hover.outside, a:active.outside {
 @keyframes animatetop {
     from {top:-300px; opacity:0}
     to {top:0; opacity:1}
+}
+
+.greeting{
+  font-family: 'Dungeon';
+  font-size: 3em;
+  line-height: 40px;
+}
+
+.contact-popup-container{
+  padding: 5px 10px;
+}
+
+.popup-send{
+  margin-top: -60px;
+  z-index: 1;
 }
 
 .dummy {

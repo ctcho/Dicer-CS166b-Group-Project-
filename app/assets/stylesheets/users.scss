@@ -209,15 +209,23 @@ $light_grey_2: #A5A5A5;
 .ruleset-selection-container{
   display: table;
   background-image: url('parchmentbackground6');
-  margin: 40px;
+  margin: 10px auto;
   font-family: 'Hultog';
-  font-size: 1.5em;
-  width: 100%;
+  width: 98%;
+}
+
+.ruleset-label{
+  font-size: 2.5em;
+  line-height: 35px;
+}
+
+#ruleset-header{
+  font-size: 4em;
 }
 
 .tutorial-section-label{
   text-align: center;
-  font-size: 2.25em;
+  font-size: 2.5em;
   color: rgb(110,0,0);
   line-height: 50px;
   margin-top: 10px;
@@ -238,10 +246,16 @@ $light_grey_2: #A5A5A5;
   margin-top: 11px;
 }
 
+.inline{
+  display: inline-block;
+}
+
 .tutorial-explanation-text{
   text-align: center;
   margin: 0px;
   padding: 0px;
+  font-size: 1.5em;
+  line-height: 24px;
 }
 
 .tutorial-opening{
@@ -268,7 +282,6 @@ $light_grey_2: #A5A5A5;
 }
 
 .campaign-type-box{
-  background-image: url('parchmentbackground6');
   margin: 0px 20px 0px 20px;
   padding: 0px;
   font-family: 'Hultog';
@@ -290,18 +303,24 @@ $light_grey_2: #A5A5A5;
   line-height: 24px;
 }
 
+.tutorial-parchment-background{
+  background-image: url('parchmentbackground4');
+}
+
 .bio-container{
   font-family: 'Hultog';
-  background-image: url('parchmentbackground5');
   font-size: 1.5em;
   margin: 0px 20px 0px 20px;
 }
 
 .location-container{
   font-family: 'Hultog';
-  background-image: url('parchmentbackground4');
   font-size: 1.5em;
   margin: 0px 20px 0px 20px;
+}
+
+.location-container label{
+  display: inline-block;
 }
 
 #online-check{
@@ -309,15 +328,24 @@ $light_grey_2: #A5A5A5;
 }
 
 #dm_profile_bio{
-  width: 98%;
-  height: 200px;
-  margin: 10px;
+  height: 150px;
+  width: 500px;
+  display: block;
+  margin: auto;
+}
+
+#player_profile_bio{
+  height: 150px;
+  width: 500px;
+  display: block;
+  margin: auto;
 }
 
 .profile-submit-container{
   font-size: 2em;
   display: block;
-  padding-left: 520px;
+  margin: 30px auto;
+  width: 23%;
 }
 
 .info-label{
