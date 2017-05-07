@@ -255,7 +255,7 @@ $light_grey_2: #A5A5A5;
   margin: 0px;
   padding: 0px;
   font-size: 1.5em;
-  line-height: 24px;
+  line-height: 30px;
 }
 
 .tutorial-opening{
@@ -279,10 +279,11 @@ $light_grey_2: #A5A5A5;
   display: flex;
   justify-content: center; /* align horizontal */
   align-items: center; /* align vertical */
+  transition: 0.4s;
 }
 
 .ruleset-box:hover {
-  opacity: 0.4;
+  opacity: 0.6;
 }
 
 .campaign-type-box{
@@ -304,6 +305,7 @@ $light_grey_2: #A5A5A5;
   text-align: left;
   padding-left: 60px;
   padding-right: 20px;
+  font-size: 1.5em;
   line-height: 24px;
 }
 
