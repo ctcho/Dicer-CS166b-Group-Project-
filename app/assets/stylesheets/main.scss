@@ -489,3 +489,14 @@ a:hover.outside, a:active.outside {
   background-image: url('parchmentbackground5');
   color: black;
 }
+
+//Anne's bullshit CSS
+.online_status {
+  color: red;
+  transition: color 1s ease;
+  &.online {
+    color: green;
+  }
+  float: right;
+  margin: 0px 5px 0px 5px;
+}

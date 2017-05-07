@@ -1,0 +1,9 @@
+<div class="preview recommend-profile-preview friends-preview">
+  <div class="avatar-container">
+    <%= image_tag user.avatar.url(:thumb), class: "dashboard-avatar" %>
+  </div>
+  <div class="preview-name">
+    <%= user.username %>
+  </div>
+  <%= check_box_tag "users[#{user.id}]"%>
+</div>

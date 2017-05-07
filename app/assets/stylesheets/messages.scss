@@ -228,3 +228,29 @@
 .field-background{
   background-image: url('parchmentbackground5');
 }
+
+.new-chat-container{
+  font-family: 'Dungeon';
+  font-size: 2em;
+}
+
+#new-chat-label{
+  padding-top: 20px;
+  font-size: 5em;
+  line-height: 70px;
+}
+
+.friends-preview{
+  margin: 5px 40px;
+  font-size: 1.5em !important;
+  line-height: 24px;
+}
+
+.new-chat-label{
+  text-align: left !important;
+  margin-top: 40px !important;
+}
+
+#new-chat-button{
+  margin: 10px;
+}
