@@ -20,8 +20,8 @@ class ChatRoomsController < ApplicationController
 
   def new
     @chat_room = ChatRoom.new
-    @users = User.first 3 # for testing
-    #@users = User.all # Eventually current_user.friends
+    @friends = User.first 3 # for testing
+    #@friends = User.all # Eventually current_user.friends
   end
 
   def index

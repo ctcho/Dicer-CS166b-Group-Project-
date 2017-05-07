@@ -6,8 +6,7 @@
         <%= image_tag @user.avatar.url(:medium) %>
       </div>
       <div class="profile-text col-md-7">
-        <p class="info-label">Username:</p>
-        <p class="info"><%= @user.username %></p>
+        <p class="info"><%= @user.username %>'s DM Profile</p>
 
         <br>
 
@@ -42,8 +41,15 @@
 
       <div class="button-container col-md-3">
         <% unless current_user? @user %>
-          <%= button_to "Write to me", new_user_messages_path, class: "contact-me-button", method: :get %>
+          <button class="contact-me-button centered-button", id="contact"> Contact me! </button>
         <% end %>
+        <% # unless friends? @user %>
+          <% #link to create me as a friend %>
+            <div class="profile-button signup-login-submit centered-button" id="profile-friends-button">
+              Add as friend
+            </div>
+          <% #end %>
+        <% #end %>
       </div>
 
       <!--Message sending modal. Class name is "modall" to avoid bootstrap conficts -->

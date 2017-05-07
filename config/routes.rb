@@ -22,7 +22,7 @@ Rails.application.routes.draw do
       resources :character_sheets
     end
     resource :messages
-
+    resources :friendships
 
     resource :dm_profiles
   end

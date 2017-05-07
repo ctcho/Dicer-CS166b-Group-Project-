@@ -19,7 +19,7 @@
               <div class="ruleset-label">
                 <%= f.label :original do %>
                   Original
-                  <%= f.check_box :original_ruleset %>
+                  <div class="hidden"><%= f.check_box :original_ruleset %></div>
                 <% end %>
               </div>
               <%= image_tag "dnd1.png", height: '450', width: '300' %>
@@ -39,7 +39,7 @@
               <div class="ruleset-label">
                 <%= f.label :advanced do %>
                   Advanced
-                  <%= f.check_box :advanced_ruleset %>
+                  <div class="hidden"><%= f.check_box :advanced_ruleset %></div>
                 <% end %>
                 <%= image_tag "dnd2.jpg", height: '450', width: '300' %>
               </div>
@@ -60,7 +60,7 @@
               <div class="ruleset-label">
                 <%= f.label :third do %>
                   3rd Edition
-                  <%= f.check_box :third %>
+                  <div class="hidden"><%= f.check_box :third %></div>
                 <% end %>
               </div>
               <%= image_tag "dnd3.jpg", height: '450', width: '300' %>
@@ -80,7 +80,7 @@
               <div class="ruleset-label">
                 <%= f.label :three_point_five do %>
                   3.5 Edition
-                  <%= f.check_box :three_point_five %>
+                  <div class="hidden"><%= f.check_box :three_point_five %></div>
                 <% end %>
               </div>
               <%= image_tag "dnd35.jpg", height: '450', width: '300' %>
@@ -101,7 +101,7 @@
               <div class="ruleset-label">
                 <%= f.label :pathfinder do %>
                   Pathfinder
-                  <%= f.check_box :pathfinder %>
+                  <div class="hidden"><%= f.check_box :pathfinder %></div>
                 <% end %>
               </div>
               <%= image_tag "pathfinder.jpg", height: '450', width: '300' %>
@@ -121,7 +121,7 @@
               <div class="ruleset-label">
                 <%= f.label :fourth  do%>
                   4th Edition
-                  <%= f.check_box :fourth %>
+                  <div class="hidden"><%= f.check_box :fourth %></div>
                 <% end %>
               </div>
               <%= image_tag "dnd4.jpg", height: '450', width: '300' %>
@@ -143,7 +143,7 @@
               <div class="ruleset-label">
                 <%= f.label :fifth do %>
                   5th Edition
-                  <%= f.check_box :fifth %>
+                  <div class="hidden"><%= f.check_box :fifth %></div>
                 <% end %>
               </div>
               <%= image_tag "dnd5.jpg", height: '450', width: '300' %>
@@ -165,7 +165,7 @@
               <div class="ruleset-label">
                 <%= f.label :homebrew do %>
                   Homebrew
-                  <%= f.check_box :homebrew %>
+                  <div class="hidden"><%= f.check_box :homebrew %></div>
                 <% end %>
               </div>
               <%= image_tag "dndhomebrew2.jpg", height: '450', width: '300' %>
@@ -287,4 +287,3 @@
     <% end %>
 
   <%= javascript_include_tag 'profile.js' %>
-  

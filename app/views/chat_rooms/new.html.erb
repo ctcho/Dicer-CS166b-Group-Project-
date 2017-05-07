@@ -1,7 +1,6 @@
 <div id="notice"><%=notice %></div>
-<div class='container-fluid parchment-background'>
-  <div class="form-text"> Create a Group Chat </div>
-  <br>
+<div class="container-fluid parchment-background new-chat-container">
+  <div class="page-label" id="new-chat-label"> Create a Group Chat </div>
   <%= form_tag(chat_rooms_path, method: "post", multipart: true) do %>
     <% if @chat_room.errors.any? %>
       <div id="error_explanation">
@@ -16,7 +15,7 @@
 
   <div class="field row">
     <div class="col-md-6">
-      <%= label_tag :name, "Give your chat a name:" %>
+      <div class="tutorial-section-label new-chat-label"><%= label_tag :name, "Chat name:" %></div>
       <%= text_field_tag :name %>
     </div>
   </div>
@@ -31,12 +30,11 @@
     <!--Iterate through all users (later all friends of current user)
     and create checkbox for each. Submits array of 0s and 1s
     Controller then iterates through all of that.-->
-    <% @users.each do |user| %>
-      <%= label_tag user.id, "#{user.username}" %>
-      <%= check_box_tag "users[#{user.id}]"%>
-    <% end %>
+    <div class="tutorial-section-label new-chat-label">Add your friends to the chat</div>
+    <%= render partial: "users/friends_preview", collection: @friends, as: :user %>
 
 
+    <div class="tutorial-section-label new-chat-label">Add a picture to represent the chat!</div>
     <div class="field">
       <% label_tag :avatar, id: 'chat-avatar-label' %>
       <%= file_field_tag :avatar, class: 'image_file_input', id: 'chat-avatar-field' %>
@@ -45,5 +43,5 @@
 
 
 
-  <%= submit_tag "Create" %>
+  <%= submit_tag "Create", class: "profile-button signup-login-submit", id: "new-chat-button" %>
 <% end %>
