@@ -107,7 +107,7 @@ class User < ApplicationRecord
     set = []
     searches.each do |profile|
       #byebug
-      if profile.user != user && within_distance(user, profile.user)
+      if profile.user != user && within_distance(user, profile.user) && !user.blocked_by? profile.user
         set << profile
       end
     end
