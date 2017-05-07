@@ -1,4 +1,3 @@
-include SearchPagesHelper
 class User < ApplicationRecord
   has_attached_file :avatar, styles: { medium: "175x175>", thumb: "100x100>", smallerthumb: "35x35>"}, default_url: ":style/dicepic.png"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
