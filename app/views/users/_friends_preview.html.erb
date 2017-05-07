@@ -5,5 +5,9 @@
   <div class="preview-name">
     <%= user.username %>
   </div>
-  <%= check_box_tag "users[#{user.id}]"%>
+  <div class="hidden">
+    <%= check_box_tag "users[#{user.id}]" %>
+  </div>
 </div>
+
+<%= javascript_include_tag 'chat.js' %>
