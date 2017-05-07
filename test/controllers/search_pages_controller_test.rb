@@ -161,6 +161,7 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
     @searcher.dm_profile = dm0
     get user_path(@searcher)
     assert_response :success
+    #byebug
     recommendations = get_similar_profiles(@searcher)
     assert recommendations.count > 0
     assert recommendations.first.class == PlayerProfile
@@ -296,8 +297,6 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
       end
       get search_pages_results_path(@params)
       assert_response :success
-      #puts "#{User.search(@params, current_user).count}"
-      #byebug
       assert_not User.search(@params, current_user).include?(@p3)
       assert_select "div.search-apology", "There are no users that match your preferences."
   end
@@ -498,7 +497,6 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
       end
       get search_pages_results_path(@params)
       assert_response :success
-      #puts "#{User.search(@params, current_user).count}"
       assert_not User.search(@params, current_user).include?(@dm3)
       assert_select "div.search-apology", "There are no users that match your preferences."
   end

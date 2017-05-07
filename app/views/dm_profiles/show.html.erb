@@ -41,10 +41,25 @@
       </div>
 
       <div class="button-container col-md-3">
-
-        <%= button_to "Write to me", new_user_messages_path, class: "contact-me-button", method: :get %>
-
+        <% unless current_user? @user %>
+          <%= button_to "Write to me", new_user_messages_path, class: "contact-me-button", method: :get %>
+        <% end %>
       </div>
+
+      <!--Message sending modal. Class name is "modall" to avoid bootstrap conficts -->
+          <div class="modall" id="msgmodal">
+           <span class="close">
+             &times;
+           </span>
+           <div class="contact-popup-container">
+             <span class="greeting">
+               Send <%= @user.username %> a message
+             </span>
+             <section class="msgform">
+               <%= render 'messages/message_form' %>
+             </section>
+           </div>
+         </div>
 
     </div>
     <div class="row">
