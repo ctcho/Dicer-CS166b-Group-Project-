@@ -12,7 +12,10 @@ class User < ApplicationRecord
   #has_and_belongs_to_many :chat_rooms
   has_many :chat_rooms_users
   has_many :chat_rooms, through: :chat_rooms_users
-
+  has_many :friendships
+  has_many :friends, through: :friendships
+  has_many :blockings
+  has_many :blockeds, through: :blockings
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :username, presence: true, uniqueness: {case_sensitive: false}
   validates :email, presence: true, uniqueness: {case_sensitive: false},
@@ -265,6 +268,15 @@ class User < ApplicationRecord
   #forgets a user
   def forget
     update_attribute(:remember_digest, nil)
+  end
+
+  def friends_with?(user)
+    self.friends.include? user
+  end
+
+  def blocked_by?(user)
+    #user.blockeds is like a hit list of people that a user has blocked
+    user.blockeds.include? self
   end
 
   acts_as_mappable :auto_geocode=>{:field=>:address, :error_message=>'Could not geocode address'}
