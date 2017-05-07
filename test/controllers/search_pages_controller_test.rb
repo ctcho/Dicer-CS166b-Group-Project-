@@ -9,7 +9,6 @@ include UsersHelper
 #now... -Cameron C.
 class SearchPagesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    #byebug
     @u1 = users(:user_1)
     @u2 = users(:user_2)
     @u3 = users(:user_3)

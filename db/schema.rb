@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170501191411) do
+ActiveRecord::Schema.define(version: 20170503185000) do
 
   create_table "chat_rooms", force: :cascade do |t|
     t.string   "name"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20170501191411) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.integer  "owner_id"
   end
 
   create_table "chat_rooms_users", force: :cascade do |t|

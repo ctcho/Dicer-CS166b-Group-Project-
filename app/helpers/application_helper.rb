@@ -1,4 +1,9 @@
 module ApplicationHelper
+
+  def online_status(user)
+    dot = content_tag :span, "&#11044;".html_safe,
+                class: "user-#{user.id} online_status #{'online' if user.online?}"
+  end
   #Function that sends back different versions of "Chats" depending on
   #if user has new messages or not
   #It has a nested for loop- fuck me

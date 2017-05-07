@@ -1,0 +1,49 @@
+<div id="notice"><%=notice %></div>
+<div class='container-fluid parchment-background'>
+  <div class="form-text"> Create a Group Chat </div>
+  <br>
+  <%= form_tag(chat_rooms_path, method: "post", multipart: true) do %>
+    <% if @chat_room.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(chat_room.errors.count, "error") %> prohibited this chat room from being saved</h2>
+        <ul>
+          <% @chat_room.errors.full_messages.each do |message| %>
+            <li> <%=message %></li>
+          <% end %>
+        </ul>
+      </div>
+  <% end %>
+
+  <div class="field row">
+    <div class="col-md-6">
+      <%= label_tag :name, "Give your chat a name:" %>
+      <%= text_field_tag :name %>
+    </div>
+  </div>
+
+  <!-- some area to add people -->
+    <!--<div id="find_users">
+      <%= label_tag :find_users, "Search for users by username" %>
+      <%=text_field_tag :user_search %>
+    </div>-->
+
+
+    <!--Iterate through all users (later all friends of current user)
+    and create checkbox for each. Submits array of 0s and 1s
+    Controller then iterates through all of that.-->
+    <% @users.each do |user| %>
+      <%= label_tag user.id, "#{user.username}" %>
+      <%= check_box_tag "users[#{user.id}]"%>
+    <% end %>
+
+
+    <div class="field">
+      <% label_tag :avatar, id: 'chat-avatar-label' %>
+      <%= file_field_tag :avatar, class: 'image_file_input', id: 'chat-avatar-field' %>
+    </div>
+
+
+
+
+  <%= submit_tag "Create" %>
+<% end %>

@@ -20,6 +20,10 @@ class User < ApplicationRecord
 
   has_secure_password
 
+  def online?
+    !Redis.new.get("user_#{self.id}_online").nil?
+  end
+  
   def self.recommender(profile, type)
     rulesets = []
     rulesets = rule_recom_parse([profile.homebrew, profile.original_ruleset, profile.advanced_ruleset,

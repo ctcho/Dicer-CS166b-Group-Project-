@@ -27,7 +27,7 @@ module SessionsHelper
     end
   end
 
-
+  # checks if a given user is the current user
   def current_user? (user)
     user == current_user
   end
@@ -51,11 +51,13 @@ module SessionsHelper
     @current_user = nil
   end
 
+  # continues a browsing session interrupted by a login or other redirect
   def redirect_back_or(default)
     redirect_to(session[:forwarding_url] || default)
     session.delete(:forwarding_url)
   end
 
+  # stores intended destination to session
   def store_location
     session[:forwarding_url] = request.original_url if request.get?
   end

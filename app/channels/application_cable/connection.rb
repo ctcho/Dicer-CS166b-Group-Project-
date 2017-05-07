@@ -2,10 +2,10 @@ module ApplicationCable
   class Connection < ActionCable::Connection::Base
     include SessionsHelper
 
-    identified_by :message_user
+    identified_by :current_user
 
     def connect
-      self.message_user = find_verified_user
+      self.current_user = find_verified_user
     end
 
     private
