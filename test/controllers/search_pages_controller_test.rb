@@ -141,7 +141,7 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
     end
     get search_pages_results_path(@params)
     assert_response :success
-    assert_select "button", "Search for Users..."
+    assert_select "button", "Search"
   end
 
   test "user will see recommendations based on only one profile type if they don't have the other" do

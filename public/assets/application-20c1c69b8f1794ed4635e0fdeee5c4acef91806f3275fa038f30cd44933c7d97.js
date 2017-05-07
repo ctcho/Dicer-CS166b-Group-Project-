@@ -12192,7 +12192,23 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
 
 }).call(this);
 (function() {
-  var scroll_bottom, submit_message;
+  jQuery(document).on('turbolinks:load', function() {
+    return App.personal_chat = App.cable.subscriptions.create({
+      channel: "AppearancesChannel"
+    }, {
+      connected: function() {},
+      disconnected: function() {},
+      received: function(data) {
+        var user;
+        user = $(".user-" + data['user_id']);
+        return user.toggleClass('online', data['online']);
+      }
+    });
+  });
+
+}).call(this);
+(function() {
+  var render_message, scroll_bottom, submit_message;
 
   jQuery(document).on('turbolinks:load', function() {
     var messages;
@@ -12209,7 +12225,7 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
         disconnected: function() {},
         received: function(data) {
           if (data.content.blank == null) {
-            $('#messages-table').append('<div class="message">' + '<div class="message-user">' + data.username + ":" + '</div>' + '<div class="message-content">' + data.content + '</div>' + '</div>');
+            $('#messages-table').append(render_message(data));
             return scroll_bottom();
           }
         }
@@ -12225,6 +12241,7 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
   submit_message = function() {
     return $('#message_content').on('keydown', function(event) {
       if (event.keyCode === 13) {
+        $(document.getElementById('send-button')).click();
         $('#send-button').click();
         event.target.value = "";
         return event.preventDefault();
@@ -12236,7 +12253,38 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
     return $('#messages').scrollTop($('#messages')[0].scrollHeight);
   };
 
+  render_message = function(data) {
+    var avatar_html, message_html, shell_html;
+    avatar_html = "<div class='message-user'>\n<img class='message-avatar' src=" + data.avatar_path + "\n/>\n</div>\n";
+    message_html = message_html = "<div class='message'>\n<div class='message-content-black-border-text>\n'" + data.content(+"\n</div>\n</div>\n");
+    shell_html = "\n<div class='message-container'>\n";
+    return shell_html + avatar_html + message_html + "</div>\n";
+  };
+
 }).call(this);
+(function() {
+  App.notifications = App.cable.subscriptions.create("NotificationsChannel", {
+    connected: function() {},
+    disconnected: function() {},
+    received: function(data) {}
+  });
+
+}).call(this);
+$(".friends_preview").on('click', function() {
+  if ($(this).find('input:checkbox').is(":checked")) {
+    $(this).find('input:checkbox').prop("checked", false);
+    $(this).css('background-color', 'transparent');
+  }
+  else {
+    $(this).find('input:checkbox').prop("checked", true);
+    $(this).css('background-color', '#6699ff');
+  }
+});
+
+
+$('input[type=checkbox]').click(function(e) {
+  e.stopPropagation();
+});
 (function() {
 
 
@@ -12257,6 +12305,21 @@ $('#edit-msg').click(function() {
 
 
 }).call(this);
+$(".ruleset-box").on('click', function() {
+  if ($(this).find('input:checkbox').is(":checked")) {
+    $(this).find('input:checkbox').prop("checked", false);
+    $(this).css('background-color', 'transparent');
+  }
+  else {
+    $(this).find('input:checkbox').prop("checked", true);
+    $(this).css('background-color', '#6699ff');
+  }
+});
+
+
+$('input[type=checkbox]').click(function(e) {
+  e.stopPropagation();
+});
 $("#search").click(function() {
   $("#search_modal").css("display", "block");
 });
@@ -12311,3 +12374,13 @@ $(function() {
     $.get($("#search-form").attr("action"), $("#search-form").serialize(), null, "script");
   });
 });
+
+//$(function(){
+  //$('#find_users input').keyup(function(){
+    //console.log("you pressed a key");
+    //console.log(document.getElementById('user_search').value);
+    //$.get('/find_user',{'key' : document.getElementById('user_search').value}, function(data){
+    //  console.log(data);
+    //}, "json");
+  //});
+//});
