@@ -7,7 +7,6 @@ $(".ruleset-box").on('click', function() {
     $(this).find('input:checkbox').prop("checked", true);
     $(this).css('background-color', '#6699ff');
   }
-  console.log("Box checked/unchecked");
 });
 
 

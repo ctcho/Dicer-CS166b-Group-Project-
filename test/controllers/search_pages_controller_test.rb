@@ -162,6 +162,7 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
     @searcher.dm_profile = dm0
     get user_path(@searcher)
     assert_response :success
+    #byebug
     recommendations = get_similar_profiles(@searcher)
     assert recommendations.count > 0
     assert recommendations.first.class == PlayerProfile
