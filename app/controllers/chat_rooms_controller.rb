@@ -14,7 +14,6 @@ class ChatRoomsController < ApplicationController
       end
       redirect_to chat_room_path(@chat_room), notice: 'Chat successfully created'
     else
-      byebug
       render :new
     end
   end
@@ -67,8 +66,7 @@ class ChatRoomsController < ApplicationController
   end
 
   def chat_room_params
-    byebug
-    {owner: current_user, name: params[:name], avatar: params[:avatar]}
+    {owner: User.find(1), name: params[:name], avatar: params[:avatar]}
   end
 
     def set_chat_room
