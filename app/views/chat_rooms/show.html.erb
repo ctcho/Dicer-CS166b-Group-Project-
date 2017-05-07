@@ -5,11 +5,12 @@
     </div>
     <div class="active-chatroom" id="messages" data-chat-room-id="<%= @chat_room.id %>">
       <%= render 'messages/messages' %>
-      <%= render 'message_form' %>
     </div>
+    <%= render 'message_form' %>
   </div>
 
   <div class="active-chat-sidebar secondary-column">
+    <div class="dummy-div"> </div>
     <%= render partial: "chat", collection: @chat_rooms, as: :chat %>
   </div>
 
