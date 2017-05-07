@@ -1,5 +1,5 @@
 class ChatRoom < ApplicationRecord
-  has_one :owner, :class_name => "User"
+  belongs_to :owner, :class_name => "User", optional: true
   #before_save :has_two_users
   has_many :messages
   #has_and_belongs_to_many :users

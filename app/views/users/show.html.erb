@@ -28,10 +28,10 @@
             Edit
           </div>
         <% end %>
-      <% else %>  
-        <%= link_to '#' do %>
-          <div class="profile-button signup-login-submit dashboard-buttons">
-            Create
+      <% else %>
+        <%= link_to new_user_dm_profiles_path(@user) do %>
+          <div class="profile-button signup-login-submit">
+            Create a DM Profile
           </div>
         <% end %>
       <% end %>
@@ -50,9 +50,9 @@
           </div>
         <% end %>
       <% else %>
-        <%= link_to '#' do %>
-          <div class="profile-button signup-login-submit dashboard-buttons">
-            Create
+        <%= link_to new_user_player_profiles_path(@user) do %>
+          <div class="profile-button signup-login-submit">
+            Create a Player Profile
           </div>
         <% end %>
       <% end %>

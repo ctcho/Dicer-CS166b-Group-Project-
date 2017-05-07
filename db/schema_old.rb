@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20170507183849) do
 
   create_table "blockings", force: :cascade do |t|
@@ -18,6 +19,16 @@ ActiveRecord::Schema.define(version: 20170507183849) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "character_sheets", force: :cascade do |t|
+    t.integer  "player_profile_id"
+    t.string   "file_path"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+=======
+ActiveRecord::Schema.define(version: 20170503185000) do
+>>>>>>> 703855edb48ba1915cb188da485826ace7fe1338
 
   create_table "chat_rooms", force: :cascade do |t|
     t.string   "name"
@@ -65,10 +76,10 @@ ActiveRecord::Schema.define(version: 20170507183849) do
   create_table "messages", force: :cascade do |t|
     t.text     "content"
     t.string   "image_path"
-    t.integer  "user_id"
-    t.integer  "chat_room_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.integer  "user_id"
+    t.integer  "chat_room_id"
   end
 
   create_table "player_profiles", force: :cascade do |t|
@@ -94,15 +105,15 @@ ActiveRecord::Schema.define(version: 20170507183849) do
     t.string   "username"
     t.string   "email"
     t.string   "password_digest"
-    t.float    "lat"
-    t.float    "lng"
-    t.string   "remember_digest"
-    t.float    "max_distance"
     t.integer  "age"
     t.string   "address"
     t.datetime "last_active"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.float    "lat"
+    t.float    "lng"
+    t.string   "remember_digest"
+    t.float    "max_distance"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
