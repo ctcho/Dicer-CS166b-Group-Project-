@@ -1,57 +1,93 @@
 <div class="parchment-background">
-<br><br>
-<div class="page-label">New Search</div>
-<br>
-<%= form_tag(search_pages_results_path, method: "get", id: "search-form", remote: true) do %>
-<div class="search-param">Profile Type (Default Search is for Players)</div>
-<%= select_tag :profile_type, options_for_select([["Players", 0], ["DM's", 1]]) %>
-<br><br><br>
-<div class="search-param">Search Preferences</div>
-<%= label_tag(:option_all, "Search for ALL the listed options") %>
-<%= radio_button_tag(:option, "AND", true) %>
-<br>
-<%= label_tag(:option_or, "Search for ANY of the listed options") %>
-<%= radio_button_tag(:option, "OR") %>
-<br><br><br>
-<div class="search-param">Exp Level</div>
-<%= select_tag :experience_level, options_for_select([["No preference", 0],
-  ['Beginner (0-1 years of play)', 1], ['Novice (1-2 years of play)', 2],
-  ['Experienced (2-5 years of play)', 3], ['Veteran (More than 5 years of play)', 4]]) %>
-  <br><br><br>
-  <div class="search-param">Preferred Rulesets</div>
-  <%=label_tag :home, "Homebrew" %>
-  <%=check_box_tag :homebrew, 1 %>
-  <br>
-  <%=label_tag :original, "Original Ruleset" %>
-  <%=check_box_tag :original_ruleset, 2 %>
-  <br>
-  <%=label_tag :advanced, "Advanced Ruleset" %>
-  <%=check_box_tag :advanced_ruleset, 3 %>
-  <br>
-  <%=label_tag :path, "Pathfinder" %>
-  <%=check_box_tag :pathfinder, 4 %>
-  <br>
-  <%=label_tag :th, "Third" %>
-  <%=check_box_tag :third, 5 %>
-  <br>
-  <%=label_tag :t_five, "Three-Point-Five" %>
-  <%=check_box_tag :three_point_five, 6 %>
-  <br>
-  <%=label_tag :frth, "Fourth" %>
-  <%=check_box_tag :fourth, 7 %>
-  <br>
-  <%=label_tag :ffth, "Fifth" %>
-  <%=check_box_tag :fifth, 8 %>
-  <br><br><br>
-  <div class="search-param">Prefer Online Play?</div>
-  <%= select_tag :online_play, options_for_select([["Yes", 1], ["No", 0]]), prompt: "Select an Option" %>
-  <br><br><br>
-  <div class="search-param">Campaign Type</div>
-  <%= select_tag :campaign_type, options_for_select([["No preference", 2], ["Original Campaign", 0],
-  ["Module", 1]]) %>
-<% end %>
+  <div class="search-results-mod">
+    <div class="page-label black-border-text" id="search-label">Search</div>
+    <%= form_tag(search_pages_results_path, method: "get", class: "search-form") do %>
+      <div class="row search-row">
+        <div class="col-md-4" id="profile-type">
+          <div class="search-param">Profile Type</div>
+          <div class="dropdown">
+            <%= select_tag :profile_type, options_for_select([["Players", 0], ["DM's", 1]]) %>
+          </div>
+        </div>
+        <div class="col-md-4" id="any-all-results">
+          <div class="search-param" id="search-pref">Search Preferences</div>
+          <div class="radio-buttons-container-results">
+            <%= radio_button_tag(:option, "AND", true) %>
+            <%= label_tag(:option_all, "Search for ALL the listed options", class: "radio-button-label")  %>
+            <br>
+            <%= radio_button_tag(:option, "OR") %>
+            <%= label_tag(:option_or, "Search for ANY of the listed options", class: "radio-button-label") %>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="search-param">Exp Level</div>
+          <div class="dropdown">
+            <%= select_tag :experience_level, options_for_select([["No preference", 0],
+              ['Beginner (0-1 years of play)', 1], ['Novice (1-2 years of play)', 2],
+              ['Experienced (2-5 years of play)', 3], ['Veteran (More than 5 years of play)', 4]]) %>
+          </div>
+        </div>
+      </div>
+      <div class="row search-row">
+        <div class="col-md-5" id="ruleset-picker">
+          <div class="search-param" id="ruleset">Preferred Rulesets</div>
+          <div class="checkboxes-container-results">
+            <div class="row">
+              <div class="ruleset-checkbox col-md-3">
+                <%=check_box_tag :original_ruleset, 2 %>
+                <%=label_tag :original, "First Edition" %>
+              </div>
+              <div class="ruleset-checkbox col-md-3">
+                <%=check_box_tag :advanced_ruleset, 3 %>
+                <%=label_tag :advanced, "Second Edition" %>
+              </div>
+              <div class="ruleset-checkbox col-md-3">
+                <%=check_box_tag :third, 5 %>
+                <%=label_tag :th, "Third Edition" %>
+              </div>
+              <div class="ruleset-checkbox col-md-3">
+                <%=check_box_tag :three_point_five, 6 %>
+                <%=label_tag :t_five, "3.5 Edition" %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="ruleset-checkbox col-md-3">
+                <%=check_box_tag :pathfinder, 4 %>
+                <%=label_tag :path, "Pathfinder" %>
+              </div>
+              <div class="ruleset-checkbox col-md-3">
+                <%=check_box_tag :fourth, 7 %>
+                <%=label_tag :frth, "Fourth Edition" %>
+              </div>
+              <div class="ruleset-checkbox col-md-3">
+                <%=check_box_tag :fifth, 8 %>
+                <%=label_tag :ffth, "Fifth Edition" %>
+              </div>
+              <div class="ruleset-checkbox col-md-3">
+                <%=check_box_tag :homebrew, 1 %>
+                <%=label_tag :home, "Homebrew" %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3" id="online-play-results">
+          <div class="search-param">Prefer Online Play?</div>
+          <div class="dropdown">
+            <%= select_tag :online_play, options_for_select([["Yes", 1], ["No", 0]]), prompt: "Select an Option" %>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="search-param">Campaign Type</div>
+          <div class="dropdown">
+            <%= select_tag :campaign_type, options_for_select([["No preference", 2], ["Original Campaign", 0],
+            ["Module", 1]]) %>
+          </div>
+        </div>
+      </div>
+      <%= submit_tag "Search", class: "profile-button signup-login-submit", id: "search-submit-results" %>
+    <% end %>
+  </div>
 
-<br><br><br><br>
-<div id="result"><%= render 'results' %></div>
-<br>
-</div>
+  <div id="result"><%= render 'results' %></div>
+
+</div
