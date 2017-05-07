@@ -267,6 +267,10 @@ $light_grey_2: #A5A5A5;
   align-items: center; /* align vertical */
 }
 
+.ruleset-box:hover {
+  opacity: 0.4;
+}
+
 .campaign-type-box{
   background-image: url('parchmentbackground6');
   margin: 0px 20px 0px 20px;

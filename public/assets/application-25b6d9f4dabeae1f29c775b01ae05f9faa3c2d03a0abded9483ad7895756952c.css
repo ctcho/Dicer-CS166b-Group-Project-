@@ -1150,7 +1150,7 @@ hr {
 @-ms-viewport {
   width: device-width;
 }
-/* line 6, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+/* line 6, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
 .visible-xs,
 .visible-sm,
 .visible-md,
@@ -1158,7 +1158,7 @@ hr {
   display: none !important;
 }
 
-/* line 12, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+/* line 12, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
 .visible-xs-block,
 .visible-xs-inline,
 .visible-xs-inline-block,
@@ -1175,256 +1175,256 @@ hr {
 }
 
 @media (max-width: 767px) {
-  /* line 27, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 27, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .visible-xs {
     display: block !important;
   }
 
-  /* line 30, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 30, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   table.visible-xs {
     display: table;
   }
 
-  /* line 33, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 33, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   tr.visible-xs {
     display: table-row !important;
   }
 
-  /* line 36, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 36, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   th.visible-xs,
   td.visible-xs {
     display: table-cell !important;
   }
 }
 @media (max-width: 767px) {
-  /* line 42, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 42, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .visible-xs-block {
     display: block !important;
   }
 }
 @media (max-width: 767px) {
-  /* line 47, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 47, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .visible-xs-inline {
     display: inline !important;
   }
 }
 @media (max-width: 767px) {
-  /* line 52, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 52, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .visible-xs-inline-block {
     display: inline-block !important;
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
-  /* line 57, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 57, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .visible-sm {
     display: block !important;
   }
 
-  /* line 60, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 60, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   table.visible-sm {
     display: table;
   }
 
-  /* line 63, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 63, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   tr.visible-sm {
     display: table-row !important;
   }
 
-  /* line 66, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 66, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   th.visible-sm,
   td.visible-sm {
     display: table-cell !important;
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
-  /* line 72, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 72, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .visible-sm-block {
     display: block !important;
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
-  /* line 77, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 77, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .visible-sm-inline {
     display: inline !important;
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
-  /* line 82, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 82, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .visible-sm-inline-block {
     display: inline-block !important;
   }
 }
 @media (min-width: 992px) and (max-width: 1199px) {
-  /* line 87, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 87, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .visible-md {
     display: block !important;
   }
 
-  /* line 90, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 90, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   table.visible-md {
     display: table;
   }
 
-  /* line 93, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 93, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   tr.visible-md {
     display: table-row !important;
   }
 
-  /* line 96, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 96, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   th.visible-md,
   td.visible-md {
     display: table-cell !important;
   }
 }
 @media (min-width: 992px) and (max-width: 1199px) {
-  /* line 102, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 102, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .visible-md-block {
     display: block !important;
   }
 }
 @media (min-width: 992px) and (max-width: 1199px) {
-  /* line 107, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 107, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .visible-md-inline {
     display: inline !important;
   }
 }
 @media (min-width: 992px) and (max-width: 1199px) {
-  /* line 112, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 112, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .visible-md-inline-block {
     display: inline-block !important;
   }
 }
 @media (min-width: 1200px) {
-  /* line 117, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 117, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .visible-lg {
     display: block !important;
   }
 
-  /* line 120, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 120, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   table.visible-lg {
     display: table;
   }
 
-  /* line 123, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 123, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   tr.visible-lg {
     display: table-row !important;
   }
 
-  /* line 126, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 126, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   th.visible-lg,
   td.visible-lg {
     display: table-cell !important;
   }
 }
 @media (min-width: 1200px) {
-  /* line 132, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 132, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .visible-lg-block {
     display: block !important;
   }
 }
 @media (min-width: 1200px) {
-  /* line 137, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 137, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .visible-lg-inline {
     display: inline !important;
   }
 }
 @media (min-width: 1200px) {
-  /* line 142, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 142, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .visible-lg-inline-block {
     display: inline-block !important;
   }
 }
 @media (max-width: 767px) {
-  /* line 147, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 147, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .hidden-xs {
     display: none !important;
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
-  /* line 152, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 152, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .hidden-sm {
     display: none !important;
   }
 }
 @media (min-width: 992px) and (max-width: 1199px) {
-  /* line 157, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 157, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .hidden-md {
     display: none !important;
   }
 }
 @media (min-width: 1200px) {
-  /* line 162, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 162, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .hidden-lg {
     display: none !important;
   }
 }
-/* line 166, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+/* line 166, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
 .visible-print {
   display: none !important;
 }
 
 @media print {
-  /* line 170, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 170, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .visible-print {
     display: block !important;
   }
 
-  /* line 173, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 173, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   table.visible-print {
     display: table;
   }
 
-  /* line 176, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 176, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   tr.visible-print {
     display: table-row !important;
   }
 
-  /* line 179, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 179, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   th.visible-print,
   td.visible-print {
     display: table-cell !important;
   }
 }
-/* line 184, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+/* line 184, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
 .visible-print-block {
   display: none !important;
 }
 
 @media print {
-  /* line 188, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 188, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .visible-print-block {
     display: block !important;
   }
 }
-/* line 192, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+/* line 192, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
 .visible-print-inline {
   display: none !important;
 }
 
 @media print {
-  /* line 196, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 196, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .visible-print-inline {
     display: inline !important;
   }
 }
-/* line 200, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+/* line 200, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
 .visible-print-inline-block {
   display: none !important;
 }
 
 @media print {
-  /* line 204, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 204, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .visible-print-inline-block {
     display: inline-block !important;
   }
 }
 @media print {
-  /* line 209, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 209, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .hidden-print {
     display: none !important;
   }
 }
-/* line 213, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+/* line 213, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
 .container {
   margin-right: auto;
   margin-left: auto;
@@ -1433,24 +1433,24 @@ hr {
 }
 
 @media (min-width: 768px) {
-  /* line 220, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 220, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .container {
     width: 750px;
   }
 }
 @media (min-width: 992px) {
-  /* line 225, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 225, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .container {
     width: 970px;
   }
 }
 @media (min-width: 1200px) {
-  /* line 230, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 230, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .container {
     width: 1170px;
   }
 }
-/* line 234, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+/* line 234, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
 .container-fluid {
   margin-right: auto;
   margin-left: auto;
@@ -1458,13 +1458,13 @@ hr {
   padding-right: 15px;
 }
 
-/* line 240, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+/* line 240, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
 .row {
   margin-left: -15px;
   margin-right: -15px;
 }
 
-/* line 244, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+/* line 244, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
 .col, .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
   position: relative;
   min-height: 1px;
@@ -1472,1050 +1472,1050 @@ hr {
   padding-right: 15px;
 }
 
-/* line 250, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+/* line 250, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
 .col, .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
   float: left;
 }
 
-/* line 253, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+/* line 253, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
 .col-xs-12 {
   width: 100%;
 }
 
-/* line 256, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+/* line 256, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
 .col-xs-11 {
   width: 91.66666667%;
 }
 
-/* line 259, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+/* line 259, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
 .col-xs-10 {
   width: 83.33333333%;
 }
 
-/* line 262, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+/* line 262, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
 .col-xs-9 {
   width: 75%;
 }
 
-/* line 265, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+/* line 265, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
 .col-xs-8 {
   width: 66.66666667%;
 }
 
-/* line 268, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+/* line 268, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
 .col-xs-7 {
   width: 58.33333333%;
 }
 
-/* line 271, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+/* line 271, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
 .col-xs-6 {
   width: 50%;
 }
 
-/* line 274, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+/* line 274, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
 .col-xs-5 {
   width: 41.66666667%;
 }
 
-/* line 277, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+/* line 277, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
 .col-xs-4 {
   width: 33.33333333%;
 }
 
-/* line 280, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+/* line 280, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
 .col-xs-3 {
   width: 25%;
 }
 
-/* line 283, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+/* line 283, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
 .col-xs-2 {
   width: 16.66666667%;
 }
 
-/* line 286, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+/* line 286, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
 .col-xs-1 {
   width: 8.33333333%;
 }
 
-/* line 289, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+/* line 289, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
 .col-xs-pull-12 {
   right: 100%;
 }
 
-/* line 292, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+/* line 292, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
 .col-xs-pull-11 {
   right: 91.66666667%;
 }
 
-/* line 295, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+/* line 295, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
 .col-xs-pull-10 {
   right: 83.33333333%;
 }
 
-/* line 298, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+/* line 298, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
 .col-xs-pull-9 {
   right: 75%;
 }
 
-/* line 301, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+/* line 301, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
 .col-xs-pull-8 {
   right: 66.66666667%;
 }
 
-/* line 304, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+/* line 304, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
 .col-xs-pull-7 {
   right: 58.33333333%;
 }
 
-/* line 307, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+/* line 307, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
 .col-xs-pull-6 {
   right: 50%;
 }
 
-/* line 310, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+/* line 310, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
 .col-xs-pull-5 {
   right: 41.66666667%;
 }
 
-/* line 313, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+/* line 313, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
 .col-xs-pull-4 {
   right: 33.33333333%;
 }
 
-/* line 316, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+/* line 316, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
 .col-xs-pull-3 {
   right: 25%;
 }
 
-/* line 319, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+/* line 319, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
 .col-xs-pull-2 {
   right: 16.66666667%;
 }
 
-/* line 322, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+/* line 322, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
 .col-xs-pull-1 {
   right: 8.33333333%;
 }
 
-/* line 325, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+/* line 325, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
 .col-xs-pull-0 {
   right: auto;
 }
 
-/* line 328, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+/* line 328, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
 .col-xs-push-12 {
   left: 100%;
 }
 
-/* line 331, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+/* line 331, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
 .col-xs-push-11 {
   left: 91.66666667%;
 }
 
-/* line 334, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+/* line 334, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
 .col-xs-push-10 {
   left: 83.33333333%;
 }
 
-/* line 337, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+/* line 337, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
 .col-xs-push-9 {
   left: 75%;
 }
 
-/* line 340, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+/* line 340, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
 .col-xs-push-8 {
   left: 66.66666667%;
 }
 
-/* line 343, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+/* line 343, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
 .col-xs-push-7 {
   left: 58.33333333%;
 }
 
-/* line 346, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+/* line 346, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
 .col-xs-push-6 {
   left: 50%;
 }
 
-/* line 349, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+/* line 349, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
 .col-xs-push-5 {
   left: 41.66666667%;
 }
 
-/* line 352, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+/* line 352, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
 .col-xs-push-4 {
   left: 33.33333333%;
 }
 
-/* line 355, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+/* line 355, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
 .col-xs-push-3 {
   left: 25%;
 }
 
-/* line 358, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+/* line 358, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
 .col-xs-push-2 {
   left: 16.66666667%;
 }
 
-/* line 361, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+/* line 361, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
 .col-xs-push-1 {
   left: 8.33333333%;
 }
 
-/* line 364, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+/* line 364, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
 .col-xs-push-0 {
   left: auto;
 }
 
-/* line 367, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+/* line 367, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
 .col-xs-offset-12 {
   margin-left: 100%;
 }
 
-/* line 370, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+/* line 370, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
 .col-xs-offset-11 {
   margin-left: 91.66666667%;
 }
 
-/* line 373, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+/* line 373, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
 .col-xs-offset-10 {
   margin-left: 83.33333333%;
 }
 
-/* line 376, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+/* line 376, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
 .col-xs-offset-9 {
   margin-left: 75%;
 }
 
-/* line 379, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+/* line 379, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
 .col-xs-offset-8 {
   margin-left: 66.66666667%;
 }
 
-/* line 382, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+/* line 382, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
 .col-xs-offset-7 {
   margin-left: 58.33333333%;
 }
 
-/* line 385, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+/* line 385, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
 .col-xs-offset-6 {
   margin-left: 50%;
 }
 
-/* line 388, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+/* line 388, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
 .col-xs-offset-5 {
   margin-left: 41.66666667%;
 }
 
-/* line 391, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+/* line 391, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
 .col-xs-offset-4 {
   margin-left: 33.33333333%;
 }
 
-/* line 394, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+/* line 394, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
 .col-xs-offset-3 {
   margin-left: 25%;
 }
 
-/* line 397, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+/* line 397, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
 .col-xs-offset-2 {
   margin-left: 16.66666667%;
 }
 
-/* line 400, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+/* line 400, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
 .col-xs-offset-1 {
   margin-left: 8.33333333%;
 }
 
-/* line 403, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+/* line 403, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
 .col-xs-offset-0 {
   margin-left: 0%;
 }
 
 @media (min-width: 768px) {
-  /* line 407, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 407, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
     float: left;
   }
 
-  /* line 410, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 410, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-sm-12 {
     width: 100%;
   }
 
-  /* line 413, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 413, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-sm-11 {
     width: 91.66666667%;
   }
 
-  /* line 416, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 416, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-sm-10 {
     width: 83.33333333%;
   }
 
-  /* line 419, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 419, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-sm-9 {
     width: 75%;
   }
 
-  /* line 422, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 422, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-sm-8 {
     width: 66.66666667%;
   }
 
-  /* line 425, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 425, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-sm-7 {
     width: 58.33333333%;
   }
 
-  /* line 428, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 428, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-sm-6 {
     width: 50%;
   }
 
-  /* line 431, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 431, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-sm-5 {
     width: 41.66666667%;
   }
 
-  /* line 434, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 434, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-sm-4 {
     width: 33.33333333%;
   }
 
-  /* line 437, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 437, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-sm-3 {
     width: 25%;
   }
 
-  /* line 440, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 440, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-sm-2 {
     width: 16.66666667%;
   }
 
-  /* line 443, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 443, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-sm-1 {
     width: 8.33333333%;
   }
 
-  /* line 446, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 446, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-sm-pull-12 {
     right: 100%;
   }
 
-  /* line 449, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 449, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-sm-pull-11 {
     right: 91.66666667%;
   }
 
-  /* line 452, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 452, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-sm-pull-10 {
     right: 83.33333333%;
   }
 
-  /* line 455, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 455, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-sm-pull-9 {
     right: 75%;
   }
 
-  /* line 458, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 458, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-sm-pull-8 {
     right: 66.66666667%;
   }
 
-  /* line 461, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 461, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-sm-pull-7 {
     right: 58.33333333%;
   }
 
-  /* line 464, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 464, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-sm-pull-6 {
     right: 50%;
   }
 
-  /* line 467, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 467, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-sm-pull-5 {
     right: 41.66666667%;
   }
 
-  /* line 470, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 470, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-sm-pull-4 {
     right: 33.33333333%;
   }
 
-  /* line 473, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 473, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-sm-pull-3 {
     right: 25%;
   }
 
-  /* line 476, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 476, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-sm-pull-2 {
     right: 16.66666667%;
   }
 
-  /* line 479, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 479, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-sm-pull-1 {
     right: 8.33333333%;
   }
 
-  /* line 482, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 482, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-sm-pull-0 {
     right: auto;
   }
 
-  /* line 485, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 485, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-sm-push-12 {
     left: 100%;
   }
 
-  /* line 488, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 488, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-sm-push-11 {
     left: 91.66666667%;
   }
 
-  /* line 491, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 491, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-sm-push-10 {
     left: 83.33333333%;
   }
 
-  /* line 494, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 494, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-sm-push-9 {
     left: 75%;
   }
 
-  /* line 497, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 497, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-sm-push-8 {
     left: 66.66666667%;
   }
 
-  /* line 500, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 500, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-sm-push-7 {
     left: 58.33333333%;
   }
 
-  /* line 503, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 503, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-sm-push-6 {
     left: 50%;
   }
 
-  /* line 506, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 506, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-sm-push-5 {
     left: 41.66666667%;
   }
 
-  /* line 509, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 509, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-sm-push-4 {
     left: 33.33333333%;
   }
 
-  /* line 512, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 512, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-sm-push-3 {
     left: 25%;
   }
 
-  /* line 515, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 515, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-sm-push-2 {
     left: 16.66666667%;
   }
 
-  /* line 518, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 518, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-sm-push-1 {
     left: 8.33333333%;
   }
 
-  /* line 521, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 521, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-sm-push-0 {
     left: auto;
   }
 
-  /* line 524, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 524, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-sm-offset-12 {
     margin-left: 100%;
   }
 
-  /* line 527, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 527, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-sm-offset-11 {
     margin-left: 91.66666667%;
   }
 
-  /* line 530, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 530, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-sm-offset-10 {
     margin-left: 83.33333333%;
   }
 
-  /* line 533, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 533, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-sm-offset-9 {
     margin-left: 75%;
   }
 
-  /* line 536, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 536, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-sm-offset-8 {
     margin-left: 66.66666667%;
   }
 
-  /* line 539, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 539, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-sm-offset-7 {
     margin-left: 58.33333333%;
   }
 
-  /* line 542, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 542, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-sm-offset-6 {
     margin-left: 50%;
   }
 
-  /* line 545, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 545, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-sm-offset-5 {
     margin-left: 41.66666667%;
   }
 
-  /* line 548, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 548, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-sm-offset-4 {
     margin-left: 33.33333333%;
   }
 
-  /* line 551, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 551, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-sm-offset-3 {
     margin-left: 25%;
   }
 
-  /* line 554, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 554, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-sm-offset-2 {
     margin-left: 16.66666667%;
   }
 
-  /* line 557, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 557, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-sm-offset-1 {
     margin-left: 8.33333333%;
   }
 
-  /* line 560, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 560, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-sm-offset-0 {
     margin-left: 0%;
   }
 }
 @media (min-width: 992px) {
-  /* line 565, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 565, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
     float: left;
   }
 
-  /* line 568, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 568, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-md-12 {
     width: 100%;
   }
 
-  /* line 571, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 571, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-md-11 {
     width: 91.66666667%;
   }
 
-  /* line 574, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 574, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-md-10 {
     width: 83.33333333%;
   }
 
-  /* line 577, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 577, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-md-9 {
     width: 75%;
   }
 
-  /* line 580, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 580, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-md-8 {
     width: 66.66666667%;
   }
 
-  /* line 583, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 583, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-md-7 {
     width: 58.33333333%;
   }
 
-  /* line 586, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 586, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-md-6 {
     width: 50%;
   }
 
-  /* line 589, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 589, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-md-5 {
     width: 41.66666667%;
   }
 
-  /* line 592, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 592, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-md-4 {
     width: 33.33333333%;
   }
 
-  /* line 595, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 595, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-md-3 {
     width: 25%;
   }
 
-  /* line 598, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 598, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-md-2 {
     width: 16.66666667%;
   }
 
-  /* line 601, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 601, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-md-1 {
     width: 8.33333333%;
   }
 
-  /* line 604, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 604, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-md-pull-12 {
     right: 100%;
   }
 
-  /* line 607, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 607, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-md-pull-11 {
     right: 91.66666667%;
   }
 
-  /* line 610, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 610, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-md-pull-10 {
     right: 83.33333333%;
   }
 
-  /* line 613, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 613, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-md-pull-9 {
     right: 75%;
   }
 
-  /* line 616, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 616, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-md-pull-8 {
     right: 66.66666667%;
   }
 
-  /* line 619, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 619, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-md-pull-7 {
     right: 58.33333333%;
   }
 
-  /* line 622, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 622, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-md-pull-6 {
     right: 50%;
   }
 
-  /* line 625, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 625, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-md-pull-5 {
     right: 41.66666667%;
   }
 
-  /* line 628, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 628, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-md-pull-4 {
     right: 33.33333333%;
   }
 
-  /* line 631, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 631, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-md-pull-3 {
     right: 25%;
   }
 
-  /* line 634, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 634, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-md-pull-2 {
     right: 16.66666667%;
   }
 
-  /* line 637, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 637, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-md-pull-1 {
     right: 8.33333333%;
   }
 
-  /* line 640, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 640, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-md-pull-0 {
     right: auto;
   }
 
-  /* line 643, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 643, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-md-push-12 {
     left: 100%;
   }
 
-  /* line 646, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 646, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-md-push-11 {
     left: 91.66666667%;
   }
 
-  /* line 649, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 649, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-md-push-10 {
     left: 83.33333333%;
   }
 
-  /* line 652, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 652, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-md-push-9 {
     left: 75%;
   }
 
-  /* line 655, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 655, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-md-push-8 {
     left: 66.66666667%;
   }
 
-  /* line 658, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 658, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-md-push-7 {
     left: 58.33333333%;
   }
 
-  /* line 661, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 661, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-md-push-6 {
     left: 50%;
   }
 
-  /* line 664, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 664, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-md-push-5 {
     left: 41.66666667%;
   }
 
-  /* line 667, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 667, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-md-push-4 {
     left: 33.33333333%;
   }
 
-  /* line 670, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 670, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-md-push-3 {
     left: 25%;
   }
 
-  /* line 673, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 673, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-md-push-2 {
     left: 16.66666667%;
   }
 
-  /* line 676, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 676, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-md-push-1 {
     left: 8.33333333%;
   }
 
-  /* line 679, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 679, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-md-push-0 {
     left: auto;
   }
 
-  /* line 682, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 682, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-md-offset-12 {
     margin-left: 100%;
   }
 
-  /* line 685, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 685, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-md-offset-11 {
     margin-left: 91.66666667%;
   }
 
-  /* line 688, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 688, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-md-offset-10 {
     margin-left: 83.33333333%;
   }
 
-  /* line 691, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 691, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-md-offset-9 {
     margin-left: 75%;
   }
 
-  /* line 694, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 694, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-md-offset-8 {
     margin-left: 66.66666667%;
   }
 
-  /* line 697, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 697, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-md-offset-7 {
     margin-left: 58.33333333%;
   }
 
-  /* line 700, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 700, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-md-offset-6 {
     margin-left: 50%;
   }
 
-  /* line 703, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 703, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-md-offset-5 {
     margin-left: 41.66666667%;
   }
 
-  /* line 706, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 706, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-md-offset-4 {
     margin-left: 33.33333333%;
   }
 
-  /* line 709, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 709, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-md-offset-3 {
     margin-left: 25%;
   }
 
-  /* line 712, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 712, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-md-offset-2 {
     margin-left: 16.66666667%;
   }
 
-  /* line 715, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 715, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-md-offset-1 {
     margin-left: 8.33333333%;
   }
 
-  /* line 718, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 718, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-md-offset-0 {
     margin-left: 0%;
   }
 }
 @media (min-width: 1200px) {
-  /* line 723, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 723, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12 {
     float: left;
   }
 
-  /* line 726, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 726, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-lg-12 {
     width: 100%;
   }
 
-  /* line 729, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 729, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-lg-11 {
     width: 91.66666667%;
   }
 
-  /* line 732, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 732, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-lg-10 {
     width: 83.33333333%;
   }
 
-  /* line 735, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 735, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-lg-9 {
     width: 75%;
   }
 
-  /* line 738, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 738, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-lg-8 {
     width: 66.66666667%;
   }
 
-  /* line 741, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 741, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-lg-7 {
     width: 58.33333333%;
   }
 
-  /* line 744, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 744, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-lg-6 {
     width: 50%;
   }
 
-  /* line 747, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 747, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-lg-5 {
     width: 41.66666667%;
   }
 
-  /* line 750, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 750, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-lg-4 {
     width: 33.33333333%;
   }
 
-  /* line 753, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 753, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-lg-3 {
     width: 25%;
   }
 
-  /* line 756, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 756, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-lg-2 {
     width: 16.66666667%;
   }
 
-  /* line 759, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 759, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-lg-1 {
     width: 8.33333333%;
   }
 
-  /* line 762, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 762, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-lg-pull-12 {
     right: 100%;
   }
 
-  /* line 765, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 765, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-lg-pull-11 {
     right: 91.66666667%;
   }
 
-  /* line 768, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 768, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-lg-pull-10 {
     right: 83.33333333%;
   }
 
-  /* line 771, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 771, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-lg-pull-9 {
     right: 75%;
   }
 
-  /* line 774, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 774, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-lg-pull-8 {
     right: 66.66666667%;
   }
 
-  /* line 777, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 777, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-lg-pull-7 {
     right: 58.33333333%;
   }
 
-  /* line 780, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 780, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-lg-pull-6 {
     right: 50%;
   }
 
-  /* line 783, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 783, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-lg-pull-5 {
     right: 41.66666667%;
   }
 
-  /* line 786, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 786, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-lg-pull-4 {
     right: 33.33333333%;
   }
 
-  /* line 789, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 789, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-lg-pull-3 {
     right: 25%;
   }
 
-  /* line 792, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 792, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-lg-pull-2 {
     right: 16.66666667%;
   }
 
-  /* line 795, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 795, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-lg-pull-1 {
     right: 8.33333333%;
   }
 
-  /* line 798, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 798, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-lg-pull-0 {
     right: auto;
   }
 
-  /* line 801, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 801, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-lg-push-12 {
     left: 100%;
   }
 
-  /* line 804, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 804, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-lg-push-11 {
     left: 91.66666667%;
   }
 
-  /* line 807, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 807, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-lg-push-10 {
     left: 83.33333333%;
   }
 
-  /* line 810, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 810, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-lg-push-9 {
     left: 75%;
   }
 
-  /* line 813, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 813, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-lg-push-8 {
     left: 66.66666667%;
   }
 
-  /* line 816, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 816, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-lg-push-7 {
     left: 58.33333333%;
   }
 
-  /* line 819, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 819, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-lg-push-6 {
     left: 50%;
   }
 
-  /* line 822, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 822, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-lg-push-5 {
     left: 41.66666667%;
   }
 
-  /* line 825, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 825, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-lg-push-4 {
     left: 33.33333333%;
   }
 
-  /* line 828, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 828, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-lg-push-3 {
     left: 25%;
   }
 
-  /* line 831, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 831, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-lg-push-2 {
     left: 16.66666667%;
   }
 
-  /* line 834, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 834, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-lg-push-1 {
     left: 8.33333333%;
   }
 
-  /* line 837, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 837, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-lg-push-0 {
     left: auto;
   }
 
-  /* line 840, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 840, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-lg-offset-12 {
     margin-left: 100%;
   }
 
-  /* line 843, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 843, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-lg-offset-11 {
     margin-left: 91.66666667%;
   }
 
-  /* line 846, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 846, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-lg-offset-10 {
     margin-left: 83.33333333%;
   }
 
-  /* line 849, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 849, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-lg-offset-9 {
     margin-left: 75%;
   }
 
-  /* line 852, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 852, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-lg-offset-8 {
     margin-left: 66.66666667%;
   }
 
-  /* line 855, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 855, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-lg-offset-7 {
     margin-left: 58.33333333%;
   }
 
-  /* line 858, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 858, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-lg-offset-6 {
     margin-left: 50%;
   }
 
-  /* line 861, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 861, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-lg-offset-5 {
     margin-left: 41.66666667%;
   }
 
-  /* line 864, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 864, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-lg-offset-4 {
     margin-left: 33.33333333%;
   }
 
-  /* line 867, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 867, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-lg-offset-3 {
     margin-left: 25%;
   }
 
-  /* line 870, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 870, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-lg-offset-2 {
     margin-left: 16.66666667%;
   }
 
-  /* line 873, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 873, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-lg-offset-1 {
     margin-left: 8.33333333%;
   }
 
-  /* line 876, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+  /* line 876, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
   .col-lg-offset-0 {
     margin-left: 0%;
   }
 }
-/* line 880, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+/* line 880, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
 .clearfix,
 .clearfix:before,
 .clearfix:after,
@@ -2529,7 +2529,7 @@ hr {
   display: table;
 }
 
-/* line 892, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+/* line 892, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
 .clearfix:after,
 .container:after,
 .container-fluid:after,
@@ -2537,24 +2537,24 @@ hr {
   clear: both;
 }
 
-/* line 898, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+/* line 898, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
 .center-block {
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* line 903, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+/* line 903, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
 .pull-right {
   float: right !important;
 }
 
-/* line 906, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+/* line 906, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
 .pull-left {
   float: left !important;
 }
 
-/* line 909, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
+/* line 909, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/bootstrap_grid.scss */
 *,
 *:before,
 *:after {
@@ -2562,25 +2562,25 @@ hr {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* line 5, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/home_pages.scss */
+/* line 5, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/home_pages.scss */
 .home-page-background {
   background-image: url("parchmentbackground4");
   margin-top: 50px;
 }
 
-/* line 10, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/home_pages.scss */
+/* line 10, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/home_pages.scss */
 .home-page-container {
   margin: 0px;
   padding: 0px;
 }
 
-/* line 15, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/home_pages.scss */
+/* line 15, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/home_pages.scss */
 #home-page-header {
   text-align: center;
   padding-top: 10px;
 }
 
-/* line 20, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/home_pages.scss */
+/* line 20, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/home_pages.scss */
 .home-page-label {
   margin-top: 20px;
   padding: 0px;
@@ -2590,13 +2590,13 @@ hr {
   font-family: 'Hultog';
 }
 
-/* line 29, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/home_pages.scss */
+/* line 29, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/home_pages.scss */
 .home-page-sublabel {
   font-size: 3em;
   margin-top: 10px;
 }
 
-/* line 34, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/home_pages.scss */
+/* line 34, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/home_pages.scss */
 .home-page-text {
   margin: 0px;
   padding: 0px;
@@ -2605,12 +2605,12 @@ hr {
   font-family: 'Hultog';
 }
 
-/* line 42, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/home_pages.scss */
+/* line 42, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/home_pages.scss */
 .contact-container {
   height: 165px;
 }
 
-/* line 46, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/home_pages.scss */
+/* line 46, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/home_pages.scss */
 #ruleset-list-start {
   margin-top: 50px;
 }
@@ -2694,27 +2694,28 @@ hr {
   font-weight: normal;
   font-style: normal;
 }
-/* line 112, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/main.scss */
+/* line 112, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/main.scss */
 html {
   margin: 0px;
   padding: 0px;
   height: 100vh;
 }
 
-/* line 117, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/main.scss */
+/* line 117, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/main.scss */
 body {
   margin: 0px !important;
   padding: 0px;
-  min-height: 100vh;
+  min-height: 658px;
+  min-width: 1350px;
   background-image: url("/assets/woodbackground1scale.png");
 }
 
-/* line 124, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/main.scss */
+/* line 125, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/main.scss */
 textarea {
   resize: none;
 }
 
-/* line 128, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/main.scss */
+/* line 129, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/main.scss */
 .header {
   width: 0px auto;
   margin: 0px auto;
@@ -2727,7 +2728,7 @@ textarea {
   background-size: contain;
 }
 
-/* line 139, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/main.scss */
+/* line 140, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/main.scss */
 .content {
   width: 0px auto;
   border: 1px solid #CCC;
@@ -2736,18 +2737,18 @@ textarea {
   margin: 70px auto;
 }
 
-/* line 147, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/main.scss */
+/* line 148, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/main.scss */
 .left-align {
   float: left;
 }
 
-/* line 150, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/main.scss */
+/* line 151, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/main.scss */
 .right-align {
   float: right;
 }
 
-/* line 154, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/main.scss */
-.header-link:link, .header-link:visited {
+/* line 155, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/main.scss */
+.header-link {
   color: black;
   height: 31px;
   padding: 6px;
@@ -2755,48 +2756,52 @@ textarea {
   font-size: 2em;
   text-align: center;
   border-left: 1px solid #c8a52d;
+  border-right: 1px solid #c8a52d;
+  border-top: none;
+  border-bottom: none;
   text-decoration: none;
   display: inline-block;
   transition: 0.2s;
   line-height: 26px;
 }
 
-/* line 168, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/main.scss */
+/* line 172, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/main.scss */
 .white-border-text {
   text-shadow: -1px 0px 0px white, 1px 0px 0px white, 0px 1px 0px white, 0px -1px 0px white;
 }
 
-/* line 175, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/main.scss */
+/* line 179, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/main.scss */
 .black-border-text {
   text-shadow: -1px 0px 0px black, 1px 0px 0px black, 0px 1px 0px black, 0px -1px 0px black;
 }
 
-/* line 183, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/main.scss */
+/* line 187, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/main.scss */
 .header-link:hover, .header-link:active {
   color: #7A0C1B;
   text-shadow: 2px 2px 10px #969696;
+  text-decoration: none;
 }
 
-/* line 189, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/main.scss */
+/* line 194, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/main.scss */
 table, td, th {
   border-bottom: 1px solid #CCC;
   text-align: center;
 }
 
-/* line 193, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/main.scss */
+/* line 198, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/main.scss */
 th {
   background-color: #C2132B;
   color: white;
   font-weight: bold;
 }
 
-/* line 198, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/main.scss */
+/* line 203, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/main.scss */
 table {
   border-collapse: collapse;
   width: 100%;
 }
 
-/* line 202, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/main.scss */
+/* line 207, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/main.scss */
 th, td {
   overflow: hidden;
   padding: 10px;
@@ -2804,12 +2809,12 @@ th, td {
   width: 50px;
 }
 
-/* line 208, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/main.scss */
+/* line 213, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/main.scss */
 tr:hover {
   background-color: #A5A5A5;
 }
 
-/* line 212, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/main.scss */
+/* line 217, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/main.scss */
 .tooltip {
   position: relative;
   display: inline-block;
@@ -2817,7 +2822,7 @@ tr:hover {
   text-decoration: underline;
 }
 
-/* line 219, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/main.scss */
+/* line 224, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/main.scss */
 .tooltip .tooltiptext {
   visibility: hidden;
   width: 120px;
@@ -2835,7 +2840,7 @@ tr:hover {
   transition: opacity 0.5s;
 }
 
-/* line 236, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/main.scss */
+/* line 241, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/main.scss */
 .tooltip .tooltiptext::after {
   content: "";
   position: absolute;
@@ -2847,13 +2852,13 @@ tr:hover {
   border-color: black transparent transparent transparent;
 }
 
-/* line 247, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/main.scss */
+/* line 252, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/main.scss */
 .tooltip:hover .tooltiptext {
   visibility: visible;
   opacity: 1;
 }
 
-/* line 252, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/main.scss */
+/* line 257, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/main.scss */
 input[type=text], input[type=password], input[type^=email] {
   border: 2px solid #A5A5A5;
   border-radius: 5px;
@@ -2861,12 +2866,12 @@ input[type=text], input[type=password], input[type^=email] {
   outline: none;
 }
 
-/* line 260, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/main.scss */
+/* line 265, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/main.scss */
 input[type=text]:focus, input[type=password]:focus, input[type^=email]:focus {
   border: 2px solid #C2132B;
 }
 
-/* line 264, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/main.scss */
+/* line 269, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/main.scss */
 select {
   width: auto;
   padding: 1px 5px;
@@ -2875,7 +2880,7 @@ select {
   background-color: #A5A5A5;
 }
 
-/* line 272, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/main.scss */
+/* line 277, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/main.scss */
 input[type=button], input[type=reset] {
   background-color: #C2132B;
   color: white;
@@ -2887,7 +2892,7 @@ input[type=button], input[type=reset] {
   cursor: pointer;
 }
 
-/* line 288, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/main.scss */
+/* line 293, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/main.scss */
 a:link.outside, a:visited.outside {
   background: none;
   color: blue;
@@ -2897,12 +2902,12 @@ a:link.outside, a:visited.outside {
   display: inline !important;
 }
 
-/* line 297, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/main.scss */
+/* line 302, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/main.scss */
 a:hover.outside, a:active.outside {
   border-bottom: 1px solid blue;
 }
 
-/* line 301, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/main.scss */
+/* line 306, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/main.scss */
 #notice {
   font-size: 3em;
   color: #cc0000 !important;
@@ -2915,7 +2920,7 @@ a:hover.outside, a:active.outside {
   margin-right: 25vw;
 }
 
-/* line 313, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/main.scss */
+/* line 318, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/main.scss */
 .home-page-container {
   width: 100%;
   height: 100%;
@@ -2926,7 +2931,7 @@ a:hover.outside, a:active.outside {
   overflow: hidden;
 }
 
-/* line 325, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/main.scss */
+/* line 330, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/main.scss */
 .main-text {
   font-family: 'Dungeon';
   text-align: center;
@@ -2940,7 +2945,7 @@ a:hover.outside, a:active.outside {
   color: white;
 }
 
-/* line 338, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/main.scss */
+/* line 343, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/main.scss */
 .hook {
   text-align: center;
   font-family: 'Hultog';
@@ -2951,7 +2956,7 @@ a:hover.outside, a:active.outside {
   color: white;
 }
 
-/* line 352, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/main.scss */
+/* line 357, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/main.scss */
 .start {
   font-family: 'Immortal';
   font-size: 4em;
@@ -2964,7 +2969,7 @@ a:hover.outside, a:active.outside {
   color: white;
 }
 
-/* line 364, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/main.scss */
+/* line 369, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/main.scss */
 .main-signup-button {
   font-family: 'Immortal';
   display: block;
@@ -2985,7 +2990,7 @@ a:hover.outside, a:active.outside {
   text-shadow: 2px 2px 1px #0a0a0a;
 }
 
-/* line 384, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/main.scss */
+/* line 389, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/main.scss */
 .main-signup-button:hover {
   background-color: rgba(150, 0, 0, 0.8);
   border-color: white;
@@ -2996,7 +3001,7 @@ a:hover.outside, a:active.outside {
   box-shadow: 0px 3px 20px -4px rgba(0, 0, 0, 0.75);
 }
 
-/* line 400, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/main.scss */
+/* line 405, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/main.scss */
 #myCarousel {
   display: block;
   margin: 0 auto;
@@ -3005,12 +3010,12 @@ a:hover.outside, a:active.outside {
   overflow: hidden;
 }
 
-/* line 408, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/main.scss */
+/* line 413, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/main.scss */
 .carousel-inner img {
   margin: 0 auto;
 }
 
-/* line 412, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/main.scss */
+/* line 417, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/main.scss */
 .page-label {
   font-family: 'Dungeon';
   font-size: 9em;
@@ -3019,7 +3024,7 @@ a:hover.outside, a:active.outside {
 }
 
 /* CSS for Sending a Message */
-/* line 419, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/main.scss */
+/* line 424, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/main.scss */
 .modall {
   display: none;
   position: relative;
@@ -3033,36 +3038,36 @@ a:hover.outside, a:active.outside {
   animation-name: animatetop;
   animation-duration: 0.4s;
 }
-/* line 431, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/main.scss */
+/* line 436, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/main.scss */
 .modall .close {
   color: black;
   float: right;
   font-weight: bold;
   font-size: 28px;
 }
-/* line 437, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/main.scss */
+/* line 442, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/main.scss */
 .modall .close:hover,
 .modall .close:focus {
   color: #000;
   cursor: pointer;
   text-decoration: none;
 }
-/* line 443, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/main.scss */
+/* line 448, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/main.scss */
 .modall .greeting {
   margin: auto;
   padding: 2px;
   font-size: 15px;
 }
-/* line 449, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/main.scss */
+/* line 454, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/main.scss */
 .modall .submit {
   float: right;
 }
 
-/* line 454, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/main.scss */
+/* line 459, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/main.scss */
 .msgform {
   font-size: 12px;
   background-color: white;
-  margin: auto;
+  margin: none;
   /* 15% from the top and centered */
   padding: 0;
   border: 1px solid #888;
@@ -3091,19 +3096,25 @@ a:hover.outside, a:active.outside {
     opacity: 1;
   }
 }
-/* line 5, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/messages.scss */
+/* line 479, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/main.scss */
+.dummy {
+  margin-top: 60px;
+  background-image: url("parchmentbackground5");
+  color: black;
+}
+/* line 5, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/messages.scss */
 .chat-dashboard-container {
   margin-top: 0px;
 }
 
-/* line 9, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/messages.scss */
+/* line 9, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/messages.scss */
 .chatroom-container {
   background-image: url("parchmentbackground6");
   background-size: cover;
   background-repeat: no-repeat;
 }
 
-/* line 15, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/messages.scss */
+/* line 15, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/messages.scss */
 .active-chatroom {
   width: 100%;
   text-align: left;
@@ -3112,19 +3123,19 @@ a:hover.outside, a:active.outside {
   padding: 10px;
 }
 
-/* line 27, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/messages.scss */
+/* line 27, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/messages.scss */
 #active-chatroom-header {
   text-align: center;
   padding-top: 50px;
 }
 
-/* line 32, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/messages.scss */
+/* line 32, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/messages.scss */
 .message-container {
   margin: 10px;
   display: block;
 }
 
-/* line 37, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/messages.scss */
+/* line 37, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/messages.scss */
 .message {
   color: white;
   padding: 3px 8px 3px 8px;
@@ -3133,23 +3144,23 @@ a:hover.outside, a:active.outside {
   display: inline-block;
 }
 
-/* line 45, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/messages.scss */
+/* line 45, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/messages.scss */
 .message-user {
   display: inline-block;
 }
 
-/* line 49, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/messages.scss */
+/* line 49, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/messages.scss */
 .message-avatar {
   border-radius: 50%;
   transition: 0.3s;
 }
 
-/* line 54, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/messages.scss */
+/* line 54, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/messages.scss */
 .message-avatar:hover {
   border-radius: 0;
 }
 
-/* line 62, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/messages.scss */
+/* line 62, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/messages.scss */
 #messages {
   margin: 10px;
   font-family: 'Immortal';
@@ -3157,7 +3168,7 @@ a:hover.outside, a:active.outside {
   line-height: 25px;
 }
 
-/* line 73, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/messages.scss */
+/* line 73, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/messages.scss */
 #message_content {
   padding: 2px 5px 2px 5px;
   width: 90%;
@@ -3176,13 +3187,13 @@ a:hover.outside, a:active.outside {
   display: inline-block;
 }
 
-/* line 91, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/messages.scss */
+/* line 91, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/messages.scss */
 #message_content:focus {
   border: 2px solid #8c0000;
   border-right: 0px;
 }
 
-/* line 96, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/messages.scss */
+/* line 96, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/messages.scss */
 #send-button {
   border-radius: 0px 10px 10px 0px;
   border-color: #8c0000;
@@ -3193,15 +3204,15 @@ a:hover.outside, a:active.outside {
   width: 10%;
   font-size: 1.65em;
   height: 50px;
-  margin-left: -7px;
+  margin-left: -25px;
 }
 
-/* line 109, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/messages.scss */
+/* line 109, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/messages.scss */
 #message-field {
   height: 50px;
 }
 
-/* line 113, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/messages.scss */
+/* line 113, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/messages.scss */
 .primary-column {
   float: left;
   margin-left: 20%;
@@ -3212,7 +3223,7 @@ a:hover.outside, a:active.outside {
   overflow-y: scroll;
 }
 
-/* line 123, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/messages.scss */
+/* line 123, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/messages.scss */
 .secondary-column {
   float: left;
   margin: 0 0 0 -80%;
@@ -3223,7 +3234,7 @@ a:hover.outside, a:active.outside {
   max-height: 100vh;
 }
 
-/* line 133, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/messages.scss */
+/* line 133, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/messages.scss */
 .tertiary-column {
   float: right;
   width: 20%;
@@ -3233,7 +3244,7 @@ a:hover.outside, a:active.outside {
   max-height: 100vh;
 }
 
-/* line 142, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/messages.scss */
+/* line 142, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/messages.scss */
 .chat-name-container {
   width: 100%;
   background-color: rgba(200, 200, 200, 0.6);
@@ -3244,18 +3255,18 @@ a:hover.outside, a:active.outside {
   overflow-x: hidden;
 }
 
-/* line 152, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/messages.scss */
+/* line 152, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/messages.scss */
 .chat-name-container:hover {
   background-color: rgba(200, 200, 200, 0.8);
   cursor: pointer;
 }
 
-/* line 157, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/messages.scss */
+/* line 157, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/messages.scss */
 .chat-name-container:first-child {
   margin-top: 34px;
 }
 
-/* line 161, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/messages.scss */
+/* line 161, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/messages.scss */
 .active-chat-sidebar {
   margin-top: 0px;
   background-color: rgba(200, 200, 200, 0.6);
@@ -3263,7 +3274,7 @@ a:hover.outside, a:active.outside {
   border-left: 2px solid rgba(30, 30, 30, 0.9);
 }
 
-/* line 168, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/messages.scss */
+/* line 168, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/messages.scss */
 .chat-name {
   font-family: 'Dungeon';
   font-size: 2em;
@@ -3273,7 +3284,7 @@ a:hover.outside, a:active.outside {
   white-space: nowrap;
 }
 
-/* line 177, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/messages.scss */
+/* line 177, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/messages.scss */
 #active-users-label {
   font-size: 3em;
   color: #960000;
@@ -3282,17 +3293,17 @@ a:hover.outside, a:active.outside {
   text-decoration: underline;
 }
 
-/* line 185, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/messages.scss */
+/* line 185, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/messages.scss */
 #active-users-sidebar {
   background-image: url("parchmentbackground4");
 }
 
-/* line 189, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/messages.scss */
+/* line 189, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/messages.scss */
 .user-list-container {
   text-align: center;
 }
 
-/* line 193, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/messages.scss */
+/* line 193, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/messages.scss */
 .chat-user-container {
   border-width: 1px 0px 0px 0px;
   border-color: rgba(50, 50, 50, 0.9);
@@ -3303,13 +3314,13 @@ a:hover.outside, a:active.outside {
   max-height: 45px;
 }
 
-/* line 203, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/messages.scss */
+/* line 203, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/messages.scss */
 .chat-user-container:hover {
   background-color: rgba(200, 200, 200, 0.8);
   cursor: pointer;
 }
 
-/* line 208, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/messages.scss */
+/* line 208, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/messages.scss */
 .chat-user-name {
   font-family: 'Immortal';
   font-size: 1.5em;
@@ -3322,12 +3333,12 @@ a:hover.outside, a:active.outside {
   overflow: hidden;
 }
 
-/* line 220, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/messages.scss */
+/* line 220, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/messages.scss */
 .active-user-avatar {
   float: left;
   display: inline-block;
 }
-/* line 1, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/scaffolds/scaffolds.scss */
+/* line 1, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/scaffolds/scaffolds.scss */
 body {
   background-color: #fff;
   color: #333;
@@ -3337,7 +3348,7 @@ body {
   margin: 33px;
 }
 
-/* line 10, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/scaffolds/scaffolds.scss */
+/* line 10, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/scaffolds/scaffolds.scss */
 p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
@@ -3345,7 +3356,7 @@ p, ol, ul, td {
   margin: 33px;
 }
 
-/* line 17, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/scaffolds/scaffolds.scss */
+/* line 17, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/scaffolds/scaffolds.scss */
 pre {
   background-color: #eee;
   padding: 10px;
@@ -3364,36 +3375,36 @@ pre {
     background-color: #000;
   }
 }*/
-/* line 36, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/scaffolds/scaffolds.scss */
+/* line 36, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/scaffolds/scaffolds.scss */
 th {
   padding-bottom: 5px;
 }
 
-/* line 40, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/scaffolds/scaffolds.scss */
+/* line 40, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/scaffolds/scaffolds.scss */
 td {
   padding-bottom: 7px;
   padding-left: 5px;
   padding-right: 5px;
 }
 
-/* line 47, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/scaffolds/scaffolds.scss */
+/* line 47, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/scaffolds/scaffolds.scss */
 div.field, div.actions {
   margin-bottom: 10px;
 }
 
-/* line 52, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/scaffolds/scaffolds.scss */
+/* line 52, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/scaffolds/scaffolds.scss */
 #notice {
   color: green;
 }
 
-/* line 55, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/scaffolds/scaffolds.scss */
+/* line 55, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/scaffolds/scaffolds.scss */
 .field_with_errors {
   padding: 2px;
   background-color: red;
   display: table;
 }
 
-/* line 61, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/scaffolds/scaffolds.scss */
+/* line 61, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/scaffolds/scaffolds.scss */
 #error_explanation {
   width: 450px;
   border: 2px solid red;
@@ -3402,7 +3413,7 @@ div.field, div.actions {
   margin-bottom: 20px;
   background-color: #f0f0f0;
 }
-/* line 69, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/scaffolds/scaffolds.scss */
+/* line 69, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/scaffolds/scaffolds.scss */
 #error_explanation h2 {
   text-align: left;
   font-weight: bold;
@@ -3413,41 +3424,227 @@ div.field, div.actions {
   background-color: #c00;
   color: #fff;
 }
-/* line 80, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/scaffolds/scaffolds.scss */
+/* line 80, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/scaffolds/scaffolds.scss */
 #error_explanation ul li {
   font-size: 12px;
   list-style: square;
 }
 
-/* line 86, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/scaffolds/scaffolds.scss */
+/* line 86, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/scaffolds/scaffolds.scss */
 label {
   display: block;
 }
-/* line 5, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/search_pages.scss */
+/* line 5, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/search_pages.scss */
 .search-mod {
-  margin-left: 25vw !important;
+  margin-top: 3vw !important;
+  margin-left: 23vw !important;
+  font-family: "Hultog";
+  position: absolute;
+  z-index: 1;
+  transition: 0.2s;
+}
+
+/* line 14, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/search_pages.scss */
+.search-results-mod {
+  margin-top: 3vw !important;
   font-family: "Hultog";
 }
 
-/* line 10, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/search_pages.scss */
-.search-param {
-  font-family: "Hulthog";
-  font-size: 21px;
-  font-weight: bold;
+/* line 19, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/search_pages.scss */
+.search-results-mod label {
+  display: inline-block;
 }
 
-/* line 16, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/search_pages.scss */
-.search-text {
-  font-family: "Hulthog";
+/* line 23, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/search_pages.scss */
+.search-param {
+  font-weight: bold;
+  font-size: 1.5em;
+  line-height: 24px;
+  text-align: center;
 }
-/* line 16, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+
+/* line 30, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/search_pages.scss */
+.close {
+  padding-left: 16px;
+  padding-right: 10px;
+  padding-top: 13px;
+  padding-bottom: 7px;
+  margin-left: 45vw !important;
+  font-size: 40px;
+  color: red;
+}
+
+/* line 40, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/search_pages.scss */
+.close:hover {
+  cursor: pointer;
+  background-color: lightgrey;
+}
+
+/* line 45, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/search_pages.scss */
+#search_modal {
+  display: none;
+}
+
+/* line 49, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/search_pages.scss */
+#search {
+  background: none;
+  border: none;
+}
+
+/* line 54, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/search_pages.scss */
+#search-label {
+  padding-top: 10px;
+  text-align: center;
+}
+
+/* line 59, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/search_pages.scss */
+.dropdown {
+  text-align: center;
+  font-size: 1.15em;
+}
+
+/* line 64, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/search_pages.scss */
+.radio-buttons-container {
+  padding-left: 10px;
+}
+
+/* line 68, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/search_pages.scss */
+.radio-buttons-container-results {
+  margin-left: 33px;
+}
+
+/* line 72, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/search_pages.scss */
+.radio-button-label {
+  display: inline-block;
+}
+
+/* line 76, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/search_pages.scss */
+#profile-type {
+  padding-left: 100px;
+}
+
+/* line 80, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/search_pages.scss */
+#any-all {
+  padding-left: 30px;
+}
+
+/* line 84, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/search_pages.scss */
+#any-all-results {
+  padding-left: 90px;
+}
+
+/* line 88, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/search_pages.scss */
+#exp-picker {
+  padding-left: 95px;
+}
+
+/* line 92, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/search_pages.scss */
+#ruleset-picker {
+  padding-left: 70px;
+}
+
+/* line 96, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/search_pages.scss */
+#online-play {
+  padding-left: 80px;
+}
+
+/* line 100, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/search_pages.scss */
+#online-play-results {
+  padding-right: 135px;
+}
+
+/* line 104, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/search_pages.scss */
+#campaign-types {
+  margin-left: -40px;
+}
+
+/* line 108, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/search_pages.scss */
+.search-mod label {
+  display: inline-block;
+}
+
+/* line 112, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/search_pages.scss */
+.ruleset-checkbox {
+  padding-left: 10px;
+}
+
+/* line 116, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/search_pages.scss */
+.search-row {
+  margin-bottom: 20px;
+}
+
+/* line 120, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/search_pages.scss */
+#exp {
+  padding-left: 45px;
+}
+
+/* line 124, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/search_pages.scss */
+#ruleset {
+  margin-left: -70px;
+}
+
+/* line 128, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/search_pages.scss */
+#search-pref {
+  margin-left: -85px;
+}
+
+/* line 132, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/search_pages.scss */
+.checkboxes-container {
+  margin-left: 27px;
+  width: 96%;
+}
+
+/* line 137, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/search_pages.scss */
+#search-submit {
+  display: block;
+  margin: 0 auto;
+  width: 30%;
+  font-size: 3em;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  font-size: 4.5em;
+  line-height: 40px;
+}
+
+/* line 148, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/search_pages.scss */
+#results-label {
+  text-align: center;
+  margin-top: 60px;
+}
+
+/* line 153, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/search_pages.scss */
+#results-search {
+  display: block !important;
+}
+
+/* line 157, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/search_pages.scss */
+#search-submit-results {
+  display: block;
+  margin: 0 auto;
+  width: 15%;
+  font-size: 3em;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  font-size: 4.5em;
+  line-height: 40px;
+}
+
+/* line 168, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/search_pages.scss */
+.search-apology {
+  text-align: center;
+  font-size: 3em;
+  line-height: 48px;
+  font-weight: bold;
+  font-family: 'Hultog';
+}
+/* line 16, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .parchment-background {
   background-image: url("/assets/parchmentbackground6");
   border-radius: 2px;
   margin: 10px;
 }
 
-/* line 22, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 22, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .profile-summary {
   width: 100%;
   position: relative;
@@ -3456,14 +3653,14 @@ label {
   border-bottom: 2px dashed #d2b67b;
 }
 
-/* line 34, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 34, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .profile-info {
   margin: 40px 0px 0px 0px !important;
   padding: 5px 0px 5px 5px;
   border-radius: 2px;
 }
 
-/* line 40, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 40, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .profile-preview {
   border-radius: 2px;
   border-bottom: 2px dashed #d2b67b;
@@ -3471,14 +3668,14 @@ label {
   margin: 10px 0px 10px 0px !important;
 }
 
-/* line 47, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 47, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .profile-text {
   float: none !important;
   display: table-cell;
   vertical-align: middle;
 }
 
-/* line 60, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 60, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .profile-summary img, .profile-preview img {
   border-radius: 25%;
   margin: 10px;
@@ -3487,13 +3684,13 @@ label {
   float: none !important;
 }
 
-/* line 68, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 68, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .profile-summary p {
   margin: 5px !important;
   display: inline-block;
 }
 
-/* line 73, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 73, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .profile-bio {
   margin-top: 10px;
   border-radius: 2px;
@@ -3501,7 +3698,7 @@ label {
   box-sizing: border-box;
 }
 
-/* line 82, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 82, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .bio-label {
   text-decoration: underline;
   text-align: center;
@@ -3510,7 +3707,7 @@ label {
   font-family: 'Breathe Fire';
 }
 
-/* line 90, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 90, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .bio-text {
   font-size: 2.25em;
   font-family: 'Dungeon';
@@ -3518,19 +3715,19 @@ label {
   padding: 10px 25px;
 }
 
-/* line 97, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 97, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .profile-bio p {
   margin: 10px 15px 10px 15px !important;
 }
 
-/* line 101, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 101, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .button-container {
   float: none !important;
   display: table-cell;
   vertical-align: middle;
 }
 
-/* line 107, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 107, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .contact-me-button {
   background-color: rgba(130, 0, 0, 0.65) !important;
   border: 35px solid transparent;
@@ -3544,23 +3741,23 @@ label {
   transition: 0.2s;
 }
 
-/* line 120, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 120, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .contact-me-button-small {
   background-color: rgba(130, 0, 0, 0.65);
 }
 
-/* line 124, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 124, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .contact-me-button:hover, .contact-me-button-small:hover, .contact-me-button:active, .contact-me-button-small:active {
   background-color: rgba(100, 0, 0, 0.8) !important;
   box-shadow: 0px 3px 20px -4px rgba(0, 0, 0, 0.75);
 }
 
-/* line 129, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 129, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .show-more-button {
   background-color: rgba(95, 158, 160, 0.7);
 }
 
-/* line 133, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 133, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .show-more-button:hover, .show-more-button:active {
   background-color: rgba(54, 123, 125, 0.8);
   box-shadow: 0px 3px 20px -4px rgba(0, 0, 0, 0.75);
@@ -3568,7 +3765,7 @@ label {
   text-decoration: none;
 }
 
-/* line 140, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 140, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .profile-button {
   font-family: 'Wizard Of The Moon';
   transition: 0.2s;
@@ -3583,12 +3780,12 @@ label {
   border-image: url("/assets/simplecelticborder2") 45 round;
 }
 
-/* line 154, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 154, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .profile-button:hover, .profile-button:active {
   box-shadow: 0px 3px 15px -2px rgba(0, 0, 0, 0.65) !important;
 }
 
-/* line 158, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 158, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .more-users-box {
   position: relative;
   margin-top: 10px;
@@ -3598,25 +3795,25 @@ label {
   padding-left: 10px;
 }
 
-/* line 167, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 167, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 #more-users-label {
   font-size: 2.5em;
   line-height: 40px;
 }
 
-/* line 172, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 172, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .more-users-box a {
   color: #960000;
   text-decoration: none;
 }
 
-/* line 177, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 177, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .more-users-box a:hover {
   color: #6e0000;
   text-decoration: none;
 }
 
-/* line 182, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 182, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .more-users-box div {
   padding: 5px 15px 5px 15px;
   margin: 0px;
@@ -3625,12 +3822,12 @@ label {
   line-height: 24px;
 }
 
-/* line 190, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 190, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .ending-buttons {
   margin: 10px;
 }
 
-/* line 194, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 194, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .profile-excerpt {
   vertical-align: middle;
   display: table-cell;
@@ -3640,14 +3837,14 @@ label {
   float: none !important;
 }
 
-/* line 203, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 203, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .username-preview {
   font-size: 3.5em !important;
   font-family: "Mysticora" !important;
   line-height: 45px;
 }
 
-/* line 209, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 209, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .ruleset-selection-container {
   display: table;
   background-image: url("parchmentbackground6");
@@ -3657,7 +3854,7 @@ label {
   width: 100%;
 }
 
-/* line 218, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 218, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .tutorial-section-label {
   text-align: center;
   font-size: 2.25em;
@@ -3666,7 +3863,7 @@ label {
   margin-top: 10px;
 }
 
-/* line 226, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 226, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .checkbox-label {
   float: right;
   font-size: 1.5em;
@@ -3676,21 +3873,21 @@ label {
   display: inline-block !important;
 }
 
-/* line 235, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 235, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .checkbox {
   float: left;
   display: inline-block !important;
   margin-top: 11px;
 }
 
-/* line 241, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 241, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .tutorial-explanation-text {
   text-align: center;
   margin: 0px;
   padding: 0px;
 }
 
-/* line 247, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 247, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .tutorial-opening {
   font-size: 5em;
   font-family: 'Dungeon';
@@ -3699,13 +3896,13 @@ label {
   color: white;
 }
 
-/* line 255, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 255, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 #tutorial-label {
   margin-top: 60px;
   text-align: center;
 }
 
-/* line 260, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 260, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .ruleset-box {
   border: 1px solid #A5A5A5;
   border-radius: 10px;
@@ -3718,7 +3915,13 @@ label {
   /* align vertical */
 }
 
-/* line 270, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 270, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
+.ruleset-box:hover {
+  background-color: #8FBC8F;
+  opacity: 0.8;
+}
+
+/* line 275, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .campaign-type-box {
   background-image: url("parchmentbackground6");
   margin: 0px 20px 0px 20px;
@@ -3727,13 +3930,13 @@ label {
   font-size: 1.5em;
 }
 
-/* line 278, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 283, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .ruleset-picture {
   float: left;
   display: table-cell;
 }
 
-/* line 283, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 288, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .ruleset-text {
   float: right;
   vertical-align: middle;
@@ -3744,7 +3947,7 @@ label {
   line-height: 24px;
 }
 
-/* line 293, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 298, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .bio-container {
   font-family: 'Hultog';
   background-image: url("parchmentbackground5");
@@ -3752,7 +3955,7 @@ label {
   margin: 0px 20px 0px 20px;
 }
 
-/* line 300, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 305, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .location-container {
   font-family: 'Hultog';
   background-image: url("parchmentbackground4");
@@ -3760,39 +3963,39 @@ label {
   margin: 0px 20px 0px 20px;
 }
 
-/* line 307, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 312, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 #online-check {
   text-align: center;
 }
 
-/* line 311, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 316, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 #dm_profile_bio {
   width: 98%;
   height: 200px;
   margin: 10px;
 }
 
-/* line 317, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 322, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .profile-submit-container {
   font-size: 2em;
   display: block;
   padding-left: 520px;
 }
 
-/* line 323, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 328, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .info-label {
   font-family: 'Breathe Fire';
   font-size: 2em;
   color: #6e0000;
 }
 
-/* line 329, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 334, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .info {
   font-family: 'Mysticora';
   font-size: 2em;
 }
 
-/* line 335, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 340, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .more-users-box a {
   color: #960000;
   text-decoration: none;
@@ -3800,13 +4003,13 @@ label {
   margin: 0px;
 }
 
-/* line 342, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 347, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .more-users-box a:hover {
   color: #6e0000;
   text-decoration: none;
 }
 
-/* line 347, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 352, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .signup-container {
   background-image: url("/assets/parchment-scroll");
   margin: auto;
@@ -3816,23 +4019,23 @@ label {
   font-family: 'Dungeon';
 }
 
-/* line 356, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 361, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .signup-container:first-child {
   text-align: center;
 }
 
-/* line 360, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 365, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 #signup-page-label {
   padding-top: 70px;
 }
 
-/* line 364, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 369, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .login-reminder {
   font-size: 4em;
   color: black;
 }
 
-/* line 369, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 374, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .signup-form-container {
   margin-top: 20px;
   font-size: 2.5em;
@@ -3840,7 +4043,7 @@ label {
   margin-left: -246px;
 }
 
-/* line 376, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 381, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .signup-field {
   width: 45%;
   float: left;
@@ -3848,7 +4051,7 @@ label {
   margin-bottom: 10px;
 }
 
-/* line 383, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 388, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .signup-label {
   display: inline-block !important;
   float: right;
@@ -3857,47 +4060,47 @@ label {
   padding-bottom: 20px;
 }
 
-/* line 391, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 396, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .radio-buttons-container {
   text-align: left !important;
 }
 
-/* line 395, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 400, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .button-field {
   text-align: left !important;
   padding-left: 246px;
 }
 
-/* line 400, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 405, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 #signup-avatar-label {
   padding-left: 246px;
 }
 
-/* line 404, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 409, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 #signup-avatar-field {
   padding-left: 287px;
   font-size: 0.5em;
   font-family: sans-serif;
 }
 
-/* line 410, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 415, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 #familiarity {
   padding-left: 0px;
 }
 
-/* line 414, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 419, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 #distance-label {
   padding-top: 0px;
   padding-bottom: 0px;
 }
 
-/* line 419, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 424, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 #signup {
   padding-left: 0px;
   padding-top: 28px;
 }
 
-/* line 424, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 429, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 #signup-button {
   padding-left: 0px;
   margin-left: 0px;
@@ -3905,29 +4108,29 @@ label {
   padding-top: 5px;
 }
 
-/* line 431, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 436, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .familiarity-text-container {
   width: 13.6% !important;
 }
 
-/* line 435, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 440, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .signup-login-submit {
   background-color: rgba(110, 0, 0, 0.8);
   font-size: 1.75em;
   font-family: 'Dungeon';
 }
 
-/* line 441, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 446, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .signup-login-submit:hover {
   background-color: rgba(130, 0, 0, 0.9);
 }
 
-/* line 445, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 450, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .signup-submit-container {
   padding-left: 830px;
 }
 
-/* line 449, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 454, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .login-container {
   background-image: url("/assets/parchment-scroll2");
   margin: auto;
@@ -3940,25 +4143,25 @@ label {
   height: 550px;
 }
 
-/* line 461, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 466, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .login-form-container {
   font-size: 2.5em;
   margin-top: 30px;
 }
 
-/* line 466, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 471, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 #login-submit {
   border-width: 20px !important;
   font-size: 2em;
   padding: 10px;
 }
 
-/* line 472, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 477, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 #login-label {
   padding-top: 70px;
 }
 
-/* line 479, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 484, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .sidebar-column {
   min-height: 650px;
   max-height: 100vh;
@@ -3972,7 +4175,7 @@ label {
   background-image: url("parchmentbackground5");
 }
 
-/* line 492, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 497, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .row-top {
   margin-top: -25px;
   min-width: 1349px;
@@ -3982,7 +4185,7 @@ label {
   border-bottom: 1px solid #d2b67b;
 }
 
-/* line 501, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 506, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .row-middle {
   width: 100%;
   min-width: 1349px;
@@ -3991,7 +4194,7 @@ label {
   border-bottom: 1px solid #d2b67b;
 }
 
-/* line 509, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 514, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .row-bottom {
   width: 100%;
   min-width: 1349px;
@@ -3999,7 +4202,7 @@ label {
   max-height: 33.4vh;
 }
 
-/* line 516, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 521, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .dashboard-avatar {
   margin: auto;
   border-radius: 50%;
@@ -4007,23 +4210,23 @@ label {
   display: block;
 }
 
-/* line 523, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 528, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .dashboard-avatar:hover {
   border-radius: 0;
 }
 
-/* line 527, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 532, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 #user-avatar {
   padding-top: 30px;
 }
 
-/* line 531, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 536, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 #username-label {
   font-size: 3.5em;
   text-align: center;
 }
 
-/* line 536, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 541, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .chatroom-preview-container {
   display: inline-block;
   width: 68%;
@@ -4034,12 +4237,12 @@ label {
   max-height: 33.3vh;
 }
 
-/* line 546, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 551, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 #top-chat-container {
   min-height: 235px;
 }
 
-/* line 550, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 555, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .preview {
   max-width: 200px;
   max-height: 200px;
@@ -4050,12 +4253,12 @@ label {
   vertical-align: top;
 }
 
-/* line 560, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 565, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .chatroom-preview-container div {
   margin: 0px 18px 0px 18px;
 }
 
-/* line 564, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 569, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .preview-name {
   overflow-y: scroll !important;
   overflow-x: hidden !important;
@@ -4068,22 +4271,22 @@ label {
   max-height: 60px;
 }
 
-/* line 577, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 582, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .chatroom-new-container {
   display: inline-block;
 }
 
-/* line 581, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 586, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .chatroom-new-container img {
   vertical-align: 0px !important;
 }
 
-/* line 585, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 590, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 #new-chats {
   width: 80%;
 }
 
-/* line 589, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 594, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .recommendations-container {
   display: inline-block;
   width: 80%;
@@ -4093,12 +4296,12 @@ label {
   color: #960000;
 }
 
-/* line 598, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 603, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .recommendations-container a {
   margin: 0px 50px 0px 50px;
 }
 
-/* line 602, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 607, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .row-label {
   font-family: "Wizard of the Moon";
   font-size: 3em;
@@ -4109,24 +4312,24 @@ label {
   text-align: left;
 }
 
-/* line 612, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 617, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 #first-row-label {
   padding-top: 20px;
 }
 
-/* line 616, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 621, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .dashboard-container {
   margin-top: -25px;
   background-image: url("parchmentbackground6");
 }
 
-/* line 621, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 626, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .dashboard-container a {
   color: #960000;
   text-decoration: none;
 }
 
-/* line 626, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 631, /vagrant/CS166b/Dicer3/Dicer/app/assets/stylesheets/users.scss */
 .dashboard-container a:hover {
   color: #6e0000;
   text-decoration: none;

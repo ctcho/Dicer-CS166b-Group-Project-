@@ -12198,6 +12198,9 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
     var messages;
     messages = $('#messages');
     if ($('#messages').length > 0) {
+      console.log("stuff");
+      console.log(messages);
+      console.log(messages.data('chat-room-id'));
       return App.global_chat = App.cable.subscriptions.create({
         channel: "ChatRoomChannel",
         chat_room_id: messages.data('chat-room-id')
@@ -12222,7 +12225,7 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
   submit_message = function() {
     return $('#message_content').on('keydown', function(event) {
       if (event.keyCode === 13) {
-        $('input').click();
+        $('#send-button').click();
         event.target.value = "";
         return event.preventDefault();
       }
@@ -12238,6 +12241,10 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
 
 
 }).call(this);
+$('#edit-msg').click(function() {
+  console.log("Let's pray that this is working");
+  event.preventDefault();
+});
 (function() {
 
 
@@ -12250,6 +12257,30 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
 
 
 }).call(this);
+$(".ruleset-box").on('click', function() {
+  if ($(this).find('input:checkbox').is(":checked")) {
+    $(this).find('input:checkbox').prop("checked", false);
+    $(this).css('background-color', 'transparent');
+  }
+  else {
+    $(this).find('input:checkbox').prop("checked", true);
+    $(this).css('background-color', '#6699ff');
+  }
+  console.log("Box checked/unchecked");
+});
+
+
+$('input[type=checkbox]').click(function(e) {
+  e.stopPropagation();
+});
+$("#search").click(function() {
+  $("#search_modal").css("display", "block");
+});
+
+$(".close").click(function() {
+  $("#search_modal").css("display", "none");
+})
+;
 (function() {
 
 
@@ -12267,6 +12298,9 @@ $("#contact").click(function() {
 $(".close").click(function() {
   $("#msgmodal").css("display", "none");
 });
+//$("#submit").click(function() {
+//  $("#signup-rulesets").css("display", "block");
+//});
 (function() {
 
 
@@ -12287,4 +12321,9 @@ $(".close").click(function() {
 
 
 
-;
+
+$(function() {
+  $("#search-form").on("change", function() {
+    $.get($("#search-form").attr("action"), $("#search-form").serialize(), null, "script");
+  });
+});
