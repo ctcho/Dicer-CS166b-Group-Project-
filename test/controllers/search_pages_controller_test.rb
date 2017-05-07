@@ -9,7 +9,6 @@ include UsersHelper
 #now... -Cameron C.
 class SearchPagesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    #byebug
     @u1 = users(:user_1)
     @u2 = users(:user_2)
     @u3 = users(:user_3)
@@ -142,7 +141,7 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
     end
     get search_pages_results_path(@params)
     assert_response :success
-    assert_select "button", "Search for Users..."
+    assert_select "button", "Search"
   end
 
   test "user will see recommendations based on only one profile type if they don't have the other" do
@@ -162,6 +161,7 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
     @searcher.dm_profile = dm0
     get user_path(@searcher)
     assert_response :success
+    #byebug
     recommendations = get_similar_profiles(@searcher)
     assert recommendations.count > 0
     assert recommendations.first.class == PlayerProfile
@@ -297,10 +297,8 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
       end
       get search_pages_results_path(@params)
       assert_response :success
-      #puts "#{User.search(@params, current_user).count}"
-      #byebug
       assert_not User.search(@params, current_user).include?(@p3)
-      assert_select "div.search-text", "There are no users that match your given preferences."
+      assert_select "div.search-apology", "There are no users that match your preferences."
   end
 
   test "Using the 'OR' feature returns results from most relevant to least relevant for PlayerProfiles" do
@@ -499,9 +497,8 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
       end
       get search_pages_results_path(@params)
       assert_response :success
-      #puts "#{User.search(@params, current_user).count}"
       assert_not User.search(@params, current_user).include?(@dm3)
-      assert_select "div.search-text", "There are no users that match your given preferences."
+      assert_select "div.search-apology", "There are no users that match your preferences."
   end
 
   test "Using the 'OR' feature returns results from most relevant to least relevant for DmProfiles" do

@@ -5,42 +5,54 @@
     <div class="page-label" id="username-label">
       <%= @user.username %>
     </div>
+    <%= link_to user_settings_path(current_user) do %>
+      <div class="profile-button signup-login-submit half-button dashboard-buttons">
+        Settings
+      </div>
+    <% end %>
+    <%= link_to '%' do %>
+      <div class="profile-button signup-login-submit half-button dashboard-buttons">
+        Friends
+      </div>
+    <% end %>
     <div class="dm-profile-container">
+      <div class="profile-label">DM Profile</div>
       <% unless @dm_profile.nil? %>
         <%= link_to user_dm_profiles_path(@user) do %>
-          <div class="profile-button signup-login-submit">
-            View my DM Profile
+          <div class="profile-button signup-login-submit half-button dashboard-buttons">
+            View
           </div>
         <% end %>
         <%= link_to edit_user_dm_profiles_path(@user, @dm_profile) do %>
-          <div class="profile-button signup-login-submit">
-            Edit my DM Profile
+          <div class="profile-button signup-login-submit half-button dashboard-buttons">
+            Edit
           </div>
         <% end %>
-      <% else %>
+      <% else %>  
         <%= link_to '#' do %>
-          <div class="profile-button signup-login-submit">
-            Create a DM Profile
+          <div class="profile-button signup-login-submit dashboard-buttons">
+            Create
           </div>
         <% end %>
       <% end %>
     </div>
     <div class="player-profile-container">
+      <div class="profile-label">Player Profile</div>
       <% unless @player_profile.nil? %>
         <%= link_to user_player_profiles_path(@user) do %>
-          <div class="profile-button signup-login-submit">
-            View my Player Profile
+          <div class="profile-button signup-login-submit half-button dashboard-buttons">
+            View
           </div>
         <% end %>
         <%= link_to edit_user_dm_profiles_path(@user, @player_profile) do %>
-          <div class="profile-button signup-login-submit">
-            Edit my Player Profile
+          <div class="profile-button signup-login-submit half-button dashboard-buttons">
+            Edit
           </div>
         <% end %>
       <% else %>
         <%= link_to '#' do %>
-          <div class="profile-button signup-login-submit">
-            Create a Player Profile
+          <div class="profile-button signup-login-submit dashboard-buttons">
+            Create
           </div>
         <% end %>
       <% end %>
@@ -56,9 +68,11 @@
       <%= render partial: "chat_rooms/chatroom_preview", collection: @conversations, as: :chat %>
     </div>
     <!-- create new chat link -->
+    <%= link_to new_chat_room_path do %>
     <div class="chatroom-new-container">
       <%= image_tag "addnewbutton", height: "200", width: "150" %>
     </div>
+    <% end %>
   </div>
 
   <div class="row-middle">
@@ -74,7 +88,7 @@
   <div class="row-bottom">
     <!-- recommendations -->
     <div class="recommendations-container black-border-text">
-      <div class="row-label black-border-text">
+      <div class="row-label black-border-text" id="recommendations-header">
         People you may like
       </div>
       <%= render partial: "recommend_preview", collection: @similar_profiles, as: :profile %>

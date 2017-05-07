@@ -1,6 +1,6 @@
 <%= form_for(:message, url: user_messages_path, id: "chat_show_id") do |f| %>
-  <div class="field">
-    <%=f.text_area :content, placeholder: "Send new message..", cols: "80", rows: "10" %>
+  <div class="field field-background">
+    <%=f.text_area :content %>
   </div>
-  <%= f.submit "Send message", class: "submit" %>
+  <%= f.submit "Send", class: "submit black-border-text popup-send", id: "send-button" %>
 <%end%>

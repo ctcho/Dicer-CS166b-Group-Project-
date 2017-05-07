@@ -26,17 +26,6 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     assert_template 'sessions/new'
   end
 
-  test "invalid credentials flashes an error on the login page" do
-    invalid_login
-    assert_not flash.empty?
-  end
-
-  test "remove flash when user leaves page" do
-    invalid_login
-    get root_path
-    assert flash.empty?
-  end
-
   test "valid login redirects to user user#show" do
     valid_login
     assert_redirected_to @user

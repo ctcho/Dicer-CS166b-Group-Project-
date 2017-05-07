@@ -32,7 +32,7 @@ $light_grey_2: #A5A5A5;
 }
 
 .profile-info{
-  margin: 40px 0px 0px 0px !important;
+  margin: 0px 0px 0px 0px !important;
   padding: 5px 0px 5px 5px;
   border-radius:2px;
 }
@@ -209,15 +209,23 @@ $light_grey_2: #A5A5A5;
 .ruleset-selection-container{
   display: table;
   background-image: url('parchmentbackground6');
-  margin: 40px;
+  margin: 10px auto;
   font-family: 'Hultog';
-  font-size: 1.5em;
-  width: 100%;
+  width: 98%;
+}
+
+.ruleset-label{
+  font-size: 2.5em;
+  line-height: 35px;
+}
+
+#ruleset-header{
+  font-size: 4em;
 }
 
 .tutorial-section-label{
   text-align: center;
-  font-size: 2.25em;
+  font-size: 2.5em;
   color: rgb(110,0,0);
   line-height: 50px;
   margin-top: 10px;
@@ -238,10 +246,16 @@ $light_grey_2: #A5A5A5;
   margin-top: 11px;
 }
 
+.inline{
+  display: inline-block;
+}
+
 .tutorial-explanation-text{
   text-align: center;
   margin: 0px;
   padding: 0px;
+  font-size: 1.5em;
+  line-height: 30px;
 }
 
 .tutorial-opening{
@@ -265,10 +279,14 @@ $light_grey_2: #A5A5A5;
   display: flex;
   justify-content: center; /* align horizontal */
   align-items: center; /* align vertical */
+  transition: 0.4s;
+}
+
+.ruleset-box:hover {
+  opacity: 0.6;
 }
 
 .campaign-type-box{
-  background-image: url('parchmentbackground6');
   margin: 0px 20px 0px 20px;
   padding: 0px;
   font-family: 'Hultog';
@@ -287,21 +305,28 @@ $light_grey_2: #A5A5A5;
   text-align: left;
   padding-left: 60px;
   padding-right: 20px;
+  font-size: 1.5em;
   line-height: 24px;
+}
+
+.tutorial-parchment-background{
+  background-image: url('parchmentbackground4');
 }
 
 .bio-container{
   font-family: 'Hultog';
-  background-image: url('parchmentbackground5');
   font-size: 1.5em;
   margin: 0px 20px 0px 20px;
 }
 
 .location-container{
   font-family: 'Hultog';
-  background-image: url('parchmentbackground4');
   font-size: 1.5em;
   margin: 0px 20px 0px 20px;
+}
+
+.location-container label{
+  display: inline-block;
 }
 
 #online-check{
@@ -309,15 +334,24 @@ $light_grey_2: #A5A5A5;
 }
 
 #dm_profile_bio{
-  width: 98%;
-  height: 200px;
-  margin: 10px;
+  height: 150px;
+  width: 500px;
+  display: block;
+  margin: auto;
+}
+
+#player_profile_bio{
+  height: 150px;
+  width: 500px;
+  display: block;
+  margin: auto;
 }
 
 .profile-submit-container{
   font-size: 2em;
   display: block;
-  padding-left: 520px;
+  margin: 30px auto;
+  width: 23%;
 }
 
 .info-label{
@@ -477,7 +511,7 @@ $light_grey_2: #A5A5A5;
 // now starting user dashboard
 
 .sidebar-column{
-  min-height: 650px;
+  min-height: 619px;
   max-height: 100vh;
   min-width: 250px;
   width: 20%;
@@ -531,12 +565,13 @@ $light_grey_2: #A5A5A5;
 #username-label{
   font-size: 3.5em;
   text-align: center;
+  line-height: 50px;
 }
 
 .chatroom-preview-container{
   display: inline-block;
   width: 68%;
-  overflow-x: scroll;
+  overflow-x: auto;
   overflow-y: hidden;
   white-space: nowrap;
   min-height: 192px;
@@ -562,7 +597,7 @@ $light_grey_2: #A5A5A5;
 }
 
 .preview-name{
-  overflow-y: scroll !important;
+  overflow-y: auto !important;
   overflow-x: hidden !important;
   white-space: normal !important;
   text-align: center;
@@ -626,4 +661,39 @@ $light_grey_2: #A5A5A5;
 .dashboard-container a:hover{
   color: rgb(110,0,0);
   text-decoration: none;
+}
+
+.half-button{
+  width: 49%;
+  font-size: 1.5em;
+  display: inline-block;
+}
+
+.profile-label{
+  color: rgb(120,0,0);
+  font-size: 3em;
+  text-align: center;
+  line-height: 48px;
+  margin: 10px auto 0px auto;
+  font-family: 'Dungeon';
+}
+
+#recommendations-header{
+  margin-left: 18px;
+}
+
+.dashboard-buttons{
+  border-width: 20px;
+}
+
+#profile-friends-button{
+  background-color: rgb(13, 13, 89);
+  margin-top: 10px;
+  width: 50%;
+  border-width: 20px;
+}
+
+.centered-button{
+  display: block;
+  margin: auto;
 }
