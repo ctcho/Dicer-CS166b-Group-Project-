@@ -1,7 +1,7 @@
 class FriendshipsController < ApplicationController
   def create
     @friendship = current_user.friendships.build(friend_id: params[:user_id])
-    if !current_user.blocked_by?(User.find_by(id: params[:user_id]))
+    if !current_user.blocked_by?(User.find_by(id: params[:user_id])) && !current_user.friends_with?(User.find_by(id: params[:user_id]))
       if @friendship.save
         flash[:success] = "Added friend"
       else
