@@ -1,1 +1,8 @@
-The path to destroy a friendship is user_friendship_path(@user)
+<div class="friendship-container parchment-background">
+  <div class="page-label" id="friends-label">My Friends</div>
+  <% if @friends.empty? %>
+    <div class="search-apology">You don't seem to have any friends yet. Try connecting to Facebook or searching to find some!</div>
+  <% else %>
+    <%= render partial: "/users/friends_preview_destroy", collection: @friends, as: :user %>
+  <% end %>
+</div>

@@ -29,8 +29,10 @@ class User < ApplicationRecord
     access_token = auth['token']
     facebook = Koala::Facebook::API.new(access_token)
     profile = facebook.get_object("me")
+    fb_uid = profile["id"]
     friends = facebook.get_connections("me", "friends")
-    byebug
+    friend_ids = friends.collect { |f| f["id"] }
+    [fb_uid, friend_ids]
   end
 
   def online?

@@ -37,7 +37,12 @@ class UsersController < ApplicationController
   end
 
   def facebook
-    @fb = User.koala(request.env['omniauth.auth']['credentials'])
+    @user = current_user
+    fb = User.koala(request.env['omniauth.auth']['credentials'])
+    if @user.fb_id == 0
+      @user.update(fb_id: fb[0])
+    end
+    @friends = User.where('fb_id IN (?)', fb[1])
   end
 
   # POST /users
