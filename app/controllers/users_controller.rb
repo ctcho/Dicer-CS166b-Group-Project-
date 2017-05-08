@@ -13,14 +13,13 @@ class UsersController < ApplicationController
 
   # GET /users/1
   # GET /users/1.json
+
   def show
-    #get their chats
     @user = current_user
     @dm_profile = @user.dm_profile
     @player_profile = @user.player_profile
     @conversations = @user.chat_rooms
-    @similar_profiles = get_similar_profiles(@user)
-  #  @similar_profiles = (PlayerProfile.all).sample(4); #until the code above is fixed I need this to test, fix when possible - Michael
+    @similar_profiles = get_similar_profiles(@user) & (User.location(current_user, "0") || User.location(current_user, "0"))
   end
 
   # GET /users/new

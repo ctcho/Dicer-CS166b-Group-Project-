@@ -2,12 +2,26 @@ class ChatRoomsController < ApplicationController
   before_action :set_chat_room, only: [:show, :remove_user]
   before_action :logged_in_user
   before_action :correct_user, only: [:show, :remove_user]
+  #before_action :is_owner, only [:remove_user, :add_user]
 
   def create
-
+    @chat_room = ChatRoom.new(chat_room_params)
+    if @chat_room.save
+      puts "yay!"
+      ChatRoomsUser.create(chat_room: @chat_room, user: current_user)
+      params[:users].each do |user|
+        ChatRoomsUser.create(chat_room: @chat_room, user_id: user)
+      end
+      redirect_to chat_room_path(@chat_room), notice: 'Chat successfully created'
+    else
+      render :new
+    end
   end
 
   def new
+    @chat_room = ChatRoom.new
+    @friends = User.first 3 # for testing
+    #@friends = User.all # Eventually current_user.friends
   end
 
   def index
@@ -34,6 +48,10 @@ class ChatRoomsController < ApplicationController
     end
   end
 
+  def add_user
+
+  end
+
 
 
   private
@@ -41,6 +59,14 @@ class ChatRoomsController < ApplicationController
   def correct_user
     authorized_users = @chat_room.users
     redirect_to('/unauthorized') if authorized_users.merge(User.where(id: current_user.id)).empty?
+  end
+
+  def is_owner
+
+  end
+
+  def chat_room_params
+    {owner: User.find(1), name: params[:name], avatar: params[:avatar]}
   end
 
     def set_chat_room

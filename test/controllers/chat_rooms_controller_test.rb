@@ -3,7 +3,7 @@ require 'test_helper'
 class ChatRoomsControllerTest <ActionDispatch::IntegrationTest
 
   setup do
-    @chat_room = ChatRoom.new(name: "test room")
+    @chat_room = ChatRoom.create(name: "test room")
     @user1 = users(:one)
     @user2 = users(:two)
     @user3 = users(:user_3)

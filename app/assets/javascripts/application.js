@@ -20,3 +20,13 @@ $(function() {
     $.get($("#search-form").attr("action"), $("#search-form").serialize(), null, "script");
   });
 });
+
+//$(function(){
+  //$('#find_users input').keyup(function(){
+    //console.log("you pressed a key");
+    //console.log(document.getElementById('user_search').value);
+    //$.get('/find_user',{'key' : document.getElementById('user_search').value}, function(data){
+    //  console.log(data);
+    //}, "json");
+  //});
+//});

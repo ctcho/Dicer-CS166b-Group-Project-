@@ -18,11 +18,10 @@
       </span>
       <span class="right-align">
         <% if logged_in? %>
-        <%= link_to "Profile", user_path(current_user), class: "header-link" %>
-        <%= link_to "Settings", user_settings_path(current_user), class: "header-link" %>
-        <button id="search", class="header-link white-border-text">Search for Users...</button>
-        <%= link_to "Log Out", logout_path, method: "delete", class: "header-link" %>
-        <%= link_to chats_helper, chat_rooms_path(current_user), class: "header-link" %>
+          <%= link_to "Dashboard", user_path(current_user), class: "header-link white-border-text" %>
+          <%= link_to chats_helper, chat_rooms_path(current_user), class: "header-link white-border-text" %>
+          <button id="search", class="header-link white-border-text">Search</button>
+          <%= link_to "Log Out", logout_path, method: "delete", class: "header-link white-border-text" %>
         <% else %>
           <%= link_to "Log In", login_path, class:"header-link white-border-text" %>
         <% end %>

@@ -148,4 +148,8 @@ module UsersHelper
     end
   end
 
+  def friends?(user) # returns true if the current user and input user are friends
+    current_user.friends_with?(user)
+  end
+
 end

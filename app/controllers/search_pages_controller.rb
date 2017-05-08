@@ -6,6 +6,18 @@ include SearchPagesHelper
   def search
   end
 
+  #def find_by_username
+    #byebug
+  #  key = params[:key]
+    #sql_conditions = "username LIKE #{key}%"
+    #puts sql_conditions
+  #  results = User.where("username ILIKE ?", "#{key}%")
+    #puts results
+  #  byebug
+  #  render json: {message: "Success2"}
+
+  #end
+
   def results
     #Goes to User.search in user model --Cameron C.
     @profile = params[:profile_type]
