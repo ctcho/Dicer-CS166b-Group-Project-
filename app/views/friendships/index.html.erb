@@ -5,4 +5,10 @@
   <% else %>
     <%= render partial: "/users/friends_preview_destroy", collection: @friends, as: :user %>
   <% end %>
+  <div class="page-label" id="blocked=label">Blocked List</div>
+  <% if @blocked.empty? %>
+    <div class="search-apology">You haven't blocked anyone.</div>
+  <% else %>
+    <%= render partial: "/users/blocked", collection: @blocked, as: :user %>
+  <% end %>
 </div>

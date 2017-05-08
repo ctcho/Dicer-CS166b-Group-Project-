@@ -108,9 +108,11 @@ module UsersHelper
     elsif user.player_profile.nil?
       similar_players = recommend_set(User.recommender(user.dm_profile, "player"), user)
       similar_dms = recommend_set(User.recommender(user.dm_profile, "dm"), user)
-    else #user has both
+    elsif !user.player_profile.nil? && !user.dm_profile.nil?
       similar_players = recommend_set(User.recommender(user.player_profile, "player"), user)
       similar_dms = recommend_set(User.recommender(user.dm_profile, "dm"), user)
+    else #The user got a profile incorrectly
+      return nil
     end
     if !similar_players.empty?
       count = 0

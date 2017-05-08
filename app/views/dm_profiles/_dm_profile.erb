@@ -30,7 +30,7 @@
      </span>
      <div class="contact-popup-container">
        <span class="greeting">
-         Send <%= User.find(player_profile.id).username %> a message
+         Send <%= User.find(dm_profile.user_id).username %> a message
        </span>
        <section class="msgform">
          <%= render 'messages/message_form' %>

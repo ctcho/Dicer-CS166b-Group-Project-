@@ -40,6 +40,9 @@ class User < ApplicationRecord
   end
 
   def self.recommender(profile, type)
+    if profile.nil?
+      return nil
+    end
     rulesets = []
     rulesets = rule_recom_parse([profile.homebrew, profile.original_ruleset, profile.advanced_ruleset,
     profile.pathfinder, profile.third, profile.three_point_five, profile.fourth, profile.fifth])
@@ -218,34 +221,25 @@ class User < ApplicationRecord
     end
 
     def self.ruleset_parse(rulesets)
-      #puts "#{rulesets}"
       compiled = []
       rulesets.each do |r|
         if !r.nil?
-          if r == "homebrew" #homebrew
+          if r == "1" #homebrew
             compiled << {homebrew: 1}
-            #puts "Homebrew"
-          elsif r == "original_ruleset" #original_ruleset
+          elsif r == "2" #original_ruleset
             compiled << {original_ruleset: 1}
-            #puts "Original Ruleset"
-          elsif r == "advanced_ruleset" #advanced_ruleset
+          elsif r == "3" #advanced_ruleset
             compiled << {advanced_ruleset: 1}
-            #puts "Advanced Ruleset"
-          elsif r == "pathfinder" #Pathfinder
+          elsif r == "4" #Pathfinder
             compiled << {pathfinder: 1}
-            #puts "Pathfinder"
-          elsif r == "third" #third
+          elsif r == "5" #third
             compiled << {third: 1}
-            #puts "Third"
-          elsif r == "three_point_five" #three_point_five
+          elsif r == "6" #three_point_five
             compiled << {three_point_five: 1}
-            #puts "Three point five"
-          elsif r == "fourth" #fourth
+          elsif r == "7" #fourth
             compiled << {fourth: 1}
-            #puts "Fourth"
-          elsif r == "fifth" #fifth
+          elsif r == "8" #fifth
             compiled << {fifth: 1}
-            #puts "Fifth"
           end
         end
       end

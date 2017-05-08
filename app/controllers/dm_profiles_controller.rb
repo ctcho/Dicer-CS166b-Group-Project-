@@ -16,8 +16,12 @@ class DmProfilesController < ApplicationController
     redirect_to '/unauthorized' if current_user.blocked_by? User.find(params[:user_id])
     @user = User.find(params[:user_id])
     @dm_profile = @user.dm_profile
-    @similar_profiles = User.recommender(@dm_profile, "dm")
-    @similar_profiles = recommend_set(@similar_profiles, @user) & User.location(current_user, "1")
+    unless @dm_profile.nil?
+      @similar_profiles = User.recommender(@dm_profile, "dm")
+      @similar_profiles = recommend_set(@similar_profiles, @user) & User.location(current_user, "1")
+    else
+      @similar_profiles = nil
+    end
     if !@dm_profile
       redirect_to new_user_dm_profiles_path(@user, tutorial: params[:tutorial])
     else
