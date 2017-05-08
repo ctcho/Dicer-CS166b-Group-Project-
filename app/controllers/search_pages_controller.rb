@@ -28,6 +28,7 @@ include SearchPagesHelper
     #puts "\n\nUsers in range of searcher: #{@users_in_range.class}\n\n"
     @users = @users & @users_in_range #since @users is an array, .merge won't work...
     @has_valid = has_valid_users(@users)
+    @user = current_user
   end
 
   private

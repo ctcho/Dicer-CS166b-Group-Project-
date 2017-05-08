@@ -20,6 +20,7 @@ class UsersController < ApplicationController
     @player_profile = @user.player_profile
     @conversations = @user.chat_rooms
     @similar_profiles = get_similar_profiles(@user) & (User.location(current_user, "0") || User.location(current_user, "0"))
+    #@new_conversations = find_new_conversations
   end
 
   # GET /users/new
@@ -34,15 +35,6 @@ class UsersController < ApplicationController
   # GET /users/1/edit
   def edit
     @user = User.find(params[:id])
-  end
-
-  def facebook
-    @user = current_user
-    fb = User.koala(request.env['omniauth.auth']['credentials'])
-    if @user.fb_id == 0
-      @user.update(fb_id: fb[0])
-    end
-    @friends = User.where('fb_id IN (?)', fb[1])
   end
 
   # POST /users

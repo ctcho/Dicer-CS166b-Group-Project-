@@ -19,6 +19,13 @@ ActiveRecord::Schema.define(version: 20170508041456) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "character_sheets", force: :cascade do |t|
+    t.integer  "player_profile_id"
+    t.string   "file_path"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
   create_table "chat_rooms", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at",          null: false
@@ -65,10 +72,10 @@ ActiveRecord::Schema.define(version: 20170508041456) do
   create_table "messages", force: :cascade do |t|
     t.text     "content"
     t.string   "image_path"
-    t.integer  "user_id"
-    t.integer  "chat_room_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.integer  "user_id"
+    t.integer  "chat_room_id"
   end
 
   create_table "player_profiles", force: :cascade do |t|
@@ -94,15 +101,15 @@ ActiveRecord::Schema.define(version: 20170508041456) do
     t.string   "username"
     t.string   "email"
     t.string   "password_digest"
-    t.float    "lat"
-    t.float    "lng"
-    t.string   "remember_digest"
-    t.float    "max_distance"
     t.integer  "age"
     t.string   "address"
     t.datetime "last_active"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.float    "lat"
+    t.float    "lng"
+    t.string   "remember_digest"
+    t.float    "max_distance"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
