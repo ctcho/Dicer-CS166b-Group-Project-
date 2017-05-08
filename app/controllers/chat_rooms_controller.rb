@@ -1,8 +1,8 @@
 class ChatRoomsController < ApplicationController
-  before_action :set_chat_room, only: [:show, :remove_user]
+  before_action :set_chat_room, only: [:show, :edit :remove_user]
   before_action :logged_in_user
   before_action :correct_user, only: [:show, :remove_user]
-  before_action :is_owner, only: [:remove_user, :add_user]
+  before_action :is_owner, only: [:remove_user, :add_user, :edit]
 
   def create
     @chat_room = ChatRoom.new(chat_room_params)
@@ -21,7 +21,18 @@ class ChatRoomsController < ApplicationController
   def new
     @user = current_user
     @chat_room = ChatRoom.new
+
     @friends = @user.friends
+
+  end
+
+  def edit
+    @current_members = @chat_room.chat_rooms_users
+
+  end
+
+  def update
+
   end
 
   def index
