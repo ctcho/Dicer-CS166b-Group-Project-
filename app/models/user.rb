@@ -40,6 +40,9 @@ class User < ApplicationRecord
   end
 
   def self.recommender(profile, type)
+    if profile.nil?
+      return nil
+    end
     rulesets = []
     rulesets = rule_recom_parse([profile.homebrew, profile.original_ruleset, profile.advanced_ruleset,
     profile.pathfinder, profile.third, profile.three_point_five, profile.fourth, profile.fifth])
