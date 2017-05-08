@@ -334,6 +334,13 @@ class User < ApplicationRecord
     update_attribute(:remember_digest, nil)
   end
 
+  def friends_with?(user)
+    self.friends.include? user
+  end
+
+  def blocked_by?(user)
+    user.blockeds.include? self
+  end 
   acts_as_mappable :auto_geocode=>{:field=>:address, :error_message=>'Could not geocode address'}
 
 end
