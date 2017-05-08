@@ -52,21 +52,6 @@
         <% end %>
       </div>
 
-      <!--Message sending modal. Class name is "modall" to avoid bootstrap conficts -->
-          <div class="modall" id="msgmodal">
-           <span class="close">
-             &times;
-           </span>
-           <div class="contact-popup-container">
-             <span class="greeting">
-               Send <%= @user.username %> a message
-             </span>
-             <section class="msgform">
-               <%= render 'messages/message_form' %>
-             </section>
-           </div>
-         </div>
-
     </div>
     <div class="row">
       <div class="col-md-8">
@@ -86,6 +71,20 @@
         </div>
       </div>
     </div>
+    <!--Message sending modal. Class name is "modall" to avoid bootstrap conficts -->
+    <div class="modall" id="msgmodal">
+     <span class="close">
+       &times;
+     </span>
+     <div class="contact-popup-container">
+       <span class="greeting">
+         Send <%= @user.username %> a message
+       </span>
+       <section class="msgform">
+         <%= render 'messages/message_form' %>
+       </section>
+     </div>
+   </div>
   </div>
   <div class="row">
     <div class="col-sm-3">
@@ -97,3 +96,5 @@
     </div>
   </div>
 </div>
+
+<%= javascript_include_tag 'show.js' %>
