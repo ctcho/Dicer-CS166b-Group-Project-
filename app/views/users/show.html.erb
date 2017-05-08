@@ -4,6 +4,9 @@
     <%= image_tag @user.avatar.url(:medium), class: "dashboard-avatar", id: "user-avatar" %>
     <div class="page-label" id="username-label">
       <%= @user.username %>
+        <%= link_to '/auth/facebook' do %>
+          <%= image_tag "fb-art.png", height: "42", width: "42" %>
+        <% end %>
     </div>
     <%= link_to user_settings_path(current_user) do %>
       <div class="profile-button signup-login-submit half-button dashboard-buttons">
@@ -51,7 +54,7 @@
         <% end %>
       <% else %>
         <%= link_to new_user_player_profiles_path(@user) do %>
-          <div class="profile-button signup-login-submit dashboard-button">
+          <div class="profile-button signup-login-submit dashboard-buttons">
             Create
           </div>
         <% end %>

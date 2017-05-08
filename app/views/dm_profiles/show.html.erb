@@ -42,14 +42,14 @@
       <div class="button-container col-md-3">
         <% unless current_user? @user %>
           <button class="contact-me-button centered-button", id="contact"> Contact me! </button>
+          <% unless friends?(@user) %>
+            <%= link_to user_friendships_path(@user.id), method: :create do %>
+              <div class="profile-button signup-login-submit centered-button" id="profile-friends-button">
+                Add as friend
+              </div>
+            <% end %>
+          <% end %>
         <% end %>
-        <% # unless friends? @user %>
-          <% #link to create me as a friend %>
-            <div class="profile-button signup-login-submit centered-button" id="profile-friends-button">
-              Add as friend
-            </div>
-          <% #end %>
-        <% #end %>
       </div>
 
       <!--Message sending modal. Class name is "modall" to avoid bootstrap conficts -->
@@ -90,8 +90,9 @@
   <div class="row">
     <div class="col-sm-3">
       <div class="ending-buttons">
-        <%= link_to 'Edit', edit_user_dm_profiles_path(@user, @dm_profile) %> |
-        <%= link_to 'Back', user_path(@user) %>
+        <% unless current_user? @user %>
+          <%= link_to 'Block this User', '#', class: "profile-button signup-login-submit", id: "block-button" %>
+        <% end %>
       </div>
     </div>
   </div>

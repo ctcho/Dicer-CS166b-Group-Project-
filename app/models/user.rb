@@ -24,6 +24,17 @@ class User < ApplicationRecord
 
   has_secure_password
 
+  #Facebook Schtuff. Hope it works.
+  def self.koala(auth)
+    access_token = auth['token']
+    facebook = Koala::Facebook::API.new(access_token)
+    profile = facebook.get_object("me")
+    fb_uid = profile["id"]
+    friends = facebook.get_connections("me", "friends")
+    friend_ids = friends.collect { |f| f["id"] }
+    [fb_uid, friend_ids]
+  end
+
   def online?
     !Redis.new.get("user_#{self.id}_online").nil?
   end
@@ -340,7 +351,7 @@ class User < ApplicationRecord
 
   def blocked_by?(user)
     user.blockeds.include? self
-  end 
+  end
   acts_as_mappable :auto_geocode=>{:field=>:address, :error_message=>'Could not geocode address'}
 
 end
