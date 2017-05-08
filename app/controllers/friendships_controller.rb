@@ -12,6 +12,9 @@ class FriendshipsController < ApplicationController
   end
 
   def destroy
+    @friendship = Friendship.where("user_id = ?", current_user.id)[0]
+    @friendship.destroy if @friendship != nil
+    redirect_to :back
   end
 
   def index
