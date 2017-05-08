@@ -19,9 +19,9 @@ class ChatRoomsController < ApplicationController
   end
 
   def new
+    @user = current_user
     @chat_room = ChatRoom.new
-    @friends = User.first 3 # for testing
-    #@friends = User.all # Eventually current_user.friends
+    @friends = @user.friends
   end
 
   def index
