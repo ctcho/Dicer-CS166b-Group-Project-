@@ -1,11 +1,11 @@
 <% if @user.new_record?
   @url = users_path
   @method = 'post'
-  @button = "create"
+  @button = "Create"
 else
   @url = user_path(@user)
   @method = 'patch'
-  @button = "save"
+  @button = "Save"
 end %>
 <%= form_for(:user, url: @url, method: @method, html: { multipart: true }) do |f| %>
   <% if @user.errors.any? %>
@@ -37,11 +37,6 @@ end %>
       <%= f.text_field :email, class: "signup-field"%>
     </div>
   </div>
-
-  <!--<div class="field">
-    <%= f.label :password_digest %>
-    <%= f.text_field :password_digest %>
-  </div>-->
 
   <div class = "field row">
     <div class="col-md-6">

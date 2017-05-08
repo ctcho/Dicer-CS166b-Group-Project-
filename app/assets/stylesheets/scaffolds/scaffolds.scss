@@ -11,7 +11,6 @@ p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
-  margin: 33px;
 }
 
 pre {
@@ -54,23 +53,30 @@ div {
 }
 .field_with_errors {
   padding: 2px;
-  background-color: red;
+  color: red;
   display: table;
+  text-shadow: -1px 0px 0px rgba(0, 0, 0, 1),
+               1px 0px 0px rgba(0, 0, 0, 1),
+               0px 1px 0px rgba(0, 0, 0, 1),
+               0px -1px 0px rgba(0, 0, 0, 1);
+  width: 100%;
 }
 
 #error_explanation {
-  width: 450px;
+  width: 410px;
   border: 2px solid red;
   padding: 7px;
   padding-bottom: 0;
   margin-bottom: 20px;
   background-color: #f0f0f0;
-
+  position: absolute;
+  top: 220px;
+  left: 20px;
   h2 {
     text-align: left;
     font-weight: bold;
     padding: 5px 5px 5px 15px;
-    font-size: 12px;
+    font-size: 28px;
     margin: -7px;
     margin-bottom: 0;
     background-color: #c00;
@@ -80,6 +86,7 @@ div {
   ul li {
     font-size: 12px;
     list-style: square;
+    text-align: left;
   }
 }
 

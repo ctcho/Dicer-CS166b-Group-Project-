@@ -21,5 +21,6 @@ class FriendshipsController < ApplicationController
     redirect_to root_path if !logged_in? || current_user.id != params[:user_id].to_i
     @user = current_user
     @friends = @user.friends if !@user.nil?
+    @blocked = @user.blockeds
   end
 end

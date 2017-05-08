@@ -1,0 +1,13 @@
+<div class="preview recommend-profile-preview facebook-preview">
+  <div class="avatar-container">
+    <%= image_tag user.avatar.url(:thumb), class: "dashboard-avatar" %>
+  </div>
+  <div class="preview-name">
+    <%= user.username %>
+  </div>
+  <%= link_to user_friendships_path(user.id), method: :destroy do %>
+    <div class="profile-button signup-login-submit facebook-friends-button">
+      Unblock
+    </div>
+  <% end %>
+</div>
