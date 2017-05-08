@@ -1,5 +1,5 @@
 class ChatRoomsController < ApplicationController
-  before_action :set_chat_room, only: [:show, :edit :remove_user]
+  before_action :set_chat_room, only: [:show, :edit, :remove_user]
   before_action :logged_in_user
   before_action :correct_user, only: [:show, :remove_user]
   before_action :is_owner, only: [:remove_user, :add_user, :edit]
