@@ -20,6 +20,7 @@ class UsersController < ApplicationController
     @player_profile = @user.player_profile
     @conversations = @user.chat_rooms
     @similar_profiles = get_similar_profiles(@user) & (User.location(current_user, "0") || User.location(current_user, "0"))
+    @new_conversations = find_new_conversations
   end
 
   # GET /users/new
@@ -105,5 +106,10 @@ class UsersController < ApplicationController
 
     def admin_user
       redirect_to('/unauthorized') unless current_user.admin?
+    end
+
+    #list of chat rooms that the user has never touched
+    def find_new_conversations
+
     end
 end
