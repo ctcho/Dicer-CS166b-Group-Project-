@@ -19,6 +19,21 @@
     <%= link_to "More info", user_dm_profiles_path(User.find(dm_profile.user_id)), class: "show-more-button profile-button" %>
   </div>
   <div class="button-container col-md-2">
-    <%= button_to "Write to me", "#", class: "contact-me-button-small profile-button" %>
+    <button class="contact-me-button-small profile-button", id="contact"> Contact  </button>
   </div>
 </div>
+
+<!--Message sending modal. Class name is "modall" to avoid bootstrap conficts -->
+    <div class="modall" id="msgmodal">
+     <span class="close">
+       &times;
+     </span>
+     <div class="contact-popup-container">
+       <span class="greeting">
+         Send <%= User.find(player_profile.id).username %> a message
+       </span>
+       <section class="msgform">
+         <%= render 'messages/message_form' %>
+       </section>
+     </div>
+   </div>
