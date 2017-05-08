@@ -1,9 +1,11 @@
 <% if @user.new_record?
   @url = users_path
   @method = 'post'
+  @button = "create"
 else
-  @url = user_path
+  @url = user_path(@user)
   @method = 'patch'
+  @button = "save"
 end %>
 <%= form_for(:user, url: @url, method: @method, html: { multipart: true }) do |f| %>
   <% if @user.errors.any? %>
@@ -123,7 +125,7 @@ end %>
   <% end %>
 
 <div class="actions button-container signup-submit-container">
-  <%= f.submit 'Create', class: 'profile-button signup-login-submit' %>
+  <%= f.submit @button, class: 'profile-button signup-login-submit' %>
 </div>
 
 <% end %>
