@@ -20,7 +20,7 @@ Rails.application.routes.draw do
 
   #Facebook stuff.
   get 'auth/facebook', as: "auth_provider"
-  #get 'auth/facebook/callback', to: 'sessions#new'
+  get 'auth/facebook/callback', to: 'users#facebook'
 
   resources :users do
     resource :player_profiles do

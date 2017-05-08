@@ -36,6 +36,10 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def facebook
+    @fb = User.koala(request.env['omniauth.auth']['credentials'])
+  end
+
   # POST /users
   # POST /users.json
   def create

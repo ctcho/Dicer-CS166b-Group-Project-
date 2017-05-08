@@ -1,0 +1,15 @@
+<div class="preview recommend-profile-preview friends-preview">
+  <div class="avatar-container">
+    <%= image_tag user.avatar.url(:thumb), class: "dashboard-avatar" %>
+  </div>
+  <div class="preview-name">
+    <%= user.username %>
+  </div>
+  <% unless friends? @user %>
+    <%= link_to user_friendships_path(@user.id), method: :create do %>
+      <div class="profile-button signup-login-submit" id="profile-friends-button">
+        Add as friend
+      </div>
+    <% end %>
+  <% end %>
+</div>

@@ -5,7 +5,6 @@ class SessionsController < ApplicationController
     if logged_in?
       render 'already_logged_in'
     else
-      @fb = User.koala(request.env['omniauth.auth']['credentials'])
       render 'new'
     end
   end
