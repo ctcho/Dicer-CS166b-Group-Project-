@@ -10,7 +10,7 @@
         Settings
       </div>
     <% end %>
-    <%= link_to '%' do %>
+    <%= link_to user_friendships_path(current_user) do %>
       <div class="profile-button signup-login-submit half-button dashboard-buttons">
         Friends
       </div>
@@ -28,7 +28,7 @@
             Edit
           </div>
         <% end %>
-      <% else %>  
+      <% else %>
         <%= link_to '#' do %>
           <div class="profile-button signup-login-submit dashboard-buttons">
             Create

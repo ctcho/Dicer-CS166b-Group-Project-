@@ -12,6 +12,7 @@ class PlayerProfilesController < ApplicationController
   # GET /player_profiles/1
   # GET /player_profiles/1.json
   def show
+    redirect_to '/unauthorized' if current_user.blocked_by? User.find(params[:user_id])
     @user = User.find(params[:user_id])
     @player_profile = @user.player_profile
     @similar_profiles = User.recommender(@player_profile, "player")

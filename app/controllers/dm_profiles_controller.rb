@@ -13,6 +13,7 @@ class DmProfilesController < ApplicationController
   # GET /user/1/dm_profiles
   # GET /user/1/dm_profiles.json
   def show
+    redirect_to '/unauthorized' if current_user.blocked_by? User.find(params[:user_id])
     @user = User.find(params[:user_id])
     @dm_profile = @user.dm_profile
     @similar_profiles = User.recommender(@dm_profile, "dm")

@@ -44,13 +44,13 @@
         <% unless current_user? @user %>
           <button class="contact-me-button centered-button", id="contact"> Contact me! </button>
         <% end %>
-        <% # unless friends? @user %>
-          <% #link to create me as a friend %>
+        <% unless friends? @user %>
+          <%= link_to user_friendships_path(@user.id), method: :create do %>
             <div class="profile-button signup-login-submit centered-button" id="profile-friends-button">
               Add as friend
             </div>
-          <% #end %>
-        <% #end %>
+          <% end %>
+        <% end %>
       </div>
     </div>
     <!--Message sending modal. Class name is "modall" to avoid bootstrap conficts -->

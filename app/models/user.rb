@@ -12,7 +12,7 @@ class User < ApplicationRecord
   #has_and_belongs_to_many :chat_rooms
   has_many :chat_rooms_users
   has_many :chat_rooms, through: :chat_rooms_users
-  has_many :friendships
+  has_many :friendships, dependent: :destroy
   has_many :friends, through: :friendships
   has_many :blockings
   has_many :blockeds, through: :blockings
@@ -107,7 +107,7 @@ class User < ApplicationRecord
     set = []
     searches.each do |profile|
       #byebug
-      if profile.user != user && within_distance(user, profile.user) && !user.blocked_by? profile.user
+      if profile.user != user && within_distance(user, profile.user) && !user.blocked_by?(profile.user)
         set << profile
       end
     end
