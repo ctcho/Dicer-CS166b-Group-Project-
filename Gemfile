@@ -14,6 +14,7 @@ gem 'faker', '1.7.3'
 gem 'redis'
 gem 'omniauth-facebook'
 gem 'koala', '~> 1.10.0rc'
+gem 'aws-sdk', '~> 2.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.1'
