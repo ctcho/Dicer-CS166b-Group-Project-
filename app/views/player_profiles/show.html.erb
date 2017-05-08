@@ -89,7 +89,7 @@
       <div class="col-sm-3">
         <div class="ending-buttons">
           <% unless current_user? @user %>
-            <%= link_to 'Block this User', '#', class: "profile-button signup-login-submit", id: "block-button" %>
+            <%= link_to 'Block this User', user_blockings_path(@user.id), class: "profile-button signup-login-submit", id: "block-button", method: :create %>
           <% end %>
         </div>
       </div>

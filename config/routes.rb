@@ -28,6 +28,7 @@ Rails.application.routes.draw do
     end
     resource :messages
     resources :friendships
+    resources :blockings
 
     resource :dm_profiles
   end
