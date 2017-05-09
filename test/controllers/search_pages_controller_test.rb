@@ -316,8 +316,8 @@ class SearchPagesControllerTest < ActionDispatch::IntegrationTest
     #unsorted = PlayerProfile.all
     #byebug #Uncomment both these lines in case you need to prove to yourself this works...
     assert_equal(sorted.first, @p1)
-    assert_equal(sorted.second, @p7)
-    assert_equal(sorted.third, @p8)
+    assert_equal(sorted.second, @p2)
+    assert_equal(sorted.third, @p7)
   end
 
   test "A PlayerProfile will see up to 4 recommended PlayerProfiles" do

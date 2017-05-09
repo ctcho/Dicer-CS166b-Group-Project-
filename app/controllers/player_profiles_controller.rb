@@ -15,8 +15,12 @@ class PlayerProfilesController < ApplicationController
     redirect_to root_path if current_user.blocked_by? User.find(params[:user_id])
     @user = User.find(params[:user_id])
     @player_profile = @user.player_profile
-    @similar_profiles = User.recommender(@player_profile, "player")
-    @similar_profiles = recommend_set(@similar_profiles, @user) & User.location(current_user, "0")
+    unless @player_profile.nil?
+      @similar_profiles = User.recommender(@player_profile, "player")
+      @similar_profiles = recommend_set(@similar_profiles, @user) & User.location(current_user, "0")
+    else
+      @similar_profiles = nil
+    end
   end
 
   # GET /player_profiles/new

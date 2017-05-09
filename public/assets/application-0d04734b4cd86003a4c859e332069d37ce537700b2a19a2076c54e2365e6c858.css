@@ -2781,7 +2781,7 @@ textarea {
 }
 
 /* line 191, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/main.scss */
-.header-link:hover, .header-link:active {
+.header-link:hover, .header-link:active, .header-link:focus {
   color: #7A0C1B;
   text-shadow: 2px 2px 10px #969696;
   text-decoration: none;
@@ -3150,7 +3150,7 @@ a:hover.outside, a:active.outside {
   display: block;
   padding: 10px;
   overflow-y: auto;
-  height: 450px;
+  height: 380px;
 }
 
 /* line 29, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/messages.scss */
@@ -3435,10 +3435,9 @@ p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
-  margin: 33px;
 }
 
-/* line 17, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/scaffolds/scaffolds.scss */
+/* line 16, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/scaffolds/scaffolds.scss */
 pre {
   background-color: #eee;
   padding: 10px;
@@ -3457,62 +3456,68 @@ pre {
     background-color: #000;
   }
 }*/
-/* line 36, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/scaffolds/scaffolds.scss */
+/* line 35, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/scaffolds/scaffolds.scss */
 th {
   padding-bottom: 5px;
 }
 
-/* line 40, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/scaffolds/scaffolds.scss */
+/* line 39, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/scaffolds/scaffolds.scss */
 td {
   padding-bottom: 7px;
   padding-left: 5px;
   padding-right: 5px;
 }
 
-/* line 47, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/scaffolds/scaffolds.scss */
+/* line 46, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/scaffolds/scaffolds.scss */
 div.field, div.actions {
   margin-bottom: 10px;
 }
 
-/* line 52, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/scaffolds/scaffolds.scss */
+/* line 51, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/scaffolds/scaffolds.scss */
 #notice {
   color: green;
 }
 
-/* line 55, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/scaffolds/scaffolds.scss */
+/* line 54, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/scaffolds/scaffolds.scss */
 .field_with_errors {
   padding: 2px;
-  background-color: red;
+  color: red;
   display: table;
+  text-shadow: -1px 0px 0px black, 1px 0px 0px black, 0px 1px 0px black, 0px -1px 0px black;
+  width: 100%;
 }
 
-/* line 61, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/scaffolds/scaffolds.scss */
+/* line 65, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/scaffolds/scaffolds.scss */
 #error_explanation {
-  width: 450px;
+  width: 410px;
   border: 2px solid red;
   padding: 7px;
   padding-bottom: 0;
   margin-bottom: 20px;
   background-color: #f0f0f0;
+  position: absolute;
+  top: 220px;
+  left: 20px;
 }
-/* line 69, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/scaffolds/scaffolds.scss */
+/* line 75, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/scaffolds/scaffolds.scss */
 #error_explanation h2 {
   text-align: left;
   font-weight: bold;
   padding: 5px 5px 5px 15px;
-  font-size: 12px;
+  font-size: 28px;
   margin: -7px;
   margin-bottom: 0;
   background-color: #c00;
   color: #fff;
 }
-/* line 80, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/scaffolds/scaffolds.scss */
+/* line 86, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/scaffolds/scaffolds.scss */
 #error_explanation ul li {
   font-size: 12px;
   list-style: square;
+  text-align: left;
 }
 
-/* line 86, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/scaffolds/scaffolds.scss */
+/* line 93, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/scaffolds/scaffolds.scss */
 label {
   display: block;
 }
@@ -4482,16 +4487,96 @@ label {
 
 /* line 689, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
 #profile-friends-button {
-  background-color: #0d0d59;
+  background-color: rgba(95, 158, 160, 0.7);
   margin-top: 10px;
   width: 50%;
   border-width: 20px;
 }
+/* line 694, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+#profile-friends-button:hover {
+  text-decoration: none !important;
+  background-color: rgba(54, 123, 125, 0.8);
+  box-shadow: 0px 3px 20px -4px rgba(0, 0, 0, 0.75);
+}
 
-/* line 696, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+/* line 701, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
 .centered-button {
   display: block;
   margin: auto;
+}
+
+/* line 706, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+.facebook-preview {
+  margin: 5px 40px;
+  font-size: 1.5em !important;
+  line-height: 24px;
+  max-height: 300px !important;
+}
+
+/* line 713, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+#fb-label {
+  margin-top: 40px;
+  line-height: 80px;
+}
+
+/* line 718, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+.facebook-friends-button {
+  background-color: rgba(95, 158, 160, 0.7);
+  margin: 10px 0px 10px 0px;
+  width: 100%;
+  border-width: 20px;
+}
+/* line 723, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+.facebook-friends-button:hover {
+  text-decoration: none !important;
+  background-color: rgba(54, 123, 125, 0.8);
+  box-shadow: 0px 3px 20px -4px rgba(0, 0, 0, 0.75);
+}
+
+/* line 730, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+a:hover, a:focus, a:active {
+  text-decoration: none !important;
+}
+
+/* line 734, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+#facebook-connect {
+  background-color: #3b5998;
+  border-width: 15px;
+  color: white;
+  margin: auto;
+  width: 90%;
+  display: block;
+  font-family: 'Dungeon';
+}
+
+/* line 744, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+#friends-label {
+  padding-top: 20px;
+  margin-top: 50px;
+  text-align: center;
+  line-height: 70px;
+}
+
+/* line 751, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+#block-button {
+  border-width: 10px;
+  opacity: 1;
+}
+/* line 754, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+#block-button:hover {
+  color: white;
+  text-decoration: none;
+}
+
+/* line 760, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+#account-settings {
+  background-image: none !important;
+}
+
+/* line 764, /home/anne/Dropbox/cosi166b_acharnes/Dicer/app/assets/stylesheets/users.scss */
+#blocked-label {
+  text-align: center;
+  margin-top: 30px;
 }
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files

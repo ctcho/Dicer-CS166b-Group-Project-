@@ -1,0 +1,27 @@
+<div id="notice"><%=notice %></div>
+<!-- edit name -->
+<div class="container-fluid parchment-background new-chat-container">
+    <%= form_tag(chat_rooms_path, method: "patch", multipart: true) do %>
+    <% if @chat_room.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(chat_room.errors.count, "error") %> prohibited this chat room from being saved</h2>
+        <ul>
+          <% @chat_room.errors.full_messages.each do |message| %>
+            <li> <%=message %></li>
+          <% end %>
+        </ul>
+      </div>
+  <% end %>
+  <div class="field row">
+    <div class="col-md-6">
+      <div class="tutorial-section-label new-chat-label"><%= label_tag :name, "Chat name:" %></div>
+      <%= text_field_tag :name %>
+    </div>
+  </div>
+
+<!-- list of people in chat -->
+
+
+<!-- add people (list of friends) -->
+
+<!-- avatar -->

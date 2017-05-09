@@ -6,4 +6,4 @@ test:
 
 production:
   adapter: redis
-  url: redis://h:p1a8152bf0f7389a9ed503b98f06d209bc0c29229c6fdd4e99b7d2dff4cda10af@ec2-34-206-162-178.compute-1.amazonaws.com:27769
+  url: redis://redistogo:91ead576b2d6ffe53559e3102ede3c59@greeneye.redistogo.com:9799/

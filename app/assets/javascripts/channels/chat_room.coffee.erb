@@ -35,8 +35,8 @@ scroll_bottom = () ->
   $('#messages').scrollTop($('#messages')[0].scrollHeight)
 
 render_message = (data) ->
-  avatar_html = "<div class='message-user'>\n<img class='message-avatar' src=" + data.avatar_path + "\n/>\n</div>\n"
-  message_html = message_html = "<div class='message'>\n<div class='message-content-black-border-text>\n'" +data.content +"\n</div>\n</div>\n"
+  avatar_html = "<div class='message-user'>\n<img class='message-avatar' src=" + data.avatar_path + "/>\n</div>\n"
+  message_html = "<div class='message'>\n<div class='message-content black-border-text'>\n" + data.content + "\n</div>\n</div>\n"
   shell_html = "\n<div class='message-container'>\n"
   return shell_html + avatar_html + message_html + "</div>\n"
       #send_message: (message, chat_room_id) ->
