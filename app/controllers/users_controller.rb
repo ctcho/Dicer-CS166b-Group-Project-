@@ -18,9 +18,9 @@ class UsersController < ApplicationController
     @user = current_user
     @dm_profile = @user.dm_profile
     @player_profile = @user.player_profile
-    @conversations = @user.chat_rooms
-    @similar_profiles = get_similar_profiles(@user) & (User.location(current_user, "0") || User.location(current_user, "0"))
     @new_conversations = find_new_conversations
+    @conversations = @user.chat_rooms - @new_conversations
+    @similar_profiles = get_similar_profiles(@user) & (User.location(current_user, "0") || User.location(current_user, "0"))
   end
 
   # GET /users/new
@@ -117,8 +117,16 @@ class UsersController < ApplicationController
       redirect_to('/unauthorized') unless current_user.admin?
     end
 
-    #list of chat rooms that the user has never touched
+    #Gets any conversations that the user has never seen before
     def find_new_conversations
-
+      #get chat rooms users where last_viewed is nil
+      user_rooms = ChatRoomsUser.where("user_id = ?", current_user.id)
+      new_rooms = Array.new
+      user_rooms.each do |room|
+        if room.last_viewed.nil?
+          new_rooms << ChatRoom.find_by(id: room.chat_room_id)
+        end
+      end
+      new_rooms
     end
 end

@@ -1,10 +1,18 @@
-<%= link_to chat do %>
+<%= link_to chat_room_path(chat) do %>
   <div class="preview">
     <div class="avatar-container">
-      <%= image_tag chat.avatar.url(:thumb), class: "dashboard-avatar" %>
+      <% if chat.is_a? ChatRoom %>
+        <%= image_tag chat.avatar.url(:thumb), class: "dashboard-avatar" %>
+      <% elsif chat.is_a? ChatRoomsUser %>
+        <%= image_tag ChatRoom.find(chat.chat_room_id).avatar.url(:thumb), class: "dashboard-avatar" %>
+      <%end%>
     </div>
     <div class="preview-name">
-      <%= chat.name  %>
+      <% if chat.is_a? ChatRoom %>
+        <%= chat.name  %>
+      <% elsif chat.is_a? ChatRoomsUser %>
+        <%= ChatRoom.find(chat.chat_room_id).name %>
+      <%end%>
     </div>
   </div>
 <% end %>
