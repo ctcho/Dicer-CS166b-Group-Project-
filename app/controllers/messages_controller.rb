@@ -32,9 +32,10 @@ class MessagesController < ApplicationController
     end
     if message.save
       ActionCable.server.broadcast "chat_rooms_#{@chat_room.id}_channel", content: message.content, username: message.user.username, avatar_path: message.user.avatar.url(:smallerthumb)
+    else
+      @messages = @chat_room.messages
+      redirect_to chat_room_path(@chat_room)
     end
-    @messages = @chat_room.messages
-    redirect_to chat_room_path(@chat_room)
   end
 
   def new
