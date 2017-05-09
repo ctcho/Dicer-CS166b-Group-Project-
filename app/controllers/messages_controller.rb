@@ -36,6 +36,7 @@ class MessagesController < ApplicationController
       @messages = @chat_room.messages
       redirect_to chat_room_path(@chat_room)
     end
+    redirect_to chat_room_path(@chat_room)
   end
 
   def new
